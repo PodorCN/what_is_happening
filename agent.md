@@ -145,6 +145,9 @@ git log --oneline -2        # 确认已推上去
 
 ## 6. 坑
 
+> 这份清单是**症状级**的。累积的**防错规则**（每次 review 抓到的真实错误）单独维护在
+> `review/LESSONS.md` —— 写快照前必须逐条对照，那里才是长期记忆。
+
 - `^TNX`（10Y）：Yahoo 报价可能是 ×10（52.4）、也可能已是百分数（5.24）；`fetch.mjs` 自动判别（>20 才 ÷10），手工取数先看数量级。
 - **未收盘日期 fetch 会返回旧数据**：`today` = 上一交易日收盘（期货/加密等 24h 品种 = 进行中的部分 bar）；生成任何快照前先按 §4 判定 DATE，拿不准就看 Yahoo 日线最后一根 bar 的日期是否 = DATE。
 - MTD 基线 = 上月最后**交易日**（不是 1 号），周末 `yahooClose` 自动回退；周一的 today 对比的是上周五。
@@ -152,3 +155,52 @@ git log --oneline -2        # 确认已推上去
 - Yahoo v8 偶发 429，加 `User-Agent` + 重试；失败走 §4 的 manual 流程。
 - 改样式只改 `shell.html`，改完必跑 `build-shell`，否则 `index.html` 还是旧的。
 - 本机无 python，用 node（v22 已验证）；`file://` 双击只能看内嵌快照，切日期必须 http 服务。
+
+## 7. 复审流程（writer 之后的闭环）
+
+快照不是生成完就算完。每天的自动流程是 **17:00 writer → 18:30 reviewer → 有 REVISE 则 19:00 fixer**，见 §5.1。
+
+```
+review/
+  LESSONS.md          # 累积的防错规则（跨日期累积，唯一长期记忆）
+  ledger.json         # 每天的 review 记录：verdict、findings、是否已修
+```
+
+**职责边界（三者互不越权）**：
+
+- **writer**（17:00）：只生成 + push 快照。开工前读 `review/LESSONS.md` 逐条对照。
+- **reviewer**（18:30）：**只读不写业务文件**。独立复审当天快照，找数据漏洞和前后逻辑错误。
+  - `PASS` → 在 ledger 记一条，结束。
+  - `REVISE` → 把每条 finding 写进 ledger（id/severity/category/symptom/evidence/rule），**不改快照**。
+- **fixer**（19:00，有 REVISE 才跑）：读 ledger 里未 resolved 的 findings → 改快照/脚本 →
+  **把每条 finding 的 rule 追加进 `review/LESSONS.md`**（这是"记住反馈"的唯一落点）→ 重跑 build-shell + verify → push。
+
+**reviewer 必查项**（不限于此）：
+
+1. **数字对得上** —— 每个 kpi/tbl/heatmap 数字 vs `data/<DATE>.json` 的 `computed`；四档百分比 vs 基线手算；同档跨日连续性（今天 MTD 起点应等于昨天 MTD 的基线附近）。
+2. **schema 完整** —— 四档齐全、`chains[].news[].u` 是真 URL 且非占位、四档 `labels.length == data.length == tbl` 对得上、heatmap 板块数与说明一致。
+3. **前后逻辑**（最容易出问题的）：
+   - `badges` 里的涨跌幅与 `kpi` 不矛盾；
+   - `tbl` 的期初/期末与 `data` 序列首尾一致；
+   - 主链 `main:1` 恰好一条，且它的 steps 能解释 tbl 里的主要涨跌；
+   - **辅链不能与主链重复叙述同一件事**（today 档尤其）；
+   - `d`（一句话推导）不能与 `steps` 矛盾；
+   - mtd/qtd/ytd 的 chains 不复述 today 的日内细节（§2.3）。
+4. **渲染** —— `build-shell` 后 `verify` 过；http 打开 `?date=<DATE>` 四档/热力图/链都出得来。
+
+**reviewer 不能做的事**：不自己修、不改 `snapshots/*.json`、不碰 `index.html` 样式。发现问题只记录，
+让 fixer 改 —— 避免"审的人顺手改了"导致 review 失去独立性。
+
+**verdict 判定**：任何 `critical` 或 `major` → `REVISE`；只有 `minor` → `PASS`（但仍写进 ledger 的 findings，
+下次 review 顺手回看有没有恶化）。不允许 reviewer 放宽标准求 PASS。
+
+## 5.1 排期（多伦多时间）
+
+| 时间 | job | 作用 |
+|---|---|---|
+| 17:00 | `market-wrap-writer` | 生成当天（最近已收盘交易日）快照并 push |
+| 18:30 | `market-wrap-reviewer` | 独立复审，PASS/REVISE，只记录不改 |
+| 19:00 | `market-wrap-fixer` | 仅当 reviewer 判 REVISE 时修 + 把 rule 沉淀进 `review/LESSONS.md` |
+
+三个 job 在 Hermes cron 里，用 `context_from` 把 writer 的输出注入 reviewer、reviewer 的输出注入 fixer。
+

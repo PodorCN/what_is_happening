@@ -1,0 +1,71 @@
+{
+  "$schema": "internal-review-ledger",
+  "purpose": "每个交易日的 review 记录。writer 不读这个目录，fixer 和 reviewer 读。",
+  "schema": {
+    "date": "快照日期 YYYY-MM-DD",
+    "reviewedAt": "复审时间 ISO",
+    "verdict": "PASS | REVISE",
+    "rounds": [
+      {
+        "round": 1,
+        "verdict": "PASS | REVISE",
+        "findings": [
+          {
+            "id": "F1",
+            "severity": "critical | major | minor",
+            "category": "数字 | 取数 | 逻辑 | 引用 | schema | 渲染",
+            "symptom": "具体症状：哪个字段、错在哪、正确值应为多少",
+            "evidence": "证据：与哪个来源/哪个快照/哪条链对不上",
+            "rule": "可执行的防错规则（一句话，能直接照着做）"
+          }
+        ]
+      }
+    ],
+    "resolved": "所有 finding 修复并复审通过后为 true"
+  },
+  "entries": [
+    {
+      "date": "2026-09-28",
+      "reviewedAt": "2026-09-29T01:10:00-04:00",
+      "verdict": "PASS",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "critical",
+              "category": "数字",
+              "symptom": "fetch.mjs MTD/QTD 基线取了下一个交易日的 bar：8/31 基线取成 9/1、6/30 取成 7/1，四档全部偏移一天。修复后 SPX 与手工校准一致（MTD -0.03% / QTD +2.46% / YTD +12.24%）",
+              "evidence": "node scripts/build.mjs 2026-09-28 校准表与手工校准的 SPX 四档对比",
+              "rule": "基线 = ≤ 基线日的最后一根 bar。取数后必须用 build.mjs 校准表核对，四档与前一快照同档应连续"
+            },
+            {
+              "id": "F2",
+              "severity": "critical",
+              "category": "数字",
+              "symptom": "^TNX 被 /10 两次，10Y 显示 0.52% 而非 5.24%",
+              "evidence": "Yahoo ^TNX 现返回 5.24（已是百分数），旧代码再除 10",
+              "rule": "^TNX 按数量级判别（>20 才 ÷10），写入前确认 10Y 在 2%–6% 区间"
+            },
+            {
+              "id": "F3",
+              "severity": "major",
+              "category": "取数",
+              "symptom": "对尚未收盘的日期跑 fetch.mjs 会静默返回上一交易日收盘价，期货/加密还会给出进行中的夜盘 bar，容易把旧数据写成新一天",
+              "evidence": "实测 fetch 2026-09-29 在 9/29 凌晨只返回 9/28 的数据",
+              "rule": "生成任何快照前先判定 DATE = 最近一个已收盘交易日，不满足就跳过，不许用旧数据充新日"
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
+        }
+      ],
+      "resolved": true
+    }
+  ]
+}
