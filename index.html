@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bay Street Updates by Podor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6efe0;--paper2:#fdf9ee;--ink:#191612;--mut:#6f6552;--faint:#9a8f7a;
+  --line:#d9cfb8;--hair:#e6ddc8;--claret:#990f3d;--up:#1f6b45;--down:#990f3d;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Source Serif 4","Noto Serif SC",Georgia,"Songti SC","SimSun",serif;
+  font-size:16px;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;
+  background:radial-gradient(ellipse at 30% 10%,rgba(255,252,240,.7),transparent 60%),
+             radial-gradient(ellipse at 80% 90%,rgba(120,100,60,.08),transparent 55%)}
+
+/* ── masthead ─────────────────────────────── */
+.mast{padding:0 40px}
+.nameplate{text-align:center;margin:30px 0 2px;font-family:"Playfair Display","Noto Serif SC",serif;
+  font-weight:900;font-size:clamp(38px,6vw,72px);letter-spacing:.01em;line-height:1.05}
+.nameplate small{display:block;font-family:"Source Serif 4","Noto Serif SC",serif;font-style:italic;
+  font-weight:400;font-size:clamp(14px,1.6vw,19px);letter-spacing:.28em;margin-top:8px;color:var(--mut)}
+.dateline{text-align:center;font-family:"Playfair Display",Georgia,serif;font-weight:700;
+  font-size:clamp(22px,3vw,34px);letter-spacing:.04em;margin:18px 0 4px;padding:10px 0;
+  border-top:3px double var(--ink);border-bottom:1px solid var(--ink)}
+.dateline span{color:var(--mut);font-family:"Source Serif 4",serif;font-weight:400;font-style:italic;
+  font-size:.55em;letter-spacing:.14em;margin-left:14px;text-transform:uppercase;vertical-align:.18em}
+
+/* ── layout: full width ───────────────────── */
+.wrap{padding:30px 40px 48px}
+h1{font-family:"Playfair Display","Noto Serif SC",serif;font-weight:900;
+  font-size:clamp(32px,4.4vw,56px);line-height:1.12;margin:6px 0 12px;letter-spacing:-.01em}
+.sub{font-size:clamp(17px,1.7vw,21px);color:var(--mut);line-height:1.8;max-width:72ch;
+  font-style:italic;margin-bottom:16px}
+.daynav{display:inline-flex;align-items:stretch;margin:14px 0 2px;border:1px solid var(--ink);background:var(--paper2)}
+.daynav button{background:transparent;border:none;padding:9px 18px;font-size:17px;line-height:1;cursor:pointer;
+  font-family:inherit;color:var(--ink)}
+.daynav button:hover:not(:disabled){background:var(--ink);color:var(--paper)}
+.daynav button:disabled{opacity:.25;cursor:default}
+.daynav .cur{display:flex;align-items:center;padding:9px 20px;border-left:1px solid var(--ink);border-right:1px solid var(--ink);
+  font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:16px;letter-spacing:.05em;white-space:nowrap}
+.err{background:#f6e3e3;border:1px solid var(--claret);padding:10px 14px;font-size:13px;display:none;margin:12px 0}
+
+/* ── section nav (tabs) ───────────────────── */
+.tabs{display:flex;gap:0;margin:18px 0 6px;flex-wrap:wrap;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.tab{border:none;border-right:1px solid var(--line);background:transparent;color:var(--mut);
+  padding:13px 26px;cursor:pointer;font-family:inherit;font-weight:700;font-size:14px;
+  letter-spacing:.2em;text-transform:uppercase}
+.tab:first-child{border-left:1px solid var(--line)}
+.tab:hover{color:var(--ink);background:var(--paper2)}
+.tab.active{background:var(--ink);color:var(--paper)}
+
+/* ── KPI strip ────────────────────────────── */
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:18px 0;
+  border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.k{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-right:1px solid var(--line)}
+.k:last-child{border-right:none}
+.k .l{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.k .v{font-size:12.5px;color:var(--faint);margin-top:4px;font-variant-numeric:tabular-nums}
+.k .c{font-family:"Playfair Display",Georgia,serif;font-size:clamp(22px,2.2vw,30px);font-weight:900;line-height:1;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.k .c i{font-style:normal;font-size:.6em;vertical-align:.22em;margin-right:3px}
+@media(max-width:760px){.kpi{grid-template-columns:repeat(2,1fr)}.k:nth-child(2n){border-right:none}.k{border-bottom:1px solid var(--line)}}
+
+/* ── cards → newspaper columns ────────────── */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.card{background:var(--paper2);border:1px solid var(--ink);border-radius:0;padding:28px 32px;
+  box-shadow:4px 4px 0 rgba(25,22,18,.14)}
+.card h2{margin:0 0 18px;padding-bottom:11px;font-family:"Source Serif 4","Noto Serif SC",serif;
+  font-size:15px;font-weight:700;color:var(--claret);letter-spacing:.3em;text-transform:uppercase;
+  border-bottom:3px solid var(--ink)}
+.big{font-size:18.5px;line-height:1.9}
+.big::first-letter{font-family:"Playfair Display",serif;font-size:3.4em;font-weight:900;
+  float:left;line-height:.82;padding:6px 10px 0 0;color:var(--claret)}
+
+/* ── chains ───────────────────────────────── */
+.chains{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:1100px){.chains{grid-template-columns:1fr}}
+.chain-card{background:var(--paper2);border:1px solid var(--ink);border-left:6px solid var(--ink);padding:22px 26px;
+  box-shadow:4px 4px 0 rgba(25,22,18,.10)}
+.chain-card.main{border-left-color:var(--claret);box-shadow:4px 4px 0 rgba(153,15,61,.18)}
+.t{font-family:"Playfair Display","Noto Serif SC",serif;font-weight:900;font-size:21px;margin-bottom:10px;line-height:1.35}
+.t i{font-style:normal;font-size:10.5px;letter-spacing:.2em;background:var(--claret);color:#fff;
+  padding:3px 9px;margin-right:9px;vertical-align:3px}
+.steps{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0}
+.node{background:var(--paper);border:1px solid var(--ink);padding:5px 12px;font-size:13.5px;font-weight:700}
+.arrow{color:var(--claret);font-weight:900;font-size:15px}
+.cdesc{font-size:16px;color:var(--mut);line-height:1.8;font-style:italic}
+.facts{margin:14px 0 0;padding:0;list-style:none}
+.fact{border-top:1px solid var(--line);padding:11px 0;font-size:16px;line-height:1.85}
+.fact b.time{color:var(--claret);margin-right:10px;white-space:nowrap;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+.fact a{color:var(--claret);text-decoration:none;font-size:13px;border-bottom:1px solid rgba(153,15,61,.35)}
+.fact a:hover{background:var(--claret);color:#fff}
+
+.neg{color:var(--down);font-weight:700}.pos{color:var(--up);font-weight:700}
+
+/* ── playbook / footer ────────────────────── */
+ul.play{margin:8px 0;padding-left:22px;line-height:1.9;font-size:17.5px}
+ul.play li{margin-bottom:6px}
+ul.play li::marker{color:var(--claret);font-weight:900}
+.foot{color:var(--faint);font-size:13px;line-height:1.85;margin:34px 0 0;padding-top:16px;
+  border-top:3px double var(--ink)}
+
+/* ── heat table ───────────────────────────── */
+.heat-sec{margin-bottom:16px}
+.heat-sec h3{font-size:11.5px;color:var(--mut);margin:14px 0 8px;letter-spacing:.22em;text-transform:uppercase;
+  border-bottom:1px solid var(--line);padding-bottom:5px}
+.heat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.hcell{height:104px;padding:12px 14px;display:flex;flex-direction:column;
+  justify-content:space-between;align-items:flex-start;text-align:left;overflow:hidden}
+.hcell .hn{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;line-height:1.3}
+.hcell .hn .hl{display:block;font-weight:400;opacity:.7;font-size:11px;letter-spacing:.02em;text-transform:none;margin-top:2px}
+.hcell .hc{font-size:clamp(26px,2.6vw,34px);font-weight:900;font-variant-numeric:tabular-nums;line-height:1;letter-spacing:-.015em}
+.hcell .hc i{font-style:normal;font-size:.55em;vertical-align:.28em;margin-right:3px}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="nameplate">Bay Street Updates<small>by Podor</small></div>
+  <div class="dateline" id="topdate">…</div>
+</header>
+<div class="wrap">
+<h1 id="headline"></h1><div class="sub" id="deck"></div>
+<div class="daynav"><button id="prevDay" title="Previous trading day">←</button><span class="cur" id="curDay">…</span><button id="nextDay" title="Next trading day">→</button></div>
+<div class="err" id="err"></div>
+<div class="tabs" id="tabs"></div>
+<div class="kpi" id="kpi"></div>
+<div class="grid">
+<div class="card"><h2>What Happened</h2><div class="big" id="c1"></div></div>
+<div class="card"><h2>The Playbook</h2><div id="c4"></div></div>
+</div>
+<div class="card" style="margin-top:22px"><h2>Global Markets</h2><div id="heat"></div></div>
+<div class="card" style="margin-top:22px"><h2 id="chTitle">The Chains</h2><div class="chains" id="chains"></div></div>
+<div class="foot" id="foot"></div>
+</div>
+<script type="application/json" id="embedded-snap">{"date":"2026-09-28","updatedAt":"2026-09-28T23:12:43.044Z","P":{"today":{"h":"Stocks and Bonds Sink Together as Iran Deal Collapses and Yields Hit a 19-Year High","d":"","badges":["S&P 7683 -0.77%","Dow 51481 -0.67%","Nasdaq 26820 -0.92%","10Y 5.24%","Brent $105.7"],"c1":"A stock-and-bond double whammy on Monday erased the S&P's September gains; only 3 of 11 sectors closed green. The losses split — memory and META hit hard, NVDA alone higher, BA single-handedly dragging the Dow, gold falling oddly — proof of multiple chains at work.","c4":"<ul class='play'><li>Hedge main-chain exposure with energy; Saudi supply can flip it at any time.</li><li>Split the AI trade: NVDA and the real winners vs. memory and META.</li><li>De-lever into Wednesday's PCE and Friday's payrolls; add back if 10Y dips below 5%.</li></ul>","kpi":[["S&P","7,683.69","-0.77%",0],["10Y","5.24%","19-yr high",0],["Brent","$105.7","+1.3%",1],["VIX","16.07","+8%",0]],"tbl":[["S&P","7,743.41","7,683.69","-0.77%"],["Dow","51,828","51,481","-0.67%"],["Nasdaq","27,068","26,820","-0.92%"],["10Y","5.18%","5.24%","+6bp"],["WTI","$92.6","$93.33","+0.8%"],["Gold","$4,317","$4,155","-3.7%"]],"labels":["9/21","9/22","9/23","9/24","9/25","9/28"],"data":[7764.7,7764.6,7706,7704.1,7743.4,7683.7],"chains":[{"t":"① Main Chain: Geopolitics → Oil → Inflation → Bonds → Stocks","main":1,"steps":["7-day plan rejected","Hormuz stays shut","Brent $105.7","10Y 5.27%","S&P -0.8%"],"d":"Roughly 60% of today's drop. Friday bet on a deal; the weekend falsified it; October hike odds went 58% → 70%.","news":[{"time":"Sat 9/26","fact":"Trump rejected Iran's 7-day ceasefire-and-reopen plan; WSJ, citing U.S. officials, said Tehran wanted the strait reopened within a week.","src":"Reuters","u":"https://www.reuters.com/world/middle-east/iran-awaits-us-move-after-wsj-report-says-trump-rejects-peace-plan-2026-09-26/"},{"time":"Sat 9/26","fact":"Same story: Trump said he had refused; restarting talks requires Iranian concessions first, and the strait stays closed.","src":"NYT","u":"https://www.nytimes.com/2026/09/26/us/politics/trump-iran-hormuz-strait.html?eafs_enabled=false"},{"time":"Mon 9/28","fact":"WTI $93.33 +0.79%, Brent $105.7 +1.3% — higher early, gains pared after Saudi Arabia restored East-West pipeline flows.","src":"Barron's Live / Investopedia","u":"https://www.barrons.com/livecoverage/stock-market-news-today-280926"},{"time":"9/28 16:00","fact":"10Y 5.24% after touching 5.27% intraday (highest since 2007); 30Y back to 2002 levels; 2Y 4.93%. CME odds of an October hike: 70% vs 58% a week ago.","src":"Investopedia Close","u":"https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"}]},{"t":"② Rates Kill Valuations; AI Splits","steps":["Real rates spike","SOXX -2%, DRAM -3.5%","META -5%","NVDA +2% exception"],"d":"Long duration dies first. The Muse hype is fading; the real winners price on seats plus consumption.","news":[{"time":"9/28 intraday","fact":"SOXX -2%, DRAM memory ETF -3.5%, with ARM/INTC/SNDK leading losses; MAGS -1.5%; all of Mag 7 except NVDA fell; META -5% (after -3.5% on Friday).","src":"Investopedia","u":"https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"},{"time":"9/28 early","fact":"NVDA's board added $150B to the buyback, taking it to $235B (the largest increase ever), and launched an Open Agent Safety Platform; the stock rose ~2%.","src":"Investopedia","u":"https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"},{"time":"9/28","fact":"Oppenheimer: system-of-record plus seat-and-consumption pricing equals AI upside — named MSFT/NOW/BRZE. BofA initiated IonQ at Buy with a $60 target.","src":"Investopedia","u":"https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"}]},{"t":"③ Idiosyncratic Landmines: BA + MDB","steps":["MAX software glitch","FAA CARB","BA -7%","MDB -18%"],"d":"Idiosyncratic, but BA alone accounted for about a quarter of the Dow's loss.","news":[{"time":"9/27 weekend–9/28","fact":"WSJ: a 737 MAX software glitch can knock out auto-navigation in certain landing scenarios; Boeing confirmed it, the FAA opened a CARB review, and LUV/UAL refused the new software version. BA fell 5–7%, leading the Dow down.","src":"Investopedia","u":"https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"},{"time":"9/28 premarket","fact":"MongoDB CEO Desai left effective immediately to run Enterprise at Meta; Ittycheria steps in as interim; MDB -18~20%. Meta simultaneously announced an Enterprise Platform.","src":"Investopedia","u":"https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"},{"time":"9/28","fact":"Kodiak's twin eye-drug Phase 3 hit non-inferiority, +180%; Regeneron -4%. Not enough to offset the index.","src":"Investopedia","u":"https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"}]},{"t":"④ The Dollar Squeeze","steps":["DXY 101.2","Rand -0.5%","Gold -3.7%","BTC -2%"],"d":"High real rates and haven demand both want dollars; oil is the only hedge.","news":[{"time":"9/28 London","fact":"The dollar held a two-month high as the US-Iran standoff pushed oil and yields higher; the South African rand fell 0.5% early.","src":"Reuters","u":"https://www.miamiherald.com/news/business/article317405750.html"},{"time":"9/28","fact":"Gold futures -3.7% to $4,155 (they were $4,317 on 9/26; the year's high is $4,265); DXY 101.21 +0.2%; real 10Y 2.85%.","src":"Investopedia / FRED","u":"https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"},{"time":"9/28","fact":"BTC ~$83.3k (overnight high $85k); HOOD/COIN/MARA/CRCL fell with it; Strategy added 1,665 coins last week to reach 847,666; spot ETFs took in $2.4B net last week.","src":"Investopedia","u":"https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"}]},{"t":"⑤ The Relief Chain: Why It Wasn't Worse","steps":["Saudi restores supply","WTI only +0.5%","US-China $30B list","Diesel export ban debated"],"d":"Tail-risk relief — and also the reversal trigger.","news":[{"time":"9/28","fact":"Saudi Arabia restored exports via the East-West pipeline; WTI/Brent gave back half their gains.","src":"Barron's / Investopedia","u":"https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"},{"time":"Mon 9/28","fact":"US-China $30B tariff-cut lists: the U.S. cut 77 items (fireworks, kitchenware, toys); China cut 1,619 items (farm goods, lumber, personal care).","src":"Spectrum / The Hill","u":"https://spectrumlocalnews.com/us/snplus/international/2026/09/28/u-s--china-product-lists-tariff-cuts"},{"time":"9/28","fact":"Trump weighed banning diesel exports; Goldman: a one-week ban takes diesel -25c/gal vs gasoline +30c, and diesel ends up pricier long-term.","src":"Investopedia","u":"https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"}]}]},"mtd":{"h":"September's Round-Trip: A Hawkish Fed Wipes Out the Month as the Dow Heads for Its Worst September in Three Years","d":"S&P flat on the month at -0.03%; the Dow's -3.2% is its worst September in three years.","badges":["S&P MTD -0.03%","Dow -3.2%","10Y +54bp","Oil > $100"],"c1":"8/31 7686 → 9/28 7683, back to zero. The 9/16 hike plus a hawkish Warsh was the watershed; everything after the 9/21 AI high was given back.","c4":"<ul class='play'><li>60/40 stopped working; energy was the only positive contributor.</li><li>October hinges on PCE and payrolls for back-to-back hikes.</li></ul>","kpi":[["S&P MTD","-0.03%","flat",1],["Dow MTD","-3.2%","weakest",0],["10Y MTD","+54bp","main culprit",0],["Brent","+$15%","inflation",0]],"tbl":[["S&P","7,686.14","7,683.69","-0.03%"],["Dow","53,185.9","51,481","-3.20%"],["Nasdaq","~26,890","26,820","~-0.3%"],["10Y","~4.70%","5.24%","+54bp"],["Brent","~$92","$105.7","+15%"],["VIX","~14.9","16.07","+8%"]],"labels":["8/31","9/8","9/16","9/21","9/25","9/28"],"data":[7686,7673,7551,7764,7743,7683],"chains":[{"t":"① The Fed Turns Hawkish — the MTD Core","main":1,"steps":["9/16 +25bp","Warsh hawkish","10Y breaks 5%","CME → 70%"],"d":"Powell → Warsh: from pricing cuts to pricing hikes.","news":[{"time":"Wed 9/16","fact":"Fed hiked +25bp to 3.75–4.00%; Warsh warned on inflation; Dow -600pts, S&P -0.5~1.2%.","src":"Investopedia / Yahoo Live","u":"https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09162026-12123817"},{"time":"Thu 9/17","fact":"Oil pulled back and jobs held; Nasdaq led a rebound, 10Y eased, and the market digested the hike.","src":"Reuters","u":"https://www.reuters.com/business/wall-st-futures-rise-fed-rate-hike-lifts-long-standing-overhang-2026-09-17/"},{"time":"9/23","fact":"10Y +13.9bp to 5.106% (highest since 2007, biggest one-day jump since 4/25); Nasdaq's record streak ended.","src":"Reuters","u":"https://www.reuters.com/world/china/global-markets-global-markets-2026-09-23/"}]},{"t":"② The Oil Headline Chain","steps":["9/9 tops $100","pullback","hope rally","rejection selloff"],"d":"September reversed weekly; every deal-hope rally was a sale.","news":[{"time":"9/8–9/9","fact":"10Y back above 4.8%; oil rose into the CPI wait; on 9/9 WTI topped $100.","src":"CNBC","u":"https://www.cnbc.com/2026/09/08/us-treasury-yields-bonds.html"},{"time":"9/25–9/28","fact":"Last week rallied on Hormuz-reopening hopes; after the weekend rejection, 9/28 gave it all back.","src":"Barron's","u":"https://www.barrons.com/livecoverage/stock-market-news-today-280926"}]},{"t":"③ AI Splits at the Highs","steps":["9/21 27122","memory & software weak","utilities 1-yr low"],"d":"The index is flat; the rotation underneath is violent.","news":[{"time":"9/21","fact":"S&P 7764.7 +1.49%; Nasdaq 27122 +2.26%, a record; AMD at $1T plus AI optimism.","src":"Reuters 9/21","u":"https://www.reuters.com/business/wall-st-futures-rise-ai-stocks-gain-oil-prices-slide-2026-09-21/"},{"time":"9/28","fact":"Utilities fell to a more-than-one-year low; the AI power-demand narrative backfired.","src":"Barron's","u":"https://www.barrons.com/livecoverage/stock-market-news-today-280926"}]},{"t":"④ Month-End Flows","steps":["quarter-end rebalance","Dow catch-down","gold profit-taking","BTC holds"],"d":"A weak Dow means institutions cutting blue chips; flows amplify.","news":[{"time":"8/31","fact":"S&P 7686.14 -0.3%, Dow 53185.9 -0.7%, Nasdaq slightly lower — setting the MTD starting line.","src":"AP 8/31","u":"https://finance.yahoo.com/quote/%5EGSPC/history/"},{"time":"9/28","fact":"The Dow is set for its worst September in three years; the S&P erased its monthly gain.","src":"Barron's","u":"https://www.barrons.com/livecoverage/stock-market-news-today-280926"}]}]},"qtd":{"h":"Q3's Earnings Rally Surrenders Half Its Gains as Soaring Yields Rewrite the Rate Regime","d":"6/30 7499 → 9/28 7683, +2.46%; rates ate half of Q2's gains.","badges":["S&P QTD +2.46%","Dow -1.6%","Nasdaq +2.3%","10Y +90bp"],"c1":"July rode earnings to 7798, August stalled, and September gave half back. The Dow lagged.","c4":"<ul class='play'><li>Protect the +2.5% in Q4; don't get greedy.</li><li>Cut growth to neutral; add energy and short-duration bonds.</li></ul>","kpi":[["S&P QTD","+2.46%","held",1],["Dow QTD","-1.6%","lagged",0],["Nasdaq QTD","+2.3%","holding",1],["10Y","+90bp","the spoiler",0]],"tbl":[["S&P","7,499.36","7,683.69","+2.46%"],["Dow","52,319","51,481","-1.60%"],["Nasdaq","26,213","26,820","+2.31%"],["10Y","~4.33%","5.24%","+91bp"],["Gold","~3,400","$4,155","+22%"],["BTC","~$72k","$83.4k","+16%"]],"labels":["6/30","7/31","8/15","9/15","9/25","9/28"],"data":[7499,7489,7798,7585,7743,7683],"chains":[{"t":"① Earnings vs Valuations","main":1,"steps":["Q2 +15%","July cash-in","7798 top","September gives half back"],"d":"The numerator can't outrun the denominator; without NVDA's buyback, QTD goes negative.","news":[{"time":"6/30","fact":"S&P 7499.36 +0.79%, Dow 52319 record, Nasdaq 26213; Q2 was the best in six years: S&P +15.2%, Nasdaq +21.4%.","src":"CNBC / Reuters","u":"https://www.cnbc.com/2026/06/29/stock-market-today-live-updates.html"},{"time":"6/30","fact":"WSJ: the best quarter in six years will be a hard act to follow, leaning on earnings and peace hopes.","src":"WSJ","u":"https://www.wsj.com/finance/stocks/wall-streets-best-quarter-in-six-years-will-be-a-hard-act-to-follow-6dc641d4"}]},{"t":"② The Rate Regime","steps":["Warsh","cut → hike","Japan draining","30Y at 2002"],"d":"A global resonance, not just the U.S.","news":[{"time":"9/28","fact":"Japan's Finance Minister Katayama: long-end yields are high because global AI-infrastructure capex needs funding.","src":"Bloomberg TV","u":"https://www.barrons.com/livecoverage/stock-market-news-today-280926"},{"time":"9/28","fact":"JPM's Michele: the whole curve is oversold; the bond market may stabilize.","src":"Bloomberg TV","u":"https://www.barrons.com/livecoverage/stock-market-news-today-280926"}]},{"t":"③ A Lasting War","steps":["2/28 war starts","blockade normalizes","Saudi swing","diesel premium"],"d":"Oil averaging above $90 in Q3 is the regime, not a shock.","news":[{"time":"From 2/28/26","fact":"U.S.-Israel strikes on Iran sparked a regional conflict; Iran retaliated; the strait was weaponized (CRS R48887).","src":"Congress CRS","u":"https://www.reuters.com/world/middle-east/iran-awaits-us-move-after-wsj-report-says-trump-rejects-peace-plan-2026-09-26/"},{"time":"9/28","fact":"Saudi supply restoration knocks prices down, blockade pushes them up — the only swing factor.","src":"Investopedia","u":"https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"}]},{"t":"④ Tech Divergence","steps":["Mag 7 carries","memory lags","utilities low","lottery names"],"d":"The index lies; money crowds into themes.","news":[{"time":"QTD","fact":"S&P QTD +2.5% is all mega-caps; memory, software and power-demand names lag; IonQ and Kodiak went wild.","src":"Investopedia 9/28","u":"https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"}]}]},"ytd":{"h":"The Bull Market Grinds Through 2026, but 5% Yields and a Grinding War Are Rewriting the Playbook","d":"S&P +12.2%, Nasdaq +15.4% — gains from AI and earnings, headaches from rates and war.","badges":["S&P +12.2%","Nasdaq +15.4%","Dow +7.1%","10Y +106bp"],"c1":"The rally extended 2025's +16%, breaking 50k in February and 52k in June. The 10Y moving 4.18 → 5.24 is the biggest variable.","c4":"<ul class='play'><li>With cushion in hand, don't chase; keep duration short.</li><li>Rebalance into energy and gold.</li></ul>","kpi":[["S&P YTD","+12.2%","bull",1],["Nasdaq","+15.4%","leading",1],["Dow","+7.1%","weak",1],["10Y","+106bp","rich",0]],"tbl":[["S&P","6,845.5","7,683.69","+12.24%"],["Dow","48,063","51,481","+7.11%"],["Nasdaq","23,241","26,820","+15.40%"],["10Y","4.18%","5.24%","+106bp"],["30Y","4.81%","~5.28%","+47bp"],["Gold","~$2,900","$4,155","+40%+"]],"labels":["Dec31","3/31","6/30","8/15","9/15","9/28"],"data":[6845,6528,7499,7798,7585,7683],"chains":[{"t":"① The Bull Market Continues","main":1,"steps":["2025 +16%","50k in Feb","Q2 +15%","YTD +12%"],"d":"The base case isn't broken; April's plunge V-shaped back in Q2.","news":[{"time":"12/31/25","fact":"S&P 6845.5 -0.74%, Dow 48063 -0.63%, Nasdaq 23241 -0.76% on the final day — but 2025 still posted a third straight up year: S&P +16%, Nasdaq +19%, Dow +13%.","src":"CNBC / AP","u":"https://www.cnbc.com/2025/12/30/stock-market-today-live-updates.html"},{"time":"6/30/26","fact":"Dow H1 +8.9%, its best first half since 2021; S&P Q2 +15.2%, best since 2020.","src":"Reuters","u":"https://www.reuters.com/business/us-stock-futures-little-changed-strong-quarter-nears-end-2026-06-30/"}]},{"t":"② The Second Inflation Wave","steps":["4.18 → 5.24%","tariffs + diesel","PCE above target 5 yrs","hike expectations"],"d":"The early-year 3.75% hope is dead.","news":[{"time":"12/31/25 → 9/28","fact":"10Y 4.18% → 5.24% (+106bp); 30Y 4.81% → 5.28%. Checkable on FRED/Macrotrends.","src":"FRED / Macrotrends","u":"https://fred.stlouisfed.org/series/dgs10"},{"time":"9/28","fact":"The U.S. and China each cut $30B of tariffs, but the broader regime stands; PCE has run above target for five years, and Warsh is watching inflation.","src":"Global News","u":"https://globalnews.ca/news/12075608/us-china-tariffs-trump-xi-meeting/"}]},{"t":"③ The AI Platform","steps":["accelerated compute","NVDA +25%","Agent Safety","Anthropic meeting"],"d":"The rally and rising rates share one root: AI needs money.","news":[{"time":"YTD","fact":"NVDA +25% YTD; a $235B buyback plus the Safety platform; cash flow funds the transition.","src":"Investopedia","u":"https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"},{"time":"9/28","fact":"Trump met Anthropic's CEO on AI — the policy-and-infrastructure narrative.","src":"Bloomberg","u":"https://www.barrons.com/livecoverage/stock-market-news-today-280926"}]},{"t":"④ Geopolitics as the Norm","steps":["2/28 war","weaponized strait","relief valve","falsified"],"d":"Every deal-hope rally was a sale.","news":[{"time":"9/26","fact":"The 7-day plan rejection is the Nth falsification this year; Al Jazeera mapped what comes next.","src":"Al Jazeera","u":"https://www.aljazeera.com/news/2026/9/26/trump-reportedly-rejects-irans-seven-day-ceasefire-proposal-whats-next"}]},{"t":"⑤ Monetary Regime Change","steps":["Warsh cycle","Japan normalizes","dollar V","60/40 breaks"],"d":"Allocation playbooks need rewriting.","news":[{"time":"9/28","fact":"The dollar weakened first, then V-ed back to 101; gold +40% is a vote against paper money; with stocks and bonds down together, 60/40 trails pure equity.","src":"Reuters / Investopedia","u":"https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"}]}]}},"HEAT":{"today":[{"sec":"US Indexes","items":[["S&P 500","7,683","-0.77"],["Dow","51,481","-0.67"],["Nasdaq","26,820","-0.92"],["Russell 2K","2,817","-0.69"],["VIX","16.07","+8.07"]]},{"sec":"S&P Sectors (3 of 11 green)","items":[["Energy","—","+0.50"],["Health","—","+0.40"],["Staples","—","+0.30"],["Tech","—","-1.20"],["Utilities","1-yr low","-1.30"],["RealEst","—","-0.90"],["Comm","META drag","-1.00"],["Indust","BA drag","-0.70"]]},{"sec":"Bonds & Rates","items":[["10Y","5.24%","+6bp"],["30Y","~5.28%","2002 high"],["2Y","4.93%","+7bp"],["CME Oct hike","70%","+12pp"]]},{"sec":"Commodities / Global / Crypto","items":[["Brent","$105.7","+1.30"],["WTI","$93.33","+0.79"],["Gold fut","$4,155","-3.70"],["DXY","101.21","+0.20"],["BTC","$83,442","-0.89"],["SSE","3,823","-1.67"],["Stoxx600","638","0.00"],["HK","thin","rally"]]}],"mtd":[{"sec":"Indexes MTD","items":[["S&P","7,683","-0.03"],["Dow","51,481","-3.20"],["Nasdaq","26,820","-0.30"],["VIX","16.07","+8.0"]]},{"sec":"Sectors MTD","items":[["Energy","—","+4.0"],["Staples","—","+0.5"],["Tech","—","-1.5"],["Utilities","—","-3.0"]]},{"sec":"Rates MTD","items":[["10Y","5.24%","+54bp"],["30Y","~5.28%","+40bp"]]},{"sec":"Commodities MTD","items":[["Brent","$105.7","+15.0"],["Gold","$4,155","-3.0"],["BTC","$83k","+2.0"]]}],"qtd":[{"sec":"Indexes QTD","items":[["S&P","+2.46","+2.46"],["Nasdaq","+2.31","+2.31"],["Dow","-1.60","-1.60"],["Russell","—","+1.0"]]},{"sec":"Sectors QTD","items":[["Energy","—","+8.0"],["Tech","—","+3.0"],["Utilities","—","-5.0"],["Staples","—","+1.0"]]},{"sec":"Rates QTD","items":[["10Y","+91bp","+91bp"],["30Y","—","+70bp"]]},{"sec":"Commodities QTD","items":[["Gold","+22","+22.0"],["Brent","+12","+12.0"],["BTC","+16","+16.0"]]}],"ytd":[{"sec":"Indexes YTD","items":[["S&P","+12.24","+12.24"],["Nasdaq","+15.40","+15.40"],["Dow","+7.11","+7.11"],["Russell","—","+9.0"]]},{"sec":"Sectors YTD","items":[["Tech","—","+18.0"],["Energy","—","+15.0"],["Utilities","—","-2.0"],["Staples","—","+5.0"]]},{"sec":"Rates YTD","items":[["10Y","+106bp","+106bp"],["30Y","+47bp","+47bp"]]},{"sec":"Commodities YTD","items":[["Gold","+40","+40.0"],["BTC","—","+25.0"],["Brent","—","+30.0"],["DXY","—","+1.0"]]}]},"foot":"Closing baseline (auto 2026-09-28): SPX 7683.69 (-0.03% MTD / +2.46% QTD / +12.24% YTD) · DJI 51481.51 (-3.20% MTD) · IXIC 26820.38 (+15.40% YTD) · 10Y 5.24% · WTI 93.33 · Gold 4155.00 · BTC 83442.00. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.18% · 26-06-30 S&P 7499.36/Dow 52319/Nasdaq 26213 · 26-08-31 S&P 7686.14/Dow 53185.9 · 26-09-28 S&P 7683.69/Dow 51481/Nasdaq 26820/10Y 5.24%/WTI $93.33/Brent $105.7/Gold $4155/BTC $83442/VIX 16.07. For information only — not investment advice.","label":"2026-09-28 Monday close"}</script>
+<script>
+let SNAP = null, PERIOD = "today";
+const PERIODS = [["today", "Today"], ["mtd", "MTD"], ["qtd", "QTD"], ["ytd", "YTD"]];
+
+function heatColor(v) {
+  const t = String(v).trim();
+  let up = t.startsWith("+"), dn = t.startsWith("-");
+  if (!up && !dn) {
+    if (/rally|surge|jump|soar/i.test(t)) up = true;
+    else if (/high|low|plunge|slump|selloff/i.test(t)) dn = true;
+    else return "background:#ece3cd;color:#6f6552";
+  }
+  const m = t.match(/\d+(?:\.\d+)?/);
+  let n = /^[+-]?[\d.]+\s*(bp|pp)?$/.test(t) && m ? parseFloat(m[0]) : 2.5;
+  if (/bp/.test(t)) n /= 10;
+  if (/pp/.test(t)) n /= 2;
+  const a = Math.min(Math.max(n / 4, 0.08), 1);
+  const rgb = up ? "31,107,69" : "153,15,61";
+  const deep = up ? "#14532d" : "#6d0a2c";
+  return `background:rgba(${rgb},${(0.12 + 0.88 * a).toFixed(2)});color:${a > 0.5 ? "#fdf9ee" : deep}`;
+}
+
+function fmtRet(v) {
+  const t = String(v).trim();
+  return /^[+-]?\d+(\.\d+)?$/.test(t) ? t + "%" : t;
+}
+
+function render(period) {
+  PERIOD = period;
+  const P = SNAP.P, HEAT = SNAP.HEAT, d = P[period];
+  document.getElementById("headline").innerText = d.h;
+  const deck = document.getElementById("deck");
+  deck.innerText = d.d;
+  deck.style.display = d.d ? "" : "none";
+  document.getElementById("c1").innerHTML = d.c1;
+  document.getElementById("c4").innerHTML = d.c4;
+  document.getElementById("kpi").innerHTML = d.kpi.map(x => { const t = String(x[2]); const ar = t.startsWith("+") ? "<i>▲</i>" : t.startsWith("-") ? "<i>▼</i>" : ""; return `<div class="k"><div><div class="l">${x[0]}</div><div class="v">${x[1]}</div></div><div class="c ${x[3] ? "pos" : "neg"}">${ar}${t}</div></div>`; }).join("");
+  document.getElementById("chTitle").innerText = "The Chains";
+  document.getElementById("chains").innerHTML = d.chains.map(c => `<div class="chain-card ${c.main ? "main" : ""}"><div class="t">${c.main ? "<i>MAIN</i>" : ""}${c.t}</div><div class="steps">${c.steps.map((s, i) => `${i ? '<span class="arrow">→</span>' : ""}<span class="node">${s}</span>`).join("")}</div><div class="cdesc">${c.d}</div><ul class="facts">${(c.news || []).map(n => `<li class="fact"><b class="time">${n.time}</b>${n.fact} <a href="${n.u}" target="_blank" rel="noopener">[${n.src} ↗]</a></li>`).join("")}</ul></div>`).join("");
+  document.getElementById("heat").innerHTML = (HEAT[period] || HEAT.today).map(g => `<div class="heat-sec"><h3>${g.sec}</h3><div class="heat-grid">${g.items.map(it => { const t = String(it[2]).trim(); const ar = t.startsWith("+") ? "<i>▲</i>" : t.startsWith("-") ? "<i>▼</i>" : ""; return `<div class="hcell" style="${heatColor(it[2])}"><div class="hn">${it[0]}${it[1] && it[1] !== "—" ? `<span class="hl">${it[1]}</span>` : ""}</div><div class="hc">${ar}${fmtRet(it[2])}</div></div>`; }).join("")}</div></div>`).join("");
+  document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b.dataset.p === period));
+  document.getElementById("foot").innerText = SNAP.foot || "";
+}
+
+function formatDate(dateStr, style) {
+  try { return new Date(dateStr + "T12:00:00").toLocaleDateString("en-US", style); }
+  catch (e) { return dateStr; }
+}
+
+async function init() {
+  const errBox = document.getElementById("err");
+  const params = new URLSearchParams(location.search);
+  const want = params.get("date");
+  const embedded = JSON.parse(document.getElementById("embedded-snap").textContent);
+  let list = null;
+  try {
+    const r = await fetch("snapshots/index.json", { cache: "no-store" });
+    if (r.ok) list = await r.json();
+  } catch (e) { /* file:// 下 fetch 不可用，走内嵌兜底 */ }
+  if (!Array.isArray(list) || !list.length) list = [embedded.date];
+  const date = (want && list.includes(want)) ? want : list[list.length - 1];
+  let snap = null, via = "";
+  try {
+    const r = await fetch(`snapshots/${date}.json`, { cache: "no-store" });
+    if (r.ok) { snap = await r.json(); via = "snapshot"; }
+  } catch (e) { /* file:// 兜底 */ }
+  if (!snap) {
+    if (date === embedded.date) { snap = embedded; via = "embedded"; }
+    else {
+      errBox.style.display = "block";
+      errBox.innerText = `Failed to load snapshots/${date}.json (browsers block fetch under file://). Serve over http instead: npx serve . or python -m http.server — or use ?date=${embedded.date} for the embedded snapshot.`;
+      return;
+    }
+  }
+  SNAP = snap;
+  document.title = `Bay Street Updates · ${snap.date}`;
+  document.getElementById("topdate").innerHTML = `${formatDate(snap.date, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}<span>U.S. Close</span>`;
+  const i = list.indexOf(date);
+  document.getElementById("curDay").innerText = formatDate(date, { month: "short", day: "numeric", year: "numeric" });
+  const prev = document.getElementById("prevDay"), next = document.getElementById("nextDay");
+  prev.disabled = i <= 0;
+  next.disabled = i >= list.length - 1;
+  prev.onclick = () => { location.search = `?date=${list[i - 1]}`; };
+  next.onclick = () => { location.search = `?date=${list[i + 1]}`; };
+  const tabs = document.getElementById("tabs");
+  tabs.innerHTML = PERIODS.map(([k, label]) => `<button class="tab" data-p="${k}">${k === "today" ? formatDate(SNAP.date, { month: "short", day: "numeric" }) : label}</button>`).join("");
+  tabs.querySelectorAll(".tab").forEach(b => b.onclick = () => render(b.dataset.p));
+  render("today");
+}
+init();
+</script>
+</body>
+</html>

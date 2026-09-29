@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bay Street Updates by Podor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Noto+Serif+SC:wght@400;600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6efe0;--paper2:#fdf9ee;--ink:#191612;--mut:#6f6552;--faint:#9a8f7a;
+  --line:#d9cfb8;--hair:#e6ddc8;--claret:#990f3d;--up:#1f6b45;--down:#990f3d;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Source Serif 4","Noto Serif SC",Georgia,"Songti SC","SimSun",serif;
+  font-size:16px;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.5;
+  background:radial-gradient(ellipse at 30% 10%,rgba(255,252,240,.7),transparent 60%),
+             radial-gradient(ellipse at 80% 90%,rgba(120,100,60,.08),transparent 55%)}
+
+/* ── masthead ─────────────────────────────── */
+.mast{padding:0 40px}
+.nameplate{text-align:center;margin:30px 0 2px;font-family:"Playfair Display","Noto Serif SC",serif;
+  font-weight:900;font-size:clamp(38px,6vw,72px);letter-spacing:.01em;line-height:1.05}
+.nameplate small{display:block;font-family:"Source Serif 4","Noto Serif SC",serif;font-style:italic;
+  font-weight:400;font-size:clamp(14px,1.6vw,19px);letter-spacing:.28em;margin-top:8px;color:var(--mut)}
+.dateline{text-align:center;font-family:"Playfair Display",Georgia,serif;font-weight:700;
+  font-size:clamp(22px,3vw,34px);letter-spacing:.04em;margin:18px 0 4px;padding:10px 0;
+  border-top:3px double var(--ink);border-bottom:1px solid var(--ink)}
+.dateline span{color:var(--mut);font-family:"Source Serif 4",serif;font-weight:400;font-style:italic;
+  font-size:.55em;letter-spacing:.14em;margin-left:14px;text-transform:uppercase;vertical-align:.18em}
+
+/* ── layout: full width ───────────────────── */
+.wrap{padding:30px 40px 48px}
+h1{font-family:"Playfair Display","Noto Serif SC",serif;font-weight:900;
+  font-size:clamp(32px,4.4vw,56px);line-height:1.12;margin:6px 0 12px;letter-spacing:-.01em}
+.sub{font-size:clamp(17px,1.7vw,21px);color:var(--mut);line-height:1.8;max-width:72ch;
+  font-style:italic;margin-bottom:16px}
+.daynav{display:inline-flex;align-items:stretch;margin:14px 0 2px;border:1px solid var(--ink);background:var(--paper2)}
+.daynav button{background:transparent;border:none;padding:9px 18px;font-size:17px;line-height:1;cursor:pointer;
+  font-family:inherit;color:var(--ink)}
+.daynav button:hover:not(:disabled){background:var(--ink);color:var(--paper)}
+.daynav button:disabled{opacity:.25;cursor:default}
+.daynav .cur{display:flex;align-items:center;padding:9px 20px;border-left:1px solid var(--ink);border-right:1px solid var(--ink);
+  font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:16px;letter-spacing:.05em;white-space:nowrap}
+.err{background:#f6e3e3;border:1px solid var(--claret);padding:10px 14px;font-size:13px;display:none;margin:12px 0}
+
+/* ── section nav (tabs) ───────────────────── */
+.tabs{display:flex;gap:0;margin:18px 0 6px;flex-wrap:wrap;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.tab{border:none;border-right:1px solid var(--line);background:transparent;color:var(--mut);
+  padding:13px 26px;cursor:pointer;font-family:inherit;font-weight:700;font-size:14px;
+  letter-spacing:.2em;text-transform:uppercase}
+.tab:first-child{border-left:1px solid var(--line)}
+.tab:hover{color:var(--ink);background:var(--paper2)}
+.tab.active{background:var(--ink);color:var(--paper)}
+
+/* ── KPI strip ────────────────────────────── */
+.kpi{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:18px 0;
+  border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.k{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-right:1px solid var(--line)}
+.k:last-child{border-right:none}
+.k .l{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.k .v{font-size:12.5px;color:var(--faint);margin-top:4px;font-variant-numeric:tabular-nums}
+.k .c{font-family:"Playfair Display",Georgia,serif;font-size:clamp(22px,2.2vw,30px);font-weight:900;line-height:1;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.k .c i{font-style:normal;font-size:.6em;vertical-align:.22em;margin-right:3px}
+@media(max-width:760px){.kpi{grid-template-columns:repeat(2,1fr)}.k:nth-child(2n){border-right:none}.k{border-bottom:1px solid var(--line)}}
+
+/* ── cards → newspaper columns ────────────── */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:34px}@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.card{background:var(--paper2);border:1px solid var(--ink);border-radius:0;padding:28px 32px;
+  box-shadow:4px 4px 0 rgba(25,22,18,.14)}
+.card h2{margin:0 0 18px;padding-bottom:11px;font-family:"Source Serif 4","Noto Serif SC",serif;
+  font-size:15px;font-weight:700;color:var(--claret);letter-spacing:.3em;text-transform:uppercase;
+  border-bottom:3px solid var(--ink)}
+.big{font-size:18.5px;line-height:1.9}
+.big::first-letter{font-family:"Playfair Display",serif;font-size:3.4em;font-weight:900;
+  float:left;line-height:.82;padding:6px 10px 0 0;color:var(--claret)}
+
+/* ── chains ───────────────────────────────── */
+.chains{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:1100px){.chains{grid-template-columns:1fr}}
+.chain-card{background:var(--paper2);border:1px solid var(--ink);border-left:6px solid var(--ink);padding:22px 26px;
+  box-shadow:4px 4px 0 rgba(25,22,18,.10)}
+.chain-card.main{border-left-color:var(--claret);box-shadow:4px 4px 0 rgba(153,15,61,.18)}
+.t{font-family:"Playfair Display","Noto Serif SC",serif;font-weight:900;font-size:21px;margin-bottom:10px;line-height:1.35}
+.t i{font-style:normal;font-size:10.5px;letter-spacing:.2em;background:var(--claret);color:#fff;
+  padding:3px 9px;margin-right:9px;vertical-align:3px}
+.steps{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:12px 0}
+.node{background:var(--paper);border:1px solid var(--ink);padding:5px 12px;font-size:13.5px;font-weight:700}
+.arrow{color:var(--claret);font-weight:900;font-size:15px}
+.cdesc{font-size:16px;color:var(--mut);line-height:1.8;font-style:italic}
+.facts{margin:14px 0 0;padding:0;list-style:none}
+.fact{border-top:1px solid var(--line);padding:11px 0;font-size:16px;line-height:1.85}
+.fact b.time{color:var(--claret);margin-right:10px;white-space:nowrap;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase}
+.fact a{color:var(--claret);text-decoration:none;font-size:13px;border-bottom:1px solid rgba(153,15,61,.35)}
+.fact a:hover{background:var(--claret);color:#fff}
+
+.neg{color:var(--down);font-weight:700}.pos{color:var(--up);font-weight:700}
+
+/* ── playbook / footer ────────────────────── */
+ul.play{margin:8px 0;padding-left:22px;line-height:1.9;font-size:17.5px}
+ul.play li{margin-bottom:6px}
+ul.play li::marker{color:var(--claret);font-weight:900}
+.foot{color:var(--faint);font-size:13px;line-height:1.85;margin:34px 0 0;padding-top:16px;
+  border-top:3px double var(--ink)}
+
+/* ── heat table ───────────────────────────── */
+.heat-sec{margin-bottom:16px}
+.heat-sec h3{font-size:11.5px;color:var(--mut);margin:14px 0 8px;letter-spacing:.22em;text-transform:uppercase;
+  border-bottom:1px solid var(--line);padding-bottom:5px}
+.heat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.hcell{height:104px;padding:12px 14px;display:flex;flex-direction:column;
+  justify-content:space-between;align-items:flex-start;text-align:left;overflow:hidden}
+.hcell .hn{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;line-height:1.3}
+.hcell .hn .hl{display:block;font-weight:400;opacity:.7;font-size:11px;letter-spacing:.02em;text-transform:none;margin-top:2px}
+.hcell .hc{font-size:clamp(26px,2.6vw,34px);font-weight:900;font-variant-numeric:tabular-nums;line-height:1;letter-spacing:-.015em}
+.hcell .hc i{font-style:normal;font-size:.55em;vertical-align:.28em;margin-right:3px}
+</style>
+</head>
+<body>
+<header class="mast">
+  <div class="nameplate">Bay Street Updates<small>by Podor</small></div>
+  <div class="dateline" id="topdate">…</div>
+</header>
+<div class="wrap">
+<h1 id="headline"></h1><div class="sub" id="deck"></div>
+<div class="daynav"><button id="prevDay" title="Previous trading day">←</button><span class="cur" id="curDay">…</span><button id="nextDay" title="Next trading day">→</button></div>
+<div class="err" id="err"></div>
+<div class="tabs" id="tabs"></div>
+<div class="kpi" id="kpi"></div>
+<div class="grid">
+<div class="card"><h2>What Happened</h2><div class="big" id="c1"></div></div>
+<div class="card"><h2>The Playbook</h2><div id="c4"></div></div>
+</div>
+<div class="card" style="margin-top:22px"><h2>Global Markets</h2><div id="heat"></div></div>
+<div class="card" style="margin-top:22px"><h2 id="chTitle">The Chains</h2><div class="chains" id="chains"></div></div>
+<div class="foot" id="foot"></div>
+</div>
+<script type="application/json" id="embedded-snap"><!--EMBEDDED--></script>
+<script>
+let SNAP = null, PERIOD = "today";
+const PERIODS = [["today", "Today"], ["mtd", "MTD"], ["qtd", "QTD"], ["ytd", "YTD"]];
+
+function heatColor(v) {
+  const t = String(v).trim();
+  let up = t.startsWith("+"), dn = t.startsWith("-");
+  if (!up && !dn) {
+    if (/rally|surge|jump|soar/i.test(t)) up = true;
+    else if (/high|low|plunge|slump|selloff/i.test(t)) dn = true;
+    else return "background:#ece3cd;color:#6f6552";
+  }
+  const m = t.match(/\d+(?:\.\d+)?/);
+  let n = /^[+-]?[\d.]+\s*(bp|pp)?$/.test(t) && m ? parseFloat(m[0]) : 2.5;
+  if (/bp/.test(t)) n /= 10;
+  if (/pp/.test(t)) n /= 2;
+  const a = Math.min(Math.max(n / 4, 0.08), 1);
+  const rgb = up ? "31,107,69" : "153,15,61";
+  const deep = up ? "#14532d" : "#6d0a2c";
+  return `background:rgba(${rgb},${(0.12 + 0.88 * a).toFixed(2)});color:${a > 0.5 ? "#fdf9ee" : deep}`;
+}
+
+function fmtRet(v) {
+  const t = String(v).trim();
+  return /^[+-]?\d+(\.\d+)?$/.test(t) ? t + "%" : t;
+}
+
+function render(period) {
+  PERIOD = period;
+  const P = SNAP.P, HEAT = SNAP.HEAT, d = P[period];
+  document.getElementById("headline").innerText = d.h;
+  const deck = document.getElementById("deck");
+  deck.innerText = d.d;
+  deck.style.display = d.d ? "" : "none";
+  document.getElementById("c1").innerHTML = d.c1;
+  document.getElementById("c4").innerHTML = d.c4;
+  document.getElementById("kpi").innerHTML = d.kpi.map(x => { const t = String(x[2]); const ar = t.startsWith("+") ? "<i>▲</i>" : t.startsWith("-") ? "<i>▼</i>" : ""; return `<div class="k"><div><div class="l">${x[0]}</div><div class="v">${x[1]}</div></div><div class="c ${x[3] ? "pos" : "neg"}">${ar}${t}</div></div>`; }).join("");
+  document.getElementById("chTitle").innerText = "The Chains";
+  document.getElementById("chains").innerHTML = d.chains.map(c => `<div class="chain-card ${c.main ? "main" : ""}"><div class="t">${c.main ? "<i>MAIN</i>" : ""}${c.t}</div><div class="steps">${c.steps.map((s, i) => `${i ? '<span class="arrow">→</span>' : ""}<span class="node">${s}</span>`).join("")}</div><div class="cdesc">${c.d}</div><ul class="facts">${(c.news || []).map(n => `<li class="fact"><b class="time">${n.time}</b>${n.fact} <a href="${n.u}" target="_blank" rel="noopener">[${n.src} ↗]</a></li>`).join("")}</ul></div>`).join("");
+  document.getElementById("heat").innerHTML = (HEAT[period] || HEAT.today).map(g => `<div class="heat-sec"><h3>${g.sec}</h3><div class="heat-grid">${g.items.map(it => { const t = String(it[2]).trim(); const ar = t.startsWith("+") ? "<i>▲</i>" : t.startsWith("-") ? "<i>▼</i>" : ""; return `<div class="hcell" style="${heatColor(it[2])}"><div class="hn">${it[0]}${it[1] && it[1] !== "—" ? `<span class="hl">${it[1]}</span>` : ""}</div><div class="hc">${ar}${fmtRet(it[2])}</div></div>`; }).join("")}</div></div>`).join("");
+  document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b.dataset.p === period));
+  document.getElementById("foot").innerText = SNAP.foot || "";
+}
+
+function formatDate(dateStr, style) {
+  try { return new Date(dateStr + "T12:00:00").toLocaleDateString("en-US", style); }
+  catch (e) { return dateStr; }
+}
+
+async function init() {
+  const errBox = document.getElementById("err");
+  const params = new URLSearchParams(location.search);
+  const want = params.get("date");
+  const embedded = JSON.parse(document.getElementById("embedded-snap").textContent);
+  let list = null;
+  try {
+    const r = await fetch("snapshots/index.json", { cache: "no-store" });
+    if (r.ok) list = await r.json();
+  } catch (e) { /* file:// 下 fetch 不可用，走内嵌兜底 */ }
+  if (!Array.isArray(list) || !list.length) list = [embedded.date];
+  const date = (want && list.includes(want)) ? want : list[list.length - 1];
+  let snap = null, via = "";
+  try {
+    const r = await fetch(`snapshots/${date}.json`, { cache: "no-store" });
+    if (r.ok) { snap = await r.json(); via = "snapshot"; }
+  } catch (e) { /* file:// 兜底 */ }
+  if (!snap) {
+    if (date === embedded.date) { snap = embedded; via = "embedded"; }
+    else {
+      errBox.style.display = "block";
+      errBox.innerText = `Failed to load snapshots/${date}.json (browsers block fetch under file://). Serve over http instead: npx serve . or python -m http.server — or use ?date=${embedded.date} for the embedded snapshot.`;
+      return;
+    }
+  }
+  SNAP = snap;
+  document.title = `Bay Street Updates · ${snap.date}`;
+  document.getElementById("topdate").innerHTML = `${formatDate(snap.date, { weekday: "long", year: "numeric", month: "long", day: "numeric" })}<span>U.S. Close</span>`;
+  const i = list.indexOf(date);
+  document.getElementById("curDay").innerText = formatDate(date, { month: "short", day: "numeric", year: "numeric" });
+  const prev = document.getElementById("prevDay"), next = document.getElementById("nextDay");
+  prev.disabled = i <= 0;
+  next.disabled = i >= list.length - 1;
+  prev.onclick = () => { location.search = `?date=${list[i - 1]}`; };
+  next.onclick = () => { location.search = `?date=${list[i + 1]}`; };
+  const tabs = document.getElementById("tabs");
+  tabs.innerHTML = PERIODS.map(([k, label]) => `<button class="tab" data-p="${k}">${k === "today" ? formatDate(SNAP.date, { month: "short", day: "numeric" }) : label}</button>`).join("");
+  tabs.querySelectorAll(".tab").forEach(b => b.onclick = () => render(b.dataset.p));
+  render("today");
+}
+init();
+</script>
+</body>
+</html>

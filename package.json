@@ -1,0 +1,11 @@
+{
+  "name": "what-is-happening",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "fetch": "node scripts/fetch.mjs",
+    "build": "node scripts/build.mjs",
+    "build-shell": "node scripts/build-shell.mjs",
+    "verify": "node scripts/verify.mjs"
+  }
+}
