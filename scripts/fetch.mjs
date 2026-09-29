@@ -31,8 +31,10 @@ async function yahooClose(symbol, dateStr) {
   const ts = res.timestamp, closes = res.indicators.quote[0].close;
   const target = new Date(dateStr + "T16:00:00-04:00").getTime() / 1000;
   let best = null;
+  // 取 <= target（date 当天收盘时刻）的最后一根 bar。勿加 +86400 余量：
+  // 会过冲到次一交易日的 bar（MTD/QTD 基线因此差一天，9/29 修复）。
   for (let i = 0; i < ts.length; i++) {
-    if (ts[i] <= target + 86400 && closes[i] != null) best = { t: ts[i], c: closes[i] };
+    if (ts[i] <= target && closes[i] != null) best = { t: ts[i], c: closes[i] };
   }
   if (!best) throw new Error(`${symbol} no close <= ${dateStr}`);
   return best.c;
@@ -82,9 +84,13 @@ async function main() {
       out.closes[k] = null;
     }
   }
-  // TNX 换算成 %
+  // TNX 换算成 %：Yahoo 有时返回 ×10 报价（52.4），有时已是百分数（5.24）。
+  // 判别：>20 时除以 10。（原先无条件 /10 会把 5.24 变成 0.52，9/29 修复）
   if (out.closes.tnx) {
-    for (const k of ["today", "mtdBase", "qtdBase", "ytdBase"]) out.closes.tnx[k] = +(out.closes.tnx[k] / 10).toFixed(2);
+    for (const k of ["today", "mtdBase", "qtdBase", "ytdBase"]) {
+      const v = out.closes.tnx[k];
+      if (v != null) out.closes.tnx[k] = +(v > 20 ? v / 10 : v).toFixed(2);
+    }
   }
   mkdirSync("data", { recursive: true });
   writeFileSync(`data/${date}.json`, JSON.stringify(out, null, 2));
