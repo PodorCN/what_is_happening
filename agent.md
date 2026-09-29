@@ -94,7 +94,11 @@ agent.md                    # 本文件
 - 四档齐全；`news[].u` 必须是真 URL；文案用英文（页面是英文报纸风格）。
 - 最省事：**复制前一天快照文件改数字和 chains**，不要从零写。
 
-## 4. 每日数据准备 + 推 GitHub（照抄，DATE 换成当天）
+## 4. 每日数据准备 + 推 GitHub（照抄，DATE 见下）
+
+> **先定 DATE（重要）**：本 job 每天 06:30（多伦多）跑，目标是**最近一个已收盘交易日**的 wrap——通常是「昨天」，周一早 = 上周五，**不是「今天」**（今天还没收盘）。
+> - 该日已有快照（查 `snapshots/index.json`）→ **无新交易日：跳过并在结果里说明**（不写 `data/`、不生成快照、不 commit/push；正常情况，不是失败）。
+> - 没有 → 照抄下面流程，DATE = 该日。
 
 ```bash
 DATE=2026-09-29
@@ -131,7 +135,7 @@ git log --oneline -2        # 确认已推上去
 
 ## 5. 给 agent 的 prompt 模板
 
-> 今天是 YYYY-MM-DD（周X），美东已收盘。按 agent.md 跑：
+> 今天是 YYYY-MM-DD（周X），美东已收盘。目标 DATE = 最近一个已收盘交易日；若其快照已存在（无新交易日）→ 跳过并说明。按 agent.md 跑：
 > 1) §1 思路收集新闻（主线三连搜 + 必读 Investopedia/Barron's 收盘帖）；
 > 2) §4 跑 fetch+build，数字以校准表为准；
 > 3) 写 `snapshots/YYYY-MM-DD.json`（复制昨天文件改，四档+每链 time+fact+真链接），`snapshots/index.json` 追加日期；
@@ -141,7 +145,8 @@ git log --oneline -2        # 确认已推上去
 
 ## 6. 坑
 
-- `^TNX` Yahoo 返回 yield*10，记得 /10。
+- `^TNX`（10Y）：Yahoo 报价可能是 ×10（52.4）、也可能已是百分数（5.24）；`fetch.mjs` 自动判别（>20 才 ÷10），手工取数先看数量级。
+- **未收盘日期 fetch 会返回旧数据**：`today` = 上一交易日收盘（期货/加密等 24h 品种 = 进行中的部分 bar）；生成任何快照前先按 §4 判定 DATE，拿不准就看 Yahoo 日线最后一根 bar 的日期是否 = DATE。
 - MTD 基线 = 上月最后**交易日**（不是 1 号），周末 `yahooClose` 自动回退；周一的 today 对比的是上周五。
 - Gold 区分期货/现货，本 repo 用期货并注明口径。
 - Yahoo v8 偶发 429，加 `User-Agent` + 重试；失败走 §4 的 manual 流程。
