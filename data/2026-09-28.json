@@ -1,23 +1,23 @@
 {
   "date": "2026-09-28",
-  "note": "2026-09-28 手工校准 + 联网验证版。之后每天由 scripts/fetch.mjs 生成同格式文件。",
+  "note": "2026-09-28 手工校准 + 联网验证版（2026-09-29 review F2 修复：手填约数已按 Yahoo 收盘精确值覆盖）。之后每天由 scripts/fetch.mjs 生成同格式文件。",
   "bases": { "mtdBase": "2026-08-31", "qtdBase": "2026-06-30", "ytd": "2025-12-31" },
   "closes": {
     "spx": { "today": 7683.69, "mtdBase": 7686.14, "qtdBase": 7499.36, "ytdBase": 6845.5 },
     "dji": { "today": 51481.51, "mtdBase": 53185.9, "qtdBase": 52319.2, "ytdBase": 48063.29 },
-    "ixic": { "today": 26820.38, "mtdBase": 26890, "qtdBase": 26213.72, "ytdBase": 23241.99 },
-    "tnx": { "today": 5.24, "mtdBase": 4.7, "qtdBase": 4.33, "ytdBase": 4.18 },
-    "wti": { "today": 93.33, "mtdBase": 88, "qtdBase": 83, "ytdBase": 71 },
+    "ixic": { "today": 26820.38, "mtdBase": 26370.89, "qtdBase": 26213.72, "ytdBase": 23241.99 },
+    "tnx": { "today": 5.24, "mtdBase": 4.76, "qtdBase": 4.42, "ytdBase": 4.16 },
+    "wti": { "today": 92.6, "mtdBase": 85.76, "qtdBase": 69.5, "ytdBase": 57.42 },
     "brent": { "today": 105.7, "mtdBase": 92, "qtdBase": 94, "ytdBase": 81 },
-    "gold": { "today": 4155, "mtdBase": 4270, "qtdBase": 3400, "ytdBase": 2900 },
-    "btc": { "today": 83442, "mtdBase": 81800, "qtdBase": 72000, "ytdBase": 67000 },
-    "dxy": { "today": 101.21, "mtdBase": 100.4, "qtdBase": 99.8, "ytdBase": 100.1 },
-    "vix": { "today": 16.07, "mtdBase": 14.9, "qtdBase": 15.5, "ytdBase": 17.2 }
+    "gold": { "today": 4168.4, "mtdBase": 4481.5, "qtdBase": 4038.5, "ytdBase": 4341.1 },
+    "btc": { "today": 83502.61, "mtdBase": 78548.63, "qtdBase": 58558.86, "ytdBase": 87508.83 },
+    "dxy": { "today": 101.2, "mtdBase": 99.43, "qtdBase": 101.19, "ytdBase": 98.28 },
+    "vix": { "today": 16.07, "mtdBase": 14.92, "qtdBase": 16.45, "ytdBase": 14.95 }
   },
   "computed": {
     "spx": { "mtdPct": -0.03, "qtdPct": 2.46, "ytdPct": 12.24 },
     "dji": { "mtdPct": -3.2, "qtdPct": -1.6, "ytdPct": 7.11 },
-    "ixic": { "mtdPct": -0.3, "qtdPct": 2.31, "ytdPct": 15.4 }
+    "ixic": { "mtdPct": 1.7, "qtdPct": 2.31, "ytdPct": 15.4 }
   },
   "sources": [
     "https://finance.yahoo.com/quote/%5EGSPC/history/",

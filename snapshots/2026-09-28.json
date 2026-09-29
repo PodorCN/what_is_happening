@@ -25,8 +25,8 @@
         ["Dow", "51,828", "51,481", "-0.67%"],
         ["Nasdaq", "27,068", "26,820", "-0.92%"],
         ["10Y", "5.18%", "5.24%", "+6bp"],
-        ["WTI", "$92.6", "$93.33", "+0.8%"],
-        ["Gold", "$4,317", "$4,155", "-3.7%"]
+        ["WTI", "$92.41", "$92.60", "+0.2%"],
+        ["Gold", "$4,321", "$4,168", "-3.5%"]
       ],
       "labels": ["9/21", "9/22", "9/23", "9/24", "9/25", "9/28"],
       "data": [7764.7, 7764.6, 7706, 7704.1, 7743.4, 7683.7],
@@ -51,7 +51,7 @@
             },
             {
               "time": "Mon 9/28",
-              "fact": "WTI $93.33 +0.79%, Brent $105.7 +1.3% — higher early, gains pared after Saudi Arabia restored East-West pipeline flows.",
+              "fact": "WTI $92.60 +0.2%, Brent $105.7 +1.3% — higher early, gains pared after Saudi Arabia restored East-West pipeline flows.",
               "src": "Barron's Live / Investopedia",
               "u": "https://www.barrons.com/livecoverage/stock-market-news-today-280926"
             },
@@ -115,7 +115,7 @@
         },
         {
           "t": "④ The Dollar Squeeze",
-          "steps": ["DXY 101.2", "Rand -0.5%", "Gold -3.7%", "BTC -2%"],
+          "steps": ["DXY 101.2", "Rand -0.5%", "Gold -3.5%", "BTC -2%"],
           "d": "High real rates and haven demand both want dollars; oil is the only hedge.",
           "news": [
             {
@@ -126,7 +126,7 @@
             },
             {
               "time": "9/28",
-              "fact": "Gold futures -3.7% to $4,155 (they were $4,317 on 9/26; the year's high is $4,265); DXY 101.21 +0.2%; real 10Y 2.85%.",
+              "fact": "Gold futures -3.5% to $4,168 (they were $4,321 on 9/25; the year's high is $4,265); DXY 101.21 +0.2%; real 10Y 2.85%.",
               "src": "Investopedia / FRED",
               "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"
             },
@@ -140,7 +140,7 @@
         },
         {
           "t": "⑤ The Relief Chain: Why It Wasn't Worse",
-          "steps": ["Saudi restores supply", "WTI only +0.5%", "US-China $30B list", "Diesel export ban debated"],
+          "steps": ["Saudi restores supply", "WTI only +0.2%", "US-China $30B list", "Diesel export ban debated"],
           "d": "Tail-risk relief — and also the reversal trigger.",
           "news": [
             {
@@ -168,22 +168,22 @@
     "mtd": {
       "h": "September's Round-Trip: A Hawkish Fed Wipes Out the Month as the Dow Heads for Its Worst September in Three Years",
       "d": "S&P flat on the month at -0.03%; the Dow's -3.2% is its worst September in three years.",
-      "badges": ["S&P MTD -0.03%", "Dow -3.2%", "10Y +54bp", "Oil > $100"],
+      "badges": ["S&P MTD -0.03%", "Dow -3.2%", "10Y +48bp", "Oil > $100"],
       "c1": "8/31 7686 → 9/28 7683, back to zero. The 9/16 hike plus a hawkish Warsh was the watershed; everything after the 9/21 AI high was given back.",
       "c4": "<ul class='play'><li>60/40 stopped working; energy was the only positive contributor.</li><li>October hinges on PCE and payrolls for back-to-back hikes.</li></ul>",
       "kpi": [
         ["S&P MTD", "-0.03%", "flat", 1],
         ["Dow MTD", "-3.2%", "weakest", 0],
-        ["10Y MTD", "+54bp", "main culprit", 0],
+        ["10Y MTD", "+48bp", "main culprit", 0],
         ["Brent", "+$15%", "inflation", 0]
       ],
       "tbl": [
         ["S&P", "7,686.14", "7,683.69", "-0.03%"],
         ["Dow", "53,185.9", "51,481", "-3.20%"],
-        ["Nasdaq", "~26,890", "26,820", "~-0.3%"],
-        ["10Y", "~4.70%", "5.24%", "+54bp"],
+        ["Nasdaq", "26,370.89", "26,820", "+1.70%"],
+        ["10Y", "4.76%", "5.24%", "+48bp"],
         ["Brent", "~$92", "$105.7", "+15%"],
-        ["VIX", "~14.9", "16.07", "+8%"]
+        ["VIX", "~14.9", "16.07", "+7.7%"]
       ],
       "labels": ["8/31", "9/8", "9/16", "9/21", "9/25", "9/28"],
       "data": [7686, 7673, 7551, 7764, 7743, 7683],
@@ -274,24 +274,24 @@
       ]
     },
     "qtd": {
-      "h": "Q3's Earnings Rally Surrenders Half Its Gains as Soaring Yields Rewrite the Rate Regime",
-      "d": "6/30 7499 → 9/28 7683, +2.46%; rates ate half of Q2's gains.",
-      "badges": ["S&P QTD +2.46%", "Dow -1.6%", "Nasdaq +2.3%", "10Y +90bp"],
-      "c1": "July rode earnings to 7798, August stalled, and September gave half back. The Dow lagged.",
+      "h": "Q3's Earnings Rally Surrenders ~40% of Its Gains as Soaring Yields Rewrite the Rate Regime",
+      "d": "6/30 7499 → 9/28 7683, +2.46%; rates ate ~40% of the quarter's rally.",
+      "badges": ["S&P QTD +2.46%", "Dow -1.6%", "Nasdaq +2.3%", "10Y +82bp"],
+      "c1": "July rode earnings to 7798, August stalled, and September gave back ~40%. The Dow lagged.",
       "c4": "<ul class='play'><li>Protect the +2.5% in Q4; don't get greedy.</li><li>Cut growth to neutral; add energy and short-duration bonds.</li></ul>",
       "kpi": [
         ["S&P QTD", "+2.46%", "held", 1],
         ["Dow QTD", "-1.6%", "lagged", 0],
         ["Nasdaq QTD", "+2.3%", "holding", 1],
-        ["10Y", "+90bp", "the spoiler", 0]
+        ["10Y", "+82bp", "the spoiler", 0]
       ],
       "tbl": [
         ["S&P", "7,499.36", "7,683.69", "+2.46%"],
         ["Dow", "52,319", "51,481", "-1.60%"],
         ["Nasdaq", "26,213", "26,820", "+2.31%"],
-        ["10Y", "~4.33%", "5.24%", "+91bp"],
-        ["Gold", "~3,400", "$4,155", "+22%"],
-        ["BTC", "~$72k", "$83.4k", "+16%"]
+        ["10Y", "4.42%", "5.24%", "+82bp"],
+        ["Gold", "$4,038.5", "$4,168", "+3.2%"],
+        ["BTC", "$58.6k", "$83.5k", "+42.6%"]
       ],
       "labels": ["6/30", "7/31", "8/15", "9/15", "9/25", "9/28"],
       "data": [7499, 7489, 7798, 7585, 7743, 7683],
@@ -299,7 +299,7 @@
         {
           "t": "① Earnings vs Valuations",
           "main": 1,
-          "steps": ["Q2 +15%", "July cash-in", "7798 top", "September gives half back"],
+          "steps": ["Q2 +15%", "July cash-in", "7798 top", "September gives back ~40%"],
           "d": "The numerator can't outrun the denominator; without NVDA's buyback, QTD goes negative.",
           "news": [
             {
@@ -372,22 +372,22 @@
     "ytd": {
       "h": "The Bull Market Grinds Through 2026, but 5% Yields and a Grinding War Are Rewriting the Playbook",
       "d": "S&P +12.2%, Nasdaq +15.4% — gains from AI and earnings, headaches from rates and war.",
-      "badges": ["S&P +12.2%", "Nasdaq +15.4%", "Dow +7.1%", "10Y +106bp"],
-      "c1": "The rally extended 2025's +16%, breaking 50k in February and 52k in June. The 10Y moving 4.18 → 5.24 is the biggest variable.",
+      "badges": ["S&P +12.2%", "Nasdaq +15.4%", "Dow +7.1%", "10Y +108bp"],
+      "c1": "The rally extended 2025's +16%, breaking 50k in February and 52k in June. The 10Y moving 4.16 → 5.24 is the biggest variable.",
       "c4": "<ul class='play'><li>With cushion in hand, don't chase; keep duration short.</li><li>Rebalance into energy and gold.</li></ul>",
       "kpi": [
         ["S&P YTD", "+12.2%", "bull", 1],
         ["Nasdaq", "+15.4%", "leading", 1],
         ["Dow", "+7.1%", "weak", 1],
-        ["10Y", "+106bp", "rich", 0]
+        ["10Y", "+108bp", "rich", 0]
       ],
       "tbl": [
         ["S&P", "6,845.5", "7,683.69", "+12.24%"],
         ["Dow", "48,063", "51,481", "+7.11%"],
         ["Nasdaq", "23,241", "26,820", "+15.40%"],
-        ["10Y", "4.18%", "5.24%", "+106bp"],
-        ["30Y", "4.81%", "~5.28%", "+47bp"],
-        ["Gold", "~$2,900", "$4,155", "+40%+"]
+        ["10Y", "4.16%", "5.24%", "+108bp"],
+        ["30Y", "4.84%", "5.56%", "+72bp"],
+        ["Gold", "$4,341", "$4,168", "-4.0%"]
       ],
       "labels": ["Dec31", "3/31", "6/30", "8/15", "9/15", "9/28"],
       "data": [6845, 6528, 7499, 7798, 7585, 7683],
@@ -414,12 +414,12 @@
         },
         {
           "t": "② The Second Inflation Wave",
-          "steps": ["4.18 → 5.24%", "tariffs + diesel", "PCE above target 5 yrs", "hike expectations"],
+          "steps": ["4.16 → 5.24%", "tariffs + diesel", "PCE above target 5 yrs", "hike expectations"],
           "d": "The early-year 3.75% hope is dead.",
           "news": [
             {
               "time": "12/31/25 → 9/28",
-              "fact": "10Y 4.18% → 5.24% (+106bp); 30Y 4.81% → 5.28%. Checkable on FRED/Macrotrends.",
+              "fact": "10Y 4.16% → 5.24% (+108bp); 30Y 4.84% → 5.56% (+72bp). Checkable on FRED/Macrotrends.",
               "src": "FRED / Macrotrends",
               "u": "https://fred.stlouisfed.org/series/dgs10"
             },
@@ -433,12 +433,12 @@
         },
         {
           "t": "③ The AI Platform",
-          "steps": ["accelerated compute", "NVDA +25%", "Agent Safety", "Anthropic meeting"],
+          "steps": ["accelerated compute", "NVDA +22.7%", "Agent Safety", "Anthropic meeting"],
           "d": "The rally and rising rates share one root: AI needs money.",
           "news": [
             {
               "time": "YTD",
-              "fact": "NVDA +25% YTD; a $235B buyback plus the Safety platform; cash flow funds the transition.",
+              "fact": "NVDA +22.7% YTD; a $235B buyback plus the Safety platform; cash flow funds the transition.",
               "src": "Investopedia",
               "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"
             },
@@ -470,7 +470,7 @@
           "news": [
             {
               "time": "9/28",
-              "fact": "The dollar weakened first, then V-ed back to 101; gold +40% is a vote against paper money; with stocks and bonds down together, 60/40 trails pure equity.",
+              "fact": "The dollar weakened first, then V-ed back to 101; gold sits down 4% on the year after round-tripping its war spike; with stocks and bonds down together, 60/40 trails pure equity.",
               "src": "Reuters / Investopedia",
               "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"
             }
@@ -508,7 +508,7 @@
         "sec": "Bonds & Rates",
         "items": [
           ["10Y", "5.24%", "+6bp"],
-          ["30Y", "~5.28%", "2002 high"],
+          ["30Y", "5.56%", "2002 high"],
           ["2Y", "4.93%", "+7bp"],
           ["CME Oct hike", "70%", "+12pp"]
         ]
@@ -517,10 +517,10 @@
         "sec": "Commodities / Global / Crypto",
         "items": [
           ["Brent", "$105.7", "+1.30"],
-          ["WTI", "$93.33", "+0.79"],
-          ["Gold fut", "$4,155", "-3.70"],
+          ["WTI", "$92.60", "+0.2"],
+          ["Gold fut", "$4,168", "-3.5"],
           ["DXY", "101.21", "+0.20"],
-          ["BTC", "$83,442", "-0.89"],
+          ["BTC", "$83,503", "-0.6"],
           ["SSE", "3,823", "-1.67"],
           ["Stoxx600", "638", "0.00"],
           ["HK", "thin", "rally"]
@@ -533,8 +533,8 @@
         "items": [
           ["S&P", "7,683", "-0.03"],
           ["Dow", "51,481", "-3.20"],
-          ["Nasdaq", "26,820", "-0.30"],
-          ["VIX", "16.07", "+8.0"]
+          ["Nasdaq", "26,820", "+1.70"],
+          ["VIX", "16.07", "+7.7"]
         ]
       },
       {
@@ -549,16 +549,16 @@
       {
         "sec": "Rates MTD",
         "items": [
-          ["10Y", "5.24%", "+54bp"],
-          ["30Y", "~5.28%", "+40bp"]
+          ["10Y", "5.24%", "+48bp"],
+          ["30Y", "5.56%", "+31bp"]
         ]
       },
       {
         "sec": "Commodities MTD",
         "items": [
           ["Brent", "$105.7", "+15.0"],
-          ["Gold", "$4,155", "-3.0"],
-          ["BTC", "$83k", "+2.0"]
+          ["Gold", "$4,168", "-7.0"],
+          ["BTC", "$83.5k", "+6.3"]
         ]
       }
     ],
@@ -569,7 +569,7 @@
           ["S&P", "+2.46", "+2.46"],
           ["Nasdaq", "+2.31", "+2.31"],
           ["Dow", "-1.60", "-1.60"],
-          ["Russell", "—", "+1.0"]
+          ["Russell", "—", "-6.8"]
         ]
       },
       {
@@ -584,16 +584,16 @@
       {
         "sec": "Rates QTD",
         "items": [
-          ["10Y", "+91bp", "+91bp"],
-          ["30Y", "—", "+70bp"]
+          ["10Y", "+82bp", "+82bp"],
+          ["30Y", "—", "+66bp"]
         ]
       },
       {
         "sec": "Commodities QTD",
         "items": [
-          ["Gold", "+22", "+22.0"],
+          ["Gold", "$4,168", "+3.2"],
           ["Brent", "+12", "+12.0"],
-          ["BTC", "+16", "+16.0"]
+          ["BTC", "$83.5k", "+42.6"]
         ]
       }
     ],
@@ -604,7 +604,7 @@
           ["S&P", "+12.24", "+12.24"],
           ["Nasdaq", "+15.40", "+15.40"],
           ["Dow", "+7.11", "+7.11"],
-          ["Russell", "—", "+9.0"]
+          ["Russell", "—", "+13.5"]
         ]
       },
       {
@@ -619,21 +619,21 @@
       {
         "sec": "Rates YTD",
         "items": [
-          ["10Y", "+106bp", "+106bp"],
-          ["30Y", "+47bp", "+47bp"]
+          ["10Y", "+108bp", "+108bp"],
+          ["30Y", "+72bp", "+72bp"]
         ]
       },
       {
         "sec": "Commodities YTD",
         "items": [
-          ["Gold", "+40", "+40.0"],
-          ["BTC", "—", "+25.0"],
+          ["Gold", "-4.0", "-4.0"],
+          ["BTC", "—", "-4.6"],
           ["Brent", "—", "+30.0"],
-          ["DXY", "—", "+1.0"]
+          ["DXY", "—", "+3.0"]
         ]
       }
     ]
   },
-  "foot": "Closing baseline (auto 2026-09-28): SPX 7683.69 (-0.03% MTD / +2.46% QTD / +12.24% YTD) · DJI 51481.51 (-3.20% MTD) · IXIC 26820.38 (+15.40% YTD) · 10Y 5.24% · WTI 93.33 · Gold 4155.00 · BTC 83442.00. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.18% · 26-06-30 S&P 7499.36/Dow 52319/Nasdaq 26213 · 26-08-31 S&P 7686.14/Dow 53185.9 · 26-09-28 S&P 7683.69/Dow 51481/Nasdaq 26820/10Y 5.24%/WTI $93.33/Brent $105.7/Gold $4155/BTC $83442/VIX 16.07. For information only — not investment advice.",
+  "foot": "Closing baseline (auto 2026-09-28): SPX 7683.69 (-0.03% MTD / +2.46% QTD / +12.24% YTD) · DJI 51481.51 (-3.20% MTD) · IXIC 26820.38 (+15.40% YTD) · 10Y 5.24% · WTI 92.60 · Gold 4168.40 · BTC 83502.61. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.16% · 26-06-30 S&P 7499.36/Dow 52319/Nasdaq 26213 · 26-08-31 S&P 7686.14/Dow 53185.9 · 26-09-28 S&P 7683.69/Dow 51481/Nasdaq 26820/10Y 5.24%/WTI $92.60/Brent $105.7/Gold $4,168/BTC $83,503/VIX 16.07. For information only — not investment advice.",
   "label": "2026-09-28 Monday close"
 }

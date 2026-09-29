@@ -90,8 +90,8 @@
         },
         {
           "t": "③ Landmine of the Day: FICO's Moat Cracks (-27%)",
-          "steps": ["Pulte post: one GSE pricing grid", "VantageScore joins FICO Classic", "Rocket Mortgage flips to VantageScore in Q4", "FICO -27% (~-50% YTD)", "Apple -2.7% adds index weight"],
-          "d": "Half of FICO's year is gone because a regulator posted on X — the day's cautionary tale on policy-made moats. Apple's slide was the quieter index drag beneath the surface.",
+          "steps": ["Pulte post: one GSE pricing grid", "VantageScore joins FICO Classic", "Rocket Mortgage flips to VantageScore in Q4", "FICO -27% (~-63% YTD)", "Apple -2.7% adds index weight"],
+          "d": "Nearly two-thirds of FICO's year is gone because a regulator posted on X — the day's cautionary tale on policy-made moats. Apple's slide was the quieter index drag beneath the surface.",
           "news": [
             {
               "time": "9/29",
@@ -329,7 +329,7 @@
         {
           "t": "① Earnings vs Valuations",
           "main": 1,
-          "steps": ["Q2 +15%", "July cash-in", "7799 top (Aug)", "September gives a third back"],
+          "steps": ["Q2 +15%", "July cash-in", "7799 top (Aug)", "September gives back ~40%"],
           "d": "The numerator can't outrun the denominator: a 2.3% net gain after a 4% peak.",
           "news": [
             {
@@ -469,12 +469,12 @@
         },
         {
           "t": "③ The AI Platform",
-          "steps": ["accelerated compute", "NVDA +25% + $235B buyback", "AMD pays $8.2B for World Labs", "Anthropic targets $2T IPO"],
+          "steps": ["accelerated compute", "NVDA +21.8% + $235B buyback", "AMD pays $8.2B for World Labs", "Anthropic targets $2T IPO"],
           "d": "The rally and rising rates share one root: AI needs money.",
           "news": [
             {
               "time": "YTD",
-              "fact": "NVDA +25% YTD with a $235B buyback; the capex cycle keeps compounding.",
+              "fact": "NVDA +21.8% YTD with a $235B buyback; the capex cycle keeps compounding.",
               "src": "Investopedia",
               "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09282026-12144759"
             },
