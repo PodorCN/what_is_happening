@@ -66,6 +66,52 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-09-29",
+      "reviewedAt": "2026-09-29T18:50:00-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "today 链③ FICO：steps 写 'FICO -27% (~-50% YTD)'、d 写 'Half of FICO's year is gone'——把 9/28 崩盘前的 -50% YTD 当成了 9/29 崩盘后的现值。9/29 收盘后正确值：约 -63% YTD（先跌 50% 再跌 27%，不可能仍是 -50%）。",
+              "evidence": "Yahoo FICO 日线：12/31/25 = 1690.62 → 9/28 = 840.89（-50.26%）→ 9/29 = 617.87（-63.45%，当日 -26.5%）；链③自己的 news 亦写 'Monday's pre-crash close had already left the stock down ~50%'，两处互斥。",
+              "rule": "个股 YTD 一律用当日收盘重算（今收 ÷ 年内首个收盘 − 1）；凡出现 '今日跌 x% + YTD y%' 必须自检 (1+y)×(1+x) ≈ (1+新YTD)，禁止沿用前一天引用过的 YTD。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "跨日连续性失守：9/29 的 MTD 期初 ≠ 9/28 的 MTD 期初（Nasdaq 26,370.89 vs ~26,890）。逐项核查：9/29（自动取数）全部与 Yahoo 一致；错侧为 9/28 快照的手工约数，需修 9/28——①Nasdaq MTD 基线 = 26,370.89、9/28 MTD = +1.70%（原写 ~26,890 / ~-0.3%，mtd tbl 与 heat 两处）；②30Y 9/28 = 5.56%（原写 ~5.28%）；③WTI 9/28 收 = $92.60（原写 $93.33/+0.8%）；④Gold 9/28 收 = $4,168.40/-3.5%（原写 $4,155/-3.7%）；⑤QTD/YTD 基数：Gold 4,038.5/4,341.1（原写 ~3,400/~2,900）、BTC 58,558.86/87,508.83（原写 ~$72k/~$67k）、10Y 4.42/4.16（原写 ~4.33/4.18）。",
+              "evidence": "9/28 快照 vs 9/29 快照同档对比；Yahoo（^IXIC 8/31 = 26,370.89、^TYX 9/28 = 5.56、CL=F 9/28 = 92.60、GC=F 9/28 = 4,168.4、^TNX 6/30 = 4.42、12/31 = 4.16）逐项核对，9/29 侧全部可核、9/28 侧为手填约数。",
+              "rule": "跨日复核发现不连续 → 先重拉 Yahoo 判定错侧；错侧快照按 Yahoo 收盘精确值重算覆盖；任何手填值不得偏离真值 >1%（超 1% 必须用精确值或记 null）。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "ytd 链③（steps 与 news）写 'NVDA +25% YTD'；Yahoo 现算 = +21.8%。",
+              "evidence": "Yahoo NVDA：12/31/25 = 186.50 → 9/29 = 227.21 = +21.8%；快照 ytd ③ 与可算值差约 3pp。",
+              "rule": "写 '某股 +x% YTD' 前用 Yahoo 当日收盘现算；来源数字与 Yahoo 不符时以 Yahoo 为准，或原文注明来源。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "qtd 主链① step 'September gives a third back' 与数字不符：峰顶 7,799（8/13）→ 7,670.84，回吐 ≈ 42.7%，应写 '~40% / nearly half' 而不是三分之一。",
+              "evidence": "qtd 档 data 序列 [7499, 7490, 7799, 7586, 7743, 7671] 自算：(7799−7670.84)/(7799−7499.36) ≈ 42.7%；与同链 d 'a 2.3% net gain after a 4% peak'（→回吐≈43%）一致，但与 'a third' 不符。",
+              "rule": "写'回吐三分之一/一半'类比例必须带算式 (峰值−现值)/(峰值−期初)，并按算值取整到最近的 1/4 档（42.7% → '~40%'）。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
