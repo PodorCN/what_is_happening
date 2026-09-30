@@ -1,0 +1,1296 @@
+{
+  "date": "2026-09-30",
+  "updatedAt": "2026-09-30T21:25:00Z",
+  "P": {
+    "today": {
+      "h": "Soft PCE, Hard Ceiling: Stocks Split Into Quarter-End as the 10Y Hits a 24-Year High",
+      "d": "",
+      "badges": [
+        "S&P 7,652 -0.25%",
+        "Dow 50,906 -0.86%",
+        "Nasdaq 26,861 +0.24%",
+        "10Y 5.29%",
+        "Brent ~$103.5"
+      ],
+      "c1": "The last session of Q3 ended split: the Nasdaq rose 0.24% while the S&P slipped 0.25% and the Dow fell 0.86% — and all three closed at their session lows. August PCE came in cooler than expected (3.4% headline, 3.0% core), pulling October hike odds down to ~35-37% from ~71% a week earlier — yet the 10Y still touched nearly 5.31%, its highest since 2002, and oil bounced after Trump denied he would ease sanctions on Iran. Tech was the only sector to hold gains as a last-hour, quarter-end fade finished the tape.",
+      "c4": "<ul class='play'><li>Yields are still the ceiling: with the 10Y at 24-year highs, stay short duration — soft data alone won't break the range until Friday's payrolls prove the cooling.</li><li>Own what has orders: HPE's record day and Micron's blowout print show AI-hardware spend is real — chase the cash flows, not the story stocks.</li><li>Breadth is the tell: only 1 of 11 sectors closed green — the tape needs non-tech participation (and a cooler 10Y) to break out of its range.</li></ul>",
+      "kpi": [
+        [
+          "S&P",
+          "7,651.54",
+          "-0.25%",
+          0
+        ],
+        [
+          "10Y",
+          "5.29%",
+          "24-yr high",
+          0
+        ],
+        [
+          "Brent",
+          "~$103.5",
+          "+0.9%",
+          0
+        ],
+        [
+          "MRNA",
+          "-5.4%",
+          "Citi sell call",
+          0
+        ]
+      ],
+      "tbl": [
+        [
+          "S&P",
+          "7,670.84",
+          "7,651.54",
+          "-0.25%"
+        ],
+        [
+          "Dow",
+          "51,349.92",
+          "50,906.05",
+          "-0.86%"
+        ],
+        [
+          "Nasdaq",
+          "26,797.54",
+          "26,861.06",
+          "+0.24%"
+        ],
+        [
+          "10Y",
+          "5.26%",
+          "5.29%",
+          "+4bp"
+        ],
+        [
+          "WTI",
+          "$89.38",
+          "$90.35",
+          "+1.1%"
+        ],
+        [
+          "Gold",
+          "$4,179.7",
+          "$4,189",
+          "+0.2%"
+        ]
+      ],
+      "labels": [
+        "9/23",
+        "9/24",
+        "9/25",
+        "9/28",
+        "9/29",
+        "9/30"
+      ],
+      "data": [
+        7706,
+        7704.1,
+        7743.4,
+        7683.7,
+        7670.8,
+        7651.5
+      ],
+      "chains": [
+        {
+          "t": "① Main Chain: The Repricing That Wasn't Enough — Soft PCE, Yet a 24-Year High in the 10Y",
+          "main": 1,
+          "steps": [
+            "8:30am ET: August PCE 3.4% y/y / 3.0% core — both below estimates",
+            "October hike odds collapse to ~35-37% (from ~51% Tuesday; ~71% a week ago)",
+            "Yields dip on the data — then climb all day: 10Y nearly 5.31%, highest since 2002",
+            "Nasdaq +0.24% holds; S&P -0.25%, Dow -0.86% — all three close at session lows",
+            "Q3 closes: S&P +2.0%, Nasdaq +2.5% (2nd straight quarterly gain), Dow -2.7%"
+          ],
+          "d": "Reduced hike odds helped tech but couldn't pull the long end down — fresh 24-year-high yields sold every rally, and quarter-end flows finished the fade. That contradiction explains roughly 60% of today's action.",
+          "news": [
+            {
+              "time": "9/30 8:30am ET",
+              "fact": "August PCE rose 3.4% y/y (core 3.0%) — below the 3.7%/3.3% expected and matching downwardly revised July — cooler, but still well above the Fed's 2% target; economists said it may not stop one more hike this year.",
+              "src": "Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            },
+            {
+              "time": "9/30 close",
+              "fact": "The 10Y touched nearly 5.31% — its highest level since 2002 — and held above 5.30% late in the afternoon, extending the climb that has pressured equities all month.",
+              "src": "Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            },
+            {
+              "time": "9/30 9:34am ET",
+              "fact": "CME FedWatch: odds of a quarter-point hike at the late-October meeting fell to ~35% from ~51% a day earlier as the PCE landed; futures jumped and yields briefly dipped.",
+              "src": "Yahoo Finance",
+              "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-september-30-dow-sp-500-nasdaq-080339262.html"
+            },
+            {
+              "time": "9/29-9/30",
+              "fact": "The shifting bias toward a Fed hold came after New York Fed President John Williams said there was 'no need for urgency' to raise rates in October; combined with Wednesday's cool PCE, October hike odds slid from ~51% Tuesday toward ~35-37%.",
+              "src": "Yahoo Finance / Investopedia",
+              "u": "https://news.yahoo.com/feds-williams-sees-no-urgency-180056354.html"
+            },
+            {
+              "time": "9/30 close",
+              "fact": "Bond yields fell in the minutes after the PCE report before continuing a climb that is increasingly pressuring equities; by the close, October hike odds were ~37% versus ~71% a week earlier, with a December hike still expected.",
+              "src": "Yahoo Finance / Investopedia",
+              "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-september-30-dow-sp-500-nasdaq-080339262.html"
+            },
+            {
+              "time": "9/30 close",
+              "fact": "The S&P turned lower and the Dow touched session lows in the final minutes of trading; stocks finished mixed on the last session of the third quarter.",
+              "src": "Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            }
+          ]
+        },
+        {
+          "t": "② The Split: Tech Was the Only Boat That Floated",
+          "steps": [
+            "Nasdaq opens +0.5%, runs to +1.2% intraday (27,108)",
+            "AI hardware and software bought: HPE to a record, CRM +1.9%, MSFT/AAPL/AMZN up ~1%",
+            "The yield climb clips the tape: Alphabet +3% midday fades to +0.9%",
+            "Last hour slides: only Tech stays green (1 of 11 sectors); staples and health sold worst",
+            "Dow -0.86% to session lows — its 5-month winning streak ends (-4.3% in September)"
+          ],
+          "d": "Lower hike odds powered growth while the long end's new highs crushed everything rate-sensitive — a mixed index masking a violent split: one green sector, ten red, and a Dow that broke a five-month streak.",
+          "news": [
+            {
+              "time": "9/30",
+              "fact": "Hewlett Packard Enterprise rallied more than 5% to a fresh record (intraday high $67) after raising its networking growth targets and landing a $1.2B order for AMD-powered Helios racks from Vultr; it closed +3.9%, among the S&P 500's biggest gainers.",
+              "src": "Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            },
+            {
+              "time": "9/30 midday",
+              "fact": "Software led the gainers as hike odds fell: Datadog +2%+, Salesforce +2%, with Adobe, Atlassian, Autodesk, Intuit, Microsoft, Palantir, ServiceNow and Workday all up more than 1%.",
+              "src": "Barchart (via Nasdaq)",
+              "u": "https://www.nasdaq.com/articles/stocks-climb-signs-lower-inflation-and-stronger-us-growth"
+            },
+            {
+              "time": "9/30",
+              "fact": "Alphabet ran +3% at midday but closed +0.9% as the tape faded; the Magnificent Seven ETF (MAGS) finished +0.4%, and five of the six top Dow gainers were megacaps — yet the Dow stayed red.",
+              "src": "Investopedia / Yahoo Finance",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            },
+            {
+              "time": "9/30 close",
+              "fact": "Information Technology was Wednesday's relative winner as 10 of 11 S&P sectors closed red.",
+              "src": "Sector ETF closes, Yahoo Finance",
+              "u": "https://finance.yahoo.com/quote/XLK/"
+            }
+          ]
+        },
+        {
+          "t": "③ Stock-Level Landmines: Moderna's Downgrade, Jabil's -10%",
+          "steps": [
+            "Citi cuts Moderna to 'sell' after its 500% run — MRNA -5.4% to $193",
+            "Still the S&P's #2 performer of 2026, behind only Sandisk",
+            "Jabil -10% and Conagra -4.9% after earnings; Cal-Maine -0.9%",
+            "FactSet +3.8% on the other side of earnings",
+            "Boeing -0.9%: its $20B Navy jet win couldn't hold the stock up"
+          ],
+          "d": "Single names still swing 5-10% on policy and analyst headlines while the index barely budges — this market's dispersion, not its direction, is the story.",
+          "news": [
+            {
+              "time": "9/30",
+              "fact": "Citi downgraded Moderna to 'sell', telling clients the stock's outsized 2026 rally (500%+) left it overvalued; shares fell ~5.4% to close near $193 — still the S&P 500's second-best performer this year behind Sandisk.",
+              "src": "Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            },
+            {
+              "time": "9/30 close",
+              "fact": "Post-earnings movers: Jabil ended down 10%, Conagra fell ~5%, Cal-Maine slipped less than 1%, and FactSet gained almost 4%.",
+              "src": "Investopedia / Yahoo Finance",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            },
+            {
+              "time": "9/30 close",
+              "fact": "Boeing ended ~1% lower, erasing early gains from a 'multi-billion-dollar' ($20B+) Navy F/A-XX fighter contract won after Tuesday's close.",
+              "src": "Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            },
+            {
+              "time": "9/30",
+              "fact": "Robinhood shares slid 3.2% as the company rolled out new active-trading products, including 'Robinhood Agents' that can trade on users' behalf.",
+              "src": "Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            }
+          ]
+        },
+        {
+          "t": "④ Oil's Bounce: Trump Says No to Sanctions Relief",
+          "steps": [
+            "Monday-Tuesday supply headlines knocked crude off its war premium (WTI -3.9% Tuesday)",
+            "Wednesday: Trump denies he would ease sanctions on Iran",
+            "WTI climbs back: settled around $90.4-90.6 (+1.1-1.4% by quote)",
+            "Brent +0.9% to ~$103.50; the war's 7th month keeps the Strait bid",
+            "Energy the least-bad of the red sectors (-0.1%)"
+          ],
+          "d": "With a peace deal denied, the supply-risk premium returned — oil's bounce is the one place today's inflation math got worse, not better.",
+          "news": [
+            {
+              "time": "9/30 close",
+              "fact": "WTI settled up ~1.1-1.4% around $90.4-90.6 (quotes vary) and Brent advanced 0.9% to $103.50 as traders digested Trump's denial that he would ease sanctions on Iran.",
+              "src": "Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            },
+            {
+              "time": "9/30",
+              "fact": "No peace progress: the war enters its seventh month and Hormuz risk remains the swing factor for crude and inflation.",
+              "src": "Yahoo Finance",
+              "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-september-30-dow-sp-500-nasdaq-080339262.html"
+            },
+            {
+              "time": "9/29",
+              "fact": "Tuesday's -3.6~3.9% drop came as Saudi Arabia ramped East-West pipeline exports right before Trump said he 'offered Iran nothing'.",
+              "src": "Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09292026-12146739"
+            }
+          ]
+        },
+        {
+          "t": "⑤ Late-Cycle Check: Micron's Record Print and Friday's Payrolls Test",
+          "steps": [
+            "PCE cooling + GDP revised up to 2.2% + ADP +90k = soft-landing data",
+            "But core PCE still 3.0%: economists say one more hike stays on the table",
+            "Micron after the bell: record FQ4 revenue $54.23B; FY26 $133.19B (vs $37.38B)",
+            "Micron stock about -1% in after-hours trading despite the beat",
+            "Next: Nike earnings (Thu), then September payrolls (Fri) — the range-breaker"
+          ],
+          "d": "The data argues both sides: cooling inflation with solid growth is the bull case; a 3% core and a live December hike are the bear case — Friday's jobs report picks the winner.",
+          "news": [
+            {
+              "time": "9/30 after close",
+              "fact": "Micron reported record fiscal-Q4 results: revenue $54.23B (vs $41.46B in FQ3), non-GAAP EPS $33.42; FY26 revenue $133.19B versus $37.38B a year earlier, with a record fiscal 2027 guided on AI-driven memory demand.",
+              "src": "Micron IR",
+              "u": "http://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Fiscal-Fourth-Quarter-and-Full-Year-2026-Results"
+            },
+            {
+              "time": "9/30 post-market",
+              "fact": "Micron shares drifted about 1% lower in early after-hours trading despite the beat, as Micron's call with analysts got under way.",
+              "src": "Yahoo Finance (post-market)",
+              "u": "https://finance.yahoo.com/quote/MU/"
+            },
+            {
+              "time": "9/30",
+              "fact": "The data stack behind the day: GDP revised up to 2.2% from 1.5%; August real consumer spending +0.6% m/m, the fastest pace in over a year; and ADP private payrolls +90k for September (vs ~75k expected, with August revised down to +36k).",
+              "src": "Yahoo Finance / Investopedia",
+              "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-september-30-dow-sp-500-nasdaq-080339262.html"
+            },
+            {
+              "time": "9/30",
+              "fact": "Micron's report lands as investors hunt for evidence the memory boom can keep funding the AI build-out; Nike reports Thursday and the September jobs report lands Friday.",
+              "src": "Investopedia / Yahoo Finance",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            }
+          ]
+        }
+      ]
+    },
+    "mtd": {
+      "h": "September's Round-Trip, Complete: Dow -4.29% Snaps 5-Month Streak; Only Tech Held",
+      "d": "S&P 7,686 → 7,651.5 for the month (-0.45%); a +53bp move in the 10Y rewrote pricing mid-month, leaving only tech standing.",
+      "badges": [
+        "S&P MTD -0.45%",
+        "Dow -4.29%",
+        "10Y +53bp",
+        "Tech +5% MTD"
+      ],
+      "c1": "The month round-tripped: from 7,686 on 8/31, the S&P peaked at 7,764.7 on 9/21 and gave it all back, closing September -0.45%. The 9/16 hawkish hike flipped the regime (cuts to hikes), the 10Y ran +53bp to 5.29%, and the Dow's -4.3% ended a five-month winning streak. Tech (+5%) was the only sector in the green; financials, materials and staples each lost 5%+.",
+      "c4": "<ul class='play'><li>September's lesson: with the 10Y +53bp on the month, only earnings-backed tech held — anchor there until rates stabilize.</li><li>Dow's streak snapped and October hike odds fell to ~37%: if payrolls soften Friday, the rotation back into cyclicals is the Q4 trade to watch.</li></ul>",
+      "kpi": [
+        [
+          "S&P MTD",
+          "-0.45%",
+          "gave it back",
+          0
+        ],
+        [
+          "Dow MTD",
+          "-4.29%",
+          "5-mo streak ends",
+          0
+        ],
+        [
+          "10Y MTD",
+          "+53bp",
+          "the culprit",
+          0
+        ],
+        [
+          "Tech MTD",
+          "+5.0%",
+          "only shelter",
+          1
+        ]
+      ],
+      "tbl": [
+        [
+          "S&P",
+          "7,686.14",
+          "7,651.54",
+          "-0.45%"
+        ],
+        [
+          "Dow",
+          "53,185.9",
+          "50,906.05",
+          "-4.29%"
+        ],
+        [
+          "Nasdaq",
+          "26,370.89",
+          "26,861.06",
+          "+1.86%"
+        ],
+        [
+          "10Y",
+          "4.76%",
+          "5.29%",
+          "+53bp"
+        ],
+        [
+          "WTI",
+          "$85.76",
+          "$90.35",
+          "+5.4%"
+        ],
+        [
+          "VIX",
+          "14.92",
+          "16.34",
+          "+9.5%"
+        ]
+      ],
+      "labels": [
+        "8/31",
+        "9/8",
+        "9/16",
+        "9/21",
+        "9/25",
+        "9/30"
+      ],
+      "data": [
+        7686,
+        7673,
+        7551,
+        7764,
+        7743,
+        7651.5
+      ],
+      "chains": [
+        {
+          "t": "① The Flip: From Pricing Cuts to Pricing Hikes — the MTD Core",
+          "main": 1,
+          "steps": [
+            "Late August: rate cuts still the priced path",
+            "9/16: Fed hikes +25bp (3.75-4.00%); Warsh hawkish",
+            "10Y breaks 5%, then runs to 5.29% (+53bp MTD)",
+            "30Y to 5.64% (+39bp); oil-driven inflation feeds hike pricing",
+            "Late Sept: October odds peak ~70%, slide to ~37% after PCE"
+          ],
+          "d": "One meeting flipped the month: the Warsh Fed's hawkish hike turned duration into the market's tax collector — and everything outside tech paid.",
+          "news": [
+            {
+              "time": "Wed 9/16",
+              "fact": "Fed hiked +25bp to 3.75-4.00%; Warsh warned on inflation; the Dow fell ~600 points on the day.",
+              "src": "Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09162026-12123817"
+            },
+            {
+              "time": "9/23",
+              "fact": "10Y +13.9bp to 5.106% — highest since 2007, biggest one-day jump since April 2025; Nasdaq's record streak ended.",
+              "src": "Reuters",
+              "u": "https://www.reuters.com/world/china/global-markets-global-markets-2026-09-23/"
+            },
+            {
+              "time": "9/30",
+              "fact": "Month-end: 10Y 5.29% (+53bp MTD), 30Y 5.64% (+39bp), and October hike odds re-priced to ~37% after the soft PCE.",
+              "src": "Yahoo / Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            }
+          ]
+        },
+        {
+          "t": "② The Round-Trip: A Record at 7,764.7, Then the Give-Back",
+          "steps": [
+            "8/31: month opens at 7,686",
+            "9/21: peak 7,764.7 (AMD hits $1T)",
+            "9/22-9/29: yield shocks knock it back",
+            "9/30: closes the month at 7,651.5 — a round-trip, not a crash"
+          ],
+          "d": "September handed back the entire AI-record leg: +1% month at the peak became -0.45% — the grind, not a break.",
+          "news": [
+            {
+              "time": "9/21",
+              "fact": "S&P hit 7,764.7 and Nasdaq set a record as AMD reached a $1T market cap — the month's high-water mark.",
+              "src": "Reuters",
+              "u": "https://www.reuters.com/business/wall-st-futures-rise-ai-stocks-gain-oil-prices-slide-2026-09-21/"
+            },
+            {
+              "time": "9/30",
+              "fact": "September closes: S&P -0.5%, Nasdaq +1.9%, Dow -4.3% — snapping the Dow's five-month winning streak.",
+              "src": "Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            }
+          ]
+        },
+        {
+          "t": "③ War Headlines, Reversed Weekly",
+          "steps": [
+            "9/9: WTI tops $100 for the first time this cycle",
+            "Deal-hope rallies get sold",
+            "9/26: Trump rejects Iran's 7-day proposal",
+            "9/29-30: supply-driven swings — month nets +5.4%"
+          ],
+          "d": "September oil traded headline-to-headline; every deal-hope rally was a sale until the supply story took over this week.",
+          "news": [
+            {
+              "time": "9/8-9/9",
+              "fact": "10Y back above 4.8% as oil rose into the CPI wait; on 9/9 WTI topped $100 a barrel.",
+              "src": "CNBC",
+              "u": "https://www.cnbc.com/2026/09/08/us-treasury-yields-bonds.html"
+            },
+            {
+              "time": "9/26-9/29",
+              "fact": "After Trump rejected Iran's ceasefire proposal, the premium deflated on Saudi supply; WTI closed the month up ~5% anyway.",
+              "src": "Al Jazeera / Investopedia",
+              "u": "https://www.aljazeera.com/news/2026/9/26/trump-reportedly-rejects-irans-seven-day-ceasefire-proposal-whats-next"
+            }
+          ]
+        },
+        {
+          "t": "④ Cross-Section: One Shelter, Many Casualties",
+          "steps": [
+            "Tech +5.0% — the only sector up solidly",
+            "Financials -7.5%, materials -7.6% (worst)",
+            "Utilities -6.6%: the rate trade's whipping boy",
+            "Semis and mega-caps carried the index pretense"
+          ],
+          "d": "The index said -0.45%; the average stock said much worse — dispersion was September's signature.",
+          "news": [
+            {
+              "time": "September",
+              "fact": "Into month-end, the gap was stark: tech/comm sat at the top while financials, materials and staples each fell 5%+ — with utilities at 1-year lows.",
+              "src": "Sector ETF closes, Yahoo Finance",
+              "u": "https://finance.yahoo.com/quote/XLK/"
+            }
+          ]
+        }
+      ]
+    },
+    "qtd": {
+      "h": "Q3 Ends in the Black: S&P +2.03%, Nasdaq +2.47% (2nd Straight Quarterly Gain); Dow -2.70%",
+      "d": "6/30 7,499 → 9/30 7,651.5: July's earnings run survived a hawkish September give-back; the 10Y's +87bp is why the net gain is only ~2%.",
+      "badges": [
+        "S&P QTD +2.03%",
+        "Nasdaq +2.47%",
+        "Dow -2.70%",
+        "10Y +87bp"
+      ],
+      "c1": "The quarter's three acts: July rode earnings to fresh highs, August stalled at the 7,800 line, and September handed back roughly half of the run on the Warsh hike and the yield surge. Final score: S&P +2.03% and Nasdaq +2.47% — second straight quarterly gains for both — while the Dow finished -2.70%. Energy (+15.8%) and health (+6.2%) carried; utilities (-13%) were the rate trade's casualty.",
+      "c4": "<ul class='play'><li>The quarter kept its gains — barely. Protect the +2% through Friday's payrolls; October's range is set by the 10Y.</li><li>Energy and health were the quarter's real engines, not mega-cap tech — a barbell worth keeping into Q4.</li></ul>",
+      "kpi": [
+        [
+          "S&P QTD",
+          "+2.03%",
+          "held",
+          1
+        ],
+        [
+          "Nasdaq QTD",
+          "+2.47%",
+          "2nd straight",
+          1
+        ],
+        [
+          "Dow QTD",
+          "-2.70%",
+          "lagged",
+          0
+        ],
+        [
+          "10Y",
+          "+87bp",
+          "the spoiler",
+          0
+        ]
+      ],
+      "tbl": [
+        [
+          "S&P",
+          "7,499.36",
+          "7,651.54",
+          "+2.03%"
+        ],
+        [
+          "Dow",
+          "52,319",
+          "50,906.05",
+          "-2.70%"
+        ],
+        [
+          "Nasdaq",
+          "26,213.72",
+          "26,861.06",
+          "+2.47%"
+        ],
+        [
+          "10Y",
+          "4.42%",
+          "5.29%",
+          "+87bp"
+        ],
+        [
+          "Gold",
+          "$4,038.5",
+          "$4,189",
+          "+3.7%"
+        ],
+        [
+          "BTC",
+          "$58.6k",
+          "$83.7k",
+          "+42.9%"
+        ]
+      ],
+      "labels": [
+        "6/30",
+        "7/31",
+        "8/13",
+        "9/15",
+        "9/25",
+        "9/30"
+      ],
+      "data": [
+        7499,
+        7490,
+        7799,
+        7586,
+        7743,
+        7651.5
+      ],
+      "chains": [
+        {
+          "t": "① Earnings vs Rates: A 4% Peak Becomes a 2% Gain",
+          "main": 1,
+          "steps": [
+            "Q2 +15.2% — best in six years",
+            "July: earnings cashing, new highs",
+            "August stall at the 7,800 line",
+            "September gives back roughly half the run"
+          ],
+          "d": "The numerator can't outrun the denominator: a strong earnings quarter netted ~2% because the 10Y took 87bp the other way.",
+          "news": [
+            {
+              "time": "6/30",
+              "fact": "S&P 7,499.36 +0.79% to close Q2 — the best quarter in six years: S&P +15.2%, Nasdaq +21.4%, Dow's best H1 since 2021.",
+              "src": "CNBC / Reuters",
+              "u": "https://www.cnbc.com/2026/06/29/stock-market-today-live-updates.html"
+            },
+            {
+              "time": "6/30",
+              "fact": "WSJ: the best quarter in six years will be a hard act to follow.",
+              "src": "WSJ",
+              "u": "https://www.wsj.com/finance/stocks/wall-streets-best-quarter-in-six-years-will-be-a-hard-act-to-follow-6dc641d4"
+            },
+            {
+              "time": "9/30",
+              "fact": "Q3 closes: S&P +2%, Nasdaq +2.5% — second straight quarterly gains for both; Dow -2.7%.",
+              "src": "Reuters / Investopedia",
+              "u": "https://www.reuters.com/business/us-stock-futures-inch-up-yields-ease-inflation-report-looms-2026-09-30/"
+            }
+          ]
+        },
+        {
+          "t": "② The Rate Regime Switches Engines",
+          "steps": [
+            "Powell-era cuts → Warsh-era hikes",
+            "10Y 4.42% → 5.29% (+87bp)",
+            "30Y 4.90% → 5.64% (+74bp)",
+            "Katayama: AI-capex demand is lifting long-end yields globally"
+          ],
+          "d": "The quarter's spoiler was written in rates: a hike cycle re-opened mid-stream and repriced everything long.",
+          "news": [
+            {
+              "time": "9/28",
+              "fact": "Japan's Finance Minister Katayama pointed to global AI-infrastructure capex demand behind high long-end yields; JPM's Michele said the curve is oversold.",
+              "src": "Bloomberg TV (via Barron's)",
+              "u": "https://www.barrons.com/livecoverage/stock-market-news-today-280926"
+            },
+            {
+              "time": "Q3",
+              "fact": "Quarter-to-date: 10Y 4.42% → 5.29% (+87bp); 30Y 4.90% → 5.64% (+74bp).",
+              "src": "Yahoo / FRED",
+              "u": "https://fred.stlouisfed.org/series/dgs10"
+            }
+          ]
+        },
+        {
+          "t": "③ Oil Above $90 Is the Regime",
+          "steps": [
+            "2/28: war starts",
+            "Blockade normalizes",
+            "Q3 average above $90",
+            "WTI +30% QTD — the inflation input"
+          ],
+          "d": "For a full quarter, oil above $90 wasn't a shock — it was the backdrop feeding the Fed's hawkish turn.",
+          "news": [
+            {
+              "time": "From 2/28/26",
+              "fact": "U.S.-Israel strikes on Iran started the conflict; Iran retaliated and the Strait of Hormuz was weaponized — the supply threat that still sets the oil bid.",
+              "src": "Reuters",
+              "u": "https://www.reuters.com/world/middle-east/iran-awaits-us-move-after-wsj-report-says-trump-rejects-peace-plan-2026-09-26/"
+            },
+            {
+              "time": "9/30",
+              "fact": "WTI ends the quarter at ~$90.4 (+30% QTD); the war's monthly supply swings remain the swing factor.",
+              "src": "Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            }
+          ]
+        },
+        {
+          "t": "④ The Rotation Underneath",
+          "steps": [
+            "Energy +15.8%, health +6.2% led",
+            "Tech +2.7% — carried but no longer alone",
+            "Utilities -13.0% worst (rates)",
+            "Real estate -7.1%, consumer disc -7.2%"
+          ],
+          "d": "Strip out the index and the quarter's real winners were oil and pharma — the late-rotation signature of a hike-priced world.",
+          "news": [
+            {
+              "time": "Q3",
+              "fact": "Quarter cross-section: energy (+15.8%) and health (+6.2%) led; utilities (-13.0%) and consumer discretionary (-7.2%) lagged.",
+              "src": "Sector ETF closes, Yahoo Finance",
+              "u": "https://finance.yahoo.com/quote/XLE/"
+            }
+          ]
+        }
+      ]
+    },
+    "ytd": {
+      "h": "The Bull Holds Into Q4: S&P +11.77% as +113bp of Rates Rewrite the Playbook",
+      "d": "S&P +11.77%, Nasdaq +15.57%, Dow +5.91% through three quarters — AI and earnings carried; the 10Y's +113bp and a seventh month of war taxed the rest.",
+      "badges": [
+        "S&P +11.77%",
+        "Nasdaq +15.57%",
+        "Dow +5.91%",
+        "10Y 5.29%"
+      ],
+      "c1": "Three quarters in, the rally has extended 2025's +16% — breaking 50k in February, 52k in June, then weathering September's yield shock. The 10Y's move from 4.16% to 5.29% (+113bp) is the year's biggest variable; gold, after spiking with the war, closed Q3 down ~3.5% for the year.",
+      "c4": "<ul class='play'><li>With an +11.8% cushion, don't chase — but don't fight the trend either; own energy and the AI capex chain.</li><li>60/40's playbook stays broken while the 10Y prints 24-year highs — keep duration short into Q4.</li></ul>",
+      "kpi": [
+        [
+          "S&P YTD",
+          "+11.77%",
+          "bull",
+          1
+        ],
+        [
+          "Nasdaq",
+          "+15.57%",
+          "leading",
+          1
+        ],
+        [
+          "Dow",
+          "+5.91%",
+          "lagging",
+          1
+        ],
+        [
+          "10Y",
+          "+113bp",
+          "rich",
+          0
+        ]
+      ],
+      "tbl": [
+        [
+          "S&P",
+          "6,845.5",
+          "7,651.54",
+          "+11.77%"
+        ],
+        [
+          "Dow",
+          "48,063",
+          "50,906.05",
+          "+5.91%"
+        ],
+        [
+          "Nasdaq",
+          "23,242",
+          "26,861.06",
+          "+15.57%"
+        ],
+        [
+          "10Y",
+          "4.16%",
+          "5.29%",
+          "+113bp"
+        ],
+        [
+          "30Y",
+          "4.84%",
+          "5.64%",
+          "+80bp"
+        ],
+        [
+          "Gold",
+          "$4,341",
+          "$4,189",
+          "-3.5%"
+        ]
+      ],
+      "labels": [
+        "Dec31",
+        "3/31",
+        "6/30",
+        "8/13",
+        "9/15",
+        "9/30"
+      ],
+      "data": [
+        6845,
+        6528,
+        7499,
+        7799,
+        7586,
+        7651.5
+      ],
+      "chains": [
+        {
+          "t": "① The Bull Market Continues",
+          "main": 1,
+          "steps": [
+            "2025: +16%, third straight up year",
+            "February: 50k on the Dow",
+            "Q2 +15.2% — best in six years",
+            "Three quarters: S&P +11.77%"
+          ],
+          "d": "The base case isn't broken — dips keep getting bought and the year's gains survived a full rate shock.",
+          "news": [
+            {
+              "time": "12/31/25",
+              "fact": "2025 closed with a third straight up year (S&P +16%, Nasdaq +19%, Dow +13%); the S&P finished at 6,845.5.",
+              "src": "CNBC / AP",
+              "u": "https://www.cnbc.com/2025/12/30/stock-market-today-live-updates.html"
+            },
+            {
+              "time": "Q2 2026",
+              "fact": "Dow H1 +8.9%, its best first half since 2021; S&P Q2 +15.2%, best since 2020.",
+              "src": "Reuters",
+              "u": "https://www.reuters.com/business/us-stock-futures-little-changed-strong-quarter-nears-end-2026-06-30/"
+            }
+          ]
+        },
+        {
+          "t": "② The Second Inflation Wave",
+          "steps": [
+            "4.16% → 5.29% on the 10Y (+113bp)",
+            "War's oil above $90 and tariffs keep inflation sticky",
+            "Core PCE still 3.0%, above the 2% target",
+            "One more hike still priced (December)"
+          ],
+          "d": "The early-year cut hopes are dead; the hike cycle itself is the year's master variable.",
+          "news": [
+            {
+              "time": "12/31/25 → 9/30/26",
+              "fact": "10Y 4.16% → 5.29% (+113bp); 30Y 4.84% → 5.64% (+80bp) — the biggest repricing in two decades.",
+              "src": "FRED / Yahoo",
+              "u": "https://fred.stlouisfed.org/series/dgs10"
+            },
+            {
+              "time": "9/30",
+              "fact": "August core PCE 3.0% — cooler than expected, still a full point above target; Warsh's Fed remains on watch.",
+              "src": "Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            }
+          ]
+        },
+        {
+          "t": "③ The AI Platform",
+          "steps": [
+            "Accelerated compute keeps compounding",
+            "NVDA +17% in Q3 alone (~+22.5% YTD)",
+            "AMD pays $8.2B for World Labs",
+            "Anthropic targets a $2T+ IPO"
+          ],
+          "d": "The rally and the rate surge share one root: AI needs capital, and capital has a price again.",
+          "news": [
+            {
+              "time": "Q3",
+              "fact": "Nvidia gained 17% in Q3 (about +22.5% YTD after three quarters), capping a quarter of Trump dinners, media hits and conferences — and its $12.9B Hugging Face deal.",
+              "src": "Yahoo Finance",
+              "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-september-30-dow-sp-500-nasdaq-080339262.html"
+            },
+            {
+              "time": "9/29",
+              "fact": "2026's capital cycle: AMD's $8.2B World Labs deal and Anthropic's targeted $2T-plus listing headline a year of relentless AI investment.",
+              "src": "Investopedia / Fortune",
+              "u": "https://fortune.com/2026/09/28/amd-acquires-world-labs-startup-fei-fei-li-8-2-billion/"
+            }
+          ]
+        },
+        {
+          "t": "④ Geopolitics as the Norm",
+          "steps": [
+            "2/28: war starts",
+            "Hormuz weaponized",
+            "Deal hopes repeatedly falsified",
+            "Oil +57% YTD"
+          ],
+          "d": "Every deal-hope rally was a sale — the war is a permanent line item now, not an event.",
+          "news": [
+            {
+              "time": "9/26",
+              "fact": "The seven-day ceasefire proposal rejection is this year's latest falsified deal signal; mediators keep working.",
+              "src": "Al Jazeera",
+              "u": "https://www.aljazeera.com/news/2026/9/26/trump-reportedly-rejects-irans-seven-day-ceasefire-proposal-whats-next"
+            }
+          ]
+        },
+        {
+          "t": "⑤ Monetary Regime Change",
+          "steps": [
+            "Warsh cycle",
+            "Global long-end repricing",
+            "Dollar +3.2% YTD",
+            "Gold round-trips its war spike (-3.5%)"
+          ],
+          "d": "Real assets and 60/40 both need new playbooks when the risk-free rate moves 113bp in nine months.",
+          "news": [
+            {
+              "time": "9/30",
+              "fact": "The dollar is +3.2% YTD (101.47) and set for its largest monthly rise versus the euro in 14 months; gold's war spike has fully retraced — down ~3.5% this year.",
+              "src": "Investopedia / Yahoo",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "HEAT": {
+    "today": [
+      {
+        "sec": "US Indexes",
+        "items": [
+          [
+            "S&P 500",
+            "7,652",
+            "-0.25"
+          ],
+          [
+            "Dow",
+            "50,906",
+            "-0.86"
+          ],
+          [
+            "Nasdaq",
+            "26,861",
+            "+0.24"
+          ],
+          [
+            "Russell 2K",
+            "2,797",
+            "-0.39"
+          ],
+          [
+            "VIX",
+            "16.34",
+            "+1.87"
+          ]
+        ]
+      },
+      {
+        "sec": "S&P Sectors (1 of 11 green)",
+        "items": [
+          [
+            "Tech",
+            "only +",
+            "+0.6"
+          ],
+          [
+            "Energy",
+            "—",
+            "-0.1"
+          ],
+          [
+            "ConsDisc",
+            "—",
+            "-0.3"
+          ],
+          [
+            "Comm",
+            "—",
+            "-0.4"
+          ],
+          [
+            "RealEst",
+            "—",
+            "-1.0"
+          ],
+          [
+            "Financials",
+            "—",
+            "-1.1"
+          ],
+          [
+            "Health",
+            "—",
+            "-1.4"
+          ],
+          [
+            "Staples",
+            "worst",
+            "-1.5"
+          ]
+        ]
+      },
+      {
+        "sec": "Bonds & Rates",
+        "items": [
+          [
+            "10Y",
+            "5.29%",
+            "+4bp"
+          ],
+          [
+            "30Y",
+            "5.64%",
+            "'02 high"
+          ],
+          [
+            "CME Oct hike",
+            "~37%",
+            "slid"
+          ]
+        ]
+      },
+      {
+        "sec": "Commodities / Global / Crypto",
+        "items": [
+          [
+            "Brent",
+            "~$103.5",
+            "+0.9"
+          ],
+          [
+            "WTI",
+            "$90.35",
+            "+1.1"
+          ],
+          [
+            "Gold fut",
+            "$4,189",
+            "+0.2"
+          ],
+          [
+            "DXY",
+            "101.47",
+            "+0.1"
+          ],
+          [
+            "BTC",
+            "$83.7k",
+            "+0.1"
+          ],
+          [
+            "Stoxx 600",
+            "635",
+            "-0.5"
+          ]
+        ]
+      }
+    ],
+    "mtd": [
+      {
+        "sec": "Indexes MTD",
+        "items": [
+          [
+            "S&P",
+            "7,652",
+            "-0.45"
+          ],
+          [
+            "Dow",
+            "50,906",
+            "-4.29"
+          ],
+          [
+            "Nasdaq",
+            "26,861",
+            "+1.86"
+          ],
+          [
+            "VIX",
+            "16.34",
+            "+9.5"
+          ]
+        ]
+      },
+      {
+        "sec": "Sectors MTD",
+        "items": [
+          [
+            "Tech",
+            "only +",
+            "+5.0"
+          ],
+          [
+            "Health",
+            "—",
+            "-1.2"
+          ],
+          [
+            "Energy",
+            "—",
+            "-3.8"
+          ],
+          [
+            "Utilities",
+            "—",
+            "-6.6"
+          ],
+          [
+            "Financials",
+            "—",
+            "-7.5"
+          ],
+          [
+            "Materials",
+            "worst",
+            "-7.6"
+          ]
+        ]
+      },
+      {
+        "sec": "Rates MTD",
+        "items": [
+          [
+            "10Y",
+            "5.29%",
+            "+53bp"
+          ],
+          [
+            "30Y",
+            "5.64%",
+            "+39bp"
+          ]
+        ]
+      },
+      {
+        "sec": "Commodities MTD",
+        "items": [
+          [
+            "WTI",
+            "$90.35",
+            "+5.4"
+          ],
+          [
+            "Gold",
+            "$4,189",
+            "-6.5"
+          ],
+          [
+            "BTC",
+            "$83.7k",
+            "+6.6"
+          ]
+        ]
+      }
+    ],
+    "qtd": [
+      {
+        "sec": "Indexes QTD",
+        "items": [
+          [
+            "S&P",
+            "+2.03",
+            "+2.03"
+          ],
+          [
+            "Nasdaq",
+            "+2.47",
+            "+2.47"
+          ],
+          [
+            "Dow",
+            "-2.70",
+            "-2.70"
+          ],
+          [
+            "VIX",
+            "—",
+            "-0.7"
+          ]
+        ]
+      },
+      {
+        "sec": "Sectors QTD",
+        "items": [
+          [
+            "Energy",
+            "—",
+            "+15.8"
+          ],
+          [
+            "Health",
+            "—",
+            "+6.2"
+          ],
+          [
+            "Tech",
+            "—",
+            "+2.7"
+          ],
+          [
+            "Utilities",
+            "worst",
+            "-13.0"
+          ]
+        ]
+      },
+      {
+        "sec": "Rates QTD",
+        "items": [
+          [
+            "10Y",
+            "+87bp",
+            "+87bp"
+          ],
+          [
+            "30Y",
+            "+74bp",
+            "+74bp"
+          ]
+        ]
+      },
+      {
+        "sec": "Commodities QTD",
+        "items": [
+          [
+            "Gold",
+            "$4,189",
+            "+3.7"
+          ],
+          [
+            "BTC",
+            "$83.7k",
+            "+42.9"
+          ],
+          [
+            "WTI",
+            "$90.35",
+            "+30.0"
+          ]
+        ]
+      }
+    ],
+    "ytd": [
+      {
+        "sec": "Indexes YTD",
+        "items": [
+          [
+            "S&P",
+            "+11.77",
+            "+11.77"
+          ],
+          [
+            "Nasdaq",
+            "+15.57",
+            "+15.57"
+          ],
+          [
+            "Dow",
+            "+5.91",
+            "+5.91"
+          ],
+          [
+            "VIX",
+            "—",
+            "+9.3"
+          ]
+        ]
+      },
+      {
+        "sec": "Sectors YTD",
+        "items": [
+          [
+            "Energy",
+            "—",
+            "+37.6"
+          ],
+          [
+            "Tech",
+            "—",
+            "+36.0"
+          ],
+          [
+            "Health",
+            "—",
+            "+8.8"
+          ],
+          [
+            "ConsDisc",
+            "worst",
+            "-8.9"
+          ],
+          [
+            "Utilities",
+            "—",
+            "-7.6"
+          ]
+        ]
+      },
+      {
+        "sec": "Rates YTD",
+        "items": [
+          [
+            "10Y",
+            "+113bp",
+            "+113bp"
+          ],
+          [
+            "30Y",
+            "+80bp",
+            "+80bp"
+          ]
+        ]
+      },
+      {
+        "sec": "Commodities YTD",
+        "items": [
+          [
+            "WTI",
+            "$90.35",
+            "+57.4"
+          ],
+          [
+            "Gold",
+            "$4,189",
+            "-3.5"
+          ],
+          [
+            "BTC",
+            "$83.7k",
+            "-4.4"
+          ],
+          [
+            "DXY",
+            "101.47",
+            "+3.2"
+          ]
+        ]
+      }
+    ]
+  },
+  "foot": "Closing baseline (auto 2026-09-30): SPX 7651.54 (-0.45% MTD / +2.03% QTD / +11.77% YTD) · DJI 50906.05 (-4.29% MTD) · IXIC 26861.06 (+15.57% YTD) · 10Y 5.29% · WTI 90.35 · Gold 4189.00 · BTC 83698.24. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.16% · 26-06-30 S&P 7499.36/Dow 52319/Nasdaq 26213/10Y 4.42% · 26-08-31 S&P 7686.14/Dow 53185.9/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/WTI $90.35/Brent ~$103.5/Gold $4,189 (fut)/BTC $83,698/VIX 16.34. For information only — not investment advice.",
+  "label": "2026-09-30 Wednesday close"
+}
