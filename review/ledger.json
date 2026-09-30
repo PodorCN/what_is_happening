@@ -117,6 +117,44 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-09-30",
+      "reviewedAt": "2026-09-30T19:04:25-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "取数",
+              "symptom": "9/29 快照与 data 的 WTI/Gold 收盘取了 fetch 时点的未定稿值，非结算价：WTI $88.96 应为 $89.38（日变动 -3.9% → -3.5%）；Gold $4,214.10 应为 $4,179.70（+1.1% → +0.3%）。9/29 文件约 17 处现值 + 6 处 '-3.6/-3.9%' 表述需整表重算（today/mtd/qtd/ytd 的 tbl、heat、foot、链内数字；示例：mtd WTI +3.7→+4.2、mtd Gold -6.0→-6.7、qtd Gold +4.35→+3.5、qtd WTI +28.0→+28.6、ytd Gold -2.9→-3.7、ytd WTI +54.9→+55.7、foot WTI/Gold）。9/30 侧连带 2 处：链④ step 'WTI -3.9% Tuesday'→'-3.5%'、news 'Tuesday's -3.6~3.9% drop'→'~3.5%'（同链 AMD 的 -3.6% Monday 与油无关，勿动）。9/30 期初 $89.38/$4,179.7 与结算价一致，是正确侧，无需改。",
+              "evidence": "加通社/BNN 9/29 wire：'November crude oil contract was down US$3.22 at US$89.38'、'December gold contract was up US$11.30 at US$4,179.70'（92.60−3.22=89.38、4168.40+11.30=4179.70 自洽）；economies.com：'gold settled 0.3% higher at $4,179.70'；Yahoo 重拉 9/29 CL=F=89.38 / GC=F=4,179.70（今日多次 fetch 稳定）；9/30 Yahoo 页头 widget 前收 4,179.70/89.38。成因：Yahoo 期货 bar 在收盘后数小时把 last 修正为结算价，9/29 17:19 fetch 拿到的是修正前值。",
+              "rule": "期货收盘以结算价为准：写快照的『昨收』必须当天重拉 CL=F/GC=F，不得沿用昨日文件；跨日不连续用『重拉 Yahoo 值 + 通讯社结算价报道』双源判错侧，错侧文件按结算价整表重算覆盖（一处不漏）。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "ytd 链③（steps 与 news）写 'NVDA +17% in Q3 alone (~+22.5% YTD)'；Yahoo 现算 Q3 = +14.1%（6/30 收 200.09 → 9/30 收 228.38）。同句 YTD ~+22.5% 经现算正确（+22.5%）。",
+              "evidence": "Yahoo NVDA 日线：200.09 → 228.38 = +14.14%；来源（Yahoo liveblog）的 17% 未现算，与 Yahoo 自身数据矛盾。",
+              "rule": "个股季度涨幅同样必须现算（Q3 = 9/30 收 ÷ 6/30 收 − 1）；来源数字与现算不符时以现算为准，或注明来源口径。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "qtd 链③ 标题 'Oil Above $90 Is the Regime' 与 step 'Q3 average above $90'、d 'For a full quarter, oil above $90' 与实算不符：Q3 WTI 日收盘均值 = $85.68（64 个交易日：7 月 $79.2 / 8 月 $82.5 / 9 月 $95.7；仅 21/64 日 >$90）。$90+ 是 9 月现象，不是全季均值。",
+              "evidence": "Yahoo CL=F 日线 2026-07-01～2026-09-30 自算；同链 news 'WTI ends the quarter at ~$90.4' 本身没错，但『平均/全季』表述错误。",
+              "rule": "写『Q3/区间平均』类论断必须用日收盘序列现算并把算值写进文案（Q3 WTI 均值 $85.7 → 写 'averaged ~$86'，或改说 'the $90+ regime began in September'）。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
