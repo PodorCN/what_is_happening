@@ -43,7 +43,7 @@
       "ytdBase": 4.16
     },
     "wti": {
-      "today": 88.95999908447266,
+      "today": 89.37999725341797,
       "mtdBase": 85.76000213623047,
       "qtdBase": 69.5,
       "ytdBase": 57.41999816894531
@@ -55,7 +55,7 @@
       "ytdBase": 60.849998474121094
     },
     "gold": {
-      "today": 4214.10009765625,
+      "today": 4179.7001953125,
       "mtdBase": 4481.5,
       "qtdBase": 4038.5,
       "ytdBase": 4341.10009765625
@@ -106,9 +106,9 @@
     },
     "wti": {
       "dayPct": null,
-      "mtdPct": 3.73,
-      "qtdPct": 28,
-      "ytdPct": 54.93
+      "mtdPct": 4.22,
+      "qtdPct": 28.6,
+      "ytdPct": 55.66
     },
     "brent": {
       "dayPct": null,
@@ -118,9 +118,9 @@
     },
     "gold": {
       "dayPct": null,
-      "mtdPct": -5.97,
-      "qtdPct": 4.35,
-      "ytdPct": -2.93
+      "mtdPct": -6.73,
+      "qtdPct": 3.5,
+      "ytdPct": -3.72
     },
     "btc": {
       "dayPct": null,

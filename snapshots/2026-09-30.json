@@ -68,13 +68,13 @@
         [
           "WTI",
           "$89.38",
-          "$90.35",
-          "+1.1%"
+          "$90.42",
+          "+1.2%"
         ],
         [
           "Gold",
           "$4,179.7",
-          "$4,189",
+          "$4,186.2",
           "+0.2%"
         ]
       ],
@@ -222,7 +222,7 @@
         {
           "t": "④ Oil's Bounce: Trump Says No to Sanctions Relief",
           "steps": [
-            "Monday-Tuesday supply headlines knocked crude off its war premium (WTI -3.9% Tuesday)",
+            "Monday-Tuesday supply headlines knocked crude off its war premium (WTI -3.5% Tuesday)",
             "Wednesday: Trump denies he would ease sanctions on Iran",
             "WTI climbs back: settled around $90.4-90.6 (+1.1-1.4% by quote)",
             "Brent +0.9% to ~$103.50; the war's 7th month keeps the Strait bid",
@@ -244,7 +244,7 @@
             },
             {
               "time": "9/29",
-              "fact": "Tuesday's -3.6~3.9% drop came as Saudi Arabia ramped East-West pipeline exports right before Trump said he 'offered Iran nothing'.",
+              "fact": "Tuesday's ~3.5% drop came as Saudi Arabia ramped East-West pipeline exports right before Trump said he 'offered Iran nothing'.",
               "src": "Investopedia",
               "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09292026-12146739"
             }
@@ -354,7 +354,7 @@
         [
           "WTI",
           "$85.76",
-          "$90.35",
+          "$90.42",
           "+5.4%"
         ],
         [
@@ -546,7 +546,7 @@
         [
           "Gold",
           "$4,038.5",
-          "$4,189",
+          "$4,186.2",
           "+3.7%"
         ],
         [
@@ -629,14 +629,14 @@
           ]
         },
         {
-          "t": "③ Oil Above $90 Is the Regime",
+          "t": "③ September's $90 Regime",
           "steps": [
             "2/28: war starts",
             "Blockade normalizes",
-            "Q3 average above $90",
+            "Q3 averaged ~$86; $90+ began in September",
             "WTI +30% QTD — the inflation input"
           ],
-          "d": "For a full quarter, oil above $90 wasn't a shock — it was the backdrop feeding the Fed's hawkish turn.",
+          "d": "Q3 oil averaged ~$86 — the $90+ regime began in September — not a shock; it was the backdrop feeding the Fed's hawkish turn.",
           "news": [
             {
               "time": "From 2/28/26",
@@ -743,8 +743,8 @@
         [
           "Gold",
           "$4,341",
-          "$4,189",
-          "-3.5%"
+          "$4,186.2",
+          "-3.6%"
         ]
       ],
       "labels": [
@@ -817,7 +817,7 @@
           "t": "③ The AI Platform",
           "steps": [
             "Accelerated compute keeps compounding",
-            "NVDA +17% in Q3 alone (~+22.5% YTD)",
+            "NVDA +14.1% in Q3 alone (~+22.5% YTD)",
             "AMD pays $8.2B for World Labs",
             "Anthropic targets a $2T+ IPO"
           ],
@@ -825,7 +825,7 @@
           "news": [
             {
               "time": "Q3",
-              "fact": "Nvidia gained 17% in Q3 (about +22.5% YTD after three quarters), capping a quarter of Trump dinners, media hits and conferences — and its $12.9B Hugging Face deal.",
+              "fact": "Nvidia gained 14.1% in Q3 (about +22.5% YTD after three quarters), capping a quarter of Trump dinners, media hits and conferences — and its $12.9B Hugging Face deal.",
               "src": "Yahoo Finance",
               "u": "https://finance.yahoo.com/markets/live/stock-market-today-wednesday-september-30-dow-sp-500-nasdaq-080339262.html"
             },
@@ -983,12 +983,12 @@
           ],
           [
             "WTI",
-            "$90.35",
-            "+1.1"
+            "$90.42",
+            "+1.2"
           ],
           [
             "Gold fut",
-            "$4,189",
+            "$4,186.2",
             "+0.2"
           ],
           [
@@ -1090,13 +1090,13 @@
         "items": [
           [
             "WTI",
-            "$90.35",
+            "$90.42",
             "+5.4"
           ],
           [
             "Gold",
-            "$4,189",
-            "-6.5"
+            "$4,186.2",
+            "-6.6"
           ],
           [
             "BTC",
@@ -1177,7 +1177,7 @@
         "items": [
           [
             "Gold",
-            "$4,189",
+            "$4,186.2",
             "+3.7"
           ],
           [
@@ -1187,8 +1187,8 @@
           ],
           [
             "WTI",
-            "$90.35",
-            "+30.0"
+            "$90.42",
+            "+30.1"
           ]
         ]
       }
@@ -1269,13 +1269,13 @@
         "items": [
           [
             "WTI",
-            "$90.35",
-            "+57.4"
+            "$90.42",
+            "+57.5"
           ],
           [
             "Gold",
-            "$4,189",
-            "-3.5"
+            "$4,186.2",
+            "-3.6"
           ],
           [
             "BTC",
@@ -1291,6 +1291,6 @@
       }
     ]
   },
-  "foot": "Closing baseline (auto 2026-09-30): SPX 7651.54 (-0.45% MTD / +2.03% QTD / +11.77% YTD) · DJI 50906.05 (-4.29% MTD) · IXIC 26861.06 (+15.57% YTD) · 10Y 5.29% · WTI 90.35 · Gold 4189.00 · BTC 83698.24. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.16% · 26-06-30 S&P 7499.36/Dow 52319/Nasdaq 26213/10Y 4.42% · 26-08-31 S&P 7686.14/Dow 53185.9/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/WTI $90.35/Brent ~$103.5/Gold $4,189 (fut)/BTC $83,698/VIX 16.34. For information only — not investment advice.",
+  "foot": "Closing baseline (auto 2026-09-30): SPX 7651.54 (-0.45% MTD / +2.03% QTD / +11.77% YTD) · DJI 50906.05 (-4.29% MTD) · IXIC 26861.06 (+15.57% YTD) · 10Y 5.29% · WTI 90.42 · Gold 4186.20 · BTC 83698.24. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.16% · 26-06-30 S&P 7499.36/Dow 52319/Nasdaq 26213/10Y 4.42% · 26-08-31 S&P 7686.14/Dow 53185.9/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/WTI $90.42/Brent ~$103.5/Gold $4,186.2 (fut)/BTC $83,698/VIX 16.34. For information only — not investment advice.",
   "label": "2026-09-30 Wednesday close"
 }

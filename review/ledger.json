@@ -152,9 +152,14 @@
               "rule": "写『Q3/区间平均』类论断必须用日收盘序列现算并把算值写进文案（Q3 WTI 均值 $85.7 → 写 'averaged ~$86'，或改说 'the $90+ regime began in September'）。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true
     }
   ]
 }
