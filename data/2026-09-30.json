@@ -55,13 +55,13 @@
       "ytdBase": 60.849998474121094
     },
     "gold": {
-      "today": 4186.2,
+      "today": 4186.7,
       "mtdBase": 4481.5,
       "qtdBase": 4038.5,
       "ytdBase": 4341.10009765625
     },
     "btc": {
-      "today": 83698.2421875,
+      "today": 83553.8515625,
       "mtdBase": 78548.6328125,
       "qtdBase": 58558.859375,
       "ytdBase": 87508.828125
@@ -118,15 +118,15 @@
     },
     "gold": {
       "dayPct": null,
-      "mtdPct": -6.59,
-      "qtdPct": 3.66,
-      "ytdPct": -3.57
+      "mtdPct": -6.58,
+      "qtdPct": 3.67,
+      "ytdPct": -3.56
     },
     "btc": {
       "dayPct": null,
-      "mtdPct": 6.56,
-      "qtdPct": 42.93,
-      "ytdPct": -4.35
+      "mtdPct": 6.37,
+      "qtdPct": 42.68,
+      "ytdPct": -4.52
     },
     "dxy": {
       "dayPct": null,

@@ -203,9 +203,14 @@
               "rule": "单名涨跌幅写入前用 Yahoo 当日收盘现算（今收÷昨收−1）；引用盘中值必须标注口径或改用收盘值。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true
     }
   ]
 }

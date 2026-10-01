@@ -145,8 +145,8 @@
             "Morning dip: Mideast crude flows had recovered, capping the fear premium",
             "Reuters: China suspends October fuel exports beyond HK/Macau; PetroChina cancels cargoes",
             "WSJ: a third US carrier strike group — up to 10,000 troops — due by end-November",
-            "WTI settles +2.7% at $92.87; Brent +4.4% to $102.31",
-            "Refiners ride it: Marathon +5.7%, Valero +5%; energy is the day's best sector"
+            "WTI settles +2.7% at $92.87; Brent +4.4% to $102.31 (Dec front; Nov expired ~$103.5)",
+            "Refiners ride it: Marathon +6.3%, Valero +5%; energy is the day's best sector"
           ],
           "d": "The war premium found two fresh bids — China's export ban and a new carrier deployment — lifting Brent back over $102 while the rest of the tape stayed flat.",
           "news": [
@@ -164,24 +164,24 @@
             },
             {
               "time": "10/1 close",
-              "fact": "WTI settled +2.7% at $92.87; Brent jumped 4.4% to $102.31 — the day's cleanest one-way trade.",
+              "fact": "WTI settled +2.7% at $92.87; Brent jumped 4.4% to $102.31 (Dec front; Nov expired ~$103.5) — the day's cleanest one-way trade.",
               "src": "Barron's",
               "u": "https://www.barrons.com/livecoverage/stock-market-news-today-100126"
             },
             {
               "time": "10/1",
-              "fact": "Refining margins flashed: Marathon Petroleum +5.7% and Valero +5% led the energy complex.",
+              "fact": "Refining margins flashed: Marathon Petroleum +6.3% and Valero +5% led the energy complex.",
               "src": "Investopedia",
               "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-10012026-12151047"
             }
           ]
         },
         {
-          "t": "③ Proof of Earnings: Accenture +16%, Synopsys +10% — Micron's Grudging +3%",
+          "t": "③ Proof of Earnings: Accenture +16%, Synopsys +12.8% — Micron's Grudging +3%",
           "steps": [
             "Accenture soars 16% on an FQ4 beat: EPS $3.29, revenue $18.7B, bookings $22.2B",
             "Micron erases losses to end +3% — a record quarter, but 'a high burden' on the stock",
-            "Synopsys +10% on OpenAI and Amazon custom-chip deals (Amazon pact worth over $1B)",
+            "Synopsys +12.8% on OpenAI and Amazon custom-chip deals (Amazon pact worth over $1B)",
             "Memory complex rallies with it: DRAM ETF +3%, SK Hynix +5%",
             "Tech +1.1% and the Nasdaq's second straight up day — even as the tape stayed flat"
           ],
@@ -201,7 +201,7 @@
             },
             {
               "time": "10/1",
-              "fact": "Synopsys jumped 10% after announcing AI deals with OpenAI (a joint chip-design model) and Amazon (custom silicon, worth over $1B).",
+              "fact": "Synopsys jumped 12.8% after announcing AI deals with OpenAI (a joint chip-design model) and Amazon (custom silicon, worth over $1B).",
               "src": "Investopedia",
               "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-10012026-12151047"
             },
@@ -220,7 +220,7 @@
             "Energy +1.9% and Tech +1.1% carried the tape; Health Care -1.3% was worst",
             "Russell 2000 +0.35% outperformed — the day after a ~7.5% quarter",
             "Bespoke: September equal-weight lagged cap-weight by 4.6pp — 3rd-worst month since 2003",
-            "Single names: FICO +8%, Mattel +19%, MSG Sports -5%, McCormick -5%"
+            "Single names: FICO +11.7%, Mattel +19%, MSG Sports -1.5%, McCormick -5%"
           ],
           "d": "The +0.19% headline hid a rotate-under-the-hood day: fuel and AI up, defensives and health care down — the same split September ran on.",
           "news": [
@@ -244,7 +244,7 @@
             },
             {
               "time": "10/1",
-              "fact": "FICO +8% (FHFA's Pulte backs FICO Direct), Mattel +19% (WSJ: takeover interest from Authentic Brands), MSG Sports -5% (board approves Knicks-Rangers split), McCormick -5%.",
+              "fact": "FICO +11.7% (FHFA's Pulte backs FICO Direct), Mattel +19% (WSJ: takeover interest from Authentic Brands), MSG Sports -1.5% (board approves Knicks-Rangers split), McCormick -5%.",
               "src": "CNBC / Investopedia",
               "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-10012026-12151047"
             }
@@ -371,18 +371,10 @@
         ]
       ],
       "labels": [
-        "9/24",
-        "9/25",
-        "9/28",
-        "9/29",
         "9/30",
         "10/1"
       ],
       "data": [
-        7704.1,
-        7743.4,
-        7683.7,
-        7670.8,
         7651.5,
         7666.5
       ],
@@ -480,7 +472,7 @@
         "10Y -5bp",
         "Gold +0.4%"
       ],
-      "c1": "Q4's first session looked like Q3's last: the long end tried to break something (a 5.344% print on the 10Y) and the AI complex refused to break (Micron +3%, Accenture +16%, Synopsys +10%). In between, the quarter opens nearly flat — +0.19% — carrying Q3's three questions: can earnings outrun rates, can the war's fuel premium be capped, and does breadth ever widen. Gold's +0.4% and a dollar at a three-month high round out the macro set.",
+      "c1": "Q4's first session looked like Q3's last: the long end tried to break something (a 5.344% print on the 10Y) and the AI complex refused to break (Micron +3%, Accenture +16%, Synopsys +12.8%). In between, the quarter opens nearly flat — +0.19% — carrying Q3's three questions: can earnings outrun rates, can the war's fuel premium be capped, and does breadth ever widen. Gold's +0.4% and a dollar at a three-month high round out the macro set.",
       "c4": "<ul class='play'><li>Q4's trade starts where Q3's ended: own proven AI demand, rent the rest — Micron's 'high burden' and Nike's -5% after hours show the ledge is narrow.</li><li>The 10Y's 5.2% is the valuation ceiling and 5.34% its stress test — Friday's payrolls is the next trial.</li><li>Energy is Q4's macro wildcard: the third carrier deployment gives the war premium a November deadline — hedge the fuel tail.</li></ul>",
       "kpi": [
         [
@@ -547,18 +539,10 @@
         ]
       ],
       "labels": [
-        "9/24",
-        "9/25",
-        "9/28",
-        "9/29",
         "9/30",
         "10/1"
       ],
       "data": [
-        7704.1,
-        7743.4,
-        7683.7,
-        7670.8,
         7651.5,
         7666.5
       ],
@@ -620,7 +604,7 @@
             "Q3: WTI +30% as the war premium rebuilt",
             "Q4 day one: China halts October fuel exports; Brent +4.4% over $102",
             "A third US carrier group due by end-November",
-            "Refiners lead again (Marathon +5.7%, Valero +5%)",
+            "Refiners lead again (Marathon +6.3%, Valero +5%)",
             "Wall Street's 2026 Brent forecasts keep rising (Reuters poll: $89 average)"
           ],
           "d": "Oil re-entered Q4 the same way it dominated Q3 — through supply fear, not demand — and fuel is once again the quarter's fastest inflation input.",
@@ -1267,6 +1251,6 @@
       }
     ]
   },
-  "foot": "Closing baseline (auto 2026-10-01): SPX 7666.45 (+0.19% MTD / +0.19% QTD / +11.99% YTD) · DJI 50926.56 (+0.04% MTD) · IXIC 26871.60 (+15.62% YTD) · 10Y 5.24% · WTI 92.87 · Gold 4202.30 · BTC 84613.94. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.16% · 26-06-30 S&P 7499.36/Dow 52319/Nasdaq 26213/10Y 4.42% · 26-08-31 S&P 7686.14/Dow 53185.9/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/WTI $90.42/Brent ~$103.5/Gold $4,186.2 (fut)/BTC $83,698/VIX 16.34. For information only — not investment advice.",
+  "foot": "Closing baseline (auto 2026-10-01): SPX 7666.45 (+0.19% MTD / +0.19% QTD / +11.99% YTD) · DJI 50926.56 (+0.04% MTD) · IXIC 26871.60 (+15.62% YTD) · 10Y 5.24% · WTI 92.87 · Gold 4202.30 · BTC 84613.94. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.16% · 26-06-30 S&P 7499.36/Dow 52319/Nasdaq 26213/10Y 4.42% · 26-08-31 S&P 7686.14/Dow 53185.9/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/WTI $90.42/Brent ~$103.5 (Nov; Dec front ~$98.0)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
   "label": "2026-10-01 Thursday close"
 }
