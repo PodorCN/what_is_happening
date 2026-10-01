@@ -160,6 +160,52 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-10-01",
+      "reviewedAt": "2026-10-01T18:53:00-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "Brent 换月合约混用：正文（badges/kpi/HEAT/链②）写 'Brent ~$102.3 / +4.4% to $102.31'，foot 基线行却写 '26-09-30 … Brent ~$103.5'——由 $103.5 起算应为 -1.2%，同一文件内互斥。~$103.5 是 9/30 尚在报价的 November 合约价（9/30 文件用的就是它），而 +4.4% 的基准是换月后 December 合约的 ~$98.0（98.0×1.044≈102.3）。foot 不注明换月，10/2 的写手会继续拿 $103.5 当基准。",
+              "evidence": "CNBC 10/1 live blog：'Brent crude with December expiry… about 4.6% higher at $102.55'；同页更早一条 'Brent for December delivery slipped 0.12% to $97.91'（→ 基准≈$98.0）。Yahoo BZ=F 5m/1m 结算窗口：9/30≈$98.06、10/1≈$102.38（+4.4% ✓）；Yahoo BZ=F 日线 103.53→102.62（-0.9%）为跨合约 roll 假象（agent.md §6 已警示），不得用作 Brent 日环比。",
+              "rule": "Brent 的『昨收/基线』与『日变动』必须同合约同口径：换月周在 foot 与正文注明合约（如 'Brent +4.4% to $102.31 (Dec front; Nov expired ~$103.5)'），禁止用 Yahoo BZ=F 日线做 Brent 日环比/MTD%，也禁止把 +4.4% 改成 Yahoo 口径的 -0.9%。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "mtd 与 qtd 的 labels/data 未按新窗口重建：两档序列与 today 逐点相同（9/24–10/1，[7704.1,7743.4,7683.7,7670.8,7651.5,7666.5]），但两档 tbl 期初 = 7,651.54（9/30 收盘）只落在序列倒数第二位；序列首点 7,704.1（9/24）≠ 期初，违反 agent.md §3『四档 tbl 期初/期末必须与 data 序列首尾一致』。10 月/Q4 仅 1 个交易日，正确序列应从 9/30 起重建（如 labels ['9/30','10/1']、data [7651.5,7666.5]）。today 档沿用既有惯例（期初=序列倒数第二点）不动。",
+              "evidence": "对比 9/28–9/30 文件：mtd 序列首点 = 8/31 收 7686 = tbl 期初，qtd 序列首点 = 6/30 收 7499 = tbl 期初，均自窗口基期开始；10/1 文件 today/mtd/qtd 三档序列完全相同 = 未按换期更新。",
+              "rule": "换期首日（新月/新季/新年）必须重建 mtd/qtd/ytd 的 labels/data：首点 = 新窗口基期收盘、末点 = 当日收盘；不得沿用上一窗口的滚动 6 日序列。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "foot 基线行 '26-09-30 … Gold $4,186.2 (fut) / BTC $83,698' 与本文件期初不一致：本文件 today/qtd tbl 期初与 data 用 Gold $4,186.7（4186.70）、BTC $83,554（83553.85，qtd tbl 显示 $83.6k）。同文件 Gold 差 $0.5、BTC 差 $144；且与 9/30 已发布的 $4,186.2/$83,698.24 不一致——两侧只能各对一个，需判错侧。",
+              "evidence": "10/1 文件 foot vs 自身 tbl/data（data mtdBase: gold 4186.70、btc 83553.85）；snapshots/2026-09-30.json foot 'Gold 4186.20 / BTC 83698.24'；当前 Yahoo 重拉 GC=F 9/30=4186.70、BTC-USD 9/30=83553.85（与 10/1 期初侧一致）。",
+              "rule": "foot 的『昨收/基线』必须用当天重拉值并逐项对齐本文件 tbl/data 期初（Gold/BTC 同 WTI 待遇）；发现跨日不一致按『重拉 Yahoo + 通讯社/来源双源判错侧』整表覆盖错侧。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "4 个单名涨跌幅用的是盘中/早盘值，与收盘现算不符：FICO 写 +8%（收盘 +11.7%，592.47→661.75）；SNPS 写 +10%（收盘 +12.8%，434.94→490.54）；MSGS 写 -5%（收盘 -1.5%，405.21→399.19）；MPC 写 +5.7%（收盘 +6.3%，395.42→420.15）。其余单名（ACN +16%、MU +3%、MAT +19%、MKC -5%、VLO +5%）与收盘相符，无需改。",
+              "evidence": "Yahoo 日线 9/30→10/1 收盘现算（上列）；CNBC 博客 FICO 条为早盘 'rallied 8%'、SNPS 报道为盘中 'surged 11% to $483.59'，而 ACN 条 'ended the day up close to 16%' 为收盘口径——来源混用盘中与收盘值。",
+              "rule": "单名涨跌幅写入前用 Yahoo 当日收盘现算（今收÷昨收−1）；引用盘中值必须标注口径或改用收盘值。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
