@@ -262,9 +262,14 @@
               "rule": "ytd 序列年内峰值锚点（8/13=7799）在非换期日不得静默删除；腾位须明确取舍并保持与正文 'August record' 可对照。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true
     }
   ]
 }
