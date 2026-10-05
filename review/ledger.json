@@ -270,6 +270,44 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-10-05",
+      "reviewedAt": "2026-10-05T19:07:24-04:00",
+      "verdict": "PASS",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "PASS",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "qtd 链③ step3 写 'the US benchmark never reclaimed $92'，与 Q4 序列矛盾：WTI 10/1 收盘 $92.87（盘中最高约 $93.46），已站上 $92 后回落，'never reclaimed' 为假。应改为与序列一致的表述（如 'hasn't closed above $92 since Oct 1' 或 'still below $92 after its Oct 1 spike'）。",
+              "evidence": "本文件 qtd 窗口收盘序列 90.42→92.87→91.11→89.43（10/1 值见 data/2026-10-01.json 与 10/2 快照 today tbl 期初 $92.87，10/2 复审 F1 已确认『为正确昨收，勿动』）；Yahoo CL=F 10/1 小时线最高 ~$93.46。",
+              "rule": "写 'never/从未' 类窗口级断言前，先把窗口内全部收盘（必要时含盘中高/低）逐项列一遍核对；'reclaim $X' 只在窗口内曾收盘于 $X 上方时才允许写，否则改写为 'still below $X' 或 '自 X 日高点回落'。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "mtd 链② step3 写 '20Y +4bp and 30Y +4bp on Monday'，与同文件 HEAT 及来源矛盾：HEAT today/mtd/qtd 三处 30Y 均为 '+3bp'，mtd 链② step1 亦写 '+3bp'；所引 CNBC 为 'about 3 basis points to 5.661%'（live blog：'rose more than 3 basis points to 5.664%'）；Yahoo ^TYX 5.630→5.665=+3.5bp。30Y 应统一为 +3bp；同句 '20Y +4bp' 为全库首次出现的指标（全部快照中仅本日含 '20Y'），无 data/来源对应值，无法核对时应删除或注明来源。",
+              "evidence": "snapshots/2026-10-05.json：HEAT.today/mtd/qtd『30Y 5.66% +3bp』、mtd 链② step1『the 30Y at 5.66%, +3bp』；cnbc.com/2026/10/05/treasury-yields-bonds-fed-rates.html（'about 3 basis points to 5.661%'）；CNBC live blog（'the 30-year rose more than 3 basis points to 5.664%'）。",
+              "rule": "同一天同一指标的 bp 变动值全文件只保留一个（HEAT 与各链必须相等），按 (今收−昨收)×100 取整后统一；链内引入新指标（如 20Y）必须先在 data 或 ≥2 个来源落值，否则不写。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today 链② news[3] 以直接引语引用 ING：'We still see Brent remaining above $100 as long as tensions remain and attacks on vessels in the region continue'，但该句在所引 CNBC 稿、Reuters 原文各转载（asiaone/wincountry）、ING 官方 Commodities Feed（think.ing.com 10/5）、fxstreet/engine.online 的 ING 报道中均找不到；来源实为转述（'Brent prices continue to stay above $100 per barrel on persistent geopolitical tensions and an increase in attacks on commercial vessels in the Gulf, ING analysts said in a note.'）。应降级为转述句，或替换为可核的直接引语。",
+              "evidence": "cnbc.com/2026/10/05/oil-slips-as-middle-east-crude-exports-rise-g7-to-release-stocks.html 全文与 asiaone/wincountry 转载均为间接转述；ing_feed 原文为 'The market continues to settle above this key level...'；本日其余 6 处引语（Hatfield×2、Andersen、Manthey、Staunovo、Kitco bond 句）均可在来源中逐字找到，仅此句不可核。",
+              "rule": "直接引语必须能在所引 URL（或同稿转载）中逐字找到；找不到时降级为转述（'ING analysts said in a note that...'），禁止把转述句改写成一/三人称引语。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }

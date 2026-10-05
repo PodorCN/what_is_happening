@@ -1,0 +1,1298 @@
+{
+  "date": "2026-10-05",
+  "updatedAt": "2026-10-05T22:00:00Z",
+  "P": {
+    "today": {
+      "h": "The Inverse-Bond Trade: Nasdaq Sets a Record as the 10Y Prints a Fresh 2002 High",
+      "d": "",
+      "badges": [
+        "S&P 7,774 +0.66%",
+        "Dow 51,268 +0.18%",
+        "Nasdaq 27,477 record",
+        "10Y 5.31%",
+        "Brent $100.32"
+      ],
+      "c1": "A record that refused to read the bond market: the Nasdaq closed at an all-time high of 27,477.31 (+1.05%, intraday 27,544.07), the S&P 500 added 0.66% to 7,773.95 — within ~0.3% of its August record — and the Dow lagged at +0.18%. The tape did it while the 10-year yield spiked ~7bp to 5.349%, its highest since April 2002, before closing at 5.311% (+3bp); the 30-year printed 5.703% intraday, a level last seen in May 2002. 'Tech is sort of like the inverse bond trade,' said Infrastructure Capital's Jay Hatfield — 'it's buy tech, sell everything else.' Monday's data was tame (ISM services 54.9, roughly in line; the prices-paid index 74, its 12-month average the highest since March 2023), and the tape took its cues elsewhere: oil's second straight supply-driven slide (Brent -1.9% to $100.32; WTI settled $89.43) softened the inflation edge, the dollar firmed (DXY +0.2%; the euro hit a 17-month low on France's fiscal crisis), and gold settled -0.1% at $4,156.8. Under the record: M&A Monday (Schneider's $22.6B all-cash takeout of PTC — +33.5%, the S&P's top gainer and its biggest one-day gain on record; C.H. Robinson's $5.8B deal for RXO), Brazil's election rip (PBR +11.5%, the real +4%), SpaceX +7.6% — and thin breadth: only ~50.6% of Nasdaq issues advanced.",
+      "c4": "<ul class='play'><li>Rates still set the terms: the 10Y's 5.31%-5.35% zone is every multiple's ceiling — the record stood Monday, but a break above ~5.35% without earnings proof is the risk; the Fed minutes (Wednesday) and CPI (Oct 14) referee next.</li><li>Watch breadth, not the index: 50.6% of Nasdaq names advancing under a record close says megacaps are carrying it — the narrowness is the fragility.</li><li>Oil's supply wave (G7 barrels, recovering exports, Aramco's price cut) is the cleanest disinflation input left; Houthi strikes on Aramco sites are the counter-bid — $100 Brent is the line.</li></ul>",
+      "kpi": [
+        [
+          "S&P",
+          "7,773.95",
+          "+0.66%",
+          1
+        ],
+        [
+          "Nasdaq",
+          "27,477.31",
+          "record close",
+          1
+        ],
+        [
+          "10Y",
+          "5.31%",
+          "2002 high",
+          1
+        ],
+        [
+          "WTI",
+          "$89.43",
+          "-1.8%",
+          0
+        ]
+      ],
+      "tbl": [
+        [
+          "S&P",
+          "7,722.72",
+          "7,773.95",
+          "+0.66%"
+        ],
+        [
+          "Dow",
+          "51,176.96",
+          "51,267.90",
+          "+0.18%"
+        ],
+        [
+          "Nasdaq",
+          "27,190.86",
+          "27,477.31",
+          "+1.05%"
+        ],
+        [
+          "10Y",
+          "5.28%",
+          "5.31%",
+          "+3bp"
+        ],
+        [
+          "WTI",
+          "$91.11",
+          "$89.43",
+          "-1.8%"
+        ],
+        [
+          "Gold",
+          "$4,162.5",
+          "$4,156.8",
+          "-0.1%"
+        ]
+      ],
+      "labels": [
+        "9/28",
+        "9/29",
+        "9/30",
+        "10/1",
+        "10/2",
+        "10/5"
+      ],
+      "data": [
+        7683.7,
+        7670.8,
+        7651.5,
+        7666.5,
+        7722.7,
+        7774.0
+      ],
+      "chains": [
+        {
+          "t": "① Main Chain: The Inverse-Bond Trade — a Nasdaq Record While the 10Y Prints a 2002 High",
+          "main": 1,
+          "steps": [
+            "10:00 ET: ISM services 54.9 for September — roughly in line, slightly below August; prices-paid +1.4 to 74, its 12-month average the highest since March 2023",
+            "The long end keeps selling: the 10Y spikes ~7bp to 5.349% — highest since April 3, 2002 — and closes +3bp at 5.311%; the 30Y peaks at 5.703%, best since May 2002",
+            "Hatfield: 'It's a momentum selloff' — the 10Y trades ~100bp over terminal Fed funds as fiscal and inflation worries pile up",
+            "Equities don't blink: Nasdaq +1.05% to a record close 27,477.31 (intraday 27,544.07); S&P +0.66% to 7,773.95; Dow +0.18%",
+            "Megacaps carry: Nvidia +2.1%, Meta +1.9%, Tesla +2.2%, Microsoft +1.5%, SpaceX +7.6% — 'buy tech, sell everything else'",
+            "Cross-asset: DXY +0.2% to 102.11 (the euro hit a 17-month low on France); oil -1.9% cushions; gold settles -0.1% at $4,156.8"
+          ],
+          "d": "One trade explained Monday's 60%: tech as the inverse bond trade — a record Nasdaq close while the 10-year printed its highest level since 2002, cushioned by an oil slide and a firm dollar.",
+          "news": [
+            {
+              "time": "10/5 10:00am ET",
+              "fact": "ISM services PMI came in at 54.9 for September — roughly in line with expectations and slightly below August; the prices-paid index rose 1.4 points to 74, putting its 12-month average at its highest since March 2023.",
+              "src": "CNBC",
+              "u": "https://www.cnbc.com/2026/10/05/treasury-yields-bonds-fed-rates.html"
+            },
+            {
+              "time": "10/5",
+              "fact": "The 10-year Treasury yield rose about 3 basis points to 5.311% after jumping as much as 7bp to 5.349% — its highest level since April 3, 2002; the 30-year touched 5.703%, a level not seen since late May 2002.",
+              "src": "CNBC",
+              "u": "https://www.cnbc.com/2026/10/05/treasury-yields-bonds-fed-rates.html"
+            },
+            {
+              "time": "10/5 close",
+              "fact": "The Nasdaq closed at a record 27,477.31, up 1.05% (intraday high 27,544.07); the S&P 500 rose 0.66% to 7,773.95 and the Dow added 90.94 points (+0.18%) to 51,267.90.",
+              "src": "CNBC",
+              "u": "https://www.cnbc.com/2026/10/04/stock-market-today-live-updates.html"
+            },
+            {
+              "time": "10/5",
+              "fact": "'Tech is sort of like the inverse bond trade. It's buy tech, sell everything else,' Infrastructure Capital Advisors' Jay Hatfield said — calling the yield move 'a momentum selloff.'",
+              "src": "CNBC",
+              "u": "https://www.cnbc.com/2026/10/04/stock-market-today-live-updates.html"
+            },
+            {
+              "time": "10/5",
+              "fact": "Only 50.58% of Nasdaq Composite issues advanced on the record day; NYSE advancers still led decliners 1.04-to-1 and Nasdaq 1.09-to-1.",
+              "src": "TS2 / Reuters",
+              "u": "https://ts2.tech/en/nasdaq-hits-record-but-only-50-6-of-its-stocks-rise-as-megacaps-lead"
+            },
+            {
+              "time": "10/5",
+              "fact": "The euro fell to a 17-month low — its weakest since May 2025 — as France's deepening fiscal crisis and political uncertainty, plus speculation of an early election in Spain, pressured European assets; the dollar index rose ~0.2%.",
+              "src": "CNBC / Bloomberg",
+              "u": "https://www.cnbc.com/2026/10/05/daily-open-euro-spain-election-france-budget.html"
+            }
+          ]
+        },
+        {
+          "t": "② Oil's Supply Wave: G7 Barrels and Recovering Exports Push Brent to $100.32",
+          "steps": [
+            "Brent settles -1.89% at $100.32; WTI settles at $89.43, down about 1.8% — a second straight supply-driven slide",
+            "The supply wave: the G7's 100M-barrel release (diesel first) adds barrels; Middle East exports topped pre-war levels on 4 of the last 7 days of September (Kpler/Vortexa)",
+            "Aramco cuts November prices for Asia to six-year lows; OPEC+ postpones its 2027 quota review",
+            "But the risk premium stays armed: Houthis claim missile and drone strikes on Aramco sites in Riyadh and Khurais; ING flags continued attacks on vessels",
+            "Products lead again: ICE gasoil +2% to $1,390.25 — Europe's diesel squeeze is still the complex's stress point",
+            "Ukraine will step up strikes on Russian refineries, Zelenskiy says — the supply war runs both ways"
+          ],
+          "d": "For a second session the marginal oil headline was supply, not threat — G7 barrels, recovering exports, Aramco's price cut — and Brent's slide under $100.5 was the disinflation input equities used to wear a 5.31% 10-year.",
+          "news": [
+            {
+              "time": "10/5 close",
+              "fact": "Brent crude futures fell 1.9% to close at $100.32 a barrel; US WTI settled at $89.43 a barrel, down about 1.8%.",
+              "src": "Reuters (CNBC)",
+              "u": "https://www.cnbc.com/2026/10/05/oil-slips-as-middle-east-crude-exports-rise-g7-to-release-stocks.html"
+            },
+            {
+              "time": "10/5",
+              "fact": "Middle East crude exports have risen above pre-war levels on four of the last seven days of September (Kpler and Vortexa data), adding supply back into the market as the G7's 100-million-barrel release rolls out.",
+              "src": "Reuters (CNBC)",
+              "u": "https://www.cnbc.com/2026/10/05/oil-slips-as-middle-east-crude-exports-rise-g7-to-release-stocks.html"
+            },
+            {
+              "time": "10/5",
+              "fact": "Yemen's Houthis said they fired missiles and drones at Saudi Aramco facilities in Riyadh and Khurais in response to Saudi-led strikes; separately, Aramco cut November prices for Asian buyers to six-year lows and OPEC+ delayed its 2027 quota review.",
+              "src": "Reuters (CNBC)",
+              "u": "https://www.cnbc.com/2026/10/05/oil-slips-as-middle-east-crude-exports-rise-g7-to-release-stocks.html"
+            },
+            {
+              "time": "10/5",
+              "fact": "'We still see Brent remaining above $100 as long as tensions remain and attacks on vessels in the region continue,' ING analysts wrote; ICE gasoil futures rose 2% to $1,390.25.",
+              "src": "Reuters (CNBC)",
+              "u": "https://www.cnbc.com/2026/10/05/oil-slips-as-middle-east-crude-exports-rise-g7-to-release-stocks.html"
+            },
+            {
+              "time": "10/5",
+              "fact": "Ukraine plans to step up attacks on Russian refineries, President Zelenskiy said — extending the war's supply risk to the other side of the barrel.",
+              "src": "Reuters (CNBC)",
+              "u": "https://www.cnbc.com/2026/10/05/oil-slips-as-middle-east-crude-exports-rise-g7-to-release-stocks.html"
+            }
+          ]
+        },
+        {
+          "t": "③ Deal Monday: Schneider's $22.6B Takeout of PTC — and Brazil's Election Rip",
+          "steps": [
+            "Schneider Electric agrees to buy PTC in a $22.6B all-cash deal — PTC +33.5% to $192.26, the S&P 500's top performer and its largest one-day gain on record",
+            "C.H. Robinson to buy freight broker RXO for $5.8B in stock and cash — RXO +22.5%; C.H. Robinson -10.8%",
+            "Cerebras +9.1% after OpenAI's Sam Altman calls the chip designer a 'close partner'",
+            "Brazil's election shock: Bolsonaro leads the first round — the real +4%, Petrobras +11.5%, Ambev +8.7%",
+            "The ripple: Nu +13.0%, Bradesco +18.6%, Itaú +15.5% — Monday's widest winners were São Paulo's"
+          ],
+          "d": "Monday's stock-picking came from the deal tape and a São Paulo ballot box — two multi-billion takeovers and Brazil's election repricing sorted the day's biggest winners.",
+          "news": [
+            {
+              "time": "10/5",
+              "fact": "Schneider Electric agreed to acquire software maker PTC in an all-cash deal valuing its equity at about $22.6 billion; PTC closed up 33.5% — the top S&P 500 performer and its largest single-day gain on record.",
+              "src": "Reuters (Kitco)",
+              "u": "https://www.kitco.com/news/off-the-wire/2026-10-05/sp-500-nasdaq-record-high-megacap-tech-stocks-rise"
+            },
+            {
+              "time": "10/5",
+              "fact": "RXO advanced 22.5% after C.H. Robinson Worldwide agreed to buy the freight broker for $5.8 billion in stock and cash; C.H. Robinson fell 10.8%.",
+              "src": "Reuters (Kitco)",
+              "u": "https://www.kitco.com/news/off-the-wire/2026-10-05/sp-500-nasdaq-record-high-megacap-tech-stocks-rise"
+            },
+            {
+              "time": "10/5",
+              "fact": "Cerebras Systems gained 9.1% after OpenAI CEO Sam Altman called the chip designer a 'close partner' with 'deep engagement pushing on the frontiers of speed.'",
+              "src": "Reuters (Kitco)",
+              "u": "https://www.kitco.com/news/off-the-wire/2026-10-05/sp-500-nasdaq-record-high-megacap-tech-stocks-rise"
+            },
+            {
+              "time": "10/5",
+              "fact": "Brazil's real jumped more than 4% as Bolsonaro led the first round of the presidential election; Petrobras gained 11.5% and Ambev 8.7% as Brazil-exposed names surged.",
+              "src": "TheStreet / Reuters",
+              "u": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-05-2026"
+            }
+          ]
+        },
+        {
+          "t": "④ Under the Record: Thin Breadth, a Storage Bounce, and the Day's Laggards",
+          "steps": [
+            "The record was thin: only ~50.6% of Nasdaq names advanced; the S&P logged 3 new 52-week highs against 18 new lows (Nasdaq: 23 vs 157)",
+            "The Dow's +0.18% and real estate's -0.3% show what didn't participate — Materials (+1.3%) and comm services (+1.2%) led instead",
+            "Laggards: Bristol Myers -3.8%, Nokia -3.8%, Corning -2.9%, Intel -2.6% — single-story and rate-pressed names got taxed",
+            "Storage bounced: Western Digital +6.3%, Seagate +4.5% — clawing back part of Friday's ~10% Toshiba shock",
+            "The split inside AI: the SOX was -0.3% early while software & services ran +1.4% — the stack trades name by name"
+          ],
+          "d": "Under the record sat a narrow tape — half the Nasdaq up, more new lows than highs, the Dow barely green — and the day's money was made in deals, Brazil and a storage bounce, not in breadth.",
+          "news": [
+            {
+              "time": "10/5",
+              "fact": "Only 50.58% of Nasdaq issues advanced on the record day, though advancing volume beat declining volume on both major exchanges.",
+              "src": "TS2",
+              "u": "https://ts2.tech/en/nasdaq-hits-record-but-only-50-6-of-its-stocks-rise-as-megacaps-lead"
+            },
+            {
+              "time": "10/5",
+              "fact": "The S&P 500 posted 3 new 52-week highs and 18 new lows; the Nasdaq Composite recorded 23 new highs and 157 new lows.",
+              "src": "Reuters (Kitco)",
+              "u": "https://www.kitco.com/news/off-the-wire/2026-10-05/sp-500-nasdaq-record-high-megacap-tech-stocks-rise"
+            },
+            {
+              "time": "10/5",
+              "fact": "Bristol Myers Squibb, Nokia and Corning were among Monday's biggest large-cap decliners, each down roughly 3-4%.",
+              "src": "24/7 Wall St. / Yahoo",
+              "u": "https://247wallst.com/cards/tech-did-the-heavy-lifting-again-the-nasdaq-s-1-06-gain-ne-gspc-market-bell-01m46tkf2f7w10vn47cy4b9tyt"
+            },
+            {
+              "time": "10/5",
+              "fact": "Ten of 11 S&P sectors finished higher — Materials (+1.3%) and communication services (+1.2%) led, while real estate was the lone decliner.",
+              "src": "TS2",
+              "u": "https://ts2.tech/en/nasdaq-hits-record-but-only-50-6-of-its-stocks-rise-as-megacaps-lead"
+            }
+          ]
+        },
+        {
+          "t": "⑤ The Relief Ledger: What Let Equities Wear a 5.31% 10-Year",
+          "steps": [
+            "Oil's second straight supply-driven slide (Brent -1.9% to $100.32) is the quarter's cleanest disinflation input",
+            "Earnings hope carries: Goldman sees 27% Q3 EPS growth; 'the market still has enough momentum to push through' (Andersen Capital)",
+            "The near-term Fed trade stays dovish: ~80% odds of an October hold; December still largely priced (~70-84%)",
+            "The dollar's bid stayed orderly (DXY +0.2%) and gold barely moved — no panic signature anywhere",
+            "Gates ahead: Fed September minutes Wednesday; CPI Oct 14 — earnings open with Constellation (Tue), PepsiCo (Thu), Delta (Fri)"
+          ],
+          "d": "Four shock absorbers — oil's supply slide, earnings optimism, a priced-out October hike and an orderly dollar — let the record happen despite the bond market.",
+          "news": [
+            {
+              "time": "10/5",
+              "fact": "Traders see an 80% chance the Fed holds rates steady this month, though a December hike remains largely priced in, per CME FedWatch.",
+              "src": "Reuters (Kitco)",
+              "u": "https://www.kitco.com/news/off-the-wire/2026-10-05/sp-500-nasdaq-record-high-megacap-tech-stocks-rise"
+            },
+            {
+              "time": "10/5",
+              "fact": "Goldman Sachs expects S&P 500 earnings growth of 27% year-over-year in Q3, underpinning the buy-the-dip camp; Citi's Beata Manthey: 'we still find ourselves in the resilience camp for now.'",
+              "src": "CNBC",
+              "u": "https://www.cnbc.com/2026/10/04/stock-market-today-live-updates.html"
+            },
+            {
+              "time": "10/5",
+              "fact": "'Many investors expect higher yields to derail the equity rally, but I think the market still has enough momentum to push through further increases in interest rates,' said Peter Andersen of Andersen Capital Management.",
+              "src": "Reuters (Kitco)",
+              "u": "https://www.kitco.com/news/off-the-wire/2026-10-05/sp-500-nasdaq-record-high-megacap-tech-stocks-rise"
+            },
+            {
+              "time": "10/5",
+              "fact": "The week's gates: the Fed's September meeting minutes on Wednesday, CPI on Oct 14 — and earnings from Constellation Brands, PepsiCo and Delta Air Lines.",
+              "src": "Investopedia",
+              "u": "https://investopedia.com/5-things-to-know-before-the-stock-market-opens-on-monday-october-5-2026-12159188"
+            }
+          ]
+        }
+      ]
+    },
+    "mtd": {
+      "h": "October, Three Sessions In: The Record Run Meets the 2002 Ceiling",
+      "d": "S&P 7,651.5 to 7,773.95 (+1.60% MTD): a record run built on dovish repricing and deal tape, tested by a long end at fresh 2002 highs — plus the month's first supply wave for fuel.",
+      "badges": [
+        "S&P MTD +1.60%",
+        "Nasdaq +2.29%",
+        "10Y +2bp",
+        "WTI -1.1%"
+      ],
+      "c1": "Three sessions into October, the month has its shape: a record run that won't wait for the bond market. The S&P is +1.60% MTD at 7,773.95 (within ~0.3% of its August record), the Nasdaq +2.29% with a record close, the Dow +0.71% — powered by the post-payrolls dovish repricing (~20% October hike odds), earnings optimism and a deal wave (PTC, RXO, Cerebras). Resisting it: a long end that printed fresh 2002 highs on both Oct 1 and Oct 5 — the 10Y at 5.31% (+2bp MTD), the 30Y at 5.66% (+3bp). Beneath: Energy (+3.2%) leads sectors, Health (-0.6%) lags; oil is -1.1% MTD as supply news (G7 barrels, recovering exports) met a still-armed risk premium; the dollar is +0.65% with the euro at a 17-month low; and gold, -0.7% MTD, still can't reclaim $4,200.",
+      "c4": "<ul class='play'><li>October's checklist: Fed minutes (Wednesday), CPI (Oct 14), the Oct 28 meeting — with the near-term hike ~priced out, risk sits in any hawkish re-repricing.</li><li>The month's internal signature: growth (Tech, deals) leading while Health and rate-sensitives lag — dispersion, not direction.</li><li>$100 Brent is the month's line: supply policy is winning so far, but the risk premium re-arms on every escalation headline.</li></ul>",
+      "kpi": [
+        [
+          "S&P MTD",
+          "+1.60%",
+          "three days",
+          1
+        ],
+        [
+          "Nasdaq MTD",
+          "+2.29%",
+          "record",
+          1
+        ],
+        [
+          "10Y MTD",
+          "+2bp",
+          "2002 highs",
+          0
+        ],
+        [
+          "WTI MTD",
+          "-1.1%",
+          "supply wave",
+          0
+        ]
+      ],
+      "tbl": [
+        [
+          "S&P",
+          "7,651.54",
+          "7,773.95",
+          "+1.60%"
+        ],
+        [
+          "Dow",
+          "50,906.05",
+          "51,267.90",
+          "+0.71%"
+        ],
+        [
+          "Nasdaq",
+          "26,861.06",
+          "27,477.31",
+          "+2.29%"
+        ],
+        [
+          "10Y",
+          "5.29%",
+          "5.31%",
+          "+2bp"
+        ],
+        [
+          "WTI",
+          "$90.42",
+          "$89.43",
+          "-1.1%"
+        ],
+        [
+          "VIX",
+          "16.34",
+          "15.52",
+          "-5.0%"
+        ]
+      ],
+      "labels": [
+        "9/30",
+        "10/1",
+        "10/2",
+        "10/5"
+      ],
+      "data": [
+        7651.5,
+        7666.5,
+        7722.7,
+        7774.0
+      ],
+      "chains": [
+        {
+          "t": "① Three Sessions In: The Record Run Meets the 2002 Ceiling",
+          "main": 1,
+          "steps": [
+            "Post-payrolls dovish tilt holds: October hike odds ~20%, down from ~70% a week before the month began",
+            "The record run: Nasdaq +2.29% MTD to a record close; S&P +1.60%; Dow +0.71%",
+            "The ceiling: the 10Y printed fresh 2002 highs on Oct 1 and again Monday (5.349% intraday); it ends the window at 5.31%",
+            "The fuel: deal tape (PTC/Schneider, RXO/CHRW, Cerebras) plus earnings hope (Goldman: 27% Q3 EPS growth)",
+            "The month's next referees: Fed minutes (Wednesday), then CPI on Oct 14"
+          ],
+          "d": "October's headline trade is the tug-of-war: a record run on dovish odds and deal tape, against a long end that keeps printing 2002 highs.",
+          "news": [
+            {
+              "time": "10/5",
+              "fact": "October hike odds sit near 20%, with traders seeing an 80% chance of a Fed hold this month; a December increase remains largely priced.",
+              "src": "Reuters (Kitco)",
+              "u": "https://www.kitco.com/news/off-the-wire/2026-10-05/sp-500-nasdaq-record-high-megacap-tech-stocks-rise"
+            },
+            {
+              "time": "10/5",
+              "fact": "The Nasdaq reached an all-time high as megacap and growth stocks advanced, with Nvidia up ~1-2% and Meta, Microsoft and Tesla each up more than 1%.",
+              "src": "Reuters (Kitco)",
+              "u": "https://www.kitco.com/news/off-the-wire/2026-10-05/sp-500-nasdaq-record-high-megacap-tech-stocks-rise"
+            },
+            {
+              "time": "10/5",
+              "fact": "Deal Monday: Schneider agreed to buy PTC for $22.6 billion and C.H. Robinson agreed to buy RXO for $5.8 billion — the month's first big takeovers.",
+              "src": "Reuters (Kitco)",
+              "u": "https://www.kitco.com/news/off-the-wire/2026-10-05/sp-500-nasdaq-record-high-megacap-tech-stocks-rise"
+            }
+          ]
+        },
+        {
+          "t": "② The Long End's Message: +2bp to 5.31%, and It Won't Blink",
+          "steps": [
+            "The 10Y ends the window at 5.31%, +2bp MTD; the 30Y at 5.66%, +3bp",
+            "Both ends printed fresh multi-decade highs this month — including Monday's 5.349%/5.703% spikes",
+            "The steepening: 20Y +4bp and 30Y +4bp on Monday against a flat 2Y (4.82%) — term premium, not policy",
+            "France's debt burden and pre-election politics joined the global bond story",
+            "The dollar takes the yield bid: DXY +0.65% MTD to 102.11"
+          ],
+          "d": "The month's most important number isn't a price — it's the 10Y's 5.31%: every equity gain this month is a bet against it.",
+          "news": [
+            {
+              "time": "10/5",
+              "fact": "The 10-year yield touched 5.349% — its highest since April 2002 — and closed at 5.311%; the 30-year reached 5.703%, a level last seen in May 2002.",
+              "src": "CNBC",
+              "u": "https://www.cnbc.com/2026/10/05/treasury-yields-bonds-fed-rates.html"
+            },
+            {
+              "time": "10/5",
+              "fact": "'Global bond markets were in focus on worries over France's debt burden and political uncertainty ahead of next year's presidential election.'",
+              "src": "Reuters (Kitco)",
+              "u": "https://www.kitco.com/news/off-the-wire/2026-10-05/sp-500-nasdaq-record-high-megacap-tech-stocks-rise"
+            },
+            {
+              "time": "10/5",
+              "fact": "The euro fell to a 17-month low, its weakest since May 2025, as France's fiscal crisis and political uncertainty — and speculation of an early election in Spain — pressured European assets.",
+              "src": "CNBC / Bloomberg",
+              "u": "https://www.cnbc.com/2026/10/05/daily-open-euro-spain-election-france-budget.html"
+            }
+          ]
+        },
+        {
+          "t": "③ October's Two-Sided Trade: Dollars Firm, Oil Soft, Gold Stuck",
+          "steps": [
+            "DXY +0.65% MTD at 102.11 — the yield gap still bids the dollar",
+            "WTI -1.1% MTD ($89.43) as the G7 release and recovering exports met the risk premium",
+            "Brent +2.4% MTD on the December basis ($100.32) — still above $100, off its Oct 1 peak",
+            "Gold -0.7% MTD ($4,156.8) — it can't reclaim $4,200 while real yields sit near multi-decade highs",
+            "Bitcoin +2.7% MTD ($85.8k) — the month's risk appetite shows up here, not in gold"
+          ],
+          "d": "October's cross-asset tell: a firm dollar and soft crude — and gold, the cleanest dovish beneficiary, still can't hold a bid.",
+          "news": [
+            {
+              "time": "10/5",
+              "fact": "Gold prices advanced on rising US debt worries and fading near-term hike expectations, but a firmer dollar capped gains; UBS's Giovanni Staunovo sees 'rising government debt levels as a structural tailwind' for bullion.",
+              "src": "Reuters (Kitco)",
+              "u": "https://www.kitco.com/news/off-the-wire/2026-10-05/gold-edges-october-rate-hike-bets-ease-stronger-dollar-cap-gains"
+            },
+            {
+              "time": "10/5",
+              "fact": "US gold futures settled 0.1% lower at $4,156.80 an ounce; spot gold edged 0.1% lower to $4,139.89.",
+              "src": "Reuters",
+              "u": "https://www.reuters.com/world/india/gold-gains-october-fed-rate-hike-prospects-fade-2026-10-05/"
+            },
+            {
+              "time": "10/5",
+              "fact": "Oil's slide extended as supply worries eased: Brent closed at $100.32 and WTI settled at $89.43.",
+              "src": "Reuters (CNBC)",
+              "u": "https://www.cnbc.com/2026/10/05/oil-slips-as-middle-east-crude-exports-rise-g7-to-release-stocks.html"
+            }
+          ]
+        }
+      ]
+    },
+    "qtd": {
+      "h": "Q4's First Three Sessions: +1.60% and a Record — the Data Wall Is Next",
+      "d": "9/30 7,651.5 to 10/5 7,773.95 (+1.60% QTD): Q4 opens with a Nasdaq record and a 5.31% 10Y — deals and AI carry while the rate-sensitive lag, and the data wall waits.",
+      "badges": [
+        "S&P QTD +1.60%",
+        "Nasdaq +2.29%",
+        "10Y +2bp",
+        "Gold -0.7%"
+      ],
+      "c1": "Q4 is three sessions old and has both of its organizing themes: a record run (the Nasdaq's record close; the S&P +1.60% QTD at 7,773.95 — within ~0.3% of its August record) and a long end that won't join (the 10Y at 5.31%, fresh 2002 highs on both Oct 1 and Oct 5; the 30Y at 5.66%). The quarter opened on the post-payrolls dovish tilt (~20% October hike odds) and added a deal wave — Schneider/PTC ($22.6B), C.H. Robinson/RXO ($5.8B) — plus Brazil's election rip. Dispersion is the character so far: storage crashed ~10% Friday on Toshiba's capacity news, then bounced (WDC +6.3%, STX +4.5% Monday); real estate was Monday's only red sector; Energy (+3.2%) leads QTD, Health (-0.6%) lags. The quarter's first gates: Fed minutes (Wednesday), CPI (Oct 14), then the earnings wave (Constellation, PepsiCo, Delta).",
+      "c4": "<ul class='play'><li>Q4's opening trade: 'no October hike' is nearly free to hold — the money is in December's repricing and earnings proof.</li><li>The dispersion signature: deals and AI get paid, rate-sensitives and guidance surprises get taxed — prove it or pay.</li><li>Duration: a 5.2%-5.35% 10Y band caps multiples while it lasts; the quarter's bull case starts with a bond market that stops making news.</li></ul>",
+      "kpi": [
+        [
+          "S&P QTD",
+          "+1.60%",
+          "open",
+          1
+        ],
+        [
+          "Nasdaq",
+          "+2.29%",
+          "record",
+          1
+        ],
+        [
+          "10Y QTD",
+          "+2bp",
+          "the ceiling",
+          0
+        ],
+        [
+          "WTI",
+          "-1.1%",
+          "supply wave",
+          0
+        ]
+      ],
+      "tbl": [
+        [
+          "S&P",
+          "7,651.54",
+          "7,773.95",
+          "+1.60%"
+        ],
+        [
+          "Dow",
+          "50,906.05",
+          "51,267.90",
+          "+0.71%"
+        ],
+        [
+          "Nasdaq",
+          "26,861.06",
+          "27,477.31",
+          "+2.29%"
+        ],
+        [
+          "10Y",
+          "5.29%",
+          "5.31%",
+          "+2bp"
+        ],
+        [
+          "Gold",
+          "$4,186.7",
+          "$4,156.8",
+          "-0.7%"
+        ],
+        [
+          "BTC",
+          "$83.6k",
+          "$85.8k",
+          "+2.7%"
+        ]
+      ],
+      "labels": [
+        "9/30",
+        "10/1",
+        "10/2",
+        "10/5"
+      ],
+      "data": [
+        7651.5,
+        7666.5,
+        7722.7,
+        7774.0
+      ],
+      "chains": [
+        {
+          "t": "① The Q3 Handoff, Tested on Day Three",
+          "main": 1,
+          "steps": [
+            "Q3 closed: S&P +2.03%, Nasdaq +2.47%, Dow -2.70% — with Treasuries' worst quarter since 1994",
+            "Q4 days one through three: +1.60%, a Nasdaq record close, and a 5.31% 10Y",
+            "The odds move held: October hike ~20% (from ~64-70% before the month)",
+            "December (~70-84%) and the Oct 28 meeting remain live",
+            "Now earnings season carries the load (Constellation, PepsiCo, Delta first)"
+          ],
+          "d": "Q3 ended net-positive but rate-taxed; Q4's first three sessions changed the odds and the record book, not the arithmetic — earnings still have to outrun the long bond.",
+          "news": [
+            {
+              "time": "9/30",
+              "fact": "Q3 closed with the S&P up 2.03% and the Nasdaq up 2.47% — a second straight quarterly gain — while the Dow fell 2.70%.",
+              "src": "Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09302026-12148860"
+            },
+            {
+              "time": "10/5",
+              "fact": "The Nasdaq hit a new all-time high as AI-tied stocks rose — the quarter's first record close.",
+              "src": "Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-10052026-12159195"
+            }
+          ]
+        },
+        {
+          "t": "② The Opening Split: Deals and Bounces vs the Rate-Taxed",
+          "steps": [
+            "Deal Monday: PTC +33.5% (Schneider, $22.6B), RXO +22.5% (C.H. Robinson, $5.8B), Cerebras +9.1%",
+            "Storage's round trip: -10% Friday on Toshiba's capacity news, +6.3%/+4.5% Monday",
+            "Sector QTD: Energy +3.2% and Tech +2.6% lead; Health -0.6% and real estate lag",
+            "Real estate was Monday's only red sector — the rate-sensitive tell",
+            "Q4's dispersion trade is live: deals paid, rate-pressed lagged"
+          ],
+          "d": "Q4's first three sessions show the quarter's template: deal and AI news gets paid; anything rate-sensitive pays the toll.",
+          "news": [
+            {
+              "time": "10/5",
+              "fact": "Schneider Electric's $22.6B all-cash deal for PTC and C.H. Robinson's $5.8B stock-and-cash deal for RXO led the quarter's first M&A wave.",
+              "src": "Reuters (Kitco)",
+              "u": "https://www.kitco.com/news/off-the-wire/2026-10-05/sp-500-nasdaq-record-high-megacap-tech-stocks-rise"
+            },
+            {
+              "time": "10/2",
+              "fact": "Toshiba will double HDD production capacity by fiscal 2027 (Nikkei Asia); Seagate and Western Digital each fell more than 10% Friday.",
+              "src": "Investopedia",
+              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-10022026-12153808"
+            }
+          ]
+        },
+        {
+          "t": "③ Fuel's Policy Answer, Day Three",
+          "steps": [
+            "Brent +2.4% QTD on the December basis — back to $100.32 after peaking ~$102.3 on Oct 1",
+            "The G7's 100M-barrel release is front-loading diesel; Middle East exports are recovering; Aramco cut Asia prices to six-year lows",
+            "WTI -1.1% QTD at $89.43 — the US benchmark never reclaimed $92",
+            "The counter-bid: Houthi strikes on Aramco sites, vessel attacks, Ukraine's refinery campaign",
+            "$100 Brent is Q4's line in the sand — above it, the inflation trade re-arms"
+          ],
+          "d": "Oil entered Q4 as the inflation stress point and got policy's answer within three sessions — but the risk premium stays armed above $100 Brent.",
+          "news": [
+            {
+              "time": "10/1",
+              "fact": "The Trump administration told Germany and France to draw down emergency diesel inventories or face a potential US export ban.",
+              "src": "Reuters",
+              "u": "https://www.reuters.com/business/energy/us-tells-france-germany-release-diesel-stocks-or-face-us-export-ban-sources-say-2026-10-01/"
+            },
+            {
+              "time": "10/5",
+              "fact": "The G7's 100M-barrel release and recovering exports pushed Brent to $100.32, down 1.9% on the day; Aramco cut November Asia prices to six-year lows.",
+              "src": "Reuters (CNBC)",
+              "u": "https://www.cnbc.com/2026/10/05/oil-slips-as-middle-east-crude-exports-rise-g7-to-release-stocks.html"
+            }
+          ]
+        }
+      ]
+    },
+    "ytd": {
+      "h": "The Bull Holds Into Q4: S&P +13.56% as the 10Y's +115bp Sets the Terms",
+      "d": "S&P +13.56%, Nasdaq +18.22% (record), Dow +6.67% with three sessions of Q4 logged — AI and earnings carry; the 10Y's +115bp and an eighth month of war still tax the rest.",
+      "badges": [
+        "S&P +13.56%",
+        "Nasdaq +18.22%",
+        "Dow +6.67%",
+        "10Y 5.31%"
+      ],
+      "c1": "Three sessions into Q4 and the year's base case is intact: the bull runs on AI capex and earnings proof, fighting the same two taxes — a 10Y up 115bp to 5.31% (fresh 2002 highs Monday) and oil up ~56% as the war grinds through its eighth month. The scoreboard: S&P +13.56%, Nasdaq +18.22% (record close), Dow +6.67%; underneath, energy (+41.9%) leads and consumer discretionary (-7.5%) lags. Monday added the quarter's first deal wave (Schneider/PTC, C.H. Robinson/RXO) and Brazil's election repricing — and kept the rate math honest: December still prices ~70-84% for a hike, with the Fed's minutes due Wednesday.",
+      "c4": "<ul class='play'><li>The year's lesson holds into Q4: buy where earnings compound (AI infrastructure), rent where rates rule (long duration, the consumer).</li><li>Rates: the 10Y's +115bp is 2026's biggest tax — a confirmed Fed pause is the largest single bullish catalyst left this year.</li><li>Wildcards into year-end: the war's fuel premium (month eight) and December's Fed — both live.</li></ul>",
+      "kpi": [
+        [
+          "S&P YTD",
+          "+13.56%",
+          "bull",
+          1
+        ],
+        [
+          "Nasdaq",
+          "+18.22%",
+          "leading",
+          1
+        ],
+        [
+          "Dow",
+          "+6.67%",
+          "lagging",
+          1
+        ],
+        [
+          "10Y",
+          "+115bp",
+          "2026's tax",
+          0
+        ]
+      ],
+      "tbl": [
+        [
+          "S&P",
+          "6,845.5",
+          "7,773.95",
+          "+13.56%"
+        ],
+        [
+          "Dow",
+          "48,063",
+          "51,267.90",
+          "+6.67%"
+        ],
+        [
+          "Nasdaq",
+          "23,242",
+          "27,477.31",
+          "+18.22%"
+        ],
+        [
+          "10Y",
+          "4.16%",
+          "5.31%",
+          "+115bp"
+        ],
+        [
+          "30Y",
+          "4.84%",
+          "5.66%",
+          "+82bp"
+        ],
+        [
+          "Gold",
+          "$4,341",
+          "$4,156.8",
+          "-4.2%"
+        ]
+      ],
+      "labels": [
+        "12/31",
+        "3/31",
+        "6/30",
+        "8/13",
+        "9/30",
+        "10/1",
+        "10/2",
+        "10/5"
+      ],
+      "data": [
+        6845,
+        6528,
+        7499,
+        7799,
+        7651.5,
+        7666.5,
+        7722.7,
+        7774.0
+      ],
+      "chains": [
+        {
+          "t": "① The Bull Market Continues",
+          "main": 1,
+          "steps": [
+            "S&P +13.56% YTD; Nasdaq +18.22% (record close); Dow +6.67%",
+            "AI capex remains the engine (Nvidia +28% YTD at $238.90; Cerebras/Altman; Broadcom's $60B Anthropic financing)",
+            "Q4 opened +1.60% — the S&P sits ~0.3% from its August record (7,799)",
+            "Every yield shock this year has been bought — Monday's 5.35% spike included"
+          ],
+          "d": "The year's base case hasn't broken: earnings-proof AI compounds, dips get bought, and the S&P sits +13.56% with a quarter to go.",
+          "news": [
+            {
+              "time": "10/5",
+              "fact": "The Nasdaq closed at a record high as megacap and growth stocks advanced, extending the year's AI-led advance.",
+              "src": "Reuters (Kitco)",
+              "u": "https://www.kitco.com/news/off-the-wire/2026-10-05/sp-500-nasdaq-record-high-megacap-tech-stocks-rise"
+            },
+            {
+              "time": "10/5",
+              "fact": "Schneider's $22.6B PTC takeout and C.H. Robinson's $5.8B RXO deal opened Q4's M&A account; PTC's +33.5% was its largest one-day gain on record.",
+              "src": "Reuters (Kitco)",
+              "u": "https://www.kitco.com/news/off-the-wire/2026-10-05/sp-500-nasdaq-record-high-megacap-tech-stocks-rise"
+            }
+          ]
+        },
+        {
+          "t": "② The Second Inflation Wave",
+          "steps": [
+            "10Y +115bp YTD to 5.31%; the 30Y +82bp to 5.66%",
+            "A war-driven oil shock (WTI ~+56%) re-fed inflation through 2026",
+            "The Fed hiked in September; December still ~70-84% priced",
+            "Gold -4.2% YTD despite the panic — real rates dominated"
+          ],
+          "d": "2026's inflation wave came from the barrel, not the printing press: oil and the war re-anchored rate expectations higher all year.",
+          "news": [
+            {
+              "time": "10/5",
+              "fact": "The 10-year yield closed at 5.311% after touching 5.349% — near levels last seen in 2002; the 30-year at 5.665%.",
+              "src": "CNBC",
+              "u": "https://www.cnbc.com/2026/10/05/treasury-yields-bonds-fed-rates.html"
+            },
+            {
+              "time": "10/5",
+              "fact": "US gold futures settled 0.1% lower at $4,156.80 — the metal remains ~4% lower on the year as real yields press.",
+              "src": "Reuters",
+              "u": "https://www.reuters.com/world/india/gold-gains-october-fed-rate-hike-prospects-fade-2026-10-05/"
+            }
+          ]
+        },
+        {
+          "t": "③ The AI Platform",
+          "steps": [
+            "Nvidia +28% YTD ($238.90), near its record; Monday +2.1%",
+            "Broadcom's $60B Anthropic financing and Amazon's $8B chip recycling deepen the stack",
+            "Cerebras +9.1% on Altman's 'close partner' remark — the private layer prices in too",
+            "Deals: Schneider pays $22.6B for PTC — industrial software gets bought into the stack"
+          ],
+          "d": "AI infrastructure remains 2026's compounding machine — chips, financing and now industrial software — and the market pays by the billion.",
+          "news": [
+            {
+              "time": "10/5",
+              "fact": "Cerebras Systems rose 9.1% after OpenAI CEO Sam Altman described the chip designer as a 'close partner.'",
+              "src": "Reuters (Kitco)",
+              "u": "https://www.kitco.com/news/off-the-wire/2026-10-05/sp-500-nasdaq-record-high-megacap-tech-stocks-rise"
+            },
+            {
+              "time": "10/5",
+              "fact": "Schneider Electric's $22.6 billion all-cash deal for PTC extends the year's AI-adjacent consolidation.",
+              "src": "Reuters (Kitco)",
+              "u": "https://www.kitco.com/news/off-the-wire/2026-10-05/sp-500-nasdaq-record-high-megacap-tech-stocks-rise"
+            }
+          ]
+        },
+        {
+          "t": "④ Geopolitics as the Norm",
+          "steps": [
+            "The war grinds through an eighth month; Houthis fired at Aramco sites in Riyadh and Khurais Monday",
+            "The G7's 100M-barrel release is the first coordinated supply answer of the conflict",
+            "Vessel attacks keep the premium armed; Brent holds $100",
+            "WTI ~+56% YTD is the year's hidden tax"
+          ],
+          "d": "2026's hidden tax is geography: eight months of war that re-price oil, bonds and the dollar every time they escalate — now met with supply policy of its own.",
+          "news": [
+            {
+              "time": "10/5",
+              "fact": "Houthis claimed missile and drone strikes on Saudi Aramco facilities; Middle East exports are still recovering, above pre-war levels on some days.",
+              "src": "Reuters (CNBC)",
+              "u": "https://www.cnbc.com/2026/10/05/oil-slips-as-middle-east-crude-exports-rise-g7-to-release-stocks.html"
+            },
+            {
+              "time": "10/2",
+              "fact": "The G7 agreed to release 100 million barrels of fuel over four months to address surging diesel prices, coordinated through the IEA.",
+              "src": "CNBC",
+              "u": "https://www.cnbc.com/2026/10/02/diesel-oil-trump-europe-export-ban.html"
+            }
+          ]
+        },
+        {
+          "t": "⑤ Monetary Regime Change",
+          "steps": [
+            "Rates: from cut-hopes in January to hike-priced in October",
+            "September delivered a hike; October's odds collapsed to ~20%",
+            "The dollar +3.9% YTD at 102.11 as the US out-yields peers",
+            "December (~70-84% for a hike) is the year's final macro gate"
+          ],
+          "d": "2026 flipped the monetary script — the year started pricing cuts, now prices hikes past a September delivery — and the dollar and gold both carry the marks.",
+          "news": [
+            {
+              "time": "10/5",
+              "fact": "Traders priced a 22% chance of an October hike — down from about 70% the prior week — and an 84% chance of a December increase.",
+              "src": "Reuters",
+              "u": "https://www.reuters.com/world/india/gold-gains-october-fed-rate-hike-prospects-fade-2026-10-05/"
+            },
+            {
+              "time": "10/5",
+              "fact": "The Fed's September meeting minutes are due Wednesday — the week's key read on the hike path.",
+              "src": "Investopedia",
+              "u": "https://investopedia.com/5-things-to-know-before-the-stock-market-opens-on-monday-october-5-2026-12159188"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "HEAT": {
+    "today": [
+      {
+        "sec": "US Indexes",
+        "items": [
+          [
+            "S&P 500",
+            "7,774",
+            "+0.66"
+          ],
+          [
+            "Dow",
+            "51,268",
+            "+0.18"
+          ],
+          [
+            "Nasdaq",
+            "27,477",
+            "+1.05"
+          ],
+          [
+            "Russell 2K",
+            "2,847",
+            "+0.50"
+          ],
+          [
+            "VIX",
+            "15.52",
+            "+1.4"
+          ]
+        ]
+      },
+      {
+        "sec": "S&P Sectors (10 of 11 green)",
+        "items": [
+          [
+            "Materials",
+            "best",
+            "+1.3"
+          ],
+          [
+            "Comm",
+            "—",
+            "+1.2"
+          ],
+          [
+            "Energy",
+            "—",
+            "+1.0"
+          ],
+          [
+            "Fins",
+            "—",
+            "+0.7"
+          ],
+          [
+            "Health",
+            "—",
+            "+0.7"
+          ],
+          [
+            "Tech",
+            "—",
+            "+0.6"
+          ],
+          [
+            "ConsDisc",
+            "—",
+            "+0.3"
+          ],
+          [
+            "RealEst",
+            "worst",
+            "-0.3"
+          ]
+        ]
+      },
+      {
+        "sec": "Bonds & Rates",
+        "items": [
+          [
+            "10Y",
+            "5.31%",
+            "+3bp"
+          ],
+          [
+            "2Y",
+            "4.82%",
+            "—"
+          ],
+          [
+            "30Y",
+            "5.66%",
+            "+3bp"
+          ],
+          [
+            "CME Oct hike",
+            "~20%",
+            "eased"
+          ]
+        ]
+      },
+      {
+        "sec": "Commodities / Global / Crypto",
+        "items": [
+          [
+            "Brent",
+            "$100.32",
+            "-1.9"
+          ],
+          [
+            "WTI",
+            "$89.43",
+            "-1.8"
+          ],
+          [
+            "Gold fut",
+            "$4,156.8",
+            "-0.1"
+          ],
+          [
+            "DXY",
+            "102.11",
+            "+0.2"
+          ],
+          [
+            "BTC",
+            "$85.8k",
+            "-0.8"
+          ],
+          [
+            "Stoxx 600",
+            "634",
+            "+0.4"
+          ]
+        ]
+      }
+    ],
+    "mtd": [
+      {
+        "sec": "Indexes MTD",
+        "items": [
+          [
+            "S&P",
+            "7,774",
+            "+1.60"
+          ],
+          [
+            "Dow",
+            "51,268",
+            "+0.71"
+          ],
+          [
+            "Nasdaq",
+            "27,477",
+            "+2.29"
+          ],
+          [
+            "VIX",
+            "15.52",
+            "-5.0"
+          ]
+        ]
+      },
+      {
+        "sec": "Sectors MTD",
+        "items": [
+          [
+            "Energy",
+            "best",
+            "+3.2"
+          ],
+          [
+            "Tech",
+            "—",
+            "+2.6"
+          ],
+          [
+            "Industrials",
+            "—",
+            "+1.9"
+          ],
+          [
+            "ConsDisc",
+            "—",
+            "+1.5"
+          ],
+          [
+            "Health",
+            "worst",
+            "-0.6"
+          ]
+        ]
+      },
+      {
+        "sec": "Rates MTD",
+        "items": [
+          [
+            "10Y",
+            "5.31%",
+            "+2bp"
+          ],
+          [
+            "30Y",
+            "5.66%",
+            "+3bp"
+          ]
+        ]
+      },
+      {
+        "sec": "Commodities MTD",
+        "items": [
+          [
+            "WTI",
+            "$89.43",
+            "-1.1"
+          ],
+          [
+            "Gold",
+            "$4,156.8",
+            "-0.7"
+          ],
+          [
+            "BTC",
+            "$85.8k",
+            "+2.7"
+          ]
+        ]
+      }
+    ],
+    "qtd": [
+      {
+        "sec": "Indexes QTD",
+        "items": [
+          [
+            "S&P",
+            "+1.60",
+            "+1.60"
+          ],
+          [
+            "Nasdaq",
+            "+2.29",
+            "+2.29"
+          ],
+          [
+            "Dow",
+            "+0.71",
+            "+0.71"
+          ],
+          [
+            "VIX",
+            "—",
+            "-5.0"
+          ]
+        ]
+      },
+      {
+        "sec": "Sectors QTD",
+        "items": [
+          [
+            "Energy",
+            "best",
+            "+3.2"
+          ],
+          [
+            "Tech",
+            "—",
+            "+2.6"
+          ],
+          [
+            "Industrials",
+            "—",
+            "+1.9"
+          ],
+          [
+            "ConsDisc",
+            "—",
+            "+1.5"
+          ],
+          [
+            "Health",
+            "worst",
+            "-0.6"
+          ]
+        ]
+      },
+      {
+        "sec": "Rates QTD",
+        "items": [
+          [
+            "10Y",
+            "+2bp",
+            "+2bp"
+          ],
+          [
+            "30Y",
+            "+3bp",
+            "+3bp"
+          ]
+        ]
+      },
+      {
+        "sec": "Commodities QTD",
+        "items": [
+          [
+            "Gold",
+            "$4,156.8",
+            "-0.7"
+          ],
+          [
+            "BTC",
+            "$85.8k",
+            "+2.7"
+          ],
+          [
+            "WTI",
+            "$89.43",
+            "-1.1"
+          ]
+        ]
+      }
+    ],
+    "ytd": [
+      {
+        "sec": "Indexes YTD",
+        "items": [
+          [
+            "S&P",
+            "+13.56",
+            "+13.56"
+          ],
+          [
+            "Nasdaq",
+            "+18.22",
+            "+18.22"
+          ],
+          [
+            "Dow",
+            "+6.67",
+            "+6.67"
+          ],
+          [
+            "VIX",
+            "—",
+            "+3.8"
+          ]
+        ]
+      },
+      {
+        "sec": "Sectors YTD",
+        "items": [
+          [
+            "Energy",
+            "—",
+            "+41.9"
+          ],
+          [
+            "Tech",
+            "—",
+            "+39.6"
+          ],
+          [
+            "Health",
+            "—",
+            "+8.1"
+          ],
+          [
+            "Utilities",
+            "—",
+            "-6.4"
+          ],
+          [
+            "ConsDisc",
+            "worst",
+            "-7.5"
+          ]
+        ]
+      },
+      {
+        "sec": "Rates YTD",
+        "items": [
+          [
+            "10Y",
+            "+115bp",
+            "+115bp"
+          ],
+          [
+            "30Y",
+            "+82bp",
+            "+82bp"
+          ]
+        ]
+      },
+      {
+        "sec": "Commodities YTD",
+        "items": [
+          [
+            "WTI",
+            "$89.43",
+            "+55.7"
+          ],
+          [
+            "Gold",
+            "$4,156.8",
+            "-4.2"
+          ],
+          [
+            "BTC",
+            "$85.8k",
+            "-1.9"
+          ],
+          [
+            "DXY",
+            "102.11",
+            "+3.9"
+          ]
+        ]
+      }
+    ]
+  },
+  "foot": "Closing baseline (auto 2026-10-05): SPX 7773.95 (+1.60% MTD / +1.60% QTD / +13.56% YTD) · DJI 51267.90 (+0.71% MTD) · IXIC 27477.31 (+18.22% YTD) · 10Y 5.31% · WTI 89.43 · Gold 4156.80 · BTC 85809.64. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.16% · 26-06-30 S&P 7499.36/Dow 52319/Nasdaq 26213/10Y 4.42% · 26-08-31 S&P 7686.14/Dow 53185.9/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/WTI $90.42/Brent ~$103.5 (Nov; Dec front ~$98.0)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
+  "label": "2026-10-05 Monday close"
+}
