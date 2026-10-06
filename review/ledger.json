@@ -367,9 +367,14 @@
               "rule": "写『never/从未/尚未』类窗口级断言前，先把窗口内全部收盘（必要时含盘中极值）逐项列出核对；与序列不符即改写；重复出现的历史 minor（未 resolved）由 fixer 一并修复并沉淀进 LESSONS。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true
     }
   ]
 }

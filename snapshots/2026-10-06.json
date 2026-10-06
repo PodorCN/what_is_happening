@@ -100,11 +100,11 @@
           "main": 1,
           "steps": [
             "Overnight: global bonds rally — Bunds -5bp, OATs -9bp, Italy -11bp to 4.52% — taking the edge off Monday's 24-year-high yield spike",
-            "Morning: Brent slides below $98 (a session low around $97.4) as Gulf exports recover — Kpler: Middle East flows ex-Iran above pre-war levels — and Saudi's East-West pipeline returns to 5.8M bpd",
+            "Morning: Brent slides below $98 (a session low just above $97) as Gulf supply recovers — the day's first pressure valve",
             "US yields follow: the 10Y pulls back ~4bp to 5.27% (30Y -2bp to 5.64%); the dollar slips to 101.86 (-0.3%); VIX eases to 15.0 (-3.3%)",
             "Risk appetite returns to the compounding names: Nvidia sets a third straight intraday record ($6T cap in sight), AMD +2.8% on Citi's Street-high $800 target, Marvell +5.8% on raised guidance",
-            "Records follow: S&P closes above 7,800 for the first time (7,818.93, +0.58%); Nasdaq another record (27,599.79, +0.45%); Dow +0.49% to 51,521.28 — 10 of 11 sectors green",
-            "The day's emblem: Constellation Energy +12% on a 20-year Google nuclear-power deal; utilities (+3.0%) lead the sector table"
+            "Records follow: S&P closes above 7,800 for the first time (7,818.93, +0.58%); Nasdaq another record (27,599.79, +0.45%); Dow +0.49% to 51,521.28",
+            "The day's emblem: Constellation Energy +12% on a 20-year Google nuclear-power deal"
           ],
           "d": "One story explained Tuesday's 60%: the bond market's first real pause of October opened the pressure valves — oil dipped, yields eased, and the money that had been hiding went back to work in AI and into records.",
           "news": [
@@ -156,11 +156,11 @@
           "t": "② The Split Tape: Power and AI Infrastructure Get Paid — Memory Gets Sold",
           "steps": [
             "The bottleneck trades got paid: Ciena +13.9%, Astera Labs +7.6%, Nebius +7.4%, CoreWeave +5.0% — enthusiasm returned to AI-buildout names",
-            "Power was the day's theme: Constellation +12% on the Google deal, utilities +3.0% led the sector table; Alphabet +0.4%",
-            "Semis split from storage: AMD +2.8% (Citi's Street-high $800 target), Marvell +5.8% (raised long-term targets toward ~$20B next year), the SOX +0.3% — while the HDD corner broke",
+            "The Google deal's fine print: 890MW of new nuclear plus a 2,700MW supply agreement — more than $4.3B of new Constellation investment; Alphabet +0.4%",
+            "Semis vs storage: the SOX +0.3% while the HDD corner broke — the split ran through the whole stack",
             "Memory's wipeout: Seagate -9.2%, Western Digital -6.9%, SK Hynix -6.4%, the memory ETF (DRAM) -3.5%, SanDisk -2.6%",
             "The trigger: Bloomberg reports Seagate and Toshiba are bidding for TDK's magnetic-heads unit — colliding with Friday's Toshiba capacity-doubling shock; Wedbush doubts the deal could clear antitrust",
-            "The edges: Moderna -7.8% and Novavax -9.9% gave back part of their runs; Option Care Health +33% on its $5.8B takeout; Health Care the only red sector (-0.2%)"
+            "The edges: Moderna -7.8% and Novavax -9.9% gave back part of their runs; Option Care Health +33% on its $5.8B takeout"
           ],
           "d": "Under the records sat a clean split: the AI buildout's bottlenecks — power, optics, custom silicon — got paid by the billion, while its commodities got sold on a supply scare.",
           "news": [
@@ -199,11 +199,11 @@
         {
           "t": "③ Oil's Round Trip: Below $98 in the Morning, $100.58 at the Close",
           "steps": [
-            "Morning: Brent slides below $98 — a session low around $97.4 — as Gulf exports recover and Saudi Arabia's East-West pipeline returns to 5.8M bpd (about 83% of capacity, the energy minister said Tuesday morning)",
-            "The supply wave keeps rolling: Kpler data shows Middle East crude exports ex-Iran above pre-war levels; the G7's 100M-barrel release is still flowing diesel-first",
+            "The supply specifics: Saudi's East-West pipeline is back at 5.8M bpd (about 83% of capacity, the energy minister said), and Middle East flows ex-Iran topped pre-war levels on 4 of the last 7 days of September (Kpler/Vortexa)",
+            "The supply wave keeps rolling: the G7's 100M-barrel release is still flowing diesel-first",
             "A domestic patch: Trump's executive order lets truckers and farmers use cheaper red-dyed diesel more broadly to bring down record-high fuel costs",
             "The premium stays armed: traders keep watching Houthi attacks on Saudi targets and Hormuz tanker flows; PVM's John Evans: more crude getting through has 'dampened price fervour'",
-            "The close: Brent settles +0.26% at $100.58 (December basis); WTI +0.01% at $89.44 — both 'comfortably lower' in the morning before grinding back"
+            "The close: Brent settles +0.26% at $100.58 (December basis); WTI +0.01% at $89.44"
           ],
           "d": "Oil's round trip — under $98 to a $100.58 settle — was the day's second relief valve and its reminder: supply news can cool the barrel, but the war premium re-arms it by the close.",
           "news": [
@@ -221,9 +221,15 @@
             },
             {
               "time": "10/6",
-              "fact": "Oil slipped as Middle East exports and the G7's stockpile release eased supply concerns: Gulf oil flows excluding Iran surged to over 81% of pre-war levels in September (Kpler).",
+              "fact": "Oil slipped as Middle East exports and the G7's stockpile release eased supply concerns.",
               "src": "Reuters (Lufkin Daily News)",
               "u": "https://lufkindailynews.com/news_reuters/business/oil-slips-as-mideast-exports-g7-stockpile-ease-supply-concerns/article_3be5f692-bab4-503c-ab92-e4b36067ee5e.html"
+            },
+            {
+              "time": "10/6",
+              "fact": "Gulf oil flows excluding Iran averaged over 81% of pre-war levels in September, led by a recovery in Saudi exports, while Iranian exports fell to zero under a US blockade.",
+              "src": "Reuters (gCaptain)",
+              "u": "https://gcaptain.com/gulf-oil-flows-rise-to-average-81-of-pre-war-rate-in-september/"
             },
             {
               "time": "10/6",
@@ -242,17 +248,17 @@
         {
           "t": "④ The Relief Ledger: Bond Calm, Priced-Out October — and Wednesday's Test",
           "steps": [
-            "The calls get louder: Apollo's Slok sees yields peaking within a month; BCA calls Treasuries 'deeply oversold' with a 'tactical rally' ahead; JPMorgan is tactically bullish; Rosenberg sees selling pressure easing",
+            "The calls get louder: Apollo's Slok sees yields peaking within a month; BCA calls Treasuries 'deeply oversold' with a 'tactical rally' ahead; JPMorgan is tactically bullish",
             "The odds: October hike ~19% (from ~51% a week ago); December ~84% — the near-term Fed path is nearly priced out",
             "Earnings optimism takes the handoff: LSEG sees +30.6% Q3 EPS growth (energy +114.7%, tech +66.5%); Lamb Weston +7.5% after lifting its full-year outlook; season opens next week with the banks",
             "The gates: FOMC minutes Wednesday 2 pm ET; CPI Oct 14; the Oct 28 meeting — the ceiling is tested, not removed",
-            "The quiet signature: the dollar slipped to 101.86, gold closed +0.7% at $4,187.10, bitcoin -0.2% — no panic anywhere in the cross-asset tape"
+            "The quiet signature: gold closed +0.7% at $4,187.10, bitcoin -0.2% — no panic anywhere in the cross-asset tape"
           ],
           "d": "Four shock absorbers for Tuesday's records: a bond market that finally paused, an October hike nearly priced out, earnings expectations running hot, and a deal machine still buying.",
           "news": [
             {
               "time": "10/6",
-              "fact": "The sell-off in bonds appeared to abate, and several Wall Street analysts say the worst may be over: Apollo's Torsten Slok expects yields to peak within a month; BCA Research calls Treasuries 'deeply oversold' with a 'tactical rally' ahead; JPMorgan is tactically bullish and Rosenberg Research sees selling pressure easing.",
+              "fact": "The sell-off in bonds appeared to abate, and several Wall Street analysts say the worst may be over: Apollo's Torsten Slok expects yields to peak within a month; BCA Research calls Treasuries 'deeply oversold' with a 'tactical rally' ahead; and JPMorgan is tactically bullish.",
               "src": "Business Insider",
               "u": "https://www.businessinsider.com/bond-yields-selloff-treasury-bonds-stocks-outlook-sp500-equal-weight-2026-10"
             },
@@ -466,7 +472,7 @@
           "steps": [
             "Brent +2.6% MTD on the December basis (~$98 to $100.58) — back above $100 after its round trip",
             "The G7's 100M-barrel release is front-loading diesel; Gulf exports keep recovering; Trump's red-dyed diesel order broadens supply",
-            "WTI -1.1% MTD at $89.44 — the US benchmark never reclaimed $92",
+            "WTI -1.1% MTD at $89.44 — still below $92 after its Oct 1 spike",
             "The counter-bid stays armed: Houthi attacks on Saudi targets, vessel risks, Hormuz flows watched daily",
             "$100 Brent is the month's line — above it, the inflation trade re-arms"
           ],
@@ -634,7 +640,7 @@
           "steps": [
             "Brent +2.6% QTD on the December basis — $100.58 after dipping below $98 midweek",
             "The G7's 100M-barrel release plus Trump's red-dyed diesel order answer the diesel squeeze",
-            "WTI -1.1% QTD at $89.44 — never reclaimed $92",
+            "WTI -1.1% QTD at $89.44 — still below $92 after its Oct 1 spike",
             "The counter-bid: Houthi attacks, vessel risks — the premium re-arms on headlines",
             "$100 Brent is Q4's line in the sand"
           ],

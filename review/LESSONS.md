@@ -40,6 +40,17 @@
 | 2026-10-01 | 数字 | 4 个单名涨跌幅用了盘中/早盘值：FICO +8%（收盘 +11.7%）、SNPS +10%（+12.8%）、MSGS -5%（-1.5%）、MPC +5.7%（+6.3%） | 单名涨跌幅写入前用 Yahoo 当日收盘现算（今收÷昨收−1）；引用盘中值必须标注口径或改用收盘值 |
 | 2026-10-02 | 数字 | mtd/qtd 'Sectors' 面板复制当日值：Tech +1.0（应 +2.1）、Industrials +0.8（应 +1.8）、Health -0.01（应 -1.3）；best 标签应为 Energy +2.1 | mtd/qtd/ytd 的 Sectors 面板必须用窗口期初→期末的板块 ETF 现算值、逐日重算，禁止复制当日值；best/worst 标签必须与面板内数字一致 |
 | 2026-10-02 | 引用 | 链② n4 尾句 'both benchmarks finished the week lower' 与所引 Reuters 稿矛盾（稿：'For the week, Brent was up 0.11% with WTI 1.6% lower'；Investopedia 原文亦无此句） | 周线收尾句必须用结算稿最终数字逐合约核方向（Brent +0.1%、WTI -1.6%），不得合成 'both lower' 类总结 |
+| 2026-10-06 | 数字 | 主链 s1/辅③ s0 写 Brent『a session low around $97.4』；实际全时段低点 ≈ $97.06–97.08（97.4 只是 09:xx 的次级低点） | 写 session low/high 前用 Yahoo 5m/1m 全时段极值（或通讯社结算稿原文）核对，取两位小数；禁止用某一时段的局部低点冒充 session low；『around $X』偏差 >0.2% 必须改精确值 |
+| 2026-10-06 | 引用 | 辅③ n2 的 Kpler『81% of pre-war』句不在所引 lufkin URL 内（实出自同日另一条 Reuters 稿），两句被合并挂在同一 URL 下 | news.fact 的每个来源句都必须能在 news.u 指向的页面内找到；合并两条来源时拆成两条 news（各配真实 URL）；一条 URL 只能背书其页内实际存在的句子 |
+| 2026-10-06 | 逻辑 | 『above pre-war levels』与『over 81% of pre-war levels (September)』并置互斥（>100% vs 81% 均值）；10/5 文件曾带限定『4 of the last 7 days of September』，本日丢失 | 同一指标在文件中两次出现必须同口径同时间窗：『above pre-war』须带限定（如 on 4 of the last 7 days of September），『81%』须注明 September average；修改一处须同步另一处 |
+| 2026-10-06 | 引用 | 并列观点中『Rosenberg sees selling pressure easing』不在所引 BI 文内（BI 全文仅 Sløk/BCA/JPMorgan 三家） | 并列观点清单逐人核对是否都在所引 URL 内；缺源的一条要么补真实 URL、要么删除；禁止把不同来源的观点合并挂在同一条 URL 下 |
+| 2026-10-06 | 逻辑 | mtd/qtd『never reclaimed $92』为假（10/1 收盘 $92.87，已站上后回落）；且为 10/5 F1 已认定未修的重复，本日再犯两次 | 写『never/从未/尚未』类窗口级断言前，先把窗口内全部收盘（必要时含盘中极值）逐项列出核对；与序列不符即改写；重复出现的历史 minor（未 resolved）由 fixer 一并修复并沉淀进 LESSONS |
+
+## 链结构（主链 / 辅链）
+
+| 日期 | 类别 | 症状 | 规则 |
+|---|---|---|---|
+| 2026-10-06 | 逻辑 | today 档辅链与主链重复叙述同一件事（Brent 晨段、CEG +12%/utilities、AMD/Marvell、10-of-11 板块、DXY 101.86 多处近乎逐字；utilities +3.0% 出现 3 次） | chains 定稿前做『主链×每条辅链』逐对事实比对（对象+数字+方向）：任何事实在主链与辅链重复出现即改写——辅链只保留增量（新对象/新数字），主链只保留传导节点；today 档内同一数字不得出现两次以上（结构性表格字段除外） |
 
 ## 待补充
 
