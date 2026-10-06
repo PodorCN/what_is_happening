@@ -308,6 +308,68 @@
         }
       ],
       "resolved": false
+    },
+    {
+      "date": "2026-10-06",
+      "reviewedAt": "2026-10-06T19:04:14-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "today 档辅链与主链重复叙述同一件事，多处近乎逐字：①主链 s1『Morning: Brent slides below $98 (a session low around $97.4) as Gulf exports recover — Kpler: Middle East flows ex-Iran above pre-war levels — and Saudi's East-West pipeline returns to 5.8M bpd』≈ 辅③ s0（仅加 83% 注）；②主链 s5『Constellation Energy +12% on a 20-year Google nuclear-power deal; utilities (+3.0%) lead the sector table』≈ 辅② s1；③主链 s3『AMD +2.8% on Citi's Street-high $800 target, Marvell +5.8% on raised guidance』≈ 辅② s2；④主链 s4/s5『10 of 11 sectors green / utilities lead』≈ 辅⑤ s0；⑤主链 s2『dollar slips to 101.86』≈ 辅④ s4。utilities +3.0% 全文出现 3 次（主链 s5、辅② s1、辅⑤ s0），CEG +12% 2 次，AMD/Marvell 2 次。",
+              "evidence": "agent.md §2.2『辅链不能与主链重复叙述同一件事』+ reviewer 必查项；辅②③⑤ 各自另有增量（Ciena/ALAB、G7 diesel、breadth 统计），但上述事实在两条链中重复出现；对照 10/1、10/2 快照主链与辅链无此重复。",
+              "rule": "chains 定稿前做『主链×每条辅链』逐对事实比对（对象+数字+方向）：任何事实在主链与辅链重复出现即改写——辅链只保留增量（新对象/新数字），主链只保留传导节点；today 档内同一数字不得出现两次以上（结构性表格字段除外）。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "主链 s1 与辅③ s0 写 Brent『a session low around $97.4』，与实际盘中低点不符：实际全时段低点 ≈ $97.06–97.08（WSJ『falling as low as $97.06 earlier in the session』；DTN『intraday low of $97.06』；Yahoo BZ=F 5m 最低 97.08 @08:50 ET）。$97.4 仅对应 09:xx 的一次次级低点（97.39）。应改为『~$97.1』或『just above $97』。",
+              "evidence": "WSJ/DTN 结算稿 + Yahoo BZ=F 5m（includePrePost）10/6 ET 全时段最低 97.08；对照 BI『as low as $97 a barrel』。",
+              "rule": "写 session low/high 前用 Yahoo 5m/1m 全时段极值（或通讯社结算稿原文）核对，取两位小数；禁止用盘中某一时段的局部低点冒充 session low，『around $X』偏差 >0.2% 必须改精确值。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "辅③ n2 后半句『Gulf oil flows excluding Iran surged to over 81% of pre-war levels in September (Kpler)』在所引 URL（lufkindailynews 文）全文中不存在（该页无 Kpler/81%/ex-Iran 任何字样）；该句实出自同日另一条 Reuters 稿『Gulf oil flows rise to average 81% of pre-war rate in September』。前半句『Oil slipped as…』确在 lufkin 文中。",
+              "evidence": "curl 全文比对 lufkin 页 0 hits（kpler/81/ex-iran）；检索确认原句出自 reuters.com/business/energy/gulf-oil-flows-rise-average-81-pre-war-rate-september-data-shows-2026-10-06。",
+              "rule": "news.fact 的每个来源句都必须能在 news.u 指向的页面内找到；合并两条来源时拆成两条 news，或为第二句补上其真实 URL；一条 URL 只能背书其页内实际存在的句子。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "『above pre-war levels』（主链 s1『Kpler: Middle East flows ex-Iran above pre-war levels』；辅③ s1 同句）与本文件 n2『over 81% of pre-war levels in September』并置互斥（>100% vs 81%）。实际口径：9 月下旬若干日超 pre-war、9 月均值 81%；10/5 文件曾带限定『on 4 of the last 7 days of September』，本日丢失限定词。",
+              "evidence": "本文件 s1 vs n2；10/5 快照同句带限定；Reuters 10/6（81% 为 September 均值）vs AFP/Gulf News 10/5（『surpassed pre-war levels last week』）。",
+              "rule": "同一指标在文件中两次出现必须同口径同时间窗：『above pre-war』须带限定（如 on several days in late September），『81%』须注明 September average；修改一处须同步另一处。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "辅④ n0 列四位分析师，其中『Rosenberg Research sees selling pressure easing』在引用的 Business Insider 文中不存在（全文核对：仅 Slok、BCA、JPMorgan 三家，Rosenberg 零出现）。Rosenberg 10/6 另有晨报（earlymorningwithdave.com），若保留该句须补其真实来源。",
+              "evidence": "curl BI 全文 0 hits『Rosenberg』；文中分析师段落仅三家在案。",
+              "rule": "并列观点清单逐人核对是否都在所引 URL 内；缺源的一条要么补真实 URL、要么删除；禁止把不同来源的观点合并挂在同一条 URL 下。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd ③ s2 与 qtd ③ s2 均写 WTI『never reclaimed $92』，为假：10/1 WTI 收盘 $92.87（已站上 $92 后回落）。应改为『hasn't closed above $92 since Oct 1』或『still below $92 after its Oct 1 spike』。该句是 10/5 review F1 已认定的同款错误（未修复），本日又重复两次。",
+              "evidence": "data/2026-10-01.json wti.today=92.87、Yahoo CL=F 10/1=92.87、10/6=89.44；ledger 2026-10-05 F1。",
+              "rule": "写『never/从未/尚未』类窗口级断言前，先把窗口内全部收盘（必要时含盘中极值）逐项列出核对；与序列不符即改写；重复出现的历史 minor（未 resolved）由 fixer 一并修复并沉淀进 LESSONS。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
