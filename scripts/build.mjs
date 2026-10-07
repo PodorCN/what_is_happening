@@ -3,7 +3,7 @@
 // Chains(文字链) 仍由 agent 按 agent.md 流程写 —— 因为需要读新闻做因果。
 // 这个脚本只做“数”的部分，保证 MTD/QTD/YTD 不再手算错。
 
-import { readFileSync, writeFileSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, existsSync, readdirSync } from "fs";
 
 const date = process.argv[2] || new Date().toISOString().slice(0, 10);
 const fp = `data/${date}.json`;
@@ -25,6 +25,29 @@ for (const k of ["tnx", "wti", "brent", "gold", "btc", "dxy", "vix"]) {
   if (cp) console.log(`${k}: today ${f2(c.today)} | mtd ${s(cp.mtdPct)} | qtd ${s(cp.qtdPct)} | ytd ${s(cp.ytdPct)}`);
   else console.log(`${k}: today ${f2(c.today)} | mtd ${pct2(c.today,c.mtdBase)} | qtd ${pct2(c.today,c.qtdBase)} | ytd ${pct2(c.today,c.ytdBase)}`);
 }
+
+// —— 基线连续性检查：mtdBase/qtdBase 应与上一交易日一致（Brent 跨合约回归教训，见 review/LESSONS.md）——
+try {
+  const files = readdirSync("data").filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort();
+  const prevFile = files.filter((f) => f < `${date}.json`).pop();
+  if (prevFile) {
+    const p = JSON.parse(readFileSync(`data/${prevFile}`, "utf8"));
+    const bad = [];
+    const sameM = d.bases.mtdBase === p.bases.mtdBase;
+    const sameQ = d.bases.qtdBase === p.bases.qtdBase;
+    for (const k of Object.keys(d.closes || {})) {
+      const a = d.closes[k], b = p.closes && p.closes[k];
+      if (!a || !b) continue;
+      if (sameM && a.mtdBase != null && b.mtdBase != null && Math.abs(a.mtdBase - b.mtdBase) > Math.max(1e-6, Math.abs(b.mtdBase) * 1e-6)) bad.push(`${k}.mtdBase ${b.mtdBase} -> ${a.mtdBase}`);
+      if (sameQ && a.qtdBase != null && b.qtdBase != null && Math.abs(a.qtdBase - b.qtdBase) > Math.max(1e-6, Math.abs(b.qtdBase) * 1e-6)) bad.push(`${k}.qtdBase ${b.qtdBase} -> ${a.qtdBase}`);
+    }
+    if (!sameM || !sameQ) console.log(`基线连续性检查：检测到换期（${p.bases.mtdBase}/${p.bases.qtdBase} -> ${d.bases.mtdBase}/${d.bases.qtdBase}），仅检查未换期项`);
+    if (bad.length) console.log(`⚠ 基线连续性异常（vs ${prevFile}）: ${bad.join(" | ")} —— 禁止跨合约/换月混用，修复后再 commit`);
+    else console.log(`基线连续性 OK（vs ${prevFile}：mtd/qtd 期初一致）`);
+  } else {
+    console.log("基线连续性检查：无上一交易日文件，跳过");
+  }
+} catch (e) { console.log("基线连续性检查跳过:", e.message); }
 
 // 自动更新 index.html 底部的基线注释行，避免网页与 json 脱节
 const htmlPath = "index.html";

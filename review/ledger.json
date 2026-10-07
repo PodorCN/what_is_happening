@@ -450,9 +450,14 @@
               "rule": "BTC 重拉一次定稿，同一值写入 data+foot+链文，-2.7%/-0.4/-4.9 等派生值按定稿值重算并全文件逐项对齐。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true
     }
   ]
 }

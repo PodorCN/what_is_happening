@@ -12,7 +12,7 @@
         "10Y 5.28% +1bp",
         "Brent $100.20"
       ],
-      "c1": "The record run's first October loss — and almost all of it recovered by the close. Long-dated Treasury yields resumed their climb, the 10-year touching 5.365% (highest since April 2002) and the 30-year 5.732% (highest since May 2002), while Houthi attacks on Saudi targets put the war premium back on the barrel; the S&P slid as much as 0.7% and the Dow 1.2% intraday, snapping their four-day win streaks, and the Nasdaq's six-day run ended. Two valves then opened: a strong 10-year auction backed yields off the highs (the 10Y finished +1bp at 5.28%), and the IEA agreed to accelerate its emergency stock release, diesel first, turning crude lower — WTI settled lower, Brent -0.38%. The 2 pm FOMC minutes showed 'most participants' still expect another hike by year-end. The close: S&P 7,801.77 (-0.22%), Dow 51,179.87 (-0.66%), Nasdaq 27,538.69 (-0.22%). Under the hood it was worse than it looked: industrials -2.2% as Caterpillar sank 5.8% on an FTC/USDA farm-equipment inquiry; health care the lone green sector (+1.0%); gold at a two-month low; bitcoin -2.7% to $83.2k; and the dollar +0.4% to 102.29 as the euro slid toward 17-month lows.",
+      "c1": "The record run's first October loss — and almost all of it recovered by the close. Long-dated Treasury yields resumed their climb, the 10-year touching 5.365% (highest since April 2002) and the 30-year 5.732% (highest since May 2002), while Houthi attacks on Saudi targets put the war premium back on the barrel; the S&P slid as much as 0.7% and the Dow 1.2% intraday, snapping their four-day win streaks, and the Nasdaq notched its first down day in six. Two valves then opened: a strong 10-year auction backed yields off the highs (the 10Y finished +1bp at 5.28%), and the IEA agreed to accelerate its emergency stock release, diesel first, turning crude lower — WTI settled lower, Brent -0.38%. The 2 pm FOMC minutes showed 'most participants' still expect another hike by year-end. The close: S&P 7,801.77 (-0.22%), Dow 51,179.87 (-0.66%), Nasdaq 27,538.69 (-0.22%). Under the hood it was worse than it looked: industrials -2.2% as Caterpillar sank 5.8% on an FTC/USDA farm-equipment inquiry; health care the lone green sector (+1.0%); gold at a two-month low; bitcoin -2.7% to $83.2k; and the dollar +0.4% to 102.29 as the euro slid toward 17-month lows.",
       "c4": "<ul class='play'><li>The 5.25-5.35% band: every re-test of the 2002 ceiling still gets bought at the auction — but the band caps multiples; CPI (Oct 14) and the Oct 28 meeting referee next.</li><li>The split is the trade: rate-sensitive cyclicals (machinery, homebuilders, small caps) pay the toll while defensives (health care) and bottlenecks get paid — dispersion, not direction.</li><li>The barrel's $100 line: the IEA's accelerated release vs the re-arming war premium — below it the inflation trade exhales, above it re-arms.</li></ul>",
       "kpi": [
         [
@@ -24,7 +24,7 @@
         [
           "Nasdaq",
           "27,538.69",
-          "six-day run ends",
+          "five-day run ends",
           0
         ],
         [
@@ -164,7 +164,7 @@
             },
             {
               "time": "10/7",
-              "fact": "Skydance fell in its second day after the renamed company's merger with Warner Bros. Discovery closed — the worst performer in the S&P 500, and down 35% since the start of the year.",
+              "fact": "Skydance fell in its second day after the renamed company's merger with Warner Bros. Discovery closed — the worst performer in the S&P 500, and down about 34% since the start of the year.",
               "src": "Investopedia",
               "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-10072026-12162282"
             },
@@ -183,7 +183,7 @@
             "The counter: the IEA agrees to accelerate its March collective action — ~100M barrels still to come — and to prioritize diesel 'given the current tightness in diesel markets'",
             "The reversal: both benchmarks slide to session lows at 1:47pm ET (Brent $99.62, WTI $87.96) as the supply news lands",
             "The settle: WTI -1.3% at $88.28, Brent -0.38% at $100.20 (December basis) — the day's cleanest round trip",
-            "The read-through: stocks pared losses after crude turned lower — the barrel remains the fastest inflation valve on the board"
+            "The read-through: the barrel remains the fastest inflation valve on the board"
           ],
           "d": "Oil wrote Wednesday's cleanest arc — a morning spike on war headlines, then lower all afternoon once policy answered — Brent's settle back at the $100 line.",
           "news": [
@@ -218,11 +218,10 @@
           "steps": [
             "The bond valve: $39 billion of 10-year notes cleared at a 5.3% auction yield — the highest since 2000 — and BMO called the sale 'strong', with non-dealer bidding above average",
             "The Fed valve: the hawkish minutes were already in the price — October hike odds near 17% (from ~38% a week ago), December ~83%",
-            "The market's own valve: dip-buying was immediate — the morning's slide was almost fully recovered by the close",
             "The gates: CPI (Oct 14), the Oct 28 meeting, and Q3 earnings season kicking into gear next week — UnitedHealth and Johnson & Johnson lead off",
             "The quiet tell: the VIX closed at 15.08 — barely up — no panic bid anywhere in the cross-asset tape"
           ],
-          "d": "Wednesday's shock absorbers: an auction that held, a hawkish Fed already priced out of October, dip-buyers on the clock, and the gates still ahead.",
+          "d": "Wednesday's shock absorbers: an auction that held, a hawkish Fed already priced out of October, and the gates still ahead.",
           "news": [
             {
               "time": "10/7",
@@ -328,7 +327,7 @@
         "10Y -2bp",
         "WTI -2.4%"
       ],
-      "c1": "Five sessions into October, the month has its full arc: two record closes (the first close above 7,800), a ceiling re-tested twice at 24-year highs, and the first red session, pared to almost nothing. The S&P is +1.96% MTD at 7,801.77, the Nasdaq +2.52%, the Dow +0.54%. The fuel: dovish odds (~17% for October), a deal tape (PTC, RXO, Option Care), and AI compounding — now led by power. The tax: a 10Y that ends the window at 5.28% (-2bp MTD) after printing fresh 24-year highs twice; WTI -2.4% as supply policy met a re-arming premium; gold -1.1% to a two-month low; the dollar +0.8% with the euro near 17-month lows. Beneath: Utilities (+4.3%) and Energy (+3.0%) lead sectors; Real Estate (-0.8%) lags. Gates: CPI (Oct 14), the Oct 28 meeting — and Q3 earnings season must validate the +30.6% consensus.",
+      "c1": "Five sessions into October, the month has its full arc: two record closes (the first close above 7,800), a ceiling re-tested three times at 24-year highs, and the first red session, pared to almost nothing. The S&P is +1.96% MTD at 7,801.77, the Nasdaq +2.52%, the Dow +0.54%. The fuel: dovish odds (~17% for October), a deal tape (PTC, RXO, Option Care), and AI compounding — now led by power. The tax: a 10Y that ends the window at 5.28% (-2bp MTD) after printing fresh 24-year highs three times; WTI -2.4% as supply policy met a re-arming premium; gold -1.1% to a two-month low; the dollar +0.8% with the euro near 17-month lows. Beneath: Utilities (+4.3%) and Energy (+3.0%) lead sectors; Real Estate (-0.8%) lags. Gates: CPI (Oct 14), the Oct 28 meeting — and Q3 earnings season must validate the +30.6% consensus.",
       "c4": "<ul class='play'><li>October's verdict so far: dovish odds + deal tape + AI > the 10Y — but only while the 10Y stays under ~5.35%; the ceiling is tested, not removed.</li><li>Sector signature: inflation beneficiaries (Utilities, Energy) and growth (Tech) lead; Real Estate lags — dispersion, not direction.</li><li>Gates: CPI (Oct 14) and the Oct 28 meeting — then earnings must validate the +30.6% Q3 consensus.</li></ul>",
       "kpi": [
         [
@@ -796,7 +795,7 @@
           "news": [
             {
               "time": "10/7",
-              "fact": "The 10-year Treasury note yield rose nearly 8 basis points to hit a high of 5.350% on Wednesday, officially topping its high from Monday — the highest level since April 3, 2002.",
+              "fact": "Investors were spooked by the benchmark 10-year Treasury note yield reaching its highest level since April 2002 at 5.365% on Wednesday. The 30-year bond yield also hit its highest level since May 2002 at 5.732%.",
               "src": "CNBC",
               "u": "https://www.cnbc.com/2026/10/06/stock-market-today-live-updates.html"
             },

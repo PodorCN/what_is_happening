@@ -21,6 +21,9 @@
 | 2026-10-02 | 取数 | 期货三价沿用 Yahoo 未修订日线 bar（收盘后数小时才修订为结算价）：WTI $91.26/-1.7%（应 $91.11/-1.9%）、Brent ~$102.7/+0.4%（应 ~$102.25/-0.06%，方向翻转）、Gold $4,172.1/-0.7%（应 ~$4,162.5/-0.9%）；全部派生 % 需整表同步 | 期货三价一律取结算价：通讯社结算报道优先，或结算窗 1m VWAP 复现（CL/BZ≈14:28–14:30 ET、GC≈13:28–13:30 ET）；禁止直接用 Yahoo 日线 bar 值；修正后同步全部派生 %（tbl/HEAT/kpi/徽章/c1/链/foot 一处不漏），4pm 类盘中引用须标注口径 |
 | 2026-10-02 | 取数 | data 的 Brent mtd/qtd 跨合约混算（mtdBase 103.53=9/30 Nov、today=10/2 Dec），得假值 -0.8；Dec 口径应为 98.0→102.25=+4.3% | Brent 跨期%（日/MTD/QTD/YTD）必须同一合约序列（换月后=Dec 前月）现算；data 的 mtdBase/today 不得跨合约混用 |
 | 2026-10-02 | schema | ytd 序列静默删掉 9/29–10/1 一直保留的年内峰值锚点 8/13（7,799），正文 'about 1% from its August record' 失去对照点 | ytd 序列年内峰值锚点（8/13=7799）在非换期日不得静默删除；腾位须明确取舍（扩点或说明）并保持与正文 'August record' 可对照 |
+| 2026-10-07 | 取数 | data 期货三价未回写结算价（回归 10-02 同类）：data.today 88.99/100.98/4134.10 vs 结算 88.28/100.20/4141，全部派生 % 同错（快照侧为正确结算口径） | 结算价修正必须同时回写 data/<DATE>.json 的 today 与全部派生 %（mtdPct/qtdPct/ytdPct），data computed 与快照逐项相等后才 commit——只修快照不修 data = 半修 |
+| 2026-10-07 | 取数 | Brent mtdBase/qtdBase 回归 103.53（Nov 值），与 10-02 后沿用的 Dec 口径 98 断裂，computed -2.46 为跨合约假值（Dec 口径 +2.2） | Brent 的 mtdBase/qtdBase 固定取 Dec 前月序列的上月末收盘（本季=98.0），禁止回写 Nov 值；每日构建后跑『今日 mtdBase == 昨日 mtdBase』连续性检查（build.mjs 已内置自动告警） |
+| 2026-10-07 | 取数 | BTC 定稿值不统一：data 83379.86（17:01 fetch）vs foot 83212.25 vs 链文 -2.7%，HEAT -0.4/-4.9 仅与 83212.25 成立 | BTC 重拉一次定稿，同一值写入 data+foot+链文；派生值按定稿值重算并全文件逐项对齐（24h 品种日环比以 Yahoo previousClose 为准） |
 
 ## 取数前提
 
@@ -45,12 +48,17 @@
 | 2026-10-06 | 逻辑 | 『above pre-war levels』与『over 81% of pre-war levels (September)』并置互斥（>100% vs 81% 均值）；10/5 文件曾带限定『4 of the last 7 days of September』，本日丢失 | 同一指标在文件中两次出现必须同口径同时间窗：『above pre-war』须带限定（如 on 4 of the last 7 days of September），『81%』须注明 September average；修改一处须同步另一处 |
 | 2026-10-06 | 引用 | 并列观点中『Rosenberg sees selling pressure easing』不在所引 BI 文内（BI 全文仅 Sløk/BCA/JPMorgan 三家） | 并列观点清单逐人核对是否都在所引 URL 内；缺源的一条要么补真实 URL、要么删除；禁止把不同来源的观点合并挂在同一条 URL 下 |
 | 2026-10-06 | 逻辑 | mtd/qtd『never reclaimed $92』为假（10/1 收盘 $92.87，已站上后回落）；且为 10/5 F1 已认定未修的重复，本日再犯两次 | 写『never/从未/尚未』类窗口级断言前，先把窗口内全部收盘（必要时含盘中极值）逐项列出核对；与序列不符即改写；重复出现的历史 minor（未 resolved）由 fixer 一并修复并沉淀进 LESSONS |
+| 2026-10-07 | 数字 | mtd c1『re-tested twice / fresh 24-year highs twice』与 mtd ① s1 枚举（Oct 1、Oct 5、Oct 7 三次）矛盾 | 计数词（twice/three times）必须与链内枚举一致；每日新增一次时同步更新全部计数与 deck 表述 |
+| 2026-10-07 | 数字 | today c1『the Nasdaq's six-day run ended』与收盘序列不符（9/30–10/6 连涨 5 日，10/7 为首跌日） | run/streak 表述按收盘序列逐日计数（连涨 5 日 →『five-day run』），或直接沿用来源口径『first down day in six』 |
+| 2026-10-07 | 数字 | ② n3 照抄 Investopedia『down 35% YTD』，现算 SKYD = -33.7%（13.40→8.89） | 单名 YTD 数字引用前用收盘序列现算；现算与来源差 >1pp 时改为现算值（≈-34%）或加注来源口径（二选一，禁止直接照抄来源值当事实） |
+| 2026-10-07 | 逻辑 | 同一 10Y 盘中高点文件内两值：正文 5.365%（=Yahoo 1m 高点 5.364）vs ytd ② n0 引用 5.350%（CNBC 同页两帖，前帖为盘中早值） | 同一天同一指标全文件只保留一个值（含引用句）；引用句与正文不一致时改引同源同值句或加注口径 |
 
 ## 链结构（主链 / 辅链）
 
 | 日期 | 类别 | 症状 | 规则 |
 |---|---|---|---|
 | 2026-10-06 | 逻辑 | today 档辅链与主链重复叙述同一件事（Brent 晨段、CEG +12%/utilities、AMD/Marvell、10-of-11 板块、DXY 101.86 多处近乎逐字；utilities +3.0% 出现 3 次） | chains 定稿前做『主链×每条辅链』逐对事实比对（对象+数字+方向）：任何事实在主链与辅链重复出现即改写——辅链只保留增量（新对象/新数字），主链只保留传导节点；today 档内同一数字不得出现两次以上（结构性表格字段除外） |
+| 2026-10-07 | 逻辑 | today ④ s2『dip-buying…slide almost fully recovered』≈ 主链 ① s4（近乎逐字），③ s4 第三次转述『stocks pared losses』，④ d 亦有回响 | chains 定稿前做『主链×每条辅链』逐对事实比对：『跌深收复/尾盘拉回』叙事只归主链，辅链不得再转述；④ 只留拍卖/加息概率/gates/VIX |
 
 ## 待补充
 
