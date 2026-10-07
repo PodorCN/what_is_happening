@@ -375,6 +375,84 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-10-07",
+      "reviewedAt": "2026-10-07T19:21:53-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "取数",
+              "symptom": "data/2026-10-07.json 的期货三价仍是 17:01 fetch 的 Yahoo 未修订日线值、未同步为结算价，导致 data 与快照全线对不上：wti.today 88.99（应 88.28）、brent.today 100.98（应 100.20）、gold.today 4134.10（应 ≈4141）；派生值同错：wti.mtdPct -1.58（应 -2.4）、brent.mtdPct -2.46（应 +2.2；Brent 基线的跨合约问题另见 F3）、gold.mtdPct -1.26（应 -1.1）、gold.ytdPct -4.77（应 -4.6）。快照侧（③ s3『WTI -1.3% at $88.28, Brent -0.38% at $100.20』、⑤ s1『gold -1.1% to $4,141』、HEAT、foot）全部为结算价口径，data 是错侧。",
+              "evidence": "CNBC 10/06 live blog（本日 9 处引用）原文『settled down 1.3% at $88.28』『ended at $100.20 a barrel, down 0.4%』；Yahoo 1m 结算窗复现：14:28–14:30 ET CL=F 88.26/88.30/88.28、BZ=F=100.20，13:27–13:31 GC=F VWAP≈4141；data 文件 mtime 17:01（未修订 fetch 值）；与 LESSONS 2026-10-02 F1（期货三价取结算价）同类——当日已修、本日回归。",
+              "rule": "期货三价一律以结算价定稿（通讯社结算稿优先，或结算窗 1m VWAP 复现：CL/BZ≈14:28–14:30 ET、GC≈13:28–13:30 ET），并回写 data/<DATE>.json 的 today 与全部派生 %（mtdPct/qtdPct/ytdPct），使 data computed 与快照逐项相等后再 commit。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "today 档辅链与主链重复叙述同一件事：④ s2『The market's own valve: dip-buying was immediate — the morning's slide was almost fully recovered by the close』≈ 主链① s4『dip-buyers step in, and most of the morning's slide is recovered — a near-flat close』（近乎逐字）；同一『收复跌幅』事实还在③ s4『stocks pared losses after crude turned lower』第三次出现。",
+              "evidence": "LESSONS 2026-10-06 F1 规则『任何事实在主链与辅链重复出现即改写——辅链只保留增量』；④ d 亦有『dip-buyers on the clock』回响。",
+              "rule": "chains 定稿前做『主链×每条辅链』逐对事实比对：『跌深收复/尾盘拉回』叙事只归主链；④ 只留拍卖/加息概率/VIX，③ 只留原油本身（去掉『stocks pared losses』转述）。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "取数",
+              "symptom": "data brent.mtdBase/qtdBase = 103.53（9/30 尚在报价的 Nov 合约值），与 10-02 修复确立、10-05/10-06 沿用的 Dec 口径 98 断裂：10-06 文件 mtdBase=98，本日文件 103.53 → 跨日『MTD 期初』不连续；computed brent.mtdPct -2.46 为跨合约混算假值（Dec 口径应 +2.2，与快照一致）。",
+              "evidence": "data/2026-10-06.json brent.mtdBase=98（10-02 后各日均 98）；本文件 foot 自注『Brent ~$103.5 (Nov; Dec front ~$98.0)』；mtd ③ s0『Brent +2.2% MTD on the December basis (~$98 to $100.20)』；LESSONS 2026-10-02『Brent 跨期%必须同一合约序列；data 的 mtdBase/today 不得跨合约混用』。",
+              "rule": "Brent 的 mtdBase/qtdBase 固定取 Dec 前月序列的上月末收盘（本季=98.0），禁止回写 Nov 值；每日构建后跑『今日 mtdBase == 昨日 mtdBase』连续性检查（合约换月周按 LESSONS 规则注记）。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "mtd c1 两处计数与同档链矛盾：『a ceiling re-tested twice at 24-year highs』『after printing fresh 24-year highs twice』vs mtd ① s1『fresh 24-year highs on Oct 1, Oct 5 and Oct 7』（三次）。",
+              "evidence": "^TNX 5m 高点序列 10/1 5.342 → 10/5 5.349 → 10/7 5.364，逐一创 24 年新高；10-06 版本『fresh 2002 highs on Oct 1 and Oct 5 … tested twice』当时正确，本日新增一次未同步 c1 计数。",
+              "rule": "计数词（twice/three times）必须与链内枚举一致；每日新增一次时同步更新全部计数与 deck 表述。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today c1『the Nasdaq's six-day run ended』与收盘序列不符：9/30–10/6 连涨 5 日，10/7 为首个下跌日；同文件① s2 的正确口径为『first down day in six』。",
+              "evidence": "Yahoo 日线 ^IXIC：9/30 +0.24、10/1 +0.04、10/2 +1.19、10/5 +1.05、10/6 +0.45、10/7 -0.22；StreetInsider 原文『The Nasdaq notched its first down day in six』。",
+              "rule": "run/streak 表述按收盘序列逐日计数（连涨 5 日 →『five-day run』），或直接沿用来源口径『first down day in six』。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "② n3『down 35% since the start of the year』（Investopedia 原文如此）vs 现算 -33.7%：SKYD 12/31/25 收 13.40 → 10/7 收 8.89，差 >1pp。",
+              "evidence": "Investopedia 页原文『Skydance shares are down 35% since the start of the year.』；Yahoo SKYD 日线现算 -33.66%（区间 -32.6%～-34.2%）；LESSONS 2026-09-29『来源数字与 Yahoo 不符时以 Yahoo 为准，或原文注明来源』。",
+              "rule": "单名 YTD 数字引用前用收盘序列现算；现算与来源差 >1pp 时改为现算值（≈-34%）或加注来源口径（二选一，禁止直接照抄来源值当事实）。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "同一 10Y 盘中高点在文件内两个值：today c1/① s0『touches 5.365%』（Yahoo 1m 高点 5.364）vs ytd ② n0 引用『a high of 5.350%』。",
+              "evidence": "CNBC live blog 同页两帖：一帖『…reaching its highest level since April 2002 at 5.365%』、另一帖『rose nearly 8 basis points to hit a high of 5.350%』；Yahoo 1m 高 5.364 @09:25 ET；LESSONS 2026-10-05 F2（30Y +3/+4bp 两值）同类。",
+              "rule": "同一天同一指标全文件只保留一个值（含引用句）；引用句与正文不一致时改引同源同值句（本页存在『5.365%』帖）或加注口径。"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "取数",
+              "symptom": "BTC 定稿值不统一：data.btc.today 83379.86（17:01 fetch）vs foot『BTC 83212.25』vs ⑤ s2『-2.7%』（隐含 ≈83310；foot 值隐含 -2.8%）；HEAT -0.4/-4.9 与 mtd/qtd 均按 83212.25 成立，data computed（-0.21/-4.72）对不上。",
+              "evidence": "foot、⑤ s2、HEAT『BTC $83.2k -2.7/-0.4/-4.9』均为 83212.25 口径；data 为 fetch 旧值；与 LESSONS 2026-10-01 F3（foot 与 data 期初不一致）同类。",
+              "rule": "BTC 重拉一次定稿，同一值写入 data+foot+链文，-2.7%/-0.4/-4.9 等派生值按定稿值重算并全文件逐项对齐。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
