@@ -88,9 +88,9 @@ h1{font-family:"Playfair Display","Noto Serif SC",serif;font-weight:900;
 .t{font-family:"Playfair Display","Noto Serif SC",serif;font-weight:900;font-size:23px;margin-bottom:12px;line-height:1.35}
 .t i{font-style:normal;font-size:11.5px;letter-spacing:.2em;background:var(--claret);color:#fff;
   padding:3px 10px;margin-right:9px;vertical-align:3px}
-.steps{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:14px 0}
+.steps{display:flex;flex-direction:column;align-items:stretch;gap:4px;margin:14px 0}
 .node{background:var(--paper);border:1px solid var(--ink);padding:6px 14px;font-size:15.5px;font-weight:700}
-.arrow{color:var(--claret);font-weight:900;font-size:17px}
+.arrow{color:var(--claret);font-weight:900;font-size:14px;text-align:center;line-height:1}
 .cdesc{font-size:17.5px;color:#4f4636;line-height:1.85;font-style:italic}
 .facts{margin:16px 0 0;padding:0;list-style:none}
 .fact{border-top:1px solid var(--line);padding:12px 0;font-size:17.5px;line-height:1.9}
@@ -185,7 +185,7 @@ function render(period) {
   document.getElementById("c4").innerHTML = d.c4;
   document.getElementById("kpi").innerHTML = d.kpi.map(x => { const t = String(x[2]); const ar = t.startsWith("+") ? "<i>▲</i>" : t.startsWith("-") ? "<i>▼</i>" : ""; return `<div class="k"><div><div class="l">${x[0]}</div><div class="v">${x[1]}</div></div><div class="c ${x[3] ? "pos" : "neg"}">${ar}${t}</div></div>`; }).join("");
   document.getElementById("chTitle").innerText = "The Chains";
-  document.getElementById("chains").innerHTML = d.chains.map(c => `<div class="chain-card ${c.main ? "main" : ""}"><div class="t">${c.main ? "<i>MAIN</i>" : ""}${c.t}</div><div class="steps">${c.steps.map((s, i) => `${i ? '<span class="arrow">→</span>' : ""}<span class="node">${s}</span>`).join("")}</div><div class="cdesc">${c.d}</div><ul class="facts">${(c.news || []).map(n => `<li class="fact"><b class="time">${n.time}</b>${n.fact} <a href="${n.u}" target="_blank" rel="noopener">[${n.src} ↗]</a></li>`).join("")}</ul></div>`).join("");
+  document.getElementById("chains").innerHTML = d.chains.map(c => `<div class="chain-card ${c.main ? "main" : ""}"><div class="t">${c.main ? "<i>MAIN</i>" : ""}${c.t}</div><div class="steps">${c.steps.map((s, i) => `${i ? '<span class="arrow">↓</span>' : ""}<span class="node">${s}</span>`).join("")}</div><div class="cdesc">${c.d}</div><ul class="facts">${(c.news || []).map(n => `<li class="fact"><b class="time">${n.time}</b>${n.fact} <a href="${n.u}" target="_blank" rel="noopener">[${n.src} ↗]</a></li>`).join("")}</ul></div>`).join("");
   document.getElementById("heat").innerHTML = (HEAT[period] || HEAT.today).map(g => `<div class="heat-sec"><h3>${g.sec}</h3><div class="heat-grid">${g.items.map(it => { const t = String(it[2]).trim(); const ar = t.startsWith("+") ? "<i>▲</i>" : t.startsWith("-") ? "<i>▼</i>" : ""; return `<div class="hcell" style="${heatColor(it[2])}"><div class="hn">${it[0]}${it[1] && it[1] !== "—" ? `<span class="hl">${it[1]}</span>` : ""}</div><div class="hc">${ar}${fmtRet(it[2])}</div></div>`; }).join("")}</div></div>`).join("");
   document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b.dataset.p === period));
   document.getElementById("foot").innerText = SNAP.foot || "";
