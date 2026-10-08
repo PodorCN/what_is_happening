@@ -458,6 +458,68 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-10-08",
+      "reviewedAt": "2026-10-08T19:17:44-04:00",
+      "verdict": "PASS",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "PASS",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "mtd ① s0『Sessions one-three: records — the first close above 7,800 (10/6)…』与所枚举事件矛盾：10/6 是本月第 4 个交易日（10/1、10/2、10/5、10/6）；两条记录（10/5 Nasdaq 记录收盘、10/6 S&P 首破 7,800）落在第 3、4 个交易日。应改『Sessions three-four』或去掉序号。",
+              "evidence": "10/5 快照『the Nasdaq closed at an all-time high』（第 3 个交易日）；10/6 快照『the S&P Closes Above 7,800 for the First Time』（第 4 个交易日）；本文件 mtd d『six sessions delivered two record closes』。",
+              "rule": "写『Sessions a-b』前把区间内枚举事件的日期逐个核对进区间（10/6 不在 one-three 内即改区间），或去掉序号只留事件。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today ① s4『the S&P recovers most of its slide into the close』按同链口径实算 ≈48%（7,801.77→低点 7,731.26→收 7,765.36；(7765.36−7731.26)/(7801.77−7731.26)=48.4%），不足『most』；应写『about half』或给出数字。",
+              "evidence": "Yahoo 5m ^GSPC：低点 7,731.26 @13:25 ET、收 7,765.36；LESSONS 2026-09-29『收复/回吐比例词必须带算式按算值取整』。",
+              "rule": "『收复/回吐』比例词先算 (收−低)/(昨收−低)，按算值取最近 1/4 档（48.4%→'about half'）；most/majority 仅在实算明显过半（≥60%）时使用。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today ② s2『the S&P 500 tech sector falls 2% at its worst』——全时段极值实算 ≈2.3%（^SP500-45 盘中低 -2.28%、XLK -2.44%，低点均在 13:25 ET），『at its worst』口径的 2% 偏低；来源原句仅为 1:30pm 的『is down 2%』。应写『more than 2%』/『as much as 2.3%』或删『at its worst』。",
+              "evidence": "Yahoo ^SP500-45 5m 低 7316.58（pc 7487.55）；XLK 5m 低 196.48（pc 201.39）；Investopedia 1:30 PM 帖原文『The S&P 500 Information Technology Sector is down 2%』；LESSONS 2026-10-06『session low/high 前用全时段极值核对』。",
+              "rule": "来源时点值改写为『at its worst/最低/最高』类极值断言前，先用 Yahoo 5m 全时段极值复算；对不上就保留来源口径（不加极值词）或改用复算值。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "mtd ③ s1『…and SPR flows remain the offset』与 ytd ④ s3『SPR — the offsets that keep working』：『SPR』（战略石油储备）为全库首次出现的术语，当日 8 个来源与全部历史快照均无此表述；来源口径是 IEA『release of oil stocks』/『governments… have drawn oil from stockpiles』。应改用来源口径或补真实出处。",
+              "evidence": "本日 8 个来源全文检索『SPR』无命中；10/7 IEA 稿（al-monitor）只说『accelerate the release of oil stocks』；历史快照仅本文件含『SPR』；LESSONS 2026-10-05 F2（新指标无来源须删除或注明）同类。",
+              "rule": "链内引入新术语/机制前先 grep 当日来源与历史快照；无命中则改用来源原词（stockpile releases）或删除，禁止自造机制名。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd ② s1 与 ③ s0/s2 重复叙述同一件事：② s1『The barrel re-armed… supply shocks stacked — tanker attacks, strike risk, Isaias』≈ ③ s0『the heaviest week of tanker attacks…, strike-risk headlines, and Isaias shut-ins — the war premium re-armed』（同三条驱动、同 re-armed 句式）；且『Brent +6.4% on the December basis』在 mtd ① s4、② s1、③ s2 共出现 3 次。② 应只留增量（Energy 领涨结论），驱动细节与数字归 ③。",
+              "evidence": "LESSONS 2026-10-06 F1『任何事实在主链与辅链重复出现即改写——辅链只保留增量』；10/7 F2 为 today 档同类前例。",
+              "rule": "chains 定稿前逐对比对（mtd/qtd/ytd 同样执行）：同一驱动列表/同一数字在链间 ≤2 次；驱动细节只归一条链，其余链只留结论或引用。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today ② news[1]（time『10/8 afternoon』）写 Coherent/Lumentum『down a respective 9.5% and 7.5%』：两值为来源帖盘中值（当时 S&P -0.9%）未标注口径；LITE 收盘 -5.6%（差 1.9pp），且收盘口径下 sector 次差为 Arm -6.5% 而非 LITE。应在 fact 内标注（盘中）或改用收盘值/收盘排名。",
+              "evidence": "Investopedia 该帖上下文『The S&P 500 is down 0.9% overall』（非收盘）；Yahoo：LITE -5.62%（1111.07→1048.60）、COHR -9.63%、ARM -6.48%；LESSONS 2026-10-01 F4『引用盘中值必须标注口径或改用收盘值』。",
+              "rule": "引用来源的盘中单名涨跌幅：fact 内加『(intraday)』标注或改用收盘现算值；涉及 worst/排名时按收盘重排核对。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
