@@ -520,6 +520,36 @@
         }
       ],
       "resolved": false
+    },
+    {
+      "date": "2026-10-09",
+      "reviewedAt": "2026-10-09T19:15:00-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "取数",
+              "symptom": "Gold 收盘取的是当日盘中报价，非收盘值：today tbl『$4,157→$4,215 / +1.4%』、today HEAT『Gold fut $4,215 / +1.4』、c1『Gold +1.4% to $4,215 (Dec futures)』、⑤ s0『gold +1.4% Friday (Dec futures $4,215…)』、foot『Gold 4215 (Dec fut)』、data.gold.today=4215——全部沿用 Kitco 0842 GMT 盘中文（『US gold futures for December delivery also added 1.4%, trading at $4,215.30 per ounce』）。收盘口径应为 $4,220.30 / +1.52%（显示 +1.5%）：CNBC @GC.1 收盘页『4:59 PM EDT 4,220.30 +63.30 (+1.52%)』、CME 4220.3、Investopedia 收盘稿『Gold futures rose 1.5% to $4,220』、Yahoo GC=F 日线 C=4220.30。派生连带：mtd +0.7→+0.8、qtd +0.7→+0.8、ytd -2.9→-2.8；受影响处：mtd c1、mtd/qtd/ytd HEAT、qtd tbl、ytd tbl、ytd ② s3、ytd ⑤ s2、foot、data computed；⑤ news[0] 的 $4,215.30 引用句须加注『盘中 (0842 GMT)』或替换为收盘句。",
+              "evidence": "Yahoo GC=F 10/9 日线：O 4159.7 / H 4232.7 / L 4156.1 / C 4220.2998（meta 日变动 +1.523%）；CNBC @GC.1、CME 4220.3、Investopedia 收盘稿三方一致；Kitco 原文时间戳 0842 GMT 为盘中；与 LESSONS 2026-09-30（未定稿值当收盘）、2026-10-02（期货三价取结算价、禁止盘中值当收盘）同类。",
+              "rule": "期货收盘值定稿前用『CNBC/CME 类收盘报价 + Yahoo 日线 close』双源核对；正文值若来自盘中/早盘引用（如 Kitco 0842 GMT）必须替换为收盘值，并回写 data 的 today 与全部派生 %（tbl/HEAT/c1/链/foot/引用句 一处不漏）。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "c1『yields holding below 5.25%』与 ① s1『yields hold below 5.25%』与全时段不符：10Y US 时段开盘即 5.257%、盘中峰值 5.28%（10:42 ET）、09:30–14:58 间 223 分钟高于 5.25%，仅收盘 5.244% 低于 5.25%——『below 5.25%』只对收盘成立，写成开盘/全时段『hold』为假。应改为收盘口径（如『the 10Y closed at 5.24%』）或给出峰值口径。",
+              "evidence": "Yahoo ^TNX 1m：09:30=5.257、max 5.280 @10:42、close 5.244；Investopedia 原句『was below 5.25%』仅指收盘；LESSONS 2026-10-06 F2（session 极值核对）同类。",
+              "rule": "写『收益率 hold 在 X% 之下』类阈值断言前用 Yahoo 1m 全时段极值核对（max>X 即不可写 below）；只对收盘成立的断言须写明『closed below』。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
