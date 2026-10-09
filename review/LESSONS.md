@@ -24,6 +24,7 @@
 | 2026-10-07 | 取数 | data 期货三价未回写结算价（回归 10-02 同类）：data.today 88.99/100.98/4134.10 vs 结算 88.28/100.20/4141，全部派生 % 同错（快照侧为正确结算口径） | 结算价修正必须同时回写 data/<DATE>.json 的 today 与全部派生 %（mtdPct/qtdPct/ytdPct），data computed 与快照逐项相等后才 commit——只修快照不修 data = 半修 |
 | 2026-10-07 | 取数 | Brent mtdBase/qtdBase 回归 103.53（Nov 值），与 10-02 后沿用的 Dec 口径 98 断裂，computed -2.46 为跨合约假值（Dec 口径 +2.2） | Brent 的 mtdBase/qtdBase 固定取 Dec 前月序列的上月末收盘（本季=98.0），禁止回写 Nov 值；每日构建后跑『今日 mtdBase == 昨日 mtdBase』连续性检查（build.mjs 已内置自动告警） |
 | 2026-10-07 | 取数 | BTC 定稿值不统一：data 83379.86（17:01 fetch）vs foot 83212.25 vs 链文 -2.7%，HEAT -0.4/-4.9 仅与 83212.25 成立 | BTC 重拉一次定稿，同一值写入 data+foot+链文；派生值按定稿值重算并全文件逐项对齐（24h 品种日环比以 Yahoo previousClose 为准） |
+| 2026-10-09 | 取数 | Gold 收盘误把 Kitco 0842 GMT 盘中值 $4,215 当收盘（结算价应为 $4,216.3：Reuters『gained 1.4% to settle at $4,216.3』；13:28–13:30 结算窗 VWAP 4216.4 复现）。陷阱：17:00 电子盘最后一笔 $4,220.30（=Yahoo 日线 C/CNBC 4:59PM 报价）≠ 结算价，勿误采 | 期货收盘=官方结算价：优先通讯社『settled at』句，无稿用结算窗 1m VWAP（GC≈13:28–13:30 ET、CL/BZ≈14:28–14:30 ET）；禁止用电子盘最后一笔/Yahoo 日线 close/CNBC 收盘报价充当结算价；正文引用盘中时点值须加注『intraday』或替换为结算/更新值；修正后回写 data today 与全部派生 %（tbl/HEAT/c1/链/foot/引用句 一处不漏） |
 
 ## 取数前提
 
@@ -52,6 +53,7 @@
 | 2026-10-07 | 数字 | today c1『the Nasdaq's six-day run ended』与收盘序列不符（9/30–10/6 连涨 5 日，10/7 为首跌日） | run/streak 表述按收盘序列逐日计数（连涨 5 日 →『five-day run』），或直接沿用来源口径『first down day in six』 |
 | 2026-10-07 | 数字 | ② n3 照抄 Investopedia『down 35% YTD』，现算 SKYD = -33.7%（13.40→8.89） | 单名 YTD 数字引用前用收盘序列现算；现算与来源差 >1pp 时改为现算值（≈-34%）或加注来源口径（二选一，禁止直接照抄来源值当事实） |
 | 2026-10-07 | 逻辑 | 同一 10Y 盘中高点文件内两值：正文 5.365%（=Yahoo 1m 高点 5.364）vs ytd ② n0 引用 5.350%（CNBC 同页两帖，前帖为盘中早值） | 同一天同一指标全文件只保留一个值（含引用句）；引用句与正文不一致时改引同源同值句或加注口径 |
+| 2026-10-09 | 数字 | c1『yields holding below 5.25%』与 ① s1『yields hold below 5.25%』与全时段不符：10Y 开盘 5.257%、盘中峰值 5.28%（10:42 ET）、223 分钟高于 5.25%，仅收盘 5.244% 低于 | 写『收益率 hold 在 X% 之下』类阈值断言前用 Yahoo 1m 全时段极值核对（max>X 即不可写 below）；只对收盘成立的断言须写明『closed below』，或改峰值口径 |
 
 ## 链结构（主链 / 辅链）
 

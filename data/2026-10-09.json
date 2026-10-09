@@ -55,7 +55,7 @@
       "ytdBase": 60.849998474121094
     },
     "gold": {
-      "today": 4215,
+      "today": 4216.3,
       "mtdBase": 4186.7001953125,
       "qtdBase": 4186.7001953125,
       "ytdBase": 4341.10009765625
@@ -118,9 +118,9 @@
     },
     "gold": {
       "dayPct": null,
-      "mtdPct": 0.68,
-      "qtdPct": 0.68,
-      "ytdPct": -2.9
+      "mtdPct": 0.71,
+      "qtdPct": 0.71,
+      "ytdPct": -2.87
     },
     "btc": {
       "dayPct": null,

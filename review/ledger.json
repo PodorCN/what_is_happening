@@ -547,9 +547,14 @@
               "rule": "写『收益率 hold 在 X% 之下』类阈值断言前用 Yahoo 1m 全时段极值核对（max>X 即不可写 below）；只对收盘成立的断言须写明『closed below』。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true
     }
   ]
 }

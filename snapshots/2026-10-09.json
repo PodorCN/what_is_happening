@@ -12,7 +12,7 @@
     "10Y 5.24% +1bp",
     "Brent $104.72"
    ],
-   "c1": "Relief finally outran the week's two villains. After five sessions of pressure — Brent above $100, a 10-year near 24-year highs, and Thursday's AI revenue scare — Friday opened with oil easing early (Brent down nearly 1%) and yields holding below 5.25%. The S&P opened green and held the gains all session, closing at 7,811.54 (+0.59%) — less than 8 points from Tuesday's closing record — as tech recovered from Thursday's selloff: Bloomberg reported OpenAI expects to reach or exceed $70 billion in annualized revenue by year-end, and Lumentum's CEO said the company's optical components are 'completely sold out' through early 2029. The Dow added 423 points (+0.83%) and the Nasdaq rose 0.64%; all three posted weekly gains, the Nasdaq's fourth straight. Nine of 11 sectors finished higher — real estate (+1.9%) and health (+1.6%) led — but telecom was the day's wound: SpaceX's late-Thursday spectrum deal sent Verizon -10.1%, AT&T -10.8% and T-Mobile -13.3% — the three biggest decliners in the S&P 500 — while tower REITs surged (CCI +15.6%, AMT +9.3%, SBAC +7.3%). Oil settled up ~0.4% (WTI $91.85, Brent $104.72) and the 10-year closed at 5.24% (+1bp) — stabilization, not reversal. Gold +1.4% to $4,215 (Dec futures); the dollar +0.1% to 102.23; bitcoin +1.0% to $82.5k; VIX 14.84.",
+   "c1": "Relief finally outran the week's two villains. After five sessions of pressure — Brent above $100, a 10-year near 24-year highs, and Thursday's AI revenue scare — Friday opened with oil easing early (Brent down nearly 1%) and yields off the week's highs, peaking at 5.28%. The S&P opened green and held the gains all session, closing at 7,811.54 (+0.59%) — less than 8 points from Tuesday's closing record — as tech recovered from Thursday's selloff: Bloomberg reported OpenAI expects to reach or exceed $70 billion in annualized revenue by year-end, and Lumentum's CEO said the company's optical components are 'completely sold out' through early 2029. The Dow added 423 points (+0.83%) and the Nasdaq rose 0.64%; all three posted weekly gains, the Nasdaq's fourth straight. Nine of 11 sectors finished higher — real estate (+1.9%) and health (+1.6%) led — but telecom was the day's wound: SpaceX's late-Thursday spectrum deal sent Verizon -10.1%, AT&T -10.8% and T-Mobile -13.3% — the three biggest decliners in the S&P 500 — while tower REITs surged (CCI +15.6%, AMT +9.3%, SBAC +7.3%). Oil settled up ~0.4% (WTI $91.85, Brent $104.72) and the 10-year closed at 5.24% (+1bp) — stabilization, not reversal. Gold +1.4% to $4,216.3 (Dec futures); the dollar +0.1% to 102.23; bitcoin +1.0% to $82.5k; VIX 14.84.",
    "c4": "<ul class='play'><li>The relief was stabilization, not salvation: oil still settled higher on the day and the 10Y still sits near 24-year highs — the S&P is nearly back at its record, but the 5.2-5.35% band still referees everything.</li><li>A new fault line: SpaceX's spectrum deal repriced the wireless chain in a day — carriers -10% to -13%, towers +7% to +16%; own the picks-and-shovels, rent the incumbents, watch the FCC process.</li><li>The gates: bond market closed Monday (stocks open); earnings season opens Tuesday with the big banks; CPI (Oct 14) and the Oct 28 meeting referee the inflation and AI-revenue math.</li></ul>",
    "kpi": [
     [
@@ -74,7 +74,7 @@
     [
      "Gold",
      "$4,157",
-     "$4,215",
+     "$4,216.3",
      "+1.4%"
     ]
    ],
@@ -100,7 +100,7 @@
      "main": 1,
      "steps": [
       "The setup: a week of pressure — Brent above $100, a 10-year at 24-year highs, Thursday's AI scare — leaves the tape coiled near records",
-      "The open: oil eases early (Brent down nearly 1%) as Trump says the U.S. will not attack Iran before the midterms, amid talks to end the war; yields hold below 5.25%",
+      "The open: oil eases early (Brent down nearly 1%) as Trump says the U.S. will not attack Iran before the midterms, amid talks to end the war; yields top out at 5.28%",
       "The tape: stocks stay green from the open — 9 of 11 sectors finish higher, with real estate (+1.9%) and health (+1.6%) leading",
       "The close: S&P 7,811.54 (+0.59%), near Tuesday's record close; Dow +0.83% (+423 points); Nasdaq +0.64%; all three post weekly gains (the Nasdaq's fourth straight)",
       "The fine print: oil still settled up on the day (WTI $91.85 +0.4%, Brent $104.72 +0.4%) and the 10Y ends at 5.24% (+1bp) — the relief is stabilization, not reversal",
@@ -242,7 +242,7 @@
     {
      "t": "⑤ The Ledger: Metals Bid, Breadth Debated — and the Gates Ahead",
      "steps": [
-      "The hedges bid: gold +1.4% Friday (Dec futures $4,215; heading for a weekly gain), spot silver +1.7% to $60.36, platinum +3.4%, palladium +3.7% — as cooling oil and a softer dollar met bargain-hunting after Wednesday's two-month low",
+      "The hedges bid: gold +1.4% Friday (Dec futures $4,216.3; heading for a weekly gain), spot silver +2.4% to $60.77, platinum +3.1%, palladium +2.1% — as cooling oil and a softer dollar met bargain-hunting after Wednesday's two-month low",
       "The debate: Goldman Sachs says S&P breadth has fallen to its lowest since the dotcom bubble, with the median stock nearly 20% off its highs; Morgan Stanley sees 'an opportunity' in laggards — 'the main risk is a renewed spike in bond volatility'",
       "The seasonality: Deutsche Bank — the S&P has risen in 21 of the last 23 midterm cycles (one month before to two months after): 'we entered that sweet spot this week'; Truist — the bull market, the 11th since the 1950s, is on track to complete four full years on Oct. 12",
       "The gates: bond market closed Monday for Columbus Day (stocks open); earnings season kicks into high gear Tuesday with the big banks; CPI (Oct 14) and the Oct 28 meeting referee the odds (October ~19%, December ~84%, CME FedWatch)"
@@ -251,9 +251,9 @@
      "news": [
       {
        "time": "10/9",
-       "fact": "Spot gold rose 1.4% to $4,189.99 by 0842 GMT, heading for a weekly gain; US gold futures for December delivery also added 1.4%, trading at $4,215.30 per ounce. Among other metals, spot silver gained 1.7% to $60.36 per ounce, platinum climbed 3.4% to $1,690.49 and palladium jumped 3.7% to $1,162.18.",
+       "fact": "Gold rose for a second straight session on Friday, touching a one-week high, as bargain buying emerged after bullion fell to a two-month low earlier this week, while traders assessed the likelihood of further US Federal Reserve interest rate hikes. US gold futures for December delivery gained 1.4% to settle at $4,216.3. Spot gold rose 1.5% to $4,194.36 per ounce by 03:29 p.m. EDT (1929 GMT), heading for a weekly gain of about 1.3%. Among other metals, spot silver gained 2.4% to $60.77 per ounce, platinum jumped 3.1% to $1,685.64 and palladium rose 2.1% to $1,146.39.",
        "src": "Kitco (Reuters)",
-       "u": "https://www.kitco.com/news/off-the-wire/2026-10-09/gold-adds-over-1-easing-oil-prices-softer-dollar"
+       "u": "https://www.kitco.com/news/off-the-wire/2026-10-09/gold-hits-one-week-high-heads-weekly-gain-bargain-hunting"
       },
       {
        "time": "10/9",
@@ -522,7 +522,7 @@
     [
      "Gold",
      "$4,186.7",
-     "$4,215",
+     "$4,216.3",
      "+0.7%"
     ],
     [
@@ -702,7 +702,7 @@
     [
      "Gold",
      "$4,341",
-     "$4,215",
+     "$4,216.3",
      "-2.9%"
     ]
    ],
@@ -971,7 +971,7 @@
      ],
      [
       "Gold fut",
-      "$4,215",
+      "$4,216.3",
       "+1.4"
      ],
      [
@@ -1083,7 +1083,7 @@
      ],
      [
       "Gold",
-      "$4,215",
+      "$4,216.3",
       "+0.7"
      ],
      [
@@ -1175,7 +1175,7 @@
     "items": [
      [
       "Gold",
-      "$4,215",
+      "$4,216.3",
       "+0.7"
      ],
      [
@@ -1277,7 +1277,7 @@
      ],
      [
       "Gold",
-      "$4,215",
+      "$4,216.3",
       "-2.9"
      ],
      [
@@ -1294,6 +1294,6 @@
    }
   ]
  },
- "foot": "Closing baseline (auto 2026-10-09): SPX 7811.54 (+2.09% MTD / +2.09% QTD / +14.11% YTD) · DJI 51654.95 (+1.47% MTD) · IXIC 27366.17 (+17.74% YTD) · 10Y 5.24% · WTI 91.85 · Brent 104.72 (Dec settle) · Gold 4215 (Dec fut) · BTC 82495.21. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.16% · 26-06-30 S&P 7499.36/Dow 52319/Nasdaq 26213/10Y 4.42% · 26-08-31 S&P 7686.14/Dow 53185.9/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/WTI $90.42/Brent ~$103.5 (Nov; Dec front ~$98.0)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
+ "foot": "Closing baseline (auto 2026-10-09): SPX 7811.54 (+2.09% MTD / +2.09% QTD / +14.11% YTD) · DJI 51654.95 (+1.47% MTD) · IXIC 27366.17 (+17.74% YTD) · 10Y 5.24% · WTI 91.85 · Brent 104.72 (Dec settle) · Gold 4216.3 (Dec fut) · BTC 82495.21. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.16% · 26-06-30 S&P 7499.36/Dow 52319/Nasdaq 26213/10Y 4.42% · 26-08-31 S&P 7686.14/Dow 53185.9/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/WTI $90.42/Brent ~$103.5 (Nov; Dec front ~$98.0)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
  "label": "2026-10-09 Friday close"
 }
