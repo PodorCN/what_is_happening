@@ -606,9 +606,14 @@
               "rule": "写『X 领涨道指』前现算全 30 成分当日价格变动（道指价格加权、同除数，变动排名=点数贡献排名）；只有第一名可用 led，其余用 helped / among the biggest boosts。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true
     }
   ]
 }
