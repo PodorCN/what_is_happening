@@ -555,6 +555,60 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-10-12",
+      "reviewedAt": "2026-10-12T19:15:00-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "today ② s1『LITE entered the day up ~170% year-to-date』时点错误：进入当日（10/9 收盘 $1,103.35）的 YTD 应为 ~+199%（对 12/31/25 收盘 $368.59）；~170% 是周一收盘后值（$995.41 = +170.1%），也正是 24/7 来源句（发布于周一盘中/卖压中）的现值。应改为『entered the day up ~199%』或『still up ~170% after Monday's slide』。",
+              "evidence": "Yahoo LITE 日线：2025-12-31 收盘 368.59、2026-10-09 收盘 1103.355（+199.3%）、2026-10-12 收盘 995.41（+170.1%）；24/7 Wall St 原文『Lumentum's 170% year-to-date gain』为盘中现值；LESSONS 2026-10-07 F6（来源 YTD 值须现算核对、不得改变时点口径）同类。",
+              "rule": "写『某股进入当日时 ±x% YTD』前用前一日收盘现算（前收 ÷ 上年末 12/31 收盘 − 1）；引用来源的 YTD 值先核对它对应的时点（盘中/盘后），禁止把盘中现值改写成『进入当日』口径。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today ⑤ s0『bank shares enter in correction (KBW index more than 14% off its August peak)』与现算不符：^BKX 10/12 收盘 171.41 对 8 月最高收盘 193.91（8/14）= −11.6%（对 8/17 盘中高点 195.55 = −12.3%；对周一盘中最低 170.74 = −12.7%），任何口径都到不了『>14%』。应改用现算值（约 −12%）或加注来源口径。",
+              "evidence": "^BKX 日线（6/1–10/12 全量核验，最大值确在 8 月：收盘 193.91 @8/14、盘中高点 195.55 @8/17）；来源句为 Yahoo Finance 直播帖『is now down more than 14% from its August peak』（⑤ news 内引用；链内未注明口径）；LESSONS 2026-10-07 F6（现算与来源差 >1pp 须改现算或加注）。",
+              "rule": "指数回撤数字（『距 X 月峰值 −n%』）引用前用 Yahoo 日线现算（收盘口径）；现算与来源差 >1pp 时改用现算值或加注来源口径，禁止直接照抄来源数字当事实。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ③ s2『Bumble +49.6% — the WSJ reported advanced talks to go private』出处错：该链唯一相关来源（③ news1，BNN Bloomberg (Reuters)）全文为『a source familiar with the matter told Reuters』，无任何 WSJ 字样；WSJ 只属同链 s3 的 Decart 条（Amazon）。应改为『Reuters reported』/『a source told Reuters』。",
+              "evidence": "bnnbloomberg.ca 页面全文（已下载逐段核验）：通篇 Reuters，无 'Wall Street Journal'/'WSJ'；快照 ③ news1 src『BNN Bloomberg (Reuters)』、fact 句『told Reuters on Monday』；邻条 s3 的 WSJ 表述与 Investopedia fact『a report in The Wall Street Journal…Decart』对应。",
+              "rule": "链内写『某媒体 reported』前先在该链 news.u 指向的页面检索该媒体名；attribution 以被引页面为准，不得凭记忆或从邻条串写。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd ② s2『The AI complex wobbled twice (10/8, 10/12): the first scare was walked back within a session; Monday's unwind stuck』与主链 ① s2『…the AI revenue question lands (10/8) and is walked back within a session (10/9)』及 ① s3『…the AI complex (10/12)』重复叙述同一事件且句式复用（walked back within a session）；辅链应只保留增量（『twice』计数与『stuck vs 回补』对比）。",
+              "evidence": "同一 mtd 档 ①/② 链文对比；LESSONS 2026-10-06 F1、2026-10-08 F5（辅链只留增量，同一事实/句式不得跨链复用）。",
+              "rule": "mtd 辅链只保留主链未给的增量（计数/对比/新对象）；『walked back』『unwind』等事件细节与句式归主链，定稿前逐链比对同档内有无同句复用。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today ③ s4『The value bid: Salesforce +2.1% … led the Dow's advance』与现算不符：全 30 成分中点数贡献 MSFT +6.08 > CRM +4.79，涨幅 VZ +2.71% > CRM +2.09%，CRM 两种口径均非第一；c1 的『helped by』（来源口径）正确，链内『led』应降级（helped/among the biggest boosts）或改写主语。",
+              "evidence": "Dow 30 日线 10/9→10/12 现算（MSFT +6.08 / +1.14%；CRM +4.79 / +2.09%；VZ +1.13 / +2.71%）；Investopedia 原文『helped by a 2% rise in shares of Salesforce』。",
+              "rule": "写『X 领涨道指』前现算全 30 成分当日价格变动（道指价格加权、同除数，变动排名=点数贡献排名）；只有第一名可用 led，其余用 helped / among the biggest boosts。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
