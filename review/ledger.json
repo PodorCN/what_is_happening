@@ -614,6 +614,60 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-10-13",
+      "reviewedAt": "2026-10-13T19:00:33-04:00",
+      "verdict": "PASS",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "PASS",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today c1 与 ① s2 写『Samsung and SK Hynix roughly -8% each』，为来源盘中口径未更新为收盘：收盘现算 Samsung -7.39%（250,500→232,000）、SK Hynix -10.09%（1,605,000→1,443,000），SK Hynix 差约 2.1pp；n3 同句为来源原句（可在带『盘中』注时保留）",
+              "evidence": "Yahoo 日线 005930.KS / 000660.KS（10/12→10/13）；『roughly 8%』出自 Yahoo Finance live blog（盘中时点，收盘未更新），多家转载同句",
+              "rule": "韩股单名涨跌幅同样用 Yahoo 收盘现算（005930.KS / 000660.KS，今收÷昨收−1）；正文一律用收盘值（≈-7.4% / -10.1%），来源盘中值只允许出现在加注『盘中』的引用句里"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today ① s3『(Deere +2% the tell)』与 n4『(PACCAR -1%, Deere +2%)』为 24/7 来源盘中值：收盘现算 DE +2.75%（632.61→650.00）、PCAR -0.14%（108.13→107.98）",
+              "evidence": "247wallst 原文系午后盘中（DE $642.72 / PCAR $106.76 时点）；Yahoo DE / PCAR 日线现算；与 LESSONS 2026-10-01『单名涨跌幅写入前用 Yahoo 收盘现算』同类",
+              "rule": "引用 24/7 类盘中稿的副题数字前必须收盘现算（DE ≈ +2.8%、PCAR ≈ -0.1%）；未现算的来源值须加注『盘中』或替换为收盘值"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ② n6 引用 24/7 卡片『A 5.1% slide to $377.13 erases roughly $18 billion…』未标盘中口径：$377.13 与 -5.1% 均为 2:20pm ET 盘中值（-5.1% 系相对开盘 $397.26 的回吐），当日收盘为 $377.76 / -0.2%（同档 s5 已正确）——同链两口径并置（5.1% vs -0.2%）易读成全日 -5.1%",
+              "evidence": "24/7 卡片 widget 自标『Regular session 2:20pm ET』；Yahoo UNH 日线 收盘 377.76（378.52→377.76 = -0.20%）；LESSONS 2026-10-08 F6『引用盘中值须加注或改用收盘值』",
+              "rule": "引用盘中值必须加注口径（如『intraday, 2:20pm ET』）或改用收盘句；同一链内某标的的全日涨跌幅口径只能有一个"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today ④ 链内美元方向表述互斥：s2『The dollar stepped back: DXY slipped 0.4%』vs s3『a firm dollar vs CPI-haven demand』——同一条链对美元当日方向给出两种读法",
+              "evidence": "本文件 c1『the dollar backed off an 18-month high (DXY 102.2, -0.4%)』；DXY 现算 102.592→102.203 = -0.38%；CNBC 源句『as the US dollar held firm』为隔夜水平口径",
+              "rule": "同一链内同一标的的方向词必须统一：s3 改『a dollar near its 18-month high』（水平口径）或『a resilient dollar』，不得与当日 down 0.4% 并用 firm"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd ② s3 尾句『— and the last two were global』复述同档主链 ① s4『the AI complex over two sessions (10/12-13), now global』的定性表述（『global』在 h/d/c1 概括层已出现，链间不应再复述）",
+              "evidence": "同档 ① s4 vs ② s3 逐句比对；LESSONS 2026-10-12『mtd 辅链只保留主链未给的增量（计数/对比/新对象）』",
+              "rule": "mtd 辅链只保留增量（『three of four sessions (10/8, 10/12, 10/13)』计数可留）；『global』类定性词与事件细节归主链——定稿前 grep 同档链文关键词逐链比对，重复即删"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
