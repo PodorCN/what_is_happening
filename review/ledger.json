@@ -668,6 +668,52 @@
         }
       ],
       "resolved": false
+    },
+    {
+      "date": "2026-10-14",
+      "reviewedAt": "2026-10-14T18:57:43-04:00",
+      "verdict": "PASS",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "PASS",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd ③ s2『Week two's new layer: the Houthis hit Aramco's Dhahran headquarters; the IEA warns the diesel squeeze runs into 2027』逐条复述 today ④ 的两条当日头号事实（④ 标题即『Aramco Hit, Diesel Warning』，s0/s1 已展开）；窗口档 chains 应只保留月内增量口径，具体事件细节归 today ④",
+              "evidence": "与 today ④ s0/s1 及 10/14 news（Reuters/CNBC 两条）事实完全重复；同窗口 qtd ③ 用抽象口径（『supply shocks met policy supply』『$100-107 band』）未复述；LESSONS 2026-10-12 F4、2026-10-13 F5 同类判例",
+              "rule": "定稿前把 today 各链的具体事件（地点/对象/数字）与 mtd/qtd/ytd 各链做事实级比对：today 已展开的事件不得在窗口档 chains 逐条再列，窗口档只写计数、层级或对比句"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today ④ s3『gasoline +34.2% y/y fed the print』与主链 ① s0『gasoline +34.2% y/y as the war's fuel shock fed through』重复同一事实（同数字+同因果），辅链应只保留增量（Beige Book 传导）",
+              "evidence": "同档 ① s0 vs ④ s3；10/13 快照 today 档各链间仅有巧合数字重叠（1.4% 分属 Intel +1.4% 与 KBW -1.4%），无同事实复用；LESSONS 2026-10-06『任何事实在主链与辅链重复出现即改写——辅链只保留增量（新对象/新数字）』",
+              "rule": "today 档定稿前对每对链做数字级比对：主链已出现的统计数字辅链不得复用同一事实表述，辅链只保留新对象（如 Beige Book 句）"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd c1『a 10Y that touched 5.33% then closed 5.19%』与 qtd ① s4『ends the window at 5.19% after touching 5.33%』把 10/14 当日盘内触值 5.33% 用作窗口触值口径；本窗口（10/1–10/14）实际峰值 ~5.36%（10/7），同档引用句为『briefly neared 5.37%』——窗口档内并存 5.33/5.37 两个触值",
+              "evidence": "Yahoo ^TNX 5m 窗口逐日高点最大 5.364（2026-10-07）、10/14 当日高点 5.329；mtd ① n1 / qtd ① n0（Investopedia 10/12）『two days after it briefly neared 5.37%, its highest level in more than 24 years』；10/13 版 mtd c1 用通用口径『after printing fresh 24-year highs』",
+              "rule": "窗口档（mtd/qtd/ytd）描述 10Y 触值一律用窗口最大口径或通用表述『fresh 24-year highs』，当日盘内触值只出现在 today 档；定稿前 grep 全文件『5.3』触值，核对窗口档与同档引用句峰值一致"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today c1 两处引号内措辞与来源不符：①『its CEO called the market 'irrational'』来源作 acting 'irrationally'；②『the Beige Book said fuel costs are 'permeating all District reports'』来源作『Higher oil prices permeated all District reports』（permeating→permeated）",
+              "evidence": "srnnews（Reuters 转载）与 SWI swissinfo 原文均作 'irrationally'（引号内）；Investopedia（10/14）Beige Book 原文『Higher oil prices permeated all District reports』；同文件 ④ s3 引用同源为『higher oil prices permeated all District reports』（正确），c1 与 ④ s3 对同一来源两种引法",
+              "rule": "引号内文字必须与来源逐字一致（可整段裁剪，不可改词/时态/语序）；无法逐字引用时去引号改转述；定稿前对每个引号片段在已存来源文本里 grep 核字"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
