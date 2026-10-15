@@ -714,6 +714,60 @@
         }
       ],
       "resolved": false
+    },
+    {
+      "date": "2026-10-15",
+      "reviewedAt": "2026-10-15T19:04:01-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "today HEAT『S&P SECTORS』5 个板块日涨跌幅与收盘现算不符（疑沿用盘中/旧值，均小于收盘幅度）：Comms 写 +0.6（应 +1.5）、ConsDisc 写 +1.2（应 +1.7）、Staples 写 +0.4（应 +0.7）、RealEstate 写 +1.0（应 +1.2）、Tech 写 -0.5（应 -0.7）；且与本文件自身 mtd 面板矛盾——由 (1+mtd今日)÷(1+mtd昨日)-1 反推当日得 Comms +1.46 / ConsDisc +1.72 / Staples +0.72 / Tech -0.65，与 ETF 现算一致。另 Health（+1.86，写 +1.8）与 Materials（+1.79，写 +1.7）各差 0.1pp，属舍入边界，按同一现算口径一并复核。",
+              "evidence": "Yahoo 板块 ETF 收盘 10/14→10/15：XLC 110.82→112.44（+1.46）、XLY 111.50→113.41（+1.71）、XLP 86.06→86.68（+0.72）、XLK 190.43→189.19（-0.65）、XLRE 41.49→41.99（+1.21），meta changePct 同值；mtd 面板两日（Comms/ConsDisc/Staples/Tech：10/14 写 -0.1/+2.4/+6.8/-2.7，10/15 写 +1.3/+4.2/+7.5/-3.4）与 ETF 收盘全部一致，故错的只能是 today 面板这 5 格；其余 6 格（Health/Materials/Financials +1.4/Industrials +0.5/Utilities -0.2/Energy -1.6）与现算相符或 ≤0.1pp。",
+              "rule": "today HEAT 板块日值一律用板块 ETF（XLC/XLY/XLP/XLK/XLV/XLE/XLU/XLI/XLB/XLRE/XLF）今收÷昨收-1 现算（meta changePct 可复核）；定稿前做自洽检查：(1+当日mtd)÷(1+昨日mtd)-1 ≈ 当日值（±0.15pp），不符即重算；来源盘中值不得直接当收盘值写入。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today c1『PPI +6.3% y/y, the fastest since March 2022』比较级归属错：『fastest since March 2022』属 m/m +1.3%（链④ s0 用法正确）；y/y 6.3% 的正确口径为『highest annual rate since December 2022』。应改为『PPI +6.3% y/y, the highest since December 2022』或删比较级。",
+              "evidence": "CNN『It's the fastest monthly increase since March 2022 and the highest annual rate since December 2022』；bizpacreview『the largest annual increase since December 2022』；UPI『largest annual increase since 2022』；本文件链④ s0 已正确写 m/m『the fastest monthly jump since March 2022』——同一来源两组数字被混接。",
+              "rule": "引用『fastest/biggest since…』类比较级前，先在来源里核对其修饰 m/m 还是 y/y（本月基准：m/m=since March 2022、y/y=since December 2022）；同一比较级全文件只保留一处且口径一致。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "窗口档 10Y 触值仍写当日盘内值：mtd c1『a 10Y that touched 5.33% then closed 5.09%』与 qtd ① s4『ends the window at 5.09% (-20bp) after touching 5.33%』；本窗口（10/1-10/15）实际峰值 ≈5.36%（^TNX 10/7 高点 5.364＝52周高点），同文件引用句亦写『briefly neared 5.37%』，5.33 与 5.37 并存。系 10/14 F3 复现（未修复）。",
+              "evidence": "同文件 mtd/qtd news 引用（Investopedia）：『…briefly neared 5.37%, its highest level in more than 24 years』；Yahoo ^TNX 窗口内最高 5.364（10/7）；5.33% 是 10/14 当日盘内高点（昨日快照当日档用值），非本窗口最大。",
+              "rule": "窗口档写 10Y 触值一律用窗口最大口径：先 grep 全文件『5.3』消除多值并存，再取 ^TNX 窗口内最高（或沿用来源『neared 5.37 / fresh 24-year highs』）；当日盘内触值只允许出现在 today 档。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "窗口档复述 today ③ 的当日事件：mtd ③ s2『Week two's new layers: a container ship sunk near Hormuz; an 8.6M-barrel EIA draw; the Houthis fired on Aden's palace』、qtd ③ s3『The newest layer: a sunk container ship and an 8.6M-barrel draw vs shadow-fleet relief talk』——沉船/EIA 抽取/亚丁宫袭击均为 today ③ s1/s2 已展开的当日细节。系 10/14 F1 复现（未修复）。",
+              "evidence": "today ③ s1『a Singapore-registered container ship sank in the Strait of Hormuz…』、s2『EIA crude inventories fell 8.6 million barrels… the Houthis fired on Aden's presidential palace』；mtd/qtd 两处逐项重复同一对象与数字（10/14 F1 已判同款）。",
+              "rule": "定稿前把 today 各链的具体事件（对象/地点/数字）与 mtd/qtd/ytd 链逐条比对：today 已展开的事件不得在窗口档再列，窗口档只写计数、层级或对比句；重复出现的历史 minor（10/14 F1）由 fixer 一并修复并沉淀 LESSONS。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "倍数词错误：today c1『An equal-weighted version of the S&P climbed 1.4% — double the benchmark』与 ① s2『…climbed 1.4% — double the cap-weighted index』；实算 1.4% 对 +0.33% ≈ 4.2 倍（RSP +1.37% 对 SPY +0.29%），非 double；来源原句无『double』。应改『more than four times the benchmark』或删倍数词。",
+              "evidence": "SWI swissinfo（Bloomberg）原文：『an equal-weighted version of the S&P 500 — which strips out market-value biases — climbed 1.4%.』；Yahoo：RSP 212.09→215.00（+1.37%）、SPY 769.60→771.79（+0.29%）；S&P 500 收 +0.33%。",
+              "rule": "写『N 倍于基准』类倍数前用两个数字现算比值（如 1.4÷0.33≈4.2），倍数词必须与算值一致；来源未给的倍数/比较级不得自行添加。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
