@@ -58,6 +58,10 @@
 | 2026-10-12 | 数字 | today ⑤ s0『KBW index more than 14% off its August peak』现算仅 **−11.6%**（收盘口径；含盘中最多 −12.7%，任何口径到不了 >14%）；同档 n4 为来源原句（保留为引用） | 指数回撤数字（『距 X 月峰值 −n%』）引用前用 Yahoo 日线现算（收盘口径）；现算与来源差 >1pp 时改用现算值或加注来源口径，禁止直接照抄来源数字当事实 |
 | 2026-10-12 | 引用 | today ③ s2『the WSJ reported』（Bumble 私有化）出处错：被引页面（BNN Bloomberg／Reuters）全文 0 处 WSJ、34 处 Reuters（『a source familiar with the matter told Reuters』）；WSJ 只属同链 s3 的 Decart 条 | 链内写『某媒体 reported』前先在该链 news.u 指向的页面检索该媒体名；attribution 以被引页面为准，不得凭记忆或从邻条串写 |
 | 2026-10-12 | 数字 | today ③ s4『Salesforce +2.1% … led the Dow's advance』与现算不符：按 Δ$（同除数，= 点数贡献）MSFT +6.08 > CRM +4.79，按涨幅 VZ +2.71% > CRM +2.09%，CRM 两种口径均非第一（c1『helped by』为来源口径，正确） | 写『X 领涨道指』前现算全 30 成分当日价格变动（道指价格加权、同除数 → 美元变动排名 = 点数贡献排名）；只有第一名可用 led，其余用 helped / among the biggest boosts |
+| 2026-10-15 | 数字 | today HEAT 板块 5 格沿用盘中/旧值：Comms +0.6→+1.5、ConsDisc +1.2→+1.7、Staples +0.4→+0.7、RealEstate +1.0→+1.2、Tech -0.5→-0.7；Health/Materials 舍入边界一并复核（+1.8→+1.9、+1.7→+1.8）；与自身 mtd 面板及 ETF 收盘现算矛盾 | today 板块日值一律用板块 ETF（XLC/XLY/XLP/XLK/XLV/XLE/XLU/XLI/XLB/XLRE/XLF）今收÷昨收−1 现算、保留 1 位小数；定稿前做自洽检查 (1+当日mtd)÷(1+昨日mtd)−1 ≈ 当日值（±0.15pp）；盘中值不得当收盘值写入 |
+| 2026-10-15 | 数字 | today c1『PPI +6.3% y/y, the fastest since March 2022』口径错：fastest（since March 2022）属 m/m +1.3%；y/y 6.3% 应写『the highest annual rate since December 2022』——同一来源两组数字混接 | 引用『fastest/biggest since…』前先在来源核对修饰的是 m/m 还是 y/y（本月基准：m/m=since March 2022、y/y=since December 2022）；同一比较级全文件只留一处且口径一致 |
+| 2026-10-15 | 逻辑 | 窗口档 10Y 触值沿用当日盘内值：mtd c1 / qtd ① s4『touched 5.33%』（10/14 盘内高点），窗口峰值实为 5.364（10/7），与引用句『neared 5.37%』并存（10/14 F3 已犯未修，本日复现） | 窗口档写 10Y 触值一律用窗口最大口径：先 grep 全文件『5.3』核对，取 ^TNX 窗口内最高（5.36%）或沿用来源『neared 5.37 / fresh 24-year highs』；当日盘内触值只允许出现在 today 档 |
+| 2026-10-15 | 数字 | today c1 / ① s2『climbed 1.4% — double the benchmark』倍数错：1.37% vs 0.33% ≈ 4.2 倍（RSP/SPY = 1.37/0.29 ≈ 4.8），非 double，且来源原句无倍数词 | 写『N 倍于基准』类倍数前用两个数字现算比值（1.4÷0.33≈4.2）；来源未给的倍数/比较级不得自行添加 |
 
 ## 链结构（主链 / 辅链）
 
@@ -66,6 +70,7 @@
 | 2026-10-06 | 逻辑 | today 档辅链与主链重复叙述同一件事（Brent 晨段、CEG +12%/utilities、AMD/Marvell、10-of-11 板块、DXY 101.86 多处近乎逐字；utilities +3.0% 出现 3 次） | chains 定稿前做『主链×每条辅链』逐对事实比对（对象+数字+方向）：任何事实在主链与辅链重复出现即改写——辅链只保留增量（新对象/新数字），主链只保留传导节点；today 档内同一数字不得出现两次以上（结构性表格字段除外） |
 | 2026-10-07 | 逻辑 | today ④ s2『dip-buying…slide almost fully recovered』≈ 主链 ① s4（近乎逐字），③ s4 第三次转述『stocks pared losses』，④ d 亦有回响 | chains 定稿前做『主链×每条辅链』逐对事实比对：『跌深收复/尾盘拉回』叙事只归主链，辅链不得再转述；④ 只留拍卖/加息概率/gates/VIX |
 | 2026-10-12 | 逻辑 | mtd ② s2『the first scare was walked back within a session; Monday's unwind stuck』复述主链 ① s2 同一事件且句式复用（walked back within a session） | mtd 辅链只保留主链未给的增量（计数/对比/新对象）；『walked back』『unwind』等事件细节与句式归主链，定稿前逐链比对同档内有无同句复用 |
+| 2026-10-15 | 逻辑 | 窗口档复述 today 当日事件：mtd ③ s2（沉船/EIA draw/Aden 宫）与 qtd ③ s3（同两件）为 today ③ s1/s2 已展开细节（10/14 F1 已犯未修，本日复现） | 定稿前把 today 各链的具体事件（对象/地点/数字）与 mtd/qtd/ytd 链逐条比对：today 已展开的事件不得在窗口档再列，窗口档只写计数、层级或对比句 |
 
 ## 待补充
 
