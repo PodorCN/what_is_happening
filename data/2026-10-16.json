@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-16",
+  "symbols": {
+    "spx": "^GSPC",
+    "dji": "^DJI",
+    "ixic": "^IXIC",
+    "tnx": "^TNX",
+    "wti": "CL=F",
+    "brent": "BZ=F",
+    "gold": "GC=F",
+    "btc": "BTC-USD",
+    "dxy": "DX-Y.NYB",
+    "vix": "^VIX"
+  },
+  "bases": {
+    "mtdBase": "2026-09-30",
+    "qtdBase": "2026-09-30",
+    "ytd": "2025-12-31"
+  },
+  "closes": {
+    "spx": {
+      "today": 7659.43994140625,
+      "mtdBase": 7651.5400390625,
+      "qtdBase": 7651.5400390625,
+      "ytdBase": 6845.5
+    },
+    "dji": {
+      "today": 52002.41015625,
+      "mtdBase": 50906.05078125,
+      "qtdBase": 50906.05078125,
+      "ytdBase": 48063.2890625
+    },
+    "ixic": {
+      "today": 26140.033203125,
+      "mtdBase": 26861.060546875,
+      "qtdBase": 26861.060546875,
+      "ytdBase": 23241.990234375
+    },
+    "tnx": {
+      "today": 5.1,
+      "mtdBase": 5.29,
+      "qtdBase": 5.29,
+      "ytdBase": 4.16
+    },
+    "wti": {
+      "today": 101.41,
+      "mtdBase": 90.41999816894531,
+      "qtdBase": 90.41999816894531,
+      "ytdBase": 57.41999816894531
+    },
+    "brent": {
+      "today": 109.86,
+      "mtdBase": 98,
+      "qtdBase": 98,
+      "ytdBase": 60.849998474121094
+    },
+    "gold": {
+      "today": 4180.91,
+      "mtdBase": 4186.7001953125,
+      "qtdBase": 4186.7001953125,
+      "ytdBase": 4341.10009765625
+    },
+    "btc": {
+      "today": 81652.05,
+      "mtdBase": 83553.8515625,
+      "qtdBase": 83553.8515625,
+      "ytdBase": 87508.828125
+    },
+    "dxy": {
+      "today": 101.78099822998047,
+      "mtdBase": 101.44999694824219,
+      "qtdBase": 101.44999694824219,
+      "ytdBase": 98.27999877929688
+    },
+    "vix": {
+      "today": 19.989999771118164,
+      "mtdBase": 16.34000015258789,
+      "qtdBase": 16.34000015258789,
+      "ytdBase": 14.949999809265137
+    }
+  },
+  "computed": {
+    "spx": {
+      "dayPct": -1.09,
+      "mtdPct": 0.1,
+      "qtdPct": 0.1,
+      "ytdPct": 11.89
+    },
+    "dji": {
+      "dayPct": -0.34,
+      "mtdPct": 2.15,
+      "qtdPct": 2.15,
+      "ytdPct": 8.2
+    },
+    "ixic": {
+      "dayPct": -2.14,
+      "mtdPct": -2.68,
+      "qtdPct": -2.68,
+      "ytdPct": 12.47
+    },
+    "tnx": {
+      "dayPct": 0.2,
+      "mtdPct": -3.59,
+      "qtdPct": -3.59,
+      "ytdPct": 22.6
+    },
+    "wti": {
+      "dayPct": 3.51,
+      "mtdPct": 12.15,
+      "qtdPct": 12.15,
+      "ytdPct": 76.61
+    },
+    "brent": {
+      "dayPct": 3.72,
+      "mtdPct": 12.1,
+      "qtdPct": 12.1,
+      "ytdPct": 80.54
+    },
+    "gold": {
+      "dayPct": 0.27,
+      "mtdPct": -0.14,
+      "qtdPct": -0.14,
+      "ytdPct": -3.69
+    },
+    "btc": {
+      "dayPct": -0.52,
+      "mtdPct": -2.28,
+      "qtdPct": -2.28,
+      "ytdPct": -6.69
+    },
+    "dxy": {
+      "dayPct": -0.22,
+      "mtdPct": 0.33,
+      "qtdPct": 0.33,
+      "ytdPct": 3.56
+    },
+    "vix": {
+      "dayPct": 21.45,
+      "mtdPct": 22.34,
+      "qtdPct": 22.34,
+      "ytdPct": 33.71
+    }
+  }
+}
