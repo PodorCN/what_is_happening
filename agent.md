@@ -15,6 +15,7 @@ scripts/fetch.mjs           # 拉数：Yahoo v8 chart，免 key，Node 18+
 scripts/build.mjs           # 校数：打印校准表（贴快照前先核对）
 scripts/build-shell.mjs     # 合成：shell.html + 最新快照 → index.html
 scripts/verify.mjs          # 校验：内嵌快照可解析、四档齐全、挂载点都在
+scripts/lint.mjs            # 文案 lint：窗口档过期标签/当日复述/计数与序列矛盾/出处缺失（ERROR 阻断 commit）
 agent.md                    # 本文件
 ```
 
@@ -60,6 +61,30 @@ agent.md                    # 本文件
 - **QTD**：讲季度三段论（7 月吃财报 → 8 月滞涨 → 9 月回吐），回答"季度涨幅保住了吗"。
 - **YTD**：讲年度双引擎和最大变量（AI+盈利 vs 利率+战争），回答"基本盘坏没坏"。
 - MTD/QTD/YTD 的 chains 是**增量视角**，不复述 today 的日内细节。
+- **季度首月（1/4/7/10 月）MTD 与 QTD 同基期、数字完全相同**：QTD 不得是 MTD 的改写版。MTD 讲"这个月发生了什么"；
+  QTD 讲"这个季度相对上季末站在哪、还剩哪些关口"（对比上季末的格局、季内剩余的 FOMC/财报季/数据日程、季度涨幅的风险点）。
+  `lint.mjs` 用整档用词重合度检测（>0.30 告警）。
+
+### 2.5 窗口档每日重写协议（"复制昨天文件"的边界）
+
+§3 允许复制昨天的快照做起点——这只适用于**结构和数字骨架**。窗口档（mtd/qtd/ytd）的文字是累积错误的主要来源
+（10/15 复盘：S&P "两次新高"其实是 Nasdaq 的、"Week Two" 在第三周、10/9 的广度警告原样挂了五天、"Warsh tonight" 进了 YTD）。
+每天对窗口档的**每一句** `h/d/c1/c4/kpi/chains[].t/d/steps` 过下面五问，任何一问答不上就改写或删除：
+
+1. **时间词还对吗？** "week two / first week / eleven sessions / this month's first …" 按今天的窗口重新数（交易日数 = `labels.length-1`）。
+   描述当前状态的标签必须随日推进；特指某一周时写日期区间（"10/5-9"）。
+2. **是当日内容吗？** "tonight / this morning / 今天的板块涨跌 / 当日事件" 只属于 today 档。窗口档只写窗口级的计数、区间、对比。
+3. **主语对吗？** "record close / fastest since / highest since" 类断言必须在**同一子句**点名指数或口径（S&P vs Nasdaq、m/m vs y/y、收盘 vs 盘中），
+   并与 `data`/`labels` 序列可核对（`lint.mjs` 自动比对 S&P 序列的新高次数）。
+4. **还成立吗？** 连续 ≥3 天没改的论断（`lint.mjs` 会列出来），用**今天的窗口数据**重验一次：
+   当时的论据（如"广度最窄"）是否已被新数据推翻？区间/上下限（"5.2-5.35% is the band""ceiling held"）是否已被本档自己写的数字突破？
+   只要本档任何一处数字落在区间外，区间断言就不能留。
+5. **基准写清了吗？** 概率/预期类变化（FedWatch、共识）必须写**相对窗口期初或事件前**的净变化（"22% pre-CPI → 37% peak → 29%"），
+   不能只拿事件后峰值作对照然后说"faded/fell"。
+
+另外两条硬规则：
+- `news[].time` 标**事件发生日**，不是文章 URL/发布日期（周一的文章回顾周五 → `10/9 close`）。
+- 改写时删掉的具体内容，替换句必须仍含**可核对的对象/数字/日期**；"escalation kept coming — another round of the same fight" 这类空话等于删除，宁可直接删掉该 step。
 
 ### 2.4 热力图取舍
 只放 `名字 + return`，颜色二值（`+`绿/`-`红），不要深浅、不要横条——扫一眼只分涨跌。
@@ -111,7 +136,8 @@ node scripts/build.mjs $DATE
 #    cp snapshots/2026-09-28.json snapshots/$DATE.json  # 起点，周一请确认周末无交易
 #    写完后：snapshots/index.json 末尾追加 "$DATE"（保持升序、不重复）
 
-# 3) 合成 + 校验
+# 3) 文案 lint + 合成 + 校验
+node scripts/lint.mjs $DATE        # ERROR 必须清零才能继续；WARN 逐条按 §2.5 处理
 node scripts/build-shell.mjs $DATE
 node scripts/verify.mjs
 
@@ -130,6 +156,8 @@ git log --oneline -2        # 确认已推上去
 ```
 
 - commit 信息格式固定为 `wrap(YYYY-MM-DD): 主线一句话`，方便回看。
+- `lint.mjs` 有 ERROR 时**禁止 commit**。WARN 要么修掉，要么在 commit body 加 `lint-ack:` 段，逐条写"保留理由 + 用什么新数据验证过"
+  （如 `lint-ack: mtd.chains.0.steps.1 stale — 10/7 5.365% 仍是窗口高点，已核 ^TNX`）。没有理由的 WARN = reviewer 直接记 finding。
 - 若开了 GitHub Pages（源选 main / 根目录），push 后线上自动更新，无需额外操作。
 - 若 `fetch.mjs` 拉不到数（节假日/429）：用收盘帖原文数字手填 `data/$DATE.json`，缺失记 `null`，commit 信息加 `(manual)`。
 
@@ -139,7 +167,7 @@ git log --oneline -2        # 确认已推上去
 > 1) §1 思路收集新闻（主线三连搜 + 必读 Investopedia/Barron's 收盘帖）；
 > 2) §4 跑 fetch+build，数字以校准表为准；
 > 3) 写 `snapshots/YYYY-MM-DD.json`（复制昨天文件改，四档+每链 time+fact+真链接），`snapshots/index.json` 追加日期；
-> 4) 跑 `build-shell` + `verify`，http 服务下 `browser.preview` 验收；
+> 4) 窗口档按 §2.5 五问逐句重写；跑 `lint`（ERROR 清零，WARN 修掉或写进 commit body 的 `lint-ack:`）+ `build-shell` + `verify`，http 服务下 `browser.preview` 验收；
 > 5) §4 的 git 命令推到 `origin main`。
 > 不编 URL，不编数字，对不上就标 `~` 或 `null`。
 
@@ -174,10 +202,17 @@ review/
   - `PASS` → 在 ledger 记一条，结束。
   - `REVISE` → 把每条 finding 写进 ledger（id/severity/category/symptom/evidence/rule），**不改快照**。
 - **fixer**（19:00，有 REVISE 才跑）：读 ledger 里未 resolved 的 findings → 改快照/脚本 →
-  **把每条 finding 的 rule 追加进 `review/LESSONS.md`**（这是"记住反馈"的唯一落点）→ 重跑 build-shell + verify → push。
+  **把每条 finding 的 rule 追加进 `review/LESSONS.md`**（这是"记住反馈"的唯一落点）→ 重跑 lint + build-shell + verify → push。
+  - **按类修，不按点修**：finding 指出的是一个位置，但同类问题通常在四档里各有一份。修之前先 grep 全文件（四档 + HEAT + news）
+    找出同一模式的所有出现，一次修完，并在 commit 里列出额外修到的位置。只修 reviewer 点名的那一处 = 半修。
+  - **替换句必须带信息**（§2.5）：删掉的具体内容不能换成空话。
+  - **能机械检查的规则写进 `scripts/lint.mjs`，不只写进 LESSONS**：LESSONS 是给人读的长清单，越长越容易被跳过；
+    同一类错误第二次出现时，fixer 必须评估能否加一条 lint 规则（加了就在 LESSONS 那一行注明 `[lint]`）。
 
 **reviewer 必查项**（不限于此）：
 
+0. **先跑 `node scripts/lint.mjs <DATE>`**：有 ERROR 直接记 major；每条 WARN 对照 writer commit body 的 `lint-ack:`，
+   没有 ack 或 ack 理由不成立 → 记 finding。lint 只覆盖机械可检的部分，§2.5 五问的语义部分仍需人工逐句过窗口档。
 1. **数字对得上** —— 每个 kpi/tbl/heatmap 数字 vs `data/<DATE>.json` 的 `computed`；四档百分比 vs 基线手算；同档跨日连续性（今天 MTD 起点应等于昨天 MTD 的基线附近）。
 2. **schema 完整** —— 四档齐全、`chains[].news[].u` 是真 URL 且非占位、四档 `labels.length == data.length == tbl` 对得上、heatmap 板块数与说明一致。
 3. **前后逻辑**（最容易出问题的）：
@@ -186,7 +221,8 @@ review/
    - 主链 `main:1` 恰好一条，且它的 steps 能解释 tbl 里的主要涨跌；
    - **辅链不能与主链重复叙述同一件事**（today 档尤其）；
    - `d`（一句话推导）不能与 `steps` 矛盾；
-   - mtd/qtd/ytd 的 chains 不复述 today 的日内细节（§2.3）。
+   - mtd/qtd/ytd 的 chains 不复述 today 的日内细节（§2.3）；
+   - 窗口档逐句过 §2.5 五问（时间词 / 当日内容 / 主语 / 是否仍成立 / 基准），尤其是从前几天沿用下来的句子。
 4. **渲染** —— `build-shell` 后 `verify` 过；http 打开 `?date=<DATE>` 四档/热力图/链都出得来。
 
 **reviewer 不能做的事**：不自己修、不改 `snapshots/*.json`、不碰 `index.html` 样式。发现问题只记录，

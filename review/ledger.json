@@ -770,6 +770,77 @@
           "round": 2,
           "verdict": "PASS",
           "findings": []
+        },
+        {
+          "round": 3,
+          "verdict": "REVISE",
+          "note": "人工复审（round 2 PASS 之后），已在同一 commit 修复；规则沉淀进 LESSONS 2026-10-16 行与 scripts/lint.mjs",
+          "findings": [
+            {
+              "id": "M1",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "mtd/qtd/ytd 6 处『two record closes』挂在 S&P 名下",
+              "evidence": "S&P 十月仅 10/6 7,818.93 一次新高（10/5 7,773.95 低于 8 月纪录）；两次新高为 Nasdaq 10/5 27,477.31 / 10/6 27,599.79（见 10/5、10/6 快照 today c1）",
+              "rule": "见 LESSONS 2026-10-16 行 1"
+            },
+            {
+              "id": "M2",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "『odds fell / market faded two hot prints』与引用的 FedWatch 序列矛盾",
+              "evidence": "同文件 news：22%（CPI 前）→ 37%（10/14）→ 29%（10/15），窗口内净升；December 88→91→88",
+              "rule": "见 LESSONS 2026-10-16 行 2"
+            },
+            {
+              "id": "M3",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "qtd『5.2-5.35% is the band』/ kpi『ceiling held』被同档 5.365%、5.09% 突破",
+              "evidence": "data/10-01..10-14 10Y 收盘 5.19-5.31；10/7 盘中 5.365；10/15 收 5.09",
+              "rule": "见 LESSONS 2026-10-16 行 3"
+            },
+            {
+              "id": "M4",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd ② Goldman 广度警告自 10/9 原样沿用，与窗口扩散数据相反",
+              "evidence": "Dow +2.50% vs Nasdaq -0.55% MTD；Energy/Staples/Utilities 领涨",
+              "rule": "见 LESSONS 2026-10-16 行 4"
+            },
+            {
+              "id": "M5",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "时间标签过期（Week Two / week-plus / came in week one）+ F4 修出的空话 + 残留『Warsh tonight』",
+              "evidence": "窗口 10/1-10/15 跨 3 个自然周；10/6 属第二周",
+              "rule": "见 LESSONS 2026-10-16 行 5-6"
+            },
+            {
+              "id": "M6",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "news time『10/12 close』实为周五 10/9 收盘稿",
+              "evidence": "fact 原文『Stocks surged Friday … ended the week』",
+              "rule": "见 LESSONS 2026-10-16 行 7"
+            },
+            {
+              "id": "M7",
+              "severity": "minor",
+              "category": "schema",
+              "symptom": "qtd/ytd HEAT 第二列重复涨跌幅",
+              "evidence": "『S&P +1.21 +1.21』等 10 格",
+              "rule": "见 LESSONS 2026-10-16 行 8"
+            },
+            {
+              "id": "M8",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "ytd ③『Anthropic's Q3 revenue at $16.8B』本文件及前 8 份快照 news 均无出处",
+              "evidence": "grep news[].fact 无 16.8",
+              "rule": "news 无出处的数字删掉或补来源"
+            }
+          ]
         }
       ],
       "resolved": true
