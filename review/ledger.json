@@ -844,6 +844,60 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-10-16",
+      "reviewedAt": "2026-10-16T19:07:40-04:00",
+      "verdict": "PASS",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "PASS",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "未到期的时段词：mtd c1『the AI complex (10/12-13, and again into month-end)』、mtd d『…and again into month-end』、mtd ③ s0『crude held above $100 into the month's final stretch』、ytd ③ s3『an eighth straight chip slide into month-end』。10/16 是 10 月第 12 个交易日（本月共约 22 个交易日，尚有 10 个），以上『month-end / final stretch』均指向尚未发生的时段；且『and again into month-end』与 mtd ① s2 自身枚举『the AI complex (10/12-13)』矛盾——AI 综合体的复价只有 10/12-13 与 10/16 两段。",
+              "evidence": "快照 date=2026-10-16（周五，10 月第 12 个交易日）；mtd ① s2 枚举『(10/12-13)』；对比 10/15 版 mtd ③ s0 无该措辞（原文『re-armed the war premium above $100』）；全库 grep『month-end』仅本文件 3 处、『final stretch』仅 1 处（均为 10/16 新引入）。",
+              "rule": "定稿前对照当日日历：『month-end / final stretch』只允许在月末最后 3 个交易日使用；月中一律写具体日期（如 10/16）或『mid-month』；lint 词表加入 month-end / final stretch 告警。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ① s2『neocloud peers Nebius and IREN slid over 3% early』：全文件 62 条 news 无一条提及 Nebius/IREN（该句无文件内出处）；且数值与所引 Reuters 稿（① n3）现存两个版本均不符——06:07 ET 版『dipped over 2.8% each』、07:03 ET 版『dipped 2% each』。",
+              "evidence": "grep 全快照『Nebius』『IREN』各 1 次（均为该步自身）；Reuters 同稿转载：wsau.com / wmbdradio.com / kfgo.com / kelo.com（06:07 版）、marketscreener.com / money.usnews.com（07:03 版）；开盘口径现算 NBIS -3.8%（188.41→181.17）、IREN -3.9%（30.39→29.20）。",
+              "rule": "链步骤中的个股数字必须与所引 news 的措辞一致且该 news 在本文件内；无法匹配时改用现算收盘值（NBIS -12.2%、IREN -11.2%）或注明『at the open』口径。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "取数",
+              "symptom": "BTC 同指标两值：today ④ s3『bitcoin -0.5% to ~$81.6k』vs HEAT 四档与 qtd tbl『$81.7k』（共 5 处）、foot『BTC 81652.05』。",
+              "evidence": "data/2026-10-16.json btc.today=81652.05（≈$81.7k）；『~$81.6k』对应来源句『$81,562.09』（swi news）。与 10/07 F8（BTC 定稿值不统一）同类。",
+              "rule": "同一指标全文件单值：BTC 一律写 data 定稿值四舍五入（$81.7k）；引用来源值（$81,562.09）须带出处括注。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "原油 YTD 同档两值：ytd ④ s0『crude up over 60% this year』vs ytd ② s2『crude up 76.6% YTD』（同档同指标）。",
+              "evidence": "现算 WTI 57.42→101.41 = +76.6%；『more than 60%』系 devdiscourse 稿（ytd ②/⑤ news，time『10/8 close』，写于原油 ≈91.5 时）旧值；10/15 版该处带引号（'soaring more than 60%'），10/16 去引号后读作文件自身数字。",
+              "rule": "定稿前 grep 同一指标在全文件的出现处（『60%』『76.6』），统一到现算值；保留来源旧值必须带引号并注口径。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "窗口档复述 today 当日行情措辞：qtd ③ s3『Then the corridor cracked: Brent ran to $109.86 — a first $110 touch since May』与 today ② s2『Brent +3.7% to $109.86 — a first $110 touch since May』特征短语逐字重复；mtd ③ s4『then the month's escalation carried the premium past $109』同题。（同类：10/14 F1、10/15 F4。）",
+              "evidence": "today ② s2 与 qtd ③ s3 均含『$109.86 — a first $110 touch since May』；10/15 版窗口档只写期末值（『The numbers: Brent from ~$98 to $105.92 (+8.1% MTD)』），未复述当日行情。",
+              "rule": "窗口档油价链只保留期末值（$109.86 / +12.1%）与窗口结论（『corridor cracked upward』）；today 档特征短语（『first $110』『since May』）定稿前逐档 grep，不得在 mtd/qtd/ytd 复现。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
