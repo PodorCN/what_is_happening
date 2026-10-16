@@ -135,9 +135,15 @@
       },
       {
        "time": "10/16",
-       "fact": "CoreWeave's bonds sold off sharply this week, pushing yields to above 15%. Reuters reported, citing people familiar with the matter, that some current Anthropic investors and prospective investors in its upcoming IPO are weighing a lower valuation, amid broader concerns over ballooning AI financing costs.",
+       "fact": "Nvidia-backed CoreWeave slumped 12%, bringing its loss over the past five sessions to about 25%. The data center operator's bonds also sold off sharply this week, pushing yields above 15%.",
        "src": "Reuters",
-       "u": "https://www.forth.news/articles/Cg5y8SQJUHpyeC1foC2mW"
+       "u": "https://www.reuters.com/business/wall-st-futures-mixed-tech-wobbles-again-tesla-gains-2026-10-16/"
+      },
+      {
+       "time": "10/15",
+       "fact": "Some current Anthropic investors and prospective investors in its upcoming initial public offering are weighing a lower valuation for the AI company after its latest financial disclosures, four people familiar with the matter said. Some investors discussed a valuation of around $1.5 trillion, a significant step down from the roughly $2 trillion that investors had previously expected for the November share sale.",
+       "src": "Reuters",
+       "u": "https://www.reuters.com/business/finance/investors-temper-anthropic-ipo-valuation-expectations-over-revenue-growth-2026-10-15/"
       },
       {
        "time": "10/16",
@@ -208,9 +214,15 @@
       },
       {
        "time": "10/16",
-       "fact": "'After a brief reprieve, the oil market is having to price risk back in, particularly heading into the weekend,' said Rebecca Babin, senior energy trader at CIBC Private Wealth Group. 'Conflict in the Middle East still keeps coming back and I think it's questionable how much diesel fuel Russia can actually deliver to the markets,' said Dennis Kissler of BOK Financial.",
-       "src": "Bloomberg (World Oil) / Reuters",
+       "fact": "'After a brief reprieve, the oil market is having to price risk back in, particularly heading into the weekend,' said Rebecca Babin, senior energy trader at CIBC Private Wealth Group.",
+       "src": "Bloomberg (World Oil)",
        "u": "https://worldoil.com/news/2026/10/16/oil-hits-110-as-houthi-strikes-russia-ukraine-attacks-lift-supply-fears/"
+      },
+      {
+       "time": "10/16",
+       "fact": "'Conflict in the Middle East still keeps coming back and I think it's questionable how much diesel fuel Russia can actually deliver to the markets. Those two factors are just continuing to have traders be buyers,' said Dennis Kissler, senior vice president of trading at BOK Financial.",
+       "src": "Reuters (Yahoo Finance)",
+       "u": "https://finance.yahoo.com/energy/articles/oil-edges-down-investors-weigh-010642305.html"
       },
       {
        "time": "10/16",
@@ -556,7 +568,7 @@
     "Brent +12.1%"
    ],
    "c1": "Q4's ledger: +0.10% (7,659.44) for the S&P, -2.68% for the Nasdaq, +2.15% for the Dow. Inside it: one all-time mark set (10/6, first time beyond 7,800); a 24-year top on 10/7 (5.36%) before the long end retreated to 5.10% (-19bp QTD); three repricings booked — telecom names, the AI complex, the CPI-PPI pair — with October hike odds swinging 22% → 37% → ~17%. The $100-107 corridor ended upward (Brent +12.1%, December basis); gold -0.1%; the dollar +0.3%. The character: dispersion — Energy +11.0% QTD against Tech -6.3%. Still ahead: Oct 27-28, October PCE (Oct 29), earnings, the Nov 3 midterms.",
-   "c4": "<ul class='play'><li>The opening fortnight's lesson: two hot prints moved October hike odds from 22% before CPI to a 37% peak and back to ~17% — fully faded; the Fed's reaction function is now the whole game.</li><li>The fortnight's winners: energy and safety plays; the losers: the AI complex's crowded corners — then rescued partly.</li><li>Duration still sets the terms: the 10Y caps multiples, but its retreat to 5.10% enabled the rotation — a quiet bond market is the bull case's first draft.</li></ul>",
+   "c4": "<ul class='play'><li>The quarter's opening lesson: two hot prints moved October hike odds from 22% before CPI to a 37% peak and back to ~17% — fully faded; the Fed's reaction function is now the whole game.</li><li>The winners so far: energy and safety plays; the losers: the AI complex's crowded corners — then rescued partly.</li><li>Duration still sets the terms: the 10Y caps multiples, but its retreat to 5.10% enabled the rotation — a quiet bond market is the bull case's first draft.</li></ul>",
    "kpi": [
     [
      "S&P QTD",
@@ -653,7 +665,7 @@
    ],
    "chains": [
     {
-     "t": "① The Q4 Handoff — Opening Fortnight",
+     "t": "① The Q4 Handoff — First Three Weeks",
      "main": 1,
      "steps": [
       "The handoff: 9/30 finished at 7,651.5; it ends at 7,659.44 — the span still holds one S&P all-time mark (7,818.93, 10/6)",
@@ -712,7 +724,7 @@
       "Then the corridor cracked: Brent ran to $109.86 — a first $110 touch since May",
       "The final marks: Brent $109.86 (+12.1% QTD, Dec basis); WTI $101.41 (+12.2%)"
      ],
-     "d": "The quarter's barrel: supply shocks vs policy supply — a $100-107 band that broke upward as the month escalated.",
+     "d": "The quarter's oil: price shocks vs policy offsets — a $100-107 corridor that cracked upward as the month escalated.",
      "news": [
       {
        "time": "10/8",
@@ -929,9 +941,9 @@
       },
       {
        "time": "10/16",
-       "fact": "CoreWeave's bonds sold off sharply this week, pushing yields to above 15%.",
+       "fact": "CoreWeave's bonds sold off sharply this week, pushing yields above 15%.",
        "src": "Reuters",
-       "u": "https://www.forth.news/articles/Cg5y8SQJUHpyeC1foC2mW"
+       "u": "https://www.reuters.com/business/wall-st-futures-mixed-tech-wobbles-again-tesla-gains-2026-10-16/"
       }
      ]
     },
