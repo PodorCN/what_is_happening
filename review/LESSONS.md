@@ -2,7 +2,7 @@
 
 每条 = reviewer 曾经抓到过一次的真实错误。**写 `snapshots/<DATE>.json` 之前先读这份清单，逐条对照；新快照里再犯就是失职。**
 
-来源：每次 review 跑完后由 fixer job 追加。格式固定：`日期 | 类别 | 症状 | 规则`。
+来源：每次 review 跑完后由 fixer job 追加。格式固定：`日期 | 类别 | 症状 | 规则`。规则末尾标 `[lint]` 的已由 `scripts/lint.mjs` 自动检查——仍要遵守，但写手可以把注意力放在没标的条目上。
 
 ---
 
@@ -62,6 +62,10 @@
 | 2026-10-15 | 数字 | today c1『PPI +6.3% y/y, the fastest since March 2022』口径错：fastest（since March 2022）属 m/m +1.3%；y/y 6.3% 应写『the highest annual rate since December 2022』——同一来源两组数字混接 | 引用『fastest/biggest since…』前先在来源核对修饰的是 m/m 还是 y/y（本月基准：m/m=since March 2022、y/y=since December 2022）；同一比较级全文件只留一处且口径一致 |
 | 2026-10-15 | 逻辑 | 窗口档 10Y 触值沿用当日盘内值：mtd c1 / qtd ① s4『touched 5.33%』（10/14 盘内高点），窗口峰值实为 5.364（10/7），与引用句『neared 5.37%』并存（10/14 F3 已犯未修，本日复现） | 窗口档写 10Y 触值一律用窗口最大口径：先 grep 全文件『5.3』核对，取 ^TNX 窗口内最高（5.36%）或沿用来源『neared 5.37 / fresh 24-year highs』；当日盘内触值只允许出现在 today 档 |
 | 2026-10-15 | 数字 | today c1 / ① s2『climbed 1.4% — double the benchmark』倍数错：1.37% vs 0.33% ≈ 4.2 倍（RSP/SPY = 1.37/0.29 ≈ 4.8），非 double，且来源原句无倍数词 | 写『N 倍于基准』类倍数前用两个数字现算比值（1.4÷0.33≈4.2）；来源未给的倍数/比较级不得自行添加 |
+| 2026-10-16 | 逻辑 | mtd/qtd/ytd 共 6 处『two record closes』挂在 S&P 名下；S&P 十月只有 1 次创纪录收盘（10/6 7,818.93），两次是 Nasdaq 的（10/5、10/6）——10/6 的原句被逐日照抄，主语漂移到 S&P | 『record close / fastest since / highest since』类断言必须在同一子句点名指数与口径，并与 `labels/data` 序列核对次数 `[lint]` |
+| 2026-10-16 | 逻辑 | 『odds fell to ~29% despite hot prints / the market faded two hot prints』：FedWatch 实为 22%（CPI 前）→ 37% → 29%，窗口内净升 7pp；只与事件后峰值比就说 faded | 概率/预期变化写相对窗口期初或事件前的净变化（22% pre-CPI → 37% peak → 29%），用 half-faded 而非 faded `[lint 部分]` |
+| 2026-10-16 | 逻辑 | qtd ①『5.2-5.35% is the band』+ kpi『ceiling held』与同档自己写的 5.365%（10/7 盘中）和 5.09%（10/15 收盘）矛盾 | 区间/上限断言写入前，把本档出现的该指标所有数值（期初、期末、触值）逐个放进区间核对；有一个在区间外就不能写 band/held `[lint]` |
+| 2026-10-16 | 逻辑 | mtd ②『Goldman: narrowest breadth since the dotcom bubble』从 10/9 原样挂到 10/15，而窗口数据已转向扩散（Dow +2.50% vs Nasdaq -0.55% MTD，防御/能源领涨） | 连续 ≥3 天未改的窗口论断必须用当天窗口数据重验，被新数据推翻的改写为『X 日的警告已被 … 回应』或删除 `[lint：stale 告警]` |
 
 ## 链结构（主链 / 辅链）
 
@@ -71,6 +75,11 @@
 | 2026-10-07 | 逻辑 | today ④ s2『dip-buying…slide almost fully recovered』≈ 主链 ① s4（近乎逐字），③ s4 第三次转述『stocks pared losses』，④ d 亦有回响 | chains 定稿前做『主链×每条辅链』逐对事实比对：『跌深收复/尾盘拉回』叙事只归主链，辅链不得再转述；④ 只留拍卖/加息概率/gates/VIX |
 | 2026-10-12 | 逻辑 | mtd ② s2『the first scare was walked back within a session; Monday's unwind stuck』复述主链 ① s2 同一事件且句式复用（walked back within a session） | mtd 辅链只保留主链未给的增量（计数/对比/新对象）；『walked back』『unwind』等事件细节与句式归主链，定稿前逐链比对同档内有无同句复用 |
 | 2026-10-15 | 逻辑 | 窗口档复述 today 当日事件：mtd ③ s2（沉船/EIA draw/Aden 宫）与 qtd ③ s3（同两件）为 today ③ s1/s2 已展开细节（10/14 F1 已犯未修，本日复现） | 定稿前把 today 各链的具体事件（对象/地点/数字）与 mtd/qtd/ytd 链逐条比对：today 已展开的事件不得在窗口档再列，窗口档只写计数、层级或对比句 |
+| 2026-10-16 | 逻辑 | 窗口档时间标签过期：第三周还写『The Barrel, Week Two』『Week two's new layers』『Q4's first week-plus』；qtd c1『first close above 7,800 came in week one』（10/6 实为第二周） | 描述当前状态的时间标签按当天窗口重数（交易日=labels.length-1，周次按自然周）；特指某周写日期区间 `[lint]` |
+| 2026-10-16 | 逻辑 | 10/15 F4 的修法把具体事件换成『escalation kept coming — another round of the same fight』——空话，信息量为零；『Warsh tonight』仍留在 mtd/qtd c1 和 ytd ⑤（同类未全文件排查） | fixer 按类修：grep 全文件同一模式一次修完；替换句必须含可核对的对象/数字/日期，否则直接删 step；窗口档禁当日时间词 `[lint：tonight 类 ERROR]` |
+| 2026-10-16 | 引用 | mtd ①/qtd ① 引 Investopedia『Stocks surged Friday … ended the week around 5.24%』标 time『10/12 close』（URL 日期），内容是周五 10/9 收盘 | news.time 标事件发生日，不是文章 URL/发布日期；fact 里出现星期几先核对 `[lint]` |
+| 2026-10-16 | schema | qtd/ytd HEAT 第二列填了与涨跌幅相同的值（『+1.21』『-20bp』），页面重复显示同一个数（10/9 起每天沿用） | HEAT items 第二列只能是水平值（点位/价格/收益率）或『—』 `[lint ERROR]` |
+| 2026-10-16 | 结构 | 季度首月 MTD 与 QTD 同基期，QTD 是 MTD 的改写（整档用词重合 0.39-0.43，正常 <0.2） | 季度首月 QTD 换视角：对比上季末、季内剩余关口（FOMC/财报季/数据），不复述 MTD 的月内叙事 `[lint：重合度>0.30 告警]` |
 
 ## 待补充
 
