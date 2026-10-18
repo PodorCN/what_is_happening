@@ -161,6 +161,35 @@ for (const tier of WIN) for (const [k, s] of authored(snap.P[tier])) {
   }
 }
 
+// ---------- 11. FX 块：必须是当天 fx.mjs 注入的，不能是复制昨天文件带过来的 ----------
+const dataFx = existsSync(`data/${DATE}.json`) ? JSON.parse(readFileSync(`data/${DATE}.json`, "utf8")).fx : null;
+const FX = snap.FX;
+if (dataFx && Object.keys(dataFx.pairs || {}).length && !FX) E("FX", `data/${DATE}.json 有 FX 数据但快照没有 FX 块——跑 node scripts/fx.mjs ${DATE}`);
+if (FX) {
+  if (FX.asOf !== DATE) E("FX", `FX.asOf=${FX.asOf} ≠ ${DATE}——FX 块是从前一天文件复制来的，重跑 node scripts/fx.mjs ${DATE}`);
+  for (const p of FX.pairs || []) {
+    const last = p.series[p.series.length - 1];
+    if (last[0] !== DATE) E(`FX.${p.id}`, `序列最后一根是 ${last[0]}，不是 ${DATE}`);
+    const dp = dataFx?.pairs?.[p.id];
+    if (dp) { const dl = dp.series[dp.series.length - 1][1]; if (Math.abs(dl - last[1]) > Math.abs(dl) * 1e-6) E(`FX.${p.id}`, `快照末值 ${last[1]} ≠ data 末值 ${dl}——重跑 fx.mjs`); }
+  }
+  // 文中引用的货币对涨跌幅 vs FX 序列现算（today = 日环比；其余档 = 相对基期）
+  const pctOf = (p, tier) => {
+    const s = p.series, last = s[s.length - 1][1];
+    let ref = s[s.length - 2]?.[1];
+    if (tier !== "today") { const b = FX.bases[tier]; for (const [d, c] of s) if (d <= b) ref = c; }
+    return (last / ref - 1) * 100;
+  };
+  for (const tier of ["today", ...WIN]) for (const [k, s] of authored(snap.P[tier] || {})) for (const p of FX.pairs) {
+    const nm = p.name.replace("/", "\\/?");
+    for (const m of s.matchAll(new RegExp(`\\b${nm}\\b[^.;%]{0,40}?([+-−]?\\d+(?:\\.\\d+)?)%`, "gi"))) {
+      const v = parseFloat(m[1].replace("−", "-")), calc = pctOf(p, tier);
+      if (Math.abs(Math.abs(v) - Math.abs(calc)) > 0.06 || (Math.sign(v) && /^[+-−]/.test(m[1]) && Math.sign(v) !== Math.sign(calc)))
+        W(`${tier}.${k}`, `"${m[0]}" 与 FX 序列现算 ${calc >= 0 ? "+" : ""}${calc.toFixed(2)}%（${tier === "today" ? "日环比" : "相对 " + FX.bases[tier]}）不符`);
+    }
+  }
+}
+
 for (const e of errs) console.log("ERROR " + e);
 for (const w of warns) console.log("WARN  " + w);
 console.log(`\nlint ${DATE}: ${errs.length} error(s), ${warns.length} warning(s)`);

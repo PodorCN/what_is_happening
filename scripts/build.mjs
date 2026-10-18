@@ -25,6 +25,10 @@ for (const k of ["tnx", "wti", "brent", "gold", "btc", "dxy", "vix"]) {
   if (cp) console.log(`${k}: today ${f2(c.today)} | mtd ${s(cp.mtdPct)} | qtd ${s(cp.qtdPct)} | ytd ${s(cp.ytdPct)}`);
   else console.log(`${k}: today ${f2(c.today)} | mtd ${pct2(c.today,c.mtdBase)} | qtd ${pct2(c.today,c.qtdBase)} | ytd ${pct2(c.today,c.ytdBase)}`);
 }
+for (const [k, p] of Object.entries(d.fx?.pairs || {})) {
+  const c = d.closes[k], cp = d.computed[k]; if (!c || !cp) continue;
+  console.log(`${p.name}: today ${Number(c.today).toFixed(p.dp)} | day ${s(cp.dayPct)} | mtd ${s(cp.mtdPct)} | qtd ${s(cp.qtdPct)} | ytd ${s(cp.ytdPct)}  (FX 卡片由 fx.mjs 自动注入，勿手填)`);
+}
 
 // —— 基线连续性检查：mtdBase/qtdBase 应与上一交易日一致（Brent 跨合约回归教训，见 review/LESSONS.md）——
 try {
