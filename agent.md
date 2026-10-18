@@ -15,6 +15,7 @@ scripts/fetch.mjs           # 拉数：Yahoo v8 chart，免 key，Node 18+
 scripts/build.mjs           # 校数：打印校准表（贴快照前先核对）
 scripts/build-shell.mjs     # 合成：shell.html + 最新快照 → index.html
 scripts/verify.mjs          # 校验：内嵌快照可解析、四档齐全、挂载点都在
+scripts/fx.mjs              # FX：把 data/ 里的货币对日线序列注入快照 FX 块（页面 Currencies 卡片，数字不手填）
 scripts/lint.mjs            # 文案 lint：窗口档过期标签/当日复述/计数与序列矛盾/出处缺失（ERROR 阻断 commit）
 agent.md                    # 本文件
 ```
@@ -89,6 +90,16 @@ agent.md                    # 本文件
 ### 2.4 热力图取舍
 只放 `名字 + return`，颜色二值（`+`绿/`-`红），不要深浅、不要横条——扫一眼只分涨跌。
 分组固定四组：US 指数 / S&P 板块 / 债券利率 / 商品全球加密；板块注明"11 仅 N 红"交代广度。
+货币对不进热力图（DXY 仍留在商品组做美元总览），单独放在 Currencies 卡片，见 §2.6。
+
+### 2.6 货币对（Currencies 卡片）
+- **数据全自动**：`fetch.mjs` 拉 USD/CAD、USD/JPY、USD/EUR、USD/CNY、CAD/CNY 的 YTD 日线 → `fx.mjs` 注入快照 `FX` 块 →
+  页面按档切片：Today 档 = 近 ~2 周走势 + 日环比；MTD/QTD/YTD = 基期起走势 + 窗口涨跌 + 区间高低。**writer 不手填任何 FX 数字。**
+- **报价方向 = 名字方向**：USD/CAD +0.5% = 美元兑加元升 0.5%（加元贬）。USD/EUR 是按用户要求的方向；市场惯例报 EUR/USD，
+  卡片同时显示倒数。正文提到欧元时写清是哪个方向，不要把 EUR/USD 的涨写成 USD/EUR 的涨。
+- **叙事**：货币对只在它是当日/窗口驱动因素时进 chains（例：日元干预或 BOJ、油价 → 加元、人民币中间价、美元随收益率走），
+  数字从 `build.mjs` 校准表的 FX 行抄（或 `fx.mjs` 输出）；`lint.mjs` 会把文中 "USD/JPY +x%" 与序列现算比对。
+- 加新货币对：只改 `scripts/fetch.mjs` 顶部的 `FX_PAIRS`（Yahoo 代码、显示名、小数位），下游自动跟上。
 
 ## 3. 快照 schema（写文件前对照）
 
@@ -112,10 +123,13 @@ agent.md                    # 本文件
   "HEAT": {
     "today": [{ "sec": "US 指数", "items": [["S&P 500","7,6xx","-0.77"]]} …],
     "mtd": […], "qtd": […], "ytd": […]
-  }
+  },
+  "FX": { "asOf": "2026-10-19", "src": "…", "bases": { "mtd": "2026-09-30", "qtd": "2026-09-30", "ytd": "2025-12-31" },
+    "pairs": [{ "id": "usdcad", "name": "USD/CAD", "dp": 4, "series": [["2025-12-31", 1.37], …] }, …] }
 }
 ```
 
+- `FX` 块由 `fx.mjs` 生成，**不要手改、不要从昨天文件沿用**（复制昨天文件后它是旧的，必须重跑 fx.mjs；lint 会拦）。
 - 四档齐全；`news[].u` 必须是真 URL；文案用英文（页面是英文报纸风格）。
 - 最省事：**复制前一天快照文件改数字和 chains**，不要从零写。
 
@@ -136,7 +150,8 @@ node scripts/build.mjs $DATE
 #    cp snapshots/2026-09-28.json snapshots/$DATE.json  # 起点，周一请确认周末无交易
 #    写完后：snapshots/index.json 末尾追加 "$DATE"（保持升序、不重复）
 
-# 3) 文案 lint + 合成 + 校验
+# 3) FX 注入 + 文案 lint + 合成 + 校验
+node scripts/fx.mjs $DATE          # 覆盖从昨天文件带来的旧 FX 块；data 无 fx（Yahoo 不通）时报错退出，FX 卡片留空即可，不要手填
 node scripts/lint.mjs $DATE        # ERROR 必须清零才能继续；WARN 逐条按 §2.5 处理
 node scripts/build-shell.mjs $DATE
 node scripts/verify.mjs
@@ -166,7 +181,7 @@ git log --oneline -2        # 确认已推上去
 > 今天是 YYYY-MM-DD（周X），美东已收盘。目标 DATE = 最近一个已收盘交易日；若其快照已存在（无新交易日）→ 跳过并说明。按 agent.md 跑：
 > 1) §1 思路收集新闻（主线三连搜 + 必读 Investopedia/Barron's 收盘帖）；
 > 2) §4 跑 fetch+build，数字以校准表为准；
-> 3) 写 `snapshots/YYYY-MM-DD.json`（复制昨天文件改，四档+每链 time+fact+真链接），`snapshots/index.json` 追加日期；
+> 3) 写 `snapshots/YYYY-MM-DD.json`（复制昨天文件改，四档+每链 time+fact+真链接），`snapshots/index.json` 追加日期；跑 `node scripts/fx.mjs YYYY-MM-DD` 注入货币对；
 > 4) 窗口档按 §2.5 五问逐句重写；跑 `lint`（ERROR 清零，WARN 修掉或写进 commit body 的 `lint-ack:`）+ `build-shell` + `verify`，http 服务下 `browser.preview` 验收；
 > 5) §4 的 git 命令推到 `origin main`。
 > 不编 URL，不编数字，对不上就标 `~` 或 `null`。
@@ -181,6 +196,10 @@ git log --oneline -2        # 确认已推上去
 - **未收盘日期 fetch 会返回旧数据**：`today` = 上一交易日收盘（期货/加密等 24h 品种 = 进行中的部分 bar）；生成任何快照前先按 §4 判定 DATE，拿不准就看 Yahoo 日线最后一根 bar 的日期是否 = DATE。
 - MTD 基线 = 上月最后**交易日**（不是 1 号），周末 `yahooClose` 自动回退；周一的 today 对比的是上周五。
 - Gold 区分期货/现货，本 repo 用期货并注明口径。
+- **FX 收盘口径**：外汇 24 小时交易，没有"收盘价"。Yahoo FX 日线按伦敦日期归档；DATE 当天那根是 fetch 时点（17:00 多伦多 ≈ 纽约收盘）的报价，
+  之后 Yahoo 还会继续更新到伦敦午夜——所以**次日重拉时昨天的 FX 值会略有漂移（通常 <0.1%）**，属正常，不算跨日不连续。
+  正文写 FX 数字以当天 data 为准，注明 "~NY close" 口径即可。
+- FX 序列只保留周一至周五；美股休市日（感恩节等）外汇照常有 bar，所以 FX 交易日数可能比 S&P 多一天。
 - Yahoo v8 偶发 429，加 `User-Agent` + 重试；失败走 §4 的 manual 流程。
 - 改样式只改 `shell.html`，改完必跑 `build-shell`，否则 `index.html` 还是旧的。
 - 本机无 python，用 node（v22 已验证）；`file://` 双击只能看内嵌快照，切日期必须 http 服务。

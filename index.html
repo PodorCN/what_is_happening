@@ -125,6 +125,24 @@ ul.play li::marker{color:var(--claret);font-weight:900}
 .tab{padding:11px 4px;font-size:12px;letter-spacing:.12em;text-align:center}
 }
 @media(max-width:480px){.heat-grid{grid-template-columns:1fr}}
+
+/* ── currencies ───────────────────────────── */
+.fx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.fxt{background:var(--paper);border:1px solid var(--line);padding:12px 14px 10px;min-width:0}
+.fxt .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.fxt .nm{font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.fxt .dl{font-family:"Playfair Display",Georgia,serif;font-size:24px;font-weight:900;font-variant-numeric:tabular-nums;line-height:1;white-space:nowrap}
+.fxt .dl i{font-style:normal;font-size:.55em;vertical-align:.28em;margin-right:3px}
+.fxt .lv{font-size:15px;font-variant-numeric:tabular-nums;margin-top:4px}
+.fxt .lv small{color:var(--faint);font-size:11.5px;margin-left:6px}
+.fxt svg{display:block;width:100%;height:56px;margin:8px 0 4px;cursor:crosshair;touch-action:none}
+.fxt .rg{font-size:11.5px;color:var(--mut);font-variant-numeric:tabular-nums;min-height:1.3em}
+.fx-note{font-size:12.5px;color:var(--faint);margin-top:12px;line-height:1.7}
+.fx-tbl{margin-top:8px;font-size:13px}
+.fx-tbl summary{cursor:pointer;color:var(--mut);letter-spacing:.06em}
+.fx-tbl table{border-collapse:collapse;margin-top:8px;font-variant-numeric:tabular-nums;width:100%;max-width:640px}
+.fx-tbl th,.fx-tbl td{border-bottom:1px solid var(--hair);padding:4px 8px;text-align:right}
+.fx-tbl th:first-child,.fx-tbl td:first-child{text-align:left}
 </style>
 </head>
 <body>
@@ -143,6 +161,9 @@ ul.play li::marker{color:var(--claret);font-weight:900}
 <div class="card"><h2>The Playbook</h2><div id="c4"></div></div>
 </div>
 <div class="card" style="margin-top:22px"><h2>Global Markets</h2><div id="heat"></div></div>
+<div class="card" id="fxCard" style="margin-top:22px;display:none"><h2>Currencies</h2><div class="fx-grid" id="fx"></div>
+<details class="fx-tbl"><summary>Data table</summary><div id="fxTbl"></div></details>
+<div class="fx-note" id="fxNote"></div></div>
 <div class="card" style="margin-top:22px"><h2 id="chTitle">The Chains</h2><div class="chains" id="chains"></div></div>
 <div class="foot" id="foot"></div>
 </div>
@@ -174,6 +195,57 @@ function fmtRet(v) {
   return /^[+-]?\d+(\.\d+)?$/.test(t) ? t + "%" : t;
 }
 
+// FX：按档切片同一条日线序列。today = 最近 11 根（约两周，涨跌 = 日环比）；mtd/qtd/ytd = 基期 bar 起到当日
+const md = s => `${+s.slice(5, 7)}/${+s.slice(8, 10)}`;
+function fxWindow(p, period, bases) {
+  const s = p.series;
+  if (period === "today") { const w = s.slice(-11); return { w, ref: w[w.length - 2], label: "1D", refLbl: "prior close", rangeLbl: `${md(w[0][0])}–${md(w[w.length - 1][0])}` }; }
+  const b = bases[period];
+  let i = 0; s.forEach(([d], k) => { if (d <= b) i = k; });
+  const w = s.slice(i);
+  return { w, ref: w[0], label: period.toUpperCase(), refLbl: "period start", rangeLbl: `since ${md(w[0][0])}` };
+}
+function renderFX(period) {
+  const card = document.getElementById("fxCard"), FX = SNAP.FX;
+  if (!FX || !FX.pairs || !FX.pairs.length) { card.style.display = "none"; return; }
+  card.style.display = "";
+  const W = 200, H = 56, pad = 4, rows = [];
+  document.getElementById("fx").innerHTML = FX.pairs.map((p, n) => {
+    const { w, ref, label, rangeLbl } = fxWindow(p, period, FX.bases);
+    const last = w[w.length - 1][1], chg = (last / ref[1] - 1) * 100;
+    const vals = w.map(x => x[1]), lo = Math.min(...vals), hi = Math.max(...vals), span = hi - lo || 1;
+    const X = k => pad + k * (W - 2 * pad) / Math.max(w.length - 1, 1), Y = v => H - pad - (v - lo) / span * (H - 2 * pad);
+    const col = chg >= 0 ? "var(--up)" : "var(--down)", sign = chg >= 0 ? "+" : "";
+    const pts = w.map((x, k) => `${X(k).toFixed(1)},${Y(x[1]).toFixed(1)}`).join(" ");
+    const f = v => v.toFixed(p.dp);
+    rows.push(`<tr><td>${p.name}</td><td>${md(ref[0])} ${f(ref[1])}</td><td>${md(w[w.length - 1][0])} ${f(last)}</td><td>${sign}${chg.toFixed(2)}%</td><td>${f(lo)}</td><td>${f(hi)}</td></tr>`);
+    const rangeTxt = `${rangeLbl} · range ${f(lo)}–${f(hi)}`;
+    return `<div class="fxt" data-n="${n}"><div class="top"><span class="nm">${p.name}</span><span class="dl" style="color:${col}"><i>${chg >= 0 ? "▲" : "▼"}</i>${sign}${chg.toFixed(2)}%</span></div>
+<div class="lv">${f(last)}${p.inv ? `<small>${p.inv} ${(1 / last).toFixed(p.dp)}</small>` : ""}<small>${label}</small></div>
+<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="${p.name} ${rangeLbl}: ${f(ref[1])} to ${f(last)} (${sign}${chg.toFixed(2)}%)">
+<line x1="${pad}" x2="${W - pad}" y1="${Y(ref[1]).toFixed(1)}" y2="${Y(ref[1]).toFixed(1)}" stroke="var(--line)" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"/>
+<polyline points="${pts}" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+<line class="xh" y1="0" y2="${H}" stroke="var(--mut)" stroke-width="1" vector-effect="non-scaling-stroke" style="display:none"/>
+</svg><div class="rg" data-def="${rangeTxt}">${rangeTxt}</div></div>`;
+  }).join("");
+  document.getElementById("fxTbl").innerHTML = `<table><thead><tr><th>Pair</th><th>Start</th><th>End</th><th>Change</th><th>Low</th><th>High</th></tr></thead><tbody>${rows.join("")}</tbody></table>`;
+  document.getElementById("fxNote").innerText = `Read as base/quote: USD/CAD +0.50% = the US dollar up 0.50% against the Canadian dollar. Line = daily closes over the window (Today tab: last ~2 weeks); dashed line = reference (Today: prior close; MTD/QTD/YTD: period start). ${FX.src}.`;
+  // 悬停：十字线 + 在卡片底行显示日期与数值（不用浮层，手机上也不遮挡）
+  document.querySelectorAll(".fxt").forEach(t => {
+    const p = FX.pairs[+t.dataset.n], { w } = fxWindow(p, period, FX.bases), svg = t.querySelector("svg"), xh = t.querySelector(".xh"), rg = t.querySelector(".rg");
+    const move = e => {
+      const r = svg.getBoundingClientRect(), x = ((e.touches ? e.touches[0].clientX : e.clientX) - r.left) / r.width * W;
+      const k = Math.max(0, Math.min(w.length - 1, Math.round((x - pad) / (W - 2 * pad) * (w.length - 1))));
+      const px = pad + k * (W - 2 * pad) / Math.max(w.length - 1, 1);
+      xh.setAttribute("x1", px); xh.setAttribute("x2", px); xh.style.display = "";
+      rg.textContent = `${md(w[k][0])} · ${w[k][1].toFixed(p.dp)}`;
+    };
+    const out = () => { xh.style.display = "none"; rg.textContent = rg.dataset.def; };
+    svg.addEventListener("mousemove", move); svg.addEventListener("touchmove", move, { passive: true });
+    svg.addEventListener("mouseleave", out); svg.addEventListener("touchend", out);
+  });
+}
+
 function render(period) {
   PERIOD = period;
   const P = SNAP.P, HEAT = SNAP.HEAT, d = P[period];
@@ -187,6 +259,7 @@ function render(period) {
   document.getElementById("chTitle").innerText = "The Chains";
   document.getElementById("chains").innerHTML = d.chains.map(c => `<div class="chain-card ${c.main ? "main" : ""}"><div class="t">${c.main ? "<i>MAIN</i>" : ""}${c.t}</div><div class="steps">${c.steps.map((s, i) => `${i ? '<span class="arrow">↓</span>' : ""}<span class="node">${s}</span>`).join("")}</div><div class="cdesc">${c.d}</div><ul class="facts">${(c.news || []).map(n => `<li class="fact"><b class="time">${n.time}</b>${n.fact} <a href="${n.u}" target="_blank" rel="noopener">[${n.src} ↗]</a></li>`).join("")}</ul></div>`).join("");
   document.getElementById("heat").innerHTML = (HEAT[period] || HEAT.today).map(g => `<div class="heat-sec"><h3>${g.sec}</h3><div class="heat-grid">${g.items.map(it => { const t = String(it[2]).trim(); const ar = t.startsWith("+") ? "<i>▲</i>" : t.startsWith("-") ? "<i>▼</i>" : ""; return `<div class="hcell" style="${heatColor(it[2])}"><div class="hn">${it[0]}${it[1] && it[1] !== "—" ? `<span class="hl">${it[1]}</span>` : ""}</div><div class="hc">${ar}${fmtRet(it[2])}</div></div>`; }).join("")}</div></div>`).join("");
+  renderFX(period);
   document.querySelectorAll(".tab").forEach(b => b.classList.toggle("active", b.dataset.p === period));
   document.getElementById("foot").innerText = SNAP.foot || "";
 }

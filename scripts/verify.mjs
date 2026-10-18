@@ -11,4 +11,6 @@ console.log("foot head:", (s.foot || "").slice(0, 30));
 for (const id of ["prevDay", "curDay", "nextDay", "tabs", "heat", "chains", "foot", "topdate"]) {
   if (!h.includes(`id="${id}"`)) throw new Error("missing #" + id);
 }
+for (const id of ["fxCard", "fx"]) if (!h.includes(`id="${id}"`)) throw new Error("missing #" + id);
+console.log("FX:", s.FX ? `${s.FX.pairs.length} pairs, asOf ${s.FX.asOf}` : "none (data 无 fx 时正常)");
 console.log("all mount nodes OK");
