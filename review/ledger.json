@@ -898,6 +898,68 @@
         }
       ],
       "resolved": false
+    },
+    {
+      "date": "2026-10-19",
+      "reviewedAt": "2026-10-19T18:38:00-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "引用",
+              "symptom": "today ① n2 整段引文取自 live blog 的盘中旧版，三个数字在定稿页均不存在：『a gauge of chip giants climbed 2.9%』（定稿 1.6%）、『The Nasdaq 100 added 1.3%』（定稿 1.2%）、『CoreWeave Inc. jumped 4%』（定稿页全文 0 次 CoreWeave）；CoreWeave +4% 还与本链 s3『CoreWeave went from +7% to -0.4%』并列成两个收盘价。",
+              "evidence": "curl sw1 URL（nasdaq-100-climbs-on-ai-trade-revival-after-rout.../92235911；旧 slug nasdaq-futures-rebound... 302 到同篇）定稿正文：'a gauge of chip giants climbed 1.6%. The Nasdaq 100 added 1.2%'，全文无 CoreWeave；2.9%/1.3%/+4% 只存在于早盘版本。",
+              "rule": "引用 live blog 一律以美东 16:00 后定稿版为准：定稿前在 news.u 页面全文检索每个数字与股票名，检索不到就换真正包含该句的 URL；盘中数字必须带 early/midday 时间标签，不得与收盘值并列成事实。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "同一 sw1 URL 下另有 3 条 fact 在定稿页检索不到：today ④ n4『More than 70 S&P 500 companies are due to report this week』、mtd ② n2『quality stocks…equal-weighted S&P 500』、qtd ③ n0『Federal Reserve has entered its communications blackout period』；定稿页只点名 Meta/Tesla 本周财报，无 70 家、无 equal-weighted/quality stocks、无 Federal Reserve。",
+              "evidence": "对 sw1 定稿页 grep：'70 S&P'=0、'equal-weighted'=0、'quality stocks'=0、'Federal Reserve'=0；AP/Investopedia/CNBC 同日稿也无『70 家』句（Investopedia 的 'more than 70' 指 70 million children）。",
+              "rule": "每条 news.fact 定稿前用 2 个特征词（数字/专名）在 news.u 页面全文检索；检索不到就换到真正包含该句的 URL 或删除；同一 URL 只背书其页面内实际存在的句子。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "芯片连跌天数同链两口径：today ① n0（Bloomberg 10/16）写『eighth straight day』，同链 d 写『nine-session chip slide』、s1 写『first gain in 10 sessions』（=9 连跌）。",
+              "evidence": "Yahoo SOXX 日线 10/6–10/16 连续 9 个下跌日（10/16 收 493.39）；CNBC 10/19『nine consecutive losing days』；Bloomberg 10/16 稿写 eighth。",
+              "rule": "同一链内 streak 计数只保留一个口径：以收盘序列现算（SOXX 9 连跌）为准，引用源计数不符时在引句旁标注来源口径或删掉计数。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd c4『The month's last gate is the Fed…into the Oct 27-28 meeting』与本快照 qtd c1/c4/③ s1 的『PCE Oct 29』矛盾——10 月最后一个 gate 是 10/29 PCE，不是 10/27-28 FOMC。",
+              "evidence": "qtd c1『the PCE print (Oct 29)』、qtd c4『PCE (Oct 29)』、qtd ③ s1『Oct 29: the PCE print』；mtd c4 仍写 last gate = Fed。",
+              "rule": "窗口档写『last/only gate』前先列出本档提到的全部日期并取最晚者；FOMC 与 PCE 同月时按日期排序写。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "取数",
+              "symptom": "跨日 1bp 断点：10/19 today tbl 期初 10Y 5.09%/30Y 5.43%（Treasury 10/16 正确值），但 10/16 快照收盘写 5.10%/5.44%，页面 10/16→10/19 出现 5.10→5.09、5.44→5.43 的倒退。",
+              "evidence": "Treasury daily yield curve CSV：10/15 10Y 5.10/30Y 5.43，10/16 5.09/5.43，10/19 5.15/5.48；10/16 快照 tbl/HEAT/badges 用 5.10/5.44 且写 +1bp（实际 10Y -1bp、30Y 0bp）。",
+              "rule": "跨日 tbl 期初必须等于上一快照期末；不一致时先查 Treasury 日值判定错侧——本次错侧是 10/16 文件（应 5.09/5.43），10/19 的 5.15/5.09 与 5.48/5.43 不动。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ② s1 的『Paris -1.1%, Frankfurt -1.2% and London -1.1%』在文件内无出处：所引 AP 原文只写『indexes slid more than 1%』，无三国具体值。",
+              "evidence": "AP 10/19 正文：'In Europe, the losses were sharper, and indexes slid more than 1% following violent protests…'；全文件 56 条 news 无 DAX/CAC/FTSE 具体数字。",
+              "rule": "链内具体指数的点位/百分比必须能对应本文件某条 news 的原句；否则改用来源口径（more than 1%）或补真实 URL。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
