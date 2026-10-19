@@ -194,16 +194,28 @@ if (snap.CAL) {
   const dt = new Date(DATE + "T12:00:00Z"), mon = new Date(dt); mon.setUTCDate(dt.getUTCDate() - ((dt.getUTCDay() + 6) % 7));
   const fri = new Date(mon); fri.setUTCDate(mon.getUTCDate() + 4);
   const [lo, hi] = [mon, fri].map(x => x.toISOString().slice(0, 10));
-  let prevKey = "";
+  const prevKey = {};
   (snap.CAL.items || []).forEach((it, i) => {
-    const at = `CAL.items.${i}`, key = `${it.date} ${it.time || ""}`;
+    const at = `CAL.items.${i}`, grp = it.grp || "na";
+    if (!["na", "global"].includes(grp)) E(at, `grp "${grp}" 只能是 na（美加）或 global（海外 CPI/央行）`);
+    // 不同时区的 time 不可比，只在同组同时区内比时间
+    const key = `${it.date} ${it.tz || "ET"} ${it.time || ""}`;
     if (!/^\d{4}-\d{2}-\d{2}$/.test(it.date || "")) return E(at, `date "${it.date}" 不是 YYYY-MM-DD`);
     if (!/^https?:\/\//.test(it.u || "") || !it.src) E(at, `${it.ev}：缺 src 或 u 不是真 URL`);
     if (it.date > DATE && it.act != null) E(at, `${it.ev} 在 ${it.date} 才公布，快照日 ${DATE} 不可能有 actual "${it.act}"`);
     if (it.date <= DATE && it.act == null) W(at, `${it.ev} 已于 ${it.date} 公布但 act 为空——补实际值或在 note 说明拿不到`);
     if (it.date < lo || it.date > hi) W(at, `${it.date} 不在快照所在周（${lo}~${hi}）——CAL 只放今日与本周`);
-    if (key < prevKey) W(at, `未按日期/时间升序（${key} 排在 ${prevKey} 之后）`);
-    prevKey = key;
+    const pk = prevKey[grp] || "";
+    if (it.date < pk.slice(0, 10) || (key.slice(0, 10) === pk.slice(0, 10) && key.split(" ")[1] === pk.split(" ")[1] && key < pk))
+      W(at, `组 ${grp} 内未按日期/时间升序（${key} 排在 ${pk} 之后）`);
+    prevKey[grp] = key;
+  });
+  // 央行总览：下次决议日已过 = 利率/上次动作/预期都可能过期
+  (snap.CAL.board || []).forEach((b, i) => {
+    const at = `CAL.board.${i}`;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(b.next || "")) return E(at, `${b.cb} next "${b.next}" 不是 YYYY-MM-DD`);
+    if (!(b.links || []).length || b.links.some(l => !/^https?:\/\//.test(l.u || "") || !l.src)) E(at, `${b.cb}：links 为空或含非 URL`);
+    if (b.next < DATE) W(at, `${b.cb} 的决议日 ${b.next} 已过——更新 rate/last/next/exp（决议结果写进 last）`);
   });
 }
 

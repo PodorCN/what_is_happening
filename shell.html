@@ -136,6 +136,19 @@ table.cal{width:100%;border-collapse:collapse;font-size:15.5px;font-variant-nume
 .cal tr.today td{background:rgba(153,15,61,.06)}
 .cal .cty{display:inline-block;font-size:10.5px;letter-spacing:.12em;border:1px solid var(--ink);padding:1px 5px;margin-right:7px;vertical-align:1px}
 .cal .chip{display:inline-block;font-size:10px;letter-spacing:.16em;background:var(--claret);color:#fff;padding:2px 6px;margin-left:6px;vertical-align:2px}
+.cal .sm{display:block;font-size:11.5px;color:var(--faint);font-weight:400;font-family:"Source Serif 4",serif}
+.cal td.tm .sm{display:inline}
+.cal td.cb{font-weight:700;white-space:nowrap}
+.cal td.br{font-weight:900;font-family:"Playfair Display",Georgia,serif;font-size:17px;white-space:nowrap}
+.cal td.bn{white-space:nowrap;font-weight:700}
+.cal td.bl{font-size:14px;color:#4f4636;white-space:nowrap}
+.cal-h{font-size:11.5px;color:var(--mut);margin:22px 0 4px;letter-spacing:.22em;text-transform:uppercase}
+@media(max-width:760px){
+.cal.board tr{grid-template-areas:"cb cb cb" "bc br bn" "bl bl bl" "bx bx bx";column-gap:12px}
+.cal.board td.cb{grid-area:cb}.cal.board td.bc{grid-area:bc}.cal.board td.br{grid-area:br}.cal.board td.bn{grid-area:bn;white-space:normal}
+.cal.board td.bl{grid-area:bl;white-space:normal}.cal.board td.bx{grid-area:bx}
+.cal td.bn::before{content:attr(data-l);display:block;font-weight:400;font-size:10px;letter-spacing:.16em;color:var(--mut)}
+}
 @media(max-width:760px){
 .cal thead{display:none}
 table.cal,.cal tbody{display:block}
@@ -228,16 +241,31 @@ function renderCal() {
   if (!C || !(C.items || []).length) { card.style.display = "none"; return; }
   card.style.display = "";
   document.getElementById("calTitle").innerText = `Economic Calendar · ${C.title || "This Week"}`;
-  let lastDay = "";
-  const rows = C.items.map(it => {
-    const day = formatDate(it.date, { weekday: "short", month: "numeric", day: "numeric" });
-    const isToday = it.date === SNAP.date, done = it.date <= SNAP.date;
-    const dayCell = day === lastDay ? "" : day + (isToday ? '<span class="chip">TODAY</span>' : "");
-    lastDay = day;
-    const act = it.act != null ? `<td class="num a act" data-l="ACTUAL">${it.act}</td>` : `<td class="num a pend" data-l="ACTUAL">${done ? "n/a" : "—"}</td>`;
-    return `<tr class="${isToday ? "today" : ""}"><td class="day">${dayCell}</td><td class="tm">${it.time || ""}</td><td class="ev"><span class="cty">${it.cty || "US"}</span>${it.ev}</td>${act}<td class="num e" data-l="CONS.">${it.est ?? "—"}</td><td class="num p" data-l="PRIOR">${it.prev ?? "—"}</td><td class="nt">${it.note ? it.note + " " : ""}<a href="${it.u}" target="_blank" rel="noopener">[${it.src} ↗]</a></td></tr>`;
+  const day = d => formatDate(d, { weekday: "short", month: "numeric", day: "numeric" });
+  const link = (src, u) => `<a href="${u}" target="_blank" rel="noopener">[${src} ↗]</a>`;
+  // 本周五：board 里本周内的央行决议高亮
+  const fri = new Date(SNAP.date + "T12:00:00"); fri.setDate(fri.getDate() + (5 - fri.getDay() + 7) % 7);
+  const friISO = fri.toISOString().slice(0, 10);
+  const board = (C.board || []).map(b => {
+    const soon = b.next >= SNAP.date && b.next <= friISO;
+    return `<tr class="${soon ? "today" : ""}"><td class="cb"><span class="cty">${b.cty}</span>${b.cb}</td><td class="num bc" data-l="LATEST CPI">${b.cpi ?? "—"}${b.cpiM ? `<span class="sm">${b.cpiM}</span>` : ""}</td><td class="num br" data-l="POLICY RATE">${b.rate}</td><td class="bl">${b.last}</td><td class="bn" data-l="NEXT DECISION">${day(b.next)}${soon ? '<span class="chip">THIS WEEK</span>' : ""}</td><td class="nt bx">${b.exp} ${(b.links || []).map(l => link(l.src, l.u)).join(" ")}</td></tr>`;
   }).join("");
-  document.getElementById("cal").innerHTML = `${C.note ? `<p class="cal-note">${C.note}</p>` : ""}<div class="cal-wrap"><table class="cal"><thead><tr><th>Day</th><th>ET</th><th>Release</th><th style="text-align:right">Actual</th><th style="text-align:right">Cons.</th><th style="text-align:right">Prior</th><th>Note</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+  const table = grp => {
+    let lastDay = "";
+    const rows = C.items.filter(it => (it.grp || "na") === grp).map(it => {
+      const isToday = it.date === SNAP.date, done = it.date <= SNAP.date;
+      const dayCell = day(it.date) === lastDay ? "" : day(it.date) + (isToday ? '<span class="chip">TODAY</span>' : "");
+      lastDay = day(it.date);
+      const act = it.act != null ? `<td class="num a act" data-l="ACTUAL">${it.act}</td>` : `<td class="num a pend" data-l="ACTUAL">${done ? "n/a" : "—"}</td>`;
+      return `<tr class="${isToday ? "today" : ""}"><td class="day">${dayCell}</td><td class="tm">${it.time || ""} <span class="sm">${it.tz || "ET"}</span></td><td class="ev"><span class="cty">${it.cty || "US"}</span>${it.ev}</td>${act}<td class="num e" data-l="CONS.">${it.est ?? "—"}</td><td class="num p" data-l="PRIOR">${it.prev ?? "—"}</td><td class="nt">${it.note ? it.note + " " : ""}${link(it.src, it.u)}</td></tr>`;
+    }).join("");
+    return rows ? `<div class="cal-wrap"><table class="cal"><thead><tr><th>Day</th><th>Time</th><th>Release</th><th style="text-align:right">Actual</th><th style="text-align:right">Cons.</th><th style="text-align:right">Prior</th><th>Note</th></tr></thead><tbody>${rows}</tbody></table></div>` : "";
+  };
+  const na = table("na"), gl = table("global");
+  document.getElementById("cal").innerHTML = (C.note ? `<p class="cal-note">${C.note}</p>` : "")
+    + (board ? `<h3 class="cal-h">Inflation &amp; Policy Rates</h3><div class="cal-wrap"><table class="cal board"><thead><tr><th>Central bank</th><th style="text-align:right">Latest CPI</th><th style="text-align:right">Policy rate</th><th>Last move</th><th>Next decision</th><th>Expected</th></tr></thead><tbody>${board}</tbody></table></div>` : "")
+    + (na ? `<h3 class="cal-h">This Week · US &amp; Canada</h3>${na}` : "")
+    + (gl ? `<h3 class="cal-h">This Week · Global CPI &amp; Central Banks</h3>${gl}` : "");
 }
 
 function formatDate(dateStr, style) {

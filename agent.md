@@ -88,8 +88,14 @@ agent.md                    # 本文件
 - 改写时删掉的具体内容，替换句必须仍含**可核对的对象/数字/日期**；"escalation kept coming — another round of the same fight" 这类空话等于删除，宁可直接删掉该 step。
 
 ### 2.6 经济数据日程（CAL）
-- 只放**今日 + 本周（周一至周五）**的宏观数据：美国为主，加拿大的大项（CPI、BoC、就业）也收（Bay Street 读者）。财报不进表，写进 `note`。
-- 每行 = `date/time(ET)/cty/ev/act/est/prev/note/src/u`。已公布（date ≤ DATE）必须填 `act`；未公布的 `act` 必须是 `null`（lint：未来日期有 actual = ERROR）。
+三块，读者优先级从高到低：
+1. **`board` 全球通胀 & 政策利率总览**（最重要）：固定 7 行 Fed / BoC / ECB / BoE / BoJ / BoK / PBoC，
+   每行 `cty/cb/cpi/cpiM/rate/last/next(YYYY-MM-DD)/exp/links[{src,u}]`。某行 CPI 新出或央行刚决议 → 当天就更新该行；
+   `next` 已过的行 lint 会 WARN（决议结果写进 `last`，`next` 换成下一次）。
+2. **`items` 中 `grp:"na"`：本周美国 + 加拿大**——只收影响利率/主线的（CPI、就业、零售、GDP、PMI、claims、房地产、BoC），不贪多。
+3. **`items` 中 `grp:"global"`：本周海外 CPI 与央行决议**（欧元区、英国、日本、韩国、中国为主，其他央行有意外才收）。
+- 财报不进表，写进 `note`。
+- 每行 = `grp/date/time/tz/cty/ev/act/est/prev/note/src/u`。`date`/`time` 用**发布地**日期时间并写 `tz`（ET/BST/JST/KST/BJT…），亚洲/欧洲项在 `note` 里注明对应美东时间。已公布（date ≤ DATE）必须填 `act`；未公布的 `act` 必须是 `null`（lint：未来日期有 actual = ERROR）。
 - 共识/前值至少一个可靠源（Investing.com 周历、官方发布机构）；两源不一致时在 `note` 写出差异。拿不到就 `null`，不编。
 - `note` 一句话写"为什么重要/和今天的主线怎么连"，不复述 chains。
 - 周一新建本周 CAL；周二至周五复制昨天的 CAL，把当天公布的项补 `act` 并改写 note。
@@ -121,8 +127,10 @@ agent.md                    # 本文件
     "today": [{ "sec": "US 指数", "items": [["S&P 500","7,6xx","-0.77"]]} …],
     "mtd": […], "qtd": […], "ytd": […]
   },
-  "CAL": { "title": "Week of Oct 19–23", "note": "本周宏观一句话（静默期/无大数据/财报）",
-    "items": [{ "date": "2026-10-19", "time": "10:00", "cty": "US", "ev": "NAHB Housing Market Index (Oct)",
+  "CAL": { "title": "Week of Oct 19–23", "note": "本周全球政策/通胀一句话",
+    "board": [{ "cty": "US", "cb": "Fed", "cpi": "3.7%", "cpiM": "Sep", "rate": "3.75–4.00%", "last": "+25bp, Sep 16",
+      "next": "2026-10-28", "exp": "Hold priced …", "links": [{ "src": "Fed statement", "u": "https://…" }] }],
+    "items": [{ "grp": "na", "date": "2026-10-19", "time": "10:00", "tz": "ET", "cty": "US", "ev": "NAHB Housing Market Index (Oct)",
       "act": "29", "est": "31", "prev": "32", "note": "…", "src": "NAHB", "u": "https://…" }] }
 }
 ```
