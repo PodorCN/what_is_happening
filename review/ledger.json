@@ -957,9 +957,14 @@
               "rule": "链内具体指数的点位/百分比必须能对应本文件某条 news 的原句；否则改用来源口径（more than 1%）或补真实 URL。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true
     }
   ]
 }

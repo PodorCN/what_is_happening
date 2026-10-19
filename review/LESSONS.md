@@ -25,6 +25,7 @@
 | 2026-10-07 | 取数 | Brent mtdBase/qtdBase 回归 103.53（Nov 值），与 10-02 后沿用的 Dec 口径 98 断裂，computed -2.46 为跨合约假值（Dec 口径 +2.2） | Brent 的 mtdBase/qtdBase 固定取 Dec 前月序列的上月末收盘（本季=98.0），禁止回写 Nov 值；每日构建后跑『今日 mtdBase == 昨日 mtdBase』连续性检查（build.mjs 已内置自动告警） |
 | 2026-10-07 | 取数 | BTC 定稿值不统一：data 83379.86（17:01 fetch）vs foot 83212.25 vs 链文 -2.7%，HEAT -0.4/-4.9 仅与 83212.25 成立 | BTC 重拉一次定稿，同一值写入 data+foot+链文；派生值按定稿值重算并全文件逐项对齐（24h 品种日环比以 Yahoo previousClose 为准） |
 | 2026-10-09 | 取数 | Gold 收盘误把 Kitco 0842 GMT 盘中值 $4,215 当收盘（结算价应为 $4,216.3：Reuters『gained 1.4% to settle at $4,216.3』；13:28–13:30 结算窗 VWAP 4216.4 复现）。陷阱：17:00 电子盘最后一笔 $4,220.30（=Yahoo 日线 C/CNBC 4:59PM 报价）≠ 结算价，勿误采 | 期货收盘=官方结算价：优先通讯社『settled at』句，无稿用结算窗 1m VWAP（GC≈13:28–13:30 ET、CL/BZ≈14:28–14:30 ET）；禁止用电子盘最后一笔/Yahoo 日线 close/CNBC 收盘报价充当结算价；正文引用盘中时点值须加注『intraday』或替换为结算/更新值；修正后回写 data today 与全部派生 %（tbl/HEAT/c1/链/foot/引用句 一处不漏） |
+| 2026-10-19 | 取数 | 跨日 1bp 断点：10/16 快照把 Yahoo ^TNX 5.098 当 Treasury 收盘写成 5.10%/5.44%（Treasury 10/16 = 5.09%/5.43%，10Y -1bp、30Y 0bp），10/19 的期初 5.09/5.43 因此对不上 | 收益率一律以 Treasury daily yield curve 定稿（^TNX 只做盘中参考）；跨日 tbl 期初必须等于上一快照期末，不一致先查 Treasury 判错侧，错侧整表改（tbl/HEAT/徽章/链/foot + MTD/QTD/YTD 的 bp 一并重算） |
 
 ## 取数前提
 
@@ -66,6 +67,11 @@
 | 2026-10-16 | 逻辑 | 『odds fell to ~29% despite hot prints / the market faded two hot prints』：FedWatch 实为 22%（CPI 前）→ 37% → 29%，窗口内净升 7pp；只与事件后峰值比就说 faded | 概率/预期变化写相对窗口期初或事件前的净变化（22% pre-CPI → 37% peak → 29%），用 half-faded 而非 faded `[lint 部分]` |
 | 2026-10-16 | 逻辑 | qtd ①『5.2-5.35% is the band』+ kpi『ceiling held』与同档自己写的 5.365%（10/7 盘中）和 5.09%（10/15 收盘）矛盾 | 区间/上限断言写入前，把本档出现的该指标所有数值（期初、期末、触值）逐个放进区间核对；有一个在区间外就不能写 band/held `[lint]` |
 | 2026-10-16 | 逻辑 | mtd ②『Goldman: narrowest breadth since the dotcom bubble』从 10/9 原样挂到 10/15，而窗口数据已转向扩散（Dow +2.50% vs Nasdaq -0.55% MTD，防御/能源领涨） | 连续 ≥3 天未改的窗口论断必须用当天窗口数据重验，被新数据推翻的改写为『X 日的警告已被 … 回应』或删除 `[lint：stale 告警]` |
+| 2026-10-19 | 引用 | today ① n2 整段引文取自 Bloomberg live blog 的盘中旧版：芯片指标 2.9%（定稿 1.6%）、Nasdaq 100 1.3%（定稿 1.2%）、CoreWeave +4%（定稿页 0 次，且与本链「+7%→-0.4%」并列成两个收盘值） | 引用 live blog / 滚动稿一律以美东 16:00 后定稿版为准：定稿前在 news.u 页面全文检索每个数字与股票名，检索不到就换真正包含该句的 URL；盘中数字必须带 early/midday 时间标签，不得与收盘值并列成事实 |
+| 2026-10-19 | 引用 | 同一 sw1 定稿页下另有 3 条 fact 检索不到（「more than 70 S&P 500 companies」「quality stocks / equal-weighted」「Fed communications blackout」），实出自同文早盘版或其他稿 | 每条 news.fact 定稿前用 2 个特征词（数字或专名）在 news.u 页面全文检索；检索不到就换到真正包含该句的 URL 或删除；同一 URL 只背书其页内实际存在的句子 |
+| 2026-10-19 | 逻辑 | 芯片连跌天数同链两口径：n0（10/16 Bloomberg 盘中稿）写「eighth straight day」，而 d「nine-session」/ s1「first gain in 10 sessions」按 9 连跌；SOXX 收盘序列 10/6–10/16 实为 9 连跌 | 同一链内 streak 计数只保留一个口径并以收盘序列现算（SOXX 10/6–10/16 = 9 连跌）；引用盘中稿的较小计数必须标注时点（如「eight completed sessions at the time of writing」），否则删掉计数 |
+| 2026-10-19 | 逻辑 | mtd c4「The month's last gate is the Fed…into the Oct 27-28 meeting」与同文件 qtd c1/c4/③「PCE Oct 29」矛盾——10 月最后一个 gate 是 10/29 PCE，不是 10/27-28 FOMC | 窗口档写「last/only gate」前先列出本档提到的全部日期并取最晚者；FOMC 与 PCE 同月时按日期排序写（FOMC 10/27-28 → PCE 10/29） |
+| 2026-10-19 | 引用 | today ② s1「Paris -1.1%, Frankfurt -1.2% and London -1.1%」文件内无出处：所引 AP 原文只写「indexes slid more than 1%」，无三国具体值 | 链内具体指数的点位/百分比必须能对应本文件某条 news 的原句；否则改用来源口径（more than 1%）或补真实 URL；不得凭记忆补国别数字 |
 
 ## 链结构（主链 / 辅链）
 

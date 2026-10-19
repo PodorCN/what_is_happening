@@ -111,7 +111,7 @@
      "main": 1,
      "steps": [
       "The setup: last week the Nasdaq fell 4.5% — its worst week since June — and the S&P 2%; chipmakers logged their longest losing streak since 2008, with SOXX down 4% on Friday alone",
-      "The turn: dip buyers met the open — an ETF tracking chip names rallied 3% in premarket, on course for its first gain in 10 sessions (Bloomberg) — as investors bet the AI investment boom still supports earnings",
+      "The turn: dip buyers met the open — the VanEck Semiconductor ETF climbed nearly 3% by midday, on pace to end a nine-day losing streak (CNBC) — as investors bet the AI investment boom still supports earnings",
       "The leadership: memory and semis led — WDC +6.1%, SNDK +5.5%, STX +3.4%, MU +3.0%, MRVL +4.1%, AMD +1.8%, INTC +2.4%, NVDA +1.4%",
       "The fade: SOXX closed +1.7% after trading +3.7% early; SMH +1.6% after +3% midday; CoreWeave went from +7% to -0.4% — the bid thinned into the close",
       "The scoreboard: Nasdaq +1.11% to 26,430.89, S&P +0.41% to 7,690.73, Dow -0.07% to 51,966.03, Russell 2000 +0.25% — a tech repair, not a broad rally"
@@ -119,8 +119,8 @@
      "d": "The reprieve: a nine-session chip slide met dip buyers — enough to lift the Nasdaq 1.1%, not enough to broaden the tape.",
      "news": [
       {
-       "time": "10/16",
-       "fact": "Another burst of selling in technology shares drove the Nasdaq 100 to its worst week since the April 2025 tariff turmoil as investors questioned the outlook for the artificial-intelligence trade. Chipmakers fell for an eighth straight day, the longest slide since 2008. CoreWeave Inc., a cloud-computing services provider whose bonds recently hit levels that typically signal distress, sank 12%. The S&P 500 lost 1.1%.",
+       "time": "10/16 (intraday)",
+       "fact": "Another burst of selling in technology shares drove the Nasdaq 100 to its worst week since the April 2025 tariff turmoil as investors questioned the outlook for the artificial-intelligence trade. Chipmakers fell for an eighth straight day, the longest slide since 2008. CoreWeave Inc., a cloud-computing services provider whose bonds recently hit levels that typically signal distress, sank 12%. The S&P 500 lost 1.1%. The chip slide reached nine sessions with Friday's close.",
        "src": "Bloomberg (SWI swissinfo)",
        "u": "https://www.swissinfo.ch/eng/chip-stocks-post-longest-losing-streak-since-2008%3a-markets-wrap/92225060"
       },
@@ -132,7 +132,7 @@
       },
       {
        "time": "10/19",
-       "fact": "A rally in giant chipmakers buoyed the stock market as dip buyers emerged on bets the artificial-intelligence investment boom will continue to support solid earnings. Following a rout in one of the most-crowded bets, a gauge of chip giants climbed 2.9%. The Nasdaq 100 added 1.3%. CoreWeave Inc. jumped 4% as Goldman Sachs Group Inc. recommended buying the shares after a recent plunge.",
+       "fact": "A rebound in chipmakers buoyed the stock market as dip buyers emerged on bets the artificial-intelligence investment boom will continue to support solid earnings. Following a rout in one of the most-crowded bets, a gauge of chip giants climbed 1.6%. The Nasdaq 100 added 1.2%.",
        "src": "Bloomberg (SWI swissinfo)",
        "u": "https://www.swissinfo.ch/eng/nasdaq-100-climbs-on-ai-trade-revival-after-rout%3a-markets-wrap/92235911"
       },
@@ -160,7 +160,7 @@
      "t": "② The Narrow Tape: a 5.15% 10Y, a French Shock — and Three Sectors Green",
      "steps": [
       "The rate leg: the 10Y rose 6bp to 5.15% and the 30Y 5bp to 5.48% — the move came even as the Nasdaq rallied",
-      "The French source: weekend protests drove Paris -1.1%, Frankfurt -1.2% and London -1.1%, lifted French yields and pushed the euro down 0.2%; the dollar rose 0.2% to 102.0",
+      "The French source: weekend protests drove European indexes more than 1% lower, lifted French yields and pushed the euro down 0.2%; the dollar rose 0.2% to 102.0",
       "The domestic bill: utilities -2.0%, real estate -1.2%, financials -0.8% and staples -0.5% — the rate-sensitive cohorts paid for the 10Y; Ameriprise fell 4% on a BofA downgrade",
       "The breadth: only three of 11 sector ETFs closed green — ConsDisc +1.8%, Tech +1.4%, Materials +0.1% — and the majority of stocks outside AI and tech fell (AP)",
       "The tell: the VIX fell 7.8% to 18.44, so this was rotation, not de-risking — the fear gauge never confirmed the narrow breadth"
@@ -286,8 +286,8 @@
       {
        "time": "10/19",
        "fact": "More than 70 S&P 500 companies are due to report this week, including Magnificent Seven members Tesla Inc. and Meta Platforms Inc.",
-       "src": "Bloomberg (SWI swissinfo)",
-       "u": "https://www.swissinfo.ch/eng/nasdaq-futures-rebound-from-tech-selloff%2c-oil-dips%3a-markets-wrap/92235911"
+       "src": "Bloomberg (Yahoo Finance)",
+       "u": "https://sg.finance.yahoo.com/news/us-stock-futures-rise-ahead-142550232.html"
       },
       {
        "time": "10/19",
@@ -315,7 +315,7 @@
     "Brent +11.8%"
    ],
    "c1": "Thirteen sessions into October and the S&P is +0.51% at 7,690.73 — still 1.6% below the 7,818.93 record set on 10/6 — while the Nasdaq is -1.60% and the Dow +2.08%. The month's arc: an S&P record close in the first week, then three repricings (wireless on 10/9, the AI complex on 10/12-13, the CPI-PPI pair on 10/14-15), and a chip-led repair that stopped the slide. The 10Y touched a 24-year high of 5.36% on 10/7 and closed at 5.15% (-14bp MTD); October hike odds went from 22% before CPI to a 37% peak and back to ~16%. Beneath the index: Energy +10.2% leads, Tech -5.0% lags — a ~15-point spread — and eight of 11 sectors are positive. Oil: WTI +14.6% (Nov), Brent +11.8% (Dec). Gates: FOMC Oct 27-28, PCE Oct 29.",
-   "c4": "<ul class='play'><li>October's shape is a round trip, not a trend: the S&P is +0.51% MTD but 1.6% below its 10/6 record — the month's gains were made in the first week and defended since.</li><li>The dispersion trade still pays: Energy +10.2% vs Tech -5.0% is a ~15-point spread — own the barrel's beneficiaries, rent the AI complex until its funding costs stop rising.</li><li>The month's last gate is the Fed: October odds ~16% price a hold, so the risk is December (~92%) — watch the 10Y at 5.15% into the Oct 27-28 meeting.</li></ul>",
+   "c4": "<ul class='play'><li>October's shape is a round trip, not a trend: the S&P is +0.51% MTD but 1.6% below its 10/6 record — the month's gains were made in the first week and defended since.</li><li>The dispersion trade still pays: Energy +10.2% vs Tech -5.0% is a ~15-point spread — own the barrel's beneficiaries, rent the AI complex until its funding costs stop rising.</li><li>The month's last gate is the PCE print on Oct 29, two days after the Fed: October odds ~16% price a hold, so the risk is December (~92%) — watch the 10Y at 5.15% through both.</li></ul>",
    "kpi": [
     [
      "S&P MTD",
@@ -482,9 +482,9 @@
       },
       {
        "time": "10/19",
-       "fact": "A pattern of outperformance by so-called quality stocks and weakness in the equal-weighted S&P 500 is set to fade, creating an opportunity to snap up equities, Morgan Stanley's Michael Wilson said.",
-       "src": "Bloomberg (SWI swissinfo)",
-       "u": "https://www.swissinfo.ch/eng/nasdaq-100-climbs-on-ai-trade-revival-after-rout%3a-markets-wrap/92235911"
+       "fact": "An outperformance of the so-called quality factor and a decline in the equal-weighted version of the S&P 500 are set to come to an end, providing an opportune window to snap up stocks, Morgan Stanley's Michael Wilson said.",
+       "src": "Bloomberg (Yahoo Finance)",
+       "u": "https://finance.yahoo.com/markets/stocks/articles/morgan-stanley-wilson-says-ready-091148275.html"
       }
      ]
     },
@@ -717,9 +717,9 @@
      "news": [
       {
        "time": "10/19",
-       "fact": "The Federal Reserve has entered its communications blackout period ahead of its Oct. 28 policy decision, while geopolitical risks remained elevated.",
-       "src": "Bloomberg (SWI swissinfo)",
-       "u": "https://www.swissinfo.ch/eng/nasdaq-futures-rebound-from-tech-selloff%2c-oil-dips%3a-markets-wrap/92235911"
+       "fact": "The Federal Reserve's communications blackout period runs from Oct 17 through Oct 29, ahead of the Oct 27-28 FOMC meeting, according to the Atlanta Fed's 2026 blackout calendar.",
+       "src": "Federal Reserve Bank of Atlanta",
+       "u": "https://www.atlantafed.org/news-and-events/press-room/blackout-periods"
       },
       {
        "time": "10/19",
