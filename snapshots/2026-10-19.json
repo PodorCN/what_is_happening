@@ -120,7 +120,7 @@
      "news": [
       {
        "time": "10/16 (intraday)",
-       "fact": "Another burst of selling in technology shares drove the Nasdaq 100 to its worst week since the April 2025 tariff turmoil as investors questioned the outlook for the artificial-intelligence trade. Chipmakers fell for an eighth straight day, the longest slide since 2008. CoreWeave Inc., a cloud-computing services provider whose bonds recently hit levels that typically signal distress, sank 12%. The S&P 500 lost 1.1%. The chip slide reached nine sessions with Friday's close.",
+       "fact": "Another burst of selling in technology shares drove the Nasdaq 100 to its worst week since the April 2025 tariff turmoil as investors questioned the outlook for the artificial-intelligence trade. Chipmakers fell for an eighth straight day, the longest slide since 2008. CoreWeave Inc., a cloud-computing services provider whose bonds recently hit levels that typically signal distress, sank 12%. The S&P 500 lost 1.1%.",
        "src": "Bloomberg (SWI swissinfo)",
        "u": "https://www.swissinfo.ch/eng/chip-stocks-post-longest-losing-streak-since-2008%3a-markets-wrap/92225060"
       },
@@ -1434,5 +1434,131 @@
    }
   ]
  },
- "foot": "Closing baseline (auto 2026-10-19): SPX 7690.73 (+0.51% MTD / +0.51% QTD / +12.35% YTD) · DJI 51966.03 (+2.08% MTD) · IXIC 26430.89 (+13.72% YTD) · 10Y 5.15% · WTI 103.66 (Nov settle; Dec 98.54) · Brent 109.55 (Dec settle) · Gold 4160.7 (Dec fut) · BTC 81939.67. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.16% · 26-06-30 S&P 7499.36/Dow 52319/Nasdaq 26213/10Y 4.42% · 26-08-31 S&P 7686.14/Dow 53185.9/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/WTI $90.42/Brent ~$103.5 (Nov; Dec front ~$98.0)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice."
+ "foot": "Closing baseline (auto 2026-10-19): SPX 7690.73 (+0.51% MTD / +0.51% QTD / +12.35% YTD) · DJI 51966.03 (+2.08% MTD) · IXIC 26430.89 (+13.72% YTD) · 10Y 5.15% · WTI 103.66 (Nov settle; Dec 98.54) · Brent 109.55 (Dec settle) · Gold 4160.7 (Dec fut) · BTC 81939.67. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.16% · 26-06-30 S&P 7499.36/Dow 52319/Nasdaq 26213/10Y 4.42% · 26-08-31 S&P 7686.14/Dow 53185.9/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/WTI $90.42/Brent ~$103.5 (Nov; Dec front ~$98.0)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
+ "CAL": {
+  "title": "Week of Oct 19–23",
+  "note": "A light macro week: no CPI, payrolls or FOMC decision, and the Fed is in its blackout (Oct 17–29), so no Fed speakers. The tape leans on housing, claims and the flash PMIs; earnings carry the rest (Netflix Tue; Meta and Tesla Wed after the close). Next gates: FOMC Oct 27–28, BoC Oct 28, PCE Oct 29.",
+  "items": [
+   {
+    "date": "2026-10-19",
+    "time": "08:30",
+    "cty": "CA",
+    "ev": "CPI (Sep, y/y)",
+    "act": "3.1%",
+    "est": "3.2%",
+    "prev": "3.0%",
+    "note": "Below the 3.2% Reuters poll; gasoline +27.8% y/y, ex-gasoline 2.2%; core trim/median 1.8%/1.9%",
+    "src": "Statistics Canada",
+    "u": "https://www150.statcan.gc.ca/n1/daily-quotidien/261019/dq261019a-eng.htm"
+   },
+   {
+    "date": "2026-10-19",
+    "time": "10:00",
+    "cty": "US",
+    "ev": "NAHB Housing Market Index (Oct)",
+    "act": "29",
+    "est": "31",
+    "prev": "32",
+    "note": "Lowest since June 2012; 43% of builders cut prices, the most in the 2020–26 period",
+    "src": "NAHB",
+    "u": "https://www.nahb.org/news-and-economics/press-releases/2026/10/builder-sentiment-falls-on-rising-rates"
+   },
+   {
+    "date": "2026-10-20",
+    "time": "08:30",
+    "cty": "US",
+    "ev": "Housing Starts (Sep)",
+    "act": null,
+    "est": "1.30M",
+    "prev": "1.275M",
+    "note": "First hard housing print after the NAHB miss",
+    "src": "Investing.com",
+    "u": "https://www.investing.com/news/stock-market-news/us-economic-calendar-preview-key-releases-for-the-week-of-oct-1923-2026-93CH-4958178"
+   },
+   {
+    "date": "2026-10-20",
+    "time": "08:30",
+    "cty": "US",
+    "ev": "Building Permits (Sep)",
+    "act": null,
+    "est": "1.40M",
+    "prev": "1.394M",
+    "note": "",
+    "src": "CoinDesk",
+    "u": "https://www.coindesk.com/markets/2026/10/19/cme-s-bitcoin-cash-uniswap-futures-global-pmis-crypto-week-ahead"
+   },
+   {
+    "date": "2026-10-21",
+    "time": "10:30",
+    "cty": "US",
+    "ev": "EIA Weekly Crude Inventories",
+    "act": null,
+    "est": null,
+    "prev": null,
+    "note": "Oil-supply read with Brent near $110",
+    "src": "Phemex News",
+    "u": "https://phemex.com/news/article/fed-enters-blackout-ahead-of-october-meeting-as-us-earnings-season-accelerates-100277"
+   },
+   {
+    "date": "2026-10-22",
+    "time": "08:30",
+    "cty": "US",
+    "ev": "Initial Jobless Claims (wk to 10/17)",
+    "act": null,
+    "est": "200K",
+    "prev": "199K",
+    "note": "Last labor read before the Oct 27–28 FOMC",
+    "src": "Investing.com",
+    "u": "https://www.investing.com/news/stock-market-news/us-economic-calendar-preview-key-releases-for-the-week-of-oct-1923-2026-93CH-4958178"
+   },
+   {
+    "date": "2026-10-22",
+    "time": "10:00",
+    "cty": "US",
+    "ev": "Conference Board LEI (Sep)",
+    "act": null,
+    "est": null,
+    "prev": "-0.1%",
+    "note": "August: 99.5 (2016=100)",
+    "src": "Conference Board",
+    "u": "https://www.conference-board.org/pdf_free/press/US%20LEI%20PRESS%20RELEASE-Sep%202026.pdf"
+   },
+   {
+    "date": "2026-10-23",
+    "time": "09:45",
+    "cty": "US",
+    "ev": "S&P Global Flash Manufacturing PMI (Oct)",
+    "act": null,
+    "est": "55.5",
+    "prev": "55.9",
+    "note": "",
+    "src": "Investing.com",
+    "u": "https://www.investing.com/news/stock-market-news/us-economic-calendar-preview-key-releases-for-the-week-of-oct-1923-2026-93CH-4958178"
+   },
+   {
+    "date": "2026-10-23",
+    "time": "09:45",
+    "cty": "US",
+    "ev": "S&P Global Flash Services PMI (Oct)",
+    "act": null,
+    "est": "58.0",
+    "prev": "58.8",
+    "note": "",
+    "src": "Investing.com",
+    "u": "https://www.investing.com/news/stock-market-news/us-economic-calendar-preview-key-releases-for-the-week-of-oct-1923-2026-93CH-4958178"
+   },
+   {
+    "date": "2026-10-23",
+    "time": "10:00",
+    "cty": "US",
+    "ev": "UMich Consumer Sentiment (Oct, final)",
+    "act": null,
+    "est": null,
+    "prev": "46.3 (prelim)",
+    "note": "Preliminary 1-yr inflation expectations: 4.7%",
+    "src": "Investing.com",
+    "u": "https://www.investing.com/news/stock-market-news/us-economic-calendar-preview-key-releases-for-the-week-of-oct-1923-2026-93CH-4958178"
+   }
+  ]
+ }
 }

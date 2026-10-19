@@ -8,7 +8,8 @@ const s = JSON.parse(h.slice(a, b));
 console.log("snap date:", s.date, "| periods:", Object.keys(s.P).join(","));
 for (const k of Object.keys(s.P)) console.log(` ${k}: chains=${s.P[k].chains.length} tbl=${s.P[k].tbl.length} labels=${s.P[k].labels.length}`);
 console.log("foot head:", (s.foot || "").slice(0, 30));
-for (const id of ["prevDay", "curDay", "nextDay", "tabs", "heat", "chains", "foot", "topdate"]) {
+console.log("cal items:", (s.CAL?.items || []).length);
+for (const id of ["prevDay", "curDay", "nextDay", "tabs", "heat", "chains", "foot", "topdate", "calCard", "cal"]) {
   if (!h.includes(`id="${id}"`)) throw new Error("missing #" + id);
 }
 console.log("all mount nodes OK");

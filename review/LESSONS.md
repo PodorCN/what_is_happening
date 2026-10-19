@@ -72,6 +72,7 @@
 | 2026-10-19 | 逻辑 | 芯片连跌天数同链两口径：n0（10/16 Bloomberg 盘中稿）写「eighth straight day」，而 d「nine-session」/ s1「first gain in 10 sessions」按 9 连跌；SOXX 收盘序列 10/6–10/16 实为 9 连跌 | 同一链内 streak 计数只保留一个口径并以收盘序列现算（SOXX 10/6–10/16 = 9 连跌）；引用盘中稿的较小计数必须标注时点（如「eight completed sessions at the time of writing」），否则删掉计数 |
 | 2026-10-19 | 逻辑 | mtd c4「The month's last gate is the Fed…into the Oct 27-28 meeting」与同文件 qtd c1/c4/③「PCE Oct 29」矛盾——10 月最后一个 gate 是 10/29 PCE，不是 10/27-28 FOMC | 窗口档写「last/only gate」前先列出本档提到的全部日期并取最晚者；FOMC 与 PCE 同月时按日期排序写（FOMC 10/27-28 → PCE 10/29） |
 | 2026-10-19 | 引用 | today ② s1「Paris -1.1%, Frankfurt -1.2% and London -1.1%」文件内无出处：所引 AP 原文只写「indexes slid more than 1%」，无三国具体值 | 链内具体指数的点位/百分比必须能对应本文件某条 news 的原句；否则改用来源口径（more than 1%）或补真实 URL；不得凭记忆补国别数字 |
+| 2026-10-19 | 引用 | fixer 修 F3 时在 today ① n0 的 Bloomberg 原句末尾追加「The chip slide reached nine sessions with Friday's close.」——原文没有这句，round 2 复审与 lint 均未发现 | news.fact 只能是来源原句，修订时不得往里追加/改写文字；作者自己的判断（如按收盘序列现算的连跌天数）写进 steps/d，引文计数与之不符就标时点或换源 `[lint：#11 引文完整性，原句+尾巴=ERROR，同 URL 改写=WARN]` |
 
 ## 链结构（主链 / 辅链）
 

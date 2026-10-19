@@ -119,6 +119,36 @@ ul.play li::marker{color:var(--claret);font-weight:900}
 .hcell .hc{font-size:clamp(26px,2.6vw,34px);font-weight:900;font-variant-numeric:tabular-nums;line-height:1;letter-spacing:-.015em}
 .hcell .hc i{font-style:normal;font-size:.55em;vertical-align:.28em;margin-right:3px}
 
+/* ── economic calendar ────────────────────── */
+.cal-note{font-size:16.5px;line-height:1.8;color:#4f4636;font-style:italic;margin:0 0 14px}
+.cal-wrap{overflow-x:auto}
+table.cal{width:100%;border-collapse:collapse;font-size:15.5px;font-variant-numeric:tabular-nums}
+.cal th{text-align:left;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);font-weight:700;
+  border-bottom:2px solid var(--ink);padding:8px 10px;white-space:nowrap}
+.cal td{border-bottom:1px solid var(--line);padding:9px 10px;vertical-align:top}
+.cal td.day{font-weight:700;white-space:nowrap}
+.cal td.tm,.cal td.num{white-space:nowrap}
+.cal td.num{text-align:right}
+.cal td.act{font-weight:900;font-family:"Playfair Display",Georgia,serif;font-size:17px}
+.cal td.pend{color:var(--faint)}
+.cal td.nt{font-size:14px;color:#4f4636;line-height:1.6;min-width:220px}
+.cal td.nt a{color:var(--claret);text-decoration:none;border-bottom:1px solid rgba(153,15,61,.35);white-space:nowrap}
+.cal tr.today td{background:rgba(153,15,61,.06)}
+.cal .cty{display:inline-block;font-size:10.5px;letter-spacing:.12em;border:1px solid var(--ink);padding:1px 5px;margin-right:7px;vertical-align:1px}
+.cal .chip{display:inline-block;font-size:10px;letter-spacing:.16em;background:var(--claret);color:#fff;padding:2px 6px;margin-left:6px;vertical-align:2px}
+@media(max-width:760px){
+.cal thead{display:none}
+table.cal,.cal tbody{display:block}
+.cal tr{display:grid;grid-template-columns:repeat(3,1fr);grid-template-areas:"day day day" "tm ev ev" "a e p" "nt nt nt";
+  border-bottom:1px solid var(--line);padding:8px 6px}
+.cal td{border:none;padding:3px 0;background:none!important}
+.cal td.day{grid-area:day}.cal td.day:empty{display:none}
+.cal td.tm{grid-area:tm}.cal td.ev{grid-area:ev}.cal td.a{grid-area:a}.cal td.e{grid-area:e}.cal td.p{grid-area:p}
+.cal td.nt{grid-area:nt;min-width:0}
+.cal td.num{text-align:left}
+.cal td.num::before{content:attr(data-l);display:block;font-family:"Source Serif 4",serif;font-weight:400;font-size:10px;letter-spacing:.16em;color:var(--mut)}
+}
+
 /* ── narrow phones: tabs in one row, heat list vertical ── */
 @media(max-width:560px){
 .tabs{display:grid;grid-template-columns:repeat(4,1fr)}
@@ -142,6 +172,7 @@ ul.play li::marker{color:var(--claret);font-weight:900}
 <div class="card"><h2>What Happened</h2><div class="big" id="c1"></div></div>
 <div class="card"><h2>The Playbook</h2><div id="c4"></div></div>
 </div>
+<div class="card" id="calCard" style="margin-top:22px;display:none"><h2 id="calTitle">Economic Calendar</h2><div id="cal"></div></div>
 <div class="card" style="margin-top:22px"><h2>Global Markets</h2><div id="heat"></div></div>
 <div class="card" style="margin-top:22px"><h2 id="chTitle">The Chains</h2><div class="chains" id="chains"></div></div>
 <div class="foot" id="foot"></div>
@@ -191,6 +222,24 @@ function render(period) {
   document.getElementById("foot").innerText = SNAP.foot || "";
 }
 
+// 经济数据日程：与 Today/MTD/QTD/YTD 档无关，每份快照渲染一次；旧快照无 CAL 则整卡隐藏
+function renderCal() {
+  const C = SNAP.CAL, card = document.getElementById("calCard");
+  if (!C || !(C.items || []).length) { card.style.display = "none"; return; }
+  card.style.display = "";
+  document.getElementById("calTitle").innerText = `Economic Calendar · ${C.title || "This Week"}`;
+  let lastDay = "";
+  const rows = C.items.map(it => {
+    const day = formatDate(it.date, { weekday: "short", month: "numeric", day: "numeric" });
+    const isToday = it.date === SNAP.date, done = it.date <= SNAP.date;
+    const dayCell = day === lastDay ? "" : day + (isToday ? '<span class="chip">TODAY</span>' : "");
+    lastDay = day;
+    const act = it.act != null ? `<td class="num a act" data-l="ACTUAL">${it.act}</td>` : `<td class="num a pend" data-l="ACTUAL">${done ? "n/a" : "—"}</td>`;
+    return `<tr class="${isToday ? "today" : ""}"><td class="day">${dayCell}</td><td class="tm">${it.time || ""}</td><td class="ev"><span class="cty">${it.cty || "US"}</span>${it.ev}</td>${act}<td class="num e" data-l="CONS.">${it.est ?? "—"}</td><td class="num p" data-l="PRIOR">${it.prev ?? "—"}</td><td class="nt">${it.note ? it.note + " " : ""}<a href="${it.u}" target="_blank" rel="noopener">[${it.src} ↗]</a></td></tr>`;
+  }).join("");
+  document.getElementById("cal").innerHTML = `${C.note ? `<p class="cal-note">${C.note}</p>` : ""}<div class="cal-wrap"><table class="cal"><thead><tr><th>Day</th><th>ET</th><th>Release</th><th style="text-align:right">Actual</th><th style="text-align:right">Cons.</th><th style="text-align:right">Prior</th><th>Note</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+
 function formatDate(dateStr, style) {
   try { return new Date(dateStr + "T12:00:00").toLocaleDateString("en-US", style); }
   catch (e) { return dateStr; }
@@ -235,6 +284,7 @@ async function init() {
   tabs.innerHTML = PERIODS.map(([k, label]) => `<button class="tab" data-p="${k}">${k === "today" ? formatDate(SNAP.date, { month: "short", day: "numeric" }) : label}</button>`).join("");
   tabs.querySelectorAll(".tab").forEach(b => b.onclick = () => render(b.dataset.p));
   render("today");
+  renderCal();
 }
 init();
 </script>

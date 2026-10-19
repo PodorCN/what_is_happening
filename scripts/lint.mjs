@@ -1,6 +1,7 @@
 // 文案 lint：拦截"复制昨天文件"带来的过期/自相矛盾表述。用法: node scripts/lint.mjs YYYY-MM-DD
 // ERROR → exit 1，禁止 commit；WARN → 逐条修掉，或在 commit body 的 `lint-ack:` 段写明为何保留（reviewer 会核对）
 import { readFileSync, existsSync } from "fs";
+import { execFileSync } from "child_process";
 
 const DATE = process.argv[2];
 if (!/^\d{4}-\d{2}-\d{2}$/.test(DATE || "")) { console.error("用法: node scripts/lint.mjs YYYY-MM-DD"); process.exit(2); }
@@ -159,6 +160,51 @@ for (const tier of WIN) for (const [k, s] of authored(snap.P[tier])) {
     const v = m[1] || m[2];
     if (!factNums.has(v)) W(`${tier}.${k}`, `"${m[0]}" 在本快照及前 ${prevSnaps.length} 份快照的 news[] 里都找不到出处——补来源 news 或删掉`);
   }
+}
+
+// ---------- 11. 引文完整性：news.fact 是来源原句，修订时不得往里追加/改写文字 ----------
+// 基准 = writer 首次提交的同日快照 + 前几份快照里同一 URL 的引文。
+// 原句 + 尾巴 = ERROR（10/19：fixer 在 Bloomberg 原句后接了一句原文没有的话）；同 URL 下引文被改写 = WARN（须逐字核对定稿页并 lint-ack）。
+const sq = s => String(s).replace(/\s+/g, " ").trim();
+let firstVer = null;
+try {
+  const git = (...a) => execFileSync("git", a, { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] });
+  const added = git("log", "--diff-filter=A", "--format=%H", "--", `snapshots/${DATE}.json`).trim().split("\n").pop();
+  if (added) firstVer = JSON.parse(git("show", `${added}:snapshots/${DATE}.json`));
+} catch (e) { /* 无 git 或文件未提交（writer 首写）→ 只比对前几份快照 */ }
+const quotesByUrl = (ps, m = new Map()) => {
+  for (const t of ["today", ...WIN]) for (const c of ps?.P?.[t]?.chains || []) for (const n of c.news || [])
+    if (n.u) (m.get(n.u) || m.set(n.u, new Set()).get(n.u)).add(sq(n.fact));
+  return m;
+};
+const origQ = firstVer ? quotesByUrl(firstVer) : new Map();
+const knownQ = quotesByUrl(firstVer || {}, new Map());
+for (const ps of prevSnaps) quotesByUrl(ps, knownQ);
+for (const tier of ["today", ...WIN]) (snap.P[tier].chains || []).forEach((c, i) => (c.news || []).forEach((n, j) => {
+  const at = `${tier}.chains.${i}.news.${j}`, f = sq(n.fact), known = knownQ.get(n.u);
+  if (!known || known.has(f)) return;
+  const base = [...known].find(k => k.length >= 40 && f !== k && (f.startsWith(k) || f.endsWith(k)));
+  const extra = base && (f.startsWith(base) ? f.slice(base.length) : f.slice(0, f.length - base.length)).trim();
+  if (base) E(at, `引文在原句基础上被追加了文字（原句见首版快照/前几份快照同一 URL）——news.fact 只能是来源原句，作者判断写进 steps/d：「${cut(extra)}」`);
+  else if (origQ.has(n.u)) W(at, `同一 URL 下的引文与 writer 首版不同——须在 news.u 定稿页逐字检索确认，并在 commit body 的 lint-ack 写明：「${cut(f)}」`);
+}));
+
+// ---------- 12. 经济数据日程 CAL（本周 + 今日） ----------
+if (snap.CAL) {
+  const dt = new Date(DATE + "T12:00:00Z"), mon = new Date(dt); mon.setUTCDate(dt.getUTCDate() - ((dt.getUTCDay() + 6) % 7));
+  const fri = new Date(mon); fri.setUTCDate(mon.getUTCDate() + 4);
+  const [lo, hi] = [mon, fri].map(x => x.toISOString().slice(0, 10));
+  let prevKey = "";
+  (snap.CAL.items || []).forEach((it, i) => {
+    const at = `CAL.items.${i}`, key = `${it.date} ${it.time || ""}`;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(it.date || "")) return E(at, `date "${it.date}" 不是 YYYY-MM-DD`);
+    if (!/^https?:\/\//.test(it.u || "") || !it.src) E(at, `${it.ev}：缺 src 或 u 不是真 URL`);
+    if (it.date > DATE && it.act != null) E(at, `${it.ev} 在 ${it.date} 才公布，快照日 ${DATE} 不可能有 actual "${it.act}"`);
+    if (it.date <= DATE && it.act == null) W(at, `${it.ev} 已于 ${it.date} 公布但 act 为空——补实际值或在 note 说明拿不到`);
+    if (it.date < lo || it.date > hi) W(at, `${it.date} 不在快照所在周（${lo}~${hi}）——CAL 只放今日与本周`);
+    if (key < prevKey) W(at, `未按日期/时间升序（${key} 排在 ${prevKey} 之后）`);
+    prevKey = key;
+  });
 }
 
 for (const e of errs) console.log("ERROR " + e);
