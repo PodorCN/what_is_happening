@@ -15,7 +15,7 @@ scripts/fetch.mjs           # 拉数：Yahoo v8 chart，免 key，Node 18+
 scripts/build.mjs           # 校数：打印校准表（贴快照前先核对）
 scripts/build-shell.mjs     # 合成：shell.html + 最新快照 → index.html
 scripts/verify.mjs          # 校验：内嵌快照可解析、四档齐全、挂载点都在
-scripts/lint.mjs            # 文案 lint：窗口档过期标签/当日复述/计数与序列矛盾/出处缺失/引文被改写/CAL 日程（ERROR 阻断 commit）
+scripts/lint.mjs            # 文案 lint：窗口档过期标签/当日复述/计数与序列矛盾/出处缺失/引文被改写/CAL 当日发布（ERROR 阻断 commit）
 agent.md                    # 本文件
 ```
 
@@ -47,7 +47,7 @@ agent.md                    # 本文件
 ### 2.1 四问即四节
 `1·发生了什么`（一段定调）→ `2·热力图`（一眼扫涨跌）→ `3·多链+Facts`（因果）→ `4·怎么办`（playbook）。
 顺序是刻意的：先给结论，再给证据，最后给动作。
-另有一张与四档无关的 **Economic Calendar** 卡（快照顶层 `CAL`，见 §2.6），放在 What Happened/Playbook 之后、热力图之前。
+另有一张与四档无关的 **Today's Releases** 卡（快照顶层 `CAL`，见 §2.6），放在 What Happened/Playbook 之后、热力图之前。
 
 ### 2.2 Chain 设计原则
 - **一条主链 + N 条辅链**，主链标 `MAIN`，解释当日 60% 左右波动；辅链解释分裂和反常。
@@ -87,18 +87,13 @@ agent.md                    # 本文件
 - `news[].time` 标**事件发生日**，不是文章 URL/发布日期（周一的文章回顾周五 → `10/9 close`）。
 - 改写时删掉的具体内容，替换句必须仍含**可核对的对象/数字/日期**；"escalation kept coming — another round of the same fight" 这类空话等于删除，宁可直接删掉该 step。
 
-### 2.6 经济数据日程（CAL）
-三块，读者优先级从高到低：
-1. **`board` 全球通胀 & 政策利率总览**（最重要）：固定 7 行 Fed / BoC / ECB / BoE / BoJ / BoK / PBoC，
-   每行 `cty/cb/cpi/cpiM/rate/last/next(YYYY-MM-DD)/exp/links[{src,u}]`。某行 CPI 新出或央行刚决议 → 当天就更新该行；
-   `next` 已过的行 lint 会 WARN（决议结果写进 `last`，`next` 换成下一次）。
-2. **`items` 中 `grp:"na"`：本周美国 + 加拿大**——只收影响利率/主线的（CPI、就业、零售、GDP、PMI、claims、房地产、BoC），不贪多。
-3. **`items` 中 `grp:"global"`：本周海外 CPI 与央行决议**（欧元区、英国、日本、韩国、中国为主，其他央行有意外才收）。
-- 财报不进表，写进 `note`。
-- 每行 = `grp/date/time/tz/cty/ev/act/est/prev/note/src/u`。`date`/`time` 用**发布地**日期时间并写 `tz`（ET/BST/JST/KST/BJT…），亚洲/欧洲项在 `note` 里注明对应美东时间。已公布（date ≤ DATE）必须填 `act`；未公布的 `act` 必须是 `null`（lint：未来日期有 actual = ERROR）。
-- 共识/前值至少一个可靠源（Investing.com 周历、官方发布机构）；两源不一致时在 `note` 写出差异。拿不到就 `null`，不编。
-- `note` 一句话写"为什么重要/和今天的主线怎么连"，不复述 chains。
-- 周一新建本周 CAL；周二至周五复制昨天的 CAL，把当天公布的项补 `act` 并改写 note。
+### 2.6 当日重要数据发布（CAL）
+- **只放 DATE 当天公布的重要数据**，不放历史值、不放本周/下周日程、不放央行利率总览。
+- 收录范围：美国、加拿大的重要数据（CPI、就业、零售、GDP、PMI、claims、房地产、BoC/Fed 决议等）；
+  海外只收 **CPI 与央行利率决议**（欧元区、英国、日本、韩国、中国为主），外加当天的重大意外（如中国季度 GDP）。
+- 每行 = `date/time/tz/cty/ev/act/est/prev/note/src/u`。`date`/`time` 用**发布地**日期时间并写 `tz`（ET/BST/JST/KST/BJT…），亚洲/欧洲项在 `note` 注明对应美东时间。
+- `act` 必填（当天已公布）；`est` 至少一个可靠源，拿不到写 `null`。`note` 一句话写意外点/与主线的联系，不复述表里的数字。
+- 当天没有重要数据就不写 `CAL`（整卡隐藏）。lint #12：date ≠ DATE 或出现 board/grp = ERROR。
 
 ### 2.4 热力图取舍
 只放 `名字 + return`，颜色二值（`+`绿/`-`红），不要深浅、不要横条——扫一眼只分涨跌。
@@ -127,9 +122,8 @@ agent.md                    # 本文件
     "today": [{ "sec": "US 指数", "items": [["S&P 500","7,6xx","-0.77"]]} …],
     "mtd": […], "qtd": […], "ytd": […]
   },
-  "CAL": { "title": "Week of Oct 19–23", "note": "本周全球政策/通胀一句话",
-    "board": [{ "cty": "US", "cb": "Fed", "cpi": "3.7%", "cpiM": "Sep", "rate": "3.75–4.00%", "last": "+25bp, Sep 16",
-      "next": "2026-10-28", "exp": "Hold priced …", "links": [{ "src": "Fed statement", "u": "https://…" }] }],
+  "CAL": { "items": [{ "date": "2026-10-19", "time": "10:00", "tz": "ET", "cty": "US", "ev": "NAHB Housing Market Index (Oct)",
+      "act": "29", "est": "31", "prev": "32", "note": "…", "src": "NAHB", "u": "https://…" }] }],
     "items": [{ "grp": "na", "date": "2026-10-19", "time": "10:00", "tz": "ET", "cty": "US", "ev": "NAHB Housing Market Index (Oct)",
       "act": "29", "est": "31", "prev": "32", "note": "…", "src": "NAHB", "u": "https://…" }] }
 }
@@ -187,7 +181,7 @@ git log --oneline -2        # 确认已推上去
 > 今天是 YYYY-MM-DD（周X），美东已收盘。目标 DATE = 最近一个已收盘交易日；若其快照已存在（无新交易日）→ 跳过并说明。按 agent.md 跑：
 > 1) §1 思路收集新闻（主线三连搜 + 必读 Investopedia/Barron's 收盘帖）；
 > 2) §4 跑 fetch+build，数字以校准表为准；
-> 3) 写 `snapshots/YYYY-MM-DD.json`（复制昨天文件改，四档+每链 time+fact+真链接，按 §2.6 更新 `CAL`），`snapshots/index.json` 追加日期；
+> 3) 写 `snapshots/YYYY-MM-DD.json`（复制昨天文件改，四档+每链 time+fact+真链接，按 §2.6 写当日 `CAL`），`snapshots/index.json` 追加日期；
 > 4) 窗口档按 §2.5 五问逐句重写；跑 `lint`（ERROR 清零，WARN 修掉或写进 commit body 的 `lint-ack:`）+ `build-shell` + `verify`，http 服务下 `browser.preview` 验收；
 > 5) §4 的 git 命令推到 `origin main`。
 > 不编 URL，不编数字，对不上就标 `~` 或 `null`。

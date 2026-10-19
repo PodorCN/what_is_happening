@@ -120,42 +120,24 @@ ul.play li::marker{color:var(--claret);font-weight:900}
 .hcell .hc i{font-style:normal;font-size:.55em;vertical-align:.28em;margin-right:3px}
 
 /* ── economic calendar ────────────────────── */
-.cal-note{font-size:16.5px;line-height:1.8;color:#4f4636;font-style:italic;margin:0 0 14px}
 .cal-wrap{overflow-x:auto}
 table.cal{width:100%;border-collapse:collapse;font-size:15.5px;font-variant-numeric:tabular-nums}
 .cal th{text-align:left;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);font-weight:700;
   border-bottom:2px solid var(--ink);padding:8px 10px;white-space:nowrap}
 .cal td{border-bottom:1px solid var(--line);padding:9px 10px;vertical-align:top}
-.cal td.day{font-weight:700;white-space:nowrap}
 .cal td.tm,.cal td.num{white-space:nowrap}
 .cal td.num{text-align:right}
 .cal td.act{font-weight:900;font-family:"Playfair Display",Georgia,serif;font-size:17px}
-.cal td.pend{color:var(--faint)}
 .cal td.nt{font-size:14px;color:#4f4636;line-height:1.6;min-width:220px}
 .cal td.nt a{color:var(--claret);text-decoration:none;border-bottom:1px solid rgba(153,15,61,.35);white-space:nowrap}
-.cal tr.today td{background:rgba(153,15,61,.06)}
 .cal .cty{display:inline-block;font-size:10.5px;letter-spacing:.12em;border:1px solid var(--ink);padding:1px 5px;margin-right:7px;vertical-align:1px}
-.cal .chip{display:inline-block;font-size:10px;letter-spacing:.16em;background:var(--claret);color:#fff;padding:2px 6px;margin-left:6px;vertical-align:2px}
-.cal .sm{display:block;font-size:11.5px;color:var(--faint);font-weight:400;font-family:"Source Serif 4",serif}
-.cal td.tm .sm{display:inline}
-.cal td.cb{font-weight:700;white-space:nowrap}
-.cal td.br{font-weight:900;font-family:"Playfair Display",Georgia,serif;font-size:17px;white-space:nowrap}
-.cal td.bn{white-space:nowrap;font-weight:700}
-.cal td.bl{font-size:14px;color:#4f4636;white-space:nowrap}
-.cal-h{font-size:11.5px;color:var(--mut);margin:22px 0 4px;letter-spacing:.22em;text-transform:uppercase}
-@media(max-width:760px){
-.cal.board tr{grid-template-areas:"cb cb cb" "bc br bn" "bl bl bl" "bx bx bx";column-gap:12px}
-.cal.board td.cb{grid-area:cb}.cal.board td.bc{grid-area:bc}.cal.board td.br{grid-area:br}.cal.board td.bn{grid-area:bn;white-space:normal}
-.cal.board td.bl{grid-area:bl;white-space:normal}.cal.board td.bx{grid-area:bx}
-.cal td.bn::before{content:attr(data-l);display:block;font-weight:400;font-size:10px;letter-spacing:.16em;color:var(--mut)}
-}
+.cal .sm{font-size:11.5px;color:var(--faint)}
 @media(max-width:760px){
 .cal thead{display:none}
 table.cal,.cal tbody{display:block}
-.cal tr{display:grid;grid-template-columns:repeat(3,1fr);grid-template-areas:"day day day" "tm ev ev" "a e p" "nt nt nt";
+.cal tr{display:grid;grid-template-columns:repeat(3,1fr);grid-template-areas:"tm ev ev" "a e p" "nt nt nt";
   border-bottom:1px solid var(--line);padding:8px 6px}
-.cal td{border:none;padding:3px 0;background:none!important}
-.cal td.day{grid-area:day}.cal td.day:empty{display:none}
+.cal td{border:none;padding:3px 0}
 .cal td.tm{grid-area:tm}.cal td.ev{grid-area:ev}.cal td.a{grid-area:a}.cal td.e{grid-area:e}.cal td.p{grid-area:p}
 .cal td.nt{grid-area:nt;min-width:0}
 .cal td.num{text-align:left}
@@ -185,7 +167,7 @@ table.cal,.cal tbody{display:block}
 <div class="card"><h2>What Happened</h2><div class="big" id="c1"></div></div>
 <div class="card"><h2>The Playbook</h2><div id="c4"></div></div>
 </div>
-<div class="card" id="calCard" style="margin-top:22px;display:none"><h2 id="calTitle">Economic Calendar</h2><div id="cal"></div></div>
+<div class="card" id="calCard" style="margin-top:22px;display:none"><h2>Today's Releases</h2><div id="cal"></div></div>
 <div class="card" style="margin-top:22px"><h2>Global Markets</h2><div id="heat"></div></div>
 <div class="card" style="margin-top:22px"><h2 id="chTitle">The Chains</h2><div class="chains" id="chains"></div></div>
 <div class="foot" id="foot"></div>
@@ -235,37 +217,13 @@ function render(period) {
   document.getElementById("foot").innerText = SNAP.foot || "";
 }
 
-// 经济数据日程：与 Today/MTD/QTD/YTD 档无关，每份快照渲染一次；旧快照无 CAL 则整卡隐藏
+// 当日重要数据发布：与 Today/MTD/QTD/YTD 档无关，每份快照渲染一次；旧快照无 CAL 则整卡隐藏
 function renderCal() {
   const C = SNAP.CAL, card = document.getElementById("calCard");
   if (!C || !(C.items || []).length) { card.style.display = "none"; return; }
   card.style.display = "";
-  document.getElementById("calTitle").innerText = `Economic Calendar · ${C.title || "This Week"}`;
-  const day = d => formatDate(d, { weekday: "short", month: "numeric", day: "numeric" });
-  const link = (src, u) => `<a href="${u}" target="_blank" rel="noopener">[${src} ↗]</a>`;
-  // 本周五：board 里本周内的央行决议高亮
-  const fri = new Date(SNAP.date + "T12:00:00"); fri.setDate(fri.getDate() + (5 - fri.getDay() + 7) % 7);
-  const friISO = fri.toISOString().slice(0, 10);
-  const board = (C.board || []).map(b => {
-    const soon = b.next >= SNAP.date && b.next <= friISO;
-    return `<tr class="${soon ? "today" : ""}"><td class="cb"><span class="cty">${b.cty}</span>${b.cb}</td><td class="num bc" data-l="LATEST CPI">${b.cpi ?? "—"}${b.cpiM ? `<span class="sm">${b.cpiM}</span>` : ""}</td><td class="num br" data-l="POLICY RATE">${b.rate}</td><td class="bl">${b.last}</td><td class="bn" data-l="NEXT DECISION">${day(b.next)}${soon ? '<span class="chip">THIS WEEK</span>' : ""}</td><td class="nt bx">${b.exp} ${(b.links || []).map(l => link(l.src, l.u)).join(" ")}</td></tr>`;
-  }).join("");
-  const table = grp => {
-    let lastDay = "";
-    const rows = C.items.filter(it => (it.grp || "na") === grp).map(it => {
-      const isToday = it.date === SNAP.date, done = it.date <= SNAP.date;
-      const dayCell = day(it.date) === lastDay ? "" : day(it.date) + (isToday ? '<span class="chip">TODAY</span>' : "");
-      lastDay = day(it.date);
-      const act = it.act != null ? `<td class="num a act" data-l="ACTUAL">${it.act}</td>` : `<td class="num a pend" data-l="ACTUAL">${done ? "n/a" : "—"}</td>`;
-      return `<tr class="${isToday ? "today" : ""}"><td class="day">${dayCell}</td><td class="tm">${it.time || ""} <span class="sm">${it.tz || "ET"}</span></td><td class="ev"><span class="cty">${it.cty || "US"}</span>${it.ev}</td>${act}<td class="num e" data-l="CONS.">${it.est ?? "—"}</td><td class="num p" data-l="PRIOR">${it.prev ?? "—"}</td><td class="nt">${it.note ? it.note + " " : ""}${link(it.src, it.u)}</td></tr>`;
-    }).join("");
-    return rows ? `<div class="cal-wrap"><table class="cal"><thead><tr><th>Day</th><th>Time</th><th>Release</th><th style="text-align:right">Actual</th><th style="text-align:right">Cons.</th><th style="text-align:right">Prior</th><th>Note</th></tr></thead><tbody>${rows}</tbody></table></div>` : "";
-  };
-  const na = table("na"), gl = table("global");
-  document.getElementById("cal").innerHTML = (C.note ? `<p class="cal-note">${C.note}</p>` : "")
-    + (board ? `<h3 class="cal-h">Inflation &amp; Policy Rates</h3><div class="cal-wrap"><table class="cal board"><thead><tr><th>Central bank</th><th style="text-align:right">Latest CPI</th><th style="text-align:right">Policy rate</th><th>Last move</th><th>Next decision</th><th>Expected</th></tr></thead><tbody>${board}</tbody></table></div>` : "")
-    + (na ? `<h3 class="cal-h">This Week · US &amp; Canada</h3>${na}` : "")
-    + (gl ? `<h3 class="cal-h">This Week · Global CPI &amp; Central Banks</h3>${gl}` : "");
+  const rows = C.items.map(it => `<tr><td class="tm">${it.time || ""} <span class="sm">${it.tz || "ET"}</span></td><td class="ev"><span class="cty">${it.cty || "US"}</span>${it.ev}</td><td class="num a act" data-l="ACTUAL">${it.act ?? "—"}</td><td class="num e" data-l="CONS.">${it.est ?? "—"}</td><td class="num p" data-l="PRIOR">${it.prev ?? "—"}</td><td class="nt">${it.note ? it.note + " " : ""}<a href="${it.u}" target="_blank" rel="noopener">[${it.src} ↗]</a></td></tr>`).join("");
+  document.getElementById("cal").innerHTML = `<div class="cal-wrap"><table class="cal"><thead><tr><th>Time</th><th>Release</th><th style="text-align:right">Actual</th><th style="text-align:right">Cons.</th><th style="text-align:right">Prior</th><th>Note</th></tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 
 function formatDate(dateStr, style) {

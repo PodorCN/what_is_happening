@@ -1436,289 +1436,8 @@
  },
  "foot": "Closing baseline (auto 2026-10-19): SPX 7690.73 (+0.51% MTD / +0.51% QTD / +12.35% YTD) · DJI 51966.03 (+2.08% MTD) · IXIC 26430.89 (+13.72% YTD) · 10Y 5.15% · WTI 103.66 (Nov settle; Dec 98.54) · Brent 109.55 (Dec settle) · Gold 4160.7 (Dec fut) · BTC 81939.67. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.16% · 26-06-30 S&P 7499.36/Dow 52319/Nasdaq 26213/10Y 4.42% · 26-08-31 S&P 7686.14/Dow 53185.9/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/WTI $90.42/Brent ~$103.5 (Nov; Dec front ~$98.0)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
  "CAL": {
-  "title": "Week of Oct 19–23",
-  "note": "Policy is turning hawkish almost everywhere energy bites: the Fed, ECB, BoJ and BoK have all hiked since July, the BoE is expected to follow in November. This week's tests: UK CPI (Wed), the BoK decision (Thu) and Japan's CPI (Fri); the Fed is in blackout (Oct 17–29). Next week is the big one: Fed and BoC (Oct 28), ECB (Oct 29), BoJ (Oct 30).",
-  "board": [
-   {
-    "cty": "US",
-    "cb": "Fed",
-    "cpi": "3.7%",
-    "cpiM": "Sep",
-    "rate": "3.75–4.00%",
-    "last": "+25bp, Sep 16",
-    "next": "2026-10-28",
-    "exp": "Hold priced (Oct hike odds ~16%); December hike ~92%",
-    "links": [
-     {
-      "src": "Fed statement",
-      "u": "https://www.federalreserve.gov/monetarypolicy/files/monetary20260916a1.pdf"
-     },
-     {
-      "src": "Investopedia CPI",
-      "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-10142026-12173010"
-     }
-    ]
-   },
-   {
-    "cty": "CA",
-    "cb": "BoC",
-    "cpi": "3.1%",
-    "cpiM": "Sep",
-    "rate": "2.25%",
-    "last": "Hold (7 straight)",
-    "next": "2026-10-28",
-    "exp": "Hold expected (8th straight); -68K Sep jobs argue cut, oil argues hike — a 'live' meeting",
-    "links": [
-     {
-      "src": "StatCan CPI",
-      "u": "https://www150.statcan.gc.ca/n1/daily-quotidien/261019/dq261019a-eng.htm"
-     },
-     {
-      "src": "BNN Bloomberg",
-      "u": "https://www.bnnbloomberg.ca/business/economics/2026/10/16/bank-of-canada-set-for-pair-of-important-data-drops-ahead-of-live-rate-decision/"
-     }
-    ]
-   },
-   {
-    "cty": "EA",
-    "cb": "ECB",
-    "cpi": "3.8%",
-    "cpiM": "Sep",
-    "rate": "2.50% depo",
-    "last": "+25bp, Sep",
-    "next": "2026-10-29",
-    "exp": "Hold ~99% priced; headline 3.8% vs 3.2% in Aug, core 2.5% (flash)",
-    "links": [
-     {
-      "src": "Eurostat",
-      "u": "https://ec.europa.eu/eurostat/web/products-euro-indicators/w/2-16102026-ap"
-     },
-     {
-      "src": "FinanceCalendar",
-      "u": "https://www.financecalendar.com/event/ecb-rate-decision-october-2026/"
-     }
-    ]
-   },
-   {
-    "cty": "UK",
-    "cb": "BoE",
-    "cpi": "3.1%",
-    "cpiM": "Aug",
-    "rate": "3.75%",
-    "last": "Hold 6–3, Sep 17",
-    "next": "2026-11-05",
-    "exp": "Reuters poll: majority sees a hike to 4.00%; Sep CPI (Wed) est 3.4%",
-    "links": [
-     {
-      "src": "Bank of England",
-      "u": "https://www.bankofengland.co.uk/explainers/current-interest-rate"
-     },
-     {
-      "src": "HomeOwners Alliance",
-      "u": "https://hoa.org.uk/news/interest-rate-predictions-2/"
-     }
-    ]
-   },
-   {
-    "cty": "JP",
-    "cb": "BoJ",
-    "cpi": "1.9%",
-    "cpiM": "Aug (core 1.7%)",
-    "rate": "~1.25%",
-    "last": "+25bp, Sep",
-    "next": "2026-10-30",
-    "exp": "Hold ~95% (Polymarket); December hike in focus — Ueda: 'cannot tolerate any further rise'",
-    "links": [
-     {
-      "src": "Investing.com core CPI",
-      "u": "https://www.investing.com/economic-calendar/japan-national-core-consumer-price-index-(cpi)-yoy-344"
-     },
-     {
-      "src": "SBS",
-      "u": "https://news.sbs.co.kr/english/article.do?news_id=N1008802202"
-     }
-    ]
-   },
-   {
-    "cty": "KR",
-    "cb": "BoK",
-    "cpi": "2.9%",
-    "cpiM": "Sep",
-    "rate": "3.00%",
-    "last": "+25bp, Jul & Aug",
-    "next": "2026-10-22",
-    "exp": "Hold expected (19 of 20 in SEDaily poll); November hike seen, terminal 3.50%",
-    "links": [
-     {
-      "src": "Korea Times CPI",
-      "u": "https://www.koreatimes.co.kr/economy/20261002/consumer-prices-up-29-in-september"
-     },
-     {
-      "src": "Seoul Economic Daily",
-      "u": "https://en.sedaily.com/finance/2026/10/18/korea-to-hold-rate-in-october-raise-in-november-survey"
-     }
-    ]
-   },
-   {
-    "cty": "CN",
-    "cb": "PBoC",
-    "cpi": null,
-    "cpiM": "",
-    "rate": "LPR 3.00% / 3.50%",
-    "last": "Unchanged 16 months",
-    "next": "2026-10-20",
-    "exp": "Hold (22 of 22 in Reuters poll); Q3 GDP 4.5% beat cuts the case for easing",
-    "links": [
-     {
-      "src": "Reuters (via WBOW)",
-      "u": "https://1027wbow.com/2026/10/19/china-set-to-leave-benchmark-lending-rates-unchanged-for-17th-month/"
-     }
-    ]
-   }
-  ],
   "items": [
    {
-    "grp": "na",
-    "tz": "ET",
-    "date": "2026-10-19",
-    "time": "08:30",
-    "cty": "CA",
-    "ev": "CPI (Sep, y/y)",
-    "act": "3.1%",
-    "est": "3.2%",
-    "prev": "3.0%",
-    "note": "Below the 3.2% Reuters poll; gasoline +27.8% y/y, ex-gasoline 2.2%; core trim/median 1.8%/1.9%",
-    "src": "Statistics Canada",
-    "u": "https://www150.statcan.gc.ca/n1/daily-quotidien/261019/dq261019a-eng.htm"
-   },
-   {
-    "grp": "na",
-    "tz": "ET",
-    "date": "2026-10-19",
-    "time": "10:00",
-    "cty": "US",
-    "ev": "NAHB Housing Market Index (Oct)",
-    "act": "29",
-    "est": "31",
-    "prev": "32",
-    "note": "Lowest since June 2012; 43% of builders cut prices, the most in the 2020–26 period",
-    "src": "NAHB",
-    "u": "https://www.nahb.org/news-and-economics/press-releases/2026/10/builder-sentiment-falls-on-rising-rates"
-   },
-   {
-    "grp": "na",
-    "tz": "ET",
-    "date": "2026-10-20",
-    "time": "08:30",
-    "cty": "US",
-    "ev": "Housing Starts (Sep)",
-    "act": null,
-    "est": "1.30M",
-    "prev": "1.275M",
-    "note": "First hard housing print after the NAHB miss",
-    "src": "Investing.com",
-    "u": "https://www.investing.com/news/stock-market-news/us-economic-calendar-preview-key-releases-for-the-week-of-oct-1923-2026-93CH-4958178"
-   },
-   {
-    "grp": "na",
-    "tz": "ET",
-    "date": "2026-10-20",
-    "time": "08:30",
-    "cty": "US",
-    "ev": "Building Permits (Sep)",
-    "act": null,
-    "est": "1.40M",
-    "prev": "1.394M",
-    "note": "",
-    "src": "CoinDesk",
-    "u": "https://www.coindesk.com/markets/2026/10/19/cme-s-bitcoin-cash-uniswap-futures-global-pmis-crypto-week-ahead"
-   },
-   {
-    "grp": "na",
-    "tz": "ET",
-    "date": "2026-10-21",
-    "time": "10:30",
-    "cty": "US",
-    "ev": "EIA Weekly Crude Inventories",
-    "act": null,
-    "est": null,
-    "prev": null,
-    "note": "Oil-supply read with Brent near $110",
-    "src": "Phemex News",
-    "u": "https://phemex.com/news/article/fed-enters-blackout-ahead-of-october-meeting-as-us-earnings-season-accelerates-100277"
-   },
-   {
-    "grp": "na",
-    "tz": "ET",
-    "date": "2026-10-22",
-    "time": "08:30",
-    "cty": "US",
-    "ev": "Initial Jobless Claims (wk to 10/17)",
-    "act": null,
-    "est": "200K",
-    "prev": "199K",
-    "note": "Last labor read before the Oct 27–28 FOMC",
-    "src": "Investing.com",
-    "u": "https://www.investing.com/news/stock-market-news/us-economic-calendar-preview-key-releases-for-the-week-of-oct-1923-2026-93CH-4958178"
-   },
-   {
-    "grp": "na",
-    "tz": "ET",
-    "date": "2026-10-22",
-    "time": "10:00",
-    "cty": "US",
-    "ev": "Conference Board LEI (Sep)",
-    "act": null,
-    "est": null,
-    "prev": "-0.1%",
-    "note": "August: 99.5 (2016=100)",
-    "src": "Conference Board",
-    "u": "https://www.conference-board.org/pdf_free/press/US%20LEI%20PRESS%20RELEASE-Sep%202026.pdf"
-   },
-   {
-    "grp": "na",
-    "tz": "ET",
-    "date": "2026-10-23",
-    "time": "09:45",
-    "cty": "US",
-    "ev": "S&P Global Flash Manufacturing PMI (Oct)",
-    "act": null,
-    "est": "55.5",
-    "prev": "55.9",
-    "note": "",
-    "src": "Investing.com",
-    "u": "https://www.investing.com/news/stock-market-news/us-economic-calendar-preview-key-releases-for-the-week-of-oct-1923-2026-93CH-4958178"
-   },
-   {
-    "grp": "na",
-    "tz": "ET",
-    "date": "2026-10-23",
-    "time": "09:45",
-    "cty": "US",
-    "ev": "S&P Global Flash Services PMI (Oct)",
-    "act": null,
-    "est": "58.0",
-    "prev": "58.8",
-    "note": "",
-    "src": "Investing.com",
-    "u": "https://www.investing.com/news/stock-market-news/us-economic-calendar-preview-key-releases-for-the-week-of-oct-1923-2026-93CH-4958178"
-   },
-   {
-    "grp": "na",
-    "tz": "ET",
-    "date": "2026-10-23",
-    "time": "10:00",
-    "cty": "US",
-    "ev": "UMich Consumer Sentiment (Oct, final)",
-    "act": null,
-    "est": null,
-    "prev": "46.3 (prelim)",
-    "note": "Preliminary 1-yr inflation expectations: 4.7%",
-    "src": "Investing.com",
-    "u": "https://www.investing.com/news/stock-market-news/us-economic-calendar-preview-key-releases-for-the-week-of-oct-1923-2026-93CH-4958178"
-   },
-   {
-    "grp": "global",
     "date": "2026-10-19",
     "time": "10:00",
     "tz": "BJT",
@@ -1727,65 +1446,35 @@
     "act": "4.5%",
     "est": "4.4%",
     "prev": null,
-    "note": "Q/q +1.2% vs 1.1% est; Sep retail sales +1.1% — exports carry, domestic demand weak",
+    "note": "Sunday 22:00 ET; q/q +1.2% vs 1.1% est; Sep retail sales only +1.1%",
     "src": "Xinhua",
     "u": "https://english.news.cn/20261019/89cd3cbf51d94ed7bc3156fa7c628667/c.html"
    },
    {
-    "grp": "global",
-    "date": "2026-10-20",
-    "time": "09:00",
-    "tz": "BJT",
-    "cty": "CN",
-    "ev": "PBoC Loan Prime Rate (1Y / 5Y)",
-    "act": null,
-    "est": "3.00% / 3.50%",
-    "prev": "3.00% / 3.50%",
-    "note": "Monday 21:00 ET; 17th straight hold expected",
-    "src": "Reuters (via WBOW)",
-    "u": "https://1027wbow.com/2026/10/19/china-set-to-leave-benchmark-lending-rates-unchanged-for-17th-month/"
-   },
-   {
-    "grp": "global",
-    "date": "2026-10-21",
-    "time": "07:00",
-    "tz": "BST",
-    "cty": "UK",
-    "ev": "CPI (Sep, y/y)",
-    "act": null,
-    "est": "3.4%",
-    "prev": "3.1%",
-    "note": "02:00 ET; motor fuel and energy driving it — sets up the Nov 5 BoE hike debate",
-    "src": "ONS",
-    "u": "https://www.ons.gov.uk/releases/consumerpriceinflationukseptember2026"
-   },
-   {
-    "grp": "global",
-    "date": "2026-10-22",
-    "time": "a.m.",
-    "tz": "KST",
-    "cty": "KR",
-    "ev": "BoK Base Rate Decision",
-    "act": null,
-    "est": "3.00%",
-    "prev": "3.00%",
-    "note": "Wednesday night ET; watch for hike dissents (5 of 11 in MoneyToday poll flag one)",
-    "src": "Seoul Economic Daily",
-    "u": "https://en.sedaily.com/finance/2026/10/18/korea-to-hold-rate-in-october-raise-in-november-survey"
-   },
-   {
-    "grp": "global",
-    "date": "2026-10-23",
+    "tz": "ET",
+    "date": "2026-10-19",
     "time": "08:30",
-    "tz": "JST",
-    "cty": "JP",
-    "ev": "National CPI (Sep, y/y)",
-    "act": null,
-    "est": null,
-    "prev": "1.9% (core 1.7%)",
-    "note": "Thursday 19:30 ET; last CPI before the Oct 29–30 BoJ meeting",
-    "src": "FinanceCalendar",
-    "u": "https://www.financecalendar.com/japan-cpi/"
+    "cty": "CA",
+    "ev": "CPI (Sep, y/y)",
+    "act": "3.1%",
+    "est": "3.2%",
+    "prev": "3.0%",
+    "note": "Ex-gasoline 2.2%; core trim/median 1.8%/1.9% — eases pressure on the BoC",
+    "src": "Statistics Canada",
+    "u": "https://www150.statcan.gc.ca/n1/daily-quotidien/261019/dq261019a-eng.htm"
+   },
+   {
+    "tz": "ET",
+    "date": "2026-10-19",
+    "time": "10:00",
+    "cty": "US",
+    "ev": "NAHB Housing Market Index (Oct)",
+    "act": "29",
+    "est": "31",
+    "prev": "32",
+    "note": "Lowest since June 2012; 43% of builders cut prices",
+    "src": "NAHB",
+    "u": "https://www.nahb.org/news-and-economics/press-releases/2026/10/builder-sentiment-falls-on-rising-rates"
    }
   ]
  }

@@ -189,33 +189,14 @@ for (const tier of ["today", ...WIN]) (snap.P[tier].chains || []).forEach((c, i)
   else if (origQ.has(n.u)) W(at, `同一 URL 下的引文与 writer 首版不同——须在 news.u 定稿页逐字检索确认，并在 commit body 的 lint-ack 写明：「${cut(f)}」`);
 }));
 
-// ---------- 12. 经济数据日程 CAL（本周 + 今日） ----------
+// ---------- 12. 当日重要数据发布 CAL（只放 DATE 当天公布的） ----------
 if (snap.CAL) {
-  const dt = new Date(DATE + "T12:00:00Z"), mon = new Date(dt); mon.setUTCDate(dt.getUTCDate() - ((dt.getUTCDay() + 6) % 7));
-  const fri = new Date(mon); fri.setUTCDate(mon.getUTCDate() + 4);
-  const [lo, hi] = [mon, fri].map(x => x.toISOString().slice(0, 10));
-  const prevKey = {};
+  if (snap.CAL.board || snap.CAL.items?.some(it => it.grp)) E("CAL", "CAL 只保留 items（当日发布），不要 board/grp——见 agent.md §2.6");
   (snap.CAL.items || []).forEach((it, i) => {
-    const at = `CAL.items.${i}`, grp = it.grp || "na";
-    if (!["na", "global"].includes(grp)) E(at, `grp "${grp}" 只能是 na（美加）或 global（海外 CPI/央行）`);
-    // 不同时区的 time 不可比，只在同组同时区内比时间
-    const key = `${it.date} ${it.tz || "ET"} ${it.time || ""}`;
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(it.date || "")) return E(at, `date "${it.date}" 不是 YYYY-MM-DD`);
+    const at = `CAL.items.${i}`;
+    if (it.date !== DATE) E(at, `${it.ev} 的 date "${it.date}" 不是快照日 ${DATE}——CAL 只放当天（发布地日期）公布的数据，不放历史或未来日程`);
     if (!/^https?:\/\//.test(it.u || "") || !it.src) E(at, `${it.ev}：缺 src 或 u 不是真 URL`);
-    if (it.date > DATE && it.act != null) E(at, `${it.ev} 在 ${it.date} 才公布，快照日 ${DATE} 不可能有 actual "${it.act}"`);
-    if (it.date <= DATE && it.act == null) W(at, `${it.ev} 已于 ${it.date} 公布但 act 为空——补实际值或在 note 说明拿不到`);
-    if (it.date < lo || it.date > hi) W(at, `${it.date} 不在快照所在周（${lo}~${hi}）——CAL 只放今日与本周`);
-    const pk = prevKey[grp] || "";
-    if (it.date < pk.slice(0, 10) || (key.slice(0, 10) === pk.slice(0, 10) && key.split(" ")[1] === pk.split(" ")[1] && key < pk))
-      W(at, `组 ${grp} 内未按日期/时间升序（${key} 排在 ${pk} 之后）`);
-    prevKey[grp] = key;
-  });
-  // 央行总览：下次决议日已过 = 利率/上次动作/预期都可能过期
-  (snap.CAL.board || []).forEach((b, i) => {
-    const at = `CAL.board.${i}`;
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(b.next || "")) return E(at, `${b.cb} next "${b.next}" 不是 YYYY-MM-DD`);
-    if (!(b.links || []).length || b.links.some(l => !/^https?:\/\//.test(l.u || "") || !l.src)) E(at, `${b.cb}：links 为空或含非 URL`);
-    if (b.next < DATE) W(at, `${b.cb} 的决议日 ${b.next} 已过——更新 rate/last/next/exp（决议结果写进 last）`);
+    if (it.act == null) W(at, `${it.ev} 没有 actual——当日已公布的数据必须填实际值，拿不到就删掉该行`);
   });
 }
 
