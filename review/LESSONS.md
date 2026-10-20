@@ -26,6 +26,7 @@
 | 2026-10-07 | 取数 | BTC 定稿值不统一：data 83379.86（17:01 fetch）vs foot 83212.25 vs 链文 -2.7%，HEAT -0.4/-4.9 仅与 83212.25 成立 | BTC 重拉一次定稿，同一值写入 data+foot+链文；派生值按定稿值重算并全文件逐项对齐（24h 品种日环比以 Yahoo previousClose 为准） |
 | 2026-10-09 | 取数 | Gold 收盘误把 Kitco 0842 GMT 盘中值 $4,215 当收盘（结算价应为 $4,216.3：Reuters『gained 1.4% to settle at $4,216.3』；13:28–13:30 结算窗 VWAP 4216.4 复现）。陷阱：17:00 电子盘最后一笔 $4,220.30（=Yahoo 日线 C/CNBC 4:59PM 报价）≠ 结算价，勿误采 | 期货收盘=官方结算价：优先通讯社『settled at』句，无稿用结算窗 1m VWAP（GC≈13:28–13:30 ET、CL/BZ≈14:28–14:30 ET）；禁止用电子盘最后一笔/Yahoo 日线 close/CNBC 收盘报价充当结算价；正文引用盘中时点值须加注『intraday』或替换为结算/更新值；修正后回写 data today 与全部派生 %（tbl/HEAT/c1/链/foot/引用句 一处不漏） |
 | 2026-10-19 | 取数 | 跨日 1bp 断点：10/16 快照把 Yahoo ^TNX 5.098 当 Treasury 收盘写成 5.10%/5.44%（Treasury 10/16 = 5.09%/5.43%，10Y -1bp、30Y 0bp），10/19 的期初 5.09/5.43 因此对不上 | 收益率一律以 Treasury daily yield curve 定稿（^TNX 只做盘中参考）；跨日 tbl 期初必须等于上一快照期末，不一致先查 Treasury 判错侧，错侧整表改（tbl/HEAT/徽章/链/foot + MTD/QTD/YTD 的 bp 一并重算） |
+| 2026-10-20 | 取数 | ytd 10Y 期初沿用 Yahoo ^TNX 4.16%，Treasury 12/31/2025 为 4.18%（同表 30Y 已按 Treasury），YTD 写成 +96bp（应 +94bp），同位共 10 处 | 收益率基期与收盘一律取 Treasury daily yield curve：ytd 10Y 期初 4.18、YTD +94bp，同步 h/d/c1/c4/kpi/tbl/① s2/② s0/② d/HEAT/foot 的 25-12-31 行；改完 grep『96bp』应为 0 处 |
 
 ## 取数前提
 
@@ -72,6 +73,10 @@
 | 2026-10-19 | 逻辑 | 芯片连跌天数同链两口径：n0（10/16 Bloomberg 盘中稿）写「eighth straight day」，而 d「nine-session」/ s1「first gain in 10 sessions」按 9 连跌；SOXX 收盘序列 10/6–10/16 实为 9 连跌 | 同一链内 streak 计数只保留一个口径并以收盘序列现算（SOXX 10/6–10/16 = 9 连跌）；引用盘中稿的较小计数必须标注时点（如「eight completed sessions at the time of writing」），否则删掉计数 |
 | 2026-10-19 | 逻辑 | mtd c4「The month's last gate is the Fed…into the Oct 27-28 meeting」与同文件 qtd c1/c4/③「PCE Oct 29」矛盾——10 月最后一个 gate 是 10/29 PCE，不是 10/27-28 FOMC | 窗口档写「last/only gate」前先列出本档提到的全部日期并取最晚者；FOMC 与 PCE 同月时按日期排序写（FOMC 10/27-28 → PCE 10/29） |
 | 2026-10-19 | 引用 | today ② s1「Paris -1.1%, Frankfurt -1.2% and London -1.1%」文件内无出处：所引 AP 原文只写「indexes slid more than 1%」，无三国具体值 | 链内具体指数的点位/百分比必须能对应本文件某条 news 的原句；否则改用来源口径（more than 1%）或补真实 URL；不得凭记忆补国别数字 |
+| 2026-10-20 | 引用 | today ④ n2 的 14.9% 句挂在 Reuters 转载页，而该页定稿为 17.2%（同句 22.1%/57.6% 未变）；n1 的 pending home sales（-7.3%/66.0/2001）在该页 0 处出现——数字对、引用页错，14.9% 外溢四档 7 处 | news.u 必须能背书该条 fact 的每个数字：定稿后对每条 fact 用 2 个特征词（主数字 + 专名）在 u 页面全文检索，检索不到就换到真正含该句的 URL（pending home sales → Reuters/Yahoo 稿，14.9% → TipRanks/收盘稿），禁止把两个不同故事挂在同一 URL 下，也禁止为迁就旧版页面改掉已核实的数字 |
+| 2026-10-20 | 数字 | ytd ③ s2 把窗口从 past week 改成 two weeks 却没重算：CRWV 10/6 91.72 → 10/20 62.13 = -32.3%，不是 about a quarter | 窗口词改动（past week → two weeks）后必须用新窗口首尾收盘重算句中百分比：两周口径写 about 30%（nearly a third），或保留 past week 写 -24% |
+| 2026-10-20 | 引用 | 四处细节在 34 条 news 里查不到出处：② s1 SOXX 盘前 -1.5%、③ s0 3M 与 Amazon 数据中心合作、③ s3 Hasbro MAG beat + 回购翻倍、ytd ③ s2 sell-side upgrade（事实属实、缺源） | steps 里的专名+动作组合（合作方、回购、评级、盘前数字）必须能在本链某条 news 的原句里找到；属实但缺源就补真 URL（3M → Reuters 10/19 稿、Hasbro → 24/7 Wall St Q3 稿、升级 → Yahoo Finance 10/19 稿），补不到就删掉该修饰语 |
+| 2026-10-20 | 数字 | today c1/HEAT『BTC +1.1%』现算 82,775.52/81,939.67 = +1.02%，+1.1 是用取整后的 82.8/81.9 反算 | 日环比一律用未取整的收盘值现算后再保留 1 位小数，禁止拿文案里的取整点位反算百分比 |
 
 ## 链结构（主链 / 辅链）
 
@@ -86,6 +91,8 @@
 | 2026-10-16 | 引用 | mtd ①/qtd ① 引 Investopedia『Stocks surged Friday … ended the week around 5.24%』标 time『10/12 close』（URL 日期），内容是周五 10/9 收盘 | news.time 标事件发生日，不是文章 URL/发布日期；fact 里出现星期几先核对 `[lint]` |
 | 2026-10-16 | schema | qtd/ytd HEAT 第二列填了与涨跌幅相同的值（『+1.21』『-20bp』），页面重复显示同一个数（10/9 起每天沿用） | HEAT items 第二列只能是水平值（点位/价格/收益率）或『—』 `[lint ERROR]` |
 | 2026-10-16 | 结构 | 季度首月 MTD 与 QTD 同基期，QTD 是 MTD 的改写（整档用词重合 0.39-0.43，正常 <0.2） | 季度首月 QTD 换视角：对比上季末、季内剩余关口（FOMC/财报季/数据），不复述 MTD 的月内叙事 `[lint：重合度>0.30 告警]` |
+| 2026-10-20 | 逻辑 | today 主链与辅链重复同一事实：① s2 与 ④ s3 逐字写「10Y -3bp / 30Y -6bp」；② s1 复述 ① s3 的「tech 唯一下跌 -0.3%」；② s2 复述 ① s4/c1 的「26,424.82 / -6.07 点」 | 辅链只写主链没有的增量：④ 保留 2Y +2bp 与曲线形态、删掉 10Y/30Y 重复数字；② 保留 SOXX 与盘中低点 26,192、删掉 tech -0.3% 与收盘点位；定稿前对同档每对链做数字交集检查，交集里的数字只留一处 |
+| 2026-10-20 | 逻辑 | 同一 gate 在同档重复：qtd ① s3 与 qtd ③ s2 都写 Meta/Tesla 10/21，ytd ③ s3 第三次重复且带 Wednesday/this week 相对时间词 | 日历 gate 只归该档的一条链（qtd 交给 ③）；qtd ① 的『Owed』只写层级句（earnings verdict 未出、29% 增速待验），不再列公司与日期；ytd 写『本季度首个 Mag7 财报周』并去掉 Wednesday/this week 等相对时间词 |
 
 ## 待补充
 

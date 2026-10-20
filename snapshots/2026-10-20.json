@@ -2,7 +2,7 @@
  "date": "2026-10-20",
  "updatedAt": "2026-10-20T21:40:00Z",
  "label": "2026-10-20 Tuesday close",
- "foot": "Closing baseline (auto 2026-10-20): SPX 7712.57 (+0.80% MTD / +0.80% QTD / +12.67% YTD) · DJI 52495.88 (+3.12% MTD) · IXIC 26424.82 (+13.69% YTD) · 10Y 5.12% · WTI 101.79 (Nov settle, expired; Dec 97.82) · Brent 108.79 (Dec settle) · Gold 4141.8 (Dec fut) · BTC 82775.5. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.16% · 26-06-30 S&P 7499.36/Dow 52319/Nasdaq 26213/10Y 4.42% · 26-08-31 S&P 7686.14/Dow 53185.9/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/WTI $90.42 (Nov)/Brent ~$103.5 (Nov; Dec front ~$98.0)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
+ "foot": "Closing baseline (auto 2026-10-20): SPX 7712.57 (+0.80% MTD / +0.80% QTD / +12.67% YTD) · DJI 52495.88 (+3.12% MTD) · IXIC 26424.82 (+13.69% YTD) · 10Y 5.12% · WTI 101.79 (Nov settle, expired; Dec 97.82) · Brent 108.79 (Dec settle) · Gold 4141.8 (Dec fut) · BTC 82775.5. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.18% · 26-06-30 S&P 7499.36/Dow 52319/Nasdaq 26213/10Y 4.42% · 26-08-31 S&P 7686.14/Dow 53185.9/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/WTI $90.42 (Nov)/Brent ~$103.5 (Nov; Dec front ~$98.0)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
  "P": {
   "today": {
    "h": "The Barrel Relents: Oil Off Its Five-Month High, the Dow Up 1% — and the Nasdaq Flat",
@@ -14,7 +14,7 @@
     "10Y 5.12% -3bp",
     "Brent $108.79 -0.7%"
    ],
-   "c1": "<b>Oil gave back its five-month high, and everything rate-sensitive caught the bid.</b> Brent touched $111.99 — its highest since May — before settling at $108.79 (-0.7%), and WTI's expiring November contract settled $101.79 (-1.8%) after a $110.48 session high, once reports said mediators had put a proposal to revive US-Iran talks on the table. The S&P 500 rose 0.28% to 7,712.57 after an opening dip of 0.3% and a 7,747 midmorning peak; the Dow jumped 529.85 points (1.02%) to 52,495.88; the Nasdaq finished 6.07 points lower (-0.02%) at 26,424.82, having been up 0.6% at 10:30. Ten of 11 sector ETFs closed higher — health care +2.4%, real estate +1.7%, utilities +1.3% — with tech the lone loser (-0.3%) and SOXX -0.4%; the equal-weighted RSP rose 1.15% against SPY's 0.34%, and the Russell 2000 gained 1.65%. The 10Y fell 3bp to 5.12% and the 30Y 6bp to 5.42% after housing starts (-5.2%) and pending home sales (-7.3%, the lowest since 2001) left next week's hike odds at 14.9%. The dollar slipped 0.3% to 101.7, gold fell 0.5% to $4,141, bitcoin rose 1.1% to $82.8k and the VIX dropped 6.1% to 17.31. After the bell, SpaceX reported its first profit; Netflix slipped on slower revenue growth.",
+   "c1": "<b>Oil gave back its five-month high, and everything rate-sensitive caught the bid.</b> Brent touched $111.99 — its highest since May — before settling at $108.79 (-0.7%), and WTI's expiring November contract settled $101.79 (-1.8%) after a $110.48 session high, once reports said mediators had put a proposal to revive US-Iran talks on the table. The S&P 500 rose 0.28% to 7,712.57 after an opening dip of 0.3% and a 7,747 midmorning peak; the Dow jumped 529.85 points (1.02%) to 52,495.88; the Nasdaq finished 6.07 points lower (-0.02%) at 26,424.82, having been up 0.6% at 10:30. Ten of 11 sector ETFs closed higher — health care +2.4%, real estate +1.7%, utilities +1.3% — with tech the lone loser (-0.3%) and SOXX -0.4%; the equal-weighted RSP rose 1.15% against SPY's 0.34%, and the Russell 2000 gained 1.65%. The 10Y fell 3bp to 5.12% and the 30Y 6bp to 5.42% after housing starts (-5.2%) and pending home sales (-7.3%, the lowest since 2001) left next week's hike odds at 14.9%. The dollar slipped 0.3% to 101.7, gold fell 0.5% to $4,141, bitcoin rose 1.0% to $82.8k and the VIX dropped 6.1% to 17.31. After the bell, SpaceX reported its first profit; Netflix slipped on slower revenue growth.",
    "c4": "<ul class='play'><li>The tell was breadth, not the index: RSP +1.15% against SPY's 0.34%, and 10 of 11 sectors green — this was a rotation into everything AI is not, not a fresh leg of the AI trade.</li><li>Oil is now the swing factor for rates: a $3 pullback in Brent bought 3bp on the 10Y and 1.7% in REITs — $112 is the level that re-tightens the whole chain.</li><li>The rally rests on an unverified report: both WSJ and Bloomberg flagged that the peace-talk headlines were unconfirmed, so a denial puts $110+ crude straight back in play.</li><li>Wednesday is the AI trade's real test: Meta and Tesla report, with SpaceX's first profit already on the tape — watch capex guidance, not the headline EPS.</li></ul>",
    "kpi": [
     [
@@ -156,8 +156,8 @@
      "main": 0,
      "steps": [
       "The Asian signal: Elice, a South Korean AI-infrastructure supplier, fell 32% in its Seoul debut — the country's worst opening day for a sizeable company — and the Kospi dropped 3.7%, with MSCI's Asia gauge at its lowest since July",
-      "The US echo: SOXX was down 1.5% premarket and closed -0.4%; tech was the only one of 11 sector ETFs in the red (-0.3%)",
-      "The intraday swing: the Nasdaq fell 0.9% to 26,192 in the first fifteen minutes, was up 0.6% by 10:30, and closed at 26,424.82 — 6.07 points lower",
+      "The US echo: SOXX closed -0.4% while the broad market rallied — the chip tape stayed the laggard",
+      "The intraday swing: the Nasdaq fell 0.9% to 26,192 in the first fifteen minutes, was up 0.6% by 10:30, then stalled into the close",
       "The credit file stayed open: CoreWeave's five-year CDS held near 1,121bp, above the 1,000 distress line, even as the stock rose 1.7%; memory names bounced (WDC +3.4%, STX +2.2%, MRVL +1.4%)",
       "The tell: the selling was confined to the AI complex — the rest of the tape absorbed it without an index-level drawdown"
      ],
@@ -192,6 +192,12 @@
        "fact": "The S&P 500 and Nasdaq Composite began Tuesday's session in the red. The broad market index fell 0.2% just after 9:30 a.m. ET, while the tech-heavy Nasdaq pulled back 0.4%.",
        "src": "CNBC",
        "u": "https://www.cnbc.com/2026/10/19/stock-market-today-live-updates.html?output=1"
+      },
+      {
+       "time": "10/20",
+       "fact": "Chip stocks ended lower, with the iShares Semiconductor ETF (SOXX) finishing down 0.4%.",
+       "src": "Investopedia",
+       "u": "https://investopedia.com/stock-market-today-dow-jones-and-s-and-p-500-10202026-12183813"
       }
      ]
     },
@@ -236,6 +242,18 @@
        "fact": "In post-earnings moves, General Motors and GE Aerospace ranked among the biggest S&P 500 decliners. 3M rose 6% to lead the Dow, and defense contractors RTX and Northrop Grumman slipped less than 1% and rose 5%, respectively.",
        "src": "Investopedia (intraday)",
        "u": "https://investopedia.com/stock-market-today-dow-jones-and-s-and-p-500-10202026-12183813"
+      },
+      {
+       "time": "10/19",
+       "fact": "3M said on Monday it was expanding its commercial relationship with Amazon and had issued a warrant to an Amazon subsidiary allowing it the right to buy 3M common stock worth over $521 million; about 85% of the warrant shares become available as Amazon buys optical connectivity and other data-center products, fully vesting once total purchases hit $6 billion.",
+       "src": "Reuters (WHBL)",
+       "u": "https://whbl.com/2026/10/19/3m-expands-amazon-data-center-partnership-shares-gain"
+      },
+      {
+       "time": "10/20",
+       "fact": "Hasbro's Magic: The Gathering cleared $600 million in quarterly revenue for the first time, at $616.1 million, carrying third-quarter revenue past consensus; management raised full-year constant-currency revenue growth to 7-9% and doubled its 2026 buyback target.",
+       "src": "24/7 Wall St",
+       "u": "https://247wallst.com/cards/hasbro-q3-2026-earnings-has-01m5ceek3b1ftpvmsck42qsr29"
       }
      ]
     },
@@ -245,8 +263,8 @@
      "steps": [
       "The data: housing starts fell 5.2% to a 1.22 million annual rate against a 1.3 million estimate; single-family starts ran at 859,000 (-4.6%); permits held at 1.4 million",
       "The crack: pending home sales fell 7.3% to 66.0, the lowest since the series began in 2001",
-      "The repricing: CME FedWatch put the odds of a 25bp hike at next week's meeting at 14.9%, down from 22.1% a week ago and 57.6% a month earlier",
-      "The curve: the 10Y -3bp to 5.12% and the 30Y -6bp to 5.42%, but the 2Y rose 2bp to 4.79% — a long-end rally, not an easing",
+      "The repricing: CME FedWatch put the odds of a 25bp hike at next week's meeting at 14.9%, down from 22.1% a week ago",
+      "The curve: the 2Y rose 2bp to 4.79% while the long end rallied — relief, not an easing",
       "The cross-asset check: the dollar -0.3% to 101.7 and gold -0.5% to $4,141 — both softer, neither pricing a pivot"
      ],
      "d": "The rate file: weak housing did what hawkish talk could not — hike odds fell to 14.9% and the long end rallied, while the front end still edged higher.",
@@ -260,14 +278,14 @@
       {
        "time": "10/20",
        "fact": "The National Association of Realtors said its pending home sales index tumbled 7.3% to 66.0 last month, the lowest level since the series started in 2001.",
-       "src": "Reuters (Euronext)",
-       "u": "https://live.euronext.com/en/financial-news/stocks-mostly-rise-oil-us-yields-ease-euro-edges"
+       "src": "Reuters (Yahoo Finance)",
+       "u": "https://ca.finance.yahoo.com/news/us-pending-home-sales-tumble-140050152.html"
       },
       {
        "time": "10/20",
-       "fact": "Traders see a 14.9% probability of a Federal Reserve rate hike of at least 25 basis points at its policy meeting next week, according to CME FedWatch, down from 22.1% a week ago and 57.6% a month earlier.",
-       "src": "Reuters (Euronext)",
-       "u": "https://live.euronext.com/en/financial-news/stocks-mostly-rise-oil-us-yields-ease-euro-edges"
+       "fact": "At the October 28 Fed meeting the odds of a 25-basis-point hike are 14.9%, down from 22.1% a week ago, according to the CME FedWatch tool.",
+       "src": "TipRanks",
+       "u": "https://tipranks.com/news/why-is-the-stock-market-up-today-10-20-26"
       },
       {
        "time": "10/20",
@@ -541,7 +559,7 @@
     "10Y -17bp",
     "Brent +11.0%"
    ],
-   "c1": "Q4 is fourteen sessions old. The S&P sits at 7,712.57, +0.80% on the quarter, with the Nasdaq -1.62% and the Dow +3.12%; that compares with a +2.0% third quarter for the S&P, so the quarter has added less than half of what the summer did. What is in the ledger: an all-time closing high of 7,818.93 on 10/6, a 24-year intraday high of 5.36% on the 10Y on 10/7 — now 5.12%, a net -17bp — and three repricings (telecom, the AI complex, the inflation prints) all booked inside the first two weeks. What is not: the FOMC on Oct 27-28, the PCE print on Oct 29, the bulk of Q3 earnings with Meta and Tesla on Wednesday, and the Nov 3 midterms. Brent is +11.0% for the quarter and WTI +12.6%. The quarter's test is whether +0.80% survives those four gates.",
+   "c1": "Q4 is fourteen sessions old. The S&P sits at 7,712.57, +0.80% on the quarter, with the Nasdaq -1.62% and the Dow +3.12%; that compares with a +2.0% third quarter for the S&P, so the quarter has added less than half of what the summer did. What is in the ledger: an all-time closing high of 7,818.93 on 10/6, a 24-year intraday high of 5.36% on the 10Y on 10/7 — now 5.12%, a net -17bp — and three repricings (telecom, the AI complex, the inflation prints) all booked inside the first two weeks. What is not: the FOMC on Oct 27-28, the PCE print on Oct 29, the bulk of Q3 earnings with Meta and Tesla reporting Oct 21, and the Nov 3 midterms. Brent is +11.0% for the quarter and WTI +12.6%. The quarter's test is whether +0.80% survives those four gates.",
    "c4": "<ul class='play'><li>The quarter has banked +0.80% and a 24-year yield print, not a direction — the S&P is 1.4% below its 10/6 record with the four biggest gates still unplayed.</li><li>Position for the calendar, not the tape: FOMC on Oct 27-28, PCE on Oct 29, a megacap earnings week and the midterms — the quarter's whole risk budget sits in the next fourteen days.</li><li>The rate bill is the swing: a 10Y at 5.12% keeps leadership narrow; a break back below 5% would let the AI complex's repair widen into a quarter-end bid.</li></ul>",
    "kpi": [
     [
@@ -649,7 +667,7 @@
       "Banked: a 7,818.93 close on 10/6, the quarter's only record, and a 5.36% print on the 10Y on 10/7, the highest in 24 years",
       "Banked: a full round trip in October hike odds — 22% before CPI, 37% at the peak, 14.9% now",
       "Owed: an FOMC decision on Oct 27-28, with December odds near 92% implying one more hike this year",
-      "Owed: the Q3 earnings verdict, tracking 29% growth, with Meta and Tesla reporting Wednesday",
+      "Owed: the Q3 earnings verdict — 29% growth is the consensus, and none of it has been confirmed yet",
       "The standing: +0.80% QTD on a +2.0% Q3 base — the quarter has added less than half of the summer's gain"
      ],
      "d": "Q4's first fourteen sessions banked a record and a yield spike — the verdict still sits with the Fed and the earnings week.",
@@ -741,16 +759,16 @@
    ]
   },
   "ytd": {
-   "h": "The Bull at +12.67%: AI Earnings Carry, a 96bp Rate Bill",
-   "d": "S&P +12.67%, Nasdaq +13.69%, Dow +9.22% with fourteen Q4 sessions logged — AI capex and 29% earnings growth carry; a 10Y up 96bp, a 79% barrel and a hot CPI-PPI pair tax the rest.",
+   "h": "The Bull at +12.67%: AI Earnings Carry, a 94bp Rate Bill",
+   "d": "S&P +12.67%, Nasdaq +13.69%, Dow +9.22% with fourteen Q4 sessions logged — AI capex and 29% earnings growth carry; a 10Y up 94bp, a 79% barrel and a hot CPI-PPI pair tax the rest.",
    "badges": [
     "S&P +12.67%",
     "Nasdaq +13.69%",
     "Dow +9.22%",
     "10Y 5.12%"
    ],
-   "c1": "The year's base case still holds: AI capex and earnings carry the S&P to +12.67% (7,712.57) and the Nasdaq to +13.69%, with the Dow +9.22%; the bull turned four on 10/12. Against it: a 10Y at 5.12% (+96bp YTD, with a 24-year high of 5.36% printed on 10/7), Brent +78.8% and WTI +77.3% as the war grinds through an eighth month, and a hot September CPI (3.7%) and PPI (6.3%). Beneath the index: Energy +52.0% leads the year, Tech +28.8%, Health +16.2%; Comms -6.4% and ConsDisc -3.3% lag, Utilities -1.9%. Gold -4.6%, bitcoin -5.4%, the dollar +3.5%; December hike odds near 92%.",
-   "c4": "<ul class='play'><li>The year's engine is intact: AI capex and 29% earnings growth have carried the S&P +12.67% through a 96bp rise in the 10Y — earnings are doing the work rates used to do.</li><li>The credit file is the newest risk: CoreWeave's CDS above 1,000 and Anthropic's valuation reset are the market's stress gauges — watch them before the AI complex.</li><li>The year's last macro gate is December (odds near 92%): a pause this month is priced; the December decision is where the bull's 2027 setup gets set.</li></ul>",
+   "c1": "The year's base case still holds: AI capex and earnings carry the S&P to +12.67% (7,712.57) and the Nasdaq to +13.69%, with the Dow +9.22%; the bull turned four on 10/12. Against it: a 10Y at 5.12% (+94bp YTD, with a 24-year high of 5.36% printed on 10/7), Brent +78.8% and WTI +77.3% as the war grinds through an eighth month, and a hot September CPI (3.7%) and PPI (6.3%). Beneath the index: Energy +52.0% leads the year, Tech +28.8%, Health +16.2%; Comms -6.4% and ConsDisc -3.3% lag, Utilities -1.9%. Gold -4.6%, bitcoin -5.4%, the dollar +3.5%; December hike odds near 92%.",
+   "c4": "<ul class='play'><li>The year's engine is intact: AI capex and 29% earnings growth have carried the S&P +12.67% through a 94bp rise in the 10Y — earnings are doing the work rates used to do.</li><li>The credit file is the newest risk: CoreWeave's CDS above 1,000 and Anthropic's valuation reset are the market's stress gauges — watch them before the AI complex.</li><li>The year's last macro gate is December (odds near 92%): a pause this month is priced; the December decision is where the bull's 2027 setup gets set.</li></ul>",
    "kpi": [
     [
      "S&P YTD",
@@ -772,7 +790,7 @@
     ],
     [
      "10Y",
-     "+96bp",
+     "+94bp",
      "2026's tax",
      0
     ]
@@ -798,9 +816,9 @@
     ],
     [
      "10Y",
-     "4.16%",
+     "4.18%",
      "5.12%",
-     "+96bp"
+     "+94bp"
     ],
     [
      "30Y",
@@ -864,7 +882,7 @@
      "steps": [
       "The engines: AI capex — hyperscalers are heading toward $1 trillion a year — and earnings, with Q3 growth tracking 29%",
       "The scoreboard: S&P +12.67%, Nasdaq +13.69%, Dow +9.22% — the AI-heavy index still leads despite October's repricing",
-      "The referee: the 10Y at 5.12%, +96bp YTD, and a 24-year high of 5.36% printed on 10/7",
+      "The referee: the 10Y at 5.12%, +94bp YTD, and a 24-year high of 5.36% printed on 10/7",
       "The taxes: WTI +77.3% and Brent +78.8% as the war grinds into an eighth month; September CPI 3.7% and PPI 6.3%",
       "The breadth: Energy +52.0% leads; Comms -6.4%, ConsDisc -3.3% and Utilities -1.9% lag"
      ],
@@ -894,12 +912,12 @@
      "t": "② The Rate and Inflation Tax",
      "main": 0,
      "steps": [
-      "The long end: the 10Y from 4.16% to 5.12% (+96bp); the 30Y from 4.84% to 5.42% (+58bp)",
+      "The long end: the 10Y from 4.18% to 5.12% (+94bp); the 30Y from 4.84% to 5.42% (+58bp)",
       "The Fed: a September hike, its first since July 2023 — with December odds near 92%",
       "The prints: September CPI 3.7% y/y and PPI 6.3% y/y; October hike odds round-tripped 22% to 37% and back to 14.9%",
       "The cross-asset echo: the dollar +3.5%, gold -4.6% — real rates, not war, set the tone for both"
      ],
-     "d": "2026's tax: a 96bp rise in the 10Y and a second inflation wave — the September hike was the year's regime change.",
+     "d": "2026's tax: a 94bp rise in the 10Y and a second inflation wave — the September hike was the year's regime change.",
      "news": [
       {
        "time": "10/8 close",
@@ -927,8 +945,8 @@
      "steps": [
       "The buildout moved onto credit: CoreWeave carries $22 billion of bonds and $26 billion of loans; a June bond at 9.625% yielded 15% at last week's peak",
       "The scare: Anthropic IPO investors weighed a ~$1.5T valuation, down from ~$2T; OpenAI's revenue was reported at ~$50 billion, not ~$70 billion",
-      "The repair: a sell-side upgrade has not reversed the move — the stock is still down about a quarter over two weeks",
-      "The test: Meta and Tesla report Wednesday, with Lam and Texas Instruments this week — capex guidance is the number that matters"
+      "The repair: Goldman's upgrade has not reversed the move — the stock is still down about 30% over two weeks",
+      "The test: the quarter's first Mag 7 earnings week — capex guidance, not the headline EPS, is the number that matters"
      ],
      "d": "The AI platform's year: capex compounding on credit — October's stress test was a financing scare; the earnings week is the answer.",
      "news": [
@@ -955,6 +973,12 @@
        "fact": "CoreWeave shares went from a 7% morning gain to a 0.4% loss, following a 25.2% slide last week.",
        "src": "AP",
        "u": "https://apnews.com/article/stocks-markets-oil-us-ai-494fbe4361a0360b2f6368e7a6d8f058"
+      },
+      {
+       "time": "10/19",
+       "fact": "CoreWeave shares rose 3% before surrendering their gains Monday after Goldman Sachs upgraded the neocloud provider to Buy from Neutral; the analyst also raised the stock's price target from $106 to $139 per share following a sell-off of more than 25% last week.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/markets/stocks/article/coreweave-stock-rebounds-on-goldman-sachs-upgrade-to-buy-124139909.html"
       }
      ]
     }
@@ -1099,7 +1123,7 @@
      [
       "BTC",
       "$82.8k",
-      "+1.1"
+      "+1.0"
      ],
      [
       "Stoxx 600",
@@ -1455,7 +1479,7 @@
      [
       "10Y",
       "5.12%",
-      "+96bp"
+      "+94bp"
      ],
      [
       "30Y",
