@@ -965,6 +965,76 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-10-20",
+      "reviewedAt": "2026-10-20T18:45:00-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "引用",
+              "symptom": "today ④ 的两条 news 与其 news.u 不符：(1) n2 写『14.9% probability … down from 22.1% a week ago and 57.6% a month earlier』，同一句在 u 页面原文为『stand at 17.2%』（22.1%/57.6% 与原文一字不差，说明整句抄自该页但主数字与页面相反）；(2) n1 的 pending home sales 事实（-7.3%、指数 66.0、2001 年以来最低）在该页全文 0 处出现（该页是股市 wrap，无 Realtor/housing/pending home sales）。14.9% 另出现在 today c1、today HEAT『CME Oct hike』、mtd c1、qtd ① s1、qtd ③ s0、ytd ② s2，合计 7 处。",
+              "evidence": "curl https://live.euronext.com/en/financial-news/stocks-mostly-rise-oil-us-yields-ease-euro-edges 原文：『Expectations for a rate hike of at least 25 basis points from the Federal Reserve at its policy meeting next week stand at 17.2%, according to CME FedWatch, down from 22.1% a week ago and 57.6% a month earlier.』；全文 grep Realtor/pending/home sales/housing = 0。14.9% 本身有收盘源支持（Closing Look 10/20『CME FedWatch put hike odds at 14.9%, down from 22.1% a week ago, per Reuters』、CoinMarketCap『odds of an October rate hike at 14.9%』）；pending home sales 亦有 Reuters『US pending home sales tumble to record low in September』(wkzo 10/20) 与 NAR 新闻稿支持 —— 即数字对、引用页错，不是数字错。",
+              "rule": "news.u 必须能背书该条 fact 的每个数字：定稿后对每条 fact 用 2 个特征词（主数字 + 专名）在 u 页面全文检索，检索不到就换到真正含该句的 URL（本次 pending home sales → Reuters/NAR 稿，14.9% → 收盘版 Reuters 稿），禁止把两个不同故事挂在同一 URL 下，也禁止为迁就旧版页面改掉已核实的数字。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "取数",
+              "symptom": "ytd 的 10Y 期初写 4.16%、YTD +96bp，与当日已在用的 Treasury 口径不一致：Treasury 2025-12-31 10Y = 4.18%，5.12−4.18 = +94bp；4.16 是 Yahoo ^TNX 的 4.163。同一张 tbl 的 30Y 期初 4.84/+58bp 已按 Treasury，属同表混源。96bp 出现在 ytd h『a 96bp Rate Bill』、d『up 96bp』、kpi、tbl、c1、① s2、② s0 共 7 处，foot 的『25-12-31 … 10Y 4.16%』同错。",
+              "evidence": "Treasury daily yield curve CSV：12/31/2025 10 Yr 4.18、30 Yr 4.84；10/20/2026 10 Yr 5.12、30 Yr 5.42（curl home.treasury.gov daily_treasury_yield_curve 2026/all 与 2025/all）。Yahoo ^TNX 12/31/2025 close = 4.163。LESSONS 2026-10-19 已确立『收益率一律以 Treasury daily yield curve 定稿（^TNX 只做盘中参考）』。",
+              "rule": "收益率基期与收盘一律取 Treasury daily yield curve：ytd 10Y 期初改 4.18、YTD 改 +94bp，同步 h/d/kpi/tbl/c1/① s2/② s0 与 foot 的 25-12-31 行；改完 grep『96bp』应为 0 处。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today 主链与辅链重复同一事实：① s2『the 10Y fell 3bp to 5.12% and the 30Y 6bp to 5.42%』与 ④ s3『the 10Y -3bp to 5.12% and the 30Y -6bp to 5.42%』逐字重复同一对数字；② s1『tech was the only one of 11 sector ETFs in the red (-0.3%)』复述 ① s3『tech the only sector lower』；② s2『closed at 26,424.82 — 6.07 points lower』复述 ① s4/c1 的同一收盘事实。",
+              "evidence": "同档内 5.12%/-3bp、5.42%/-6bp 在 ① 与 ④ 各写一次；tech -0.3% 在 ① s3 与 ② s1 各一次；26,424.82/-6.07 在 ① s4 与 ② s2 各一次（c1 为总述，不计）。对应 LESSONS 2026-10-06/10-07『辅链只保留增量』。",
+              "rule": "辅链只写主链没有的增量：④ 保留 2Y +2bp 与曲线形态、删掉 10Y/30Y 重复数字；② 保留 SOXX 盘前 -1.5%、26,192 日内低点与 10:30 翻红、删掉 tech -0.3% 与收盘点位；定稿前对同档每对链做数字交集检查，交集里的数字只留一处。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "同一 gate 在同档重复：qtd ① s3『…with Meta and Tesla reporting Wednesday』与 qtd ③ s2『Oct 21: Meta and Tesla, the first Magnificent Seven prints of the quarter』重复；ytd ③ s3『Meta and Tesla report Wednesday, with Lam and Texas Instruments this week』第三次重复，且 Wednesday/this week 属窗口档相对时间词。",
+              "evidence": "qtd ① s3 / qtd ③ s2 / ytd ③ s3 三处为同一事实（Meta、Tesla 10/21 财报）。",
+              "rule": "日历 gate 只归该档的一条链（qtd 交给 ③）；qtd ① 的『Owes』只写层级句（earnings verdict 未出、29% 增速待验），不再列公司与日期；ytd 写『本季度首个 Mag7 财报周』并去掉 Wednesday/this week 等相对时间词。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "ytd ③ s2『the stock is still down about a quarter over two weeks』窗口与数值不符：CRWV 10/6 收 91.72 → 10/20 收 62.13 = -32.3%（10/7 起算 -29.8%），不是 about a quarter（≈-25%）。",
+              "evidence": "Yahoo CRWV 日线：2026-10-06 91.72、2026-10-07 88.45、2026-10-20 62.13。10/19 版原句为『-25% over the past week』（10/12 80.26 → 10/19 61.12 = -23.8%，当时成立），本日把窗口改成 two weeks 却未重算百分比。",
+              "rule": "窗口词改动（past week → two weeks）后必须用新窗口首尾收盘重算句中百分比：两周口径写 about 30%（nearly a third），或保留 past week 写 -24%。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "四处具体细节在本文件 34 条 news 里查不到出处（事实本身均属实）：② s1『SOXX was down 1.5% premarket』；③ s0『expanding a data-center partnership with Amazon』；③ s3『Hasbro +11.2% on a Magic: The Gathering-driven beat and a doubled buyback target』；ytd ③ s2『a sell-side upgrade has not reversed the move』（10/19 版有 Goldman 升级的 news，本日该链 4 条 news 全无 upgrade）。",
+              "evidence": "grep 全文件 Amazon / upgrade 各 1 次（均在 step 自身）；所引 swissinfo 原文与 CNBC 10/19 live blog 全文均无 Amazon 合作、Hasbro 回购翻倍、SOXX 盘前数字（CNBC 只写 Hasbro +5%、上调营收展望）。外部核实属实：Reuters『3M expands Amazon data center partnership』(10/19)、Hasbro Q3（MTG +34% 至 $616M、回购目标 $200M→$400M）。",
+              "rule": "steps 里的专名+动作组合（合作方、回购、评级、盘前数字）必须能在本链某条 news 的原句里找到；属实但缺源就补真 URL（3M → Reuters 10/19 稿、Hasbro → 公司 Q3 稿、升级 → 10/19 AP/BI 稿），补不到就删掉该修饰语。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today c1『bitcoin rose 1.1% to $82.8k』与 today HEAT『BTC $82.8k +1.1』现算应为 +1.0%：82,775.52 ÷ 81,939.67 − 1 = +1.02%（+1.1% 是用取整后的 82.8/81.9 反算出来的）。",
+              "evidence": "data/2026-10-20.json btc.today = 82775.52；data/2026-10-19.json btc.today = 81939.67。",
+              "rule": "日环比一律用未取整的收盘值现算后再保留 1 位小数（82,775.52/81,939.67 = +1.02% → +1.0%），禁止拿文案里的取整点位反算百分比。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
