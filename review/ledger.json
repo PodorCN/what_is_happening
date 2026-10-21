@@ -1040,6 +1040,76 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-10-21",
+      "reviewedAt": "2026-10-21T18:43:59-04:00",
+      "verdict": "PASS",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "PASS",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd.c1『one record close in week one』与 mtd.c4『the month's gains were made in week one』把 10/6 的纪录收盘（7,818.93）归到十月第一周；十月第一周只有 10/1-10/2 两个交易日，10/6 属第二周（10/5-10/9），且 MTD 涨幅是到 10/6 才累积到 +2.19%，不是第一周。",
+              "evidence": "labels 10/1,10/2,10/5,10/6…；data 9/30 7,651.54 → 10/6 7,818.93 = +2.19%；到 10/16 已回落到 +0.10%。LESSONS 2026-10-16 已判定『10/6 实为第二周』。",
+              "rule": "写 week one/two 前按自然周核对：10/1-10/2=第一周、10/5-10/9=第二周；10/6 的事件改写为『in the first four sessions』或『by 10/6』，不得写 week one。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "qtd.c1 与 qtd.chains[0].steps[0] 写三次 repricing『inside the first two weeks』；三次分别发生在 10/9、10/12-13、10/14-15，10/12-15 已进入第三周（10/15 是本月第 11 个交易日），『first two weeks』只覆盖 10/9 一次。",
+              "evidence": "mtd.c1 自己列出的日期 10/9、10/12-13、10/14-15；10 月交易日序列见 labels；LESSONS 2026-10-16 时间词规则。",
+              "rule": "窗口档写『first two weeks』前把事件日期逐日排进自然周；10/9-10/15 跨三周，统一改『by 10/15 (first 11 sessions)』或『inside the first three weeks』。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "窗口档 chains 复述 today 的当日发布：mtd ③ s2 的 EIA 3.06M 桶（today ② s3 同数）、mtd ③ s3 的 Kpler 24.6M b/d（today ② s5 同数）、qtd ② s2 的 2Y +2bp（today ③ s2）、qtd ② s3 的 >$5B 债务推迟（today ③ s3）、qtd ② s5 的法国 5%/160bp（today ③ s1）。窗口档应只写窗口级计数/对比。",
+              "evidence": "today ② s3/s5、today ③ s1/s2/s3 与 mtd/qtd 对应 steps 的数字逐一相同；LESSONS 2026-10-14 F1 / 2026-10-15 F4 同类判例。",
+              "rule": "定稿前对 today 各链与 mtd/qtd/ytd 各链做数字交集检查；EIA/Kpler/当日 bp/法国 5%/债务推迟等当日发布项只留在 today，窗口档改写为窗口累计、均值或起止对比。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd ③ s1 写 Brent『held a $100-107 corridor for two weeks, then ran to $111.99 on 10/20』，但 10/16 已收 $109.86（本链 news[0] 自己引用），10/19 收 $109.55；突破发生在 10/16，不是 10/20。",
+              "evidence": "mtd ③ news[0] Reuters 10/16『settled $3.94, or 3.7%, higher at $109.86』；data/2026-10-16 brent.today=109.86、10/19=109.55；10/20 盘中高 111.99 见本链 s1 与 today ② s2。",
+              "rule": "写窗口路径前先把每日收盘列成序列：$100-107 只到 10/15，10/16 收 109.86 即突破；改为『…through 10/15, then $109.86 on 10/16 and $111.99 on 10/20』。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ④ s1 写 AT&T 被『SpaceX's spectrum purchase and merger talk』重估为无线竞争者；所引 Reuters 把 AT&T -6.5% 归因于 SpaceX 业绩 + 10/9 频谱收购，merger talk 是 SpaceX-Tesla 的并购讨论，与 AT&T 的无线竞争无关，属多余因果。",
+              "evidence": "Reuters via Investing.com 10/21『AT&T sank 6.5% ... the SpaceX results, along with a recent wireless spectrum purchase, fanned fears…』；CNBC 10/21 单独报道 SpaceX/Tesla 成立特别委员会讨论合并。",
+              "rule": "因果句每个修饰语都要能在本链 news 原句找到；删掉『and merger talk』，或另起一句写 SpaceX-Tesla 合并并配 CNBC URL，不要挂在 AT&T 的因果上。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "HEAT.today 的 DXY 写 101.68 / -0.1；用 data 收盘现算 101.685/101.71 = -0.02%，应显示 -0.0。-0.1 来自 Reuters 的 -0.14%（对应 101.65），与 101.68 的价格不同源。",
+              "evidence": "data/2026-10-21.json closes.dxy.today=101.685；data/2026-10-20.json=101.71；Reuters 10/21『dollar index fell 0.14% to 101.65』。",
+              "rule": "同一格的价格与百分比必须同源：用 data 收盘 101.685/101.71 现算得 -0.0；若用 Reuters 的 -0.14%，价格写 101.65，禁止混用。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd.c1 与 qtd.c1 把 10Y『5.36% 高点 → 5.13% 收盘』和『-16bp』并置，但 5.13-5.36=-23bp；-16bp 的基期是 9/30 的 5.29%，句中没有写出来，读者无法对上。",
+              "evidence": "data 9/30 tnx=5.29、10/7 盘中高 5.36、10/21=5.13；5.13-5.29=-16bp，5.13-5.36=-23bp。",
+              "rule": "写『5.36% high → 5.13%』并给 bp 时同句写出基期：『5.29% open → 5.36% high → 5.13% (-16bp)』；否则删掉 bp 只留点位。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
