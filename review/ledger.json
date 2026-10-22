@@ -1110,6 +1110,116 @@
         }
       ],
       "resolved": false
+    },
+    {
+      "date": "2026-10-22",
+      "reviewedAt": "2026-10-22T18:45:41-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "mtd.c1『Energy +9.87% leads』+ mtd.d『Energy +9.9% and Tech -6.9% bookending a 16.7-point spread』+ mtd ② s1『best-to-worst is 16.7 points』把 Energy 说成月内最强板块、把 16.7 点说成极值差；实际最强是 Staples +11.65%（XLP），best-to-worst = 11.65 − (−6.85) = 18.50 点，16.7 只是 Energy 与 Tech 的两板块差。",
+              "evidence": "板块 ETF 9/30→10/22 现算：XLP +11.65、XLE +9.87、XLU +8.70、XLV +7.65、XLB +6.14、XLF +6.09、XLY +5.67、XLRE +3.94、XLI −0.15、XLC −3.20、XLK −6.85（HEAT.mtd Sectors 首行也是 Staples +11.7）。同链 s0 自己按 Staples 在首位排列，与 s1『Energy +9.87% against Tech −6.85』矛盾；10/21 快照 Energy +10.8 确为第一，今日被 Staples 反超后句子未重写（LESSONS §2.5 第 4 条『还成立吗』）。",
+              "rule": "写『X leads / best-to-worst N points』前用 11 个板块 ETF 现算排序取真正 max/min 再相减；标题与导语只许点名第一名，若要讲 Energy vs Tech 必须写成『Energy +9.9% vs Tech −6.9%（16.7 点）』，禁用 leads / bookending / best-to-worst。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "引用",
+              "symptom": "today ① n2 的 fact 前半句『Meta's credit risk hit a record high』在所引 swissinfo 页面 0 次出现（只有后半句 reignited fears… 出自该页）；同一断言还外溢到 today ① s2、qtd.c4『Meta's risk premium at a record』、ytd ③ s2『Meta's credit risk hit a record high』，共 4 处。",
+              "evidence": "抓取 https://www.swissinfo.ch/eng/nasdaq-100-slumps-most-since-june-as-bonds-rally%3a-markets-wrap/92254614 全文（30,030 字符）检索 credit/record/default/CDS 均为 0 次，原文只有『plans to boost capital spending reignited fears that tech firms will issue more debt…』；文件内 5 个可抓取页面中『record high』只出现在 AP 且指股市本身，与 Meta 信用无关。",
+              "rule": "news.fact 的每个分句都要能在 news.u 页面全文检索到；『record high / at a record』类断言必须挂真正含该句的 URL（Meta CDS/信用风险另找源），检索不到就删掉该分句，并同步删掉 c4 与窗口档里的同一『at a record』。"
+            },
+            {
+              "id": "F3",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "today.c1『the 10Y fell 17bp to 4.96% … its biggest one-day drop since March 2023』比较级错误：2023-11-14（−19bp）与 2024-08-02（−19bp）跌幅都大于今天的 −17bp，正确应为『biggest since 8/2/2024』。",
+              "evidence": "Treasury daily yield curve 2023–2026 全序列现算，≤−17bp 的交易日只有 2023-03-10(−23)、2023-03-17(−17)、2023-11-14(−19)、2024-08-02(−19)、2026-10-22(−17)；最近一次严格更大在 2024-08-02。所引 CNBC 标题只说『lowest level in nearly a month』，未给比较级。",
+              "rule": "写『biggest/fastest since X』前把该指标全历史日变化现算成序列，取最近一次严格更大的日期作为 X（本例 8/2/2024）；不得用来源标题的模糊表述反推比较级。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today.c1 与 qtd ② s0 写『the first close below 5% since 9/23』；Treasury 9/23 收 5.11%（在 5% 上方），最后一次收于 5% 下方是 9/22（4.96%），应为 since 9/22。",
+              "evidence": "Treasury CSV：09/22/2026 10Y=4.96、09/23/2026=5.11、10/15=5.10、10/16=5.09、10/21=5.13、10/22=4.96。",
+              "rule": "『first close below X since Y』的 Y 必须是序列里最后一个满足条件的收盘日：写前在 Treasury CSV 里取最后一个 <X 的日期（本例 9/22），日期与阈值同句写清。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "窗口档复述 today 当日事件：mtd ③ s3（NYT 10/22 打击计划 + Brent settled $113.17）、qtd ② s4（『duration was bought alongside a five-month high in crude』= 当日股债联动）、qtd ③ s3（『the Iran strike plan explicitly dated after them』）；today ② s0/s2 已完整叙述同一事件。",
+              "evidence": "today ② s0『A New York Times report…resuming strikes on Iran…following the 11/3 midterm elections』与 mtd ③ s3、qtd ③ s3 同对象同日期；today ② s2『Brent's December contract settled…at $113.17』与 qtd ② s4 同值。LESSONS 2026-10-15 F4、2026-10-21 F3 同类未修。",
+              "rule": "窗口档只写窗口端点数值（『Brent $113.17』）与计数/层级，不写当日触发事件；定稿前 grep 窗口档里的当日专名（NYT / Iran / midterms / five-month high / duration）逐条删。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "同档辅链数字交集：today ③ s3『Lockheed Martin +7.0% and Procter & Gamble +5.6%』与 ④ s1『the stock rose 5.6%』/④ s2『Lockheed Martin … gained 7.0%』重复同一对个股与涨跌幅；② s3『XLE closed 0.87% lower』与 ③ s2 的『energy -0.87%』重复同一数字。",
+              "evidence": "Yahoo 10/22 现算 XLE −0.87%、PG +5.58%、LMT +6.96%，两链数值同源同日；LESSONS 2026-10-20 F3『同档数字交集只留一处』。",
+              "rule": "个股涨跌幅只在一条链出现（明细归 ④，③ 只留指数/板块层面的分裂）；定稿前对同档每对链做数字集合求交，交集里的数字删到只剩一处。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "取数",
+              "symptom": "mtd ③ s0『Brent's December contract began October at $98.03, crossed $100 on 10/1, held a $100-107 corridor for two weeks』两处日期错：Dec 合约 10/1 约 $98.0，首次收盘上 $100 是 10/6（$100.58）；$100-107 只维持到 10/15，10/16 已收 $109.86 突破上沿。",
+              "evidence": "各日 foot 的 Dec settle：10/1 ~98.0、10/6 100.58、10/7 100.20、10/8 104.28、10/12 106.65、10/15 105.92、10/16 109.86、10/19 109.55、10/20 108.79、10/21 108.82、10/22 113.17；10/21 ledger F4 已判同类未修。",
+              "rule": "写 Brent 路径前把每日 Dec settle 列成序列再落日期：起点 98.03、首破 100 在 10/6、corridor 为 10/6-10/15、突破在 10/16；换月周的日期断言必须用同合约序列（禁止用 Nov 口径）。"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ② s1『…and the US ordered some diplomats out of Saudi Arabia』在文件 22 条 news 中无出处；所引 Yahoo 页只有『Iran-backed Houthis launched new strikes against Saudi targets』。",
+              "evidence": "抓取 5 个可访问页面全文检索 diplomat/embassy/evacuate：0 次（仅 AP 导航栏出现『US Embassy』标题）；Yahoo 页（news u）只有 Houthi 一句。",
+              "rule": "steps 里每个『专名+动作』都要能在本链某条 news 的原句找到；找不到就删掉该分句或补真 URL，不得凭记忆补外交动作。"
+            },
+            {
+              "id": "F9",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "ytd ③ s3『The counter-evidence: SpaceX's first profit and Super Micro's raised guidance…』在今日 22 条 news 里没有对应条目（全文 SpaceX 出现 2 次、Super Micro 1 次，全部集中在这一句）。",
+              "evidence": "今日快照全文 grep；两件事实出自 10/20-10/21 的快照（10/21 有 CNBC/Investing.com 链接），今日未重挂任何 news。",
+              "rule": "跨日沿用的事实必须在当日文件里重挂一条 news（time 写事件日、u 用真实链接），否则从窗口档删掉该 step。"
+            },
+            {
+              "id": "F10",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "ytd ③ s4『Alphabet, Microsoft and Amazon report next week』在年度档使用相对时间词；同文件 qtd ③ s2 已用绝对日期『10/26-30』。",
+              "evidence": "LESSONS 2026-10-20 明确要求 ytd 去掉 Wednesday/this week 类相对时间词；lint 只拦 tonight 类，未覆盖 next week。",
+              "rule": "窗口档禁用 next week/this week 类相对时间词，统一写绝对日期区间（10/26-30），并在 lint.mjs 增加 next week 的 ERROR 规则。"
+            },
+            {
+              "id": "F11",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today.tbl 的 10Y（−17bp）与 Gold（−2.2%）两行没有任何链覆盖：头条写『a Flight to Bonds That Put the 10Y Back Under 5%』，但四条链（Meta/Lam、Brent、Split、What Didn't Break）21 个 step 里没有一步讲债市或黄金，c1 成为唯一解释。",
+              "evidence": "today.chains 全 21 个 step 无 10Y/30Y/2Y 数值与债市传导、无 gold；tbl 6 行中 S&P/Nasdaq/Dow/WTI/Brent 有链，10Y/Gold 无链。",
+              "rule": "tbl 每行至少被一条链的某个 step 覆盖；债券腿当日变动 >10bp 时单独成链（或写进主链 step），不得让 c1 成为唯一解释。"
+            },
+            {
+              "id": "F12",
+              "severity": "minor",
+              "category": "取数",
+              "symptom": "data/2026-10-22.json 的 tnx.today=4.95、tnx.ytdBase=4.16，与快照 4.96/4.18（Treasury 口径）不一致，computed.tnx.ytdPct=18.98 因此是 Yahoo 口径的假值。",
+              "evidence": "Treasury：10/22=4.96、9/30=5.29、12/31/2025=4.18；Yahoo ^TNX 10/22=4.953、12/31/2025=4.163。data/2026-10-21 tnx.today 已按 Treasury 回写为 5.13，今日回退到 Yahoo。",
+              "rule": "收益率定稿后同步回写 data 的 today 与 ytdBase（Treasury 口径）并重算 computed；data.computed 与快照 tbl 同项相等后才 commit。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
