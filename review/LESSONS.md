@@ -27,6 +27,7 @@
 | 2026-10-09 | 取数 | Gold 收盘误把 Kitco 0842 GMT 盘中值 $4,215 当收盘（结算价应为 $4,216.3：Reuters『gained 1.4% to settle at $4,216.3』；13:28–13:30 结算窗 VWAP 4216.4 复现）。陷阱：17:00 电子盘最后一笔 $4,220.30（=Yahoo 日线 C/CNBC 4:59PM 报价）≠ 结算价，勿误采 | 期货收盘=官方结算价：优先通讯社『settled at』句，无稿用结算窗 1m VWAP（GC≈13:28–13:30 ET、CL/BZ≈14:28–14:30 ET）；禁止用电子盘最后一笔/Yahoo 日线 close/CNBC 收盘报价充当结算价；正文引用盘中时点值须加注『intraday』或替换为结算/更新值；修正后回写 data today 与全部派生 %（tbl/HEAT/c1/链/foot/引用句 一处不漏） |
 | 2026-10-19 | 取数 | 跨日 1bp 断点：10/16 快照把 Yahoo ^TNX 5.098 当 Treasury 收盘写成 5.10%/5.44%（Treasury 10/16 = 5.09%/5.43%，10Y -1bp、30Y 0bp），10/19 的期初 5.09/5.43 因此对不上 | 收益率一律以 Treasury daily yield curve 定稿（^TNX 只做盘中参考）；跨日 tbl 期初必须等于上一快照期末，不一致先查 Treasury 判错侧，错侧整表改（tbl/HEAT/徽章/链/foot + MTD/QTD/YTD 的 bp 一并重算） |
 | 2026-10-20 | 取数 | ytd 10Y 期初沿用 Yahoo ^TNX 4.16%，Treasury 12/31/2025 为 4.18%（同表 30Y 已按 Treasury），YTD 写成 +96bp（应 +94bp），同位共 10 处 | 收益率基期与收盘一律取 Treasury daily yield curve：ytd 10Y 期初 4.18、YTD +94bp，同步 h/d/c1/c4/kpi/tbl/① s2/② s0/② d/HEAT/foot 的 25-12-31 行；改完 grep『96bp』应为 0 处 |
+| 2026-10-22 | 取数 | data 的 tnx.today=4.95 / ytdBase=4.16 未按 Treasury 回写（快照 tbl 是 4.96 / 4.18），computed.ytdPct 18.98 是 Yahoo 口径的假值 | 收益率定稿后同步回写 data 的 today 与 ytdBase（Treasury 口径：10/22 4.96、2025-12-31 4.18）并重算 computed 三项；data.computed 与快照 tbl 同项相等后才 commit |
 
 ## 取数前提
 
@@ -77,6 +78,21 @@
 | 2026-10-20 | 数字 | ytd ③ s2 把窗口从 past week 改成 two weeks 却没重算：CRWV 10/6 91.72 → 10/20 62.13 = -32.3%，不是 about a quarter | 窗口词改动（past week → two weeks）后必须用新窗口首尾收盘重算句中百分比：两周口径写 about 30%（nearly a third），或保留 past week 写 -24% |
 | 2026-10-20 | 引用 | 四处细节在 34 条 news 里查不到出处：② s1 SOXX 盘前 -1.5%、③ s0 3M 与 Amazon 数据中心合作、③ s3 Hasbro MAG beat + 回购翻倍、ytd ③ s2 sell-side upgrade（事实属实、缺源） | steps 里的专名+动作组合（合作方、回购、评级、盘前数字）必须能在本链某条 news 的原句里找到；属实但缺源就补真 URL（3M → Reuters 10/19 稿、Hasbro → 24/7 Wall St Q3 稿、升级 → Yahoo Finance 10/19 稿），补不到就删掉该修饰语 |
 | 2026-10-20 | 数字 | today c1/HEAT『BTC +1.1%』现算 82,775.52/81,939.67 = +1.02%，+1.1 是用取整后的 82.8/81.9 反算 | 日环比一律用未取整的收盘值现算后再保留 1 位小数，禁止拿文案里的取整点位反算百分比 |
+| 2026-10-22 | 逻辑 | mtd 把 Energy 说成第一、把 16.7 点说成 best-to-worst：实际第一是 Staples +11.65%（XLP），best-to-worst = 11.65 − (−6.85) = 18.50；16.7 只是 Energy 与 Tech 的两板块差（标题/导语/② s1 三处，且同链 s0 自己把 Staples 排第一） | 写『X leads / best-to-worst N 点』前用 11 个板块 ETF 现算排序取真正 max/min 再相减，标题与导语只点名第一名；只讲 Energy vs Tech 时写『Energy +9.9% vs Tech −6.9%（16.7 点）』，禁用 leads / bookending / best-to-worst |
+| 2026-10-22 | 引用 | news.fact『Meta's credit risk hit a record high』挂的 swissinfo 页是 Bloomberg 滚动 wrap，正文随当天多次改写：复审检索不到该句（同页只剩 Houthi/Alphabet 句），同一断言还外溢 today ① s2、qtd c4、ytd ③ s2 共 4 处 | 滚动 wrap 转载页（swissinfo / FinancialJuice）不能背固定事实，改挂静态单篇（如 Yahoo Finance 的 Bloomberg 单篇）或通讯社稿；定稿前对每条 fact 用 2 个特征词在 u 页面检索，检索不到就换 URL |
+| 2026-10-22 | 数字 | c1『10Y −17bp 是 biggest one-day drop since March 2023』不成立：2023-11-14 与 2024-08-02 都是 −19bp，最近一次严格更大在 2024-08-02 | 写『biggest/fastest since X』前把该指标全历史日变化现算成序列，取最近一次严格更大的日期作 X（10Y −17bp → since 8/2/2024）；不得用来源标题的模糊表述（biggest rally in over a year）反推比较级 |
+| 2026-10-22 | 数字 | 『first close below 5% since 9/23』错一天：9/23 收 5.11%，最后一次 5% 下方是 9/22（4.96）；today c1、qtd c4、qtd ② s0 三处 | 『first close below X since Y』的 Y = 序列里最后一个满足条件的收盘日；写前在 Treasury CSV 里取最后一个 <X 的日期，日期与阈值同句写清 |
+| 2026-10-22 | 取数 | mtd ③ s0 Brent 路径日期错：把 $100-107 走廊写到 10/20，实际 10/16 已收 $109.86 突破上沿 | Brent 路径按每日 Dec settle 序列写：9/30 98.03 → 10/1 102.21（当日即破 100）→ $100-107 走廊到 10/15 → 10/16 收 109.86 → 10/22 113.17；换月周只用同一合约序列，禁止拿 9/30 的 98.03 当 10/1 收盘 |
+| 2026-10-22 | 引用 | today ② s1『the US ordered some diplomats out of Saudi Arabia』在 22 条 news 里无出处（所引 Yahoo 页只有 Houthi 一句） | steps 里每个『专名+动作』都要能在本链某条 news 的原句找到；属实但缺源就补真链接（DW/Reuters/WaPo 10/22 稿），补不到就删掉该分句 |
+| 2026-10-22 | 引用 | ytd ③ s3 沿用 10/20-21 的『SpaceX first profit / Super Micro raised guidance』，当日 22 条 news 无一条背书 | 跨日沿用的事实必须在当日文件里重挂一条 news（time 写事件日、u 用真实链接），否则从窗口档删掉该 step |
+| 2026-10-22 | 逻辑 | ytd ③ s4 用相对时间词『next week』，同文件 qtd ③ s2 已写 10/26-30 | 窗口档禁用 next week / this week / last week，统一写绝对日期区间（10/26-30）`[lint]` |
+| 2026-10-23 | 数字 | today ③ s3『Colgate -3.44% and Hormel -3.42%』把 -3.42% 挂在 Hormel 名下：HRL 10/23 收 21.06（-1.40%），-3.42% 是 Hershey（HSY 175.64→169.64）；同句 PG/KO/CL 三项正确，只有第四项张冠李戴 | 写个股涨跌幅前用 close/prevClose−1 现算并同时核对代码（HRL≠HSY）；同一句里每个单名逐个对代码，禁止先按跌幅排序再补名字 |
+| 2026-10-23 | 数字 | today 档 Nasdaq 全天写 -0.20%（d/badges/c1/tbl/链标题/HEAT/foot），data.computed.ixic.dayPct=-0.21（25,955.3418÷26,008.86−1=−0.2058%）；AP 的 0.2 是通讯社取整 | 百分比一律用未取整收盘现算后保留 2 位（−0.2058→−0.21），不沿用通讯社 1 位取整值；改一处必须同步 d/badges/c1/tbl/链标题/HEAT/foot，改完 grep 旧值应为 0 处 |
+| 2026-10-23 | 数字 | mtd c4『the defensives … gave 1.9 points back on 10/23』把 XLP 当日 −1.92% 当成月度点数变化；实际 XLP MTD 11.65%→9.50%，回吐 2.15pp | 写『gave N points back』前用同一 MTD 序列算（前一日 MTD − 当日 MTD），不得拿当日日涨跌幅顶替；表述写成『XLP +11.65% → +9.50%，−2.15pp』 |
+| 2026-10-23 | 引用 | today ① n3『$117.45 session high』挂的 Yahoo 页全文 0 处（该页只有 settled $116.72 / highest since April 29）；数字本身正确（CNBC LCO.1 day high 117.45、Reuters 稿同句） | session high/low 类数字必须挂页内含该数字的 URL（Reuters/Nikkei Asia 同文或交易所报价页）并在 fact 里写明时点；c1/s2 复用该数字时，至少一条 news 要能背书 |
+| 2026-10-23 | 逻辑 | mtd ③ s3 用单周峰值 24.6（week to 10/18）概括成『above the ~18.5 million prewar』；同链 n1 自己写 10 月均值 16.7、所引原文也说仍低于 prewar | 引用周峰值必须同句给出窗口均值（『week to 10/18 high 24.6 vs October average 16.7, still below the ~18.5 prewar』）；『above prewar』只能用于确实高于 18.5 的窗口，today 与窗口档措辞必须一致 |
+| 2026-10-23 | 数字 | ③ s2 用收盘值（CCI +9.1%、AMT +4.1%、T −8.0%、TMUS −7.7%），同链 n1 引 Investopedia 的盘中值（9.5%/4%，区间 1.5–7.5% 不覆盖 −8.0）；收盘现算 CCI 85.97/78.83=+9.06、T 20.93/22.74=−7.96 | 同一天同一名字全文件只留一个收盘值；引文与现算不一致时改引含收盘值的句子（本次 Yahoo Finance 收盘稿）或给引文加『intraday』标注，并保证引文区间覆盖 step 的数字 |
+| 2026-10-23 | 逻辑 | today c4『the front end is not the story … so the long end is doing all the work』与 ① s4『2Y/10Y/30Y 各 +4bp — a parallel move』矛盾（2Y 4.65→4.69、10Y 4.96→5.00、30Y 5.29→5.33） | 写『long end is doing all the work / front end anchored』前先比三点变动：三点同幅写『a 4bp parallel shift』，只有 2s10s/10s30s 斜率变化时才允许把功劳归某一端 |
 
 ## 链结构（主链 / 辅链）
 
@@ -93,6 +109,11 @@
 | 2026-10-16 | 结构 | 季度首月 MTD 与 QTD 同基期，QTD 是 MTD 的改写（整档用词重合 0.39-0.43，正常 <0.2） | 季度首月 QTD 换视角：对比上季末、季内剩余关口（FOMC/财报季/数据），不复述 MTD 的月内叙事 `[lint：重合度>0.30 告警]` |
 | 2026-10-20 | 逻辑 | today 主链与辅链重复同一事实：① s2 与 ④ s3 逐字写「10Y -3bp / 30Y -6bp」；② s1 复述 ① s3 的「tech 唯一下跌 -0.3%」；② s2 复述 ① s4/c1 的「26,424.82 / -6.07 点」 | 辅链只写主链没有的增量：④ 保留 2Y +2bp 与曲线形态、删掉 10Y/30Y 重复数字；② 保留 SOXX 与盘中低点 26,192、删掉 tech -0.3% 与收盘点位；定稿前对同档每对链做数字交集检查，交集里的数字只留一处 |
 | 2026-10-20 | 逻辑 | 同一 gate 在同档重复：qtd ① s3 与 qtd ③ s2 都写 Meta/Tesla 10/21，ytd ③ s3 第三次重复且带 Wednesday/this week 相对时间词 | 日历 gate 只归该档的一条链（qtd 交给 ③）；qtd ① 的『Owed』只写层级句（earnings verdict 未出、29% 增速待验），不再列公司与日期；ytd 写『本季度首个 Mag7 财报周』并去掉 Wednesday/this week 等相对时间词 |
+| 2026-10-22 | 逻辑 | 窗口档复述 today 当日事件：mtd ③ s3（NYT 打击计划 + Brent 113.17）、qtd ② s4（duration + five-month high）、qtd ③ s3（Iran 计划 dated after midterms） | 窗口档只写窗口端点数值与计数/层级，不写当日触发事件；定稿前 grep 窗口档里的当日专名（NYT / Iran / midterms / five-month high / duration）逐条删 |
+| 2026-10-22 | 逻辑 | 同档数字交集：③ s3 与 ④ s1/s2 重复 PG +5.6 / LMT +7.0、与 ① s4 重复 NVDA −4.4；② s3 与 ③ s2 重复 −0.87 | 个股涨跌幅只归一条链（明细归 ④，③ 只留指数/板块层面的分裂）；定稿前对同档每对链做数字集合求交，交集里的数字删到只剩一处 |
+| 2026-10-22 | 逻辑 | tbl 的 10Y（−17bp）与 Gold（−2.2%）两行无任何链覆盖，头条却是『a Flight to Bonds』，c1 成为唯一解释 | tbl 每行至少被一条链的某个 step 覆盖；债券腿当日变动 >10bp 必须单独成链或写进主链 step，不得让 c1 成为唯一解释 |
+| 2026-10-23 | schema | mtd/qtd/ytd 三档 chains 全缺 main:1（0/3），只有 today 是 1/4；页面在这三档不显示 MAIN 徽章与红边着色（shell.html 用 c.main 控制 .chain-card.main） | 四档每档 chains[0] 必须带 `"main": 1` 且全档仅一条；build 前对四档各跑 `chains.filter(c=>c.main===1).length===1` 断言，不等于 1 就停下修 |
+| 2026-10-23 | 逻辑 | today ② s4 逐字复述 ① c1/d 的 Dow −1.23% / Nasdaq −0.20%，② d 与 ③ d 又是同一结论（Dow 弱、Nasdaq 芯片托底），辅链没有主链之外的增量 | 指数涨跌幅只在 c1 与主链讲一次；② 只留 SOXX/DRAM/SK Hynix/MU 等硬件证据，③ 只留 Dow 成分与板块证据；删掉纯复述 step（② s4）并重写该链 d，定稿前对同档每对链做数字/结论交集检查 |
 
 ## 待补充
 

@@ -1308,9 +1308,14 @@
               "rule": "写『long end is doing all the work / front end anchored』前先比三点变动：三点同幅时写『a 4bp parallel shift』，只有斜率（2s10s/10s30s）变化时才允许把功劳归某一端。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true
     }
   ]
 }

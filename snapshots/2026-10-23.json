@@ -2,20 +2,20 @@
   "date": "2026-10-23",
   "updatedAt": "2026-10-23T21:40:00Z",
   "label": "2026-10-23 Friday close",
-  "foot": "Closing baseline (auto 2026-10-23): SPX 7623.68 (-0.52% / -0.36% MTD / +11.37% YTD) · DJI 52215.16 (-1.23%) · IXIC 25955.34 (-0.20%) · 10Y 5.00% (Treasury daily curve) · WTI 103.27 (Dec settle) · Brent 116.72 (Dec settle) · Gold 4007.90 (Dec fut settle; spot traded to 3,975.23 intraday) · BTC 81334.86 (4pm ET). 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.18%/30Y 4.84%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.42% · 26-08-31 S&P 7686.14/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/WTI $88.42 (Dec)/Brent $98.03 (Dec)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
+  "foot": "Closing baseline (auto 2026-10-23): SPX 7623.68 (-0.52% / -0.36% MTD / +11.37% YTD) · DJI 52215.16 (-1.23%) · IXIC 25955.34 (-0.21%) · 10Y 5.00% (Treasury daily curve) · WTI 103.27 (Dec settle) · Brent 116.72 (Dec settle) · Gold 4007.90 (Dec fut settle; spot traded to 3,975.23 intraday) · BTC 81334.86 (4pm ET). 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.18%/30Y 4.84%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.42% · 26-08-31 S&P 7686.14/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/WTI $88.42 (Dec)/Brent $98.03 (Dec)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
   "P": {
     "today": {
       "h": "Brent at $116.72 and the 10Y Back at 5%: a 653-Point Hole in the Dow",
-      "d": "October's flash PMI put selling-price inflation at a four-year high while Brent settled 3.1% higher at $116.72, pushing the 10Y back to 5.00%: the S&P fell 0.52%, the Dow 1.23%, and the Nasdaq only 0.20% as the chip complex found a floor.",
+      "d": "October's flash PMI put selling-price inflation at a four-year high while Brent settled 3.1% higher at $116.72, pushing the 10Y back to 5.00%: the S&P fell 0.52%, the Dow 1.23%, and the Nasdaq only 0.21% as the chip complex found a floor.",
       "badges": [
         "S&P 7,624 -0.52%",
         "Dow 52,215 -1.23%",
-        "Nasdaq 25,955 -0.20%",
+        "Nasdaq 25,955 -0.21%",
         "10Y 5.00% +4bp",
         "Brent $116.72 +3.1%"
       ],
-      "c1": "<b>The barrel set the price of almost everything else on Friday.</b> Brent's December contract settled $3.55, or 3.1%, higher at $116.72 — its highest close since 29 April, after a $117.45 session high — as Houthi strikes hit Saudi airports and Aramco sites and the Wall Street Journal reported that Tehran has warned it will strike airports, pipelines and telecoms in neighbouring Gulf states if US-Israeli air operations resume. The S&P 500 fell 0.52% to 7,623.68 (-39.75 points), 2.50% below its 10/6 record; the Dow dropped 652.82 points, or 1.23%, to 52,215.16; the Nasdaq lost only 0.20% to 25,955.34 because semiconductor and memory shares stopped falling. The October flash PMI turned the oil move into an inflation story rather than a demand story: the composite slipped to 57.6 from 58.4, but the selling-price index rose to 59.8, the highest since August 2022, and the 10Y gave back 4bp of Thursday's 17bp rally to 5.00% on the Treasury curve, with the 2Y at 4.69% and the 30Y at 5.33%. Gold settled 1.3% lower at $4,007.90 after trading down to $3,975.23, its first print below $4,000 since mid-July; the dollar added 0.18%, bitcoin was flat at $81.3k and the VIX rose 2.2% to 19.45.",
-      "c4": "<ul class='play'><li>The transmission ran through the rate, not the economy: Brent +3.1% and selling prices at a four-year high put the 10Y back at 5.00%, and the rate-sensitive Dow lost 1.2% while the growth-heavy Nasdaq lost 0.2%.</li><li>The front end is not the story — a hike on 10/28 is priced below 10%, so the long end is doing all the work; 5.00% on the 10Y is October's line in the sand.</li><li>This is a risk premium, not a shortage: Brent at $116.72 with Hormuz flows still near prewar levels can fade on a headline, which is exactly why it is dangerous to be short volatility into the weekend.</li><li>Next week is the calendar, not the tape: FOMC 10/27-28, PCE 10/29 and the Alphabet-Microsoft-Amazon block, with the S&P 2.50% below its record and October at -0.36%.</li></ul>",
+      "c1": "<b>The barrel set the price of almost everything else on Friday.</b> Brent's December contract settled $3.55, or 3.1%, higher at $116.72 — its highest close since 29 April, after a $117.45 session high — as Houthi strikes hit Saudi airports and Aramco sites and the Wall Street Journal reported that Tehran has warned it will strike airports, pipelines and telecoms in neighbouring Gulf states if US-Israeli air operations resume. The S&P 500 fell 0.52% to 7,623.68 (-39.75 points), 2.50% below its 10/6 record; the Dow dropped 652.82 points, or 1.23%, to 52,215.16; the Nasdaq lost only 0.21% to 25,955.34 because semiconductor and memory shares stopped falling. The October flash PMI turned the oil move into an inflation story rather than a demand story: the composite slipped to 57.6 from 58.4, but the selling-price index rose to 59.8, the highest since August 2022, and the 10Y gave back 4bp of Thursday's 17bp rally to 5.00% on the Treasury curve, with the 2Y at 4.69% and the 30Y at 5.33%. Gold settled 1.3% lower at $4,007.90 after trading down to $3,975.23, its first print below $4,000 since mid-July; the dollar added 0.18%, bitcoin was flat at $81.3k and the VIX rose 2.2% to 19.45.",
+      "c4": "<ul class='play'><li>The transmission ran through the rate, not the economy: Brent +3.1% and selling prices at a four-year high put the 10Y back at 5.00%, and the rate-sensitive Dow lost 1.2% while the growth-heavy Nasdaq lost 0.21%.</li><li>The move was parallel, not a long-end concession: the 2Y, 10Y and 30Y each rose 4bp, and a hike on 10/28 is still priced below 10%; 5.00% on the 10Y is October's line in the sand.</li><li>This is a risk premium, not a shortage: Brent at $116.72 with Hormuz flows still near prewar levels can fade on a headline, which is exactly why it is dangerous to be short volatility into the weekend.</li><li>Next week is the calendar, not the tape: FOMC 10/27-28, PCE 10/29 and the Alphabet-Microsoft-Amazon block, with the S&P 2.50% below its record and October at -0.36%.</li></ul>",
       "kpi": [
         [
           "S&P",
@@ -59,7 +59,7 @@
           "Nasdaq",
           "26,008.86",
           "25,955.34",
-          "-0.20%"
+          "-0.21%"
         ],
         [
           "10Y",
@@ -146,9 +146,9 @@
             },
             {
               "time": "10/23",
-              "fact": "Brent's session high of $117.45 was its highest in nearly six months.",
-              "src": "Reuters (Yahoo Finance)",
-              "u": "https://finance.yahoo.com/energy/articles/oil-prices-rise-supply-concerns-052617190.html"
+              "fact": "Brent's session high of $117.45 was the highest in nearly six months.",
+              "src": "Reuters (Nikkei Asia)",
+              "u": "https://asia.nikkei.com/business/markets/commodities/brent-crude-jumps-to-highest-since-april-on-houthi-attacks-uae-oil-spill"
             },
             {
               "time": "10/23",
@@ -177,15 +177,14 @@
           ]
         },
         {
-          "t": "② The Tech Floor: Memory Bounced and the Nasdaq Lost Only 0.2%",
+          "t": "② The Tech Floor: Memory Bounced and the Nasdaq Lost Only 0.21%",
           "steps": [
             "The iShares Semiconductor ETF rose 0.53% after Thursday's 6.5% slide, and the Roundhill Memory ETF gained 3.0% after a 7% plunge",
             "SK Hynix rose 4.1% after the South Korean company ended plans for a US public offering of its Solidigm subsidiary",
             "Micron +2.5%, AMD +1.7%, Intel +1.7% and Microsoft +0.7%: the names that led Thursday's rout stopped falling on Friday",
-            "The AI platforms did not join: Meta fell another 1.0% to $642.62 and Nvidia slipped 0.6%, so the bid was in hardware and memory rather than in the capex owners",
-            "The index arithmetic: the Dow fell 1.23% while the Nasdaq fell 0.20% — on this session the cyclical index, not the AI complex, was the weak side"
+            "The AI platforms did not join: Meta fell another 1.0% to $642.62 and Nvidia slipped 0.6%, so the bid was in hardware and memory rather than in the capex owners"
           ],
-          "d": "The cap on the day: the AI complex found a bid in memory and semis, which is why an oil shock of this size cost the Nasdaq two-tenths of a point and the Dow more than a full one.",
+          "d": "The floor was hardware, not platforms: Thursday's rout stopped at memory and semis, while the capex owners — Meta and Nvidia — kept sliding.",
           "news": [
             {
               "time": "10/23 close",
@@ -213,10 +212,10 @@
             "American Express fell 3.68% to $313.22 despite beating estimates — it announced its first major job cuts in roughly a decade — and peers followed: JPMorgan -1.47%, Citigroup -1.5%, Capital One -1.0%",
             "Caterpillar -2.42%, Goldman Sachs -1.75% and Home Depot -2.41%: those three plus AmEx accounted for roughly 320 of the Dow's 653 points",
             "Telecoms were re-rated on competition: AT&T closed 8.0% lower and T-Mobile 7.7% after Bloomberg reported SpaceX is in talks for at least 80,000 US cell sites, while Crown Castle rose 9.1% and American Tower 4.1%",
-            "Staples was the worst sector, with Procter & Gamble -2.76%, Coca-Cola -2.76%, Colgate -3.44% and Hormel -3.42% — one session after the group stood at +11.65% MTD",
+            "Staples was the worst sector, with Procter & Gamble -2.76%, Coca-Cola -2.76%, Colgate -3.44% and Hershey -3.42% — one session after the group stood at +11.65% MTD",
             "The breadth: 24 of the 30 Dow components fell and nearly three of every four S&P 500 stocks declined, with the equal-weight RSP -0.77% against the S&P's -0.52%"
           ],
-          "d": "The split: the oil-and-rates bill was charged to the price-weighted, cyclical-heavy Dow, while the Nasdaq's semis found a floor.",
+          "d": "The split: the oil-and-rates bill landed on the price-weighted, cyclical Dow — AmEx, Caterpillar and the telecoms were the line items, and 24 of 30 components fell.",
           "news": [
             {
               "time": "10/23 intraday",
@@ -226,9 +225,9 @@
             },
             {
               "time": "10/23 close",
-              "fact": "Shares of cell-tower firms Crown Castle and American Tower surged a respective 9.5% and 4%, while those of major mobile providers AT&T, Verizon and T-Mobile were down 1.5% to 7.5%.",
-              "src": "Investopedia",
-              "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-10232026-12189475"
+              "fact": "Crown Castle jumped 9% Friday to its highest close since June, while American Tower and SBA Communications each rose more than 3%; AT&T and T-Mobile both fell more than 7%, and Verizon slipped 1%.",
+              "src": "Yahoo Finance",
+              "u": "https://finance.yahoo.com/markets/article/spacex-wants-to-be-americas-fourth-phone-carrier--tower-owners-are-cashing-in-162059593.html"
             },
             {
               "time": "10/23 close",
@@ -294,7 +293,7 @@
         "Brent +19.1%"
       ],
       "c1": "Seventeen sessions into October, the S&P 500 is -0.36% at 7,623.68 — 2.50% below the S&P 500's record close of 7,818.93 on 10/6 — while the Nasdaq is -3.37% and the Dow +2.57%. The month's arc: one record close, three repricings (wireless on 10/9, the AI complex on 10/12-13, the CPI-PPI pair on 10/14-15), a three-session repair from 10/19 to 10/21, and then two down sessions that took the month below zero. The 10Y touched 5.36% on 10/7 and closed at 5.00% (-29bp MTD); the 30Y is -31bp at 5.33%. Beneath the index: Energy +12.73% has taken the lead, Staples +9.50%, Tech -6.40% — a 19.1-point spread — with eight of 11 sectors positive. Oil on the December contract: WTI +16.8%, Brent +19.1%. Gates: FOMC 10/27-28, PCE 10/29.",
-      "c4": "<ul class='play'><li>October is a round trip with a different leader: -0.36% MTD and 2.50% below the 10/6 record, and the month's best sector is now the barrel rather than the pantry.</li><li>The dispersion trade still pays, but the legs changed: Energy +12.7% against Tech -6.4% is a 19.1-point spread — the defensives that carried the first three weeks gave 1.9 points back on 10/23 alone.</li><li>The month's last gate is the PCE print on 10/29, the day after the Fed decides; a 5.00% 10Y is the level that decides whether October ends green.</li><li>Watch the contract, not the headline: WTI +16.8% MTD against Brent +19.1%, both December — the spread says the war premium is in the waterborne barrel, not the American one.</li></ul>",
+      "c4": "<ul class='play'><li>October is a round trip with a different leader: -0.36% MTD and 2.50% below the 10/6 record, and the month's best sector is now the barrel rather than the pantry.</li><li>The dispersion trade still pays, but the legs changed: Energy +12.7% against Tech -6.4% is a 19.1-point spread — Staples, which led the month at +11.65% through 10/22, gave 2.15 points back on 10/23 alone (+11.65% to +9.50%).</li><li>The month's last gate is the PCE print on 10/29, the day after the Fed decides; a 5.00% 10Y is the level that decides whether October ends green.</li><li>Watch the contract, not the headline: WTI +16.8% MTD against Brent +19.1%, both December — the spread says the war premium is in the waterborne barrel, not the American one.</li></ul>",
       "kpi": [
         [
           "S&P MTD",
@@ -402,6 +401,7 @@
       "chains": [
         {
           "t": "① October's Round Trip: a Record, Three Repricings, One Repair — and Two Down Sessions",
+          "main": 1,
           "steps": [
             "The high: 7,818.93 on 10/6 — the S&P's only record close of the month, and its first close above 7,800",
             "Three repricings between 10/7 and 10/15: wireless on 10/9, the AI complex on 10/12-13, and the CPI-PPI pair on 10/14-15, when the index lost 1.11% in a single session",
@@ -474,7 +474,7 @@
             "The path: Brent's December contract began October at $98.03, crossed $100 on 10/1, held a $100-107 corridor through 10/15, closed $109.86 on 10/16 and $116.72 on 10/23",
             "The print: a $117.45 session high on 10/23, the highest level in nearly six months",
             "The supply data: EIA crude stocks fell 3.06 million barrels in the week to 10/16, against an expected 820,000-barrel draw",
-            "The flows: Kpler put Gulf crude and condensate loadings at 24.6 million barrels a day in the week to 10/18, above the roughly 18.5 million prewar benchmark",
+            "The flows: Kpler put Gulf crude and condensate loadings at a high of 24.6 million barrels a day in the week to 10/18, but October so far averages 16.7 million — still below the roughly 18.5 million prewar benchmark",
             "The scoreboard: Brent +19.1% and WTI +16.8% for the month, both on the December contract"
           ],
           "d": "October's barrel: supply data capped the premium for three weeks, then the war premium took Brent to $116.72 — a 19% month and a six-month high.",
@@ -619,6 +619,7 @@
       "chains": [
         {
           "t": "① The Ledger: What Q4 Banked and What It Still Owes",
+          "main": 1,
           "steps": [
             "Banked: a 7,818.93 all-time closing high on 10/6, the quarter's only one",
             "Banked: a 24-year high of 5.36% on the 10Y on 10/7, and a 5.00% close on 10/23 — a net -29bp for the quarter",
@@ -833,6 +834,7 @@
       "chains": [
         {
           "t": "① Two Engines, One Referee",
+          "main": 1,
           "steps": [
             "The engines: AI capex across the hyperscalers and earnings, with Q3 growth tracking 29%",
             "The scoreboard: S&P +11.37%, Nasdaq +11.67%, Dow +8.64% — the AI-heavy index leads by 30bp rather than by points",
@@ -905,7 +907,7 @@
           "d": "The year in one line: the barrel and the pantry beat the platform, and the 10Y decides the size of the check.",
           "news": [
             {
-              "time": "10/23 close",
+              "time": "10/23 intraday",
               "fact": "Energy shares were lifted by rising crude prices, with SLB and Halliburton up 6.5% and 5%, while communication services was the weakest S&P 500 sector on the day.",
               "src": "Investopedia",
               "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-10232026-12189475"
@@ -945,7 +947,7 @@
           [
             "Nasdaq",
             "25,955",
-            "-0.20"
+            "-0.21"
           ],
           [
             "Russell 2K",
