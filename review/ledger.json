@@ -1217,6 +1217,97 @@
               "rule": "收益率定稿后同步回写 data 的 today 与 ytdBase（Treasury 口径）并重算 computed；data.computed 与快照 tbl 同项相等后才 commit。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
+        }
+      ],
+      "resolved": true
+    },
+    {
+      "date": "2026-10-23",
+      "reviewedAt": "2026-10-23T18:45:00-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "today ③ s3『…Colgate -3.44% and Hormel -3.42%』把 -3.42% 挂在 Hormel 名下；Hormel（HRL）10/23 收盘 $21.06、-1.40%，-3.42% 实为 Hershey（HSY $175.64→$169.64）的跌幅。",
+              "evidence": "CNBC/Yahoo 收盘现算：HRL 21.06/21.36−1 = −1.40%（CNBC change_pct −1.40%）；HSY 169.64/175.64−1 = −3.42%；同句 PG −2.76、KO −2.76、CL −3.44 三项均正确，只有第四项张冠李戴。",
+              "rule": "写个股涨跌幅前用 close/prevClose−1 现算并同时核对代码（HRL≠HSY）；同一句里的每个单名都要逐个对代码，禁止先按跌幅排序再补名字。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today 档 Nasdaq 全天写成 -0.20%（badges / tbl / c1 / d / ② s4 / HEAT），而 data/2026-10-23.json 的 computed.ixic.dayPct = -0.21；25,955.341796875 ÷ 26,008.86 − 1 = −0.2058%，应显示 -0.21%。",
+              "evidence": "data computed -0.21；Yahoo ^IXIC 10/22 26,008.86 → 10/23 25,955.34；liveindex 收盘 −53.52 点 / −0.21%。AP 的 0.2 是通讯社取整，不是收盘现算值。",
+              "rule": "百分比一律用未取整收盘现算后保留 2 位（−0.2058 → −0.21），不要沿用通讯社的 1 位取整值；改一处必须同步 badges/kpi/tbl/c1/d/chain/HEAT 全部同值。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "schema",
+              "symptom": "mtd/qtd/ytd 三档 chains 全部缺 main:1（0/3），只有 today 是 1/4；此前每个快照四档各恰有 1 条 main。页面在这三档因此不显示 MAIN 徽章与红边着色（shell.html 用 c.main 控制 .chain-card.main）。",
+              "evidence": "node 检查 2026-10-01/06/09/15/16/19/20/21/22 快照：today/mtd/qtd/ytd 均各 1 条 main；2026-10-23 为 1/0/0/0。浏览器 http://localhost:8811/?date=2026-10-23 切 MTD/QTD/YTD，document.querySelectorAll(\"#chains .chain-card.main\").length 均为 0。",
+              "rule": "四档每档 chains[0] 必须带 \"main\": 1 且全档仅一条；build 前对四档各跑 chains.filter(c=>c.main===1).length===1 断言，不等于 1 就停下修。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "mtd c4『the defensives that carried the first three weeks gave 1.9 points back on 10/23 alone』数字错：Staples（XLP）MTD 由 10/22 的 +11.65% 降到 +9.50%，回吐 2.15 个百分点；1.9 是其当日跌幅 −1.92% 的近似，不是月度点数变化。",
+              "evidence": "XLP 10/22 89.99 / 9-30 80.603 = +11.65%；10/23 88.26 / 80.603 = +9.50%；11.65 − 9.50 = 2.15pp。同档 ② s1 自己写 11.65%。",
+              "rule": "写『gave N points back』前用同一 MTD 序列算（前一日 MTD − 当日 MTD），不得拿当日日涨跌幅顶替；表述写成『XLP +11.65% → +9.50%，−2.15pp』。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ① n3 的 fact『Brent's session high of $117.45…』在所引 finance.yahoo.com/energy/articles/oil-prices-rise-supply-concerns-052617190.html 全文 0 次出现（该页只有 settled $116.72、highest since April 29 / nearly six months，无 117.45、无 session high）；同一数字还用在 c1 与 ① s2。",
+              "evidence": "抓取该页 8,322 字符检索 117 无匹配。数字本身正确（CNBC LCO.1 day high 117.45、EFE/CNN Brasil『máximo intradía 117,45』），但需挂真正含该句的 URL。",
+              "rule": "session high/low 类数字必须挂页内含该数字的 URL（交易所/报价页或通讯社稿）并在 fact 里写明时点；c1/s2 复用该数字时，至少一条 news 要能背书。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd ③ s3『Kpler put Gulf crude and condensate loadings at 24.6 million b/d in the week to 10/18, above the roughly 18.5 million prewar benchmark』用单周峰值概括成『above prewar』；同链 n1 自己写『October so far averages 16.7 million』，today ④ s1 又写『recovered to near prewar levels』，同一指标两档两种口径。",
+              "evidence": "gCaptain/Bloomberg 10/21 原文：24.6 是 week to Oct 18 的高点，『figures for the average of October to date remain below prewar levels』，Kpler 10 月均值 16.7、Vortexa 15.4、prewar 至少 18.5。",
+              "rule": "引用周峰值必须同句给出窗口均值（『week to 10/18 high 24.6 vs October average 16.7, still below the ~18.5 prewar』）；『above prewar』只能用于确实高于 18.5 的窗口，不得拿单周高点概括，today 与窗口档措辞必须一致。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today ② s4『the Dow fell 1.23% while the Nasdaq fell 0.20%』逐字复述 ① c1/d 已给的指数涨跌；② d『cost the Nasdaq two-tenths… and the Dow more than a full one』与 ③ d『the oil-and-rates bill was charged to the … Dow, while the Nasdaq's semis found a floor』又是同一结论，辅链没有给出主链之外的增量。",
+              "evidence": "today c1『the Dow dropped 652.82 points, or 1.23%… the Nasdaq lost only 0.20%』；② s4 与 ③ d 重复同一对数字与同一因果。",
+              "rule": "定稿前对 today 每对链做数字/结论交集检查：指数涨跌幅只在 c1 与主链讲一次，② 只留 SOXX/DRAM/SK Hynix/MU 等硬件证据，③ 只留 Dow 成分与板块证据，删掉 ② s4 这类纯复述 step。"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today ③ s2 的 step 用收盘值（Crown Castle +9.1%、American Tower +4.1%、AT&T −8.0%、T-Mobile −7.7%），同链 n1 引 Investopedia 却写『Crown Castle and American Tower surged a respective 9.5% and 4%… AT&T, Verizon and T-Mobile were down 1.5% to 7.5%』——同一天同一批名字两个值，且 −8.0% 落在引文 1.5–7.5% 区间之外。",
+              "evidence": "CNBC/Yahoo 收盘：CCI 85.97/78.83 = +9.06%、AMT 188.97/181.57 = +4.08%、T 20.93/22.74 = −7.96%、TMUS 146.54/158.79 = −7.71%；Investopedia 的 9.5% 为其盘中版本。",
+              "rule": "同一天同一名字全文件只留一个收盘值；引用稿与现算不一致时改引含收盘值的句子或给引文加『intraday』标注，并保证引文区间覆盖 step 的数字。"
+            },
+            {
+              "id": "F9",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today c4『The front end is not the story … so the long end is doing all the work』与同档 ① s4『the 2Y and 30Y each rose 4bp … a parallel move』矛盾：2Y/10Y/30Y 当日各 +4bp 是平行上移，不能写成只有长端在动。",
+              "evidence": "Treasury 10/22→10/23：2Y 4.65→4.69、10Y 4.96→5.00、30Y 5.29→5.33，三点同为 +4bp；s4 自己也写 a parallel move。",
+              "rule": "写『long end is doing all the work / front end anchored』前先比三点变动：三点同幅时写『a 4bp parallel shift』，只有斜率（2s10s/10s30s）变化时才允许把功劳归某一端。"
+            }
+          ]
         }
       ],
       "resolved": false
