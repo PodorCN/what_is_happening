@@ -65,6 +65,10 @@ for (const tier of WIN) {
     if (tw) E(at, `窗口档出现当日时间词 "${tw[0]}"——属于 today 档：「${cut(s)}」`);
     else if (/\btoday\b/i.test(s)) W(at, `窗口档出现 "today"，确认不是在复述当日：「${cut(s)}」`);
 
+    // ---------- 2b. 窗口档禁用相对时间词（next week / this week / last week） ----------
+    const rw = s.match(/\b(next|this|last)\s+week\b/i);
+    if (rw) E(at, `窗口档出现相对时间词 "${rw[0]}"——改用绝对日期区间（如 10/26-30）：「${cut(s)}」`);
+
     // ---------- 3. "N sessions" 与窗口交易日数 ----------
     if (tier !== "ytd" || /Q4|quarter|October|month/i.test(s))
       for (const m of s.matchAll(/\b(\d+|[a-z]+(?:-[a-z]+)?) sessions\b/gi)) {

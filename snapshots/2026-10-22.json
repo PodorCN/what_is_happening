@@ -1,6 +1,6 @@
 {
  "date": "2026-10-22",
- "updatedAt": "2026-10-22T21:20:00Z",
+ "updatedAt": "2026-10-22T23:20:00Z",
  "label": "2026-10-22 Thursday close",
  "foot": "Closing baseline (auto 2026-10-22): SPX 7663.43 (-1.21% / +0.16% MTD / +11.95% YTD) · DJI 52867.98 (+0.02%) · IXIC 26008.86 (-2.60%) · 10Y 4.96% (Treasury daily curve) · WTI 99.47 (Dec settle) · Brent 113.17 (Dec settle) · Gold 4060.40 (Dec fut settle; Yahoo 4,038 is the 4:59pm electronic print, not the settle) · BTC 81164.95 (4pm ET). 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23241/10Y 4.18%/30Y 4.84% · 26-06-30 S&P 7499.36/10Y 4.42% · 26-08-31 S&P 7686.14/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/WTI $88.42 (Dec)/Brent $98.03 (Dec)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
  "P": {
@@ -14,7 +14,7 @@
     "10Y 4.96% -17bp",
     "Brent $113.17 +4.0%"
    ],
-   "c1": "<b>Meta's third quarter ended with cash going out the door for the first time in more than a decade, and the tape read it as a verdict on the whole AI buildout.</b> The S&P 500 fell 1.21% to 7,663.43 (-93.74 points), its worst session since July and 1.99% below the 10/6 record of 7,818.93; the Nasdaq dropped 2.60% to 26,008.86 (-694.00), its steepest fall since June. The Dow added 11.89 points to 52,867.98, the equal-weight RSP rose 0.73% against SPY's -1.18%, and six of 11 sectors closed green, so this was a repricing of AI rather than an exit from equities. The money went to duration instead: the 10Y fell 17bp to 4.96%, its first close below 5% since 9/23 and its biggest one-day drop since March 2023. Oil supplied the second pressure — Brent's December contract settled at $113.17 and WTI at $99.47 on a report of a post-midterm strike plan on Iran — while gold settled 2.2% lower at $4,060.40, bitcoin fell 4.1% to $81.2k and the VIX rose 14.1% to 19.03.",
+   "c1": "<b>Meta's third quarter ended with cash going out the door for the first time in more than a decade, and the tape read it as a verdict on the whole AI buildout.</b> The S&P 500 fell 1.21% to 7,663.43 (-93.74 points), its worst session since July and 1.99% below the 10/6 record of 7,818.93; the Nasdaq dropped 2.60% to 26,008.86 (-694.00), its steepest fall since June. The Dow added 11.89 points to 52,867.98, the equal-weight RSP rose 0.73% against SPY's -1.18%, and six of 11 sectors closed green, so this was a repricing of AI rather than an exit from equities. The money went to duration instead: the 10Y fell 17bp to 4.96%, its first close below 5% since 9/22 and its biggest one-day drop since 8/2/2024. Oil supplied the second pressure — Brent's December contract settled at $113.17 and WTI at $99.47 on a report of a post-midterm strike plan on Iran — while gold settled 2.2% lower at $4,060.40, bitcoin fell 4.1% to $81.2k and the VIX rose 14.1% to 19.03.",
    "c4": "<ul class='play'><li>The tell was the destination, not the size: the Dow and the equal-weight index rose while the S&P fell, and a 17bp rally in the 10Y says the money moved to duration rather than to cash.</li><li>Meta's print changed the AI question from demand to funding: revenue beat, cash flow went negative and a new share class was created to raise capital — watch credit spreads before multiples.</li><li>The oil leg is now the inflation leg: $113 Brent with a Fed still priced to hike before year-end is the combination that keeps the long end volatile even as the front end rallies.</li><li>The next week belongs to the calendar: the FOMC on 10/27-28 and PCE on 10/29 arrive with the S&P at +0.16% MTD and 1.99% below its record — a 10Y below 5% is the whole margin of safety.</li></ul>",
    "kpi": [
     [
@@ -118,7 +118,8 @@
       "Its credit risk hit a record high while the stock fell 7.0% to $648.85 — the equity and the credit repriced on the same print",
       "Lam Research fell 11.8% to $230.15 after giving a current-quarter profit range whose midpoint sat below consensus despite a beat; it entered the day up 52.4% this year",
       "The complex followed: the Philadelphia Semiconductor Index -6.72% to 10,731.98, 26.7% below its 6/22 record, with Nvidia -4.4% and CoreWeave -10.1% leading the damage",
-      "The tape: 7,694.62 at the open, a 7,702.94 high at 10:00 ET, a 7,637.36 low at 15:00, and a 7,663.43 close — the final hour bought 26 points back"
+      "The tape: 7,694.62 at the open, a 7,702.94 high at 10:00 ET, a 7,637.36 low at 15:00, and a 7,663.43 close — the final hour bought 26 points back",
+      "The haven: the 10Y fell 17bp to 4.96% — its biggest one-day drop since 8/2/2024 — while gold settled 2.2% lower at $4,060.40, so the bid went to duration, not to metal"
      ],
      "d": "The chain: the AI trade's collateral was always its cash flow — Meta's went negative, Lam's guide went soft, and the complex repriced on both at once.",
      "news": [
@@ -136,9 +137,9 @@
       },
       {
        "time": "10/22",
-       "fact": "Meta's credit risk hit a record high as plans to boost capital spending reignited fears that technology firms will issue more debt to finance the artificial-intelligence buildout.",
-       "src": "Bloomberg (SWI swissinfo)",
-       "u": "https://www.swissinfo.ch/eng/nasdaq-100-slumps-most-since-june-as-bonds-rally%3a-markets-wrap/92254614"
+       "fact": "A gauge of Meta Platforms' credit risk surged to a fresh record and its bonds sank, as plans to ramp up capital spending reignited fears that tech giants will issue more debt for AI buildout; five-year credit default swaps rose as much as 8.9 basis points to around 119.3 basis points, the highest since the swaps started trading.",
+       "src": "Bloomberg (Yahoo Finance)",
+       "u": "https://finance.yahoo.com/technology/ai/articles/meta-credit-risk-gauge-hits-125603234.html"
       },
       {
        "time": "10/22 close",
@@ -166,7 +167,7 @@
       "A New York Times report citing unnamed US officials said Washington and Israel are considering resuming strikes on Iran in a 'short but intensive' operation following the 11/3 midterm elections",
       "Iran-backed Houthis launched new strikes on Saudi targets and the US ordered some diplomats out of Saudi Arabia — the supply fear moved from threat to logistics",
       "Brent's December contract settled $4.35 (4.0%) higher at $113.17, its highest since early May; WTI settled $2.32 (2.4%) higher at $99.47",
-      "Energy equities did not follow: XLE closed 0.87% lower on a day crude rose 4% — the barrel is now a cost line for the index, not a growth trade",
+      "Energy equities did not follow: the sector closed lower on a day crude rose 4% — the barrel is now a cost line for the index, not a growth trade",
       "The rate read: a quarter-point hike before year-end is still priced, even with crude at a five-month high — the oil impulse is being read as an inflation problem, not a growth one"
      ],
      "d": "The chain: the war premium was re-dated to after the election — crude up 4%, the energy ETF down, and the Fed's next move still a hike.",
@@ -200,6 +201,12 @@
        "fact": "Financial markets are currently pricing in the probability that the central bank will raise its policy rate by another 25 basis points before year-end.",
        "src": "Reuters",
        "u": "https://finance.yahoo.com/markets/stocks/articles/nasdaq-futures-drop-over-1-093849296.html"
+      },
+      {
+       "time": "10/22",
+       "fact": "The US State Department asked some US diplomats to leave Saudi Arabia, ordering the departure of non-emergency government employees and their family members from its missions there, because of the threat of Houthi attacks on the Gulf kingdom.",
+       "src": "DW (AFP/Reuters)",
+       "u": "https://www.dw.com/en/us-orders-some-diplomats-to-leave-saudi-arabia-amid-houthi-threat/a-79727353"
       }
      ]
     },
@@ -208,8 +215,8 @@
      "steps": [
       "The equal-weight S&P 500 rose 0.73% while SPY fell 1.18% — a 1.9-point gap that says the average stock was bought while the largest were sold",
       "Six of 11 sectors closed higher, led by staples +3.31%, utilities +2.07%, health +1.32%, financials +1.09% and real estate +1.09%",
-      "The losers were the growth complex and its suppliers: tech -3.29%, communication services -1.42%, industrials -0.94%, energy -0.87%, consumer discretionary -0.45%",
-      "The Dow added 11.89 points as Lockheed Martin +7.0% and Procter & Gamble +5.6% offset Microsoft -2.2%, Amazon -4.6% and Nvidia -4.4%",
+      "The losers were the growth complex and its suppliers: tech -3.29%, communication services -1.42%, industrials -0.94% and consumer discretionary -0.45%, with energy lower as well",
+      "The Dow added 11.89 points as Lockheed Martin and Procter & Gamble rallied, offsetting Microsoft -2.2% and Amazon -4.6%",
       "The small caps agreed with the Dow: the Russell 2000 gained 0.11%, and the VIX at 19.03 stayed below its 19.99 close on 10/16 despite a 14.1% jump"
      ],
      "d": "The split: money left the AI complex and bought the rest of the market — the Dow and the equal-weight index closed higher on a day the S&P fell 1.2%.",
@@ -286,8 +293,8 @@
    ]
   },
   "mtd": {
-   "h": "October, Sixteen Sessions In: +0.16% and a 2% Drawdown — With Energy +9.9% Against Tech -6.9%",
-   "d": "S&P 7,651.5 to 7,663.4 (+0.16% MTD): 1.99% below the 10/6 record, with Energy +9.9% and Tech -6.9% bookending a 16.7-point spread.",
+   "h": "October, Sixteen Sessions In: +0.16% and a 2% Drawdown — With Staples +11.7% Against Tech -6.9%",
+   "d": "S&P 7,651.5 to 7,663.4 (+0.16% MTD): 1.99% below the 10/6 record, with Staples +11.7% and Tech -6.9% bookending an 18.5-point spread.",
    "badges": [
     "S&P MTD +0.16%",
     "Nasdaq -3.17%",
@@ -295,8 +302,8 @@
     "10Y -33bp",
     "Brent +15.4%"
    ],
-   "c1": "Sixteen sessions into October, the S&P 500 is +0.16% at 7,663.43 — 1.99% below the 7,818.93 all-time closing high set on 10/6 — while the Nasdaq is -3.17% and the Dow +3.85%. The month's arc: one record close, three repricings (wireless on 10/9, the AI complex on 10/12-13, the CPI-PPI pair on 10/14-15), a three-session repair from 10/19 and a give-back that cut the month's gain to +0.16%. The 10Y touched 5.36% on 10/7 and closed at 4.96% (-33bp MTD); the 30Y is -35bp at 5.29%. Beneath the index: Energy +9.87% leads, Tech -6.85% lags — a 16.7-point spread — with eight of 11 sectors positive. Oil on the December contract: WTI +12.5%, Brent +15.4%. Gates: FOMC 10/27-28, PCE 10/29.",
-   "c4": "<ul class='play'><li>October's shape is a round trip: +0.16% MTD and 1.99% below the 10/6 record — everything the month made between 10/1 and 10/9 it has now handed back.</li><li>The dispersion trade still pays: Energy +9.9% against Tech -6.9% is a 16.7-point spread — own the barrel's beneficiaries, rent the AI complex until its funding costs stop rising.</li><li>The month's last gate is the PCE print on 10/29, the day after the Fed decides; a 10Y at 4.96% is the level that decides whether October ends green.</li><li>Watch the contract, not the headline: WTI's December front month is +12.5% MTD while Brent is +15.4% — the spread widened as the war premium re-armed.</li></ul>",
+   "c1": "Sixteen sessions into October, the S&P 500 is +0.16% at 7,663.43 — 1.99% below the 7,818.93 all-time closing high set on 10/6 — while the Nasdaq is -3.17% and the Dow +3.85%. The month's arc: one record close, three repricings (wireless on 10/9, the AI complex on 10/12-13, the CPI-PPI pair on 10/14-15), a three-session repair from 10/19 and a give-back that cut the month's gain to +0.16%. The 10Y touched 5.36% on 10/7 and closed at 4.96% (-33bp MTD); the 30Y is -35bp at 5.29%. Beneath the index: Staples +11.65% leads, Tech -6.85% lags — an 18.5-point spread — with eight of 11 sectors positive. Oil on the December contract: WTI +12.5%, Brent +15.4%. Gates: FOMC 10/27-28, PCE 10/29.",
+   "c4": "<ul class='play'><li>October's shape is a round trip: +0.16% MTD and 1.99% below the 10/6 record — everything the month made between 10/1 and 10/9 it has now handed back.</li><li>The dispersion trade still pays: Staples +11.7% against Tech -6.9% is an 18.5-point spread — own the defensives, rent the AI complex until its funding costs stop rising.</li><li>The month's last gate is the PCE print on 10/29, the day after the Fed decides; a 10Y at 4.96% is the level that decides whether October ends green.</li><li>Watch the contract, not the headline: WTI's December front month is +12.5% MTD while Brent is +15.4% — the spread widened as the war premium re-armed.</li></ul>",
    "kpi": [
     [
      "S&P MTD",
@@ -439,10 +446,10 @@
      ]
     },
     {
-     "t": "② The Month's Split: Energy +9.9%, Tech -6.9% — and a 4.7-Point Breadth Premium",
+     "t": "② The Month's Split: Staples +11.7%, Tech -6.9% — and a 4.7-Point Breadth Premium",
      "steps": [
       "Sector map: eight of 11 are positive, led by Staples +11.65%, Energy +9.87%, Utilities +8.70%, Health +7.65% and Materials +6.14%",
-      "The gap: best-to-worst is 16.7 points — Energy +9.87% against Tech -6.85%",
+      "The gap: best-to-worst is 18.5 points — Staples +11.65% against Tech -6.85%",
       "The index math: Dow +3.85% against Nasdaq -3.17%, a 7.0-point gap between the old economy and the AI complex",
       "The size penalty: the equal-weighted RSP is +4.90% MTD against SPY's +0.17% — breadth has outpaid market cap by 4.7 points",
       "The message: eight sectors green and the S&P barely positive — money moved, it did not leave"
@@ -466,10 +473,9 @@
     {
      "t": "③ The Barrel, Sixteen Sessions In: $98 to $113",
      "steps": [
-      "The path: Brent's December contract began October at $98.03, crossed $100 on 10/1, held a $100-107 corridor for two weeks, then ran to $111.99 on 10/20",
+      "The path: Brent's December contract began October at $98.03, crossed $100 on 10/1, held a $100-107 corridor through 10/15, then closed $109.86 on 10/16 and $113.17 on 10/22",
       "The supply data: EIA crude stocks fell 3.06 million barrels in the week to 10/16, against an expected 820,000-barrel draw",
       "The flows: Kpler put Gulf crude and condensate loadings at a 24.6 million barrels a day high in the week to 10/18, above the roughly 18.5 million prewar benchmark",
-      "The re-arming: a New York Times report on 10/22 said Washington and Israel are weighing strikes on Iran after the 11/3 midterms, and Brent settled $113.17",
       "The scoreboard: Brent +15.4% and WTI +12.5% for the month, both on the December contract"
      ],
      "d": "October's barrel: supply data capped the premium for three weeks, then a post-election strike plan took it to $113.",
@@ -485,12 +491,6 @@
        "fact": "Crude and condensate flows from the Persian Gulf hit a high of 24.6 million barrels a day in the week to Oct. 18, according to Kpler, though October so far averages 16.7 million.",
        "src": "Bloomberg (gCaptain)",
        "u": "https://gcaptain.com/middle-east-oil-flows-near-prewar-levels-defy-hormuz-attacks/"
-      },
-      {
-       "time": "10/22",
-       "fact": "Oil prices moved sharply higher, following a New York Times report citing unnamed U.S. officials that the U.S. and Israel are considering resuming strikes on Iran in a 'short but intensive' operation following the Nov. 3 midterm elections.",
-       "src": "CNBC",
-       "u": "https://www.cnbc.com/2026/10/22/treasurys-bonds-ai-yields.html"
       }
      ]
     }
@@ -506,7 +506,7 @@
     "Brent +15.4%"
    ],
    "c1": "Q4 is sixteen sessions old and has nothing to show for it: the S&P sits at 7,663.43, +0.16% on the quarter, with the Nasdaq -3.17% and the Dow +3.85%. Against a +2.0% third quarter, the fourth has given back almost everything it made between 10/1 and 10/9. What is in the ledger: a record close of 7,818.93 on 10/6; a 24-year high of 5.36% on the 10Y on 10/7, now 4.96% — a net -33bp; three AI de-ratings; and a 15.4% quarterly rise in Brent that has re-priced the inflation path. What is not: the FOMC on 10/27-28, PCE and advance Q3 GDP on 10/29, the megacap earnings week that starts 10/26, and the 11/3 midterms. The quarter's test is whether +0.16% survives five weeks of gates.",
-   "c4": "<ul class='play'><li>The quarter has banked a record and a 24-year yield print, not a direction — the S&P is 1.99% below its 10/6 high with all four big gates unplayed.</li><li>Position for the calendar, not the tape: the Fed, PCE, the Alphabet-Microsoft-Amazon earnings week and the midterms all land inside the next eight trading days.</li><li>The rate bill is the swing: a 10Y at 4.96% is the first relief since 9/23; if it holds, the AI complex gets a valuation cushion it did not have for most of October.</li><li>The supply test is already visible in credit: Meta's risk premium at a record says AI borrowers, not Treasury buyers, are the fragile side of this quarter's financing.</li></ul>",
+   "c4": "<ul class='play'><li>The quarter has banked a record and a 24-year yield print, not a direction — the S&P is 1.99% below its 10/6 high with all four big gates unplayed.</li><li>Position for the calendar, not the tape: the Fed, PCE, the Alphabet-Microsoft-Amazon earnings week and the midterms all land inside the next eight trading days.</li><li>The rate bill is the swing: a 10Y at 4.96% is the first relief since 9/22; if it holds, the AI complex gets a valuation cushion it did not have for most of October.</li><li>The supply test is already visible in credit: Meta's risk premium at a record says AI borrowers, not Treasury buyers, are the fragile side of this quarter's financing.</li></ul>",
    "kpi": [
     [
      "S&P QTD",
@@ -640,11 +640,11 @@
     {
      "t": "② The Quarter's Rate Bill: From 5.36% to 4.96% in Fifteen Days",
      "steps": [
-      "The 10Y opened Q4 at 5.29%, printed 5.36% on 10/7 and closed 10/22 at 4.96% — a net -33bp, and the first close below 5% since 9/23",
+      "The 10Y opened Q4 at 5.29%, printed 5.36% on 10/7 and closed 10/22 at 4.96% — a net -33bp, and the first close below 5% since 9/22",
       "The curve moved together: the 30Y is -35bp on the quarter at 5.29% and the 2Y -23bp at 4.65% — a bull flattening, not a front-end story",
       "The cost: more than $5 billion of US and European debt sales were postponed in October, the biggest spate of delays this year",
       "The mirror: France's 10Y above 5% with the OAT-Bund spread near a 15-year high of 160bp — the term-premium squeeze is global",
-      "The offset: the 10Y rallied while Brent settled at $113.17 — duration was bought alongside a five-month high in crude, not against it"
+      "The offset: the 10Y's -33bp and Brent's +15.4% landed in the same quarter — duration was bought alongside a rising barrel, not against it"
      ],
      "d": "The quarter's rate bill: a 10Y that touched 5.36% and has since given back 33bp — relief bought with a growth scare, not with disinflation.",
      "news": [
@@ -674,7 +674,7 @@
       "10/27-28: the FOMC, with the 10Y at 4.96% and hike odds still positive",
       "10/29: PCE and the first estimate of Q3 GDP, one day after the meeting",
       "10/26-30: Alphabet, Microsoft and Amazon report — the capex question at index scale",
-      "11/3: the midterms, with the Iran strike plan explicitly dated after them",
+      "11/3: the midterms, the quarter's last political date",
       "Beyond the fortnight: the December meeting and the November inflation print decide whether +0.16% is a base or a peak"
      ],
      "d": "Q4's next four verdicts — Fed, PCE, megacap earnings, midterms — decide whether +0.16% is a base or a peak.",
@@ -690,12 +690,6 @@
        "fact": "Personal Income and Outlays for September, which carries the PCE price index, and the advance estimate of third-quarter GDP are both scheduled for October 29 at 8:30 a.m.",
        "src": "BEA",
        "u": "https://www.bea.gov/news/schedule"
-      },
-      {
-       "time": "10/22",
-       "fact": "Oil prices moved sharply higher, following a New York Times report citing unnamed U.S. officials that the U.S. and Israel are considering resuming strikes on Iran in a 'short but intensive' operation following the Nov. 3 midterm elections.",
-       "src": "CNBC",
-       "u": "https://www.cnbc.com/2026/10/22/treasurys-bonds-ai-yields.html"
       }
      ]
     }
@@ -893,7 +887,7 @@
       "The stress test: CoreWeave is 39.4% below its 10/6 close and fell another 10.1% on 10/22",
       "The megacap version: Meta's credit risk hit a record high on the same day it reported negative free cash flow — the funding question has reached the largest balance sheets",
       "The counter-evidence: SpaceX's first profit and Super Micro's raised guidance answered the demand question, not the funding one",
-      "The test: Alphabet, Microsoft and Amazon report next week — capex guidance, not headline EPS, is the number that matters"
+      "The test: Alphabet, Microsoft and Amazon report 10/26-30 — capex guidance, not headline EPS, is the number that matters"
      ],
      "d": "The AI platform's year: capex compounding on credit — October's stress test moved from a neocloud to a megacap, and the earnings week is the answer.",
      "news": [
@@ -914,6 +908,18 @@
        "fact": "Nvidia fell 4.4% and was the single strongest force pulling the S&P 500 lower; CoreWeave dropped 10.1%.",
        "src": "AP",
        "u": "https://apnews.com/article/stocks-markets-rates-earnings-oil-33767691a4a0730b96d6f0c5100ea9b2"
+      },
+      {
+       "time": "10/20 after close",
+       "fact": "SpaceX reported third-quarter revenue of $14.58 billion versus $12.72 billion expected and adjusted EPS of 45 cents versus 13 cents, its first profit as a public company.",
+       "src": "CNBC",
+       "u": "https://www.cnbc.com/2026/10/20/spacex-spcx-earnings-live-updates-q3-2026html.html"
+      },
+      {
+       "time": "10/20 after close",
+       "fact": "Super Micro said sales will be $18.5 billion to $19.5 billion in the quarter ended Sept. 30, up from a previous forecast of $14.5 billion to $15.5 billion, with gross margin of 12.0% to 12.5%.",
+       "src": "Investing.com (Yahoo Finance)",
+       "u": "https://finance.yahoo.com/news/supermicro-stock-surges-12-raising-210904986.html"
       }
      ]
     }

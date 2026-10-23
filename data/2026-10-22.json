@@ -37,10 +37,10 @@
       "ytdBase": 23241.990234375
     },
     "tnx": {
-      "today": 4.95,
+      "today": 4.96,
       "mtdBase": 5.29,
       "qtdBase": 5.29,
-      "ytdBase": 4.16
+      "ytdBase": 4.18
     },
     "wti": {
       "today": 99.47,
@@ -135,9 +135,9 @@
     },
     "tnx": {
       "dayPct": null,
-      "mtdPct": -6.42,
-      "qtdPct": -6.42,
-      "ytdPct": 18.98
+      "mtdPct": -6.24,
+      "qtdPct": -6.24,
+      "ytdPct": 18.66
     },
     "wti": {
       "dayPct": null,
