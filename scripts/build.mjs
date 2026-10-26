@@ -16,13 +16,17 @@ console.log("=== 校准表 (贴到网页 P.*.tbl / HEAT 前先核对) ===");
 for (const k of ["spx", "dji", "ixic"]) {
   const c = d.closes[k]; if (!c) continue;
   const ytdBase = d.bases.ytd ?? d.bases.ytdBase;
-  console.log(`${k}: today ${f2(c.today)} | MTD基(${d.bases.mtdBase}) ${f2(c.mtdBase)} ${s(d.computed[k].mtdPct)} | QTD基(${d.bases.qtdBase}) ${f2(c.qtdBase)} ${s(d.computed[k].qtdPct)} | YTD基(${ytdBase}) ${f2(c.ytdBase)} ${s(d.computed[k].ytdPct)}`);
+  console.log(`${k}: today ${f2(c.today)} | day ${s(d.computed[k].dayPct)} | MTD基(${d.bases.mtdBase}) ${f2(c.mtdBase)} ${s(d.computed[k].mtdPct)} | QTD基(${d.bases.qtdBase}) ${f2(c.qtdBase)} ${s(d.computed[k].qtdPct)} | YTD基(${ytdBase}) ${f2(c.ytdBase)} ${s(d.computed[k].ytdPct)}`);
 }
 for (const k of ["tnx", "wti", "brent", "gold", "btc", "dxy", "vix"]) {
   const c = d.closes[k]; if (!c) continue;
   const cp = d.computed[k];
   const pct2 = (a,b)=>b==null||a==null?"—":((a-b)/b*100>=0?"+":"")+((a-b)/b*100).toFixed(2)+"%";
-  if (cp) console.log(`${k}: today ${f2(c.today)} | mtd ${s(cp.mtdPct)} | qtd ${s(cp.qtdPct)} | ytd ${s(cp.ytdPct)}`);
+  if (cp) {
+    // 收益率用 bp 报日变动（页面 HEAT 也是 bp），其余用 %（review 2026-10-26 F3：校准表要能核当日涨跌）
+    const day = k === "tnx" && c.prev != null ? `${((c.today - c.prev) * 100).toFixed(0)}bp` : s(cp.dayPct);
+    console.log(`${k}: today ${f2(c.today)} | day ${day} | mtd ${s(cp.mtdPct)} | qtd ${s(cp.qtdPct)} | ytd ${s(cp.ytdPct)}`);
+  }
   else console.log(`${k}: today ${f2(c.today)} | mtd ${pct2(c.today,c.mtdBase)} | qtd ${pct2(c.today,c.qtdBase)} | ytd ${pct2(c.today,c.ytdBase)}`);
 }
 for (const [k, p] of Object.entries(d.fx?.pairs || {})) {

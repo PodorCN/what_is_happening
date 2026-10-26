@@ -2,7 +2,7 @@
   "date": "2026-10-26",
   "updatedAt": "2026-10-26T21:45:00Z",
   "label": "2026-10-26 Monday close",
-  "foot": "Closing baseline (auto 2026-10-26): SPX 7676.77 (+0.33% MTD / +12.14% YTD) · DJI 52361.58 (+2.86% MTD) · IXIC 26169.38 (+12.60% YTD) · 10Y 5.00% (Treasury daily curve) · WTI 101.57 (Dec settle) · Brent 115.81 (Dec settle) · Gold 4038.40 (Dec fut settle) · BTC 79722 (5pm ET). 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23242/10Y 4.18%/30Y 4.84%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.42% · 26-08-31 S&P 7686.14/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/WTI $88.42 (Dec)/Brent $98.03 (Dec)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
+  "foot": "Closing baseline (auto 2026-10-26): SPX 7676.77 (+0.33% MTD / +12.14% YTD) · DJI 52361.58 (+2.86% MTD) · IXIC 26169.38 (+12.60% YTD) · 10Y 5.00% (Treasury daily curve) · WTI 101.57 (Dec settle) · Brent 115.81 (Dec settle) · Gold 4038.40 (Dec fut settle) · BTC 79722 (4pm ET). 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23242/10Y 4.18%/30Y 4.84%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.42% · 26-08-31 S&P 7686.14/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/WTI $88.42 (Dec)/Brent $98.03 (Dec)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
   "P": {
     "today": {
       "h": "Anthropic's S-1 Reopened the AI Trade — and the S&P Erased October's Loss",
@@ -14,7 +14,7 @@
         "10Y 5.00% unch",
         "Brent $115.81 -0.8%"
       ],
-      "c1": "<b>The filing did more for the AI trade than any earnings print this month.</b> Anthropic publicly filed its S-1 on Monday, naming Nasdaq and the ticker ANT, and disclosed $16.29 billion of revenue in the six months to June — a 1,304% increase from a year earlier. The semiconductor complex did the buying: the iShares Semiconductor ETF rose 2.85%, with Micron and Nvidia leading, and technology was the best of the 11 S&P sectors. The S&P 500 rose 53.09 points, or 0.70%, to 7,676.77; the Nasdaq added 214.04 points, or 0.82%, to 26,169.38; the Dow managed 146.42 points, or 0.28%, to 52,361.58. The counterweight was capital raising and telecoms: Meta fell 1.88% after launching a large equity offering, Verizon dropped 3.49% on a revenue miss, and communication services was the weakest sector, at its lowest since June 2025. Oil retreated as Saudi, Pakistani and Turkish officials met Iran's leadership in Tehran: Brent's December contract settled lower at $115.81 and WTI at $101.57. Rates did not object — the 10Y closed unchanged at 5.00% and the 30Y slipped 2bp to 5.31% — gold settled 0.8% higher at $4,038.40, the dollar added 0.2%, the VIX fell 5.5% to 18.39, and bitcoin slipped 1.3% to $79.7k.",
+      "c1": "<b>The filing did more for the AI trade than any earnings print this month.</b> Anthropic publicly filed its S-1 on Monday, naming Nasdaq and the ticker ANT, and disclosed $16.29 billion of revenue in the six months to June — a 1,304% increase from a year earlier. The semiconductor complex did the buying: the iShares Semiconductor ETF rose 2.85%, with Micron and Nvidia leading, and technology was the best of the 11 S&P sectors. The S&P 500 rose 53.09 points, or 0.70%, to 7,676.77; the Nasdaq added 214.04 points, or 0.82%, to 26,169.38; the Dow managed 146.42 points, or 0.28%, to 52,361.58. The counterweight was capital raising and telecoms: Meta fell 1.88% after launching a large equity offering, Verizon dropped 3.49% on a revenue miss, and communication services was the weakest sector, at its lowest since June 2025. Oil retreated as Saudi, Pakistani and Turkish officials met Iran's leadership in Tehran: Brent's December contract settled lower at $115.81 and WTI at $101.57. Rates did not object — the 10Y closed unchanged at 5.00% and the 30Y slipped 2bp to 5.31% — gold settled 0.8% higher at $4,038.40, the dollar added 0.2%, the VIX fell 5.5% to 18.39, and bitcoin slipped 2.0% to $79.7k.",
       "c4": "<ul class='play'><li>The trigger was a filing, not a quarter: Anthropic's S-1 reopened the AI funding window and the semis rallied 2.85%, but SOXX is still roughly 25% below its high and 13.5% lower in October — a repair, not a breakout.</li><li>The split is who pays for AI: the equity raisers funded the suppliers — Nvidia, AMD and Broadcom, named as buyers of up to $5 billion of Meta's shares, rose more than 2% each while the issuer fell.</li><li>The relief valve was crude: Brent -0.8% on the Tehran talks took some inflation premium out, and a flat 5.00% 10Y is what let the multiple expand on a Monday with no data.</li><li>The week belongs to earnings: 163 S&P 500 companies report, Alphabet and Microsoft on 10/28, with the Fed 90% priced to hold — and RBC's 5-10% pullback call is the bear case for a market 1.82% below its record.</li></ul>",
       "kpi": [
         [
@@ -220,7 +220,7 @@
           "t": "③ The Barrel Stepped Back: Tehran Talks and a $0.91 Slide",
           "steps": [
             "Saudi defence minister Prince Khalid bin Salman, Pakistan's Asim Munir and Turkey's Ibrahim Kalin met Iran's Mohsen Rezaei and President Masoud Pezeshkian in Tehran — the first high-level Saudi-Iran contact since the Houthi escalation",
-            "The four sides agreed to keep talking; Tehran called it a step toward a regional security framework, while the ICG's Hamidreza Azizi said it looked 'more like a last-minute attempt to prevent the resumption of war'",
+            "The four sides agreed only to keep talking — Iranian state media reported an agreement to continue dialogue and bolster cooperation — while some, including former Foreign Minister Mohammad Javad Zarif, saw a path toward a broader regional security framework, and the ICG's Hamidreza Azizi called it 'more like a last-minute attempt to prevent the resumption of war'",
             "Brent's December contract settled $0.91, or 0.8%, lower at $115.81, after a $117.44 high and a $114.00 low; WTI settled 1.6% lower at $101.57",
             "The buffer is thinner than the headline: the Strategic Petroleum Reserve held 282.6 million barrels last week, the lowest since 1982, and the national gasoline average is $4.28 a gallon",
             "Energy equities did not follow crude down — XLE +0.4% — and consolidation continued: EQT's $12.83 billion all-stock takeover of Range Resources sent Range up 17.66% to $53.56",
@@ -278,7 +278,7 @@
             "The Fed starts its two-day meeting on 10/27 with futures pricing a 90% chance of a hold at 3.75%-4% and about an 80% chance of a December hike",
             "The global term premium eased: Moody's kept France at Aa3 with a negative outlook on 10/23, French bonds rallied and the CAC 40 rose",
             "The cross-asset tape stayed calm: the VIX fell 5.45% to 18.39, gold settled 0.8% higher at $4,038.40 after spot touched $3,975 on 10/23, and the dollar added 0.21%",
-            "Bitcoin was the exception: it slipped 1.3% to $79.7k, back below $80,000 even as equities rallied",
+            "Bitcoin was the exception: it slipped 2.0% to $79,721 at the 4pm ET close, back below $80,000 even as equities rallied",
             "The test is the tape: 163 S&P 500 companies report this week, Alphabet and Microsoft on 10/28, and RBC's Lori Calvasina sees a 5-10% pullback to 7,000-7,400"
           ],
           "d": "The floor: the Fed is priced to pause, the global term premium stopped widening and volatility fell — but a market below its record has to earn the next leg in earnings.",
@@ -302,8 +302,14 @@
               "u": "https://www.cnbc.com/2026/10/26/gold-gains-on-softer-oil-prices-fed-decision-in-focus.html"
             },
             {
-              "time": "10/26",
-              "fact": "Moody's kept France at Aa3 with a negative outlook, French borrowing costs eased and the CAC 40 rose 0.5%.",
+              "time": "10/23",
+              "fact": "Moody's kept France's credit rating at Aa3 and maintained its negative outlook, saying the outlook reflects the risk that political fragmentation will keep impairing the country's legislative institutions.",
+              "src": "CNBC",
+              "u": "https://www.cnbc.com/2026/10/23/moodys-holds-steady-on-frances-credit-rating-as-country-grapples-with-turmoil-and-higher-yields.html"
+            },
+            {
+              "time": "10/26 8:40am ET",
+              "fact": "French borrowing costs eased, with the 10-year yield down 5 basis points in Paris, and the CAC 40 opened 0.5% higher.",
               "src": "CNBC",
               "u": "https://www.cnbc.com/2026/10/25/stock-market-today-live-updates.html"
             },
@@ -318,6 +324,12 @@
               "fact": "Wall Street is wading into the peak week for earnings, with 163 S&P 500 companies set to report third-quarter results and Alphabet and Microsoft due on 10/28.",
               "src": "CNBC",
               "u": "https://www.cnbc.com/2026/10/25/stock-market-today-live-updates.html"
+            },
+            {
+              "time": "10/26 close",
+              "fact": "Bitcoin closed at $79,721 at 4pm ET, down 2.0% from Friday's $81,335 close.",
+              "src": "Yahoo Finance",
+              "u": "https://finance.yahoo.com/quote/BTC-USD/history"
             }
           ]
         }
@@ -480,7 +492,7 @@
             },
             {
               "time": "10/26 close",
-              "fact": "The S&P 500 gained 0.70% to 7,676.77, the Nasdaq 0.82% to 26,169.38 and the Dow 0.28% to 52,361.58.",
+              "fact": "The S&P 500 closed at 7,676.77 on 10/26, 25.23 points above the 9/30 base of 7,651.54 — +0.33% for October.",
               "src": "CNBC",
               "u": "https://www.cnbc.com/2026/10/25/stock-market-today-live-updates.html"
             }
@@ -560,7 +572,7 @@
         "10Y -29bp",
         "Brent +18.1%"
       ],
-      "c1": "Q4 is eighteen sessions old and 25.23 points higher: the S&P sits at 7,676.77, +0.33% on the quarter, against a +2.0% third quarter, with the Dow +2.86% and the Nasdaq -2.58%. The quarter has banked two prints — a record close of 7,818.93 on 10/6 and an intraday 5.36% on the 10Y on 10/7, the highest since 2002 — and has given back the gain it made between 10/1 and 10/9. Its composition is a rotation, not a rally: Energy +13.24%, Staples +9.13% and Utilities +7.89% against Tech -4.82% and Comms -6.42%. The 10Y is -29bp at 5.00% and the 30Y -33bp at 5.31%; Brent is +18.1% and WTI +14.9% on the December contract. Still owed: the FOMC on 10/27-28, PCE and advance Q3 GDP on 10/29, megacap earnings in the 10/26-30 window, and the 11/3 midterms.",
+      "c1": "Q4 is eighteen sessions old and 25.23 points higher: the S&P sits at 7,676.77, +0.33% on the quarter, against a +2.0% third quarter, with the Dow +2.86% and the Nasdaq -2.58%. The quarter has banked two prints — a record close of 7,818.93 on 10/6 and an intraday 5.36% on the 10Y on 10/7, the highest since 2002 — and has given back the gain it made between 10/1 and 10/9. Its composition is a rotation, not a rally: Energy +13.24%, Staples +9.13% and Utilities +7.89% against Tech -4.82% and Comms -6.42%. The 10Y is -29bp at 5.00% and the 30Y -33bp at 5.31%; Brent is +18.1% and WTI +14.9% on the December contract. Still owed: the FOMC on 10/27-28, PCE and advance Q3 GDP on 10/29, megacap earnings on 10/28-29, and the 11/3 midterms.",
       "c4": "<ul class='play'><li>The quarter has banked a record and a yield print, not a direction: +0.33% QTD with the S&P 1.82% below its 10/6 high and all four big gates still unplayed.</li><li>Position for the calendar, not the tape: the Fed, PCE, the Alphabet-Microsoft-Amazon block and the midterms all land by 11/3.</li><li>The rate bill is the swing: a 5.00% 10Y is 36bp below the 10/7 intraday peak; if it holds, the AI complex keeps a valuation cushion it did not have for most of October.</li><li>The oil bill is already in the survey data: four-year-high selling prices with Brent at $115.81 is the combination that keeps the long end from rallying for the right reason.</li></ul>",
       "kpi": [
         [
@@ -676,8 +688,7 @@
             "The standing: 7,651.54 on 9/30 to 7,676.77 — +25.23 points, or 0.33%, against a +2.0% third quarter",
             "Banked: the quarter's only record close, 7,818.93 on 10/6",
             "Banked: an intraday 5.36% on the 10Y on 10/7, a 24-year high, now 5.00% — a net -29bp",
-            "Owed: the FOMC on 10/27-28, with a hold 90% priced",
-            "Owed: PCE and advance Q3 GDP on 10/29, the megacap earnings block in the 10/26-30 window, and the 11/3 midterms"
+            "Owed: four verdicts, all inside the next six trading days — two prints banked, nothing settled"
           ],
           "d": "Q4's first eighteen sessions produced a flat index and two pieces of history — every verdict sits in the next six trading days.",
           "news": [
@@ -689,7 +700,7 @@
             },
             {
               "time": "10/7",
-              "fact": "The 10-year Treasury yield closed at 5.28% on 10/7, its highest close of the year, and the 30-year at 5.67%, per the Treasury's daily yield curve.",
+              "fact": "The 10-year Treasury yield closed at 5.28% on 10/7 — the year's highest close was 5.31% on 10/5 — and the 30-year at 5.67%, its highest close of 2026, per the Treasury's daily yield curve.",
               "src": "US Treasury",
               "u": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv"
             },
@@ -708,15 +719,14 @@
           ]
         },
         {
-          "t": "② The Quarter's Rate Bill: -29bp With a Barrel Up 18%",
+          "t": "② The Quarter's Rate Bill: Duration Bought With the Barrel Up 18%",
           "steps": [
-            "The 10Y opened Q4 at 5.29% and closed at 5.00% — a net -29bp, with an intraday 5.36% on 10/7 in between",
-            "The curve came in: the 30Y is -33bp at 5.31% and the 2Y -20bp at 4.68%",
+            "The retreat ran across the curve: the 2Y fell 20bp to 4.68% and the 30Y 33bp to 5.31% — the long end gave back more than the front",
             "The cost: more than $5 billion of US and European debt sales were postponed during October, the biggest spate of delays this year",
-            "The global mirror: France's 10Y above 5% with the OAT-Bund spread near a 15-year high of 160bp, before Moody's kept the Aa3 rating on 10/23",
+            "The global mirror: France's 10Y above 5% with the OAT-Bund spread near a 15-year high of 160bp — the quarter's clearest sovereign-risk mirror",
             "The odd pair: duration was bought in the same quarter Brent rose 18.1% — relief priced as a growth tax, not as disinflation"
           ],
-          "d": "The quarter's rate bill: a 10Y that touched 5.36% and has given back 29bp while Brent rose 18% — relief bought with a growth scare.",
+          "d": "The quarter's rate bill: relief across the curve while the barrel rose — priced as a growth tax, not as disinflation.",
           "news": [
             {
               "time": "10/26",
@@ -735,21 +745,15 @@
               "fact": "France's 10-year bond yield hit a new 24-year high above 5%, and the premium on French yields over German Bunds edged back toward a 15-year high of nearly 160 bps.",
               "src": "Reuters",
               "u": "https://live.euronext.com/en/financial-news/stocks-rise-upbeat-earnings-frances-10-year-bond-yield-hits-5-mark"
-            },
-            {
-              "time": "10/26",
-              "fact": "Moody's kept France at Aa3 with a negative outlook, French borrowing costs eased and the CAC 40 rose 0.5%.",
-              "src": "CNBC",
-              "u": "https://www.cnbc.com/2026/10/25/stock-market-today-live-updates.html"
             }
           ]
         },
         {
           "t": "③ The Quarter's Calendar: Four Verdicts Before the Midterms",
           "steps": [
-            "10/27-28: the FOMC, with the 10Y at 5.00% and a hold 90% priced",
-            "10/29: September PCE and the first estimate of Q3 GDP land one day after the Fed decides, with the 10Y at 5.00%",
-            "10/26-30: Alphabet, Microsoft and Amazon report — the capex question at index scale",
+            "10/27-28: the FOMC, with a hold 90% priced",
+            "10/29: September PCE and the first estimate of Q3 GDP land one day after the Fed decides",
+            "10/28-29: Alphabet and Microsoft report on 10/28 and Amazon on 10/29 — the capex question at index scale",
             "11/3: the midterms, the quarter's last political date",
             "After 11/3: the December meeting, where a hike is about 80% priced"
           ],
@@ -762,10 +766,22 @@
               "u": "https://www.bea.gov/news/schedule"
             },
             {
-              "time": "10/22",
-              "fact": "Alphabet Inc., Microsoft Corp. and Amazon.com Inc., three of the biggest spenders on data centers, are slated to report results in the 10/26-30 window.",
-              "src": "Bloomberg",
-              "u": "https://www.swissinfo.ch/eng/nasdaq-100-slumps-most-since-june-as-bonds-rally%3a-markets-wrap/92254614"
+              "time": "10/28",
+              "fact": "Alphabet will hold its quarterly conference call to discuss third quarter 2026 financial results on Wednesday, October 28, at 1:30 p.m. Pacific (4:30 p.m. Eastern).",
+              "src": "Alphabet IR",
+              "u": "https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Date-of-Third-Quarter-2026-Financial-Results-Conference-Call-2026-8tpGZsLS6v/default.aspx"
+            },
+            {
+              "time": "10/29",
+              "fact": "Amazon will hold a conference call to discuss its third quarter 2026 financial results on Thursday, October 29, 2026, at 2:00 p.m. PT / 5:00 p.m. ET.",
+              "src": "Amazon IR",
+              "u": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-to-Webcast-Third-Quarter-2026-Financial-Results-Conference-Call/default.aspx"
+            },
+            {
+              "time": "10/28",
+              "fact": "Microsoft will publish fiscal year 2027 first-quarter financial results after the market close on Wednesday, October 28, 2026, with a webcast at 2:30 p.m. Pacific.",
+              "src": "Microsoft IR",
+              "u": "https://microsoft.com/en-us/investor/events/fy-2027/earnings-fy-2027-q1"
             },
             {
               "time": "10/26",
@@ -910,7 +926,7 @@
             "The engines: AI capex across the hyperscalers and earnings, with Q3 growth tracking 29%",
             "The scoreboard: S&P +12.14%, Nasdaq +12.60%, Dow +8.94% — the AI-heavy index leads the blue chips by 3.7 points",
             "The referee: the 10Y at 5.00%, +82bp YTD, down from an intraday 5.36% on 10/7",
-            "The taxes: WTI +76.9% and Brent +90.3% since 12/31 as the war grinds into an eighth month; September CPI 3.7% and PPI 6.3%",
+            "The taxes: WTI +76.9% and Brent +90.3% since 12/31 as the war grinds into an eighth month",
             "The margin: the S&P is 1.82% off its record and the Nasdaq 5.18% off its 10/6 close — a bull with a valuation discount, not a broad one"
           ],
           "d": "The year's base case: AI and earnings compound, rates and oil tax — a four-year bull still faster than its referee.",
@@ -926,19 +942,13 @@
               "fact": "Analysts are forecasting overall growth of 29% for companies in the S&P 500 from the prior summer.",
               "src": "AP",
               "u": "https://apnews.com/article/stocks-markets-oil-us-ai-494fbe4361a0360b2f6368e7a6d8f058"
-            },
-            {
-              "time": "10/26",
-              "fact": "The S&P 500 gained 0.70% to 7,676.77, the Nasdaq 0.82% to 26,169.38 and the Dow 0.28% to 52,361.58.",
-              "src": "CNBC",
-              "u": "https://www.cnbc.com/2026/10/25/stock-market-today-live-updates.html"
             }
           ]
         },
         {
           "t": "② The Rate and Inflation Tax",
           "steps": [
-            "The long end: the 10Y from 4.18% to 5.00% (+82bp) and the 30Y from 4.84% to 5.31% (+47bp)",
+            "The long end: the 30Y from 4.84% to 5.31% (+47bp), so the year's term premium was paid at the back of the curve as well",
             "The Fed: a September hike, the first since July 2023, with a 90% priced hold for 10/28 and about an 80% priced hike for December",
             "The prints: September CPI 3.7% y/y and PPI 6.3% y/y; October's flash selling-price index at 59.8, the highest since August 2022",
             "The cross-asset echo: the dollar +3.8% and gold -7.0% — real rates, not war, set the tone for both",
@@ -973,7 +983,7 @@
             "The laggard is communication services at -11.78%, where the wireless carriers have been re-rated twice this year on SpaceX's carrier ambitions",
             "The spread is 67.5 points; the S&P's +12.14% is the average of those two markets",
             "The middle is the AI trade and the defensives: Tech +29.42%, Health +15.81%, Materials +13.30% and Staples +13.23%, while Utilities are -0.33%",
-            "The auditor: a 10Y at 5.00% (+82bp YTD) decides which half of that spread gets paid"
+            "The auditor: the discount rate decides which half of that spread gets paid — cash flow for the barrel, duration for the platform"
           ],
           "d": "The year in one line: the barrel and the pantry beat the platform, and the 10Y decides the size of the check.",
           "news": [
@@ -1138,7 +1148,7 @@
           [
             "BTC",
             "$79.7k",
-            "-1.3"
+            "-2.0"
           ],
           [
             "Stoxx 600",

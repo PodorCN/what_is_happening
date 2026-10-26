@@ -3,7 +3,7 @@
 // 数据源: Yahoo Finance v8 chart (免 key) + FRED DGS10 (免 key, 需网络) + Stooq 兜底
 // 输出: data/YYYY-MM-DD.json  { baselines, today, computed MTD/QTD/YTD }
 
-import { writeFileSync, mkdirSync } from "fs";
+import { writeFileSync, mkdirSync, readFileSync, existsSync, readdirSync } from "fs";
 
 const SYMBOLS = {
   spx: "^GSPC",
@@ -72,6 +72,31 @@ async function yahooClose(symbol, dateStr) {
   return best.c;
 }
 
+// 上一交易日：data/ 目录里最后一个 < DATE 的文件（data 文件只存在于已收盘交易日）。
+// 没有历史文件时回退到上一个工作日。
+function prevTradingDate(date) {
+  try {
+    const files = readdirSync("data").filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).map((f) => f.slice(0, 10)).sort();
+    const p = files.filter((d) => d < date).pop();
+    if (p) return p;
+  } catch { /* data/ 还不存在 */ }
+  const d = new Date(date + "T12:00:00Z");
+  do { d.setUTCDate(d.getUTCDate() - 1); } while (d.getUTCDay() === 0 || d.getUTCDay() === 6);
+  return d.toISOString().slice(0, 10);
+}
+
+// 上一交易日的定稿收盘：优先读 data/<prevDate>.json 的 closes[k].today —— 那天已按结算价（期货）/
+// 4pm ET（加密）定稿；Yahoo 日线对期货是未修订值、对加密是 UTC bar，直接拿来当分母会造出假涨跌幅
+// （review 2026-10-26 F2/F3）。只有缺历史文件时才回退 Yahoo。
+function prevCloseFromData(key, prevDate) {
+  const fp = `data/${prevDate}.json`;
+  if (!existsSync(fp)) return null;
+  try {
+    const j = JSON.parse(readFileSync(fp, "utf8"));
+    return j.closes?.[key]?.today ?? null;
+  } catch { return null; }
+}
+
 function periodEnds(dateStr) {
   const d = new Date(dateStr + "T12:00:00Z");
   const y = d.getUTCFullYear(), m = d.getUTCMonth() + 1;
@@ -93,33 +118,66 @@ function periodEnds(dateStr) {
 
 const pct = (a, b) => (a - b) / b * 100;
 
+// 只补 prev/dayPct，不动 today/bases（用于 data 已写入但缺日环比的日子）：
+//   node scripts/fetch.mjs 2026-10-26 --prev-only
+function backfillPrev(date) {
+  const fp = `data/${date}.json`;
+  if (!existsSync(fp)) { console.error(`missing ${fp}`); process.exit(1); }
+  const j = JSON.parse(readFileSync(fp, "utf8"));
+  const prevDate = prevTradingDate(date);
+  let n = 0;
+  for (const k of Object.keys(SYMBOLS)) {
+    const c = j.closes?.[k];
+    if (!c || c.today == null) continue;
+    const prev = prevCloseFromData(k, prevDate);
+    if (prev == null) { console.error(`WARN ${k}: 找不到 ${prevDate} 的定稿值，保留原状`); continue; }
+    let t = c.today;
+    if (k === "tnx") t = t > 20 ? t / 10 : t; // prev 来自历史 data，已是 % 口径
+    j.closes[k] = { today: c.today, prev, mtdBase: c.mtdBase, qtdBase: c.qtdBase, ytdBase: c.ytdBase };
+    j.computed[k] = { ...(j.computed[k] || {}), dayPct: +pct(t, prev).toFixed(2) };
+    console.log(`${k}: today=${t} prev=${prev} dayPct=${j.computed[k].dayPct}%`);
+    n++;
+  }
+  writeFileSync(fp, JSON.stringify(j, null, 2));
+  console.log(`\nbackfilled prev/dayPct for ${n} symbols in ${fp} (prevDate=${prevDate})`);
+}
+
 async function main() {
   const date = process.argv[2] || new Date().toISOString().slice(0, 10);
+  if (process.argv.includes("--prev-only")) return backfillPrev(date);
   const { mtdBase, qtdBase, ytd } = periodEnds(date);
+  const prevDate = prevTradingDate(date);
   const out = { date, symbols: SYMBOLS, bases: { mtdBase, qtdBase, ytd }, closes: {}, computed: {} };
   for (const [k, sym] of Object.entries(SYMBOLS)) {
     try {
-      const [t, m, q, y] = await Promise.all([
+      const [t, m, q, y, yPrev] = await Promise.all([
         yahooClose(sym, date), yahooClose(sym, mtdBase),
         yahooClose(sym, qtdBase), yahooClose(sym, ytd),
+        yahooClose(sym, prevDate),
       ]);
-      out.closes[k] = { today: t, mtdBase: m, qtdBase: q, ytdBase: y };
+      const prev = prevCloseFromData(k, prevDate) ?? yPrev;
+      out.closes[k] = { today: t, prev, mtdBase: m, qtdBase: q, ytdBase: y };
       out.computed[k] = {
-        dayPct: null, // 日环比需前一交易日，build 时另取；此处留空
+        dayPct: prev ? +pct(t, prev).toFixed(2) : null, // 日环比 = 今日 ÷ 上一交易日定稿收盘
         mtdPct: +pct(t, m).toFixed(2),
         qtdPct: +pct(t, q).toFixed(2),
         ytdPct: +pct(t, y).toFixed(2),
       };
-      console.log(k, sym, `today=${t.toFixed(2)} mtd=${pct(t, m).toFixed(2)}% qtd=${pct(t, q).toFixed(2)}% ytd=${pct(t, y).toFixed(2)}%`);
+      console.log(k, sym, `today=${t.toFixed(2)} day=${out.computed[k].dayPct}% mtd=${pct(t, m).toFixed(2)}% qtd=${pct(t, q).toFixed(2)}% ytd=${pct(t, y).toFixed(2)}%`);
     } catch (e) {
       console.error("WARN", k, e.message);
       out.closes[k] = null;
     }
   }
+  // dayPct 缺值 = 取数失败（review 2026-10-26 F3：null 会让校准表核不了任何当日涨跌幅）
+  for (const k of Object.keys(SYMBOLS)) {
+    if (out.closes[k] && out.computed[k]?.dayPct == null)
+      console.error(`WARN ${k} 缺 prev，dayPct=null —— 重拉或按 agent.md §4 manual 流程补`);
+  }
   // TNX 换算成 %：Yahoo 有时返回 ×10 报价（52.4），有时已是百分数（5.24）。
   // 判别：>20 时除以 10。（原先无条件 /10 会把 5.24 变成 0.52，9/29 修复）
   if (out.closes.tnx) {
-    for (const k of ["today", "mtdBase", "qtdBase", "ytdBase"]) {
+    for (const k of ["today", "prev", "mtdBase", "qtdBase", "ytdBase"]) {
       const v = out.closes.tnx[k];
       if (v != null) out.closes.tnx[k] = +(v > 20 ? v / 10 : v).toFixed(2);
     }

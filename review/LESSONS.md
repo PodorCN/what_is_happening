@@ -28,6 +28,7 @@
 | 2026-10-19 | 取数 | 跨日 1bp 断点：10/16 快照把 Yahoo ^TNX 5.098 当 Treasury 收盘写成 5.10%/5.44%（Treasury 10/16 = 5.09%/5.43%，10Y -1bp、30Y 0bp），10/19 的期初 5.09/5.43 因此对不上 | 收益率一律以 Treasury daily yield curve 定稿（^TNX 只做盘中参考）；跨日 tbl 期初必须等于上一快照期末，不一致先查 Treasury 判错侧，错侧整表改（tbl/HEAT/徽章/链/foot + MTD/QTD/YTD 的 bp 一并重算） |
 | 2026-10-20 | 取数 | ytd 10Y 期初沿用 Yahoo ^TNX 4.16%，Treasury 12/31/2025 为 4.18%（同表 30Y 已按 Treasury），YTD 写成 +96bp（应 +94bp），同位共 10 处 | 收益率基期与收盘一律取 Treasury daily yield curve：ytd 10Y 期初 4.18、YTD +94bp，同步 h/d/c1/c4/kpi/tbl/① s2/② s0/② d/HEAT/foot 的 25-12-31 行；改完 grep『96bp』应为 0 处 |
 | 2026-10-22 | 取数 | data 的 tnx.today=4.95 / ytdBase=4.16 未按 Treasury 回写（快照 tbl 是 4.96 / 4.18），computed.ytdPct 18.98 是 Yahoo 口径的假值 | 收益率定稿后同步回写 data 的 today 与 ytdBase（Treasury 口径：10/22 4.96、2025-12-31 4.18）并重算 computed 三项；data.computed 与快照 tbl 同项相等后才 commit |
+| 2026-10-26 | 取数 | data 的 `computed.dayPct` 对 10 个指数/商品/加密标的全为 null（`closes` 只有 today + 三个基期、缺 `prev`），校准表因此核不了当日任何涨跌幅（10/22 同病，10/23 有值） | fetch 必须写 `closes[].prev`（取**上一交易日 data 里的定稿 today**，期货才是结算价、BTC 才是 4pm ET）并算 dayPct；null 视为取数失败，跑 `node scripts/fetch.mjs <DATE> --prev-only` 补齐后再写快照；lint 对 dayPct=null 报 ERROR `[lint]` |
 
 ## 取数前提
 
@@ -93,6 +94,11 @@
 | 2026-10-23 | 逻辑 | mtd ③ s3 用单周峰值 24.6（week to 10/18）概括成『above the ~18.5 million prewar』；同链 n1 自己写 10 月均值 16.7、所引原文也说仍低于 prewar | 引用周峰值必须同句给出窗口均值（『week to 10/18 high 24.6 vs October average 16.7, still below the ~18.5 prewar』）；『above prewar』只能用于确实高于 18.5 的窗口，today 与窗口档措辞必须一致 |
 | 2026-10-23 | 数字 | ③ s2 用收盘值（CCI +9.1%、AMT +4.1%、T −8.0%、TMUS −7.7%），同链 n1 引 Investopedia 的盘中值（9.5%/4%，区间 1.5–7.5% 不覆盖 −8.0）；收盘现算 CCI 85.97/78.83=+9.06、T 20.93/22.74=−7.96 | 同一天同一名字全文件只留一个收盘值；引文与现算不一致时改引含收盘值的句子（本次 Yahoo Finance 收盘稿）或给引文加『intraday』标注，并保证引文区间覆盖 step 的数字 |
 | 2026-10-23 | 逻辑 | today c4『the front end is not the story … so the long end is doing all the work』与 ① s4『2Y/10Y/30Y 各 +4bp — a parallel move』矛盾（2Y 4.65→4.69、10Y 4.96→5.00、30Y 5.29→5.33） | 写『long end is doing all the work / front end anchored』前先比三点变动：三点同幅写『a 4bp parallel shift』，只有 2s10s/10s30s 斜率变化时才允许把功劳归某一端 |
+| 2026-10-26 | 数字 | qtd ① n1 写「10Y 10/7 收 5.28%，its highest close of the year」不成立：Treasury 2026 全年 10Y 最高收盘是 10/5 的 **5.31%**（10/7 的 5.28% 只并列第三）；5.67% 那个「年内最高收盘」属 30Y（10/7 确为 30Y 全年最高收盘） | 写「highest close of the year」前对 Treasury 全年 CSV 取该期限的 max 与日期（10Y 5.31@10/5、30Y 5.67@10/7）；比较级只挂在真正持有它的那条腿，10Y 要写就写 10/5 的 5.31% |
+| 2026-10-26 | 数字 | today ④/HEAT/c1 的 BTC「−1.3% 到 $79.7k」对不上任何基线：同口径（4pm ET，昨收 81,334.86）应为 **−2.0%**；foot 还把口径从 4pm 悄悄改成 5pm（Yahoo 5pm 值 79,965 是另一条价） | 24h 品种日环比用「今日 4pm ET ÷ 上一交易日 4pm ET 定稿收盘」现算（79,722/81,334.86 = −2.0%）；foot 口径固定写 4pm ET，改口径当天必须重算昨值；禁止把 4pm 与 5pm 两条价混作分子分母 |
+| 2026-10-26 | 引用 | qtd ③ n1 仍挂 swissinfo 的 Bloomberg 滚动 wrap，并把原文「are slated to report next week」改写成「in the 10/26-30 window」（该页 0 处 10/26-30）；10/22 已明令滚动 wrap 不得背固定事实 | 公司+日期类日历事实只挂静态一手源：Alphabet 10/28（abc.xyz IR）、Microsoft 10/28（microsoft.com IR events）、Amazon 10/29（ir.aboutamazon.com）；把 next week 换成绝对日期必须另找写明该日期的静态源 |
+| 2026-10-26 | 引用 | today ④ n3 与 qtd ② n3 同一条 fact 标 time=10/26，却把 10/23 的评级决定（Moody's 维持法国 Aa3，原文 on Friday）与 10/26 的市场反应（法国 10Y −5bp、CAC +0.5%）并成一条 | news.time 写事件发生日：评级/数据这类前一日事件标 10/23 并挂 10/23 的静态稿（CNBC 10/23），当日反应另起一条（live blog）；一条 fact 只含一个交易日的事件 |
+| 2026-10-26 | 引用 | today ③ s1「Tehran called it a step toward a regional security framework」把主张归给德黑兰官方；CNN 原文是「some, including former Foreign Minister Mohammad Javad Zarif, see it as an opportunity to move toward a broader security framework」，官方口径只有国家通讯社「agreed to continue dialogue」 | steps 的主张必须归到来源实际给定的主体（some officials / 前外长 Zarif ≠ Tehran）；官方表态只引声明原句，并在所引页面检索该主体名确认 |
 
 ## 链结构（主链 / 辅链）
 
@@ -114,6 +120,8 @@
 | 2026-10-22 | 逻辑 | tbl 的 10Y（−17bp）与 Gold（−2.2%）两行无任何链覆盖，头条却是『a Flight to Bonds』，c1 成为唯一解释 | tbl 每行至少被一条链的某个 step 覆盖；债券腿当日变动 >10bp 必须单独成链或写进主链 step，不得让 c1 成为唯一解释 |
 | 2026-10-23 | schema | mtd/qtd/ytd 三档 chains 全缺 main:1（0/3），只有 today 是 1/4；页面在这三档不显示 MAIN 徽章与红边着色（shell.html 用 c.main 控制 .chain-card.main） | 四档每档 chains[0] 必须带 `"main": 1` 且全档仅一条；build 前对四档各跑 `chains.filter(c=>c.main===1).length===1` 断言，不等于 1 就停下修 |
 | 2026-10-23 | 逻辑 | today ② s4 逐字复述 ① c1/d 的 Dow −1.23% / Nasdaq −0.20%，② d 与 ③ d 又是同一结论（Dow 弱、Nasdaq 芯片托底），辅链没有主链之外的增量 | 指数涨跌幅只在 c1 与主链讲一次；② 只留 SOXX/DRAM/SK Hynix/MU 等硬件证据，③ 只留 Dow 成分与板块证据；删掉纯复述 step（② s4）并重写该链 d，定稿前对同档每对链做数字/结论交集检查 |
+| 2026-10-26 | 逻辑 | 同档数字交集：qtd ①② 都写 5.36%/5.00%/−29bp，qtd ③ s0/s1 又两次写 5.00%；ytd ①②③ 三处写 5.00%/+82bp，ytd ①② 都写 CPI 3.7% / PPI 6.3% | 定稿前对同档每对链求数字交集：主链只写「已入账的纪录」（5.36% 盘中 / 5.00% 收盘 / −29bp），辅链只写增量（2Y −20bp、30Y −33bp 或 +47bp、债务发行、评级），CPI/PPI 只归利率链；同一期限的收盘价与变动全档只出现一次 |
+| 2026-10-26 | 逻辑 | mtd ① n4 与 ytd ① n2 逐字同句，把 today 的三指数日内涨跌（0.70/0.82/0.28）原样搬进两个窗口档，两档还共用同一条 news | 窗口档引用当日收盘只写本档端点（S&P 7,676.77、+0.33% MTD），不带三指数日内涨跌；同一条 news（同 URL + 同句）只能出现在一个档的 news 列表，端点数字由 tbl/序列背书即可 |
 
 ## 待补充
 

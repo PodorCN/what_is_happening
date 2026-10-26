@@ -144,7 +144,7 @@ DATE=2026-09-29
 
 # 1) 拉数 + 校数（数字以校准表为准）
 node scripts/fetch.mjs $DATE
-node scripts/build.mjs $DATE
+node scripts/build.mjs $DATE      # 校准表含 day 列（日环比）；dayPct 若是 null = 缺 prev，跑 fetch.mjs $DATE --prev-only 补齐（lint 会拦）
 
 # 2) 按 §1 思路读新闻，按 §2 思路写快照（复制昨天文件改）
 #    cp snapshots/2026-09-28.json snapshots/$DATE.json  # 起点，周一请确认周末无交易
@@ -201,6 +201,9 @@ git log --oneline -2        # 确认已推上去
   正文写 FX 数字以当天 data 为准，注明 "~NY close" 口径即可。
 - FX 序列只保留周一至周五；美股休市日（感恩节等）外汇照常有 bar，所以 FX 交易日数可能比 S&P 多一天。
 - Yahoo v8 偶发 429，加 `User-Agent` + 重试；失败走 §4 的 manual 流程。
+- **日环比的分母**：`fetch.mjs` 的 `prev` 取**上一交易日 `data/<prevDate>.json` 里的定稿 `today`**，不是 Yahoo 当天的日线 bar——
+  期货的 Yahoo 日线是未修订值（Brent 还会串合约，10/26 给 110.24 vs 结算 115.81），BTC 的日线是 UTC bar（与 4pm ET 差 −1.80% vs −1.98%）。
+  拿 Yahoo 日线当分母会造出假涨跌幅；缺历史文件时才回退 Yahoo 并打 WARN。
 - 改样式只改 `shell.html`，改完必跑 `build-shell`，否则 `index.html` 还是旧的。
 - 本机无 python，用 node（v22 已验证）；`file://` 双击只能看内嵌快照，切日期必须 http 服务。
 

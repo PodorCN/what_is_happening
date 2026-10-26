@@ -194,6 +194,27 @@ if (FX) {
   }
 }
 
+// ---------- 12. data 的日环比必须齐全；HEAT today 必须等于 data 当日涨跌（review 2026-10-26 F2/F3）----------
+const DATA = existsSync(`data/${DATE}.json`) ? JSON.parse(readFileSync(`data/${DATE}.json`, "utf8")) : null;
+if (DATA) {
+  for (const k of ["spx", "dji", "ixic", "vix", "wti", "brent", "gold", "btc", "dxy"]) {
+    if (DATA.closes?.[k] && DATA.computed?.[k]?.dayPct == null)
+      E(`data.${k}`, `computed.dayPct=null（缺 prev）——取数失败，重拉或按 agent.md §4 manual 流程补齐后再写快照`);
+  }
+  if (DATA.closes?.tnx && DATA.computed?.tnx?.dayPct == null)
+    W("data.tnx", `computed.dayPct=null（缺 prev）——10Y 日变动无法从 data 复核，tbl 的 bp 行另按 Treasury 核对`);
+  const HEATMAP = { "S&P 500": "spx", "Dow": "dji", "Nasdaq": "ixic", "VIX": "vix", Brent: "brent", WTI: "wti", "Gold fut": "gold", DXY: "dxy", BTC: "btc" };
+  for (const g of snap.HEAT?.today || []) for (const it of g.items || []) {
+    const key = HEATMAP[String(it[0]).trim()];
+    if (!key) continue;
+    const v = DATA.computed?.[key]?.dayPct;
+    const shown = parseFloat(String(it[2]).replace("−", "-"));
+    if (v == null || !isFinite(shown) || /bp/i.test(String(it[2]))) continue;
+    if (Math.abs(shown - v) > 0.06)
+      E(`HEAT.today/${it[0]}`, `涨跌幅 ${it[2]} ≠ data 日环比 ${v > 0 ? "+" : ""}${v}%——同一数字只留 data 现值，c1/链文/HEAT 同步改`);
+  }
+}
+
 for (const e of errs) console.log("ERROR " + e);
 for (const w of warns) console.log("WARN  " + w);
 console.log(`\nlint ${DATE}: ${errs.length} error(s), ${warns.length} warning(s)`);

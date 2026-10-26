@@ -1391,9 +1391,14 @@
               "rule": "steps 里的主张必须归到来源实际给定的主体：原文写 some officials / 前外长 Zarif 就不能写成 Tehran；官方表态只引声明原句（agreed to continue dialogue and bolster cooperation）。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true
     }
   ]
 }
