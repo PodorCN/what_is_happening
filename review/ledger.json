@@ -1316,6 +1316,84 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-10-26",
+      "reviewedAt": "2026-10-26T18:42:32-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "qtd ① n1（US Treasury 条）写『The 10-year Treasury yield closed at 5.28% on 10/7, its highest close of the year』——「年内最高收盘」不成立：Treasury 2026 年 10Y 最高收盘是 10/5 的 5.31%，10/7 的 5.28% 只排并列第三（5.31 / 5.29 / 5.28）；5.67% 那个「年内最高收盘」属于 30Y（10/7 确为 30Y 全年最高收盘）。",
+              "evidence": "Treasury daily yield curve 2026 CSV 全 205 个交易日取 max：10Y 5.31（10/05）、30Y 5.67（10/07）；10/05 5.31 / 10/06 5.27 / 10/07 5.28。本 repo 自己的 snapshots/2026-10-05.json today.tbl 10Y 期末 5.31%（badge『10Y 5.31%』），2026-10-07.json 期末 5.28%。^TNX 日线收盘同向（10/05 5.311 > 10/07 5.277）。",
+              "rule": "写「highest close of the year」前对 Treasury 全年 CSV 取该期限的 max 与日期；最高级只挂在真正持有它的那条腿（本例 30Y 5.67 才是 10/7 的年内最高收盘），10Y 要写就写 10/5 的 5.31%。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today ④ s3 / c1 / HEAT today 写 bitcoin『slipped 1.3% to $79.7k』：与自身价格及任何可得基线都对不上。同口径（10/23 17:00 ET 81,280 → 10/26 17:00 ET 79,965）应为 −1.6%；按 repo 昨值（10/23 foot 81,334.86，16:00 ET）对 79,722 为 −2.0%。全文件 56 条 news 无一条提到 bitcoin，该百分比无出处。",
+              "evidence": "Yahoo BTC-USD 1h：2026-10-23T21:00Z close 81,280.39；2026-10-26T21:00Z close 79,964.94（−1.62%）。data/2026-10-26.json closes.btc.today = 79,722（foot 写 5pm ET），上一份 foot 写 81,334.86（4pm ET）——口径在跨日时从 4pm 改成 5pm，分母因此不可比。CNBC 10/26 live blog 只有 bitcoin ETF 流出稿（$635.49M），无价格涨跌幅。",
+              "rule": "24h 品种的日环比必须用同一时点的昨值现算，口径（本 repo 固定 5pm ET）写进 foot；改口径当天要重算昨值，禁止拿上一时点（4pm）的收盘当分母；HEAT/c1/chain 同一数字只留一份现值并挂一条能背书的 news。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "取数",
+              "symptom": "data/2026-10-26.json 的 computed.dayPct 对全部 10 个指数/商品/加密标的都是 null（spx/dji/ixic/tnx/wti/brent/gold/btc/dxy/vix），build.mjs 校准表因此无法复核当日任何涨跌幅；对比 data/2026-10-23.json 同字段有值（spx −0.52、vix +2.21）。",
+              "evidence": "读 data/2026-10-26.json：computed.*.dayPct 全 null，closes.* 只有 today/mtdBase/qtdBase/ytdBase、缺 prev；同日 FX 五对 dayPct 正常。今日快照 today.tbl 6 行 + HEAT 15 个日变动全部只能靠外部重算核对。",
+              "rule": "fetch 结束后断言 computed[sym].dayPct 非 null（FX 除外）并把 prev 写进 data；出现 null 视为取数失败，重拉或走 manual 流程后再写快照。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "qtd ③ n1 仍挂在 swissinfo 的 Bloomberg 滚动 wrap（nasdaq-100-slumps-most-since-june-as-bonds-rally/92254614），且 fact 把原文『are slated to report next week』改写成『in the 10/26-30 window』；该页是逐日改写的 wrap，10/22 的 LESSONS 已明令不得用它背固定事实。",
+              "evidence": "抓取该页：含『Alphabet Inc., Microsoft Corp. and Amazon.com Inc., three of the other biggest spenders on data centers, are slated to report next week』，全文 0 处『10/26-30』；同日 today ④ n5（CNBC）只背书 Alphabet/Microsoft 10/28，Amazon 的日期仍无静态源。",
+              "rule": "窗口档的「公司+日期」事实只挂静态单篇（Yahoo Finance 单篇、通讯社稿、BEA 日程页）；把 next week 换算成绝对日期时必须另找一条写明该日期的静态源，滚动 wrap 只能引其原文措辞。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ④ n3 标 time=10/26，但事件（Moody's 维持法国 Aa3）发生在 10/23（所引 CNBC 原文『after Moody's held its credit rating on France at Aa3 on Friday』）；同一条 fact 又把 10/26 的市场反应（法国 10Y −5bp、CAC +0.5%）与 10/23 的评级决定并在一起。",
+              "evidence": "CNBC live blog 原文：『French borrowing costs eased slightly, with the 10-year yield down 5 basis points at 8:40 a.m. in Paris, after Moody's held its credit rating on France at Aa3 on Friday.』；qtd ② s3 自己也写『before Moody's kept the Aa3 rating on 10/23』，两处日期口径不一致。",
+              "rule": "news.time 写事件发生日：评级/数据这类前一日盘后事件标前一日（10/23），当日市场反应另起一条 news；一条 fact 内不得同时包含两个交易日的事件。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "同档辅链与主链重复同一组数字：qtd ① s2 与 ② s0 都写 10Y『5.36% 盘中 / 5.00% / −29bp』；ytd ① s2、② s0、③ s4 三处都写『5.00% / +82bp』；ytd ① s3 与 ② s2 都写『CPI 3.7%、PPI 6.3%』。",
+              "evidence": "逐链数字交集：qtd chain0×chain1 = {5.36%, 5.00%}；ytd chain0×chain1 = {5.00%, 3.7%, 6.3%}、chain1×chain2 = {5.00%}。原文：qtd ①s2『Banked: an intraday 5.36% ... now 5.00% — a net −29bp』与 ②s0『opened Q4 at 5.29% and closed at 5.00% — a net −29bp, with an intraday 5.36%』；ytd ①s2『the 10Y at 5.00%, +82bp YTD』/②s0『from 4.18% to 5.00% (+82bp)』/③s4『5.00% (+82bp YTD)』。",
+              "rule": "定稿前对同档每对链做数字交集，交集内的数字只留一处：主链只写「已入账的纪录」，辅链只写增量（30Y −33bp、2Y −20bp、债务发行、评级）；同一期限的收盘价与变动只归一条链。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd ① n4（time 10/26 close）与 ytd ① n2（time 10/26）是同一句『The S&P 500 gained 0.70% to 7,676.77, the Nasdaq 0.82% to 26,169.38 and the Dow 0.28% to 52,361.58』，把 today 档的三指数日内涨跌幅原样搬进两个窗口档，且两档重复同一条目。",
+              "evidence": "mtd ① n4 与 ytd ① n2 文本逐字相同、URL 同为 CNBC 2026/10/25 live blog；today c1/d 已有同样的 0.70/0.82/0.28。窗口档 s3 只需要端点 7,676.77 与 +0.33%。",
+              "rule": "窗口档引用当日收盘只写本档端点数值（S&P 7,676.77、+0.33% MTD），不带三指数日内涨跌幅；同一条 news 不得同时出现在两个档的 news 列表里。"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ③ s1『Tehran called it a step toward a regional security framework』把主张归给 Tehran 官方；所引 CNN 原文是『some, including former Foreign Minister Mohammad Javad Zarif, see it as an opportunity to move toward a broader security framework』——是部分官员/前外长的看法，不是德黑兰官方表态。",
+              "evidence": "CNN 10/26 稿全文检索：framework 只出现在 Zarif 段（some, including former Foreign Minister Mohammad Javad Zarif, see it as an opportunity to move toward a broader security framework）；伊朗官方口径只有国家通讯社声明的『agreed to continue dialogue』（同链 n1 Al Jazeera 亦同）。",
+              "rule": "steps 里的主张必须归到来源实际给定的主体：原文写 some officials / 前外长 Zarif 就不能写成 Tehran；官方表态只引声明原句（agreed to continue dialogue and bolster cooperation）。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
