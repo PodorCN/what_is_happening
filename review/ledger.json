@@ -1399,6 +1399,92 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-10-27",
+      "reviewedAt": "2026-10-27T18:45:00-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "mtd c1『…and eight of 11 are positive』与 mtd ② n7『with eight of 11 sectors positive』都写 8 个板块上涨，实为 9 个；c1 同句已写『Tech -3.20% and Comms -6.66% are the only sectors down』，11−2=9，自相矛盾。正确值：nine of 11。",
+              "evidence": "Yahoo 板块 ETF 9/30→10/27 现算：XLE +10.91 / XLU +8.65 / XLP +8.13 / XLV +6.39 / XLB +6.32 / XLY +6.07 / XLF +4.64 / XLRE +3.74 / XLI +0.56 为正，XLK −3.20 / XLC −6.66 为负 → 9 正 2 负；快照自身 HEAT mtd 面板 11 项里也是 9 项为正。",
+              "rule": "写『N of 11 sectors positive』前把 HEAT 该档 11 项逐个计数，并验证 N + 『only … down』的枚举数 = 11。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "mtd c4『the index is +0.93%, the average stock is not (RSP +4.57% against SPY +0.92%)』自相矛盾：括号里的 RSP +4.57% 说明等权股远强于指数，句子却说 average stock 没有涨；同档 mtd.d 与 ① s5 写的是『the average stock is 3.7 points ahead of the index』。",
+              "evidence": "Yahoo RSP/SPY 9/30→10/27 现算 +4.57% / +0.92%（差 3.65pp），与 c4 括号内数字一致、与 c4 主句相反；mtd.d 与 mtd ① s5 均为 ahead 口径。",
+              "rule": "c4 的结论句必须与括号内数字同向：等权跑赢时写『the average stock did better (RSP +4.57% vs SPY +0.92%)』，禁写『the average stock is not』；定稿前把 c4 每个断言与同档 d/主链 steps 逐条对向。"
+            },
+            {
+              "id": "F3",
+              "severity": "major",
+              "category": "引用",
+              "symptom": "today ① n1 与 n2（时间都标 10/27）挂的是 Bloomberg /2026-10-26/stock-market-today-dow-s-p-live-updates，即 10/26 的 live blog；但 n1 的数字（chipmakers +3.4%、Nasdaq 100 +1.3%）属 10/27（NDX 实为 +1.29%），10/26 的 NDX 是 +1.09%。时间与 URL 日期二者必有一错。",
+              "evidence": "Yahoo ^NDX 日线：10/26 +1.09%、10/27 +1.29%；10/26 SOXX +2.85%、10/27 SOXX +3.91%。以 10/26 为事件日写不出 +1.3%；以 10/27 为事件日则 URL 的日期 slug 不支持（live blog 按出稿日编号）。",
+              "rule": "news.u 的日期 slug 必须与 news.time 同日：引用 live blog 前把 URL 里的 YYYY-MM-DD 与 time 逐条比对（本日应为 /2026-10-27/…），不同日就换当日 URL，或把该条改挂真正发生在该日期的来源。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "SOXX 10/26 涨幅实为 +2.85%，today c1 写『its second straight session of roughly 3% or better』、mtd ② s4 写『it has risen 3.0% and 3.9% in the last two sessions』（3.0 高报 0.15pp）；同文件 today ① s1 写的却是『an almost 3% rise on 10/26』，三处两个口径。",
+              "evidence": "Yahoo SOXX 日线：10/23 478.20 → 10/26 491.83 = +2.85%；10/26 → 10/27 511.06 = +3.91%。10/26 快照 today ① s2 亦写 +2.85%。",
+              "rule": "同一涨幅全文件只留一个值：SOXX 10/26 = +2.85%（写 +2.9% 或『almost 3%』），禁止出现『3.0%』或『3% or better』。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "同档数字交集：mtd ① s4 与 ② s3/d 都写 Dow +2.89% / Nasdaq -1.43% / 4.3 点；qtd ① s3 与 ② s2 都写 10Y 4.99% / −30bp；ytd ① s3 与 ② n1 都写 4.99% / +81bp。",
+              "evidence": "逐链数字交集：mtd chain0×chain1 = {+2.89, −1.43, 4.3}；qtd chain0×chain1 = {4.99, −30bp}；ytd chain0×chain1 = {4.99, +81bp}。原文 mtd ② s3『Dow +2.89% against Nasdaq -1.43% is 4.3 points』与 ① s4 同句；qtd ② s2『the 10Y has since fallen 30bp to 4.99%』与 ① s3 的『now 4.99% — a net -30bp』重复。",
+              "rule": "定稿前对同档每对链求数字交集，交集内的数字只留一条链：mtd 的指数差归 ②（① 只写峰值/低点/修复点数），qtd 与 ytd 的 10Y 收盘与净变化归利率链（① 只写已入账的纪录 5.36%）。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "news 逐字复用：qtd ① n3 与 qtd ③ n0 是同一句 BEA 日程（同 URL 同句）；mtd ① n0 与 qtd ① n0 是同一句 Investopedia 10/6 纪录收盘；qtd ② n2 与 ytd ① n2 是同一句法国 10Y（同 URL 同句）。",
+              "evidence": "脚本比对 61 条 news：bea.gov/news/schedule ×2（qtd ①n3 = qtd ③n0）、investopedia-10062026 ×2（mtd ①n0 = qtd ①n0）、euronext 法国条 ×2（qtd ②n2 = ytd ①n2），fact 文本逐字相同。",
+              "rule": "同 URL + 同句的 news 只能出现在一个档的一条链里：另一处删掉（由 tbl/序列背书）或换一条角度与来源都不同的稿。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "qtd ① s4『Owed: the FOMC on 10/28, PCE and advance Q3 GDP on 10/29, megacap earnings on 10/28-29, and the midterms on 11/3』与 qtd ③ s1-s4 的四个 gate 逐项重复（含日期）。",
+              "evidence": "qtd ① s4 与 ③ s1（10/28 FOMC）、③ s2（10/29 PCE+GDP）、③ s3（10/28-29 财报）、③ s4（11/3 中期选举）一一对应；10/20 LESSONS 已定『qtd ① 的 Owed 只写层级句，不再列公司与日期』。",
+              "rule": "qtd ① 的 Owed 只写层级（财报未出、29% 增速待验），日期与公司归 ③；定稿后 grep qtd chains，10/28、10/29、11/3 各只应出现一次。"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "ytd ① d『a four-year bull that is still outrunning its referee by 4.9 points』——4.9 点是 Nasdaq(+13.92%) 对 Dow(+8.98%) 的差（同链 s2），而同链 s3 把 referee 定义为 10Y(+81bp)；用 4.9 点描述跑赢裁判与 steps 冲突。",
+              "evidence": "ytd ① s2『the AI-heavy index leads the blue chips by 4.9 points』；s3『The referee: the 10Y at 4.99%, +81bp YTD』。+12.81% 对 +81bp 不是 4.9 点。",
+              "rule": "d 里引用的数字必须能在同链 steps 里找到同一比较对象：跑赢裁判写指数涨幅对基点（+12.81% vs +81bp），4.9 点只用于 Nasdaq 对 Dow。"
+            },
+            {
+              "id": "F9",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd tbl 的 VIX 行（16.34 → 17.52，+7.2%）无任何 mtd 链覆盖；三链条全文 0 次提到 VIX，昨日 mtd ② s3 原有的 VIX 句被删后没有补回。",
+              "evidence": "mtd tbl 6 行其余各行均有链覆盖（S&P→①、Dow/Nasdaq→②、10Y→③ s5、WTI→③），仅 VIX 缺失；10/26 快照 mtd ② s3 有『the VIX is up 12.6% to 18.39 — more volatility for the same flat index』。",
+              "rule": "tbl 每行至少被一条链的某个 step 覆盖；删旧句前先确认该行仍有覆盖，VIX 窗口变动 >5% 时在 ② 的广度句后补一句（VIX 16.34→17.52，+7.2%）。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
