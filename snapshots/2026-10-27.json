@@ -14,7 +14,7 @@
     "10Y 4.99% -1bp",
     "WTI $99.90 -1.8%"
    ],
-   "c1": "<b>Chips did the work; one jet did the damage.</b> The iShares Semiconductor ETF closed 3.9% higher, its second straight session of roughly 3% or better, and the memory complex led — Roundhill's Memory ETF rose 4.5%, Micron 2.8% and Seagate 3.7% — as investors positioned for Alphabet and Microsoft on 10/28, hours after the Fed decides. The S&P 500 added 45.83 points, or 0.60%, to 7,722.60 and the Nasdaq 308.43 points, or 1.18%, to 26,477.81, while the Dow managed 15.99 points, or 0.03%, to 52,377.57: Boeing fell 10.69% to $168.18 after cutting its 737 delivery target. Breadth did not follow — the equal-weight RSP rose 0.11% against SPY's 0.56%, and six of 11 sectors closed lower. Energy was the worst at -2.05% as refiners collapsed: Valero -9.24%, Marathon -7.36% and Phillips 66 -7.03% on returning Russian diesel and another round of Iranian diplomacy. Crude fell for a second session — Brent's December contract settled $1.93 lower at $113.88 and WTI $1.86 lower at $99.90. Rates were the calm part: the 10Y closed at 4.99% and the 30Y at 5.30%, each a basis point lower, while gold settled 0.9% higher at $4,074.50, the dollar firmed, the VIX fell 4.7% to 17.52 and bitcoin rose 1.2% to $80,700 at the 4pm ET close.",
+   "c1": "<b>Chips did the work; one jet did the damage.</b> The iShares Semiconductor ETF closed 3.9% higher after a 2.85% rise on Monday, and the memory complex led — Roundhill's Memory ETF rose 4.5%, Micron 2.8% and Seagate 3.7% — as investors positioned for Alphabet and Microsoft on 10/28, hours after the Fed decides. The S&P 500 added 45.83 points, or 0.60%, to 7,722.60 and the Nasdaq 308.43 points, or 1.18%, to 26,477.81, while the Dow managed 15.99 points, or 0.03%, to 52,377.57: Boeing fell 10.69% to $168.18 after cutting its 737 delivery target. Breadth did not follow — the equal-weight RSP rose 0.11% against SPY's 0.56%, and six of 11 sectors closed lower. Energy was the worst at -2.05% as refiners collapsed: Valero -9.24%, Marathon -7.36% and Phillips 66 -7.03% on returning Russian diesel and another round of Iranian diplomacy. Crude fell for a second session — Brent's December contract settled $1.93 lower at $113.88 and WTI $1.86 lower at $99.90. Rates were the calm part: the 10Y closed at 4.99% and the 30Y at 5.30%, each a basis point lower, while gold settled 0.9% higher at $4,074.50, the dollar firmed, the VIX fell 4.7% to 17.52 and bitcoin rose 1.2% to $80,700 at the 4pm ET close.",
    "c4": "<ul class='play'><li>The rally is narrow by construction: SOXX +3.9% and the Nasdaq +1.18% against RSP +0.11% — the AI complex is being bought back, not the market.</li><li>Boeing is the Dow's arithmetic problem: -10.69% in a price-weighted average erased roughly a dozen components' gains and left the blue chips at +0.03%.</li><li>The refiners were the day's real reversal: a 2026 trade up 65% lost its footing on one cargo of Russian diesel and one round of Tehran talks.</li><li>Tomorrow is the gate: the Fed at 2pm ET with only a 7% chance of a hike priced, then Alphabet and Microsoft after the close — the risk is the statement, not the decision.</li></ul>",
    "kpi": [
     [
@@ -138,7 +138,7 @@
       },
       {
        "time": "10/27",
-       "fact": "A rally in technology companies lifted stocks ahead of results from industry giants valued at more than $10 trillion; a gauge of chipmakers rose 3.4% and the Nasdaq 100 added 1.3%.",
+       "fact": "A rally in technology companies lifted stocks ahead of results from industry giants valued at more than $10 trillion; a gauge of chipmakers rose 3.6% and the Nasdaq 100 added 1.3%.",
        "src": "Bloomberg",
        "u": "https://www.bloomberg.com/news/articles/2026-10-26/stock-market-today-dow-s-p-live-updates"
       },
@@ -162,7 +162,7 @@
       },
       {
        "time": "10/27",
-       "fact": "The Roundhill MAGS ETF, which tracks the Magnificent Seven, finished 1% higher after rising Monday, and the Nasdaq Composite closed 1.3% higher.",
+       "fact": "The Roundhill MAGS ETF, which tracks the Magnificent Seven, finished 1% higher after rising Monday.",
        "src": "Investopedia",
        "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-10272026-12196175"
       },
@@ -366,8 +366,8 @@
     "10Y -30bp",
     "Brent +16.2%"
    ],
-   "c1": "Nineteen sessions into October, the S&P 500 is +0.93% at 7,722.60 — 71.06 points above the 9/30 base and 1.23% below the month's only record close, 7,818.93 on 10/6. The arc: one record, three repricings (wireless on 10/9, the AI complex on 10/12-13, the CPI-PPI pair on 10/14-15), a low close of 7,623.68 on 10/23, and a two-day reclaim that took the month positive. The Nasdaq is -1.43% and the Dow +2.89%, a 4.3-point gap in the Dow's favour. Beneath the index: Energy +10.91%, Utilities +8.65%, Staples +8.13%, Health +6.39%, Materials +6.32% and ConsDisc +6.07% lead; Tech -3.20% and Comms -6.66% are the only sectors down, and eight of 11 are positive. The 10Y is 30bp lower at 4.99% and the 30Y 34bp lower at 5.30%. Oil on the December contract: WTI +12.98%, Brent +16.17%. Gates: FOMC 10/28, PCE and advance Q3 GDP 10/29.",
-   "c4": "<ul class='play'><li>October round-tripped: a record on 10/6, a 2.5% drawdown to 10/23 and a higher close now — the index is +0.93%, the average stock is not (RSP +4.57% against SPY +0.92%).</li><li>The leadership rotated rather than de-risked: Energy +10.9% against Comms -6.7% is a 17.6-point spread, and the Dow is 4.3 points ahead of the Nasdaq.</li><li>The rate gave the month back: -30bp on the 10Y even with Brent +16.2% — October priced oil as a growth tax, not an inflation spiral.</li><li>What decides it: the FOMC on 10/28 and PCE on 10/29, with the index 1.23% below its high and only 0.93% of cushion.</li></ul>",
+   "c1": "Nineteen sessions into October, the S&P 500 is +0.93% at 7,722.60 — 71.06 points above the 9/30 base and 1.23% below the month's only record close, 7,818.93 on 10/6. The arc: one record, three repricings (wireless on 10/9, the AI complex on 10/12-13, the CPI-PPI pair on 10/14-15), a low close of 7,623.68 on 10/23, and a two-day reclaim that took the month positive. The Nasdaq is -1.43% and the Dow +2.89%, a 4.3-point gap in the Dow's favour. Beneath the index: Energy +10.91%, Utilities +8.65%, Staples +8.13%, Health +6.39%, Materials +6.32% and ConsDisc +6.07% lead; Tech -3.20% and Comms -6.66% are the only sectors down, and nine of 11 are positive. The 10Y is 30bp lower at 4.99% and the 30Y 34bp lower at 5.30%. Oil on the December contract: WTI +12.98%, Brent +16.17%. Gates: FOMC 10/28, PCE and advance Q3 GDP 10/29.",
+   "c4": "<ul class='play'><li>October round-tripped: a record on 10/6, a 2.5% drawdown to 10/23 and a higher close now — the index is +0.93% and the average stock is 3.7 points ahead (RSP +4.57% against SPY +0.92%).</li><li>The leadership rotated rather than de-risked: Energy +10.9% against Comms -6.7% is a 17.6-point spread, and the Dow is 4.3 points ahead of the Nasdaq.</li><li>The rate gave the month back: -30bp on the 10Y even with Brent +16.2% — October priced oil as a growth tax, not an inflation spiral.</li><li>What decides it: the FOMC on 10/28 and PCE on 10/29, with the index 1.23% below its high and only 0.93% of cushion.</li></ul>",
    "kpi": [
     [
      "S&P MTD",
@@ -484,7 +484,7 @@
       "Peak on 10/6 at 7,818.93: October's only record close, and its first trip above 7,800",
       "Then 10/23: 7,623.68, the month's low close, 2.50% under that peak",
       "The last two sessions did the repair: +0.70% on 10/26 and +0.60% on 10/27 took October to +0.93%, 71.06 points above the 9/30 base",
-      "The gap between indices: Dow +2.89% against Nasdaq -1.43% is 4.3 points, the month's clearest rotation",
+      "The three repricings: wireless on 10/9, the AI complex on 10/12-13, and the CPI-PPI pair on 10/14-15, when the index lost 1.11% in a session",
       "The breadth tell: RSP +4.57% MTD against SPY +0.92% — the average stock is 3.7 points ahead of the index"
      ],
      "d": "October went from a record to a 2.5% drawdown and back above its base: +0.93% on the index, but 3.7 points more on the average stock.",
@@ -527,8 +527,9 @@
       "Sector map: Energy +10.91%, Utilities +8.65%, Staples +8.13%, Health +6.39%, Materials +6.32% and ConsDisc +6.07% lead the month",
       "Only two sectors are lower: Tech -3.20% and Comms -6.66%, so the month's damage is concentrated in the AI complex and the telecoms",
       "The spread: Energy's +10.91% against Comms' -6.66% is 17.6 points, down from 19.7 points a session ago as the barrel gave ground",
-      "The AI de-rating is the month's biggest single move: SOXX is -10.13% MTD against the S&P's +0.93%, though it has risen 3.0% and 3.9% in the last two sessions",
-      "The defensives held: Utilities +8.65% and Staples +8.13% are more than seven points ahead of the S&P's +0.93%"
+      "The AI de-rating is the month's biggest single move: SOXX is -10.13% MTD against the S&P's +0.93%, though it has risen 2.85% and 3.91% in the last two sessions",
+      "The defensives held: Utilities +8.65% and Staples +8.13% are more than seven points ahead of the S&P's +0.93%",
+      "The volatility tell: the VIX is 7.2% higher at 17.52 against a +0.93% index — more swings for a tape that has gone nowhere"
      ],
      "d": "October redistributed rather than de-risked: the barrel, the pantry and the power bill were funded by the AI complex's de-rating, and the Dow beat the Nasdaq by 4.3 points.",
      "news": [
@@ -546,7 +547,7 @@
       },
       {
        "time": "10/27 close",
-       "fact": "Sector ETF closes from 9/30 to 10/27: Energy +10.91%, Utilities +8.65%, Staples +8.13%, Health +6.39% against Tech -3.20% and Comms -6.66%, with eight of 11 sectors positive.",
+       "fact": "Sector ETF closes from 9/30 to 10/27: Energy +10.91%, Utilities +8.65%, Staples +8.13%, Health +6.39% against Tech -3.20% and Comms -6.66%, with nine of 11 sectors positive.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/XLE/history"
       }
@@ -595,7 +596,7 @@
     "10Y -30bp",
     "Brent +16.2%"
    ],
-   "c1": "Q4 is nineteen sessions old and 71.06 points higher: the S&P sits at 7,722.60, +0.93% on the quarter against a +2.0% third quarter, with the Dow +2.89% and the Nasdaq -1.43%. The quarter has banked two prints — a record close of 7,818.93 on 10/6 and an intraday 5.36% on the 10Y on 10/7, the highest since 2002 — and has given back more than half of the gain it made between 10/1 and 10/9. Its composition is a rotation, not a rally: Energy +10.91%, Utilities +8.65% and Staples +8.13% against Tech -3.20% and Comms -6.66%. The 10Y is 30bp lower at 4.99% and the 30Y 34bp lower at 5.30%; Brent is +16.17% and WTI +12.98% on the December contract. Still owed: the FOMC on 10/28, PCE and advance Q3 GDP on 10/29, megacap earnings on 10/28-29, and the 11/3 midterms.",
+   "c1": "Q4 is nineteen sessions old and 71.06 points higher: the S&P sits at 7,722.60, +0.93% on the quarter against a +2.0% third quarter, with the Dow +2.89% and the Nasdaq -1.43%. The quarter has banked two prints — a record close of 7,818.93 on 10/6 and an intraday 5.36% on the 10Y on 10/7, the highest since 2002 — and has given back more than half of the gain it made between 10/1 and 10/9. Its composition is a rotation, not a rally: Energy +10.91%, Utilities +8.65% and Staples +8.13% against Tech -3.20% and Comms -6.66%. The 10Y is 30bp lower at 4.99% and the 30Y 34bp lower at 5.30%; Brent is +16.17% and WTI +12.98% on the December contract. Still owed: the Fed decision, PCE and advance Q3 GDP, the megacap earnings block and the midterms — four verdicts, none of them banked.",
    "c4": "<ul class='play'><li>The quarter has banked a record and a yield print, not a direction: +0.93% QTD with the S&P 1.23% below its 10/6 high and all four big gates still unplayed.</li><li>Position for the calendar, not the tape: the Fed, PCE, the Alphabet-Microsoft-Amazon block and the midterms all land by 11/3.</li><li>The rate bill is the swing: a 4.99% 10Y is 37bp below the 10/7 intraday peak; if it holds, the AI complex keeps a valuation cushion it did not have for most of October.</li><li>The oil bill is already in the survey data: a flash selling-price gauge at 59.8 with Brent at $113.88 is the combination that keeps the long end from rallying for the right reason.</li></ul>",
    "kpi": [
     [
@@ -712,14 +713,14 @@
      "steps": [
       "The standing: 7,651.54 on 9/30 to 7,722.60 — +71.06 points, or 0.93%, against a +2.0% third quarter",
       "Banked: the quarter's only record close, 7,818.93 on 10/6",
-      "Banked: an intraday 5.36% on the 10Y on 10/7, a 24-year high, now 4.99% — a net -30bp",
-      "Owed: the FOMC on 10/28, PCE and advance Q3 GDP on 10/29, megacap earnings on 10/28-29, and the midterms on 11/3"
+      "Banked: an intraday 5.36% on the 10Y on 10/7, a 24-year high, with the highest close 5.31% on 10/5",
+      "Owed: four verdicts, all inside the next five trading days — the Fed, PCE and GDP, the megacap earnings block, and the midterms"
      ],
      "d": "Q4's first nineteen sessions produced a flat index and two pieces of history — every verdict is still ahead.",
      "news": [
       {
        "time": "10/6 close",
-       "fact": "The S&P 500 closed above 7,800 for the first time, up 0.6% on the day, and the Nasdaq set another record close.",
+       "fact": "The S&P 500 and Nasdaq Composite set new intraday and closing records, with the S&P finishing 0.6% higher.",
        "src": "Investopedia",
        "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-10062026-12160706"
       },
@@ -734,12 +735,6 @@
        "fact": "The S&P 500 is 71.06 points above its 9/30 base of 7,651.54, a gain of 0.93% for the quarter, on the closing series used here.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/%5EGSPC/history"
-      },
-      {
-       "time": "10/21",
-       "fact": "Personal Income and Outlays for September, which carries the PCE price index, and the advance estimate of third-quarter GDP are both scheduled for October 29 at 8:30 a.m.",
-       "src": "BEA",
-       "u": "https://www.bea.gov/news/schedule"
       }
      ]
     },
@@ -952,11 +947,11 @@
      "steps": [
       "The engines: AI capex across the hyperscalers and earnings, with Q3 growth tracking 29%",
       "The scoreboard: S&P +12.81%, Nasdaq +13.92%, Dow +8.98% — the AI-heavy index leads the blue chips by 4.9 points",
-      "The referee: the 10Y at 4.99%, +81bp YTD, down from an intraday 5.36% on 10/7",
+      "The referee: the 10Y, which touched 5.36% intraday on 10/7 — a 24-year high — and is still the rate the bull has to clear",
       "The taxes: WTI +74.0% and Brent +87.2% since 12/31 as the war grinds into an eighth month",
       "The margin: the S&P is 1.23% off its record and the Nasdaq 4.06% off its 10/6 close — a bull with a valuation discount, not a broad one"
      ],
-     "d": "The year's base case: AI and earnings compound, rates and oil tax — a four-year bull that is still outrunning its referee by 4.9 points.",
+     "d": "The year's base case: 29% earnings growth and AI capex carried the S&P +12.81%; the 10Y and the barrel are the bill — a four-year bull funded by earnings, taxed by both.",
      "news": [
       {
        "time": "10/12",
@@ -984,8 +979,7 @@
       "The long end: the 30Y from 4.84% to 5.30% (+46bp), and the 2Y from 3.47% to 4.70% (+123bp) — the front paid the most",
       "The Fed: a September hike, the first since 2023, with a 7% priced hike for 10/28 and about an 80% priced hike for December",
       "The prints: September CPI 3.7% y/y and PPI 6.3% y/y, and a flash selling-price gauge at 59.8 on 10/23, the sharpest since August 2022",
-      "The cross-asset echo: the dollar +4.18% and gold -6.14% — real rates, not war, set the tone for both",
-      "The global mirror: France's 10Y above 5% for the first time since 2002"
+      "The cross-asset echo: the dollar +4.18% and gold -6.14% — real rates, not war, set the tone for both"
      ],
      "d": "The year's bill: 81bp on the 10Y and 123bp on the 2Y, with inflation re-accelerating into the autumn — September reset the regime, and December is where it gets tested.",
      "news": [
@@ -1000,12 +994,6 @@
        "fact": "Selling prices rose at the sharpest rate since August 2022, a pace that S&P Global said indicates consumer price inflation is likely to rise further above the Fed's target in the coming months.",
        "src": "S&P Global",
        "u": "https://www.pmi.spglobal.com/Public/Home/PressRelease/07d16568e63346999890940d47639cd9"
-      },
-      {
-       "time": "10/21",
-       "fact": "France's 10-year bond yield hit a new 24-year high above 5%, and the premium on French yields over German Bunds edged back toward a 15-year high of nearly 160 bps.",
-       "src": "Reuters",
-       "u": "https://live.euronext.com/en/financial-news/stocks-rise-upbeat-earnings-frances-10-year-bond-yield-hits-5-mark"
       }
      ]
     },

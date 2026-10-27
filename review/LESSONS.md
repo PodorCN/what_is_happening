@@ -99,6 +99,12 @@
 | 2026-10-26 | 引用 | qtd ③ n1 仍挂 swissinfo 的 Bloomberg 滚动 wrap，并把原文「are slated to report next week」改写成「in the 10/26-30 window」（该页 0 处 10/26-30）；10/22 已明令滚动 wrap 不得背固定事实 | 公司+日期类日历事实只挂静态一手源：Alphabet 10/28（abc.xyz IR）、Microsoft 10/28（microsoft.com IR events）、Amazon 10/29（ir.aboutamazon.com）；把 next week 换成绝对日期必须另找写明该日期的静态源 |
 | 2026-10-26 | 引用 | today ④ n3 与 qtd ② n3 同一条 fact 标 time=10/26，却把 10/23 的评级决定（Moody's 维持法国 Aa3，原文 on Friday）与 10/26 的市场反应（法国 10Y −5bp、CAC +0.5%）并成一条 | news.time 写事件发生日：评级/数据这类前一日事件标 10/23 并挂 10/23 的静态稿（CNBC 10/23），当日反应另起一条（live blog）；一条 fact 只含一个交易日的事件 |
 | 2026-10-26 | 引用 | today ③ s1「Tehran called it a step toward a regional security framework」把主张归给德黑兰官方；CNN 原文是「some, including former Foreign Minister Mohammad Javad Zarif, see it as an opportunity to move toward a broader security framework」，官方口径只有国家通讯社「agreed to continue dialogue」 | steps 的主张必须归到来源实际给定的主体（some officials / 前外长 Zarif ≠ Tehran）；官方表态只引声明原句，并在所引页面检索该主体名确认 |
+| 2026-10-27 | 数字 | mtd c1『eight of 11 are positive』与 ② n2 同句：窗口内 Industrials 由 -0.01% 转正后实为 **9 正 2 负**（Tech -3.20、Comms -6.66），而 c1 同句自己写着『only … down』（11−2=9） | 写『N of 11 sectors positive』前把 HEAT 该档 11 项逐个计数，并验证 N +『only … down』的枚举数 = 11；任一板块跨过零轴当天必须重数 |
+| 2026-10-27 | 逻辑 | mtd c4『the index is +0.93%, the average stock is not (RSP +4.57% against SPY +0.92%)』主句与括号内数字反向；同档 d 与 ① s4 都写『the average stock is 3.7 points ahead』 | c4 结论句必须与括号内数字同向：等权跑赢写『the average stock is 3.7 points ahead (RSP +4.57% vs SPY +0.92%)』；定稿前把 c4 每个断言与同档 d / 主链 steps 逐条对向 |
+| 2026-10-27 | 数字 | SOXX 10/26 实为 **+2.85%**：today c1 写『its second straight session of roughly 3% or better』、mtd ② s3 写『3.0%』、① s1 写『almost 3%』，三种口径 | 同一涨幅全文件只留一个值：SOXX 10/26 = +2.85%（写 +2.85% 或『almost 3%』），禁止出现『3.0%』『3% or better』；改一处必须同步 c1 / 链内 s 句 |
+| 2026-10-27 | 引用 | 同 URL 同句的 news 逐字复用：BEA 日程（qtd ① n3 = ③ n0）、Investopedia 10/6 纪录收盘（mtd ① n0 = qtd ① n0）、法国 10Y（qtd ② n2 = ytd ② n2） | 定稿前跑『同 URL + 同句』比对：一字不差的 fact 只留一处——留给该事实真正的主场档，另一处删除，或改成本档口径的不同句子（mtd 留『first close above 7,800』、qtd 改写为『set new intraday and closing records』） |
+| 2026-10-27 | 逻辑 | ytd ① d『a four-year bull that is still outrunning its referee by 4.9 points』：4.9 点是 Nasdaq(+13.92%) 对 Dow(+8.98%) 的差，而 referee 在同链 s2 指 10Y | d 引用的数字必须能在同链 steps 里找到同一比较对象：跑赢裁判就写指数对基点，或干脆不带数字（『still faster than its referee』）；4.9 点只用于 Nasdaq 对 Dow |
+| 2026-10-27 | 引用 | 驳回记录（F3）：today ① n1/n2 标 time=10/27、URL 是 Bloomberg `/2026-10-26/stock-market-today-dow-s-p-live-updates`——**不是错**：该系列按出稿日编 slug，页面 Title 为『Stock Market Today: Dow, S&P Live Updates for October 27』（发布于 10/26 22:03Z），即 10/27 当日 live blog | 判 Bloomberg live blog 的日期一律看页面 Title 的『… for <交易日>』，不看 slug（slug = 前一晚出稿日）；但引文数字必须用定稿版现值（本例芯片 3.4% → 定稿 3.6%），落盘前逐字复核 |
 
 ## 链结构（主链 / 辅链）
 
@@ -122,6 +128,9 @@
 | 2026-10-23 | 逻辑 | today ② s4 逐字复述 ① c1/d 的 Dow −1.23% / Nasdaq −0.20%，② d 与 ③ d 又是同一结论（Dow 弱、Nasdaq 芯片托底），辅链没有主链之外的增量 | 指数涨跌幅只在 c1 与主链讲一次；② 只留 SOXX/DRAM/SK Hynix/MU 等硬件证据，③ 只留 Dow 成分与板块证据；删掉纯复述 step（② s4）并重写该链 d，定稿前对同档每对链做数字/结论交集检查 |
 | 2026-10-26 | 逻辑 | 同档数字交集：qtd ①② 都写 5.36%/5.00%/−29bp，qtd ③ s0/s1 又两次写 5.00%；ytd ①②③ 三处写 5.00%/+82bp，ytd ①② 都写 CPI 3.7% / PPI 6.3% | 定稿前对同档每对链求数字交集：主链只写「已入账的纪录」（5.36% 盘中 / 5.00% 收盘 / −29bp），辅链只写增量（2Y −20bp、30Y −33bp 或 +47bp、债务发行、评级），CPI/PPI 只归利率链；同一期限的收盘价与变动全档只出现一次 |
 | 2026-10-26 | 逻辑 | mtd ① n4 与 ytd ① n2 逐字同句，把 today 的三指数日内涨跌（0.70/0.82/0.28）原样搬进两个窗口档，两档还共用同一条 news | 窗口档引用当日收盘只写本档端点（S&P 7,676.77、+0.33% MTD），不带三指数日内涨跌；同一条 news（同 URL + 同句）只能出现在一个档的 news 列表，端点数字由 tbl/序列背书即可 |
+| 2026-10-27 | 逻辑 | 同档数字交集：mtd ① s3 与 ② d 都写 Dow +2.89% / Nasdaq -1.43% / 4.3 点；qtd ① s2 与 ② s1 都写 4.99% / −30bp；ytd ① s2 与 ② 都写 4.99% / +81bp | 定稿前对同档每对链求数字交集，交集内的数字只留一条链：mtd 的指数差归 ②（① 只写峰值/低点/修复点数），qtd 与 ytd 的 10Y 收盘与净变化归利率链（① 只写已入账的纪录：5.36% 盘中、5.31% 最高收盘） |
+| 2026-10-27 | 逻辑 | qtd ① s3『Owed: the FOMC on 10/28, PCE and advance Q3 GDP on 10/29, megacap earnings on 10/28-29, and the midterms on 11/3』与 ③ s0-s3 四个 gate 逐项重复（c1 同句亦重复） | qtd ① 的 Owed 只写层级句（四个 verdict、剩余交易日数），日期与公司归 ③；定稿后 grep qtd chains，10/28、10/29、11/3 除 ③ 之外应为 0 处 |
+| 2026-10-27 | 逻辑 | mtd tbl 的 VIX 行（16.34 → 17.52，+7.2%）无任何 mtd 链覆盖；昨日 ② s3 的 VIX 句被删后没有补回 | tbl 每行至少被一条链的某个 step 覆盖：删旧句前先确认该行仍有覆盖；VIX 窗口变动 >5% 时在 ② 的广度句后补一句（VIX 16.34→17.52，+7.2%）；定稿前把 tbl 六行逐行点名对链 |
 
 ## 待补充
 

@@ -1482,9 +1482,16 @@
               "rule": "tbl 每行至少被一条链的某个 step 覆盖；删旧句前先确认该行仍有覆盖，VIX 窗口变动 >5% 时在 ② 的广度句后补一句（VIX 16.34→17.52，+7.2%）。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true,
+      "fixedAt": "2026-10-27T19:35:00-04:00",
+      "fixNote": "F1/F2/F4/F5/F6/F7/F8/F9 已修（含同类：today c1 SOXX 口径、qtd ① n0 改写、ytd ② 删法国复述步）；F3 驳回：Bloomberg live blog slug=出稿日（10/26 22:03Z），页面 Title 为 for October 27，time=10/27 正确；引文芯片数按定稿版 3.4%→3.6% 校正。"
     }
   ]
 }
