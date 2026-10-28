@@ -1492,6 +1492,76 @@
       "resolved": true,
       "fixedAt": "2026-10-27T19:35:00-04:00",
       "fixNote": "F1/F2/F4/F5/F6/F7/F8/F9 已修（含同类：today c1 SOXX 口径、qtd ① n0 改写、ytd ② 删法国复述步）；F3 驳回：Bloomberg live blog slug=出稿日（10/26 22:03Z），页面 Title 为 for October 27，time=10/27 正确；引文芯片数按定稿版 3.4%→3.6% 校正。"
+    },
+    {
+      "date": "2026-10-28",
+      "reviewedAt": "2026-10-28T18:45:00-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "ytd ③ s0『Comms -12.4% and ConsDisc -3.4% are the only sectors down, with Utilities -0.5%』自相矛盾：同句自己把 Utilities 列为 -0.5%，该档 HEAT 里下跌板块实为 3 个（Comms -12.4、ConsDisc -3.4、Utilities -0.5），『only』不成立",
+              "evidence": "snapshots/2026-10-28.json HEAT.ytd Sectors 11 项中 Utilities=-0.5；Yahoo 12/31→10/28 现算 XLU -0.47%；同档 c1 写法正确（『Comms… and ConsDisc… lag, while Utilities are -0.5%』），只有 ③ s0 用了 only",
+              "rule": "写『only … down』前把该档 HEAT 11 项逐个判符号，枚举数必须等于实际下跌数（本档 3 个）；数不准就写 lag 并把第三个单列，不写 only"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today d『Oracle and SK Hynix paid for the index, utilities and real estate paid for the curve』：同一个 pay for 兼指『贡献指数上涨』与『承担代价』，前半句按字面读成 Oracle/SK Hynix 因指数上涨受损，与事实相反",
+              "evidence": "同档 c1『The work was done in two rooms: tech (+0.80%) on Oracle's investor day and SK Hynix's quarter』；② s3 ORCL +10.73%、SOXX +2.13%（Yahoo 收盘现算）",
+              "rule": "d 里方向词分开：贡献写 carried/funded the index，受损写 paid for the curve/bore the cost；同一句不得用同一动词兼指两个方向"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today ④ s2『The press conference threw no curveball… and the main indexes turned positive across the board as he spoke』复述主链 ① s3 的『发布会→盘中反转』同一事件；④ d 又把 Warsh 发布会列为本日三大缓释之一，同一因由在主链与辅链各讲一次",
+              "evidence": "① s3 已用同一场发布会解释 2Y 4.79%→4.69%→4.67%；④ s5 还重复 c1 的 0.96% 与 six of 11 sectors higher",
+              "rule": "辅链只写主链没有的增量：④ 留 2027 八次会议/伊朗-卡塔尔/OPEC+/VIX，删掉『indexes turned positive as he spoke』这类与 ① s3 同事件的句子，d 换成一个非市场的缓释项"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today ④ s5『the VIX fell 3.5% to 16.91, back below its 10/23 close of 19.45』：VIX 自 10/26（18.39）起已连续两个交易日低于 19.45，『back below』暗示今日才跌回",
+              "evidence": "data/2026-10-23 vix 19.45 → 10/26 18.39 → 10/27 17.52 → 10/28 16.91",
+              "rule": "用 back below / back above 前查最近 3 个交易日序列确认是当日穿越；不是当日穿越就写『below its 10/23 close for a third session』"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd c1『the barrel rose 13.7%』与 mtd c4『the barrel rose 17.6%』同档同词两个数（前者 WTI、后者 Brent），读者无法判断 the barrel 指哪个基准",
+              "evidence": "mtd tbl WTI $90.42→$102.78=+13.7%；mtd badge 与 HEAT Brent +17.6%",
+              "rule": "同档『the barrel』只指一个基准：首次出现写全名（WTI 或 Brent），其余句子沿用同一基准；要并列就写『WTI +13.7% / Brent +17.6%』"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "取数",
+              "symptom": "mtd/qtd tbl 的 WTI 期初为 $90.42，10/27 快照为 $88.42——跨日基线跳了 $2.00；今日值正确（9/30 定稿 90.42），但 MTD 只从 +13.0% 升到 +13.7%，小于当日 +2.9%，10/21-10/27 七份文件因此高估 WTI MTD 约 1.7pp",
+              "evidence": "data/2026-09-30.json closes.wti.today=90.42；data/2026-10-21…10-27 的 wti.mtdBase=88.42；data/2026-10-28 回到 90.42（foot 的 26-09-30 行同步改为 $90.42 (Dec)）",
+              "rule": "每日 build 后断言今日 wti.mtdBase == 上一交易日 wti.mtdBase；不等先判错侧（9/30 定稿=90.42，88.42 是 Yahoo 未定稿/前月值），正确侧改动须在 foot 写清合约口径，并回改错侧快照的 MTD 行"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ③ s4『production jumped 723,000 barrels a day to 13.99 million』在本档 7 条 news 与全文件 21 条 news 里 0 条含该数字；③ s2 的『550,000-barrel-a-day』与『Fars 卫星图/Riyadh 未确认』也只出现在 ④ n0 的 Newsquawk 页",
+              "evidence": "所引 live.euronext.com/…/oil-prices-rise-about-2-yemen-fighting-stokes-supply-fears 页现文只有 1.9M draw、15,000 预期与 OPEC+ 段，无 723,000 / 13.99M；550k BPD 与 Fars 仅见于 newsquawk.com/headlines/us-crude-wrap-wti-z6-settles-usd-288-higher-at-usd-10278bbl，而该条挂在 ④",
+              "rule": "step 里的每个具体数字必须能在**本链** news[] 某条 fact 里找到同一数字；找不到就补一条含该数字的源到本链，或删掉该子句（别链的 URL 不算本链背书）"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
