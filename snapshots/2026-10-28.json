@@ -287,15 +287,15 @@
           ]
         },
         {
-          "t": "④ What Held: a Qatari Draft, a Seven-Day Plan and Warsh's Patience",
+          "t": "④ What Held: a Qatari Draft, a Seven-Day Plan and a Press Conference Without a Curveball",
           "steps": [
             "Iran's foreign minister said Tehran is still giving diplomacy a chance and remains in close contact with intermediaries to review ideas that could implement its seven-day plan in less than a week, and Brent came off its intraday high after the remark",
             "Qatar presented a new draft deal to Tehran on Sunday and a response is expected by the end of the week, though a senior Iranian official said Doha had only put forward unacceptable ideas",
-            "Warsh gave the equity market its alibi: loan rates have climbed, lenders have become more discerning, and the committee's judgment was that monetary medicine is starting to work some",
+            "The press conference threw no curveball: Warsh said the Fed will still hold eight meetings in 2027, one of them without a policy decision, and the main indexes turned positive across the board as he spoke",
             "OPEC+ is expected to keep its December output targets steady at Sunday's meeting, with most of the seven core members already producing below quota — no new barrels are priced",
             "The tape hedged itself: the VIX fell 3.5% to 16.91, back below its 10/23 close of 19.45, and the S&P finished 0.96% below its record with six of 11 sectors higher"
           ],
-          "d": "Three things kept the day from being worse: Tehran's diplomacy line capped the barrel, Warsh's patience line capped the 2Y, and OPEC+ is not adding supply — so the VIX fell even with a hawkish hold.",
+          "d": "Three things kept the day from being worse: Tehran's diplomacy line capped the barrel, Warsh's press conference threw no curveball on rates, and OPEC+ is not adding supply — so the VIX fell even with a hawkish hold.",
           "news": [
             {
               "time": "10/28",
@@ -311,9 +311,9 @@
             },
             {
               "time": "10/28",
-              "fact": "Warsh said rates for loans have climbed and lenders and investors have become more discerning, and that the overwhelming judgment among Fed officials was that monetary medicine is starting to work some.",
-              "src": "AP",
-              "u": "https://apnews.com/article/stock-markets-ai-earnings-oil-b07c5abe1fbaacc7618aeb610eaa91e0"
+              "fact": "The main indexes turned positive across the board after Warsh said the Fed will still have eight meetings in 2027, one of which will not include a policy decision or statement.",
+              "src": "Kiplinger",
+              "u": "https://www.kiplinger.com/investing/stocks/stocks-rise-despite-inflation-and-war-talk-stock-market-today"
             },
             {
               "time": "10/28",
@@ -326,6 +326,12 @@
               "fact": "The VIX closed at 16.91, down 3.5% from 17.52, while the S&P 500 finished at 7,743.98, 0.96% below its 10/6 record close of 7,818.93.",
               "src": "Yahoo Finance",
               "u": "https://finance.yahoo.com/quote/%5EVIX/history"
+            },
+            {
+              "time": "10/28",
+              "fact": "The Fed didn't throw any curveballs, said Ryan Detrick, chief market strategist at Carson Group, adding that a hold was widely expected.",
+              "src": "Reuters",
+              "u": "https://financialnewsletter.com/wall-street-ends-higher-73/"
             }
           ]
         }
@@ -533,11 +539,11 @@
             "The scoreboard: Brent +17.6% and WTI +13.7% for the month, both on the December contract, with WTI's gain measured from the $90.42 settlement on 9/30",
             "The rate offset: the 10Y is 24bp lower at 5.05% with Brent up 17.6% — the month treated oil as a growth tax, not an inflation spiral"
           ],
-          "d": "October's barrel: a $98 start, a $117.44 high and a 17.6% month that the bond market treated as a growth tax right up to the Fed's hawkish hold.",
+          "d": "October's barrel: a $98 start, a $117.44 high and a 17.6% month that the bond market treated as a growth tax, not as an inflation spiral.",
           "news": [
             {
               "time": "10/21",
-              "fact": "US crude stocks fell by 3.06 million barrels to 412.5 million barrels last week, compared with analysts' expectations for an 820,000-barrel draw.",
+              "fact": "US crude stocks fell by 3.06 million barrels to 412.5 million barrels in the week ended 10/16, compared with analysts' expectations for an 820,000-barrel draw.",
               "src": "Reuters",
               "u": "https://au.investing.com/news/commodities-news/oil-rises-on-middle-east-supply-worries-4702921"
             },
@@ -687,7 +693,7 @@
             "The standing: 7,651.54 on 9/30 to 7,743.98 — +92.44 points, or 1.21%, against a +2.0% third quarter",
             "Banked: the quarter's only record close, 7,818.93 on 10/6",
             "Banked: an intraday 5.36% on the 10Y on 10/7, a 24-year high, with the highest close 5.31% on 10/5",
-            "Banked: the Fed's 10-2 hold at 3.75%-4.00%, with a December increase 85.0% priced",
+            "Banked: the Fed's 10-2 hold at a 3.75%-4.00% target range",
             "Owed: three verdicts — the inflation print, the megacap earnings block and the midterms — none of them banked"
           ],
           "d": "Q4's first twenty sessions produced a flat index and three pieces of history; the verdicts that matter are still ahead.",
@@ -731,7 +737,7 @@
           "news": [
             {
               "time": "10/28 close",
-              "fact": "The 10-year Treasury yield closed at 5.05% versus 5.29% at the end of September, the 2-year at 4.67% versus 4.88% and the 30-year at 5.37% versus 5.64%, per the Treasury's daily yield curve.",
+              "fact": "Against the 9/30 curve, the 10-year Treasury yield closed at 5.05% from 5.29%, the 2-year at 4.67% from 4.88% and the 30-year at 5.37% from 5.64%, per the Treasury's daily yield curve.",
               "src": "US Treasury",
               "u": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv"
             },
@@ -753,10 +759,9 @@
           "t": "③ The Quarter's Calendar: Three Verdicts Before the Midterms",
           "steps": [
             "10/29: September PCE and the first estimate of Q3 GDP land one day after the Fed decides, with GDP expected at 3.2%",
-            "10/28 after the close: Alphabet and Microsoft reported, with Microsoft up 4% and Alphabet down 7% in the after-market; Amazon follows on 10/29",
+            "10/28 after the close: Alphabet and Microsoft reported; Amazon follows on 10/29 — the capex question at index scale",
             "11/3: the midterms, the last scheduled risk on the quarter's calendar",
-            "After 11/3: the December meeting, where a 25bp hike is 85.0% priced",
-            "The quarter's earnings base: 200 S&P 500 companies have reported, 84% have beaten, and Q3 growth is tracking 31.8% year on year"
+            "After 11/3: the December meeting, where a 25bp hike is 85.0% priced"
           ],
           "d": "Q4's verdicts now run in a line: the inflation print, the megacap capex answer and the midterms decide whether the quarter's +1.21% is a base or a peak.",
           "news": [
@@ -783,12 +788,6 @@
               "fact": "Microsoft will publish fiscal year 2027 first-quarter financial results after the market close on Wednesday, October 28, 2026, with a webcast at 2:30 p.m. Pacific.",
               "src": "Microsoft IR",
               "u": "https://microsoft.com/en-us/investor/events/fy-2027/earnings-fy-2027-q1"
-            },
-            {
-              "time": "10/28",
-              "fact": "Two hundred companies in the S&P 500 have posted results, 84% have beaten consensus, and analysts estimate aggregate third-quarter earnings growth of 31.8% year on year, per LSEG.",
-              "src": "Reuters",
-              "u": "https://financialnewsletter.com/wall-street-ends-higher-73/"
             },
             {
               "time": "10/28",
@@ -974,7 +973,7 @@
           "news": [
             {
               "time": "10/28 close",
-              "fact": "The 10-year Treasury yield closed at 5.05% versus 4.18% at the end of 2025, the 30-year at 5.37% versus 4.84% and the 2-year at 4.67% versus 3.47%, per the Treasury's daily yield curve.",
+              "fact": "From 4.18% at the end of 2025, the 10-year Treasury yield closed at 5.05%, with the 30-year at 5.37% from 4.84% and the 2-year at 4.67% from 3.47%, per the Treasury's daily yield curve.",
               "src": "US Treasury",
               "u": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv"
             },
