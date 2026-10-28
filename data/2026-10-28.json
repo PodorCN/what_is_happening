@@ -49,8 +49,8 @@
     "wti": {
       "today": 102.78,
       "prev": 99.9,
-      "mtdBase": 90.42,
-      "qtdBase": 90.42,
+      "mtdBase": 88.42,
+      "qtdBase": 88.42,
       "ytdBase": 57.42
     },
     "brent": {
@@ -151,8 +151,8 @@
     },
     "wti": {
       "dayPct": 2.88,
-      "mtdPct": 13.67,
-      "qtdPct": 13.67,
+      "mtdPct": 16.24,
+      "qtdPct": 16.24,
       "ytdPct": 79
     },
     "brent": {

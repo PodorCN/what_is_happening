@@ -29,6 +29,7 @@
 | 2026-10-20 | 取数 | ytd 10Y 期初沿用 Yahoo ^TNX 4.16%，Treasury 12/31/2025 为 4.18%（同表 30Y 已按 Treasury），YTD 写成 +96bp（应 +94bp），同位共 10 处 | 收益率基期与收盘一律取 Treasury daily yield curve：ytd 10Y 期初 4.18、YTD +94bp，同步 h/d/c1/c4/kpi/tbl/① s2/② s0/② d/HEAT/foot 的 25-12-31 行；改完 grep『96bp』应为 0 处 |
 | 2026-10-22 | 取数 | data 的 tnx.today=4.95 / ytdBase=4.16 未按 Treasury 回写（快照 tbl 是 4.96 / 4.18），computed.ytdPct 18.98 是 Yahoo 口径的假值 | 收益率定稿后同步回写 data 的 today 与 ytdBase（Treasury 口径：10/22 4.96、2025-12-31 4.18）并重算 computed 三项；data.computed 与快照 tbl 同项相等后才 commit |
 | 2026-10-26 | 取数 | data 的 `computed.dayPct` 对 10 个指数/商品/加密标的全为 null（`closes` 只有 today + 三个基期、缺 `prev`），校准表因此核不了当日任何涨跌幅（10/22 同病，10/23 有值） | fetch 必须写 `closes[].prev`（取**上一交易日 data 里的定稿 today**，期货才是结算价、BTC 才是 4pm ET）并算 dayPct；null 视为取数失败，跑 `node scripts/fetch.mjs <DATE> --prev-only` 补齐后再写快照；lint 对 dayPct=null 报 ERROR `[lint]` |
+| 2026-10-28 | 取数 | 今日 mtd/qtd 的 WTI 期初从 10/27 的 $88.42 回退到 $90.42，并写成『measured from the $90.42 settlement』：90.42 是 9/30 的 CL=F（November 前月），**88.42 才是 December 合约 CLZ26 的 9/30 收盘**；10/21 换月后 7 份文件用 88.42 是对的，回退使 MTD 由 +16.2% 掉到 +13.7%（小于当日 +2.9%，跨日断裂）。同类：data/10-21、10-22 的 wti.ytdBase 用了 CLZ26 的 56.92，应为前月 57.42 | WTI 换月后 MTD/QTD 基线固定取 December 合约（CLZ26）9/30 收盘 $88.42，禁止回退到 CL=F 的 90.42（Nov 前月）；每日 build 后断言 today.mtdBase == 上一交易日 mtdBase，不等先按合约代码判错侧（Brent 同理：BZZ26 9/30=98.03、BZ=F=103.53） `[lint]` |
 
 ## 取数前提
 
@@ -105,6 +106,11 @@
 | 2026-10-27 | 引用 | 同 URL 同句的 news 逐字复用：BEA 日程（qtd ① n3 = ③ n0）、Investopedia 10/6 纪录收盘（mtd ① n0 = qtd ① n0）、法国 10Y（qtd ② n2 = ytd ② n2） | 定稿前跑『同 URL + 同句』比对：一字不差的 fact 只留一处——留给该事实真正的主场档，另一处删除，或改成本档口径的不同句子（mtd 留『first close above 7,800』、qtd 改写为『set new intraday and closing records』） |
 | 2026-10-27 | 逻辑 | ytd ① d『a four-year bull that is still outrunning its referee by 4.9 points』：4.9 点是 Nasdaq(+13.92%) 对 Dow(+8.98%) 的差，而 referee 在同链 s2 指 10Y | d 引用的数字必须能在同链 steps 里找到同一比较对象：跑赢裁判就写指数对基点，或干脆不带数字（『still faster than its referee』）；4.9 点只用于 Nasdaq 对 Dow |
 | 2026-10-27 | 引用 | 驳回记录（F3）：today ① n1/n2 标 time=10/27、URL 是 Bloomberg `/2026-10-26/stock-market-today-dow-s-p-live-updates`——**不是错**：该系列按出稿日编 slug，页面 Title 为『Stock Market Today: Dow, S&P Live Updates for October 27』（发布于 10/26 22:03Z），即 10/27 当日 live blog | 判 Bloomberg live blog 的日期一律看页面 Title 的『… for <交易日>』，不看 slug（slug = 前一晚出稿日）；但引文数字必须用定稿版现值（本例芯片 3.4% → 定稿 3.6%），落盘前逐字复核 |
+| 2026-10-28 | 逻辑 | ytd ③ s0『Comms -12.4% and ConsDisc -3.4% are the only sectors down, with Utilities -0.5%』自相矛盾：同句自己列出第三个下跌板块，该档 HEAT 实为 3 个下跌（XLU 现算 -0.47%）；同档 c1 的写法（lag … while Utilities are -0.5%）才是对的 | 写『only … down』前把该档 HEAT 11 项逐个判符号，枚举数必须等于实际下跌数；数不准就把第三个单列（『with Utilities -0.5% also below the line』），不写 only |
+| 2026-10-28 | 逻辑 | today d『Oracle and SK Hynix paid for the index, utilities and real estate paid for the curve』同一个 pay for 兼指贡献与受损，前半句按字面读成 ORCL +10.73% 因指数上涨受害 | d 里方向词分开：贡献写 carried/funded the index，受损写 paid for the curve / bore the cost；同一动词不得兼指两个方向，定稿前把 d 每个断言与 c1/主链逐条对向 |
+| 2026-10-28 | 逻辑 | today ④ s5『the VIX … back below its 10/23 close of 19.45』：VIX 10/26 起已是 18.39→17.52，连续两日在下方，『back below』暗示当日才穿越；同句还复述 c1 的『0.96% below record / six of 11』 | 用 back below / back above 前查最近 3 个交易日序列确认是否当日穿越，否则写『below its 10/23 close of 19.45 for a third session』；收盘距高点、板块广度等 c1 已给的数字不在辅链复述 |
+| 2026-10-28 | 逻辑 | mtd c1『the barrel rose 13.7%』（WTI）与 c4『the barrel rose 17.6%』（Brent）同档同词两个基准，读者无法判断 the barrel 指哪个 | 同档『the barrel』只指一个基准：首次出现写全名（WTI 或 Brent）并沿用；要并列就写『WTI +16.2% / Brent +17.6%』 |
+| 2026-10-28 | 引用 | today ③ s3 的『723,000 桶/日 至 13.992M』与 s2 的『Fars 卫星图 / 550,000 bpd』挂在 euronext 页（该页全文无 723k/Fars，只有 1.9M draw、15,000 预期与 550,000 设施）；真正含这两句的是 Newsquawk 的 crude wrap（原先只挂在 ④） | step 里的每个具体数字必须能在**本链** news[] 某条 fact 里找到，且该 fact 的 u 页面确实含此句——换到真正含该句的 URL（本次 Newsquawk），别链的 URL 不算本链背书；一条 fact 里的每个分句都要能在该页检索到 |
 
 ## 链结构（主链 / 辅链）
 
@@ -131,6 +137,7 @@
 | 2026-10-27 | 逻辑 | 同档数字交集：mtd ① s3 与 ② d 都写 Dow +2.89% / Nasdaq -1.43% / 4.3 点；qtd ① s2 与 ② s1 都写 4.99% / −30bp；ytd ① s2 与 ② 都写 4.99% / +81bp | 定稿前对同档每对链求数字交集，交集内的数字只留一条链：mtd 的指数差归 ②（① 只写峰值/低点/修复点数），qtd 与 ytd 的 10Y 收盘与净变化归利率链（① 只写已入账的纪录：5.36% 盘中、5.31% 最高收盘） |
 | 2026-10-27 | 逻辑 | qtd ① s3『Owed: the FOMC on 10/28, PCE and advance Q3 GDP on 10/29, megacap earnings on 10/28-29, and the midterms on 11/3』与 ③ s0-s3 四个 gate 逐项重复（c1 同句亦重复） | qtd ① 的 Owed 只写层级句（四个 verdict、剩余交易日数），日期与公司归 ③；定稿后 grep qtd chains，10/28、10/29、11/3 除 ③ 之外应为 0 处 |
 | 2026-10-27 | 逻辑 | mtd tbl 的 VIX 行（16.34 → 17.52，+7.2%）无任何 mtd 链覆盖；昨日 ② s3 的 VIX 句被删后没有补回 | tbl 每行至少被一条链的某个 step 覆盖：删旧句前先确认该行仍有覆盖；VIX 窗口变动 >5% 时在 ② 的广度句后补一句（VIX 16.34→17.52，+7.2%）；定稿前把 tbl 六行逐行点名对链 |
+| 2026-10-28 | 逻辑 | today ④ s2『The press conference threw no curveball… and the main indexes turned positive across the board as he spoke』复述主链 ① s2 的『发布会→2Y 反转』同一事件（④ d 又把同一场发布会列为本日缓释之一）；④ s5 还复述 c1 的『0.96% below record / six of 11 sectors higher』 | 辅链只写主链没有的增量：发布会只保留 2027 八次会议这类日历事实，『盘中翻红/尾盘拉回』类同事件句子删掉；④ 的 d 换成同日历增量（『the Fed's 2027 meeting calendar carried no surprise』）；定稿前对同档每对链做数字交集 |
 
 ## 待补充
 

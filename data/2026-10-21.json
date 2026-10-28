@@ -46,7 +46,7 @@
    "today": 97.15,
    "mtdBase": 88.42,
    "qtdBase": 88.42,
-   "ytdBase": 56.92
+   "ytdBase": 57.42
   },
   "brent": {
    "today": 108.82,
@@ -143,7 +143,7 @@
    "dayPct": null,
    "mtdPct": 9.87,
    "qtdPct": 9.87,
-   "ytdPct": 70.68
+   "ytdPct": 69.19
   },
   "brent": {
    "dayPct": null,

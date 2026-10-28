@@ -1559,9 +1559,16 @@
               "rule": "step 里的每个具体数字必须能在**本链** news[] 某条 fact 里找到同一数字；找不到就补一条含该数字的源到本链，或删掉该子句（别链的 URL 不算本链背书）"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true,
+      "fixedAt": "2026-10-28T19:20:00-04:00",
+      "fixNote": "F1/F2/F3/F4/F5/F7 已修（含同类：mtd c4 首次出现改点名 Brent、④ s5 删 c1 复述的 0.96%/six-of-11、③ n3 拆成 euronext 只背 1.9M/15,000 + Newsquawk 背 723k/Fars）。 F6 驳回其判向并改今日侧：90.42 是 9/30 的 CL=F（November 前月），88.42 才是 December 合约 CLZ26 的 9/30 收盘（Yahoo CLZ26 9/30=88.42、CL=F=90.42；10/26、10/27 foot 亦写『WTI $88.42 (Dec)』）；10/21 换月后 7 份文件用 88.42 是对的，故 WTI MTD/QTD 由 +13.7 改为 +16.2、foot 与 mtd ③ s3 改 $88.42，不改历史 7 份。 同类扩展：data/2026-10-21、10-22 的 wti.ytdBase=56.92 是 CLZ26 的 12/31 价，改回前月口径 57.42（YTD 70.7→69.2 / 74.8→73.2，含两档 HEAT/c1/链文）。 新增 scripts/lint.mjs 规则 13：基线回退到更早文件用过的值 → ERROR（本次 90.42 会直接拦下）。"
     }
   ]
 }

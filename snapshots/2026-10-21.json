@@ -697,7 +697,7 @@
     "Dow +9.97%",
     "10Y 5.13%"
    ],
-   "c1": "The year's base case still holds: AI capex and earnings carry the S&P to +13.32% (7,757.17) and the Nasdaq to +14.89%, with the Dow +9.97%; the bull turned four on 10/12. Against it: a 10Y at 5.13% (+95bp YTD), Brent +80.7% and WTI +70.7% on the December contract as the war grinds through an eighth month, and a hot September CPI (3.7%) and PPI (6.3%). Beneath the index: Energy +52.5% leads the year, Tech +31.0%, Health +15.6%; Comms -7.4% and ConsDisc -3.3% lag, Utilities -1.6%. Gold -4.4%, bitcoin -3.3%, the dollar +3.5%. The S&P is 0.79% below its record; the Nasdaq is 3.25% below its 10/6 record close.",
+   "c1": "The year's base case still holds: AI capex and earnings carry the S&P to +13.32% (7,757.17) and the Nasdaq to +14.89%, with the Dow +9.97%; the bull turned four on 10/12. Against it: a 10Y at 5.13% (+95bp YTD), Brent +80.7% and WTI +69.2% on the December contract as the war grinds through an eighth month, and a hot September CPI (3.7%) and PPI (6.3%). Beneath the index: Energy +52.5% leads the year, Tech +31.0%, Health +15.6%; Comms -7.4% and ConsDisc -3.3% lag, Utilities -1.6%. Gold -4.4%, bitcoin -3.3%, the dollar +3.5%. The S&P is 0.79% below its record; the Nasdaq is 3.25% below its 10/6 record close.",
    "c4": "<ul class='play'><li>The year's engine is intact: AI capex and 29% earnings growth have carried the S&P +13.32% through a 95bp rise in the 10Y — earnings are doing the work rates used to do.</li><li>The credit file is the newest risk: CoreWeave is still 32.6% below its 10/6 close and Anthropic's IPO pricing is the next stress gauge — watch them before the AI complex.</li><li>The year's last macro gate is December: a pause this month is priced, and the December decision is where the bull's 2027 setup gets set.</li><li>The dispersion is the year's signature: Energy +52.5% against Comms -7.4% is a 60-point spread — the index's +13.32% is an average of two very different markets.</li></ul>",
    "kpi": [
     [
@@ -815,7 +815,7 @@
       "The engines: AI capex — hyperscalers are heading toward $1 trillion a year — and earnings, with Q3 growth tracking 29%",
       "The scoreboard: S&P +13.32%, Nasdaq +14.89%, Dow +9.97% — the AI-heavy index still leads despite October's repricing",
       "The referee: the 10Y at 5.13%, +95bp YTD, and a 24-year high of 5.36% printed on 10/7",
-      "The taxes: WTI +70.7% and Brent +80.7% on the December contract as the war grinds into an eighth month; September CPI 3.7% and PPI 6.3%",
+      "The taxes: WTI +69.2% and Brent +80.7% on the December contract as the war grinds into an eighth month; September CPI 3.7% and PPI 6.3%",
       "The breadth: Energy +52.5% leads; Comms -7.4%, ConsDisc -3.3% and Utilities -1.6% lag"
      ],
      "d": "The year's base case: AI and earnings compound, rates and oil tax — a four-year bull still faster than its referee.",
@@ -1414,7 +1414,7 @@
      [
       "WTI",
       "$97.15",
-      "+70.7"
+      "+69.2"
      ],
      [
       "Brent",

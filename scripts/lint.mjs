@@ -1,6 +1,6 @@
 // 文案 lint：拦截"复制昨天文件"带来的过期/自相矛盾表述。用法: node scripts/lint.mjs YYYY-MM-DD
 // ERROR → exit 1，禁止 commit；WARN → 逐条修掉，或在 commit body 的 `lint-ack:` 段写明为何保留（reviewer 会核对）
-import { readFileSync, existsSync } from "fs";
+import { readFileSync, existsSync, readdirSync } from "fs";
 
 const DATE = process.argv[2];
 if (!/^\d{4}-\d{2}-\d{2}$/.test(DATE || "")) { console.error("用法: node scripts/lint.mjs YYYY-MM-DD"); process.exit(2); }
@@ -212,6 +212,31 @@ if (DATA) {
     if (v == null || !isFinite(shown) || /bp/i.test(String(it[2]))) continue;
     if (Math.abs(shown - v) > 0.06)
       E(`HEAT.today/${it[0]}`, `涨跌幅 ${it[2]} ≠ data 日环比 ${v > 0 ? "+" : ""}${v}%——同一数字只留 data 现值，c1/链文/HEAT 同步改`);
+  }
+
+  // ---------- 13. 基线跨日漂移/回退（review 2026-10-28 F6：WTI 90.42 是 Nov 前月、88.42 才是 Dec）----------
+  const dataFiles = readdirSync("data").filter(f => /^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort();
+  const prevDataFile = dataFiles.filter(f => f < `${DATE}.json`).pop();
+  if (prevDataFile) {
+    const PD = JSON.parse(readFileSync(`data/${prevDataFile}`, "utf8"));
+    const earlier = dataFiles.filter(f => f < prevDataFile).slice(-30)
+      .map(f => { try { return JSON.parse(readFileSync(`data/${f}`, "utf8")); } catch { return null; } })
+      .filter(Boolean);
+    for (const sym of Object.keys(DATA.closes || {})) {
+      const a = DATA.closes[sym], b = PD.closes?.[sym];
+      if (!a || !b) continue;
+      for (const f of ["mtdBase", "qtdBase", "ytdBase"]) {
+        if (a[f] == null || b[f] == null) continue;
+        if (Math.abs(a[f] - b[f]) <= Math.abs(b[f]) * 1e-6) continue;
+        const reverted = earlier.some(pd => pd.closes?.[sym] && pd.closes[sym][f] != null &&
+          Math.abs(pd.closes[sym][f] - a[f]) <= Math.abs(a[f]) * 1e-6);
+        const msg = `${sym}.${f} ${b[f]} -> ${a[f]}（vs ${prevDataFile}）`;
+        if (reverted)
+          E(`data.${sym}`, `基线回退到更早文件用过的值：${msg}——先按合约代码判错侧（CLZ26=Dec vs CL=F=前月；BZZ26 vs BZ=F），禁止把上一合约的基期价当本期`);
+        else
+          W(`data.${sym}`, `基线变更：${msg}——若是换月/换期，把合约口径写进 foot 并用同合约序列重算`);
+      }
+    }
   }
 }
 

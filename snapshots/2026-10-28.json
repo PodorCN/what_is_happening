@@ -2,11 +2,11 @@
   "date": "2026-10-28",
   "updatedAt": "2026-10-28T21:45:00Z",
   "label": "2026-10-28 Wednesday close",
-  "foot": "Closing baseline (auto 2026-10-28): SPX 7743.98 (+1.21% MTD / +13.13% YTD) · DJI 52475.10 (+3.08% MTD) · IXIC 26549.85 (+14.23% YTD) · 10Y 5.05% (Treasury daily curve) · WTI 102.78 (Dec settle) · Brent 115.32 (Dec settle) · Gold 4051.60 (Dec fut settle) · BTC 81546 (4pm ET). Sector and single-name returns computed from Yahoo closes; futures from exchange settlement. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23242/10Y 4.18%/30Y 4.84%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.42% · 26-08-31 S&P 7686.14/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/WTI $90.42 (Dec)/Brent $98.03 (Dec)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
+  "foot": "Closing baseline (auto 2026-10-28): SPX 7743.98 (+1.21% MTD / +13.13% YTD) · DJI 52475.10 (+3.08% MTD) · IXIC 26549.85 (+14.23% YTD) · 10Y 5.05% (Treasury daily curve) · WTI 102.78 (Dec settle) · Brent 115.32 (Dec settle) · Gold 4051.60 (Dec fut settle) · BTC 81546 (4pm ET). Sector and single-name returns computed from Yahoo closes; futures from exchange settlement. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23242/10Y 4.18%/30Y 4.84%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.42% · 26-08-31 S&P 7686.14/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/WTI $88.42 (Dec)/Brent $98.03 (Dec)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
   "P": {
     "today": {
       "h": "The Front End Blinked; the Long End Kept the Bill",
-      "d": "The Fed held 10-2 with two votes to hike, the 2Y spiked to 4.79% and closed 3bp lower at 4.67% while the 30Y rose 7bp to 5.37% — Oracle and SK Hynix paid for the index, utilities and real estate paid for the curve.",
+      "d": "The Fed held 10-2 with two votes to hike, the 2Y spiked to 4.79% and closed 3bp lower at 4.67% while the 30Y rose 7bp to 5.37% — Oracle and SK Hynix carried the index, utilities and real estate paid for the curve.",
       "badges": [
         "S&P 7,744 +0.28%",
         "Nasdaq 26,550 +0.27%",
@@ -262,9 +262,15 @@
             },
             {
               "time": "10/28",
-              "fact": "The EIA said energy firms pulled 1.9 million barrels of crude from storage in the week ended October 23, versus a 15,000-barrel build expected in a Reuters poll, and crude production jumped 723,000 barrels a day to 13.992 million.",
+              "fact": "The EIA said energy firms pulled 1.9 million barrels of crude from storage in the week ended October 23, versus a 15,000-barrel build expected in a Reuters poll.",
               "src": "Reuters",
               "u": "https://live.euronext.com/en/financial-news/oil-prices-rise-about-2-yemen-fighting-stokes-supply-fears"
+            },
+            {
+              "time": "10/28",
+              "fact": "In the weekly EIA data, crude production jumped 723,000 barrels a day week-on-week to 13.992 million; Fars reported satellite imagery showing significant damage to the main refining unit at Saudi Arabia's Ras Tanura refinery (550,000 bpd), which Saudi Arabia has yet to confirm.",
+              "src": "Newsquawk",
+              "u": "https://www.newsquawk.com/headlines/us-crude-wrap-wti-z6-settles-usd-288-higher-at-usd-10278bbl"
             },
             {
               "time": "10/28",
@@ -291,11 +297,11 @@
           "steps": [
             "Iran's foreign minister said Tehran is still giving diplomacy a chance and remains in close contact with intermediaries to review ideas that could implement its seven-day plan in less than a week, and Brent came off its intraday high after the remark",
             "Qatar presented a new draft deal to Tehran on Sunday and a response is expected by the end of the week, though a senior Iranian official said Doha had only put forward unacceptable ideas",
-            "The press conference threw no curveball: Warsh said the Fed will still hold eight meetings in 2027, one of them without a policy decision, and the main indexes turned positive across the board as he spoke",
+            "The press conference threw no curveball: Warsh said the Fed will still hold eight meetings in 2027, one of them without a policy decision",
             "OPEC+ is expected to keep its December output targets steady at Sunday's meeting, with most of the seven core members already producing below quota — no new barrels are priced",
-            "The tape hedged itself: the VIX fell 3.5% to 16.91, back below its 10/23 close of 19.45, and the S&P finished 0.96% below its record with six of 11 sectors higher"
+            "The tape hedged itself: the VIX fell 3.5% to 16.91, below its 10/23 close of 19.45 for a third session"
           ],
-          "d": "Three things kept the day from being worse: Tehran's diplomacy line capped the barrel, Warsh's press conference threw no curveball on rates, and OPEC+ is not adding supply — so the VIX fell even with a hawkish hold.",
+          "d": "Three things kept the day from being worse: Tehran's diplomacy line capped the barrel, the Fed's 2027 meeting calendar carried no surprise, and OPEC+ is not adding supply — so the VIX fell even with a hawkish hold.",
           "news": [
             {
               "time": "10/28",
@@ -347,8 +353,8 @@
         "10Y -24bp",
         "Brent +17.6%"
       ],
-      "c1": "October is twenty sessions old and +1.21%: the S&P sits at 7,743.98, 92.44 points above the 9/30 base and 0.96% below the month's only record close, 7,818.93 on 10/6. The shape is unchanged — one record, three repricings (wireless on 10/9, the AI complex on 10/12-13, the CPI-PPI pair on 10/14-15), a low close of 7,623.68 on 10/23 and a three-session repair — but the composition is not: Energy +11.3%, Staples +7.7%, Utilities +7.7%, Health +6.7%, Materials +6.5% and ConsDisc +6.0% lead, while Tech -2.4% and Comms -7.1% are the only sectors down, so nine of 11 are positive. The Dow is +3.08% and the Nasdaq -1.16%. The 10Y is 24bp lower at 5.05% and the 30Y 27bp lower at 5.37%, a month in which the barrel rose 13.7% and the long end still rallied. The average stock is 3.3 points ahead of the index (RSP +4.52% against SPY +1.27%), and the VIX is 3.5% higher at 16.91. The month's last gate is 10/29's PCE.",
-      "c4": "<ul class='play'><li>October round-tripped and then some: a record on 10/6, a 2.5% drawdown to 10/23 and a three-session repair to +1.21% — with the average stock 3.3 points ahead of the index (RSP +4.52% vs SPY +1.27%).</li><li>The leadership is a rotation, not a de-risking: Energy +11.3% against Comms -7.1% is an 18.4-point spread, and the Dow is 4.2 points ahead of the Nasdaq.</li><li>The rate gave the month back even with the barrel up: 10Y -24bp and 30Y -27bp — October bought duration while the barrel rose 17.6%.</li><li>What decides it: PCE and advance Q3 GDP on 10/29, with the index 0.96% below its high and 1.21% of cushion.</li></ul>",
+      "c1": "October is twenty sessions old and +1.21%: the S&P sits at 7,743.98, 92.44 points above the 9/30 base and 0.96% below the month's only record close, 7,818.93 on 10/6. The shape is unchanged — one record, three repricings (wireless on 10/9, the AI complex on 10/12-13, the CPI-PPI pair on 10/14-15), a low close of 7,623.68 on 10/23 and a three-session repair — but the composition is not: Energy +11.3%, Staples +7.7%, Utilities +7.7%, Health +6.7%, Materials +6.5% and ConsDisc +6.0% lead, while Tech -2.4% and Comms -7.1% are the only sectors down, so nine of 11 are positive. The Dow is +3.08% and the Nasdaq -1.16%. The 10Y is 24bp lower at 5.05% and the 30Y 27bp lower at 5.37%, a month in which WTI rose 16.2% and the long end still rallied. The average stock is 3.3 points ahead of the index (RSP +4.52% against SPY +1.27%), and the VIX is 3.5% higher at 16.91. The month's last gate is 10/29's PCE.",
+      "c4": "<ul class='play'><li>October round-tripped and then some: a record on 10/6, a 2.5% drawdown to 10/23 and a three-session repair to +1.21% — with the average stock 3.3 points ahead of the index (RSP +4.52% vs SPY +1.27%).</li><li>The leadership is a rotation, not a de-risking: Energy +11.3% against Comms -7.1% is an 18.4-point spread, and the Dow is 4.2 points ahead of the Nasdaq.</li><li>The rate gave the month back even with Brent up: 10Y -24bp and 30Y -27bp — October bought duration while Brent rose 17.6%.</li><li>What decides it: PCE and advance Q3 GDP on 10/29, with the index 0.96% below its high and 1.21% of cushion.</li></ul>",
       "kpi": [
         [
           "S&P MTD",
@@ -402,9 +408,9 @@
         ],
         [
           "WTI",
-          "$90.42",
+          "$88.42",
           "$102.78",
-          "+13.7%"
+          "+16.2%"
         ],
         [
           "VIX",
@@ -536,7 +542,7 @@
             "The path: Brent's December contract started at $98.03, crossed $100 on 10/1, held a $100-107 corridor to 10/15, closed $109.86 on 10/16, $116.72 on 10/23 and $115.32 at the last close",
             "The premium: Houthi strikes on Saudi airports and Aramco sites, then reports that the US could strike Iran after the 11/3 midterms, carried the contract to a $117.44 high on 10/26",
             "The physical data: EIA crude stocks fell 3.06 million barrels in the week to 10/16 and 1.9 million in the week to 10/23, and Hormuz flows averaged 11.7 million barrels a day in October",
-            "The scoreboard: Brent +17.6% and WTI +13.7% for the month, both on the December contract, with WTI's gain measured from the $90.42 settlement on 9/30",
+            "The scoreboard: Brent +17.6% and WTI +16.2% for the month, both on the December contract, with WTI's gain measured from the $88.42 settlement on 9/30",
             "The rate offset: the 10Y is 24bp lower at 5.05% with Brent up 17.6% — the month treated oil as a growth tax, not an inflation spiral"
           ],
           "d": "October's barrel: a $98 start, a $117.44 high and a 17.6% month that the bond market treated as a growth tax, not as an inflation spiral.",
@@ -573,7 +579,7 @@
         "10Y -24bp",
         "Brent +17.6%"
       ],
-      "c1": "Q4 is twenty sessions old and 92.44 points higher: the S&P sits at 7,743.98, +1.21% on the quarter against +2.0% in Q3, with the Dow +3.08% and the Nasdaq -1.16%. Three things are now banked: the quarter's only record close at 7,818.93 on 10/6, an intraday 5.36% on the 10Y on 10/7 — the highest since 2002 — and the Fed's 10-2 hold, which left the target range at 3.75%-4.00%. The composition is a rotation, not a rally: Energy +11.3%, Staples +7.7% and Utilities +7.7% against Tech -2.4% and Comms -7.1%. The 10Y is 24bp lower at 5.05% and the 30Y 27bp lower at 5.37%; Brent is +17.6% and WTI +13.7% on the December contract. Still owed: the inflation print, the megacap earnings block and the midterms — three verdicts, none of them banked, which is why the quarter's entire gain is smaller than one bad session in the AI complex.",
+      "c1": "Q4 is twenty sessions old and 92.44 points higher: the S&P sits at 7,743.98, +1.21% on the quarter against +2.0% in Q3, with the Dow +3.08% and the Nasdaq -1.16%. Three things are now banked: the quarter's only record close at 7,818.93 on 10/6, an intraday 5.36% on the 10Y on 10/7 — the highest since 2002 — and the Fed's 10-2 hold, which left the target range at 3.75%-4.00%. The composition is a rotation, not a rally: Energy +11.3%, Staples +7.7% and Utilities +7.7% against Tech -2.4% and Comms -7.1%. The 10Y is 24bp lower at 5.05% and the 30Y 27bp lower at 5.37%; Brent is +17.6% and WTI +16.2% on the December contract. Still owed: the inflation print, the megacap earnings block and the midterms — three verdicts, none of them banked, which is why the quarter's entire gain is smaller than one bad session in the AI complex.",
       "c4": "<ul class='play'><li>The quarter has banked three prints, not a direction: +1.21% QTD with the index 0.96% below its 10/6 high and three gates still unplayed.</li><li>The Fed is now a 2026 story, not a Q4 one: a 10-2 hold with 85% December odds means the quarter's risk has moved from the decision to the statement and the long end.</li><li>The rate cushion is the swing: a 5.05% 10Y is 31bp below the 10/7 intraday peak, and one session of 6-7bp back-up is enough to take it out of the utilities and the REITs.</li><li>The oil bill is already in the survey data: a flash selling-price gauge at 59.8 with Brent at $115.32 is the combination that keeps the long end from rallying for the right reason.</li></ul>",
       "kpi": [
         [
@@ -988,7 +994,7 @@
         {
           "t": "③ The Year's Two Markets: Energy +53.1%, Comms -12.4% — a 65.5-Point Spread",
           "steps": [
-            "The dispersion: Energy +53.1%, Tech +32.7%, Health +16.1% and Materials +14.4% lead; Comms -12.4% and ConsDisc -3.4% are the only sectors down, with Utilities -0.5%",
+            "The dispersion: Energy +53.1%, Tech +32.7%, Health +16.1% and Materials +14.4% lead; Comms -12.4% and ConsDisc -3.4% are the biggest laggards, with Utilities -0.5% also below the line",
             "The spread: 65.5 points between the best and worst sector",
             "The index's +13.13% is an average of two markets: the average S&P stock (RSP +13.50%) just edged the cap-weighted SPY (+13.26%)",
             "The October rotation widened the biggest gap: Energy's lead over Tech went from 1.6 points at the 9/30 close to 20.4 points"
@@ -1272,7 +1278,7 @@
           [
             "WTI",
             "$102.78",
-            "+13.7"
+            "+16.2"
           ],
           [
             "Brent",
@@ -1404,7 +1410,7 @@
           [
             "WTI",
             "$102.78",
-            "+13.7"
+            "+16.2"
           ],
           [
             "Brent",
