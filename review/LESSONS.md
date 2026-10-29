@@ -111,6 +111,14 @@
 | 2026-10-28 | 逻辑 | today ④ s5『the VIX … back below its 10/23 close of 19.45』：VIX 10/26 起已是 18.39→17.52，连续两日在下方，『back below』暗示当日才穿越；同句还复述 c1 的『0.96% below record / six of 11』 | 用 back below / back above 前查最近 3 个交易日序列确认是否当日穿越，否则写『below its 10/23 close of 19.45 for a third session』；收盘距高点、板块广度等 c1 已给的数字不在辅链复述 |
 | 2026-10-28 | 逻辑 | mtd c1『the barrel rose 13.7%』（WTI）与 c4『the barrel rose 17.6%』（Brent）同档同词两个基准，读者无法判断 the barrel 指哪个 | 同档『the barrel』只指一个基准：首次出现写全名（WTI 或 Brent）并沿用；要并列就写『WTI +16.2% / Brent +17.6%』 |
 | 2026-10-28 | 引用 | today ③ s3 的『723,000 桶/日 至 13.992M』与 s2 的『Fars 卫星图 / 550,000 bpd』挂在 euronext 页（该页全文无 723k/Fars，只有 1.9M draw、15,000 预期与 550,000 设施）；真正含这两句的是 Newsquawk 的 crude wrap（原先只挂在 ④） | step 里的每个具体数字必须能在**本链** news[] 某条 fact 里找到，且该 fact 的 u 页面确实含此句——换到真正含该句的 URL（本次 Newsquawk），别链的 URL 不算本链背书；一条 fact 里的每个分句都要能在该页检索到 |
+| 2026-10-29 | 数字 | mtd ① s2 把 10/29 收盘的 +0.90% / 68.85 点安到『10/26-10/28 三连涨修复』句上（10/28 收盘 7,743.98 对 9/30 基期应为 +1.21% / 92.44 点），与同档 c1『a three-session repair to 7,743.98 and a 0.30% give-back』互斥 | 写『某几个交易日把窗口推到 X% / Y 点』时，X/Y 必须用句中所指那一天的收盘 ÷ 窗口基期现算（10/28 → +1.21% / 92.44），当日值只用于当日叙述，不得回填到前一日的修复句 |
+| 2026-10-29 | 数字 | today ③ s3『widened October's 10Y cushion to 31bp, measured against the 5.36% intraday peak on 10/7』：以高点为基期应为 38bp（5.36−4.98），31bp 是对 9/30 的 5.29%；同文件 qtd c4 已写 38bp | 写『X bp below/above 某点』前先固定基期：基期是高点的（5.36）写 38bp，基期是窗口期初的（5.29）才写 31bp；同一比较全文件只留一个数 |
+| 2026-10-29 | 数字 | mtd ③ d/s1 把 10 月 Brent 高点写成 $117.44（10/26）；10/23 盘中高 $117.45 才是月高（且为『highest in nearly six months』） | 写窗口极值前把窗口内每个交易日的盘中高逐个列出取最大并注明发生日（10 月 Brent 高 = $117.45 @10/23）；不得用最近一次见到的次高（10/26 $117.44）顶替，d 与 steps 同改 |
+| 2026-10-29 | 引用 | mtd ③ s2 的『1.9 million（week to 10/23）』与『Hormuz flows averaged 11.7 million bpd』在本档 3 条 news 里 0 条含此数——跨日沿用但未在本链重挂源 | 跨日沿用的数字必须在当日快照**本链** news[] 重挂一条含该数字的源（time 写事件日、u 用真实链接：1.9M → 10/28 Reuters/euronext，11.7M → 10/27 Benzinga）；挂不上就从 step 删掉该数字 |
+| 2026-10-29 | 逻辑 | mtd ② s5『the VIX ends the month 5.26% higher at 17.20』与同档 c1『One session remains: 10/30 …』矛盾——10/29 只是倒数第二个交易日 | 月末最后两个交易日禁用 ends the month / 月度收官；倒数第二个交易日写『with one session left』，把 ends the month 留给真正的最后一天 |
+| 2026-10-29 | 逻辑 | ytd ③ s3『October opened the biggest gap: Energy leads Tech by 15.3 points』：10 月最大板块差是 Energy +11.72% 对 Comms -8.80% = 20.52 点，Energy 对 Tech 的 15.3 点只是第二大 | 写 biggest gap 前把该窗口 11 个板块两两差值算一遍取绝对值最大的一对（10 月 = Energy vs Comms 20.52）；Energy vs Tech 只能写『the AI-vs-oil gap』 |
+| 2026-10-29 | 引用 | 单 symbol 的 Yahoo quote/history 页被用来背书多标的数字：GOOGL 页带 NOW/MRVL、CMG 页带 DASH/RUT、FTNT 页带 MSFT、XLE 页带 XOM/CVX 与 11 个板块、^GSPC 页带 Nasdaq/Dow | 一条 fact 只写 URL 里那个 symbol 的数字；要并列 N 个标的就挂 N 条 news（各用自己的 /quote/&lt;SYM&gt;/history）；steps 里保留的每个数字都要在本链 news 里找到对应的单标的条目 |
+| 2026-10-29 | 数字 | qtd ② d『2bp of the 31bp already handed back since 10/22』：毛跌幅是 33bp（5.29→4.96），回吐 2bp 后净剩 31bp；『of the 31bp』字面读成净跌 29bp | 写『N bp of the M bp handed back』时 M 用毛变动（33bp）并同句写净剩（leaving 31bp）；净变动的分母不能拿来当毛变动用 |
 
 ## 链结构（主链 / 辅链）
 
@@ -138,6 +146,7 @@
 | 2026-10-27 | 逻辑 | qtd ① s3『Owed: the FOMC on 10/28, PCE and advance Q3 GDP on 10/29, megacap earnings on 10/28-29, and the midterms on 11/3』与 ③ s0-s3 四个 gate 逐项重复（c1 同句亦重复） | qtd ① 的 Owed 只写层级句（四个 verdict、剩余交易日数），日期与公司归 ③；定稿后 grep qtd chains，10/28、10/29、11/3 除 ③ 之外应为 0 处 |
 | 2026-10-27 | 逻辑 | mtd tbl 的 VIX 行（16.34 → 17.52，+7.2%）无任何 mtd 链覆盖；昨日 ② s3 的 VIX 句被删后没有补回 | tbl 每行至少被一条链的某个 step 覆盖：删旧句前先确认该行仍有覆盖；VIX 窗口变动 >5% 时在 ② 的广度句后补一句（VIX 16.34→17.52，+7.2%）；定稿前把 tbl 六行逐行点名对链 |
 | 2026-10-28 | 逻辑 | today ④ s2『The press conference threw no curveball… and the main indexes turned positive across the board as he spoke』复述主链 ① s2 的『发布会→2Y 反转』同一事件（④ d 又把同一场发布会列为本日缓释之一）；④ s5 还复述 c1 的『0.96% below record / six of 11 sectors higher』 | 辅链只写主链没有的增量：发布会只保留 2027 八次会议这类日历事实，『盘中翻红/尾盘拉回』类同事件句子删掉；④ 的 d 换成同日历增量（『the Fed's 2027 meeting calendar carried no surprise』）；定稿前对同档每对链做数字交集 |
+| 2026-10-29 | schema | 四档 14 条链的 t 全部缺 ①②③ 编号（如 today『The $500 Billion Miss…』、mtd『October's Round Trip…』），与 agent.md schema 示例及 10/27-28 快照格式不一致，页面与正文失去链引用锚点 | 每条 chain 的 t 首字符固定用 ①②③④⑤，按数组顺序递增；`scripts/lint.mjs` §1b 已加 /^[①②③④⑤]/ 校验 `[lint]` |
 
 ## 待补充
 

@@ -1652,9 +1652,14 @@
               "rule": "写『N bp of the M bp handed back』时 M 用毛变动（33bp）、净变动另写；或直接写『gave back 2bp of the 33bp decline, leaving 31bp』"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true
     }
   ]
 }

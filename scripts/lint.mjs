@@ -35,6 +35,15 @@ for (const [tier, groups] of Object.entries(snap.HEAT || {}))
     if (it[1] !== "—" && String(it[1]).trim() === String(it[2]).trim())
       E(`HEAT.${tier}/${g.sec}/${it[0]}`, `第二列 "${it[1]}" 与涨跌幅相同——应填水平值（点位/价格/收益率）或 "—"`);
 
+// ---------- 1b. 每条 chain 标题必须以 ①②③④⑤ 编号（review 2026-10-29 F6）----------
+for (const tier of ["today", "mtd", "qtd", "ytd"])
+  (snap.P[tier]?.chains || []).forEach((c, i) => {
+    const want = "①②③④⑤"[i];
+    const m = String(c.t || "").match(/^([①②③④⑤])/);
+    if (!m) E(`${tier}.chains.${i}.t`, `标题缺编号——应在开头写 "${want} ${String(c.t || "").slice(0, 30)}…"`);
+    else if (m[1] !== want) E(`${tier}.chains.${i}.t`, `标题编号 ${m[1]} 与数组顺序不符（应为 ${want}）`);
+  });
+
 // 窗口几何：交易日列表（不含基期）
 const mtd = snap.P.mtd, qtd = snap.P.qtd, ytd = snap.P.ytd;
 const winDays = mtd.labels.slice(1);

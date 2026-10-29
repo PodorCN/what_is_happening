@@ -118,7 +118,7 @@
    ],
    "chains": [
     {
-     "t": "The $500 Billion Miss: Alphabet's Record Day, and What Absorbed It",
+     "t": "① The $500 Billion Miss: Alphabet's Record Day, and What Absorbed It",
      "main": 1,
      "steps": [
       "Alphabet reported third-quarter revenue of $127.58 billion against about $128.2 billion expected, with Google Cloud up 103% to $30.71 billion and capital spending of $51.36 billion that left free cash flow negative",
@@ -168,9 +168,21 @@
       },
       {
        "time": "10/29 close",
-       "fact": "Alphabet's Class A shares closed at $283.82, down $41.07 or 12.64% from $324.89; ServiceNow closed at $109.67 from $150.13 and Marvell at $218.34 from $251.65.",
+       "fact": "Alphabet's Class A shares closed at $283.82, down $41.07 or 12.64% from $324.89.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/GOOGL/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "ServiceNow closed at $109.67, down 26.95% from $150.13.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/NOW/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "Marvell closed at $218.34, down 13.24% from $251.65.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/MRVL/history"
       },
       {
        "time": "10/29 close",
@@ -181,11 +193,11 @@
      ]
     },
     {
-     "t": "Healthcare's Best Level in Two Years and the Defensive Bid",
+     "t": "② Healthcare's Best Level in Two Years and the Defensive Bid",
      "steps": [
       "Healthcare closed at its highest level in at least two years: the XLV rose 2.40% with Eli Lilly up 6.63% after lifting its 2026 revenue forecast to $91-92 billion from $85-87 billion",
       "Real estate +2.21% and utilities +1.53% — the two most rate-sensitive sectors — rallied with the 10Y rather than against it",
-      "Staples +1.54%, financials +1.44%, materials +1.29% and industrials +0.97% followed, and only communication services (-1.87%) and tech (-1.18%) closed lower",
+      "Staples, financials, materials and industrials followed, and only communication services (-1.87%) and tech (-1.18%) closed lower",
       "The earnings behind the bid: Chipotle +8.88% after a third straight quarter of positive same-store sales, and DoorDash +5.61% on its $17 billion deal for Instacart",
       "It was a rotation, not a flight: the VIX added 1.71% to 17.20 — below its 10/23 close of 19.45 for a fourth session — and the Russell 2000 rose 1.01% to 2,859.22"
      ],
@@ -198,22 +210,58 @@
        "u": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-29-2026"
       },
       {
+       "time": "10/29",
+       "fact": "Chipotle Mexican Grill jumped nearly 9% in post-earnings trading even though it missed estimates, as sales at stores open a year or more rose for the third straight quarter, and DoorDash closed 5.61% higher after agreeing to buy Instacart for $17 billion.",
+       "src": "Investopedia",
+       "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-10292026-12200056"
+      },
+      {
        "time": "10/29 close",
-       "fact": "Sector ETF closes on 10/29: healthcare +2.40%, real estate +2.21%, staples +1.54%, utilities +1.53% and financials +1.44%, against communication services -1.87% and tech -1.18%; the healthcare ETF closed at its highest level in at least two years.",
+       "fact": "The healthcare sector ETF closed 2.40% higher, at its highest level in at least two years.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/XLV/history"
       },
       {
        "time": "10/29 close",
-       "fact": "Chipotle closed 8.88% higher at $31.28, DoorDash 5.61% higher at $179.00 and the Russell 2000 1.01% higher at 2,859.22.",
+       "fact": "The real estate sector ETF closed 2.21% higher.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLRE/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "The utilities sector ETF closed 1.53% higher.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLU/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "The communication services sector ETF closed 1.87% lower.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLC/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "The technology sector ETF closed 1.18% lower.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLK/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "Chipotle closed 8.88% higher at $31.28.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/CMG/history"
       },
       {
-       "time": "10/29",
-       "fact": "Chipotle Mexican Grill jumped nearly 9% in post-earnings trading even though it missed estimates, as sales at stores open a year or more rose for the third straight quarter, and DoorDash closed 5.61% higher after agreeing to buy Instacart for $17 billion.",
-       "src": "Investopedia",
-       "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-10292026-12200056"
+       "time": "10/29 close",
+       "fact": "DoorDash closed 5.61% higher at $179.00.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/DASH/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "The Russell 2000 closed 1.01% higher at 2,859.22.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/%5ERUT/history"
       },
       {
        "time": "10/29 close",
@@ -224,12 +272,12 @@
      ]
     },
     {
-     "t": "A 3.6% PCE Print and a Curve That Rallied Anyway",
+     "t": "③ A 3.6% PCE Print and a Curve That Rallied Anyway",
      "steps": [
       "September PCE rose 0.5% month on month and 3.6% year on year from 3.4%, with core at 0.3% and 3.1% — energy goods prices up 9.2% on the month",
       "Advance third-quarter GDP came in at 3.4% annualised against 3.2% expected, and CME FedWatch still showed about 80% odds of a 25bp hike in December",
       "The curve rallied anyway: the 2Y fell 6bp to 4.61%, the 10Y 7bp to 4.98% and the 30Y 5bp to 5.32%, leaving 2s30s at 71bp from 70bp",
-      "That is a parallel bid, not a steepener — and it widened October's 10Y cushion to 31bp, measured against the 5.36% intraday peak on 10/7",
+      "That is a parallel bid, not a steepener — and it widened the 10Y's cushion to the 5.36% intraday peak of 10/7 to 38bp",
       "The credit market supplied the day's demand test: Microsoft's $25 billion bond sale drew more than $115 billion of orders, its first US investment-grade deal since 2017",
       "The haven bid was thin elsewhere: gold settled 0.50% lower at $4,031.40 and the dollar index slipped 0.26% to 101.87, so this was a duration trade rather than a flight to safety"
      ],
@@ -286,7 +334,7 @@
      ]
     },
     {
-     "t": "The Vendors Paid: Caterpillar's Beat Without a Raise, Intel's After-Hours Cut",
+     "t": "④ The Vendors Paid: Caterpillar's Beat Without a Raise, Intel's After-Hours Cut",
      "steps": [
       "Caterpillar reported adjusted earnings of $7.20 a share against $7.04 expected on revenue of $20.68 billion, and the shares still fell 9.25% to $647.39",
       "That was the largest dollar decline among the 30 Dow components, and it landed on the data-centre power trade rather than on machinery demand",
@@ -305,7 +353,7 @@
       },
       {
        "time": "10/29 close",
-       "fact": "Caterpillar closed 9.25% lower at $647.39 from $713.38, the largest dollar decline among the 30 Dow components on the day.",
+       "fact": "Caterpillar closed 9.25% lower at $647.39 from $713.38.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/CAT/history"
       },
@@ -329,14 +377,20 @@
       },
       {
        "time": "10/29 close",
-       "fact": "Fortinet closed 20.09% lower at $139.10 from $174.08 after its service revenue forecast missed estimates, and Microsoft ended at $530.14, down 0.16%.",
+       "fact": "Fortinet closed 20.09% lower at $139.10 from $174.08 after its service revenue forecast missed estimates.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/FTNT/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "Microsoft ended at $530.14, down 0.16%.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/MSFT/history"
       }
      ]
     },
     {
-     "t": "A Letter to Tehran: Brent Settles at $114.88 After a $2 Intraday Slide",
+     "t": "⑤ A Letter to Tehran: Brent Settles at $114.88 After a $2 Intraday Slide",
      "steps": [
       "Brent's December contract settled 44 cents lower at $114.88 and WTI 78 cents lower at $102.00, after both fell more than $2 during the session",
       "The lows were $112.89 on Brent and $99.79 on WTI, as traders priced a new diplomatic channel rather than a supply loss",
@@ -372,9 +426,21 @@
       },
       {
        "time": "10/29 close",
-       "fact": "The energy sector ETF closed 0.38% higher, with Exxon up 0.70% and Chevron 0.99%.",
+       "fact": "The energy sector ETF closed 0.38% higher.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/XLE/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "Exxon closed 0.70% higher.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XOM/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "Chevron closed 0.99% higher.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/CVX/history"
       }
      ]
     }
@@ -506,13 +572,13 @@
    ],
    "chains": [
     {
-     "t": "October's Round Trip: a Record, a 2.5% Drawdown and a 0.90% Month",
+     "t": "① October's Round Trip: a Record, a 2.5% Drawdown and a 0.90% Month",
      "main": 1,
      "steps": [
       "Peak on 10/6 at 7,818.93: October's only record close, and its first close above 7,800",
       "Then 10/23: 7,623.68, the month's low close, 2.50% under that peak",
-      "The repair came in three consecutive closes — 10/26, 10/27 and 10/28 added +0.70%, +0.60% and +0.28% — taking the month to +0.90% and 68.85 points above the 9/30 base",
-      "The three repricings that shaped the month: wireless on 10/9, the AI complex on 10/12-13 and the CPI-PPI pair on 10/14-15, when the index lost 1.11% in a single close-to-close move",
+      "The repair came in three consecutive closes — 10/26, 10/27 and 10/28 added +0.70%, +0.60% and +0.28% — taking the month to +1.21% and 92.44 points above the 9/30 base before the 0.30% give-back",
+      "The three repricings that shaped the month: wireless on 10/9, the AI complex on 10/12-13 and the CPI-PPI pair on 10/14-15, when the index lost 1.11% on 10/14 alone",
       "The breadth tell: RSP +5.78% MTD against SPY +0.88% — the average stock is 4.9 points ahead of the index"
      ],
      "d": "October went from a record to a 2.5% drawdown and back above its base: +0.90% on the index, and 4.9 points more for the average stock.",
@@ -544,14 +610,14 @@
      ]
     },
     {
-     "t": "The Month's Split: Energy +11.72%, Comms -8.80%, a 20.52-Point Spread",
+     "t": "② The Month's Split: Energy +11.72%, Comms -8.80%, a 20.52-Point Spread",
      "steps": [
-      "Sector map: Energy +11.72%, Staples +9.40%, Utilities +9.38%, Health +9.27%, Materials +7.86% and ConsDisc +6.76% lead the month",
+      "Sector map: Energy +11.72%, Staples +9.40% and Utilities +9.38% lead the month, with health, materials and consumer discretionary also above the index",
       "Only two sectors are lower, Tech -3.58% and Comms -8.80%, so nine of 11 are positive — the damage is concentrated in the AI complex and the telecoms",
       "The spread widened to 20.52 points from 18.4 a session ago, as Energy gained and Comms lost",
       "The AI de-rating is still the month's biggest single move: SOXX -9.63% MTD while software (IGV) is +1.40% — the damage is in the hardware, not in the applications",
       "The defensives held: Utilities +9.38% and Staples +9.40% are more than eight points ahead of the index",
-      "The volatility tell: the VIX ends the month 5.26% higher at 17.20, its bid intact even after the repair"
+      "The volatility tell: the VIX sits 5.26% higher at 17.20 with one session left, its bid intact even after the repair"
      ],
      "d": "October redistributed rather than de-risked: Energy +11.72% against Comms -8.80% is a 20.52-point spread, and the Dow's +2.82% beat the Nasdaq's -2.52% by 5.3 points.",
      "news": [
@@ -569,22 +635,46 @@
       },
       {
        "time": "10/29 close",
-       "fact": "Sector ETF closes from 9/30 to 10/29: Energy +11.72%, Staples +9.40%, Utilities +9.38%, Health +9.27% against Tech -3.58% and Comms -8.80%, with nine of 11 positive and a best-to-worst spread of 20.52 points.",
+       "fact": "The energy sector ETF closed 11.72% higher from 9/30 to 10/29, at $68.71 from $61.50.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/XLE/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "The staples sector ETF closed 9.40% higher from 9/30 to 10/29.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLP/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "The utilities sector ETF closed 9.38% higher from 9/30 to 10/29.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLU/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "The technology sector ETF closed 3.58% lower from 9/30 to 10/29.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLK/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "The communication services sector ETF closed 8.80% lower from 9/30 to 10/29.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLC/history"
       }
      ]
     },
     {
-     "t": "The Barrel's October: $98.03 to $114.88, a 17.19% Month on the December Contract",
+     "t": "③ The Barrel's October: $98.03 to $114.88, a 17.19% Month on the December Contract",
      "steps": [
       "The path: Brent's December contract started at $98.03, crossed $100 on 10/1, held a $100-107 corridor to 10/15, closed $109.86 on 10/16, $116.72 on 10/23 and $114.88 at the last close",
-      "The premium: Houthi strikes on Saudi airports and Aramco sites, then reports that the US could strike Iran after the 11/3 midterms, carried the contract to a $117.44 high on 10/26 — $2.56 above the latest settle",
+      "The premium: Houthi strikes on Saudi airports and Aramco sites, then reports that the US could strike Iran after the 11/3 midterms, carried the contract to a $117.45 session high on 10/23 — the highest in nearly six months and $2.57 above the latest settle",
       "The physical data: EIA crude stocks fell 3.06 million barrels in the week to 10/16 and 1.9 million in the week to 10/23, and Hormuz flows averaged 11.7 million barrels a day in October",
       "The scoreboard: Brent +17.19% and WTI +15.36% for the month, both on the December contract, with WTI's gain measured from the $88.42 settlement on 9/30",
       "The rate offset: the 10Y is 31bp lower at 4.98% with Brent up 17.19% — the month treated oil as a growth tax, not an inflation spiral"
      ],
-     "d": "October's barrel: a $98 start, a $117.44 high and a 17.19% month that the bond market treated as a growth tax, not as an inflation spiral.",
+     "d": "October's barrel: a $98 start, a $117.45 high and a 17.19% month that the bond market treated as a growth tax, not as an inflation spiral.",
      "news": [
       {
        "time": "10/21",
@@ -593,10 +683,28 @@
        "u": "https://au.investing.com/news/commodities-news/oil-rises-on-middle-east-supply-worries-4702921"
       },
       {
+       "time": "10/23",
+       "fact": "Brent's session high of $117.45 was the highest in nearly six months, and the December contract settled at $116.72.",
+       "src": "Reuters (Nikkei Asia)",
+       "u": "https://asia.nikkei.com/business/markets/commodities/brent-crude-jumps-to-highest-since-april-on-houthi-attacks-uae-oil-spill"
+      },
+      {
        "time": "10/23 settle",
        "fact": "Brent crude futures settled at $116.72 a barrel, up 3.14%, their highest since April 29; WTI closed at $103.27, up 3.8%.",
        "src": "Reuters",
        "u": "https://www.globalbankingandfinance.com/oil-little-changed-supply-concern-lingers-amid-houthi/"
+      },
+      {
+       "time": "10/28",
+       "fact": "The EIA said energy firms pulled 1.9 million barrels of crude from storage in the week ended October 23, versus a 15,000-barrel build expected in a Reuters poll.",
+       "src": "Reuters",
+       "u": "https://live.euronext.com/en/financial-news/oil-prices-rise-about-2-yemen-fighting-stokes-supply-fears"
+      },
+      {
+       "time": "10/27",
+       "fact": "Oil flows through the Strait of Hormuz averaged 11.7 million barrels a day in October, up from 9.75 million in September but still about 18% below pre-war levels, according to Kpler data.",
+       "src": "Benzinga",
+       "u": "https://www.benzinga.com/markets/equities/26/10/62634697/refiner-stocks-valero-marathon-worst-day-since-april-2025-iran-russian-diesel"
       },
       {
        "time": "10/29 settle",
@@ -734,7 +842,7 @@
    ],
    "chains": [
     {
-     "t": "The Quarter's Ledger: a Flat Index, Three Banked Prints, Two Open Verdicts",
+     "t": "① The Quarter's Ledger: a Flat Index, Three Banked Prints, Two Open Verdicts",
      "main": 1,
      "steps": [
       "The standing: 7,651.54 on 9/30 to 7,720.39 — +68.85 points, or 0.90%, against a +2.0% third quarter",
@@ -772,7 +880,7 @@
      ]
     },
     {
-     "t": "The Quarter's Rate Bill: Duration Bought With the Barrel Up 17%",
+     "t": "② The Quarter's Rate Bill: Duration Bought With the Barrel Up 17%",
      "steps": [
       "The retreat ran across the curve: the 2Y fell 27bp to 4.61% and the 30Y 32bp to 5.32% — the long end gave back more than the front",
       "The cost: more than $5 billion of US and European debt sales were postponed in October — the year's biggest spate",
@@ -780,7 +888,7 @@
       "Duration and the barrel moved together all quarter: the 10Y ended 31bp lower even as Brent rose 17.19%, which reads as relief priced as a growth tax rather than as disinflation",
       "The composition of the 31bp: the 10Y fell 33bp from 9/30 to 10/22, then gave 2bp back over the last five closes"
      ],
-     "d": "The quarter's rate bill: relief across the curve while the barrel rose — priced as a growth tax rather than disinflation, with 2bp of the 31bp already handed back since 10/22.",
+     "d": "The quarter's rate bill: relief across the curve while the barrel rose — priced as a growth tax rather than disinflation, with 2bp of the 33bp decline already handed back since 10/22, leaving 31bp.",
      "news": [
       {
        "time": "10/29 close",
@@ -803,7 +911,7 @@
      ]
     },
     {
-     "t": "The Quarter's Calendar: Two Verdicts Before Year-End",
+     "t": "③ The Quarter's Calendar: Two Verdicts Before Year-End",
      "steps": [
       "10/30: the BOJ decision and results from Exxon, Chevron and AbbVie close out the month's calendar",
       "11/3: the midterms, the quarter's last scheduled political risk",
@@ -961,7 +1069,7 @@
    ],
    "chains": [
     {
-     "t": "Two Engines, One Referee",
+     "t": "① Two Engines, One Referee",
      "main": 1,
      "steps": [
       "The engines: AI capex across the hyperscalers and earnings, with Q3 growth now tracking 31.8% year on year",
@@ -986,14 +1094,26 @@
       },
       {
        "time": "10/29 close",
-       "fact": "The S&P 500 finished at 7,720.39, +12.78% year to date from 6,845.50, with the Nasdaq +12.66% and the Dow +8.90%.",
+       "fact": "The S&P 500 finished at 7,720.39, +12.78% year to date from 6,845.50.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/%5EGSPC/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "The Nasdaq finished at 26,184.72, +12.66% year to date from 23,241.99.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/%5EIXIC/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "The Dow finished at 52,342.56, +8.90% year to date from 48,063.29.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/%5EDJI/history"
       }
      ]
     },
     {
-     "t": "The Rate and Inflation Tax",
+     "t": "② The Rate and Inflation Tax",
      "steps": [
       "The long end: the 30Y from 4.84% to 5.32% (+48bp), and the 2Y from 3.47% to 4.61% (+114bp) — the front paid the most",
       "The Fed: a September hike, the first since 2023, a 10-2 hold on 10/28, and about 80% odds of a December increase",
@@ -1017,14 +1137,14 @@
      ]
     },
     {
-     "t": "The Year's Two Markets: Energy +53.68%, Comms -14.02% — a 67.7-Point Spread",
+     "t": "③ The Year's Two Markets: Energy +53.68%, Comms -14.02% — a 67.7-Point Spread",
      "steps": [
-      "The dispersion: Energy +53.68%, Tech +31.10%, Health +18.89% and Materials +15.83% lead; Comms -14.02% and ConsDisc -2.69% are the biggest laggards, with Utilities +1.05% still below the index",
+      "The dispersion: Energy +53.68% and Tech +31.10% lead the year, with Comms -14.02% the biggest laggard and Utilities +1.05% still below the index",
       "The spread: 67.7 points between the best and worst sector",
       "The index's gain is an average of two markets: the average S&P stock (RSP +14.87%) is 2.1 points ahead of the cap-weighted SPY (+12.82%)",
-      "October opened the biggest gap: Energy leads Tech by 15.3 points in the month, from flat at the 9/30 close"
+      "October shows the speed of it: Energy +11.72% against Comms -8.80% is a 20.52-point gap in a single month, from flat at the 9/30 close"
      ],
-     "d": "The year's signature is dispersion: a 67.7-point sector spread inside a +12.78% index, with Energy leading Tech by 15.3 points in October alone.",
+     "d": "The year's signature is dispersion: a 67.7-point sector spread inside a +12.78% index, and October alone put 20.52 points between Energy and Comms.",
      "news": [
       {
        "time": "10/23",
@@ -1034,9 +1154,39 @@
       },
       {
        "time": "10/29 close",
-       "fact": "Sector ETF closes from 12/31/2025 to 10/29: Energy +53.68%, Tech +31.10%, Health +18.89%, Comms -14.02%, ConsDisc -2.69%, with RSP +14.87% against SPY +12.82%.",
+       "fact": "The energy sector ETF closed 53.68% higher year to date, at $68.71 from $44.71.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/XLE/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "The technology sector ETF closed 31.10% higher year to date.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLK/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "The communication services sector ETF closed 14.02% lower year to date.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLC/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "The utilities sector ETF closed 1.05% higher year to date.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLU/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "The equal-weight S&P 500 ETF closed 14.87% higher year to date.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/RSP/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "SPY closed 12.82% higher year to date.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/SPY/history"
       }
      ]
     }
