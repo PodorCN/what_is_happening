@@ -1569,6 +1569,92 @@
       "resolved": true,
       "fixedAt": "2026-10-28T19:20:00-04:00",
       "fixNote": "F1/F2/F3/F4/F5/F7 已修（含同类：mtd c4 首次出现改点名 Brent、④ s5 删 c1 复述的 0.96%/six-of-11、③ n3 拆成 euronext 只背 1.9M/15,000 + Newsquawk 背 723k/Fars）。 F6 驳回其判向并改今日侧：90.42 是 9/30 的 CL=F（November 前月），88.42 才是 December 合约 CLZ26 的 9/30 收盘（Yahoo CLZ26 9/30=88.42、CL=F=90.42；10/26、10/27 foot 亦写『WTI $88.42 (Dec)』）；10/21 换月后 7 份文件用 88.42 是对的，故 WTI MTD/QTD 由 +13.7 改为 +16.2、foot 与 mtd ③ s3 改 $88.42，不改历史 7 份。 同类扩展：data/2026-10-21、10-22 的 wti.ytdBase=56.92 是 CLZ26 的 12/31 价，改回前月口径 57.42（YTD 70.7→69.2 / 74.8→73.2，含两档 HEAT/c1/链文）。 新增 scripts/lint.mjs 规则 13：基线回退到更早文件用过的值 → ERROR（本次 90.42 会直接拦下）。"
+    },
+    {
+      "date": "2026-10-29",
+      "reviewedAt": "2026-10-29T18:45:00-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "mtd ① s2『The repair came in three consecutive closes — 10/26, 10/27 and 10/28 added +0.70%, +0.60% and +0.28% — taking the month to +0.90% and 68.85 points above the 9/30 base』：+0.90% / 68.85 点是 10/29 收盘（7,720.39）的值；10/28 收盘 7,743.98 对 9/30 基期 7,651.54 应为 +1.21% / +92.44 点。该句把今日收盘值安到三连涨修复上，跳过了 10/29 的 -0.30% 回吐，与同档 c1『a three-session repair to 7,743.98 and a 0.30% give-back』自相矛盾",
+              "evidence": "data/2026-10-29.json closes.spx.today=7720.39、mtdBase=7651.54；10/28 快照 mtd ① s3 原文为『taking October to +1.21%, 92.44 points above the 9/30 base』；现算 7743.98/7651.54-1=+1.2081%，7743.98-7651.54=92.44",
+              "rule": "写『某日收盘把月度推到 X% / Y 点』时，X/Y 必须用该日收盘 ÷ 当月基期现算（本例 10/28 → +1.21% / 92.44）；当日收盘值只能用于当日叙述，不得回填到前一日的修复句"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today ② s3『it widened October's 10Y cushion to 31bp, measured against the 5.36% intraday peak on 10/7』：31bp 是 9/30 收盘 5.29% → 4.98% 的月变动；若以 5.36% 盘中高点为基期，应为 38bp（5.36-4.98）。同文件 qtd c4 已写『a 4.98% 10Y is 38bp below the 10/7 intraday peak』，两处对同一比较给出 31bp / 38bp 两个值",
+              "evidence": "Treasury 10/29 10Y=4.98、9/30=5.29；^TNX 10/7 high=5.364；5.36-4.98=0.38，5.29-4.98=0.31",
+              "rule": "写『X bp below/above 某高点』前先固定基期：基期是高点的用高点−现值，基期是窗口开头的用期初−现值；同一比较在全文件只能有一个数"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "mtd ③ d/s1 把 10 月 Brent 高点写成『a $117.44 high』/『a $117.44 high on 10/26』；10/23 快照已记录 10/23 盘中高 $117.45（『highest in nearly six months』），10/26 的 117.44 是更低的次高。月高应为 117.45（10/23），不是 117.44（10/26）",
+              "evidence": "snapshots/2026-10-23.json c1 与 step『after a $117.45 session high』、news『Brent's session high of $117.45 was the highest in nearly six months』；snapshots/2026-10-26.json『after a $117.44 high』；本档 mtd ③ 三条 news 无 117.44/117.45",
+              "rule": "写窗口极值前先把窗口内每个交易日的盘中高/低逐个列出取最大/最小并注明发生日；不得用最近一次见到的次高代替窗口极值"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "mtd ③ s2 的『1.9 million in the week to 10/23』与『Hormuz flows averaged 11.7 million barrels a day in October』在本档 3 条 news 里 0 条含这两个数字（n0 只含 3.06 million）",
+              "evidence": "snapshots/2026-10-29.json P.mtd.chains[2].news 只有 10/21 EIA 3.06M、10/23 settle、10/29 settle；1.9M 见 2026-10-28 快照 euronext 条，11.7M 见 2026-10-27 快照 Benzinga 条，今日均未重挂",
+              "rule": "跨日沿用的数字必须在当日快照本链 news[] 重挂一条含该数字的源（time 写事件日、u 用真实链接）；挂不上就从 step 删掉该数字"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd ② s5『the VIX ends the month 5.26% higher at 17.20』与同档 c1『One session remains: 10/30 …』矛盾：10/29 只是倒数第二个交易日，月份尚未结束",
+              "evidence": "snapshots/2026-10-29.json P.mtd.c1 末句『One session remains: 10/30 brings the BOJ…』；mtd 标题『Twenty-One Sessions In』；10/30 为周五交易日",
+              "rule": "月末最后两个交易日禁用『ends the month / 月度收官』；10/29 写『ends the session』或『with one session left』，把『ends the month』留给 10/30"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "schema",
+              "symptom": "四档全部 14 条链的 t 标题都没有 ①②③ 编号（如 today『The $500 Billion Miss…』、mtd『October's Round Trip…』），与 agent.md schema 示例『t\": \"① …\"』及 10/27、10/28 快照的编号格式不一致，链引用失去锚点",
+              "evidence": "snapshots/2026-10-28.json 各档 chains[].t 均以 ①/②/③/④ 开头；snapshots/2026-10-29.json 14 条全部无编号",
+              "rule": "每条 chain 的 t 首字符固定用 ①②③④⑤ 编号，按数组顺序递增；lint 加 /^[①②③④⑤]/ 校验"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "ytd ③ s3『October opened the biggest gap: Energy leads Tech by 15.3 points in the month』：10 月最大板块差是 Energy +11.72% 对 Comms -8.80% = 20.52 点；Energy 对 Tech 的 15.3 点只是第二大差，不能用 biggest gap",
+              "evidence": "本档 mtd ② 与 HEAT.mtd：Energy +11.72、Tech -3.58、Comms -8.80；11.72+8.80=20.52 > 11.72+3.58=15.30",
+              "rule": "写 biggest gap 前把该窗口 11 个板块两两差值算一遍，取绝对值最大的一对；Energy vs Tech 只能写『the AI-vs-oil gap』或『the second-biggest gap』"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "单条 Yahoo Finance 单标的页被用来背书多个不同标的的数字：today ① n2（CMG 页同时给 DASH +5.61%、RUT +1.01%）、today ③ n5（FTNT 页同时给 MSFT $530.14/-0.16%）、today ④ n4（XLE 页同时给 XOM +0.70%、CVX +0.99%）、mtd ② n2（XLE 页同时给 11 个板块涨幅）",
+              "evidence": "四条 news 的 u 均为 finance.yahoo.com/quote/<单个 symbol>/history；页面只含该 symbol 的收盘序列，不含同条 fact 的其余标的",
+              "rule": "一条 fact 里出现 N 个标的就挂 N 条 news（每个标的自己的 Yahoo history URL），或把 fact 拆成逐标的的子句；单 symbol 页面不得背书多 symbol 数字"
+            },
+            {
+              "id": "F9",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "qtd ② d『with 2bp of the 31bp already handed back since 10/22』：2bp 是从 10/22 的 4.96% 回到 4.98% 的回吐，毛跌幅是 33bp（5.29→4.96）；『2bp of the 31bp』字面读成净跌 29bp，与同档 s4『fell 33bp … then gave 2bp back』和 31bp 净变动不符",
+              "evidence": "Treasury 9/30 5.29、10/22 4.96、10/29 4.98；5.29-4.96=33bp，4.96→4.98=+2bp，净 31bp",
+              "rule": "写『N bp of the M bp handed back』时 M 用毛变动（33bp）、净变动另写；或直接写『gave back 2bp of the 33bp decline, leaving 31bp』"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
