@@ -186,9 +186,15 @@
       },
       {
        "time": "10/29 close",
-       "fact": "The VIX closed at 17.20, up 1.71% from 16.91, while the S&P 500 finished 1.26% below its 10/6 record close of 7,818.93.",
+       "fact": "The S&P 500 closed at 7,720.39, 1.26% below its 10/6 record close of 7,818.93.",
        "src": "Yahoo Finance",
-       "u": "https://finance.yahoo.com/quote/%5EVIX/history"
+       "u": "https://finance.yahoo.com/quote/%5EGSPC/history"
+      },
+      {
+       "time": "10/29 close",
+       "fact": "The Nasdaq closed at 26,184.72, 5.13% below its 10/6 record close of 27,599.79.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/%5EIXIC/history"
       }
      ]
     },
