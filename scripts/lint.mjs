@@ -249,6 +249,31 @@ if (DATA) {
   }
 }
 
+// ---------- 14. today 档 tbl 期初/期末必须等于 data 的 prev/today，且行内 % 自洽（review 2026-10-30 F1）----------
+const TBLMAP = { "S&P": "spx", Dow: "dji", Nasdaq: "ixic", "10Y": "tnx", WTI: "wti", Gold: "gold", Brent: "brent", VIX: "vix" };
+const numOf = s => parseFloat(String(s).replace(/[,$%+]/g, "").replace("−", "-"));
+if (DATA) for (const r of snap.P.today?.tbl || []) {
+  const sym = TBLMAP[String(r[0]).trim()];
+  const c = sym && DATA.closes?.[sym];
+  if (!c) continue;
+  const open = numOf(r[1]), close = numOf(r[2]);
+  if (c.prev != null && isFinite(open) && Math.abs(open - c.prev) > Math.abs(c.prev) * 2e-4)
+    E(`today.tbl/${r[0]}`, `期初 ${r[1]} ≠ data prev ${c.prev}——today 档期初必须是上一交易日定稿收盘（closes.${sym}.prev），不能沿用昨日文件的期初`);
+  if (c.today != null && isFinite(close) && Math.abs(close - c.today) > Math.abs(c.today) * 2e-4)
+    E(`today.tbl/${r[0]}`, `期末 ${r[2]} ≠ data today ${c.today}`);
+  const shown = String(r[3] || "");
+  if (!isFinite(open) || !isFinite(close) || !open) continue;
+  if (/bp/i.test(shown)) {
+    const bp = Math.round((close - open) * 100);
+    const was = parseInt(shown.replace(/[^-\d]/g, ""), 10);
+    if (isFinite(was) && bp !== was) E(`today.tbl/${r[0]}`, `行内 ${shown} ≠ 期末−期初 ${bp}bp`);
+  } else {
+    const pct = (close / open - 1) * 100;
+    const was = numOf(shown);
+    if (isFinite(was) && Math.abs(pct - was) > 0.02) E(`today.tbl/${r[0]}`, `行内 ${shown} ≠ 期末/期初−1 ${pct.toFixed(2)}%`);
+  }
+}
+
 for (const e of errs) console.log("ERROR " + e);
 for (const w of warns) console.log("WARN  " + w);
 console.log(`\nlint ${DATE}: ${errs.length} error(s), ${warns.length} warning(s)`);

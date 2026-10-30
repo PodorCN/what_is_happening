@@ -1727,9 +1727,16 @@
               "rule": "写『X、Y、Z 跑赢指数』前用同档 HEAT 把全部跑赢板块列全；枚举不全就改用『led by X, Y…』的非穷举措辞"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true,
+      "fixedAt": "2026-10-30T19:10:00-04:00",
+      "fixNote": "F1-F7 全部成立并已修：F1 today tbl 三行期初改用 data closes.prev（7,720.39 / 52,342.56 / 26,184.72），并在 scripts/lint.mjs 加规则 14（today tbl 期初=prev、期末=today、行内 % 自洽）；F2 现货金改回 Kitco 页内原句（$3,880 / -3.5%，$3,884.61 是 2025-10-06 旧低点）；F3 删 Amazon \"record\"（AP 只说 burned through US$42.4B）；F4 ④ 补挂 AP 的 Coinbase/Strategy「stronger results」句、⑤ 把 beat 限定在 Exxon/Chevron/Mondelez/Colgate 并补全 n0 原句（AZN 只留涨幅）；F5 qtd ② d 改「the 30Y 33bp lower」；F6 today ② 改「a bid led by the front end」；F7 ytd c1 补 Staples +15.11%。"
     }
   ]
 }
