@@ -1660,6 +1660,76 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-10-30",
+      "reviewedAt": "2026-10-30T18:45:00-04:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "today 档 tbl 前三行期初沿用 10/29 快照的期初（S&P 7,743.98 / Dow 52,475.10 / Nasdaq 26,549.85），未更新为 10/29 收盘；期末已是 10/30 收盘，同一行自相矛盾：7,743.98→7,580.07 实为 -2.12%（Dow -1.34%、Nasdaq -4.19%），行内却写 -1.82% / -1.09% / -2.86%。正确期初应为 7,720.39 / 52,342.56 / 26,184.72（10Y 4.98%、WTI $102.00、Gold $4,031.40 三行正确）",
+              "evidence": "data/2026-10-30.json closes.spx.prev=7720.3901、dji.prev=52342.5586、ixic.prev=26184.7246；本档 today data 序列倒数第二点=7720.39；snapshots/2026-10-29.json today tbl 期末=7,720.39/52,342.56/26,184.72；现算 7580.07/7743.98-1=-2.117%、51770.31/52475.10-1=-1.343%、25437.00/26549.85-1=-4.188%",
+              "rule": "today 档 tbl 每行期初取 data/<DATE>.json 的 closes.<sym>.prev（= data 序列倒数第二点）、期末取 today；写入后逐行现算 期末/期初−1 与行内 pct 比对（±0.02pp），三行不一致即停；lint 加这条断言"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ② s2 与 n3 写 spot gold『$3,884.90，跌 3.37%』/『4:07 p.m. ET，down $135.60』，但所引 Kitco 页面正文只有『Spot gold last traded at $3,880 an ounce, down 3.5% on the day』：$3,884.90、$135.60、4:07 p.m. 三个数字均不在页内（页内的 $3,884.61 是 2025-10-06 的盘中低点，属比较基期，不是当日价）",
+              "evidence": "curl kitco.com/news/article/2026-10-30/gold-prices-plunge-one-year-low-below-3900-higher-oil-prices-fuel-fears 正文；同档 n2（Canadian Press）只给期货结算 3,898.90，spot 另无静态源",
+              "rule": "spot 的价格/时点/变动额必须取自所引页面正文原句；页面只给 $3,880 / -3.5% 就写该值，或改挂含 4:07pm 报价的静态源，不得把报价组件数字写进 fact"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today c1、c4 第 1 条与 ① s2 三处写 Amazon『a record $42.4 billion of trailing 12-month free-cash outflow』；本档 96 条 news 无一条写 record，AP 原句为『Amazon's reporting that it burned through US$42.4 billion of cash over the prior 12 months』",
+              "evidence": "bnnbloomberg AP 稿全文检索 'record' 仅出现在 S&P 纪录相关句；today ① n3 fact 只写 42.4B/94.8B，无 record",
+              "rule": "写 record/largest/first 类最高级前必须在 news[] 找到含该词的来源句；找不到就删掉最高级，只保留数字与口径"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "④ s3『Coinbase…Strategy…even though both had beaten earnings estimates』与 ⑤ s0『Exxon +2.16%…AstraZeneca +7.02% all beat expectations』超出本链 news 覆盖：④ 的 7 条 news（Reuters/AP/CNBC/Yahoo）无一条提财报超预期（beat 句出自只挂在 ①/⑤ 的 AP 大盘稿）；⑤ n0 只对 Exxon/Chevron 写『stronger profit than analysts expected』，Mondelez/Colgate 仅写 rose/climbed，AstraZeneca 的 n1 只给收盘涨幅",
+              "evidence": "today ④ news = euronext×2 / apnews / cnbc / Yahoo BTC·COIN·MSTR；apnews 全文无 Coinbase、Strategy、earnings；today ⑤ n0 AP 句、n1 Yahoo AZN 句",
+              "rule": "step 里每个 beat/miss 归属必须在**本链** news 原句里有对应表述；只有价格变动的标的不得写成 beat expectations，缺源就删掉该分句"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "qtd ② d『…with the long end giving back 33bp』方向与 s0『the 30Y 33bp to 5.31%』相反：30Y 由 5.64% 降到 5.31% 是收益率下行（价格上行），'giving back 33bp' 读作收益率回吐上行 33bp",
+              "evidence": "Treasury 2026-09-30 30Y=5.64、2026-10-30 30Y=5.31（-33bp）；snapshots/2026-10-29.json 同档 d 原文『2bp of the 33bp decline already handed back since 10/22, leaving 31bp』，改写时 handed back 残留成 giving back",
+              "rule": "d 里收益率方向词必须与 steps 同向：收益率下行写 fell/eased Nbp，只有收益率上行才写 gave back/rose；定稿前把 d 的每个数字与 s0 的期初/期末逐项对向"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today ② s0 把 2Y -5bp、10Y -4bp、30Y -1bp 称为『a parallel bid』：三点幅度差 4bp 且短端跌幅最大（牛陡），不是平行移动",
+              "evidence": "Treasury 10/30 vs 10/29：2Y 4.61→4.56、10Y 4.98→4.94、30Y 5.32→5.31；同档 HEAT 三行同值",
+              "rule": "写 parallel shift/bid 前先列三点变动，只有三者同幅（±1bp）才用 parallel；否则写『led by the front end (2Y -5bp)』或直接列三点"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "ytd c1『while Tech +24.69%, Health +19.43% and Materials +16.30% sit ahead of the index』漏掉 Staples +15.11%（同样高于指数 +10.73%），同档 HEAT 与 ③ s0 都把 Staples 列入领先组，c1 枚举不完整",
+              "evidence": "HEAT ytd Staples +15.11 vs S&P +10.73；ytd ③ s0『Energy +56.61% and Tech +24.69% lead the year, with Health +19.43%, Materials +16.30% and Staples +15.11% ahead of the index』",
+              "rule": "写『X、Y、Z 跑赢指数』前用同档 HEAT 把全部跑赢板块列全；枚举不全就改用『led by X, Y…』的非穷举措辞"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
