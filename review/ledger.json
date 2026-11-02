@@ -1737,6 +1737,100 @@
       "resolved": true,
       "fixedAt": "2026-10-30T19:10:00-04:00",
       "fixNote": "F1-F7 全部成立并已修：F1 today tbl 三行期初改用 data closes.prev（7,720.39 / 52,342.56 / 26,184.72），并在 scripts/lint.mjs 加规则 14（today tbl 期初=prev、期末=today、行内 % 自洽）；F2 现货金改回 Kitco 页内原句（$3,880 / -3.5%，$3,884.61 是 2025-10-06 旧低点）；F3 删 Amazon \"record\"（AP 只说 burned through US$42.4B）；F4 ④ 补挂 AP 的 Coinbase/Strategy「stronger results」句、⑤ 把 beat 限定在 Exxon/Chevron/Mondelez/Colgate 并补全 n0 原句（AZN 只留涨幅）；F5 qtd ② d 改「the 30Y 33bp lower」；F6 today ② 改「a bid led by the front end」；F7 ytd c1 补 Staples +15.11%。"
+    },
+    {
+      "date": "2026-11-02",
+      "reviewedAt": "2026-11-02T18:50:00-05:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "取数",
+              "symptom": "qtd 档 Brent 跨合约混算：tbl/kpi/badges/HEAT 的 Brent QTD 写 $98.03→$104.77 = +6.88%，但 98.03 是 9/30 的 Dec 合约收盘、104.77 是 11/2 的 Jan 结算。同一口径下昨日 QTD 为 +20.00%（Dec/Dec），叠加今日 Jan -7.63% 应为 +10.84%，差 3.96pp；qtd c1/d 与 ③ s2 的「Brent +6.88% since 9/30」同步错。",
+              "evidence": "data/2026-11-02.json brent.qtdBase=98.03（foot「26-09-30 … Brent $98.03 (Dec)」），today=104.77（Jan）；snapshots/2026-10-30.json qtd tbl Brent 98.03→117.64=+20.00%，foot「Brent 117.64 (Dec final settle; January 113.43 is the new front month)」；104.77/98.03-1=6.88%，而 113.43→104.77 为 -7.63%、117.64→104.77 为 -10.94%；1.2000×0.9237=1.1084（+10.84%）。",
+              "rule": "Brent 的 QTD/YTD% 必须用前月连续序列同口径：换月后用 113.43/117.64 把 9/30 的 Dec 收盘回补为 94.52（→ +10.84%），或整段改用 Jan 合约同日序列；禁止 Dec 基期配 Jan 期末，改后同步 tbl/kpi/badges/HEAT/c1/d/③ s2。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "qtd c1 的换月句把 January 的 $104.77 写在 10/30：「rolling from December's $117.64 expiry to January's $104.77 on 10/30」。10/30 的 Jan 结算为 $113.43；$104.77 是 11/2 的结算。",
+              "evidence": "本档 foot「Dec expired at 117.64 on 10/30, January was 113.43 that day」；mtd ② s1「fell from $113.43 to $104.77」；snapshots/2026-10-30.json foot 同句。",
+              "rule": "换月句按「Dec 117.64 expired 10/30 → Jan 113.43 that day → Jan 104.77 on 11/2」三段写，日期与价格一一对应；写后与 foot 及 mtd ② s1 逐项比对。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "qtd ② d 写「technology and communication services down double digits」、② s3 写「the only double-digit losers」，但 XLC QTD 为 -9.65%，不是 double-digit；只有 Tech -11.00% 达标。",
+              "evidence": "HEAT qtd Comms -9.65；Yahoo XLC 100.26 对 9/30 收盘现算 -9.65%；同档 ② s1 亦只列 Tech -11.00、Comms -9.65。",
+              "rule": "写 double-digit 前对每个板块取 HEAT 值判 |x|≥10：Comms -9.65 改写「down nearly 10%」，或只说 technology is the only double-digit loser。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "qtd c4 第 3 条「7,818.93 on 10/6, 3.55% above the 11/2 close」分母用反：3.55% 是 7,541.40 相对 7,818.93 的跌幅；纪录高于 11/2 收盘 277.53 点，应为 3.68%。",
+              "evidence": "7,818.93/7,541.40-1=3.680%；7,541.40/7,818.93-1=-3.549%；同档 c1/s1 的「3.55% below」是对的。",
+              "rule": "「A 高于 B x%」一律用 A/B-1；把 below 句改成 above 时重算分母，禁止直接搬 3.55%。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "qtd c1「Q4 is two months and twenty-three sessions old」：Q4 自 10/1 起，11/2 只是第 2 个月的第 1 个交易日（1 个月零 1 天），不是两个月；23 sessions 正确。",
+              "evidence": "qtd labels 9/30–11/2 共 24 点 = 23 sessions；10/30 快照同句为「one month and 22 sessions old」，今日只应 +1 session，不应 +1 month。",
+              "rule": "窗口档「N months old」按自然月差现算（10/1→11/2=1 个月，第二个月），日期推进只加 sessions；定稿前与 labels.length-1 对齐。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today h/c1/① s3 的「11.72% three-session loss」实为两日跌幅：SOXX 10/29 收 513.86 → 11/2 453.65 = -11.72%（只含 10/30、11/2 两个 session）；三日（自 10/28 收 521.94）为 -13.08%。",
+              "evidence": "Yahoo SOXX 日线：10/28 521.94、10/29 513.86、10/30 471.51、11/2 453.65；453.65/521.94-1=-13.08%，453.65/513.86-1=-11.72%。",
+              "rule": "写「N-session loss」时起点取 N 个交易日前的收盘：三日用 10/28 的 521.94（-13.08%），两日用 10/29 的 513.86（-11.72%）；h/标题/c1/① s3/news 同步改。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd ① s5 与 ③ s1-s3 重复同一组日历 gate（11/3 midterms、11/6 payrolls、12/8-9 FOMC）；① 的「four dates」还漏了 ③ s4 的 Apple/Palantir。",
+              "evidence": "mtd ① s5「11/3 midterms, 11/6 payrolls, Nvidia…, 12/8-9 FOMC」；③ s1「midterms on 11/3」、s2「employment report 11/6」、s3「FOMC 12/8-9」；10/27 F7 同一模式已记录。",
+              "rule": "同一档日历 gate 只归一条链：mtd 的 11/3、11/6、12/8-9 只留在 ③；① s5 改成层级句（「四个待验事件」）或删除，定稿后 grep 该档日期在 ① 应为 0 处。"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ④ 标题/d 把 Apple 与 Palantir 都写成「Two Earnings Beats」/「both delivered」，但同档所引 Bloomberg wrap 说 Apple「posted decelerating sales growth, with China revenue missing estimates」，所引 CNBC 说 Palantir「Shares dipped about 3% in extended trading」；快照只保留 Fortune 的「rose about 1.5% immediately after」。",
+              "evidence": "today ④ n3 Apple release（$114.5B/+12%、EPS $2.10/+14% 为真，但无 consensus 数字）；④ n4 CNBC Palantir「dipped about 3% in extended trading」；④ n5 Fortune「rose about 1.5% … immediately after」；④ n7/n8 swissinfo Bloomberg wrap「decelerating sales growth, with China revenue missing estimates」。",
+              "rule": "写 beat/What Held 前每个 beat 必须有 consensus 数字（EPS/revenue vs expected）；同一事件的盘后价取最新值并注明时点（+1.5% immediate vs -3% extended 并列或只留最新），不得只留方向有利的一条。"
+            },
+            {
+              "id": "F9",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today ② d「a hot ISM prices index kept the front end offered」与 ② s5「as ISM's prices index printed 75.2」把 2Y +3bp 归因于价格指数，但同链 n9 写「75.2%，2.7 points below September's 77.9%」——指数是回落，不是 hot；mtd c4 又写「held at 75.2」。",
+              "evidence": "today ② n9（ISM/PRNewswire）原句；Treasury 10/30→11/2 2Y 4.56→4.59（+3bp）；同 n9 标题的 headline PMI 为 55.5。",
+              "rule": "因果句里的指标方向必须与同链 news 同向：prices index 由 77.9 降至 75.2 时不能写 hot/held；改引 55.5 的 headline PMI，或写「still elevated at 75.2 but 2.7pts below September」。"
+            },
+            {
+              "id": "F10",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd c1 与 ① s2 用「starts the month 3.55%/10.36% below its record」，但这两个是 11/2 收盘的距纪录值；10/30 月初期值为 3.05%（S&P 7,580.07 vs 7,818.93）和 9.09%（NDX 28,384.85 vs 31,224.47）。",
+              "evidence": "7,580.07/7,818.93-1=-3.055%；28,384.85/31,224.47-1=-9.093%；今日 qtd 序列 10/30 收 7,580.07；Yahoo ^NDX 10/30 收 28,384.85。",
+              "rule": "「starts the month X% below」只在 X 用上月最后交易日收盘现算；要写 11/2 的距纪录值就改成「is X% below」，并在同句点明「as of 11/2 close」。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
