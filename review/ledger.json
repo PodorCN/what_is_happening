@@ -1828,9 +1828,16 @@
               "rule": "「starts the month X% below」只在 X 用上月最后交易日收盘现算；要写 11/2 的距纪录值就改成「is X% below」，并在同句点明「as of 11/2 close」。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true,
+      "fixedAt": "2026-11-02T19:12:00-05:00",
+      "fixNote": "F1-F10 全部成立并已修：F1 qtd Brent 改 roll-adjusted（基期 94.52 = 98.03×113.43/117.64 → +10.84%，同步 badges/kpi/tbl/HEAT/d/c1/③ 标题与 s1；data 写 qtdBaseRaw/qtdBaseNote）；F2 换月句改三段（117.64 expired 10/30 → Jan 113.43 that day → 104.77 on 11/2）；F3 Comms -9.65 改 nearly 10%、Tech 为唯一 double-digit loser；F4 3.55→3.68；F5 two months→one month；F6 11.72% three-session 改 13.08%（h/① t/c1/① s2）；F7 mtd ① s4 改层级句（日期归 ③）；F8 ④ 标题/d 改为 Apple September-quarter record + China miss、Palantir 盘后 +1.5% 后 -3.6%，并补 Bloomberg 条（证据里的 ④ n7/n8 实为 n5/n6，编号偏移但事实成立）；F9 hot/held 改 still elevated at 75.2, 2.7 points below September（含 mtd c4）；F10 starts the month 改 is now…from 3.05%/9.09% at the 10/30 close。另：scripts/build.mjs 基线检查对带 qtdBaseNote 的换月回补放行（本次 98.03→94.52 有 note），非静默放行。"
     }
   ]
 }

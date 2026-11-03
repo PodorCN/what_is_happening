@@ -47,7 +47,11 @@ try {
       const a = d.closes[k], b = p.closes && p.closes[k];
       if (!a || !b) continue;
       if (sameM && a.mtdBase != null && b.mtdBase != null && Math.abs(a.mtdBase - b.mtdBase) > Math.max(1e-6, Math.abs(b.mtdBase) * 1e-6)) bad.push(`${k}.mtdBase ${b.mtdBase} -> ${a.mtdBase}`);
-      if (sameQ && a.qtdBase != null && b.qtdBase != null && Math.abs(a.qtdBase - b.qtdBase) > Math.max(1e-6, Math.abs(b.qtdBase) * 1e-6)) bad.push(`${k}.qtdBase ${b.qtdBase} -> ${a.qtdBase}`);
+      if (sameQ && a.qtdBase != null && b.qtdBase != null && Math.abs(a.qtdBase - b.qtdBase) > Math.max(1e-6, Math.abs(b.qtdBase) * 1e-6)) {
+        // 换月比例回补（期货前月切换）必须同时有 qtdBaseRaw 与 note，否则仍按异常处理
+        if (a.qtdBaseNote && a.qtdBaseRaw != null) console.log(`基线说明 ${k}.qtdBase ${b.qtdBase} -> ${a.qtdBase}（raw ${a.qtdBaseRaw}；${a.qtdBaseNote}）`);
+        else bad.push(`${k}.qtdBase ${b.qtdBase} -> ${a.qtdBase}`);
+      }
     }
     if (!sameM || !sameQ) console.log(`基线连续性检查：检测到换期（${p.bases.mtdBase}/${p.bases.qtdBase} -> ${d.bases.mtdBase}/${d.bases.qtdBase}），仅检查未换期项`);
     if (bad.length) console.log(`⚠ 基线连续性异常（vs ${prevFile}）: ${bad.join(" | ")} —— 禁止跨合约/换月混用，修复后再 commit`);

@@ -2,10 +2,10 @@
  "date": "2026-11-02",
  "updatedAt": "2026-11-02T22:20:00Z",
  "label": "2026-11-02 Monday close",
- "foot": "Closing baseline (auto 2026-11-02): SPX 7541.40 (-0.51% MTD / -1.44% QTD / +10.17% YTD) · DJI 51983.98 (+0.41% MTD / +2.12% QTD / +8.16% YTD) · IXIC 25164.32 (-1.07% MTD / -6.32% QTD / +8.27% YTD) · 10Y 4.91% (Treasury daily curve) · WTI 96.46 (Dec settle) · Brent 104.77 (Jan settle; Dec expired at 117.64 on 10/30, January was 113.43 that day) · Gold 3969.60 (Dec fut settle) · BTC 76687 (4pm ET). Sector and single-name returns computed from Yahoo closes; futures from exchange settlement. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23242/10Y 4.18%/30Y 4.84%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.42% · 26-08-31 S&P 7686.14/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/WTI $88.42 (Dec)/Brent $98.03 (Dec)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
+ "foot": "Closing baseline (auto 2026-11-02): SPX 7541.40 (-0.51% MTD / -1.44% QTD / +10.17% YTD) · DJI 51983.98 (+0.41% MTD / +2.12% QTD / +8.16% YTD) · IXIC 25164.32 (-1.07% MTD / -6.32% QTD / +8.27% YTD) · 10Y 4.91% (Treasury daily curve) · WTI 96.46 (Dec settle) · Brent 104.77 (Jan settle; Dec expired at 117.64 on 10/30, January was 113.43 that day; QTD base 94.52 = 9/30 Dec 98.03 × 113.43/117.64, roll-adjusted) · Gold 3969.60 (Dec fut settle) · BTC 76687 (4pm ET). Sector and single-name returns computed from Yahoo closes; futures from exchange settlement. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23242/10Y 4.18%/30Y 4.84%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.42% · 26-08-31 S&P 7686.14/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
  "P": {
   "today": {
-   "h": "The Rebound Died at the Close: Chips Down 12% in Three Days, Crude Down 7.4%, Dow Up 0.41%",
+   "h": "The Rebound Died at the Close: Chips Down 13% in Three Days, Crude Down 7.4%, Dow Up 0.41%",
    "d": "The S&P 500 opened 0.41% higher, peaked at 7,662.23 and closed 0.51% lower at 7,541.40 as the chip rout stretched to a third session; the Dow rose 0.41%, eight of 11 sectors gained and WTI settled 7.36% lower at $96.46 on Iran diplomacy hopes.",
    "badges": [
     "S&P 7,541 -0.51%",
@@ -14,7 +14,7 @@
     "10Y 4.91% -3bp",
     "WTI $96.46 -7.36%"
    ],
-   "c1": "The morning was a rebound; the close was a rotation. The S&P 500 opened at 7,610.83, ran to 7,662.23 — up 1.08% — and then gave all of it back, closing 38.67 points or 0.51% lower at 7,541.40, two points above its session low. The Nasdaq Composite fell 1.07% to 25,164.32 and the Nasdaq 100 lost 1.39% to 27,989.82, 10.36% below its 10/6 record and into a technical correction. The pressure was the AI complex: SOXX fell 3.79% for an 11.72% three-session loss, with AMD -7.52%, Micron -5.78% and Intel -8.80%, while Oracle dropped 8.76% after filing to sell $10 billion of stock alongside $10 billion of notes. The Dow rose 213.67 points to 51,983.98 and eight of 11 sectors gained — consumer discretionary +2.41%, financials +1.86%, materials +1.76% — while energy fell 3.96% as crude collapsed on reports that Trump wants to give Iran diplomacy more time. Rates split: the 10Y closed 4.91%, down 3bp, and the 30Y 5.28%, down 3bp, but the 2Y rose 3bp to 4.59%. Gold settled 1.81% higher at $3,969.60 after Friday's one-year low, and the VIX rose 8.91% to 21.15, its highest close since 6/10.",
+   "c1": "The morning was a rebound; the close was a rotation. The S&P 500 opened at 7,610.83, ran to 7,662.23 — up 1.08% — and then gave all of it back, closing 38.67 points or 0.51% lower at 7,541.40, two points above its session low. The Nasdaq Composite fell 1.07% to 25,164.32 and the Nasdaq 100 lost 1.39% to 27,989.82, 10.36% below its 10/6 record and into a technical correction. The pressure was the AI complex: SOXX fell 3.79%, taking its three-session loss to 13.08%, with AMD -7.52%, Micron -5.78% and Intel -8.80%, while Oracle dropped 8.76% after filing to sell $10 billion of stock alongside $10 billion of notes. The Dow rose 213.67 points to 51,983.98 and eight of 11 sectors gained — consumer discretionary +2.41%, financials +1.86%, materials +1.76% — while energy fell 3.96% as crude collapsed on reports that Trump wants to give Iran diplomacy more time. Rates split: the 10Y closed 4.91%, down 3bp, and the 30Y 5.28%, down 3bp, but the 2Y rose 3bp to 4.59%. Gold settled 1.81% higher at $3,969.60 after Friday's one-year low, and the VIX rose 8.91% to 21.15, its highest close since 6/10.",
    "c4": "<ul class='play'><li>The index is a funding verdict now: Oracle's $20 billion raise cost it 8.76% and the chip gauge 3.79% on the day — the AI trade is being priced off balance sheets, not bookings.</li><li>The split is the story: eight of 11 sectors green, equal weight 1.24 points ahead of SPY and the Dow up 214 points — the rotation out of AI is still funding the rest of the tape.</li><li>The barrel is the swing factor into the midterms: WTI -7.36% and Brent -7.63% in one session on a diplomatic opening, with energy -3.96% the day's worst sector.</li><li>The next gates: Apple's September-quarter record and Palantir's 96% growth landed after the bell; the 11/3 midterms and 11/6 payrolls decide whether a 21.15 VIX is hedging or the start of something.</li></ul>",
    "kpi": [
     [
@@ -120,12 +120,12 @@
    ],
    "chains": [
     {
-     "t": "① The AI Trade's Second Leg: Oracle's $20 Billion Ask and a 12% Chip Rout in Three Days",
+     "t": "① The AI Trade's Second Leg: Oracle's $20 Billion Ask and a 13% Chip Rout in Three Days",
      "main": 1,
      "steps": [
       "Oracle filed to sell $10 billion of common stock and $10 billion of senior notes on Monday, the capital plan it previewed at its 10/28 investor day",
       "ORCL fell 8.76% to $119.22; its 4.95% notes due 2031 yield 7.276% and five-year CDS sit at 292, a spread S&P Global Market Intelligence puts in high-yield territory",
-      "The chip gauge extended a three-day rout to 12%: SOXX -3.79% to $453.65, AMD -7.52%, Micron -5.78% and Intel -8.80%",
+      "The chip gauge extended a three-day rout to 13.08%: SOXX -3.79% to $453.65, AMD -7.52%, Micron -5.78% and Intel -8.80%",
       "The Nasdaq 100 closed at 27,989.82, 10.36% below its 10/6 record and in a technical correction; the Nasdaq Composite lost 1.07% to 25,164.32",
       "The S&P 500 held a 1.08% gain at its 7,662.23 high but closed at 7,541.40, down 0.51% and two points off the session low"
      ],
@@ -194,9 +194,9 @@
       "Rubio said over the weekend the US would \"prefer to do it peacefully\"; Pezeshkian said the supreme leader has given his government more authority to pursue peace talks",
       "WTI for December settled $7.66 lower at $96.46, -7.36%; Brent for January settled $8.66 lower at $104.77, -7.63% — the sharpest one-day drop in three months",
       "Energy was the worst sector: XLE -3.96%, Exxon -4.05%, Chevron -3.29%",
-      "The long end rallied with it — 10Y -3bp to 4.91%, 30Y -3bp to 5.28% — while the 2Y rose 3bp to 4.59% as ISM's prices index printed 75.2"
+      "The long end rallied with it — 10Y -3bp to 4.91%, 30Y -3bp to 5.28% — while the 2Y rose 3bp to 4.59% as ISM's prices index stayed elevated at 75.2, 2.7 points below September's 77.9"
      ],
-     "d": "A diplomatic opening in Iran was the day's biggest repricing: it removed 7.4% from WTI, put energy at the bottom of the sector table and pulled long yields lower while a hot ISM prices index kept the front end offered.",
+     "d": "A diplomatic opening in Iran was the day's biggest repricing: it removed 7.4% from WTI, put energy at the bottom of the sector table and pulled long yields lower while an ISM prices index still at 75.2, 2.7 points below September, kept the front end offered.",
      "news": [
       {
        "time": "11/1",
@@ -340,15 +340,15 @@
      ]
     },
     {
-     "t": "④ What Held: Gold's Bounce, Two Earnings Beats After the Bell and the Midterms",
+     "t": "④ What Held: Gold's Bounce, the After-Bell Earnings and the Midterms",
      "steps": [
       "December gold settled $70.70 higher at $3,969.60, a 1.81% rebound from Friday's one-year low",
       "Spot gold rose 1.9% to $3,946.57 as cheaper crude eased the energy-inflation trade that had driven the metal to its lowest since October 2025",
-      "Apple reported after the bell: September-quarter revenue $114.5 billion, up 12%, EPS $2.10, up 14%, and fiscal 2026 revenue a record $479 billion",
-      "Palantir beat after the bell with revenue up 96% to $2.31 billion and raised full-year guidance to about $8.53 billion",
+      "Apple reported after the bell: September-quarter revenue $114.5 billion, up 12%, EPS $2.10, up 14%, and fiscal 2026 revenue a record $479 billion; China revenue missed estimates as sales growth decelerated",
+      "Palantir beat after the bell with revenue up 96% to $2.31 billion and raised full-year guidance to about $8.53 billion; the shares rose about 1.5% immediately after the release before dropping 3.6% in after-hours trading",
       "Barclays called the AI drawdown \"a garden variety correction\"; the 11/3 midterms and the 11/6 payrolls report are the week's clearing events"
      ],
-     "d": "Nothing broke: gold bounced off a one-year low, Apple and Palantir both delivered after the close, and the selloff's own strategists framed it as a correction — with the midterms as the next gate.",
+     "d": "Nothing broke: gold bounced off a one-year low, Palantir beat and raised guidance after the close while Apple's September-quarter record came with a China miss, and the selloff's own strategists framed it as a correction — with the midterms as the next gate.",
      "news": [
       {
        "time": "11/2 close",
@@ -369,6 +369,12 @@
        "u": "https://www.apple.com/newsroom/2026/11/apple-reports-fourth-quarter-results/"
       },
       {
+       "time": "11/2 after hours",
+       "fact": "Apple posted decelerating sales growth, with China revenue missing estimates.",
+       "src": "Bloomberg",
+       "u": "https://swissinfo.ch/eng/s%26p-500-falls-as-chip-rout-offsets-us-iran-hopes%3A-markets-wrap/92310840"
+      },
+      {
        "time": "11/2 16:05 ET",
        "fact": "Palantir reported third-quarter revenue of $2.31 billion, up 96%, adjusted EPS of 44 cents versus 41 cents expected, and guided full-year 2026 revenue to about $8.53 billion.",
        "src": "CNBC",
@@ -376,7 +382,7 @@
       },
       {
        "time": "11/2 after hours",
-       "fact": "Palantir shares rose about 1.5% in after-hours trading immediately after the figures were published.",
+       "fact": "Palantir shares rose about 1.5% in after-hours trading immediately after the figures were published, before dropping 3.6%.",
        "src": "Fortune",
        "u": "https://fortune.com/2026/11/02/palantir-q3-results-stock-ai-trade-selloff/"
       },
@@ -406,8 +412,8 @@
     "10Y -3bp",
     "Brent -7.63%"
    ],
-   "c1": "November opened with the split that closed October. The S&P 500 is 38.67 points below its 10/30 base at 7,541.40, or -0.51%, with the Dow +0.41% and the Nasdaq -1.07%. The index starts the month 3.55% below its 10/6 record and the Nasdaq 100 10.36% below its own. The first session did not repair either: technology -2.95% and energy -3.96% against gains in eight sectors. Energy's loss came from the barrel — WTI -7.36% and Brent -7.63% after Axios reported Trump wants more time for Iran diplomacy. The 10Y is 3bp lower at 4.91% and the 30Y 3bp lower at 5.28%, while the 2Y is 3bp higher at 4.59%. Gold is +1.81% at $3,969.60 and the VIX +8.91% at 21.15. What November owes: the 11/3 midterms, the 11/6 payrolls report, Nvidia's results later in the month and the 12/8-9 FOMC, where a quarter-point hike is about 72% priced.",
-   "c4": "<ul class='play'><li>The month's shape on day one: index down 0.51%, equal weight up 0.76% and eight of 11 sectors green — the rotation, not the level, is the signal.</li><li>Energy is the month's first casualty: a 7.63% drop in Brent's January contract took the sector down 3.96% and the barrel's November base to $113.43.</li><li>The rate cushion is intact: 10Y -3bp and 30Y -3bp on the session, with the 2Y +3bp as ISM prices held at 75.2.</li><li>The month's four dates: 11/3 midterms, 11/6 payrolls, Nvidia later in November and the 12/8-9 FOMC at about 72% for a hike.</li></ul>",
+   "c1": "November opened with the split that closed October. The S&P 500 is 38.67 points below its 10/30 base at 7,541.40, or -0.51%, with the Dow +0.41% and the Nasdaq -1.07%. The index is now 3.55% below its 10/6 record and the Nasdaq 100 10.36% below its own, from 3.05% and 9.09% at the 10/30 close. The first session did not repair either: technology -2.95% and energy -3.96% against gains in eight sectors. Energy's loss came from the barrel — WTI -7.36% and Brent -7.63% after Axios reported Trump wants more time for Iran diplomacy. The 10Y is 3bp lower at 4.91% and the 30Y 3bp lower at 5.28%, while the 2Y is 3bp higher at 4.59%. Gold is +1.81% at $3,969.60 and the VIX +8.91% at 21.15. What November owes: the 11/3 midterms, the 11/6 payrolls report, Nvidia's results later in the month and the 12/8-9 FOMC, where a quarter-point hike is about 72% priced.",
+   "c4": "<ul class='play'><li>The month's shape on day one: index down 0.51%, equal weight up 0.76% and eight of 11 sectors green — the rotation, not the level, is the signal.</li><li>Energy is the month's first casualty: a 7.63% drop in Brent's January contract took the sector down 3.96% and the barrel's November base to $113.43.</li><li>The rate cushion is intact: 10Y -3bp and 30Y -3bp on the session, with the 2Y +3bp as ISM prices stayed elevated at 75.2, 2.7 points below September.</li><li>The month's four dates: 11/3 midterms, 11/6 payrolls, Nvidia later in November and the 12/8-9 FOMC at about 72% for a hike.</li></ul>",
    "kpi": [
     [
      "S&P MTD",
@@ -486,10 +492,10 @@
      "main": 1,
      "steps": [
       "The S&P 500 enters November at 7,541.40, 0.51% below the 10/30 close of 7,580.07, with the Dow +0.41% and the Nasdaq -1.07% in the same session",
-      "The Nasdaq 100 starts the month 10.36% below its 10/6 record of 31,224.47, so a technical correction is already in place",
+      "The Nasdaq 100 entered November 9.09% below its 10/6 record of 31,224.47 and closed the first session 10.36% below it, a technical correction in place",
       "Equal weight beat cap weight by 1.24 points (RSP +0.76% against SPY -0.48%) as eight of 11 sectors rose",
       "The other side of the ledger: technology -2.95% and energy -3.96% were the only sectors down more than 1%",
-      "The month's calendar has four dates: 11/3 midterms, 11/6 payrolls, Nvidia's results later in November and the 12/8-9 FOMC"
+      "The month's calendar carries four verdicts before year-end: a vote, a payrolls print, Nvidia's results and the December FOMC"
      ],
      "d": "November opened with October's split intact: the index is 0.51% lower, but eight sectors and equal weight are higher, so the month's first test is whether the rotation can outrun the AI complex.",
      "news": [
@@ -602,16 +608,16 @@
   },
   "qtd": {
    "h": "Q4's Second Month: Dow +2.12% Against Nasdaq -6.32%, an 8.4-Point Split",
-   "d": "From 9/30's 7,651.54 to 7,541.40 (-1.44%): the Dow is +2.12% and the Nasdaq -6.32%; the 10Y is 38bp lower at 4.91% while Brent is 6.88% higher and gold 5.19% lower.",
+   "d": "From 9/30's 7,651.54 to 7,541.40 (-1.44%): the Dow is +2.12% and the Nasdaq -6.32%; the 10Y is 38bp lower at 4.91% while Brent is 10.84% higher on a roll-adjusted basis and gold 5.19% lower.",
    "badges": [
     "S&P QTD -1.44%",
     "Dow +2.12%",
     "Nasdaq -6.32%",
     "10Y -38bp",
-    "Brent +6.88%"
+    "Brent +10.84%"
    ],
-   "c1": "Q4 is two months and twenty-three sessions old, and its ledger has flipped: the S&P 500 sits 110.14 points below its 9/30 base at 7,541.40, or -1.44%, with the Dow +2.12% and the Nasdaq -6.32% — an 8.4-point split that is the quarter's defining number. The shape: a record close at 7,818.93 on 10/6, a 5.36% intraday peak on the 10Y on 10/7, the highest since 2002, a 10-2 Fed hold on 10/28, then the AI unwind of the last four weeks that left the Nasdaq 100 10.36% below its record. The quarter's rates bill has fallen: the 10Y is 38bp lower at 4.91%, the 30Y 36bp lower at 5.28% and the 2Y 29bp lower at 4.59%. Against that, the barrel is still up — WTI +9.09% and Brent +6.88% since 9/30, with Brent's front month rolling from December's $117.64 expiry to January's $104.77 on 10/30. Gold is -5.19%, bitcoin -8.22% and the VIX +29.44%.",
-   "c4": "<ul class='play'><li>The quarter's verdict is in the split: Dow +2.12% against Nasdaq -6.32%, 8.4 points apart, with nine of 11 sectors higher and technology the biggest loser at -11.00%.</li><li>The yield call worked: 10Y -38bp, 30Y -36bp and 2Y -29bp since 9/30 even with WTI up 9.09% — duration was bought as growth insurance.</li><li>The quarter's record is now a high-water mark: 7,818.93 on 10/6, 3.55% above the 11/2 close.</li><li>What Q4 still owes: the 12/8-9 FOMC at about 72% for a hike and a year-end that starts from -1.44%.</li></ul>",
+   "c1": "Q4 is one month and twenty-three sessions old, and its ledger has flipped: the S&P 500 sits 110.14 points below its 9/30 base at 7,541.40, or -1.44%, with the Dow +2.12% and the Nasdaq -6.32% — an 8.4-point split that is the quarter's defining number. The shape: a record close at 7,818.93 on 10/6, a 5.36% intraday peak on the 10Y on 10/7, the highest since 2002, a 10-2 Fed hold on 10/28, then the AI unwind of the last four weeks that left the Nasdaq 100 10.36% below its record. The quarter's rates bill has fallen: the 10Y is 38bp lower at 4.91%, the 30Y 36bp lower at 5.28% and the 2Y 29bp lower at 4.59%. Against that, the barrel is still up — WTI +9.09% and Brent +10.84% on a roll-adjusted basis, with December expiring at $117.64 on 10/30, January settling at $113.43 that day and $104.77 on 11/2. Gold is -5.19%, bitcoin -8.22% and the VIX +29.44%.",
+   "c4": "<ul class='play'><li>The quarter's verdict is in the split: Dow +2.12% against Nasdaq -6.32%, 8.4 points apart, with nine of 11 sectors higher and technology the biggest loser at -11.00%.</li><li>The yield call worked: 10Y -38bp, 30Y -36bp and 2Y -29bp since 9/30 even with WTI up 9.09% — duration was bought as growth insurance.</li><li>The quarter's record is now a high-water mark: 7,818.93 on 10/6, 3.68% above the 11/2 close.</li><li>What Q4 still owes: the 12/8-9 FOMC at about 72% for a hike and a year-end that starts from -1.44%.</li></ul>",
    "kpi": [
     [
      "S&P QTD",
@@ -633,8 +639,8 @@
     ],
     [
      "Brent QTD",
-     "+6.88%",
-     "war premium fading",
+     "+10.84%",
+     "roll-adj. base",
      1
     ]
    ],
@@ -665,9 +671,9 @@
     ],
     [
      "Brent",
-     "$98.03",
+     "$94.52",
      "$104.77",
-     "+6.88%"
+     "+10.84%"
     ],
     [
      "Gold",
@@ -772,11 +778,11 @@
      "steps": [
       "Nine of 11 sectors are higher for the quarter, led by staples +12.69%, utilities +10.73%, materials +10.21%, health +9.61% and energy +9.35%",
       "Financials +7.79% and real estate +6.67% add to the defensive-value side; industrials +1.63% barely clears",
-      "Technology -11.00% and communication services -9.65% are the only double-digit losers — a 23.69-point spread from staples",
+      "Technology -11.00% is the only double-digit loser, with communication services -9.65% just behind — a 23.69-point spread from staples",
       "Equal weight is 7.13 points ahead of cap weight (RSP +5.75% against SPY -1.38%)",
       "The Russell 2000 is +0.32%, so the split is between large-cap value and large-cap growth, not size"
      ],
-     "d": "Q4's rotation is a 23.69-point sector spread: staples, utilities and materials up double digits, technology and communication services down double digits, with the Dow 8.4 points ahead of the Nasdaq.",
+     "d": "Q4's rotation is a 23.69-point sector spread: staples, utilities and materials up double digits, technology down double digits and communication services nearly 10%, with the Dow 8.4 points ahead of the Nasdaq.",
      "news": [
       {
        "time": "11/2 close",
@@ -805,10 +811,10 @@
      ]
     },
     {
-     "t": "③ The Quarter's Rate Bill: 38bp Lower With the Barrel Still Up 6.88%",
+     "t": "③ The Quarter's Rate Bill: 38bp Lower With Brent Still Up 10.84%",
      "steps": [
       "The 10Y fell from 5.29% on 9/30 to 4.91%, -38bp; the 30Y from 5.64% to 5.28%, -36bp; the 2Y from 4.88% to 4.59%, -29bp",
-      "WTI is +9.09% and Brent +6.88% over the same window, so duration rallied with crude up — the quarter priced growth risk, not only inflation",
+      "WTI is +9.09% and Brent +10.84% on a roll-adjusted basis over the same window, so duration rallied with crude up — the quarter priced growth risk, not only inflation",
       "Gold is -5.19% at $3,969.60 and bitcoin -8.22% at $76,687, the quarter's two liquidation casualties",
       "The VIX is 29.44% higher at 21.15"
      ],
@@ -1504,7 +1510,7 @@
      [
       "Brent",
       "$104.77",
-      "+6.88"
+      "+10.84"
      ],
      [
       "WTI",
