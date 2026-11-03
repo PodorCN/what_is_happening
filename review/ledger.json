@@ -1838,6 +1838,92 @@
       "resolved": true,
       "fixedAt": "2026-11-02T19:12:00-05:00",
       "fixNote": "F1-F10 全部成立并已修：F1 qtd Brent 改 roll-adjusted（基期 94.52 = 98.03×113.43/117.64 → +10.84%，同步 badges/kpi/tbl/HEAT/d/c1/③ 标题与 s1；data 写 qtdBaseRaw/qtdBaseNote）；F2 换月句改三段（117.64 expired 10/30 → Jan 113.43 that day → 104.77 on 11/2）；F3 Comms -9.65 改 nearly 10%、Tech 为唯一 double-digit loser；F4 3.55→3.68；F5 two months→one month；F6 11.72% three-session 改 13.08%（h/① t/c1/① s2）；F7 mtd ① s4 改层级句（日期归 ③）；F8 ④ 标题/d 改为 Apple September-quarter record + China miss、Palantir 盘后 +1.5% 后 -3.6%，并补 Bloomberg 条（证据里的 ④ n7/n8 实为 n5/n6，编号偏移但事实成立）；F9 hot/held 改 still elevated at 75.2, 2.7 points below September（含 mtd c4）；F10 starts the month 改 is now…from 3.05%/9.09% at the 10/30 close。另：scripts/build.mjs 基线检查对带 qtdBaseNote 的换月回补放行（本次 98.03→94.52 有 note），非静默放行。"
+    },
+    {
+      "date": "2026-11-03",
+      "reviewedAt": "2026-11-03T18:36:57-05:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "ytd 标题「The Bull at +10.57%: AI Earnings Carry, a 77bp Rate Bill and a 49% Barrel」里的 49% 是 XLE 的 YTD（+49.14%），不是原油；Brent 实际 +70.25%、WTI +67.35%。正确应为「a 70% Barrel」。",
+              "evidence": "同档 c1「Brent +70.25% and WTI +67.35%」、c4「a barrel that costs 70% more than it did in December」、HEAT ytd Brent +70.25；昨天 h「a 72% Barrel」= Brent 104.77/60.85−1=72.2%，说明该位置的「Barrel」历来指 Brent。",
+              "rule": "h 里的「N% Barrel」只能取 Brent YTD = today ÷ foot 的 60.85（本次 103.60/60.85−1=70.25%→70%），不得取 XLE；定稿后 grep 标题的 % 与 c1/c4/HEAT 的 Brent 数字必须同值。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "ytd ③ s4「Financials +4.42% and utilities +1.71% lag, with consumer discretionary the weakest of the 11」：11 个板块里最弱的是 communication services −13.83%，consumer discretionary −1.74% 只是第二弱。",
+              "evidence": "HEAT ytd：Comms −13.83、ConsDisc −1.74、Utilities +1.71、Financials +4.42；同档 c4 已正确写「communications −13.83% and consumer discretionary −1.74% are the only sectors down」。",
+              "rule": "写「weakest of the 11」前把 HEAT 该档 11 个值排序取最小并点名；要保留 consumer discretionary 只能写「the weaker of the two decliners」或「the weakest of the three laggards」。"
+            },
+            {
+              "id": "F3",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "qtd c4 第 2 条与 qtd ② d 都写「the two that are down are the two that carried the first nine months」：QTD 下跌的两个板块是 Tech −9.83 与 Comms −8.59，但 Comms 的 YTD 是 −13.83%（全年最差），不是前九个月的领涨；后半句「the nine that are up are the ones that were left behind」也不成立（Staples YTD +14.51、Health +18.88、Materials +15.97 都跑赢指数）。",
+              "evidence": "同文件 ytd HEAT/c1：Comms −13.83 为 11 个板块最差，Tech +22.60 才是「carried」；qtd HEAT 下跌板块只有 Tech/Comms 两个。",
+              "rule": "跨档写「carried the first nine months」前用 ytd HEAT 同板块符号核对：只允许 technology；communications 改成「the year’s worst sector」或删句，c4 与 ② d 同步改。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today c4 第 3 条「Brent’s second settle below $104」：11/2 结算 104.77 在 104 上方，11/3 的 103.60 是自 10/7（100.20）以来第一次收在 104 下方，应为「first settle below $104 since 10/7」。",
+              "evidence": "data/2026-11-03.json brent.prev=104.77、today=103.60；Dow Jones「Lowest settlement value since Wednesday, Oct. 7, 2026」；today ③ 标题已写「Lowest Settle Since 10/7」。",
+              "rule": "写「第 N 次收在 X 下方」前把前一日结算价与阈值比一次：104.77>104 则 N=1；与链标题的「Lowest settle since」保持同一事实。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "取数",
+              "symptom": "mtd d「Brent’s front month is 8.67% lower at $103.60」：8.67% 是 January 合约同合约变动（113.43→103.60），front-month 连续序列（Dec 117.64→Jan 103.60）是 −11.93%；同一天 today ③ s2 已写 front-month −11.93%，两处同词不同值。",
+              "evidence": "data brent.mtdBase=113.43、today=103.60；today ③ s2「The two-session decline reached $14.04, or 11.93%」；11/02 mtd ② s1 的写法是「Brent’s January contract … 7.63%」。",
+              "rule": "MTD 用同合约 Jan 序列时必须点名「January contract」并写 −8.67%；「front month」只用于 117.64 起的连续序列（−11.93%）；mtd c1/d/badge 三处口径一致。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "news[].time 用了文章/股价反应日而非事件日：today ④ n1/n3 把 Apple、Palantir 的财报标成「11/3」，但 Apple 新闻稿是 11/2、Palantir 电话会是 Monday night（11/2）；today ② n5 与 mtd ③ n2 把 Treasury $618B 标成「11/3」，原文是「Treasury said on Monday」（11/2）。",
+              "evidence": "Apple Newsroom「PRESS RELEASE November 2, 2026」；Yahoo live blog「Some highlights from Palantir’s earnings call on Monday night」；Yahoo/PR Newswire「Treasury said on Monday it expects to borrow $618 billion」。",
+              "rule": "news[].time 写事件发生日：财报=发布日 after bell（Apple/Palantir 11/2），公告=发布日（Treasury 11/2）；股价反应日（11/3）只写在 fact 里。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today h「Chips Up 2.6%」与 ① 标题「Chips Rebounded 2.6%」用 ^SOX +2.63%，但 c1/① s2 写「SOXX rose 2.50%」，同档两个「chips」数字混用且未标口径；c1 还把 SOX 的 21.9% 回撤称作「the chip gauge」紧跟在 SOXX 之后。",
+              "evidence": "Yahoo ^SOX 10328.33→10600.40=+2.63%；SOXX 453.65→465.00=+2.50%；Yahoo 原文的 21.9% 是 PHLX Semiconductor Index（^SOX），不是 SOXX。",
+              "rule": "全档只用一个 chip 口径：用 SOX 就在 c1 写「the PHLX Semiconductor Index rose 2.6%」并保留 21.9% 回撤；用 SOXX 就统一 2.50% 且回撤改引 SOX 并点名，禁止「SOXX 2.50%」与「chips 2.6%」并置。"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "schema",
+              "symptom": "FX.bases.mtd 写成「2026-10-31」（周六），五个货币对序列都没有 10/31 的 bar（10/30 有）；11/02 的 FX.bases.mtd 是「2026-10-30」。页面 fxWindow 用 <= 回退到 10/30 才没报错，但基期标签与跨日连续性已错。",
+              "evidence": "snapshots/2026-11-03.json FX.bases={\"mtd\":\"2026-10-31\",...}；FX.pairs[*].series 中 has10/31=false、has10/30=true；snapshots/2026-11-02.json FX.bases.mtd=\"2026-10-30\"；data/2026-11-03.json bases.mtdBase 同样是周末标签。",
+              "rule": "FX.bases.mtd 取上月最后一个交易日（2026-10-30），直接抄上一份快照的 bases.mtd；month-end 周末不要用 data 的 mtdBase 标签（fetch 会写成 10/31）。"
+            },
+            {
+              "id": "F9",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today ④ s5 把「VIX fell 1.51% to 20.83 … first polls closing at 6 p.m. … Polymarket 76%」放进「财报反应」链，与 ④ 的 d（reaction function inverted）无关，且 VIX −1.51%/20.83 已在 c1 出现过。",
+              "evidence": "④ 标题/d 只讲 Apple/Palantir 被卖、AMD/Super Micro 被买；c1 已有「the VIX eased 1.51% to 20.83 with the midterm vote still being counted」；HEAT today VIX 20.83/−1.51。",
+              "rule": "④ 的每个 step 必须服务于「财报反应反转」：只保留 AAPL/PLTR/SHOP/AMD/SMCI；VIX 与 Polymarket 归 c1/c4 或删除；定稿前逐链问「删掉这个 step，d 是否仍成立」。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
