@@ -33,6 +33,8 @@
 | 2026-10-30 | 数字 | today 档 tbl 的 S&P / Dow / Nasdaq 三行期初沿用了 10/29 快照的期初（7,743.98 / 52,475.10 / 26,549.85），期末已是 10/30 收盘：行内 -1.82% 按该期初实为 -2.12%（Dow -1.34%、Nasdaq -4.19%），与 c1 的「lost 140.32 points」自相矛盾（正确期初 7,720.39 / 52,342.56 / 26,184.72） | today 档 tbl 每行期初取 `data/<DATE>.json` 的 `closes.<sym>.prev`（= data 序列倒数第二点）、期末取 `today`；写入后逐行现算 期末/期初−1 与行内 pct 比对（±0.02pp），`scripts/lint.mjs` 规则 14 已自动检查 `[lint]` |
 | 2026-11-02 | 取数 | qtd Brent 跨合约混算：tbl 期初 $98.03（9/30 的 Dec 合约收盘）配期末 $104.77（11/2 的 Jan 结算），得 +6.88%；而 10/30 Dec 到期 $117.64 → Jan $113.43，同口径应为 +10.84%（98.03×113.43/117.64=94.52 回补基期）。错误外溢 badges/kpi/tbl/HEAT/d/c1/③ 标题与 s1 共 9 处 | Brent 换月后 QTD/YTD% 必须用前月连续序列：换月当日按「旧合约基期价 × 新前月同日价 ÷ 旧合约到期价」比例回补基期（本次 98.03×113.43/117.64=94.52 → +10.84%），禁止 Dec 基期配 Jan 期末；data 的 qtdBase 同步写回补值与 `qtdBaseRaw`/`qtdBaseNote`，改后 grep 旧值全文件清零 |
 | 2026-11-02 | 数字 | 换月句把 11/2 的 Jan 结算 $104.77 写成 10/30 的价：「rolling from December's $117.64 expiry to January's $104.77 on 10/30」；10/30 的 Jan 结算实为 $113.43，$104.77 是 11/2 的价（foot 与 mtd ② s1 都写对，只有 qtd c1 错） | 换月句按「Dec 117.64 expired 10/30 → Jan 113.43 that day → Jan 104.77 on 11/2」三段写，日期与价格一一对应；写后与 foot 及 mtd 链文逐项比对 |
+| 2026-11-03 | 取数 | mtd d「Brent's front month is 8.67% lower at $103.60」把 January 合约的同合约变动（113.43→103.60）称作 front month；front-month 连续序列（117.64→103.60）是 −11.93%，与 today ③ s2 同词不同值 | MTD 用同合约 Jan 序列时点名「January contract」并写 −8.67%；「front month」只用于 117.64 起的连续序列（−11.93%）；qtd ② s2 的「front month + roll-adjusted 基期」同病，改写为「Brent is 9.61% above its roll-adjusted 9/30 base」 |
+| 2026-11-03 | schema | FX.bases.mtd 写成 2026-10-31（周六），五个货币对都没有该 bar（实际基期 10/30）；data 的 bases.mtdBase 同错，因为 fetch 直接写日历月末 | FX.bases.mtd/qtd 取上月/上季最后一个交易日（本次 10/30，抄上一份快照的 bases）；`fetch.mjs` 已用 ^GSPC 日线把基线标签回退到 ≤ 月末的最后一根 bar；`lint.mjs` 断言每个货币对序列必须含 bases 的三个日期 `[lint]` |
 
 ## 取数前提
 
@@ -135,6 +137,12 @@
 | 2026-11-02 | 引用 | today ④ 标题/d 把 Apple 与 Palantir 都写成「Two Earnings Beats」/「both delivered」，但 Apple 财报无 consensus 数字、Bloomberg 明写「decelerating sales growth, with China revenue missing estimates」；Palantir 所引 CNBC 写盘后 -3%，快照只留 Fortune 的 +1.5% | 写 beat/What Held 前每个 beat 必须有 consensus 数字（EPS/revenue vs expected）；同一事件的盘后价取最新值并注明时点（+1.5% immediate vs -3.6% extended 并列或只留最新），不得只留方向有利的一条 |
 | 2026-11-02 | 逻辑 | today ② d/s5「a hot ISM prices index kept the front end offered」「printed 75.2」，同链 n9 写 75.2%、较 9 月 77.9 回落 2.7 点——方向相反；mtd c4 又写「held at 75.2」 | 因果句里的指标方向必须与同链 news 同向：prices index 由 77.9 降至 75.2 时不能写 hot/held；写「still elevated at 75.2 but 2.7 points below September」，或改引 55.5 的 headline PMI |
 | 2026-11-02 | 逻辑 | mtd c1/① s1「starts the month 3.55%/10.36% below its record」用的是 11/2 收盘值；10/30 月初期值为 3.05%（S&P 7,580.07 vs 7,818.93）和 9.09%（NDX 28,384.85 vs 31,224.47） | 「starts the month X% below」只在 X 用上月最后交易日收盘现算；要写 11/2 的距纪录值就改成「is X% below」并注明「as of 11/2 close」，或两句并列（从 3.05%/9.09% 扩到 3.55%/10.36%） |
+| 2026-11-03 | 数字 | ytd 标题「a 49% Barrel」取了 XLE 的 +49.14%，Brent 实际 +70.25%（同档 c1/c4 与 HEAT 都写 70%）；10/28 同类是「the barrel」混指 WTI/Brent | 标题「N% Barrel」只能取 Brent YTD = today ÷ 60.85（本次 103.60/60.85−1=70.25%→70%），定稿后与 c1/c4/HEAT 的 Brent 同值核对；`lint.mjs` 已加标题↔Brent YTD 检查 `[lint]` |
+| 2026-11-03 | 逻辑 | ytd ③ s4「consumer discretionary the weakest of the 11」：11 档最弱是 communications −13.83%，consumer discretionary −1.74% 只是第二弱 | 写「weakest of the 11」前把该档 HEAT 11 个值排序取最小并点名；要保留 consumer discretionary 只能写「the shallower of the two decliners」，不得用 weakest of the 11 / weakest of the two decliners |
+| 2026-11-03 | 逻辑 | qtd c4 与 ② d「the two that are down are the two that carried the first nine months / the nine that are up are the ones that were left behind」：QTD 下跌的是 Tech −9.83 与 Comms −8.59，但 Comms YTD −13.83 是全年最差，Staples/Health/Materials 的 YTD 都跑赢指数 | 跨档写「carried the first nine months」前用 ytd HEAT 同板块符号核对，只允许 technology；communications 写「the year's worst」；「left behind」类反句必须用 ytd HEAT 逐个验证，验证不了就删 |
+| 2026-11-03 | 数字 | today c4「Brent's second settle below $104」：11/2 结算 104.77 在 104 上方，11/3 的 103.60 才是 10/7（100.20）以来首次收在 104 下方 | 写「第 N 次收在 X 下方」前把前一日结算与阈值比一次（104.77>104 → N=1），并与链标题的「Lowest settle since 10/7」保持同一事实；改一处必须同步 c4 与链标题 |
+| 2026-11-03 | 引用 | news.time 用了股价反应日：Apple/Palantir 财报（11/2 盘后）与 Treasury $618B（原文 said on Monday）都标成 11/3；前一日 11/2 快照已写「Apple/Palantir reported after the bell」 | news.time 写事件发生日：财报=发布日盘后（11/2 after bell），公告=原文 said on Monday 的周一（11/2）；股价反应日只写进 fact/step；同一事件的所有 news（含 Bloomberg 的 guidance 条）时间保持一致 |
+| 2026-11-03 | 数字 | today h/① t「Chips Up 2.6%」用 ^SOX +2.63%，c1/① s1 却写 SOXX +2.50%，同档两个 chip 口径并置；21.9% 回撤本是 PHLX（^SOX）却紧跟在 SOXX 后称 the chip gauge | 全档只用一个 chip 口径：headline/链标题与正文 ETF 百分比同值（本次统一 SOXX 2.50%，h/① t 由 2.6 改 2.5）；点 SOX 必须写全名「PHLX Semiconductor Index」并给自己的点位；禁止「SOXX x%」与「chips y%」并置 |
 
 ## 链结构（主链 / 辅链）
 
@@ -164,6 +172,7 @@
 | 2026-10-28 | 逻辑 | today ④ s2『The press conference threw no curveball… and the main indexes turned positive across the board as he spoke』复述主链 ① s2 的『发布会→2Y 反转』同一事件（④ d 又把同一场发布会列为本日缓释之一）；④ s5 还复述 c1 的『0.96% below record / six of 11 sectors higher』 | 辅链只写主链没有的增量：发布会只保留 2027 八次会议这类日历事实，『盘中翻红/尾盘拉回』类同事件句子删掉；④ 的 d 换成同日历增量（『the Fed's 2027 meeting calendar carried no surprise』）；定稿前对同档每对链做数字交集 |
 | 2026-10-29 | schema | 四档 14 条链的 t 全部缺 ①②③ 编号（如 today『The $500 Billion Miss…』、mtd『October's Round Trip…』），与 agent.md schema 示例及 10/27-28 快照格式不一致，页面与正文失去链引用锚点 | 每条 chain 的 t 首字符固定用 ①②③④⑤，按数组顺序递增；`scripts/lint.mjs` §1b 已加 /^[①②③④⑤]/ 校验 `[lint]` |
 | 2026-11-02 | 逻辑 | mtd ① s4「The month's calendar has four dates: 11/3 midterms, 11/6 payrolls, Nvidia…, 12/8-9 FOMC」与 ③ s0-s2 逐项重复同一组 gate | 同一档日历 gate 只归一条链：mtd 的 11/3、11/6、12/8-9 只留在 ③；① 改成层级句（「four verdicts before year-end」），定稿后 grep 该档日期在 ① 应为 0 处 |
+| 2026-11-03 | 逻辑 | today ④ s5 把 VIX −1.51%/20.83、中期选举投票时间、Polymarket 76% 塞进「财报反应反转」链，与 d 无关，且 VIX 数字与 c1 重复 | ④ 的每个 step 必须服务该链 d：只留 AAPL/PLTR/SHOP/AMD/SMCI；VIX/选举/Polymarket 归 c1 或 c4 gates；删 step 时同链孤立的 news 一并删（或移挂真正的主场档），不留无 step 支撑的引文 |
 
 ## 待补充
 

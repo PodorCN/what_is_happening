@@ -50,6 +50,24 @@ async function yahooSeries(symbol, fromStr, toStr) {
 }
 const lastOnOrBefore = (series, d) => { let v = null; for (const [k, c] of series) if (k <= d) v = c; return v; };
 
+// 基期标签必须是真实交易日：上月/上季末落在周末或假日时，日历日期没有 bar
+// （2026-10-31 是周六，实际最后一根 bar 是 10/30，FX 卡片基期标签因此错位；review 2026-11-03 F8）。
+const shiftDays = (d, n) => {
+  const x = new Date(d + "T12:00:00Z");
+  x.setUTCDate(x.getUTCDate() + n);
+  return x.toISOString().slice(0, 10);
+};
+async function resolveTradingDay(label) {
+  try {
+    const s = await yahooSeries("^GSPC", shiftDays(label, -12), shiftDays(label, 2));
+    const bars = s.map(([d]) => d).filter((d) => d <= label);
+    return bars.length ? bars[bars.length - 1] : label;
+  } catch (e) {
+    console.error(`WARN resolveTradingDay(${label}): ${e.message}，保留日历日期`);
+    return label;
+  }
+}
+
 async function yahooClose(symbol, dateStr) {
   // 取 date 前后 5 天的日线，找 <= date 的最后一个收盘
   const end = new Date(dateStr + "T23:59:59Z").getTime() / 1000 + 86400 * 2;
@@ -145,7 +163,9 @@ function backfillPrev(date) {
 async function main() {
   const date = process.argv[2] || new Date().toISOString().slice(0, 10);
   if (process.argv.includes("--prev-only")) return backfillPrev(date);
-  const { mtdBase, qtdBase, ytd } = periodEnds(date);
+  const { mtdBase: mtdCal, qtdBase: qtdCal, ytd } = periodEnds(date);
+  // 日历月末/季末若落在周末或假日，标签回退到最后一根真实 bar 的日期（review 2026-11-03 F8）
+  const [mtdBase, qtdBase] = await Promise.all([resolveTradingDay(mtdCal), resolveTradingDay(qtdCal)]);
   const prevDate = prevTradingDate(date);
   const out = { date, symbols: SYMBOLS, bases: { mtdBase, qtdBase, ytd }, closes: {}, computed: {} };
   for (const [k, sym] of Object.entries(SYMBOLS)) {

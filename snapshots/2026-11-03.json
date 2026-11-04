@@ -5,7 +5,7 @@
  "foot": "Closing baseline (auto 2026-11-03): SPX 7568.92 (+0.36% day / -0.15% MTD / -1.08% QTD / +10.57% YTD) · DJI 51786.72 · IXIC 25372.01 · 10Y 4.95% (Treasury daily par curve; +4bp) · WTI 96.09 (Dec settle) · Brent 103.60 (Jan settle; Dec expired at 117.64 on 10/30, January was 113.43 that day; QTD base 94.52 = 9/30 Dec 98.03 × 113.43/117.64, roll-adjusted) · Gold 3940.40 (Dec fut settle) · BTC 77775 (4pm ET). Sector and single-name returns computed from Yahoo closes; futures from exchange settlement. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23242/10Y 4.18%/30Y 4.84%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.42% · 26-08-31 S&P 7686.14/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
  "P": {
   "today": {
-   "h": "The Index Rebounded, the Market Didn't: Chips Up 2.6% in a 4-of-11 Tape, 10Y Back at 4.95%",
+   "h": "The Index Rebounded, the Market Didn't: Chips Up 2.5% in a 4-of-11 Tape, 10Y Back at 4.95%",
    "d": "The S&P 500 rose 0.36% to 7,568.92 as SOXX climbed 2.50% off a bear-market close, but only four of 11 sectors gained and the equal-weight RSP fell 0.33%; the Dow lost 197 points, staples dropped 2.07% and a solid JOLTS print pushed the 10Y up 4bp to 4.95%.",
    "badges": [
     "S&P 7,569 +0.36%",
@@ -14,8 +14,8 @@
     "10Y 4.95% +4bp",
     "WTI $96.09 -0.38%"
    ],
-   "c1": "A rebound in chips, not in the market. The S&P 500 opened at 7,552.92, never traded below its prior close, peaked at 7,594.61 and finished 27.52 points or 0.36% higher at 7,568.92, while the Nasdaq Composite added 0.83% to 25,372.01. The lift came from the AI hardware complex: SOXX rose 2.50% to $465.00, with SanDisk 4.78%, AMD 3.65%, Broadcom 3.07% and Nvidia 2.29%, one session after the chip gauge closed 21.9% below its 10/6 high and in its second bear market since June. Underneath, the tape was narrow: only four of 11 sectors advanced, the equal-weight RSP fell 0.33% and the Dow lost 197.26 points to 51,786.72 as Sherwin-Williams -3.26% and Home Depot -2.20% offset Microsoft +2.74%. Staples -2.07% and materials -2.01% led the seven decliners. Rates did the rest: September JOLTS showed 7.5 million openings and a 3.4% hiring rate, the 10Y par yield rose 4bp to 4.95%, the 30Y 4bp to 5.32%, the dollar index firmed 0.09% and December gold settled 0.7% lower at $3,940.40. Oil fell a second day — WTI -0.38% to $96.09, Brent -1.12% to $103.60 — and the VIX eased 1.51% to 20.83 with the midterm vote still being counted.",
-   "c4": "<ul class='play'><li>The breadth tell: the S&P rose 0.36% while the equal-weight RSP fell 0.33% and seven of 11 sectors lost — the index is being carried, not confirmed.</li><li>The rate tell: JOLTS at 7.5 million openings lifted the whole curve with crude falling, which is why the dollar, gold and the defensives all leaned the same way.</li><li>The oil tell: Brent's second settle below $104 leaves the war premium $14.04 smaller in two sessions, and energy at -0.85% is now a drag rather than the hedge.</li><li>The gates: refunding 11/4 at 8:30 a.m. ET, payrolls 11/6, the FOMC 12/8-9 — and AMD's 7% after-hours gain is the first read on whether the chip bid survives its own earnings.</li></ul>",
+   "c1": "A rebound in chips, not in the market. The S&P 500 opened at 7,552.92, never traded below its prior close, peaked at 7,594.61 and finished 27.52 points or 0.36% higher at 7,568.92, while the Nasdaq Composite added 0.83% to 25,372.01. The lift came from the AI hardware complex: SOXX rose 2.50% to $465.00, with SanDisk 4.78%, AMD 3.65%, Broadcom 3.07% and Nvidia 2.29%, one session after the PHLX Semiconductor Index closed 21.9% below its 10/6 high and in its second bear market since June. Underneath, the tape was narrow: only four of 11 sectors advanced, the equal-weight RSP fell 0.33% and the Dow lost 197.26 points to 51,786.72 as Sherwin-Williams -3.26% and Home Depot -2.20% offset Microsoft +2.74%. Staples -2.07% and materials -2.01% led the seven decliners. Rates did the rest: September JOLTS showed 7.5 million openings and a 3.4% hiring rate, the 10Y par yield rose 4bp to 4.95%, the 30Y 4bp to 5.32%, the dollar index firmed 0.09% and December gold settled 0.7% lower at $3,940.40. Oil fell a second day — WTI -0.38% to $96.09, Brent -1.12% to $103.60 — and the VIX eased 1.51% to 20.83 with the midterm vote still being counted.",
+   "c4": "<ul class='play'><li>The breadth tell: the S&P rose 0.36% while the equal-weight RSP fell 0.33% and seven of 11 sectors lost — the index is being carried, not confirmed.</li><li>The rate tell: JOLTS at 7.5 million openings lifted the whole curve with crude falling, which is why the dollar, gold and the defensives all leaned the same way.</li><li>The oil tell: Brent's first settle below $104 since 10/7 leaves the war premium $14.04 smaller in two sessions, and energy at -0.85% is now a drag rather than the hedge.</li><li>The gates: a midterm count still unresolved, refunding 11/4 at 8:30 a.m. ET, payrolls 11/6, the FOMC 12/8-9 — and AMD's 7% after-hours gain is the first read on whether the chip bid survives its own earnings.</li></ul>",
    "kpi": [
     [
      "S&P",
@@ -120,10 +120,10 @@
    ],
    "chains": [
     {
-     "t": "① Chips Rebounded 2.6%, the Market Fell: Four of 11 Sectors Green and the Equal Weight 0.63 Points Behind",
+     "t": "① Chips Rebounded 2.5%, the Market Fell: Four of 11 Sectors Green and the Equal Weight 0.63 Points Behind",
      "main": 1,
      "steps": [
-      "The chip gauge closed 11/2 at 10,328.33, 21.9% below the 13,217.82 close it printed on 10/6 and under its 200-day average for a second straight session",
+      "The PHLX Semiconductor Index closed 11/2 at 10,328.33, 21.9% below the 13,217.82 close it printed on 10/6 and under its 200-day average for a second straight session",
       "SOXX rose 2.50% to $465.00, led by SanDisk 4.78%, Broadcom 3.07% and Nvidia 2.29%",
       "The S&P 500 gained 0.36% to 7,568.92 and the Nasdaq Composite 0.83% to 25,372.01, but only four of 11 sectors advanced",
       "The equal-weight RSP fell 0.33% to $219.26 while SPY rose 0.30% to $754.35 — the average stock lagged the index by 0.63 points",
@@ -242,7 +242,7 @@
        "u": "https://www.kitco.com/news/off-the-wire/2026-11-03/gold-edges-lower-again-dollar-yields-strengthen-us-midterms-focus"
       },
       {
-       "time": "11/3",
+       "time": "11/2",
        "fact": "Treasury said it expects to borrow $618 billion in privately held net marketable debt in the October-December quarter, $10 billion less than it announced in August, with Quarterly Refunding details due at 8:30 a.m. on 11/4.",
        "src": "PR Newswire",
        "u": "https://finance.yahoo.com/markets/stocks/articles/election-day-trading-splits-benchmarks-163100939.html"
@@ -310,13 +310,12 @@
       "Apple fell 1.90% to $331.90 after pointing to a sequential gross-margin decline on memory costs, even with revenue of $114.5 billion and net profit of $30.7 billion above estimates",
       "Palantir fell 1.65% to $175.40 despite $2.3 billion of revenue and a Q4 guide of $2.649-2.653 billion against a consensus near $2.5 billion; Bloomberg flagged a potential slowdown in sales growth",
       "Shopify dropped 8.74% to $142.57 after Q3 revenue of $3.74 billion missed the $3.75 billion consensus and gross merchandise volume of $119.15 billion missed $120.08 billion",
-      "AMD rose 3.65% into its report and added about 7% after the bell on a Q3 beat with data-center revenue up 97%; Super Micro gained 6.4% after hours on $19.9 billion of quarterly sales",
-      "The VIX fell 1.51% to 20.83 with voting under way and the first polls closing at 6 p.m. ET; Polymarket gave Democrats a 76% chance of winning both chambers"
+      "AMD rose 3.65% into its report and added about 7% after the bell on a Q3 beat with data-center revenue up 97%; Super Micro gained 6.4% after hours on $19.9 billion of quarterly sales"
      ],
      "d": "The reaction function has inverted: beats at Apple and Palantir were sold on margins and decelerating growth while AMD and Super Micro were bought on guidance — the tape is paying for the next quarter, not the last one.",
      "news": [
       {
-       "time": "11/3",
+       "time": "11/2 after bell",
        "fact": "Apple reported revenue of $114.5 billion and net profit of $30.7 billion, both ahead of expectations, but executives pointed to a sequential decline in gross margins driven largely by memory costs.",
        "src": "Investopedia",
        "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-nasdaq-11032026-12209150"
@@ -328,13 +327,13 @@
        "u": "https://finance.yahoo.com/quote/AAPL/history"
       },
       {
-       "time": "11/3",
+       "time": "11/2 after bell",
        "fact": "Palantir reported $2.3 billion in revenue and guided fourth-quarter revenue to $2.649-2.653 billion, ahead of a Visible Alpha mean estimate of a bit less than $2.5 billion.",
        "src": "Investopedia",
        "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-nasdaq-11032026-12209150"
       },
       {
-       "time": "11/3",
+       "time": "11/2 after bell",
        "fact": "Palantir issued a quarterly outlook that pointed to a potential slowdown in sales growth.",
        "src": "Bloomberg",
        "u": "https://swissinfo.ch/eng/us-stocks-rise-as-oil-extends-slide%2C-vote-begins%3A-markets-wrap/92317079"
@@ -368,24 +367,6 @@
        "fact": "Super Micro rose 6.4% in after-hours trading after reporting $19.9 billion of net sales and guiding the December quarter to $19.5-21.5 billion.",
        "src": "MarketWatch",
        "u": "https://morningstar.com/news/marketwatch/2026110387/super-micros-stock-pops-as-earnings-show-booming-demand-for-ai-servers"
-      },
-      {
-       "time": "11/3 close",
-       "fact": "The VIX closed 1.51% lower at 20.83.",
-       "src": "Yahoo Finance",
-       "u": "https://finance.yahoo.com/quote/%5EVIX/history"
-      },
-      {
-       "time": "11/3",
-       "fact": "Polymarket gave Democrats a 76% chance of winning both the House and the Senate as of 11/3 morning.",
-       "src": "Yahoo Finance",
-       "u": "https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-3-dow-sp-500-nasdaq-midterms-amd-earnings-141143244.html"
-      },
-      {
-       "time": "11/3",
-       "fact": "The first polls close at 6 p.m. Eastern time.",
-       "src": "Bloomberg",
-       "u": "https://swissinfo.ch/eng/us-stocks-rise-as-oil-extends-slide%2C-vote-begins%3A-markets-wrap/92317079"
       }
      ]
     }
@@ -393,7 +374,7 @@
   },
   "mtd": {
    "h": "November's Two Sessions: Brent Gave Back 8.7%, the S&P Moved 11 Points",
-   "d": "Two sessions in, the S&P 500 is 7,568.92, 11.15 points or 0.15% below 10/30's 7,580.07; the Dow is +0.03% and the Nasdaq -0.26%, Brent's front month is 8.67% lower at $103.60 and the equal-weight RSP is 0.62 points ahead of SPY.",
+   "d": "Two sessions in, the S&P 500 is 7,568.92, 11.15 points or 0.15% below 10/30's 7,580.07; the Dow is +0.03% and the Nasdaq -0.26%, Brent's January contract is 8.67% lower at $103.60 and the equal-weight RSP is 0.62 points ahead of SPY.",
    "badges": [
     "S&P MTD -0.15%",
     "Dow +0.03%",
@@ -581,7 +562,7 @@
        "u": "https://swissinfo.ch/eng/us-stocks-rise-as-oil-extends-slide%2C-vote-begins%3A-markets-wrap/92317079"
       },
       {
-       "time": "11/3",
+       "time": "11/2",
        "fact": "Treasury said it expects to borrow $618 billion in privately held net marketable debt in the October-December quarter, $10 billion less than in August, with Quarterly Refunding details due at 8:30 a.m. on 11/4.",
        "src": "PR Newswire",
        "u": "https://finance.yahoo.com/markets/stocks/articles/election-day-trading-splits-benchmarks-163100939.html"
@@ -613,7 +594,7 @@
     "Brent +9.61%"
    ],
    "c1": "Q4 is one month and twenty-four sessions old, and its ledger is a rotation rather than a drawdown. The S&P 500 is 82.62 points below its 9/30 base at 7,568.92, or -1.08%, and 3.30% below the record close of 7,818.93 it set on 10/6; the Dow is +1.73% at 51,786.72 and the Nasdaq -5.54% at 25,372.01. The split inside the index is wider than the index: the equal-weight RSP is +5.40% against SPY's -1.09%, a 6.49-point gap, and nine of 11 sectors are higher — staples +10.36%, utilities +10.09%, health +9.26% and energy +8.42% against technology -9.83% and communications -8.59%. Rates have helped rather than hurt: the 10Y is 34bp lower at 4.95%, the 30Y 32bp lower at 5.32% and the 2Y 27bp lower at 4.61%, even with a December hike 79% priced. Gold is -5.88% at $3,940.40 and bitcoin -6.92% at $77,775.",
-   "c4": "<ul class='play'><li>The quarter's defining number is the gap, not the level: S&P -1.08% against RSP +5.40%, a 6.49-point win for the average stock in 24 sessions.</li><li>The two sectors that are down are the two that carried the first nine months; the nine that are up are the ones that were left behind.</li><li>The 10Y's 34bp decline has run alongside a 79% December-hike probability, so duration has been paid despite the Fed, not because of it.</li><li>Still owed: refunding 11/4, payrolls 11/6 and the FOMC 12/8-9, with the 10/6 record 3.30% above the close.</li></ul>",
+   "c4": "<ul class='play'><li>The quarter's defining number is the gap, not the level: S&P -1.08% against RSP +5.40%, a 6.49-point win for the average stock in 24 sessions.</li><li>The quarter's two decliners are the AI trade: technology is giving back part of a 22.60% year, communications is extending a 13.83% loss, and staples, utilities and health lead the nine gainers.</li><li>The 10Y's 34bp decline has run alongside a 79% December-hike probability, so duration has been paid despite the Fed, not because of it.</li><li>Still owed: refunding 11/4, payrolls 11/6 and the FOMC 12/8-9, with the 10/6 record 3.30% above the close.</li></ul>",
    "kpi": [
     [
      "S&P QTD",
@@ -776,10 +757,10 @@
      "steps": [
       "The quarter's best-to-worst sector spread is 20.19 points, with the top of the table in defensives and the bottom in AI",
       "Nine of 11 sectors are positive for the quarter",
-      "Energy is positive for the quarter even after a 4.77% November drawdown, because Brent's front month is 9.61% above its roll-adjusted 9/30 base",
+      "Energy is positive for the quarter even after a 4.77% November drawdown, because Brent is 9.61% above its roll-adjusted 9/30 base",
       "Staples, utilities and health hold the top three spots — the defensives are the quarter's leadership, not a single sector"
      ],
-     "d": "The Q4 tape is a rotation, not a break: nine sectors are up, the two that are down are the ones that carried the first nine months, and the spread between them is 20 points.",
+     "d": "The Q4 tape is a rotation, not a break: nine of 11 sectors are up, the two decliners are the AI trade, and the best-to-worst spread is 20.19 points.",
      "news": [
       {
        "time": "11/3 close",
@@ -846,7 +827,7 @@
    ]
   },
   "ytd": {
-   "h": "The Bull at +10.57%: AI Earnings Carry, a 77bp Rate Bill and a 49% Barrel",
+   "h": "The Bull at +10.57%: AI Earnings Carry, a 77bp Rate Bill and a 70% Barrel",
    "d": "S&P +10.57%, Nasdaq +9.16%, Dow +7.75% — earnings carry; a 10Y up 77bp, Brent up 70.25% and gold down 9.23% tax the rest; energy +49.14% leads communications -13.83% by 62.97 points.",
    "badges": [
     "S&P +10.57%",
@@ -1064,7 +1045,7 @@
       "The year's best-to-worst sector spread is 62.97 points",
       "Five sectors beat the index's return for the year",
       "Health +18.88%, materials +15.97% and staples +14.51% join energy and technology above the index; industrials +10.44% and real estate +8.23% sit just below",
-      "Financials +4.42% and utilities +1.71% lag, with consumer discretionary the weakest of the 11"
+      "Financials +4.42% and utilities +1.71% are the weakest of the nine gainers"
      ],
      "d": "Sector breadth is better than the headline index suggests — nine of 11 are up and five beat it — but the two that are down are the ones the AI trade needed to keep leading.",
      "news": [
@@ -1691,7 +1672,7 @@
   "asOf": "2026-11-03",
   "src": "Yahoo Finance daily close (London-date bars; DATE's bar = quote at fetch time ≈ NY close)",
   "bases": {
-   "mtd": "2026-10-31",
+   "mtd": "2026-10-30",
    "qtd": "2026-09-30",
    "ytd": "2025-12-31"
   },

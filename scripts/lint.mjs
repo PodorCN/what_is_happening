@@ -180,6 +180,11 @@ const FX = snap.FX;
 if (dataFx && Object.keys(dataFx.pairs || {}).length && !FX) E("FX", `data/${DATE}.json 有 FX 数据但快照没有 FX 块——跑 node scripts/fx.mjs ${DATE}`);
 if (FX) {
   if (FX.asOf !== DATE) E("FX", `FX.asOf=${FX.asOf} ≠ ${DATE}——FX 块是从前一天文件复制来的，重跑 node scripts/fx.mjs ${DATE}`);
+  // FX 基期标签必须是真实 bar 日（review 2026-11-03 F8：10/31 是周六，五个货币对都没有该 bar）
+  for (const [tier, b] of Object.entries(FX.bases || {})) for (const p of FX.pairs || []) {
+    if (!p.series.some(([d]) => d === b))
+      E(`FX.bases.${tier}`, `${b} 不是 ${p.id} 的 bar 日——基期取上月/上季最后一个交易日，不要用日历月末`);
+  }
   for (const p of FX.pairs || []) {
     const last = p.series[p.series.length - 1];
     if (last[0] !== DATE) E(`FX.${p.id}`, `序列最后一根是 ${last[0]}，不是 ${DATE}`);
@@ -221,6 +226,14 @@ if (DATA) {
     if (v == null || !isFinite(shown) || /bp/i.test(String(it[2]))) continue;
     if (Math.abs(shown - v) > 0.06)
       E(`HEAT.today/${it[0]}`, `涨跌幅 ${it[2]} ≠ data 日环比 ${v > 0 ? "+" : ""}${v}%——同一数字只留 data 现值，c1/链文/HEAT 同步改`);
+  }
+
+  // 标题「N% Barrel」只指 Brent YTD（review 2026-11-03 F1：写成 49%，那是 XLE 的 YTD）
+  const barrel = String(snap.P?.ytd?.h || "").match(/(\d+)%\s*Barrel/i);
+  if (barrel && DATA.computed?.brent?.ytdPct != null) {
+    const want = Math.round(Math.abs(DATA.computed.brent.ytdPct));
+    if (Math.abs(Number(barrel[1]) - want) > 1)
+      E("P.ytd.h", `标题「${barrel[1]}% Barrel」≠ Brent YTD ${DATA.computed.brent.ytdPct}%——Barrel 取 Brent，不是能源板块 ETF`);
   }
 
   // ---------- 13. 基线跨日漂移/回退（review 2026-10-28 F6：WTI 90.42 是 Nov 前月、88.42 才是 Dec）----------

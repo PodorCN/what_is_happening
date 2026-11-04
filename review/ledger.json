@@ -1921,9 +1921,15 @@
               "rule": "④ 的每个 step 必须服务于「财报反应反转」：只保留 AAPL/PLTR/SHOP/AMD/SMCI；VIX 与 Polymarket 归 c1/c4 或删除；定稿前逐链问「删掉这个 step，d 是否仍成立」。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true,
+      "resolvedAt": "2026-11-03T19:20:00-05:00"
     }
   ]
 }
