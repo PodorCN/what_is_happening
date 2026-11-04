@@ -1930,6 +1930,92 @@
       ],
       "resolved": true,
       "resolvedAt": "2026-11-03T19:20:00-05:00"
+    },
+    {
+      "date": "2026-11-04",
+      "reviewedAt": "2026-11-04T18:55:00-05:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "qtd c4 第2条「The two decliners are the AI complex: technology -9.83% and communications -5.42%, and both are still positive for the year」：communications 的 YTD 为 -10.84%（HEAT.ytd Comms、ytd c1「the only sector down」），不是正数；两个板块里只有 technology（+22.59%）为正，both 全错。",
+              "evidence": "同文件 HEAT.ytd Comms -10.84、ytd c1「Communications -10.84% is the only sector down for the year」；11/3 快照同一 bullet 原文为「communications is extending a 13.83% loss」，今日改写 c4 时被替换成 still positive。",
+              "rule": "写「both/两者仍为正」前，把该档 HEAT 两个板块的 YTD 值逐个判符号并各带数字（technology +22.59%、communications -10.84%）；只对真正为正的那个用 positive，另一个写「still negative」。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "ytd ① n2「The communications ETF closed at $101.44, down 10.84% from its 12/31/25 close of $117.72」：101.44/117.72−1 = −13.83%，与句中 −10.84% 矛盾；$101.44 是 11/3 收盘，11/4 收盘为 $104.96（104.96/117.72−1 = −10.84%）。",
+              "evidence": "mtd ① n2「closed at $104.96, up 5.07% from its 10/30 close of $99.90」与 qtd ① n1「closed at $104.96, down 5.42% from its 9/30 close of $110.97」都用 104.96；11/3 快照同一条 fact 为「$101.44, down 13.83%」，今日只改了百分比未改价格（半修）。",
+              "rule": "改 news.fact 的涨跌幅时必须同时用当日收盘重写价格与基期价，并现算 close/base−1 与句中百分比对齐（±0.01pp）；改完 grep 旧价 101.44 应为 0 处。"
+            },
+            {
+              "id": "F3",
+              "severity": "major",
+              "category": "引用",
+              "symptom": "today ① n1「Trump told the Financial Times on Tuesday that the United States had no immediate plans to strike Iran」挂在 CNA 的「AI data-center stocks slide, renewables rally…」页，该页全文 0 处 Iran / Financial Times / no immediate plans；该句实际出自 Reuters 油价稿（同链 n2 的 centraloregondaily 链接）。",
+              "evidence": "对 https://www.channelnewsasia.com/business/ai-data-center-stocks-slide-renewables-rally-after-democratic-us-midterm-sweep-6523926 原文检索：Iran=0、Financial Times=0、no immediate plans=0；https://centraloregondaily.com/news/consumer/oil-slumps-after-midterm-election-rebuke-to-trump-raises-bets-on-iran-war-exit/ 原文含「Trump told the Financial Times on Tuesday that the United States had no immediate plans to strike Iran」。",
+              "rule": "news.u 定稿前用两个特征词（Iran + Financial Times）在页面全文检索；0 命中就改挂真正含该句的 Reuters 油价稿，一条 URL 只能背书其页内实际存在的句子。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "mtd HEAT「2Y 4.58% -2bp」符号错：10/30 Treasury 2Y = 4.56，11/4 = 4.58，MTD 应为 +2bp，不是 -2bp。",
+              "evidence": "Treasury daily par curve：10/30/2026 2Y 4.56、11/03 4.61、11/04 4.58；11/3 快照 mtd 2Y 为 +5bp（4.56→4.61）可作连续性对照。",
+              "rule": "mtd 收益率行按「今日 − 上月最后交易日」现算（4.58−4.56=+2bp），写后与 Treasury 10/30 行逐个相减核对符号。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "qtd c4 第4条「The record is 1.67% above the close」分母用反：7,818.93/7,688.62−1 = 1.70%；1.67% 是 130.31/7,818.93（收盘相对纪录的跌幅）。",
+              "evidence": "同档 c1 与 ② s3 都写「1.67% below its 10/6 high of 7,818.93」；把 below 句改写成 above 时未换分母。",
+              "rule": "「A 高于 B x%」一律用 A/B−1（7,818.93/7,688.62−1=1.70%）；同一差距的 below 与 above 不得同值。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today ② s5「Technology finished 0.01% lower even as three of its largest members rose more than 5%」：三个名字 Microsoft/Amazon/Apple 中 Amazon 属 consumer discretionary（XLY），不在 technology（XLK）；tech 大型成分涨超 5% 的只有 MSFT +6.68% 与 AAPL +5.31%。",
+              "evidence": "今日 HEAT：Tech -0.01、ConsDisc +4.26；AMZN +6.12% 计入 ConsDisc；XLK 成分不含 AMZN。",
+              "rule": "写「某板块 N 个最大成分」前用该板块 ETF 成分表核对名字；Amazon 只能写成「three of the index's largest members」或把 tech 改成「two of its largest members」。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "取数",
+              "symptom": "foot 的 26-06-30 / 26-08-31 10Y 仍取 Yahoo ^TNX（4.42% / 4.76%），Treasury daily par curve 为 4.44% / 4.75%；同一条 foot 的当前 10Y 与 12/31、9/30 锚点都用 Treasury，口径不一致。",
+              "evidence": "Treasury CSV：06/30/2026 10Y=4.44、08/31/2026=4.75；Yahoo ^TNX 同日 4.418 / 4.758（=4.42 / 4.76）。",
+              "rule": "foot 里所有历史 10Y/30Y 锚点统一取 Treasury daily par curve（6/30=4.44、8/31=4.75），禁止混用 ^TNX；改后 grep 4.42/4.76 应为 0 处。"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "两条 fact 挂 Kiplinger 却含该页没有的精确价位：③ n3「the energy ETF closed at $63.52, down 4.74%; the industrials ETF closed at $169.46, down 1.09%」原文只写 energy -4.8%、industrials -1.1%；② n11「Caterpillar closed at $591.30, down 5.23% from $623.94」原文只写 CAT -5.2%。",
+              "evidence": "Kiplinger 页全文检索 63.52/169.46/591.30/623.94 均 0 处；Yahoo XLE/XLI/CAT 当日收盘确为 63.52/169.46/591.30、CAT 前收 623.94（数字对、引用页不含）。",
+              "rule": "fact 含来源页没有的精确价位时，改挂对应 Yahoo /quote/<SYM>/history（一条 fact 一个 symbol），或只保留来源页的 1 位小数（-4.8%/-1.1%/-5.2%）。"
+            },
+            {
+              "id": "F9",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "qtd ③ n2 的换月句「Front-month Brent settled at $117.64 on 10/30 … January settled at $113.43 that day」挂 Reuters 油价稿，该页全文 0 处 117.64 / 113.43 / December / January。",
+              "evidence": "centraloregondaily 的 Reuters 稿只含 11/4 的 8.98/94.62/7.97/88.12；10/30 的 Dec 117.64 与 Jan 113.43 不在页内。",
+              "rule": "换月锚点必须挂 10/30 当日的结算稿或交易所结算页；挂不上就只保留 foot 的 roll-adjusted base 94.52 并删掉未背书的 117.64/113.43。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
