@@ -287,6 +287,20 @@ if (DATA) for (const r of snap.P.today?.tbl || []) {
   }
 }
 
+// ---------- 15. news.fact「closed at $A, (up|down) B% from … $C」价格与百分比必须自洽（review 2026-11-04 F2）----------
+const CLOSE_RE = /^([A-Z][^.$]{0,80}?)\sclosed at \$([\d,]+(?:\.\d+)?),\s(up|down)\s([\d.]+)%\sfrom\s(?:its\s[\d/]+\sclose of\s)?\$([\d,]+(?:\.\d+)?)/;
+for (const tier of ["today", ...WIN])
+  for (const [ci, c] of (snap.P[tier]?.chains || []).entries())
+    for (const [ni, n] of (c.news || []).entries()) {
+      const m = String(n.fact || "").match(CLOSE_RE);
+      if (!m) continue;
+      const a = parseFloat(m[2].replace(/,/g, "")), b = parseFloat(m[5].replace(/,/g, "")), shown = parseFloat(m[4]);
+      if (!a || !b) continue;
+      const pct = Math.abs((a / b - 1) * 100);
+      if (Math.abs(pct - shown) > 0.06)
+        E(`${tier}.chains.${ci}.news.${ni}`, `「closed at $${m[2]} … ${m[3]} ${m[4]}% from $${m[5]}」自相矛盾：$${m[2]}/$${m[5]}−1 = ${pct.toFixed(2)}%——改百分比时必须同时用当日收盘重写价格与基期价`);
+    }
+
 for (const e of errs) console.log("ERROR " + e);
 for (const w of warns) console.log("WARN  " + w);
 console.log(`\nlint ${DATE}: ${errs.length} error(s), ${warns.length} warning(s)`);

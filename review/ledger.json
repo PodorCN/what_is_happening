@@ -2013,9 +2013,14 @@
               "rule": "换月锚点必须挂 10/30 当日的结算稿或交易所结算页；挂不上就只保留 foot 的 roll-adjusted base 94.52 并删掉未背书的 117.64/113.43。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true
     }
   ]
 }

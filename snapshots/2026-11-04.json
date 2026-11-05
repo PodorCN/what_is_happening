@@ -2,7 +2,7 @@
   "date": "2026-11-04",
   "updatedAt": "2026-11-04T22:30:00Z",
   "label": "2026-11-04 Wednesday close",
-  "foot": "Closing baseline (auto 2026-11-04): SPX 7688.62 (+1.58% day / +1.43% MTD / +0.48% QTD / +12.32% YTD) · DJI 53356.12 · IXIC 25736.51 · 10Y 4.90% (Treasury daily par curve; -5bp) · WTI 88.12 (Dec settle) · Brent 94.62 (Jan settle; QTD base 94.52 = 9/30 Dec 98.03 × 113.43/117.64, roll-adjusted) · Gold 4073.00 (Dec fut settle) · BTC 80097 (4pm ET). Sector and single-name returns computed from Yahoo closes; futures from exchange settlement. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23242/10Y 4.18%/30Y 4.84%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.42% · 26-08-31 S&P 7686.14/10Y 4.76% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
+  "foot": "Closing baseline (auto 2026-11-04): SPX 7688.62 (+1.58% day / +1.43% MTD / +0.48% QTD / +12.32% YTD) · DJI 53356.12 · IXIC 25736.51 · 10Y 4.90% (Treasury daily par curve; -5bp) · WTI 88.12 (Dec settle) · Brent 94.62 (Jan settle; QTD base 94.52 = 9/30 Dec 98.03 × 113.43/117.64, roll-adjusted) · Gold 4073.00 (Dec fut settle) · BTC 80097 (4pm ET). Sector and single-name returns computed from Yahoo closes; futures from exchange settlement. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23242/10Y 4.18%/30Y 4.84%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.44% · 26-08-31 S&P 7686.14/10Y 4.75% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
   "P": {
     "today": {
       "h": "The Blue Wave Broke the War Trade: Dow +1,569, Brent -8.7%, the 10Y at 4.90%",
@@ -143,8 +143,8 @@
             {
               "time": "11/3",
               "fact": "Trump told the Financial Times on Tuesday that the United States had no immediate plans to strike Iran.",
-              "src": "Reuters via CNA",
-              "u": "https://www.channelnewsasia.com/business/ai-data-center-stocks-slide-renewables-rally-after-democratic-us-midterm-sweep-6523926"
+              "src": "Reuters",
+              "u": "https://centraloregondaily.com/news/consumer/oil-slumps-after-midterm-election-rebuke-to-trump-raises-bets-on-iran-war-exit/article_5cf48ab7-e37d-58be-a710-f9fd83e5e7fc.html"
             },
             {
               "time": "11/4 close",
@@ -186,7 +186,7 @@
             "The chip leg followed: SOXX -3.14%, Micron -7.00%, SanDisk -7.91%, CoreWeave -9.90% and Nvidia -3.17%",
             "Caterpillar -5.23% was the Dow's worst stock and cost the price-weighted index roughly 200 points",
             "The platforms went the other way: Microsoft +6.68%, Amazon +6.12% and Apple +5.31%, with Microsoft and Apple closing at records",
-            "Technology finished 0.01% lower even as three of its largest members rose more than 5% — the same ballot produced two opposite AI trades"
+            "Technology finished 0.01% lower even as Microsoft and Apple, two of its largest members, rose more than 5% — the same ballot produced two opposite AI trades"
           ],
           "d": "State-level data-center moratoria were priced as a cost to the build-out and a gift to the hyperscalers that already own capacity, so the AI trade split instead of falling.",
           "news": [
@@ -258,9 +258,9 @@
             },
             {
               "time": "11/4 close",
-              "fact": "Caterpillar closed at $591.30, down 5.23% from $623.94 and the worst of the 30 Dow stocks.",
-              "src": "Kiplinger",
-              "u": "https://www.kiplinger.com/investing/stocks/dow-rallies-1-570-points-on-midterm-relief-stock-market-today"
+              "fact": "Caterpillar closed at $591.30, down 5.23% from $623.94 on 11/3.",
+              "src": "Yahoo Finance",
+              "u": "https://finance.yahoo.com/quote/CAT/history"
             },
             {
               "time": "11/4 close",
@@ -319,9 +319,15 @@
             },
             {
               "time": "11/4 close",
-              "fact": "The energy ETF closed at $63.52, down 4.74%; the industrials ETF closed at $169.46, down 1.09%.",
-              "src": "Kiplinger",
-              "u": "https://www.kiplinger.com/investing/stocks/dow-rallies-1-570-points-on-midterm-relief-stock-market-today"
+              "fact": "The energy ETF closed at $63.52, down 4.74% from $66.68.",
+              "src": "Yahoo Finance",
+              "u": "https://finance.yahoo.com/quote/XLE/history"
+            },
+            {
+              "time": "11/4 close",
+              "fact": "The industrials ETF closed at $169.46, down 1.09% from $171.32.",
+              "src": "Yahoo Finance",
+              "u": "https://finance.yahoo.com/quote/XLI/history"
             },
             {
               "time": "11/4 close",
@@ -534,9 +540,15 @@
             },
             {
               "time": "11/4 close",
-              "fact": "Brent's January contract settled at $94.62, down 16.58% from the $113.43 January settle on 10/30.",
+              "fact": "Brent's January contract settled $8.98, or 8.7%, lower at $94.62 a barrel, while WTI fell $7.97, or 8.3%, to $88.12.",
               "src": "Reuters",
               "u": "https://centraloregondaily.com/news/consumer/oil-slumps-after-midterm-election-rebuke-to-trump-raises-bets-on-iran-war-exit/article_5cf48ab7-e37d-58be-a710-f9fd83e5e7fc.html"
+            },
+            {
+              "time": "10/30 settle",
+              "fact": "January Brent settled at $113.43 on 10/30, up $2.63 that day.",
+              "src": "Reuters",
+              "u": "https://centraloregondaily.com/news/consumer/oil-jumps-2-settles-at-6-month-highs-on-fears-of-escalation-in-iran/article_f6fc7713-9eb0-5924-8fb0-558b315a1bab.html"
             },
             {
               "time": "11/4 close",
@@ -637,7 +649,7 @@
         "Brent +0.11%"
       ],
       "c1": "Q4 is five weeks and twenty-five sessions old, and it has been a rotation rather than a drawdown. The S&P 500 is 37.08 points or 0.48% above its 9/30 base at 7,688.62 and 1.67% below its 10/6 high of 7,818.93; the Dow is +4.81% at 53,356.12 and the Nasdaq -4.19% at 25,736.51. Inside the index the split is the story: technology -9.83% and communications -5.42% against staples +14.07%, health +12.61% and consumer discretionary +12.39%, with seven sectors up by double digits. The average stock is well ahead of the index — RSP +7.36% against SPY's +0.55% — and the 10Y has fallen 39bp to 4.90%. Gold is -2.72% at $4,073 and Brent +0.11% at $94.62 on a roll-adjusted base.",
-      "c4": "<ul class='play'><li>The quarter's number is the gap, not the level: S&P +0.48% against RSP +7.36%, a 6.81-point win for the average stock in 25 sessions.</li><li>The two decliners are the AI complex: technology -9.83% and communications -5.42%, and both are still positive for the year.</li><li>Rates paid: the 10Y is 39bp lower at 4.90% with a December hike still 83% priced, and the 2Y is 30bp lower.</li><li>The record is 1.67% above the close; the quarter's remaining tests are payrolls 11/6, CPI 11/10 and the 12/8-9 FOMC.</li></ul>",
+      "c4": "<ul class='play'><li>The quarter's number is the gap, not the level: S&P +0.48% against RSP +7.36%, a 6.81-point win for the average stock in 25 sessions.</li><li>The two decliners are the AI complex: technology -9.83% and communications -5.42%; technology is still +22.59% for the year, but communications -10.84% is the only sector down in 2026.</li><li>Rates paid: the 10Y is 39bp lower at 4.90% with a December hike still 83% priced, and the 2Y is 30bp lower.</li><li>The record is 1.70% above the close; the quarter's remaining tests are payrolls 11/6, CPI 11/10 and the 12/8-9 FOMC.</li></ul>",
       "kpi": [
         [
           "S&P QTD",
@@ -862,7 +874,13 @@
             },
             {
               "time": "10/30",
-              "fact": "Front-month Brent settled at $117.64 on 10/30, its December contract's expiry; January settled at $113.43 that day and at $94.62 on 11/4.",
+              "fact": "Brent's December contract, which expired on Friday, settled up $2.76, or 2.4%, at $117.64 a barrel; the more active January contract gained $2.63 to $113.43.",
+              "src": "Reuters",
+              "u": "https://centraloregondaily.com/news/consumer/oil-jumps-2-settles-at-6-month-highs-on-fears-of-escalation-in-iran/article_f6fc7713-9eb0-5924-8fb0-558b315a1bab.html"
+            },
+            {
+              "time": "11/4 close",
+              "fact": "Brent's January contract settled $8.98, or 8.7%, lower at $94.62 a barrel.",
               "src": "Reuters",
               "u": "https://centraloregondaily.com/news/consumer/oil-slumps-after-midterm-election-rebuke-to-trump-raises-bets-on-iran-war-exit/article_5cf48ab7-e37d-58be-a710-f9fd83e5e7fc.html"
             },
@@ -1042,7 +1060,7 @@
             },
             {
               "time": "11/4 close",
-              "fact": "The communications ETF closed at $101.44, down 10.84% from its 12/31/25 close of $117.72.",
+              "fact": "The communications ETF closed at $104.96, down 10.84% from its 12/31/25 close of $117.72.",
               "src": "Yahoo Finance",
               "u": "https://finance.yahoo.com/quote/XLC/history"
             },
@@ -1372,7 +1390,7 @@
           [
             "2Y",
             "4.58%",
-            "-2bp"
+            "+2bp"
           ]
         ]
       },
