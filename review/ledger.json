@@ -2021,6 +2021,116 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-11-06",
+      "reviewedAt": "2026-11-06T18:44:47-05:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "today ① s1 与 n1 把「Philadelphia SE Semiconductor Index down 12.2%」写成「its worst session since April 2025」；^SOX 11/5 收 9,011.14（11/4 收 10,268.65，-12.25%），是自 2020-03-16（-15.90%）以来最大单日跌幅，应写「worst day since the Covid-19 breakout of March 2020」。「19 months / April 2025」在来源里属 Nasdaq Composite / 三大指数，不属于 SOX。",
+              "evidence": "^SOX 日线 2019-01-01→2026-11-06 只有 2020-03-16（-15.90%）更大；SOXX 自 2024 年以来也无更大单日跌幅；CNBC 11/5 稿「was down more than 12% for its worst day since the Covid-19 breakout of March 2020」，同页另一句「All three major averages posted their worst day since April 2025」才是 19 个月的出处；Zacks 页只写 SOX「plunged more than 12%」，无 since 从句。",
+              "rule": "写「某指数 worst/biggest since X」前先对该指数全历史日收益排序，取最近一次更大跌幅的日期作 X；来源里的比较级若主语是别的指数，不得移用。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "取数",
+              "symptom": "qtd HEAT「WTI $90.86 +0.49」的基期用了 90.42（CL=F 的 11 月合约）；应取 December 合约 9/30 收盘 88.42，QTD 应为 +2.73%（90.83/88.42−1；若保留 90.86 则 +2.76）。data/2026-11-05.json 与 data/2026-11-06.json 的 closes.wti.qtdBase 都写成 90.42，computed.wti.qtdPct=0.49 因此是假值；foot 自己写的是「26-09-30 … WTI $88.42 (Dec)」。",
+              "evidence": "LESSONS 2026-10-28；data/2026-11-04.json qtdBase=88.42、qtdPct=-0.34，11/5 起回退到 90.42/+0.11；11/4 快照 qtd HEAT 的 WTI 行是 -0.34，今日变 +0.49，跨日不连续；foot 与 HEAT 同文件互斥。",
+              "rule": "build 后断言今日 wti.qtdBase == 昨日 wti.qtdBase（换月日除外），且 foot 的 9/30 WTI 与 data.qtdBase 同值；WTI 换月后的 qtdBase 固定 88.42，改后 grep「90.42」与 qtd 同现应为 0 处。"
+            },
+            {
+              "id": "F3",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "qtd ③ s2「The 2Y is 37bp lower at 4.51%, so the 2s10s slope steepened by 6bp」方向反了：9/30 2s10s = 5.29−4.88 = +41bp，11/6 = 4.86−4.51 = +35bp，收窄 6bp 是 flattening，不是 steepening。",
+              "evidence": "Treasury daily par curve 9/30 与 11/6；同文件 ytd ② s2 对同一算法写「the 2s10s slope flattened by 36bp to +35bp」，可对照。",
+              "rule": "写 2s10s 变动前现算「今 10Y−2Y」减「基期 10Y−2Y」：负值写 flattened、正值写 steepened；不得由单腿 bp 大小推断方向。"
+            },
+            {
+              "id": "F4",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "ytd ① s2「Energy +37.82% and technology +14.43% are the two biggest sector gains」不成立：health +19.38%、staples +15.96%、materials +14.55% 都高于 tech，tech 只排第 5；同句「health +19.38% and staples +15.96% are ahead」还漏了 materials。mtd ③ s5「energy and technology, the two 2026 leaders」同病（energy 第 1、tech 第 5）。",
+              "evidence": "同文件 ytd HEAT 11 项：Energy +37.82 / Health +19.38 / Staples +15.96 / Materials +14.55 / Tech +14.43；mtd HEAT：energy -12.00、tech -8.23 只是月度最差两名，不是年度前二。",
+              "rule": "写「two biggest / two leaders」前对同档 HEAT 11 个值降序取前二并点名；technology 若不在前二，只能写「the AI engine」或给出排名，不得用 two biggest/leaders。"
+            },
+            {
+              "id": "F5",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "today ① s6 与 n9 写 S&P「lost 2.68% on the week — its worst since early June」/「worst week since June」；所引 detroitnews 原文是「The benchmark index had its worst week in more than a year」，且 S&P 周线最近一次更大周跌幅是 2025-04-04（-9.08%），应写「worst week since April 2025 / in more than a year」。",
+              "evidence": "detroitnews 全文「worst week in more than a year」，无 June；^GSPC 周线（2025-01→2026-11）中比 -2.68% 更差的只有 2025-03-07（-3.10%）与 2025-04-04（-9.08%）。",
+              "rule": "写「worst since X」前用周线序列取最近一次更大跌幅的日期；引用页有比较级时照抄页内口径（more than a year），不得改写成更近的月份。"
+            },
+            {
+              "id": "F6",
+              "severity": "major",
+              "category": "引用",
+              "symptom": "today ④ n1「Brent briefly breached the $100-a-barrel mark in morning trade and was on track for a sharp weekly drop after the December contract expired on Oct 30」在所引页全文 0 处（breached / 100-a-barrel / December contract / expired 均 0 命中；该 URL 现文标题是「Crude gains on worries about renewed US attacks on Iran」）；BZ=F 11/6 的 100.92 高点出现在 03:35Z（前夜），不是 morning trade。",
+              "evidence": "curl 该 URL 的 HTML 检索四个特征词全 0；BZ=F 5m 11/6 high 100.92 @03:35Z、low 96.65 @09:45Z；页面现文只写「Brent … settled at $98.32」。",
+              "rule": "每条 fact 落盘前用两个特征词（数字+专名）在 u 页面全文检索，0 命中就换静态稿或改写为该页现文；盘中时点断言必须用 1m/5m 序列标出 ET 时间，不得用 morning trade 泛指。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "取数",
+              "symptom": "油价结算值差 3 美分：Brent 写 $98.35/+0.06%、WTI 写 $90.86/+0.38%（tbl / badges / kpi / HEAT / foot / c1 / ④ / mtd / qtd / ytd 约 20 处）；官方结算为 Brent $98.32/+0.03%（+3 cents）、WTI $90.83/+0.34%（+31 cents）。派生值随之偏：Brent MTD -13.29→-13.32、QTD +4.05→+4.02、YTD +61.63→+61.58；WTI MTD -12.74→-12.76。",
+              "evidence": "所引 Reuters 稿（finance.yahoo.com/energy/articles/oil-set-sharp-weekly-drop-052924519.html）「Brent … settled at $98.32 … up 3 cents, or 0.03% … WTI … finished at $90.83 … up 31 cents, or 0.34%」；marketflux「WTI Crude Settles at $90.83」；edgeconsultancy 结算表 90.83/+0.34、98.32/+0.03。",
+              "rule": "期货结算以通讯社「settled at」句为准；写完用「前结算 + cents 变动 = 今结算」双向核对（98.29+0.03=98.32、90.52+0.31=90.83），再重算全部派生 %。"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd ① s2 句子截断：「… the worst day since April 2025, which erased the first」——「the first」后缺宾语，读者无法知道抹掉了什么（应为 the first four sessions' gains / the election rally）。",
+              "evidence": "snapshots/2026-11-06.json P.mtd.chains[0].steps[1] 原文；同档 c1「the month has given back the election rally」。",
+              "rule": "steps 落盘前逐条检查末词：以 the first / which / and / of 等悬空词结尾即视为截断，补全或删句。"
+            },
+            {
+              "id": "F9",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today c1「the S&P touched 7,444.20 at 9:50」时点错：7,444.20 的打印在 09:54 ET（14:54Z），09:50 的 1m bar 高点是 7,432.96。",
+              "evidence": "^GSPC 1m 11/6：14:54Z bar high 7,444.20；14:50Z bar high 7,432.96。",
+              "rule": "盘中时点用 1m bar 的 UTC→ET 换算后写，不得取整到最近的 5/10 分钟。"
+            },
+            {
+              "id": "F10",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "mtd n3 引「technology down 7.3%」；XLK 11/5 收 162.38 vs 11/4 176.50 = -8.00%，差 0.7pp（同段 XLI -4.1 vs -4.12、XLY -3.7 vs -3.83、XLE -2.7 vs -2.98 也都偏差）。",
+              "evidence": "Yahoo XLK/XLI/XLY/XLE 日线；Zacks 原句用 XLK 名字但数字与 ETF 收盘不符。",
+              "rule": "引用来源的板块涨跌幅前用 ETF 现算比对；差 >0.3pp 时改用现算值，或注明「source quote: S&P sector index」。"
+            },
+            {
+              "id": "F11",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today c4「Thursday's $3 trillion wipeout」与同档 ③ s2「about $2.3 trillion」、③ n3「erased $2.8 trillion」三个总额并存，读者无法判断口径。",
+              "evidence": "Zacks「approximately $3 trillion … from S&P 500 companies」；TheStreet「$2.3 trillion … Nasdaq 100 … $2.8 trillion … S&P 500」。",
+              "rule": "同一事件只留一个总额并写明口径（如「about $3T of S&P 500 market value」），其余口径删除或并列成区间。"
+            },
+            {
+              "id": "F12",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today ③ d「a 1.1% chip bounce cannot undo a 10.9% drawdown」把 1.1% 说成 chip 反弹：芯片 SOXX 当日 +3.51%、PHLX +4.21%，1.09% 是 Nasdaq Composite；该链 steps 也没有 1.1% 这个数。",
+              "evidence": "today ① s2 SOXX +3.51%、^SOX +4.21%；kpi/c1 Nasdaq +1.09%；③ steps 无 1.1%。",
+              "rule": "d 引用的每个数字必须能在同链 steps 找到同一主语与同一数值；芯片用 SOXX/PHLX 的 3.5%/4.2%，Nasdaq 用 1.09%。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
