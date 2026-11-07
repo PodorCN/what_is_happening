@@ -47,14 +47,14 @@
    "ytdBase": 4.18
   },
   "wti": {
-   "today": 90.86,
+   "today": 90.83,
    "prev": 90.52,
    "mtdBase": 104.12000274658203,
-   "qtdBase": 90.41999816894531,
+   "qtdBase": 88.42,
    "ytdBase": 57.41999816894531
   },
   "brent": {
-   "today": 98.35,
+   "today": 98.32,
    "prev": 98.29,
    "mtdBase": 113.43,
    "qtdBase": 94.52,
@@ -150,16 +150,16 @@
    "ytdPct": 16.27
   },
   "wti": {
-   "dayPct": 0.38,
-   "mtdPct": -12.74,
-   "qtdPct": 0.49,
-   "ytdPct": 58.24
+   "dayPct": 0.34,
+   "mtdPct": -12.76,
+   "qtdPct": 2.73,
+   "ytdPct": 58.18
   },
   "brent": {
-   "dayPct": 0.06,
-   "mtdPct": -13.29,
-   "qtdPct": 4.05,
-   "ytdPct": 61.63
+   "dayPct": 0.03,
+   "mtdPct": -13.32,
+   "qtdPct": 4.02,
+   "ytdPct": 61.58
   },
   "gold": {
    "dayPct": -0.94,

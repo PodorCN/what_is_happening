@@ -2,7 +2,7 @@
  "date": "2026-11-06",
  "updatedAt": "2026-11-06T22:45:00Z",
  "label": "2026-11-06 Friday close",
- "foot": "Closing baseline (auto 2026-11-06): SPX 7376.86 (+0.31% day / -2.68% MTD / -3.59% QTD / +7.76% YTD) · DJI 51285.73 · IXIC 24579.42 · 10Y 4.86% (Treasury daily par curve; +2bp) · WTI 90.86 (Dec settle) · Brent 98.35 (Jan settle; QTD base 94.52 = 9/30 Dec 98.03 × 113.43/117.64, roll-adjusted) · Gold 4074.90 (Dec fut settle) · BTC 75777 (4pm ET). Sector and single-name returns computed from Yahoo closes; futures from exchange settlement. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23242/10Y 4.18%/30Y 4.84%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.44% · 26-08-31 S&P 7686.14/10Y 4.75% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
+ "foot": "Closing baseline (auto 2026-11-06): SPX 7376.86 (+0.31% day / -2.68% MTD / -3.59% QTD / +7.76% YTD) · DJI 51285.73 · IXIC 24579.42 · 10Y 4.86% (Treasury daily par curve; +2bp) · WTI 90.83 (Dec settle) · Brent 98.32 (Jan settle; QTD base 94.52 = 9/30 Dec 98.03 × 113.43/117.64, roll-adjusted) · Gold 4074.90 (Dec fut settle) · BTC 75777 (4pm ET). Sector and single-name returns computed from Yahoo closes; futures from exchange settlement. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23242/10Y 4.18%/30Y 4.84%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.44% · 26-08-31 S&P 7686.14/10Y 4.75% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4,186.7 (fut)/BTC $83,554/VIX 16.34. For information only — not investment advice.",
  "P": {
   "today": {
    "h": "The Chips Came Back, the Breadth Didn't: Nasdaq +1.09%, Eight Sectors Lower",
@@ -12,10 +12,10 @@
     "Nasdaq 24,579 +1.09%",
     "Dow 51,286 -0.46%",
     "10Y 4.86% +2bp",
-    "Brent $98.35 +0.06%"
+    "Brent $98.32 +0.03%"
    ],
-   "c1": "A bounce, but only where the damage was. After Thursday's 12.15% collapse in SOXX, chips led Friday: SOXX rose 3.51% to $136.53, AMD 11.04% to $449.04, Intel 7.71%, Micron 5.12%, TSMC 6.33% and Nvidia 2.78% to $186.64. That carried the Nasdaq Composite 264.42 points, or 1.09%, higher to 24,579.42. The S&P 500 added 23.13 points, or 0.31%, to 7,376.86 — but only three of its 11 sectors closed higher, the equal-weight RSP fell 0.38% against SPY's +0.31%, and the Dow lost 237.33 points, or 0.46%, to 51,285.73, with Salesforce -3.94%, Nike -2.45%, Cisco -1.95% and Walmart -1.72% outweighing Nvidia and Honeywell +1.98%. The morning was the day: the S&P touched 7,444.20 at 9:50 and gave back three-quarters of that gain as October payrolls (+165,000 against 65,000 expected) lifted December hike odds to 78% and the 2Y yield 5bp to 4.51%. Brent's January contract settled at $98.35, the VIX fell 9.01% to 25.64, and gold settled $38.60 lower at $4,074.90.",
-   "c4": "<ul class='play'><li>The breadth tell: SPY +0.31% against RSP -0.38%, a 0.69-point gap, with eight of 11 sectors lower — the index rose because technology is its largest weight, not because the market did.</li><li>The rates tell: the 2Y rose 5bp to 4.51% and the 10Y 2bp to 4.86% on a 165,000 payroll print, and the dollar rose 0.75% to 102.31; that is what turned a 1.2% morning gain into a 0.31% close.</li><li>The AI tell: Thursday's $3 trillion wipeout was a policy repricing after the midterm sweep, and Friday's bounce was a valuation trade — Bloomberg now reports Anthropic's IPO eyed at $1-1.3 trillion against the $2 trillion buyers had projected.</li><li>The gates: CPI 11/10, the 10-year auction 11/10 and the 30-year 11/12, then the FOMC 12/8-9 with a hike 78% priced.</li></ul>",
+   "c1": "A bounce, but only where the damage was. After Thursday's 12.15% collapse in SOXX, chips led Friday: SOXX rose 3.51% to $136.53, AMD 11.04% to $449.04, Intel 7.71%, Micron 5.12%, TSMC 6.33% and Nvidia 2.78% to $186.64. That carried the Nasdaq Composite 264.42 points, or 1.09%, higher to 24,579.42. The S&P 500 added 23.13 points, or 0.31%, to 7,376.86 — but only three of its 11 sectors closed higher, the equal-weight RSP fell 0.38% against SPY's +0.31%, and the Dow lost 237.33 points, or 0.46%, to 51,285.73, with Salesforce -3.94%, Nike -2.45%, Cisco -1.95% and Walmart -1.72% outweighing Nvidia and Honeywell +1.98%. The morning was the day: the S&P touched 7,444.20 at 9:54 and gave back three-quarters of that gain as October payrolls (+165,000 against 65,000 expected) lifted December hike odds to 78% and the 2Y yield 5bp to 4.51%. Brent's January contract settled at $98.32, the VIX fell 9.01% to 25.64, and gold settled $38.60 lower at $4,074.90.",
+   "c4": "<ul class='play'><li>The breadth tell: SPY +0.31% against RSP -0.38%, a 0.69-point gap, with eight of 11 sectors lower — the index rose because technology is its largest weight, not because the market did.</li><li>The rates tell: the 2Y rose 5bp to 4.51% and the 10Y 2bp to 4.86% on a 165,000 payroll print, and the dollar rose 0.75% to 102.31; that is what turned a 1.2% morning gain into a 0.31% close.</li><li>The AI tell: Thursday's $2.8 trillion wipeout was a policy repricing after the midterm sweep, and Friday's bounce was a valuation trade — Bloomberg now reports Anthropic's IPO eyed at $1-1.3 trillion against the $2 trillion buyers had projected.</li><li>The gates: CPI 11/10, the 10-year auction 11/10 and the 30-year 11/12, then the FOMC 12/8-9 with a hike 78% priced.</li></ul>",
    "kpi": [
     [
      "S&P",
@@ -37,8 +37,8 @@
     ],
     [
      "Brent",
-     "$98.35",
-     "+0.06%",
+     "$98.32",
+     "+0.03%",
      0
     ]
    ],
@@ -70,8 +70,8 @@
     [
      "WTI",
      "$90.52",
-     "$90.86",
-     "+0.38%"
+     "$90.83",
+     "+0.34%"
     ],
     [
      "Gold",
@@ -125,18 +125,18 @@
      "t": "① The Chip Bounce Was One Sector Wide: SOXX +3.5%, Eight Sectors Lower",
      "main": 1,
      "steps": [
-      "Thursday ended with the Philadelphia Semiconductor Index down 12.2%, its worst session since April 2025, and SOXX 12.15% lower at $131.90 — 39.6% below its 6/22 record",
+      "Thursday ended with the Philadelphia Semiconductor Index down 12.2%, its worst session since the Covid-19 crash of March 2020, and SOXX 12.15% lower at $131.90 — 39.6% below its 6/22 record",
       "Friday the same index rose 4.21% and SOXX 3.51% to $136.53; AMD closed 11.04% higher at $449.04, Intel 7.71%, Micron 5.12%, TSMC 6.33% and Nvidia 2.78% at $186.64",
       "That was enough for the Nasdaq: +264.42 points, or 1.09%, to 24,579.42",
       "It was not enough for the market: XLK +1.45%, XLC +0.43% and XLI +0.12% were the only sectors up, and the equal-weight RSP fell 0.38% while SPY rose 0.31%",
       "The Dow lost 237.33 points, or 0.46%, to 51,285.73 as Salesforce -3.94%, Nike -2.45%, Cisco -1.95% and Walmart -1.72% outweighed Nvidia and Honeywell +1.98%",
-      "The S&P closed at 7,376.86, 5.65% below its 10/6 record of 7,818.93, and lost 2.68% on the week — its worst since early June"
+      "The S&P closed at 7,376.86, 5.65% below its 10/6 record of 7,818.93, and lost 2.68% on the week — its worst week in more than a year"
      ],
      "d": "The bounce was a valuation trade in the one corner that had fallen 12% the day before: chips rallied, the Nasdaq rose 1.09%, and everything else kept selling — eight sectors down, RSP -0.38% and a 237-point Dow decline.",
      "news": [
       {
        "time": "11/5 close",
-       "fact": "The Philadelphia SE Semiconductor Index plunged more than 12% on Thursday, its biggest one-day drop since April 2025, and all 11 S&P sectors closed lower.",
+       "fact": "The Philadelphia SE Semiconductor Index plunged more than 12% on Thursday.",
        "src": "Reuters via Zacks",
        "u": "https://finance.yahoo.com/news/stock-market-news-nov-6-132900980.html"
       },
@@ -184,9 +184,9 @@
       },
       {
        "time": "11/6 close",
-       "fact": "The S&P 500 was headed for its worst week since June and all three indexes were on track for weekly losses, while the Nasdaq posted a fourth straight weekly decline.",
+       "fact": "The benchmark index had its worst week in more than a year as investors sifted for clues about what comes next in the AI trade.",
        "src": "Reuters",
-       "u": "https://detroitnews.com/story/business/2026/11/06/nasdaq-pares-losses-as-chips-recover-rate-hike-fears-linger/92641242007"
+       "u": "https://www.streetinsider.com/General+News/Nasdaq+rebounds+as+chips+stocks+recover+from+steep+losses/27302782.html"
       }
      ]
     },
@@ -249,7 +249,7 @@
       "Friday's bounce did not repair the week: the Nasdaq ended it 3.37% lower and 10.94% below its 10/6 record of 27,599.79",
       "Jefferies called the selling 'reactionary, not a fundamental reset'; Truist's Keith Lerner said he still gives technology 'the benefit of the doubt'"
      ],
-     "d": "The election turned an earnings trade into a regulatory trade: the AI complex lost 6.3% in a session, the financing market cut Anthropic's expected valuation, and a 1.1% chip bounce cannot undo a 10.9% drawdown.",
+     "d": "The election turned an earnings trade into a regulatory trade: the AI complex lost 6.3% in a session, the financing market cut Anthropic's expected valuation, and a 3.5% chip bounce cannot undo a 10.9% Nasdaq drawdown.",
      "news": [
       {
        "time": "11/3",
@@ -298,8 +298,8 @@
     {
      "t": "④ What Held: Cheaper Crude, a Lower VIX and a Gold Bid That Slipped",
      "steps": [
-      "Brent's January contract settled at $98.35, 13.29% below its 10/30 settle of $113.43; on the continuous front-month series the drop from December's $117.64 expiry is 16.40%",
-      "WTI settled at $90.86, up 34 cents, and is 12.74% lower for the month",
+      "Brent's January contract settled at $98.32, 13.32% below its 10/30 settle of $113.43; on the continuous front-month series the drop from December's $117.64 expiry is 16.42%",
+      "WTI settled at $90.83, up 31 cents, and is 12.76% lower for the month",
       "Energy closed flat — XLE -0.02% — after Thursday's -2.7%, and the S&P energy sector is down double digits for the week",
       "The de-escalation trade is the relief valve: the 11/3 result raised the odds of an Iran exit, while tanker attacks in the Gulf provided the floor",
       "Gold settled at $4,074.90, down 0.94% and still 4.5% higher for the month; the VIX fell 9.01% to 25.64 but is 32.03% higher in November"
@@ -308,7 +308,7 @@
      "news": [
       {
        "time": "11/6",
-       "fact": "Brent briefly breached the $100-a-barrel mark in morning trade and was on track for a sharp weekly drop after the December contract expired on Oct 30.",
+       "fact": "Brent's January contract settled at $98.32 a barrel, up 3 cents, or 0.03%; US West Texas Intermediate futures finished at $90.83 a barrel, up 31 cents, or 0.34%.",
        "src": "Reuters",
        "u": "https://finance.yahoo.com/energy/articles/oil-set-sharp-weekly-drop-052924519.html"
       },
@@ -320,7 +320,7 @@
       },
       {
        "time": "11/6",
-       "fact": "Oil was set for a sharp weekly drop on expectations of a de-escalation of the Iran war after Trump's party suffered election losses, with Middle East supply concerns providing a floor.",
+       "fact": "Crude edged up late Friday on renewed fears of further US strikes on Iran, while the US midterm results raised hopes of a potential Iran war de-escalation and more crude exports out of the region.",
        "src": "Reuters",
        "u": "https://finance.yahoo.com/energy/articles/oil-set-sharp-weekly-drop-052924519.html"
       },
@@ -354,12 +354,12 @@
   },
   "mtd": {
    "h": "November's Five Sessions: S&P -2.68%, Nasdaq -3.37%, a Barrel 13% Cheaper",
-   "d": "From 10/30's 7,580.07 the S&P is 203.21 points or 2.68% lower at 7,376.86, the Nasdaq -3.37% and the Dow -0.94% after a +1.58% election session and a -4.36% AI session; Brent's January contract is -13.29% at $98.35, technology -8.23% and energy -12.00%, with the 10Y 8bp lower at 4.86%.",
+   "d": "From 10/30's 7,580.07 the S&P is 203.21 points or 2.68% lower at 7,376.86, the Nasdaq -3.37% and the Dow -0.94% after a +1.58% election session and a -4.36% AI session; Brent's January contract is -13.32% at $98.32, technology -8.23% and energy -12.00%, with the 10Y 8bp lower at 4.86%.",
    "badges": [
     "S&P -2.68%",
     "Nasdaq -3.37%",
     "Dow -0.94%",
-    "Brent -13.29%",
+    "Brent -13.32%",
     "10Y -8bp"
    ],
    "c1": "Five sessions into November, the month has given back the election rally. The S&P 500 is 203.21 points, or 2.68%, below its 10/30 base at 7,376.86; the Nasdaq is -3.37% at 24,579.42 and the Dow -0.94% at 51,285.73. The shape was two days: +1.58% on 11/4 as the blue wave removed the war premium, then -4.36% on 11/5 — the worst session since April 2025 — as the AI trade was repriced. Technology is -8.23% for the month and energy -12.00%, against communications +4.89%, real estate +1.92% and consumer discretionary +1.91%; five of 11 sectors are higher. The equal-weight RSP is -1.04% against SPY's -2.70%, the 10Y is 8bp lower at 4.86%, gold is 4.51% higher at $4,074.90 and the VIX 32.03% higher at 25.64.",
@@ -385,7 +385,7 @@
     ],
     [
      "Brent MTD",
-     "-13.29%",
+     "-13.32%",
      "January",
      0
     ]
@@ -418,8 +418,8 @@
     [
      "Brent",
      "$113.43",
-     "$98.35",
-     "-13.29%"
+     "$98.32",
+     "-13.32%"
     ],
     [
      "Gold",
@@ -450,7 +450,7 @@
      "main": 1,
      "steps": [
       "From 10/30's 7,580.07 the S&P is 2.68% lower at 7,376.86, the Nasdaq -3.37% at 24,579.42 and the Dow -0.94% at 51,285.73",
-      "The month's two big sessions were +1.58% on 11/4 after the blue wave and -4.36% on 11/5, the worst day since April 2025, which erased the first",
+      "The month's two big sessions were +1.58% on 11/4 after the blue wave and -4.36% on 11/5, the worst day since April 2025, which erased the election rally",
       "The drawdown left the S&P 5.65% below its 10/6 record of 7,818.93",
       "The equal-weight RSP is -1.04% against SPY's -2.70%, so the average stock is 1.66 points ahead of the index"
      ],
@@ -470,7 +470,7 @@
       },
       {
        "time": "11/5 close",
-       "fact": "All 11 S&P sectors closed lower on Thursday, with technology down 7.3%.",
+       "fact": "All of the benchmark index's 11 broad sectors closed in the red on Thursday.",
        "src": "Reuters via Zacks",
        "u": "https://finance.yahoo.com/news/stock-market-news-nov-6-132900980.html"
       },
@@ -491,10 +491,10 @@
     {
      "t": "② The War Premium Kept Draining Out of the Barrel",
      "steps": [
-      "Brent's January contract is 13.29% lower at $98.35 from 10/30's $113.43; WTI is 12.74% lower at $90.86",
+      "Brent's January contract is 13.32% lower at $98.32 from 10/30's $113.43; WTI is 12.76% lower at $90.83",
       "Energy is -12.00% for the month, the worst of the 11 sectors, against +37.82% for the year",
       "The unwind began with the 11/3 result, which raised the odds of an Iran exit, and continued through the week",
-      "The barrel is still 61.63% above its 12/31/2025 base of $60.85",
+      "The barrel is still 61.58% above its 12/31/2025 base of $60.85",
       "Supply kept a floor: tanker attacks in the Gulf and the Strait of Hormuz limited the downside"
      ],
      "d": "The month's biggest single move is not in equities: Brent is 13.3% cheaper, energy is the worst sector at -12.00%, and the year's leader has given back a third of its gain in five sessions.",
@@ -532,7 +532,7 @@
       "The 10Y is 8bp lower at 4.86% and the 2Y 5bp lower at 4.51%, even as December hike odds rose to 78%",
       "Gold is 4.5% higher at $4,074.90 and the VIX 32.03% higher at 25.64",
       "The dollar is 0.42% higher on the DXY at 102.31",
-      "The month's worst sectors are energy and technology, the two 2026 leaders"
+      "The month's worst sectors are energy and technology — the year's biggest gainer and the AI engine giving back at once"
      ],
      "d": "The money that left AI and crude did not leave the market: it went to communications, real estate, consumer discretionary, financials and staples, and it bought gold and volatility insurance.",
      "news": [
@@ -566,15 +566,15 @@
   },
   "qtd": {
    "h": "Q4's Rotation Became an AI Drawdown: S&P -3.59%, Tech -15.8%, Semis -28%",
-   "d": "From 9/30's 7,651.54 the S&P is 3.59% lower at 7,376.86 while the Dow is +0.75%; technology -15.84% and communications -5.57% against staples +11.76% and health +9.73%, the 10Y 43bp lower at 4.86% and Brent +4.05% on a roll-adjusted base.",
+   "d": "From 9/30's 7,651.54 the S&P is 3.59% lower at 7,376.86 while the Dow is +0.75%; technology -15.84% and communications -5.57% against staples +11.76% and health +9.73%, the 10Y 43bp lower at 4.86% and Brent +4.02% on a roll-adjusted base.",
    "badges": [
     "S&P -3.59%",
     "Dow +0.75%",
     "Nasdaq -8.49%",
     "10Y -43bp",
-    "Brent +4.05%"
+    "Brent +4.02%"
    ],
-   "c1": "Q4 is twenty-seven sessions old and its rotation has become a drawdown. The S&P 500 is 274.68 points, or 3.59%, below its 9/30 base at 7,376.86; the Dow is +0.75% at 51,285.73 and the Nasdaq -8.49% at 24,579.42. The split is now a hole: technology -15.84%, communications -5.57% and industrials -2.58% against staples +11.76%, health +9.73% and utilities +9.36%, with eight sectors still higher. The average stock is 7.44 points ahead — RSP +3.86% against SPY's -3.58%. The 10Y has fallen 43bp to 4.86%, gold is -2.67% at $4,074.90 and Brent is +4.05% at $98.35 on a roll-adjusted base.",
+   "c1": "Q4 is twenty-seven sessions old and its rotation has become a drawdown. The S&P 500 is 274.68 points, or 3.59%, below its 9/30 base at 7,376.86; the Dow is +0.75% at 51,285.73 and the Nasdaq -8.49% at 24,579.42. The split is now a hole: technology -15.84%, communications -5.57% and industrials -2.58% against staples +11.76%, health +9.73% and utilities +9.36%, with eight sectors still higher. The average stock is 7.44 points ahead — RSP +3.86% against SPY's -3.58%. The 10Y has fallen 43bp to 4.86%, gold is -2.67% at $4,074.90 and Brent is +4.02% at $98.32 on a roll-adjusted base.",
    "c4": "<ul class='play'><li>The quarter's number is the gap: RSP +3.86% against SPY -3.58%, 7.44 points for the average stock in 27 sessions.</li><li>Technology -15.84% is the only double-digit loser; communications -5.57% is second and industrials -2.58% third.</li><li>Defensives carry the quarter: staples +11.76%, health +9.73% and utilities +9.36%.</li><li>The record is 5.99% above the close; the quarter's remaining tests are CPI 11/10 and the 12/8-9 FOMC with a hike 78% priced.</li></ul>",
    "kpi": [
     [
@@ -597,7 +597,7 @@
     ],
     [
      "Brent QTD",
-     "+4.05%",
+     "+4.02%",
      "roll-adj.",
      1
     ]
@@ -630,8 +630,8 @@
     [
      "Brent",
      "$94.52",
-     "$98.35",
-     "+4.05%"
+     "$98.32",
+     "+4.02%"
     ],
     [
      "Gold",
@@ -773,9 +773,9 @@
      "t": "③ The Quarter's Rate Bill: 43bp Lower, a Hike Still Priced",
      "steps": [
       "The 10Y par yield is 43bp lower at 4.86% and the 30Y 38bp lower at 5.26%",
-      "The 2Y is 37bp lower at 4.51%, so the 2s10s slope steepened by 6bp",
+      "The 2Y is 37bp lower at 4.51%, so the 2s10s slope flattened by 6bp",
       "The market still prices a December hike at 78%",
-      "Brent is +4.05% on a roll-adjusted base at $98.35"
+      "Brent is +4.02% on a roll-adjusted base at $98.32"
      ],
      "d": "Rates fell all quarter and still price a hike: the 10Y is 43bp lower, the 2Y 37bp lower, and the December meeting is 78% priced for a hike.",
      "news": [
@@ -803,7 +803,7 @@
   },
   "ytd": {
    "h": "The Bull at +7.76%: Energy +38% Leads, Tech +14%, a 68bp Rate Bill",
-   "d": "S&P +7.76%, Nasdaq +5.75% and Dow +6.70%: energy +37.82% and technology +14.43% carry the year, the 10Y is 68bp higher at 4.86%, Brent 61.63% higher and gold 6.13% lower, with communications -10.98% the only double-digit loser.",
+   "d": "S&P +7.76%, Nasdaq +5.75% and Dow +6.70%: energy +37.82% and technology +14.43% carry the year, the 10Y is 68bp higher at 4.86%, Brent 61.58% higher and gold 6.13% lower, with communications -10.98% the only double-digit loser.",
    "badges": [
     "S&P +7.76%",
     "Nasdaq +5.75%",
@@ -834,7 +834,7 @@
     ],
     [
      "Brent",
-     "+61.63%",
+     "+61.58%",
      "war",
      1
     ]
@@ -951,7 +951,7 @@
      "main": 1,
      "steps": [
       "The S&P is +7.76% at 7,376.86, the Nasdaq +5.75% at 24,579.42 and the Dow +6.70% at 51,285.73",
-      "Energy +37.82% and technology +14.43% are the two biggest sector gains; health +19.38% and staples +15.96% are ahead of the index too",
+      "Energy +37.82% is the biggest sector gain; health +19.38%, staples +15.96% and materials +14.55% are ahead of the index too, while technology's +14.43% ranks fifth",
       "The referee is the 10Y at 4.86%, 68bp above the 12/31/2025 4.18% and 50bp below the 5.36% intraday peak of 10/7",
       "The average stock is ahead: RSP +12.78% against SPY's +7.83%, 4.95 points"
      ],
@@ -1163,13 +1163,13 @@
     "items": [
      [
       "Brent",
-      "$98.35",
-      "+0.06"
+      "$98.32",
+      "+0.03"
      ],
      [
       "WTI",
-      "$90.86",
-      "+0.38"
+      "$90.83",
+      "+0.34"
      ],
      [
       "Gold fut",
@@ -1310,13 +1310,13 @@
     "items": [
      [
       "Brent",
-      "$98.35",
-      "-13.29"
+      "$98.32",
+      "-13.32"
      ],
      [
       "WTI",
-      "$90.86",
-      "-12.74"
+      "$90.83",
+      "-12.76"
      ],
      [
       "Gold fut",
@@ -1457,13 +1457,13 @@
     "items": [
      [
       "Brent",
-      "$98.35",
-      "+4.05"
+      "$98.32",
+      "+4.02"
      ],
      [
       "WTI",
-      "$90.86",
-      "+0.49"
+      "$90.83",
+      "+2.73"
      ],
      [
       "Gold fut",
@@ -1604,13 +1604,13 @@
     "items": [
      [
       "Brent",
-      "$98.35",
-      "+61.63"
+      "$98.32",
+      "+61.58"
      ],
      [
       "WTI",
-      "$90.86",
-      "+58.24"
+      "$90.83",
+      "+58.18"
      ],
      [
       "Gold fut",

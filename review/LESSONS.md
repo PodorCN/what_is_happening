@@ -37,6 +37,8 @@
 | 2026-11-03 | schema | FX.bases.mtd 写成 2026-10-31（周六），五个货币对都没有该 bar（实际基期 10/30）；data 的 bases.mtdBase 同错，因为 fetch 直接写日历月末 | FX.bases.mtd/qtd 取上月/上季最后一个交易日（本次 10/30，抄上一份快照的 bases）；`fetch.mjs` 已用 ^GSPC 日线把基线标签回退到 ≤ 月末的最后一根 bar；`lint.mjs` 断言每个货币对序列必须含 bases 的三个日期 `[lint]` |
 | 2026-11-04 | 数字 | mtd HEAT「2Y 4.58% -2bp」符号错：Treasury 10/30 2Y=4.56、11/4=4.58，MTD 应为 **+2bp**（11/3 快照的 +5bp 可作连续性对照） | mtd/ytd 的收益率 bp 行按「今日 − 基期日」现算并保留符号（4.58−4.56=+2bp）；写后与 Treasury CSV 的基期行逐个相减核对，别凭当日方向（当日 4.61→4.58 是 −3bp，但 MTD 是 +2bp） |
 | 2026-11-04 | 取数 | foot 的 26-06-30 / 26-08-31 10Y 锚点仍取 Yahoo ^TNX 4.42%/4.76%，Treasury daily par curve 为 **4.44%/4.75%**；同一条 foot 的当前 10Y 与 12/31、9/30 锚点都用 Treasury，口径不一致 | foot 里所有历史 10Y/30Y 锚点统一取 Treasury daily par curve（6/30=4.44、8/31=4.75），禁止混用 ^TNX；改后 grep 旧值 4.42/4.76 应为 0 处 |
+| 2026-11-06 | 取数 | qtd HEAT 的 WTI 基期回退到 90.42（CL=F 的 11 月前月），显示 +0.49；Dec 合约 9/30 收盘是 **88.42**，应为 +2.73%（data/11-05、11-06 的 qtdBase 同错，而 foot 自己写的就是 88.42） | WTI 换月后 qtdBase 固定 88.42，禁止回写 90.42；build 后断言 today.qtdBase == 上一交易日 qtdBase，并让 HEAT 四档的 Brent/WTI/Gold/DXY/BTC 与 data computed 同档逐项相等（lint 规则 16） `[lint]` |
+| 2026-11-06 | 取数 | 油价结算差 3 美分、约 20 处：Brent 写 $98.35/+0.06%、WTI 写 $90.86/+0.38%；官方结算 Brent **$98.32/+0.03%（+3 cents）**、WTI **$90.83/+0.34%（+31 cents）**；派生 MTD/QTD/YTD 与 16.40% 回撤同偏 | 期货结算以通讯社「settled at」句为准，写完用「前结算 + cents 变动 = 今结算」双向核对（98.29+0.03=98.32、90.52+0.31=90.83），再重算全部派生 %（tbl/HEAT/kpi/徽章/c1/链/foot 一处不漏） |
 
 ## 取数前提
 
@@ -152,6 +154,14 @@
 | 2026-11-04 | 逻辑 | today ② s5「Technology finished 0.01% lower even as three of its largest members rose more than 5%」把 Amazon（AMZN 属 consumer discretionary / XLY）算进 technology（XLK）；tech 大型成分涨超 5% 的只有 MSFT +6.68% 与 AAPL +5.31% | 写「某板块 N 个最大成分」前用该板块 ETF（XLK/XLY/…）成分表核对名字：Amazon 只能写成「two of its largest members」去掉 AMZN，或改说「three of the index's largest members」；写后逐个名字对 ETF |
 | 2026-11-04 | 引用 | 两条 fact 挂 Kiplinger 却含该页没有的精确价位：③ n3「energy ETF $63.52 / industrials ETF $169.46」、② n11「Caterpillar $591.30, down 5.23% from $623.94」；Kiplinger 原文只有「energy -4.8%、industrials -1.1%、CAT -5.2%」，63.52/169.46/591.30/623.94 均 0 命中（数字对、引用页不含） | fact 含来源页没有的精确价位时，改挂对应 Yahoo /quote/<SYM>/history（一条 fact 一个 symbol：XLE、XLI 各一条）；或只保留来源页的 1 位小数（-4.8%/-1.1%/-5.2%），step 里若要精确值就必须有单标的 Yahoo 条目背书 |
 | 2026-11-04 | 引用 | qtd ③ n2 的换月句「Front-month Brent settled at $117.64 on 10/30 … January $113.43 that day and $94.62 on 11/4」挂 11/4 的 Reuters 油价稿：该页只有 11/4 的 8.98/94.62/7.97/88.12，117.64/113.43 均 0 处；mtd ① n4 同病（把 10/30 的 $113.43 挂在 11/4 页上） | 换月锚点必须挂 10/30 当日的结算稿（centraloregondaily 10/30「December … settled … at $117.64 … January … to $113.43」）或交易所结算页；11/4 的稿只背书 11/4 的价，一条 fact 只写一个交易日的结算，跨日的拆成两条 news（各配当日 URL） |
+| 2026-11-06 | 数字 | today ① s0/n0 把 PHLX 半导体指数「-12.2%」写成 worst since April 2025；^SOX 11/5 收 9,011.14（-12.25%），是 **2020-03-16（-15.90%）以来最大单日跌幅**；来源里的「19 个月 / April 2025」属于 Nasdaq Composite / 三大指数，不属于 SOX | 写「某指数 worst/biggest since X」前先对该指数全历史日收益排序，取最近一次更大跌幅的日期作 X（SOX → 2020-03-16）；来源里的比较级若主语是别的指数，不得移用 |
+| 2026-11-06 | 逻辑 | qtd ③ s1 写 2s10s「steepened by 6bp」方向反了：9/30 5.29−4.88=+41bp → 11/6 4.86−4.51=+35bp，收窄 6bp 是 flattening（同文件 ytd ② s1 已写对） | 写 2s10s 变动前现算「今 10Y−2Y」减「基期 10Y−2Y」：负值写 flattened、正值写 steepened；不得由单腿 bp 大小推断方向 |
+| 2026-11-06 | 数字 | ytd ① s1 说 energy 与 tech 是「two biggest sector gains」：HEAT ytd 降序为 Energy +37.82 / Health +19.38 / Staples +15.96 / Materials +14.55 / Tech +14.43，tech 只排第 5；mtd ③ s4「the two 2026 leaders」同病 | 写「two biggest / two leaders」前对同档 HEAT 11 个值降序取前二并点名；technology 不在前二时只能写「the AI engine」或给出排名，不得用 two biggest / leaders |
+| 2026-11-06 | 数字 | today ① s5/n8 写 S&P 周线「worst since early June」，所引 Reuters 定稿为「worst week in more than a year」；^GSPC 周线比 -2.68% 更差的最近一次是 2025-04-04（-9.08%） | 写「worst since X」前用周线序列取最近一次更大跌幅的日期；引用页有比较级时照抄页内口径（more than a year），不得改写成更近的月份 |
+| 2026-11-06 | 引用 | today ④ n0「Brent briefly breached the $100 mark in morning trade … December contract expired on Oct 30」在所引页全文 0 处（breached / $100 / expired 均 0 命中；BZ=F 的 100.92 高点在 03:35Z 前夜）；同链 n2 的「election losses / supply concerns providing a floor」也不在页内 | 每条 fact 落盘前用两个特征词（数字 + 专名）在 u 页面全文检索，0 命中就改写为该页现文（本次改为页内的 settled at 句）；一条 news 的每个分句都要能在该页找到 |
+| 2026-11-06 | 逻辑 | mtd ① s1 句子截断：「…which erased the first」后缺宾语，读者无法知道抹掉了什么 | steps 落盘前逐条检查末词：以 the first / which / and / of 等悬空词结尾即视为截断，补全（本次「the election rally」）或删句 |
+| 2026-11-06 | 数字 | today c1「the S&P touched 7,444.20 at 9:50」时点错：^GSPC 1m 的 7,444.20 打印在 14:54Z = **09:54 ET**，09:50 的 bar 高点是 7,432.96 | 盘中时点用 1m bar 的 UTC→ET 换算后写，不得取整到最近的 5/10 分钟 |
+| 2026-11-06 | 引用 | mtd n2 引「technology down 7.3%」（Zacks 原文是 XLK declined 7.3%）；XLK 11/5 收 162.38 vs 11/4 176.50 = **-8.00%**，差 0.7pp（同段 XLI -4.1 vs -4.12、XLY -3.7 vs -3.83、XLE -2.7 vs -2.98 也都偏差） | 引用来源的板块涨跌幅前用 ETF 现算比对；差 >0.3pp 时改用现算值或删掉该数字（本次删数字，只留「所有 11 板块收跌」）；不得把来源的近似值当收盘值 |
 
 ## 链结构（主链 / 辅链）
 
@@ -182,6 +192,8 @@
 | 2026-10-29 | schema | 四档 14 条链的 t 全部缺 ①②③ 编号（如 today『The $500 Billion Miss…』、mtd『October's Round Trip…』），与 agent.md schema 示例及 10/27-28 快照格式不一致，页面与正文失去链引用锚点 | 每条 chain 的 t 首字符固定用 ①②③④⑤，按数组顺序递增；`scripts/lint.mjs` §1b 已加 /^[①②③④⑤]/ 校验 `[lint]` |
 | 2026-11-02 | 逻辑 | mtd ① s4「The month's calendar has four dates: 11/3 midterms, 11/6 payrolls, Nvidia…, 12/8-9 FOMC」与 ③ s0-s2 逐项重复同一组 gate | 同一档日历 gate 只归一条链：mtd 的 11/3、11/6、12/8-9 只留在 ③；① 改成层级句（「four verdicts before year-end」），定稿后 grep 该档日期在 ① 应为 0 处 |
 | 2026-11-03 | 逻辑 | today ④ s5 把 VIX −1.51%/20.83、中期选举投票时间、Polymarket 76% 塞进「财报反应反转」链，与 d 无关，且 VIX 数字与 c1 重复 | ④ 的每个 step 必须服务该链 d：只留 AAPL/PLTR/SHOP/AMD/SMCI；VIX/选举/Polymarket 归 c1 或 c4 gates；删 step 时同链孤立的 news 一并删（或移挂真正的主场档），不留无 step 支撑的引文 |
+| 2026-11-06 | 逻辑 | today c4「Thursday's $3 trillion wipeout」与同档 ③ s2「about $2.3 trillion」、n2「erased $2.8 trillion」三个总额并存；$3T 是 Zacks 的 S&P 500 companies 口径、$2.8T 是 TheStreet 的指数市值口径，读者无法判断 | 同一事件只留一个总额并写明口径（本次统一 $2.8T = S&P 500 指数市值）；其余口径删除或并列成区间，c4 与链文同句必须同值 |
+| 2026-11-06 | 逻辑 | today ③ d「a 1.1% chip bounce cannot undo a 10.9% drawdown」把 Nasdaq 的 1.09% 说成 chip 反弹：SOXX 当日 **+3.51%**、PHLX **+4.21%**，1.09% 是 Nasdaq Composite，且 ③ 的 steps 里没有 1.1% | d 引用的每个数字必须能在同链 steps 找到**同一主语 + 同一数值**（chip 用 SOXX/PHLX 的 3.5%/4.2%，Nasdaq 用 1.09%）；定稿前把 d 的每个数字与 steps 逐个对主语 |
 
 ## 待补充
 

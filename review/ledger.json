@@ -2128,9 +2128,15 @@
               "rule": "d 引用的每个数字必须能在同链 steps 找到同一主语与同一数值；芯片用 SOXX/PHLX 的 3.5%/4.2%，Nasdaq 用 1.09%。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": [],
+          "note": "fixer 已修 F1-F12（全部成立，无驳回）；同步修同类的 ④ n2 无出处句与 16.42% 回撤派生值"
         }
       ],
-      "resolved": false
+      "resolved": true
     }
   ]
 }

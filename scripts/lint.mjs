@@ -301,6 +301,23 @@ for (const tier of ["today", ...WIN])
         E(`${tier}.chains.${ci}.news.${ni}`, `「closed at $${m[2]} … ${m[3]} ${m[4]}% from $${m[5]}」自相矛盾：$${m[2]}/$${m[5]}−1 = ${pct.toFixed(2)}%——改百分比时必须同时用当日收盘重写价格与基期价`);
     }
 
+// ---------- 16. HEAT 四档的 Brent/WTI/Gold/DXY/BTC 必须等于 data 同档 computed（review 2026-11-06 F2/F7）----------
+if (DATA) {
+  const HFIELD = { today: "dayPct", mtd: "mtdPct", qtd: "qtdPct", ytd: "ytdPct" };
+  const HMAP = { Brent: "brent", WTI: "wti", "Gold fut": "gold", DXY: "dxy", BTC: "btc" };
+  for (const [tier, field] of Object.entries(HFIELD)) {
+    for (const g of snap.HEAT?.[tier] || []) for (const it of g.items || []) {
+      const key = HMAP[String(it[0]).trim()];
+      if (!key) continue;
+      const v = DATA.computed?.[key]?.[field];
+      const shown = parseFloat(String(it[2]).replace("−", "-"));
+      if (v == null || !isFinite(shown)) continue;
+      if (Math.abs(shown - v) > 0.06)
+        E(`HEAT.${tier}/${it[0]}`, `${it[2]} ≠ data ${field} ${v}%——四档 HEAT 的价格与涨跌幅必须同源于 data（基期/合约错一天即报）`);
+    }
+  }
+}
+
 for (const e of errs) console.log("ERROR " + e);
 for (const w of warns) console.log("WARN  " + w);
 console.log(`\nlint ${DATE}: ${errs.length} error(s), ${warns.length} warning(s)`);
