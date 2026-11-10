@@ -39,6 +39,7 @@
 | 2026-11-04 | 取数 | foot 的 26-06-30 / 26-08-31 10Y 锚点仍取 Yahoo ^TNX 4.42%/4.76%，Treasury daily par curve 为 **4.44%/4.75%**；同一条 foot 的当前 10Y 与 12/31、9/30 锚点都用 Treasury，口径不一致 | foot 里所有历史 10Y/30Y 锚点统一取 Treasury daily par curve（6/30=4.44、8/31=4.75），禁止混用 ^TNX；改后 grep 旧值 4.42/4.76 应为 0 处 |
 | 2026-11-06 | 取数 | qtd HEAT 的 WTI 基期回退到 90.42（CL=F 的 11 月前月），显示 +0.49；Dec 合约 9/30 收盘是 **88.42**，应为 +2.73%（data/11-05、11-06 的 qtdBase 同错，而 foot 自己写的就是 88.42） | WTI 换月后 qtdBase 固定 88.42，禁止回写 90.42；build 后断言 today.qtdBase == 上一交易日 qtdBase，并让 HEAT 四档的 Brent/WTI/Gold/DXY/BTC 与 data computed 同档逐项相等（lint 规则 16） `[lint]` |
 | 2026-11-06 | 取数 | 油价结算差 3 美分、约 20 处：Brent 写 $98.35/+0.06%、WTI 写 $90.86/+0.38%；官方结算 Brent **$98.32/+0.03%（+3 cents）**、WTI **$90.83/+0.34%（+31 cents）**；派生 MTD/QTD/YTD 与 16.40% 回撤同偏 | 期货结算以通讯社「settled at」句为准，写完用「前结算 + cents 变动 = 今结算」双向核对（98.29+0.03=98.32、90.52+0.31=90.83），再重算全部派生 %（tbl/HEAT/kpi/徽章/c1/链/foot 一处不漏） |
+| 2026-11-09 | schema | data 的 closes.brent 只有 qtdBase: 94.52，缺 qtdBaseRaw / qtdBaseNote（11/03 起连续丢失），无法从 data 复核 QTD 的换月回补 | 每次 fetch/手填后 Brent 必须同时写 qtdBase: 94.52、qtdBaseRaw: 98.03、qtdBaseNote: "roll-adjusted: Dec 98.03 x 113.43/117.64 …"；缺任一字段视为 schema 不完整（可在 lint 检查） |
 
 ## 取数前提
 
@@ -162,6 +163,13 @@
 | 2026-11-06 | 逻辑 | mtd ① s1 句子截断：「…which erased the first」后缺宾语，读者无法知道抹掉了什么 | steps 落盘前逐条检查末词：以 the first / which / and / of 等悬空词结尾即视为截断，补全（本次「the election rally」）或删句 |
 | 2026-11-06 | 数字 | today c1「the S&P touched 7,444.20 at 9:50」时点错：^GSPC 1m 的 7,444.20 打印在 14:54Z = **09:54 ET**，09:50 的 bar 高点是 7,432.96 | 盘中时点用 1m bar 的 UTC→ET 换算后写，不得取整到最近的 5/10 分钟 |
 | 2026-11-06 | 引用 | mtd n2 引「technology down 7.3%」（Zacks 原文是 XLK declined 7.3%）；XLK 11/5 收 162.38 vs 11/4 176.50 = **-8.00%**，差 0.7pp（同段 XLI -4.1 vs -4.12、XLY -3.7 vs -3.83、XLE -2.7 vs -2.98 也都偏差） | 引用来源的板块涨跌幅前用 ETF 现算比对；差 >0.3pp 时改用现算值或删掉该数字（本次删数字，只留「所有 11 板块收跌」）；不得把来源的近似值当收盘值 |
+| 2026-11-09 | 逻辑 | qtd ① s1「energy +0.72% has given back its entire Q4 gain」自相矛盾（+0.72% 仍为正）；qtd c1 把 energy 与 tech/comms 并列进下跌组，同句却写 nine sectors higher | 写「given back its entire gain / round-tripped」前先算期末/期初：期末仍为正只能写「gave back nearly all」并给出峰值（energy +0.72% vs 10/30 peak +13.9%）；枚举下跌组前按 HEAT 符号分类，正值板块不得放进下跌组，并与「N sectors higher」数量对账 |
+| 2026-11-09 | 数字 | qtd c4「The record is 3.44% above the close」方向写反：7,818.93 比 7,549.94 高 3.56%，3.44% 是收盘低于纪录的幅度 | 「A 高于 B x%」一律 A/B−1，「A 低于 B x%」一律 1−B/A；同一差距的 above/below 不得复用同一个数字 |
+| 2026-11-09 | 数字 | qtd ② s3 DXY 写「+0.21%」，data computed 为 +0.22（101.671/101.4499−1 = +0.218%） | 窗口档 DXY 百分比直接抄 data.computed.dxy.<period>Pct，并让 steps/HEAT/c1 三处同值；不得手算或沿用上一日数字 |
+| 2026-11-09 | 引用 | today ① s1 的 Rubio 引语、s2 的 Hormuz shipping、s3 的「worst week since April 2025」在本链 news[].fact 无对应句（shipping 只在 ④ n10、worst week 只在 11/06 快照） | step 的每个专名/动作/比较级必须在同一链 news[].fact 有对应句；没有就补一条 news（同 URL 可拆多条）或把分句移到含该 news 的链；跨日事实必须在本日 news 重挂链接 |
+| 2026-11-09 | 引用 | mtd ② n1 的 time 写「11/9」，但 fact 是「Brent plunged by 16% last week」，事件发生在截至 11/6 的一周 | news[].time 写事件发生日：周度变动写「week ended YYYY-MM-DD」，盘后稿也写结算日，不写文章发布日期 |
+| 2026-11-09 | 逻辑 | ytd c1 与 ① s1 枚举「ahead of the index」漏掉 real estate +10.63%（高于 S&P +10.29%） | 写「X、Y、Z 跑赢指数」前把同档 HEAT 11 个板块全部与指数涨幅比较，列全所有跑赢者；列不全就改用「led by X, Y…」的非穷举措辞 |
+| 2026-11-09 | 逻辑 | qtd ① 的「Defensives absorbed the money」与 c4「Defensives carry the quarter」把 consumer discretionary（XLY +11.18%）归入防御板块 | 写「Defensives」前固定名单：XLP/XLU/XLV/XLRE（加 XLF 需注明理由），不得把 XLY 列入；要保留 XLY 就改称「the positive sectors included …」 |
 
 ## 链结构（主链 / 辅链）
 
@@ -194,6 +202,14 @@
 | 2026-11-03 | 逻辑 | today ④ s5 把 VIX −1.51%/20.83、中期选举投票时间、Polymarket 76% 塞进「财报反应反转」链，与 d 无关，且 VIX 数字与 c1 重复 | ④ 的每个 step 必须服务该链 d：只留 AAPL/PLTR/SHOP/AMD/SMCI；VIX/选举/Polymarket 归 c1 或 c4 gates；删 step 时同链孤立的 news 一并删（或移挂真正的主场档），不留无 step 支撑的引文 |
 | 2026-11-06 | 逻辑 | today c4「Thursday's $3 trillion wipeout」与同档 ③ s2「about $2.3 trillion」、n2「erased $2.8 trillion」三个总额并存；$3T 是 Zacks 的 S&P 500 companies 口径、$2.8T 是 TheStreet 的指数市值口径，读者无法判断 | 同一事件只留一个总额并写明口径（本次统一 $2.8T = S&P 500 指数市值）；其余口径删除或并列成区间，c4 与链文同句必须同值 |
 | 2026-11-06 | 逻辑 | today ③ d「a 1.1% chip bounce cannot undo a 10.9% drawdown」把 Nasdaq 的 1.09% 说成 chip 反弹：SOXX 当日 **+3.51%**、PHLX **+4.21%**，1.09% 是 Nasdaq Composite，且 ③ 的 steps 里没有 1.1% | d 引用的每个数字必须能在同链 steps 找到**同一主语 + 同一数值**（chip 用 SOXX/PHLX 的 3.5%/4.2%，Nasdaq 用 1.09%）；定稿前把 d 的每个数字与 steps 逐个对主语 |
+| 2026-11-09 | 逻辑 | today ① n2 与 ④ n0 逐字重复同一句 WTI 结算；① 的链条目只用 Brent，WTI 句在 ① 是冗余 | 同一 WTI 结算句只保留在 ④ 一条链；① 的 news 只写 Brent 结算，两链都需要 WTI 时只允许一条 news 含该句，另一条用交叉引用 |
+
+## 交付与上线
+
+| 日期 | 类别 | 症状 | 规则 |
+|---|---|---|---|
+| 2026-11-09 | 渲染 | 交付未完成：snapshots/2026-11-09.json 与 data/2026-11-09.json 仍 untracked，index.html、snapshots/index.json 未提交，最新 commit 仍是 11/06；live*.html、scratch/ 调试残留未清理 | 收尾固定顺序：build-shell → verify → git add snapshots/<DATE>.json data/<DATE>.json snapshots/index.json index.html → git commit -m "wrap(<DATE>): …" → git push origin main → git log --oneline -2 确认；live*.html 与 scratch/ 先删掉，不得入库；工具预算不足时优先 commit/push，再写文案 |
+
 
 ## 待补充
 

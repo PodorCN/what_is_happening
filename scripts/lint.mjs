@@ -318,6 +318,15 @@ if (DATA) {
   }
 }
 
+// ---------- 17. Brent QTD 换月回补字段必须完整（review 2026-11-09 F7）----------
+if (DATA?.closes?.brent) {
+  const b = DATA.closes.brent;
+  if (b.qtdBaseRaw == null)
+    E("data.closes.brent", `缺 qtdBaseRaw（应为 98.03）——无法复核 QTD 换月回补`);
+  if (b.qtdBaseNote == null || !String(b.qtdBaseNote).trim())
+    E("data.closes.brent", `缺 qtdBaseNote——应写 "roll-adjusted: Dec 98.03 x 113.43/117.64 …"`);
+}
+
 for (const e of errs) console.log("ERROR " + e);
 for (const w of warns) console.log("WARN  " + w);
 console.log(`\nlint ${DATE}: ${errs.length} error(s), ${warns.length} warning(s)`);

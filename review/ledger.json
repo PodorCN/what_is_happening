@@ -2137,6 +2137,107 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-11-09",
+      "reviewedAt": "2026-11-09T18:58:06-05:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "渲染",
+              "symptom": "交付未完成：snapshots/2026-11-09.json 与 data/2026-11-09.json 仍是 untracked，index.html、snapshots/index.json 的改动未提交，最新 commit 仍是 11/06 的 fix；线上仍是 2026-11-06，?date=2026-11-09 只在本地 http 可见。另 live.html、live2.html、live3.html、scratch/ 为 writer 调试残留，未清理。",
+              "evidence": "writer cron 输出 2026-11-09_17-21-26.md 第 39 行自述「commit 未生成……git commit/push 未执行，线上未更新」；git log --oneline -2 最新为 11/06；git status --short 显示 ?? snapshots/2026-11-09.json、?? data/2026-11-09.json、M index.html、M snapshots/index.json、?? live*.html、?? scratch/。",
+              "rule": "收尾固定顺序：build-shell → verify → git add snapshots/<DATE>.json data/<DATE>.json snapshots/index.json index.html → git commit -m \"wrap(<DATE>): …\" → git push origin main → git log --oneline -2 确认；live*.html 与 scratch/ 先删掉，不得入库；工具预算不足时优先 commit/push，再写文案。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "qtd ① s1「energy +0.72% has given back its entire Q4 gain」自相矛盾：+0.72% 仍是正收益，并未回吐全部 Q4 涨幅；qtd c1 又把 energy +0.72% 与 technology -12.70%、communications -3.25% 并列在「The split」前半段，同句末尾却写「nine sectors higher」（只有两个板块下跌）。",
+              "evidence": "XLE 9/30 收 61.50 → 11/9 收 61.94 = +0.72%；同档 HEAT energy +0.7；qtd c1 与 ① s4 都写 nine sectors higher。正确表述应为「energy +0.72%, still positive but far below its 10/30 peak of +13.9%」或「gave back nearly all of its Q4 gain」。",
+              "rule": "写「given back its entire gain / round-tripped」前先算期末/期初：期末仍为正就不得写 entire，只能写「gave back nearly all」并给出峰值；枚举下跌组前按 HEAT 符号分类，正值板块不得放进下跌组，并与「N sectors higher」的数量对账。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "qtd c4 第 4 条「The record is 3.44% above the close」方向写反：10/6 纪录 7,818.93 比 11/9 收盘 7,549.94 高 3.56%，3.44% 是收盘低于纪录的幅度；应写「the close is 3.44% below the record」或「the record is 3.56% above the close」。",
+              "evidence": "7,818.93 / 7,549.94 − 1 = +3.562%；1 − 7,549.94 / 7,818.93 = 3.442%。同快照 today/mtd c4 与 ytd ③ s3 均写「3.44% below」。",
+              "rule": "「A 高于 B x%」一律 A/B−1，「A 低于 B x%」一律 1−B/A；同一差距的 above/below 不得复用同一个数字。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "qtd ② s3「the dollar +0.21% over the same window」与 data 的 DXY QTD +0.22% 不一致；101.671 / 101.4499 − 1 = +0.218%，应为 +0.22%。",
+              "evidence": "data/2026-11-09.json computed.dxy.qtdPct = 0.22；同档 HEAT DXY +0.22；qtd ② s3 写 +0.21。",
+              "rule": "窗口档 DXY 百分比直接抄 data.computed.dxy.<period>Pct，并让 steps、HEAT、c1 三处同值；不得手算或沿用上一日数字。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ① 的 s1「Rubio called Iran’s demands ‘outrageous and ridiculous’ and said Washington was ‘not going to be rushed’」、s2「shipping was still being hit near Hormuz」、s3「the S&P’s worst week since April 2025」在本链 news[].fact 中都没有对应条目；shipping 只出现在 ④ n10，worst week 只出现在 11/06 快照。",
+              "evidence": "today ① news 共 8 条：Iran 方案、Trump 38 bridges、Brent/WTI 结算、S&P 点数、11 板块、涨跌家数、VIX、Morgan Stanley/UBS；无 Rubio、无 shipping、无 worst week。",
+              "rule": "step 的每个专名/动作/比较级必须在同一链的 news[].fact 有对应句；没有就补一条 news（同 URL 可拆多条）或把分句移到含该 news 的链；跨日事实（worst week）必须在本日 news 重挂链接，不得只留在前一天快照。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today ① n2 与 ④ n0 逐字重复同一句 WTI 结算：「US West Texas Intermediate futures settled at $86.85 a barrel, down $3.98, or 4.38%.」；① 的链条目只用 Brent，WTI 句在 ① 是冗余，且与 ④ 主叙述重复。",
+              "evidence": "today ① n2（Reuters/Yahoo oil）与 ④ n0（同一 URL）文本完全相同；① s2 只使用 Brent 句。",
+              "rule": "同一 WTI 结算句只保留在 ④ 一条链；① 的 news 只写 Brent 结算与盘中续跌；若两链都需要 WTI，只允许一条 news 含该句，另一条用「Brent/WTI 结算见 ④」式交叉引用。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "schema",
+              "symptom": "data/2026-11-09.json 的 closes.brent 只有 qtdBase: 94.52，缺 qtdBaseRaw: 98.03 与 qtdBaseNote（回补公式说明）；11/02 的 data 有这两个字段，11/03–11/09 连续丢失，无法从 data 复核 QTD Brent 的换月回补。",
+              "evidence": "data/2026-11-02.json 的 brent keys 含 qtdBaseRaw/qtdBaseNote；data/2026-11-09.json 仅 today/prev/mtdBase/qtdBase/ytdBase；快照 foot 仍写「94.52 = 9/30 Dec 98.03 × 113.43/117.64」。",
+              "rule": "每次 fetch 后把 Brent 的 qtdBase 写成回补值 94.52，并同时写 qtdBaseRaw: 98.03、qtdBaseNote: \"9/30 Dec 98.03 × 113.43/117.64\"；缺任一字段视为 schema 不完整。"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "mtd ② n1 的 time 写「11/9」，但 fact 是「Brent plunged by 16% last week」，事件发生在截至 11/6 的一周；time 应为「week ended 11/6」或「11/6 close」，不是文章发布日 11/9。",
+              "evidence": "fact 原文为「last week」；同链 s2 写「week ended 11/6」；11/6 收盘才是该周最后交易日。",
+              "rule": "news[].time 写事件发生日：周度变动写「week ended YYYY-MM-DD」，盘后稿也写结算日，不写文章发布日期。"
+            },
+            {
+              "id": "F9",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "ytd c1 与 ① s1 枚举「ahead of the index」时列出 energy/health/technology/staples/materials 五个，漏掉 real estate +10.63%（同样高于 S&P +10.29%）；同档 HEAT 明确 real estate +10.6。",
+              "evidence": "XLRE 12/31/2025 收 40.35 → 11/9 收 44.64 = +10.63%（HEAT ytd +10.6）；S&P YTD +10.29%。",
+              "rule": "写「X、Y、Z 跑赢指数」前把同档 HEAT 11 个板块全部与指数涨幅比较，列全所有跑赢者；列不全就改用「led by X, Y…」的非穷举措辞。"
+            },
+            {
+              "id": "F10",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "qtd ① s4 与 c4 把 consumer discretionary（XLY +11.18%）归入「Defensives absorbed the money / Defensives carry the quarter」；消费可选不是防御板块（防御组通常是 staples/health/utilities/real estate），分类错误。",
+              "evidence": "同档 c1 把 consumer discretionary 与 staples/health/utilities 并列时没有称 defensive；qtd ② 也未把 XLY 列入防御。",
+              "rule": "写「Defensives」前固定名单：XLP/XLU/XLV/XLRE（加 XLF 需注明理由），不得把 XLY 列入；要保留 XLY 就改称「the positive sectors included …」。"
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
+        }
+      ],
+      "resolved": true,
+      "fixedAt": "2026-11-09T19:25:00-05:00",
+      "fixNote": "F1-F10 全部成立并已修：F1 删除 live*.html/scratch 并提交推送（snapshots/data/index/index.html/FX）；F2 qtd energy 措辞改 gave back nearly all（峰值 +13.9%）+ qtd c1 分组重排；F3 record above→close below；F4 qtd DXY +0.21→+0.22；F5 ① 补 Rubio 与 worst-week 两条 news、删 s2 shipping 分句；F6 删 ① n2 重复的 WTI 结算句（留 ④ n0）；F7 data brent 补 qtdBaseRaw 98.03 与 qtdBaseNote；F8 mtd ② n1 time 改 week ended 11/6；F9 ytd c1/① s1 补 real estate +10.63%；F10 Defensives→the bid/rotation。"
     }
   ]
 }
