@@ -2238,6 +2238,69 @@
       "resolved": true,
       "fixedAt": "2026-11-09T19:25:00-05:00",
       "fixNote": "F1-F10 全部成立并已修：F1 删除 live*.html/scratch 并提交推送（snapshots/data/index/index.html/FX）；F2 qtd energy 措辞改 gave back nearly all（峰值 +13.9%）+ qtd c1 分组重排；F3 record above→close below；F4 qtd DXY +0.21→+0.22；F5 ① 补 Rubio 与 worst-week 两条 news、删 s2 shipping 分句；F6 删 ① n2 重复的 WTI 结算句（留 ④ n0）；F7 data brent 补 qtdBaseRaw 98.03 与 qtdBaseNote；F8 mtd ② n1 time 改 week ended 11/6；F9 ytd c1/① s1 补 real estate +10.63%；F10 Defensives→the bid/rotation。"
+    },
+    {
+      "date": "2026-11-11",
+      "reviewedAt": "2026-11-12T15:25:00-05:00",
+      "reviewedCommit": "ff83468",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "mtd.d 写「the 11/5 AI rout (-4.36%) has been fully recovered」，mtd ① s1 写「gave back 4.36% on 11/5 before recovering both by 11/11」；实际 11/4 收盘 7,688.62、11/11 收盘 7,619.38，仍低 0.90%（从 11/5 低点 7,353.73 只反弹 3.61%，回到 7,688.62 需 +4.56%）。成立的只有「月内收益转正（+0.52% vs 10/30 基线）」，rout 本身未收复。",
+              "evidence": "同文件 mtd.labels/data：11/4 7688.62、11/5 7353.73、11/11 7619.38；today 序列同值。7619.38/7688.62-1 = -0.90%。",
+              "rule": "写「(某日 X% 的跌幅) fully recovered / recovering both」前，用同档 labels/data 现算 期末÷跌幅前收盘-1（本次 7619.38/7688.62-1 = -0.90%）；未回正就改写为「the rout's hit to the month has been erased — the index is back above its 10/30 base but still 0.90% below its 11/4 close」。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "qtd ② s1「Financials +9.79% and real estate +9.00% joined the defensive bid」把 XLF 列入防御板块，且未给理由；XLRE 在名单内，XLF 不在。",
+              "evidence": "review/LESSONS.md 2026-11-09 条：防御固定名单 XLP/XLU/XLV/XLRE，加 XLF 需注明理由；ledger 2026-11-10 F2 为同型（XLF/XLB 被写成 defensive）当时判 minor、未修，今日复现。",
+              "rule": "写 defensive bid / Defensives 前只允许 XLP/XLU/XLV/XLRE；XLF 出现时必须在同一句给出理由，否则改写为「joined the bid」或「the positive sectors included …」；定稿前 grep「defensive」逐处核对名单。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today ① s6「The S&P is still 2.55% below its 10/6 record of 7,818.93, and the Nasdaq 4.08% below its 10/28 high of 26,549.85」把 Nasdaq 的 10/28 局部收盘高点与 S&P 的 record 并列；Nasdaq 历史最高收盘是 10/6 的 27,599.79，现价距其 -7.73%。",
+              "evidence": "Yahoo ^IXIC 日线：10/6 close 27,599.79（年内最高）、10/28 close 26,549.85；25,466.19/27,599.79-1 = -7.73%，25,466.19/26,549.85-1 = -4.08%。",
+              "rule": "与「record」并列写「X% below its <date> high」前，先取该指数全历史最高收盘：要么写「7.73% below its 10/6 record of 27,599.79」，要么去掉 record 并列、明确写「4.08% below its 10/28 closing high」。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today ③ s3 及同链 n2「The 10Y touched 5.03% on 11/10, its highest in more than two weeks」：^TNX 11/10 盘中高 5.021（5.02%），而 10/29 高 5.032、10/28 高 5.049 都更高；最近一次更高在 10/29（距 11/10 仅 12 天，不足两周）。",
+              "evidence": "Yahoo ^TNX 1d high：10/28 5.049、10/29 5.032、11/10 5.021；Investopedia 原文写「highest level in more than two weeks」。",
+              "rule": "写「highest in more than N」前用 ^TNX 日内/1m 序列找出最近一次更高点并写具体日期（本次应写「highest since 10/29」）；引用稿里的模糊时间表述必须用自算结果替换，不得原样照抄。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ③ s5 与 c1「The dollar ... its highest since May 2025」：DXY 日线最近一次高于 102.91 的收盘是 2025-04-08 的 102.96，应为「since April 2025」。",
+              "evidence": "Yahoo DX-Y.NYB 3y 日线：>102.91 的收盘仅 2025-04-04 103.02、2025-04-07 103.26、2025-04-08 102.96，2025-05 之后无；Bloomberg 原句（swissinfo 转载）确写「highest since May 2025」。",
+              "rule": "引用源的「highest since X」必须用本文所用指数（DXY）日线现算最近一次更高收盘的日期；与源不一致时按数据写日期，或注明「Bloomberg's characterization」。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "今日 wrap 提交同时改写 snapshots/2026-11-10.json 与 data/2026-11-10.json 的 gold（$4,039.30 / -1.82% → $4,030.20 / -2.05%），共 29 处；commit subject 只有「wrap(2026-11-11): …」，历史被改却无留痕。",
+              "evidence": "git show f2b89c2 --stat：snapshots/2026-11-10.json 29+/29-、data/2026-11-10.json 10±，全部 gold 相关；11/11 结算报道（-0.74% @ $4,000.50）反推 prev = 4,030.20，说明改后的值本身成立。",
+              "rule": "修正已发布的历史快照必须在 commit body 加一行「backfill(YYYY-MM-DD): field old→new, basis」（本次 gold 4,039.30→4,030.20，依据 GC=F 修订后收盘 + 11/11 settle 反推），subject 仍写当日主线。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
