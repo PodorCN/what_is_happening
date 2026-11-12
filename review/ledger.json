@@ -2309,6 +2309,53 @@
       "resolved": true,
       "fixedAt": "2026-11-12T15:26:00-05:00",
       "fixNote": "F1-F5 已修并自查通过（mtd 收复口径按 7,619.38/7,688.62 重算为 -0.90%；qtd 防御名单；Nasdaq 改挂 10/6 record 27,599.79 = -7.73%；10Y 改『since 10/29』；DXY 改『April 2025』并把美元 fact 从已滚动的 swissinfo wrap 改挂 DX-Y.NYB/history）。F6 驳回：f2b89c2 的 commit body 已写明『Also corrects the 11/10 gold baseline to the COMEX December settlement ($4,030.20, -2.05%) and re-derives its four tiers.』，并非无留痕；新值经 11/11 settle 反推成立，无需再改。"
+    },
+    {
+      "date": "2026-11-12",
+      "reviewedAt": "2026-11-12T18:45:00-05:00",
+      "reviewedCommit": "0922c9b",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "qtd 主链标题「① Q4 Is a Rotation the Dow Didn't Have」与同链 s0 及 HEAT 反向：Dow 是 +2.73%、S&P 是 -0.77%，吃到 Q4 rotation 的正是 Dow；标题却说 Dow「didn't have」这个 rotation。11/11 原句是「Q4 Is a Drawdown the Dow Didn't Have」（Dow 没有的是 drawdown），今日把 Drawdown 换成 Rotation 后未同步改后半句，主链结论变成反的。",
+              "evidence": "同文件 P.qtd.chains[0].steps[0]「the Dow +2.73% and the Nasdaq -5.57%」；HEAT.qtd 的 Dow +2.73；snapshots/2026-11-11.json 同链标题为「Q4 Is a Drawdown the Dow Didn't Have」。",
+              "rule": "把标题里的 Drawdown 换成 Rotation 时，后半句「the Dow Didn't Have」必须同步改为「the Dow Did Have」或恢复 Drawdown；定稿前把主链标题与同链 s0 的指数符号逐字对向。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "mtd.c4 第 1 条「nine sessions have produced a 0.16% month — the 11/5 rout is repaired, the 11/4 close is not」：11/12 收 7,592.40 仍比 11/4 收 7,688.62 低 1.25%，11/5 rout 的价格损失并未收复；同一句后半句又承认 11/4 close 未收复，前后自相矛盾。可成立的只有「the rout's hit to the month has been erased — back above the 10/30 base」，不能写「rout is repaired」。",
+              "evidence": "同文件 mtd labels/data：11/4 7,688.62、11/5 7,353.73、11/12 7,592.40；7,592.40/7,688.62−1 = −1.25%。11/11 ledger F1 已就同型「fully recovered」判 major，LESSONS 2026-11-11 条给了正确改写句。",
+              "rule": "写「the X/XX rout is repaired / recovered」前用同档 labels/data 现算 期末÷rout 前收盘−1；未回正只能写「the rout's hit to the month has been erased — back above the 10/30 base but still N% below the 11/4 close」，并同步扫四档 c1/c4/d 有无同型句子。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ② s1 写「Primary dealers were left with 11.39% of the sale, up from 6.79% in the previous auction and the most since June」；所引 investinglive 页面只写 11.39% vs 6.79%、9.49% 六个月均值，未给「most since June」，同链 news 也没有任何含 June 的 fact。",
+              "evidence": "investinglive 原文：Dealers were left holding 11.39%, up sharply from 6.79% in the previous auction; Dealers awarded 11.39% vs 9.49% average。Seeking Alpha 正文未提 dealer 占比/June；today ② 的 7 条 news 无 June。",
+              "rule": "写「most since <月>」前在该链 news.u 页面全文检索该月份词与比较级；检索不到就删掉该短语，或补一条真正含该比较级的静态来源，不得凭记忆补时间比较级。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "qtd ① s3 用「utilities +11.08%」、c1 用「consumer discretionary +10.68%」，但该链 news 只有 XLK/XLC/SOXX/XLP/XLV/XLF/XLRE/RSP/SPY/RUT/GC=F，没有 XLU/XLY 的成交 fact；这两个板块数字无法从链内链接验算。",
+              "evidence": "P.qtd.chains[0].news 的 src/u 列表无 XLU、XLY；HEAT.qtd 的 Utilities +11.08、ConsDisc +10.68 与 Yahoo ETF 收盘一致，但链内无来源。",
+              "rule": "链里每个板块数字都挂一条同板块 ETF 的 Yahoo close fact（本次补 XLU 与 XLY 两条），或删掉该板块的具体数字；定稿前把 steps/c1 的板块名与 news 的 ETF 代码做集合比对。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
