@@ -126,9 +126,9 @@
           "steps": [
             "CoreWeave reported nearly $3.7 billion of quarterly revenue and a $709 million loss, both ahead of Visible Alpha estimates, and raised its full-year revenue forecast to $13.3 billion",
             "CRWV jumped 24.71% to $60.77 and led the Nasdaq 100",
-            "The bid ran through the chip complex: SOXX +6.01% and the Nasdaq 100 +2.28%",
+            "The bid ran through the chip complex: SOXX +6.01%",
             "Nvidia added 2.87% to $173.73, retracing part of a 10% two-session slide tied to the board's investigation of CEO Jensen Huang, but closed well off its session high",
-            "The Nasdaq rose 1.60% to 25,466.19, its first close above the 11/3 level of 25,372.01 since the 11/5 rout; the S&P added 1.31% to 7,619.38",
+            "The Nasdaq rose 1.60% to 25,466.19, back above the 11/3 close of 25,372.01; the S&P added 1.31% to 7,619.38",
             "The S&P is still 2.55% below its 10/6 record of 7,818.93, and the Nasdaq 4.08% below its 10/28 high of 26,549.85"
           ],
           "d": "One company's numbers did the work: CoreWeave's beat-and-raise restored the AI capex story, and the money went straight back into the hardware that had been sold for two weeks.",
@@ -188,10 +188,9 @@
           "main": 0,
           "steps": [
             "The rally was cap-weighted: RSP gained 0.80% against SPY's 1.32%, so the average stock lagged the index by 0.52 points",
-            "Memory and storage produced the largest gains: SanDisk +13.69%, Micron +11.89%, Seagate +9.99%, Western Digital +8.34% and the Roundhill Memory ETF +10.36%",
-            "SK Hynix rose 9.71%, Marvell 9.33%, Intel 7.52% and Dell 11.75%, so the buying was hardware rather than software",
+            "SanDisk +13.69% and Micron +11.89% led the memory complex, with Seagate up 10% and Western Digital up 8%",
+            "SK Hynix rose 10% and the Roundhill Memory ETF gained more than 10%, so the buying was hardware rather than software",
             "Baird cut Nvidia to Neutral on the Huang uncertainty, China export risk and slower hyperscaler capex",
-            "Nvidia is still 15.10% lower in November and 6.85% lower for the year, even after the rebound",
             "Technology's 3.23% was the best of the 11 sectors, 1.37 points ahead of energy's 1.86%, while consumer discretionary slipped 0.05% as the only decliner"
           ],
           "d": "The rebound was not an Nvidia story: the memory and storage names that had been sold hardest on AI-capex fears produced the largest gains, while the index's biggest stock lagged its own sector.",
@@ -321,9 +320,9 @@
           "steps": [
             "Anthropic's IPO was said to be oversubscribed, with pricing due 11/18",
             "OpenAI's quarterly revenue reached $10 billion for the first time, though its adjusted operating loss widened to $10.9 billion",
-            "Oil's advance failed: WTI traded as high as $88.74 before settling 0.57% higher at $86.53, still 16.89% lower in November",
+            "Oil's advance failed: WTI traded as high as $88.74 before settling 0.57% higher at $86.53",
             "Brent settled $1.27, or 1.39%, higher at $92.76 after Iran's security chief said no enriched nuclear material would leave the country",
-            "The VIX fell 10.12% to 17.49, its first close below 18 since 10/29"
+            "The VIX fell 10.12% to 17.49"
           ],
           "d": "The day's relief came from the primary market and from crude, not from the Fed: a subscribed AI listing, a $10 billion OpenAI quarter and an oil rally that could not hold its intraday breakout.",
           "news": [
@@ -477,7 +476,7 @@
           "main": 1,
           "steps": [
             "The S&P is 0.52% above its 10/30 base at 7,619.38, the Dow +1.38% and the Nasdaq +0.11%",
-            "The month ran +1.58% on 11/4, gave back 4.36% on 11/5 and repaired 2.35% on 11/9",
+            "The month ran +1.58% on 11/4 and gave back 4.36% on 11/5 before recovering both by 11/11",
             "This is the first positive month-to-date reading since 11/4, when the index was +1.43%",
             "The index is still 2.55% below its 10/6 record of 7,818.93",
             "RSP is +1.99% against SPY's +0.54%, so the average stock is 1.45 points ahead"
@@ -520,8 +519,8 @@
           "t": "② The Barrel Is Still November's Biggest Price",
           "main": 0,
           "steps": [
-            "Brent's January contract is 18.22% lower at $92.76 from 10/30's $113.43, and WTI 16.89% lower at $86.53",
-            "Energy is -9.50% for the month, the worst of the 11 sectors, after giving back about a quarter of a 2026 gain that reached +56.6% on 10/30",
+            "Brent's January contract is 18.22% lower at $92.76 from 10/30's $113.43",
+            "Energy is -9.50% for the month, the worst of the 11 sectors, after erasing about a quarter of its 2026 gain",
             "Technology is the month's other loser at -2.87%, so the year's leader and the AI engine both fell in November",
             "Saudi Arabia told OPEC its October output rose 26% to 10.56 million barrels a day, the highest since the war began",
             "The API reported US crude inventories rose by 9 million barrels in the week ended 11/6, with distillates up 1.5 million"
@@ -547,6 +546,12 @@
               "u": "https://www.rigzone.com/news/oil_rebounds_amid_mixed_iran_war_signals-11-nov-2026-185062-article/"
             },
             {
+              "time": "11/11 close",
+              "fact": "XLK closed at $174.36, down 2.87% from 10/30's $179.51.",
+              "src": "Yahoo Finance",
+              "u": "https://finance.yahoo.com/quote/XLK/history"
+            },
+            {
               "time": "11/11",
               "fact": "Saudi Arabia told OPEC that its crude output rose to 10.56 million barrels a day in October, a 26% increase and the highest since the war began.",
               "src": "Rigzone",
@@ -564,9 +569,9 @@
           "t": "③ The Rotation Held: Comms +8.71%, ConsDisc +4.86%",
           "main": 0,
           "steps": [
-            "Nine of 11 sectors are higher in November, led by communications +8.71%, consumer discretionary +4.86%, financials +3.75% and real estate +3.29%",
+            "Nine of 11 sectors are higher in November, led by communications +8.71%",
             "The 10Y is 4bp higher at 4.98% and the 2Y 17bp higher at 4.73%",
-            "Gold is 2.61% higher at $4,000.50 and the VIX 9.94% lower at 17.49",
+            "Gold is 2.61% higher at $4,000.50",
             "The dollar is 1.01% higher on the DXY at 102.91",
             "Only energy and technology are lower for the month"
           ],
@@ -748,9 +753,9 @@
           "main": 1,
           "steps": [
             "The S&P is 0.42% below its 9/30 base at 7,619.38, while the Dow is +3.10% and the Nasdaq -5.19%",
-            "Technology is -10.93% for the quarter and communications -2.14%; energy is +3.04% after giving back a Q4 gain that reached +13.9% on 10/30",
+            "Technology is -10.93% for the quarter, the only double-digit sector loser",
             "The semis led the fall: SOXX is -18.01% from 9/30's $189.55 to $155.40",
-            "The bid went to the non-AI corners: staples +13.46%, health +12.19%, consumer discretionary +11.16% and utilities +11.11%",
+            "The bid went to the non-AI corners: staples +13.46% and health +12.19%",
             "Nine of 11 sectors are higher for the quarter, and the two that are not are the AI complex"
           ],
           "d": "Q4 is still a rotation, not a rally: the index is fractionally lower, the AI hardware complex is down double digits, and the money sits in staples, health and the consumer.",
@@ -798,9 +803,9 @@
           "main": 0,
           "steps": [
             "RSP is +7.03% for the quarter against SPY's -0.37%, a 7.40-point gap",
-            "Financials +9.79%, real estate +9.00% and materials +8.87% joined the defensive bid",
+            "Financials +9.79% and real estate +9.00% joined the defensive bid",
             "The small caps did not lead: the Russell 2000 is +1.77% for the quarter",
-            "Gold is -4.45% and the dollar +1.44% over the same window"
+            "Gold is -4.45% over the same window"
           ],
           "d": "The quarter's number is the gap: RSP's 7.03% against SPY's -0.37% leaves the average stock 7.40 points ahead, because the index is where the AI hardware sits.",
           "news": [
@@ -1031,7 +1036,7 @@
           "main": 1,
           "steps": [
             "The S&P is +11.30% at 7,619.38, the Nasdaq +9.57% at 25,466.19 and the Dow +9.20% at 52,486.49",
-            "Energy +41.74% is the biggest sector gain; health +22.06%, technology +21.11%, staples +17.73% and materials +16.91% are ahead of the index too",
+            "Energy +41.74% is the biggest sector gain, ahead of health +22.06% and technology +21.11%",
             "The referee is the 10Y, 80bp above the 12/31/2025 4.18% and 38bp below the 5.36% intraday peak of 10/7",
             "The average stock is ahead: RSP +16.23% against SPY's +11.42%, 4.81 points",
             "The two ends of the AI trade: AMD +158.17% and Nvidia -6.85% for the year"
