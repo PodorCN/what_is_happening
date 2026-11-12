@@ -63,7 +63,7 @@
       "qtdBaseNote": "roll-adjusted: Dec 98.03 x 113.43/117.64 (Dec expired 117.64 on 10/30; Jan settled 113.43 that day)"
     },
     "gold": {
-      "today": 4039.3,
+      "today": 4030.2,
       "prev": 4114.5,
       "mtdBase": 3898.9,
       "qtdBase": 4186.7,
@@ -164,10 +164,10 @@
       "ytdPct": 50.353
     },
     "gold": {
-      "dayPct": -1.828,
-      "mtdPct": 3.601,
-      "qtdPct": -3.521,
-      "ytdPct": -6.952
+      "dayPct": -2.05,
+      "mtdPct": 3.37,
+      "qtdPct": -3.74,
+      "ytdPct": -7.16
     },
     "btc": {
       "dayPct": -1.488,

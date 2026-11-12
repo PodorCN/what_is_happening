@@ -2,11 +2,11 @@
   "date": "2026-11-10",
   "updatedAt": "2026-11-10T22:10:43Z",
   "label": "2026-11-10 Tuesday close",
-  "foot": "Closing baseline (auto 2026-11-10): SPX 7520.93 (-0.38% day / -0.78% MTD / -1.71% QTD / +9.87% YTD) · DJI 52231.89 · IXIC 25065.88 · 10Y 4.98% (Treasury daily par curve; +10bp) · WTI 86.04 (Dec settle) · Brent 91.49 (Jan settle; QTD base 94.52 = 9/30 Dec 98.03 × 113.43/117.64, roll-adjusted) · Gold 4039.30 (Dec fut) · BTC 73811.32 (4pm ET). Sector and single-name returns computed from Yahoo closes; WTI/Brent from exchange settlement. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23242/10Y 4.18%/30Y 4.84%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.44% · 26-08-31 S&P 7686.14/10Y 4.75% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4186.7 (fut)/BTC $83554/VIX 16.34. For information only — not investment advice.",
+  "foot": "Closing baseline (auto 2026-11-10): SPX 7520.93 (-0.38% day / -0.78% MTD / -1.71% QTD / +9.87% YTD) · DJI 52231.89 · IXIC 25065.88 · 10Y 4.98% (Treasury daily par curve; +10bp) · WTI 86.04 (Dec settle) · Brent 91.49 (Jan settle; QTD base 94.52 = 9/30 Dec 98.03 × 113.43/117.64, roll-adjusted) · Gold 4030.20 (Dec fut) · BTC 73811.32 (4pm ET). Sector and single-name returns computed from Yahoo closes; WTI/Brent from exchange settlement. 25-12-31 S&P 6845.5/Dow 48063/Nasdaq 23242/10Y 4.18%/30Y 4.84%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.44% · 26-08-31 S&P 7686.14/10Y 4.75% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4186.7 (fut)/BTC $83554/VIX 16.34. For information only — not investment advice.",
   "P": {
     "today": {
       "h": "A Tenth of a Point: 2Y +17bp, 10Y 4.98%, S&P -0.38%, Nvidia -5.5%",
-      "d": "October CPI came in at 0.4% m/m and 0.3% core, a tenth hot on both lines, and Waller's pre-open nod to a half-point move took December hike odds to nearly 100%: the 2Y rose 17bp to 4.73%, the 10Y 10bp to 4.98%, the dollar had its best day since September and gold fell 1.82%, while the S&P lost only 0.38% to 7,520.93 because the average stock was flat and the hole was Nvidia's 5.47% slide.",
+      "d": "October CPI came in at 0.4% m/m and 0.3% core, a tenth hot on both lines, and Waller's pre-open nod to a half-point move took December hike odds to nearly 100%: the 2Y rose 17bp to 4.73%, the 10Y 10bp to 4.98%, the dollar had its best day since September and gold fell 2.05%, while the S&P lost only 0.38% to 7,520.93 because the average stock was flat and the hole was Nvidia's 5.47% slide.",
       "badges": [
         "S&P 7,521 -0.38%",
         "Nasdaq 25,066 -0.74%",
@@ -14,7 +14,7 @@
         "10Y 4.98% +10bp",
         "Brent $91.49 -1.17%"
       ],
-      "c1": "A hot print with no year-on-year number attached. October CPI rose 0.4% m/m after 0.6% in September, against a 0.3% consensus, and core rose 0.3% for a third straight month against 0.2% expected; shelter added 0.3% and accounted for more than 30% of the monthly increase. BLS could not publish a 12-month change for most series, because it never collected October 2025 data during the lapse in appropriations. Fed Governor Christopher Waller, speaking in London before the release, had said a 0.3% core would make him consider a half-point hike at the 12/8-9 meeting. Traders went from 84% on 11/9 to nearly 100% for a December hike, with a 50bp move at 13.6%. The 2Y jumped 17bp to 4.73% and the 10Y 10bp to 4.98%, while a $42 billion 10Y auction cleared at a 5.020% high yield and left dealers with 9.8%. The dollar had its best day since September, the DXY up 0.57% to 102.25, gold closed 1.82% lower at $4,039.30 and bitcoin fell 1.49% to $73,811. Equities bent rather than broke: the S&P fell 29.01 points, or 0.38%, to 7,520.93, the Dow 157.86 points, or 0.30%, to 52,231.89 and the Nasdaq 0.74% to 25,065.88, with the VIX down 2.31% to 19.46.",
+      "c1": "A hot print with no year-on-year number attached. October CPI rose 0.4% m/m after 0.6% in September, against a 0.3% consensus, and core rose 0.3% for a third straight month against 0.2% expected; shelter added 0.3% and accounted for more than 30% of the monthly increase. BLS could not publish a 12-month change for most series, because it never collected October 2025 data during the lapse in appropriations. Fed Governor Christopher Waller, speaking in London before the release, had said a 0.3% core would make him consider a half-point hike at the 12/8-9 meeting. Traders went from 84% on 11/9 to nearly 100% for a December hike, with a 50bp move at 13.6%. The 2Y jumped 17bp to 4.73% and the 10Y 10bp to 4.98%, while a $42 billion 10Y auction cleared at a 5.020% high yield and left dealers with 9.8%. The dollar had its best day since September, the DXY up 0.57% to 102.25, gold closed 2.05% lower at $4,030.20 and bitcoin fell 1.49% to $73,811. Equities bent rather than broke: the S&P fell 29.01 points, or 0.38%, to 7,520.93, the Dow 157.86 points, or 0.30%, to 52,231.89 and the Nasdaq 0.74% to 25,065.88, with the VIX down 2.31% to 19.46.",
       "kpi": [
         [
           "S&P",
@@ -75,8 +75,8 @@
         [
           "Gold",
           "$4,114.50",
-          "$4,039.30",
-          "-1.82%"
+          "$4,030.20",
+          "-2.05%"
         ]
       ],
       "labels": [
@@ -129,9 +129,9 @@
             "Waller said in London before the release that a 0.3% core would make him consider a half-point hike at the 12/8-9 meeting",
             "Traders moved to nearly 100% for December from 84% on 11/9, with a 50bp move at 13.6%; the 2Y rose 17bp to 4.73% and the 10Y 10bp to 4.98%",
             "A $42 billion 10Y auction cleared at a 5.020% high yield with dealers left 9.8%, and the dollar had its best day since September at DXY 102.25",
-            "Gold closed 1.82% lower at $4,039.30, while the S&P fell 0.38% to 7,520.93 and the VIX eased 2.31% to 19.46"
+            "Gold closed 2.05% lower at $4,030.20, while the S&P fell 0.38% to 7,520.93 and the VIX eased 2.31% to 19.46"
           ],
-          "d": "The inflation impulse ran through the front end first: a 0.4%/0.3% CPI, a Waller hint at 50bp and a soft 10Y auction took the 2Y up 17bp, the dollar to its best day since September and gold down 1.82% — yet the S&P lost 0.38% and the VIX fell, because the equity damage was one stock deep.",
+          "d": "The inflation impulse ran through the front end first: a 0.4%/0.3% CPI, a Waller hint at 50bp and a soft 10Y auction took the 2Y up 17bp, the dollar to its best day since September and gold down 2.05% — yet the S&P lost 0.38% and the VIX fell, because the equity damage was one stock deep.",
           "news": [
             {
               "time": "11/10",
@@ -177,7 +177,7 @@
             },
             {
               "time": "11/10 close",
-              "fact": "Gold futures for December delivery closed at $4,039.30 an ounce, down 1.82% from Monday's $4,114.50.",
+              "fact": "Gold futures for December delivery closed at $4,030.20 an ounce, down 2.05% from Monday's $4,114.50.",
               "src": "Yahoo Finance",
               "u": "https://finance.yahoo.com/quote/GC=F/history"
             },
@@ -417,8 +417,8 @@
         [
           "Gold",
           "$3,898.90",
-          "$4,039.30",
-          "+3.60%"
+          "$4,030.20",
+          "+3.37%"
         ]
       ],
       "labels": [
@@ -533,7 +533,7 @@
           "steps": [
             "Nine of 11 sectors are higher in November, led by communications +7.87%, consumer discretionary +4.91%, real estate +3.27% and financials +3.15%",
             "The 10Y is 4bp higher at 4.98% and the 2Y 17bp higher at 4.73%",
-            "Gold is 3.60% higher at $4,039.30 and the VIX 0.21% higher at 19.46",
+            "Gold is 3.37% higher at $4,030.20 and the VIX 0.21% higher at 19.46",
             "The dollar is 0.36% higher on the DXY at 102.25",
             "The month's two losers are energy and technology — the year's biggest gainer and the AI engine giving back at once"
           ],
@@ -553,7 +553,7 @@
             },
             {
               "time": "11/10 close",
-              "fact": "Gold futures for December delivery closed at $4,039.30, up 3.60% from 10/30's $3,898.90.",
+              "fact": "Gold futures for December delivery closed at $4,030.20, up 3.37% from 10/30's $3,898.90.",
               "src": "Yahoo Finance",
               "u": "https://finance.yahoo.com/quote/GC=F/history"
             },
@@ -566,7 +566,7 @@
           ]
         }
       ],
-      "c4": "<ul class='play'><li>The shape: an election rally, an AI rout and a dip-buying repair inside seven sessions — the index ends 0.78% lower but 1.95 points behind the average stock.</li><li>The barrel: Brent -19.34% is the month's dominant price, and energy the only double-digit sector loser.</li><li>The rotation: communications +7.87% and consumer discretionary +4.91% are where the AI money went, with gold +3.60% as the hedge.</li><li>The rate bill: the 10Y is 4bp higher on the month because of 11/10 alone; the front end carries the whole repricing.</li></ul>"
+      "c4": "<ul class='play'><li>The shape: an election rally, an AI rout and a dip-buying repair inside seven sessions — the index ends 0.78% lower but 1.95 points behind the average stock.</li><li>The barrel: Brent -19.34% is the month's dominant price, and energy the only double-digit sector loser.</li><li>The rotation: communications +7.87% and consumer discretionary +4.91% are where the AI money went, with gold +3.37% as the hedge.</li><li>The rate bill: the 10Y is 4bp higher on the month because of 11/10 alone; the front end carries the whole repricing.</li></ul>"
     },
     "qtd": {
       "h": "Q4's Rotation Is Still a Drawdown: S&P -1.71%, Tech -13.7%, Semis -22.7%",
@@ -639,8 +639,8 @@
         [
           "Gold",
           "$4,186.70",
-          "$4,039.30",
-          "-3.52%"
+          "$4,030.20",
+          "-3.74%"
         ]
       ],
       "labels": [
@@ -764,7 +764,7 @@
             "RSP is +6.18% for the quarter against SPY's -1.67%, a 7.85-point gap",
             "Financials +9.16%, real estate +8.97% and materials +8.52% joined the defensive bid",
             "The small caps did not lead: the Russell 2000 is +0.88% for the quarter",
-            "Gold is -3.52% and the dollar +0.79% over the same window"
+            "Gold is -3.74% and the dollar +0.79% over the same window"
           ],
           "d": "The quarter's number is the gap: the average stock is 7.85 points ahead of the cap-weighted index, because the index is where the AI hardware sits.",
           "news": [
@@ -904,8 +904,8 @@
         [
           "Gold",
           "$4,341",
-          "$4,039.30",
-          "-6.95%"
+          "$4,030.20",
+          "-7.16%"
         ]
       ],
       "labels": [
@@ -1071,7 +1071,7 @@
           "t": "③ The Year's Breadth and Its Two Failed Hedges",
           "steps": [
             "Communications -8.46% is the only sector down; the Russell 2000 is +13.68%",
-            "Gold is -6.95% at $4,039.30 and bitcoin -15.65% at $73,811 — the two hedges that did not pay",
+            "Gold is -7.16% at $4,030.20 and bitcoin -15.65% at $73,811 — the two hedges that did not pay",
             "The dollar is +4.04% on the DXY at 102.25",
             "The AI engine is still positive for the year despite a double-digit Q4 drawdown"
           ],
@@ -1091,7 +1091,7 @@
             },
             {
               "time": "11/10 close",
-              "fact": "Gold futures for December delivery closed at $4,039.30, down 6.95% from 12/31/2025's $4,341.10, and bitcoin at $73,811.32 is down 15.65% from $87,508.83.",
+              "fact": "Gold futures for December delivery closed at $4,030.20, down 7.16% from 12/31/2025's $4,341.10, and bitcoin at $73,811.32 is down 15.65% from $87,508.83.",
               "src": "Yahoo Finance",
               "u": "https://finance.yahoo.com/quote/GC=F/history"
             },
@@ -1104,7 +1104,7 @@
           ]
         }
       ],
-      "c4": "<ul class='play'><li>The engine: energy +39.14% and health +22.02% are the year's leaders, not the AI complex, which is third at +17.32%.</li><li>The referee: an 80bp 10Y and a 126bp 2Y have taken the multiple, and 2s10s is 46bp flatter.</li><li>The breadth: the average stock is 5.34 points ahead of the index, and only communications is negative.</li><li>The failed hedges: gold -6.95% and bitcoin -15.65% in a year the CPI ran hot — insurance was the one thing that did not work.</li></ul>"
+      "c4": "<ul class='play'><li>The engine: energy +39.14% and health +22.02% are the year's leaders, not the AI complex, which is third at +17.32%.</li><li>The referee: an 80bp 10Y and a 126bp 2Y have taken the multiple, and 2s10s is 46bp flatter.</li><li>The breadth: the average stock is 5.34 points ahead of the index, and only communications is negative.</li><li>The failed hedges: gold -7.16% and bitcoin -15.65% in a year the CPI ran hot — insurance was the one thing that did not work.</li></ul>"
     }
   },
   "HEAT": {
@@ -1234,8 +1234,8 @@
           ],
           [
             "Gold fut",
-            "$4,039",
-            "-1.82"
+            "$4,030",
+            "-2.05"
           ],
           [
             "DXY",
@@ -1381,8 +1381,8 @@
           ],
           [
             "Gold fut",
-            "$4,039",
-            "+3.60"
+            "$4,030",
+            "+3.37"
           ],
           [
             "DXY",
@@ -1528,8 +1528,8 @@
           ],
           [
             "Gold fut",
-            "$4,039",
-            "-3.52"
+            "$4,030",
+            "-3.74"
           ],
           [
             "DXY",
@@ -1675,8 +1675,8 @@
           ],
           [
             "Gold fut",
-            "$4,039",
-            "-6.95"
+            "$4,030",
+            "-7.16"
           ],
           [
             "DXY",
