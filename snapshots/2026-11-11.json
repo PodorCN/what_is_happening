@@ -14,7 +14,7 @@
         "10Y 4.98% 0bp",
         "Brent $92.76 +1.39%"
       ],
-      "c1": "CoreWeave did the work. The AI cloud provider reported nearly $3.7 billion of third-quarter revenue and a $709 million loss, both ahead of Visible Alpha estimates, and raised its full-year revenue forecast to $13.3 billion; the stock rose 24.71% to $60.77 and led the Nasdaq 100. The bid spread through the hardware stack — Micron +11.89%, AMD +7.32%, Broadcom +3.99%, SOXX +6.01% — and Nvidia added 2.87% to $173.73 after losing 10% over the previous two sessions. The Nasdaq closed 1.60% higher at 25,466.19, its first close above the 11/3 level of 25,372.01 since the 11/5 rout, and the S&P rose 1.31% to 7,619.38. The Dow added 0.49%, or 254.60 points, because its technology weight is small. Cash Treasuries never opened: the bond market was closed for Veterans Day, leaving the 10Y at 4.98% and the 2Y at 4.73%. The dollar rose 0.65% to 102.91, its highest since May 2025, gold futures settled 0.74% lower at $4,000.50 and the VIX fell to 17.49.",
+      "c1": "CoreWeave did the work. The AI cloud provider reported nearly $3.7 billion of third-quarter revenue and a $709 million loss, both ahead of Visible Alpha estimates, and raised its full-year revenue forecast to $13.3 billion; the stock rose 24.71% to $60.77 and led the Nasdaq 100. The bid spread through the hardware stack — Micron +11.89%, AMD +7.32%, Broadcom +3.99%, SOXX +6.01% — and Nvidia added 2.87% to $173.73 after losing 10% over the previous two sessions. The Nasdaq closed 1.60% higher at 25,466.19, its first close above the 11/3 level of 25,372.01 since the 11/5 rout, and the S&P rose 1.31% to 7,619.38. The Dow added 0.49%, or 254.60 points, because its technology weight is small. Cash Treasuries never opened: the bond market was closed for Veterans Day, leaving the 10Y at 4.98% and the 2Y at 4.73%. The dollar rose 0.65% to 102.91, its highest since April 2025, gold futures settled 0.74% lower at $4,000.50 and the VIX fell to 17.49.",
       "kpi": [
         [
           "S&P",
@@ -129,7 +129,7 @@
             "The bid ran through the chip complex: SOXX +6.01%",
             "Nvidia added 2.87% to $173.73, retracing part of a 10% two-session slide tied to the board's investigation of CEO Jensen Huang, but closed well off its session high",
             "The Nasdaq rose 1.60% to 25,466.19, back above the 11/3 close of 25,372.01; the S&P added 1.31% to 7,619.38",
-            "The S&P is still 2.55% below its 10/6 record of 7,818.93, and the Nasdaq 4.08% below its 10/28 high of 26,549.85"
+            "The S&P is still 2.55% below its 10/6 record of 7,818.93, and the Nasdaq 7.73% below its 10/6 record of 27,599.79"
           ],
           "d": "One company's numbers did the work: CoreWeave's beat-and-raise restored the AI capex story, and the money went straight back into the hardware that had been sold for two weeks.",
           "news": [
@@ -257,9 +257,9 @@
           "steps": [
             "Cash Treasuries did not trade on 11/11; the 10Y was left at Tuesday's 4.98% close and the 2Y at 4.73%",
             "Treasury futures still edged lower as the CPI report cemented wagers on a December hike",
-            "Tuesday's session had taken the 10Y as high as 5.03%, its highest in more than two weeks, before it finished just below 5%",
+            "Tuesday's session had taken the 10Y as high as 5.03%, its highest since 10/29, before it finished just below 5%",
             "The 12/8-9 meeting is fully priced for a quarter-point hike, with a half-point move at roughly 13%",
-            "The dollar rose 0.65% to 102.91 on the DXY, its highest since May 2025",
+            "The dollar rose 0.65% to 102.91 on the DXY, its highest since April 2025",
             "Gold futures settled 0.74% lower at $4,000.50; spot gold fell 1.2% to $3,984.37"
           ],
           "d": "A holiday in the cash market did not pause the hike trade: with no cash curve to sell, it priced through Treasury futures, the dollar and gold.",
@@ -278,7 +278,7 @@
             },
             {
               "time": "11/11",
-              "fact": "The 10-year Treasury yield touched 5.03% on 11/10, its highest level in more than two weeks, and finished that session just below 5%.",
+              "fact": "The 10-year Treasury yield touched 5.03% on 11/10, its highest level since 10/29, and finished that session just below 5%.",
               "src": "Investopedia",
               "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-nasdaq-11112026-12248789"
             },
@@ -290,9 +290,9 @@
             },
             {
               "time": "11/11",
-              "fact": "The dollar hit its highest since May 2025.",
-              "src": "Bloomberg",
-              "u": "https://www.swissinfo.ch/eng/us-stocks-climb-as-wall-street-gets-fresh-ai-fuel%3A-markets-wrap/92360800"
+              "fact": "The dollar index rose 0.65% to 102.91, its highest close since April 2025.",
+              "src": "Yahoo Finance",
+              "u": "https://finance.yahoo.com/quote/DX-Y.NYB/history"
             },
             {
               "time": "11/11",
@@ -375,7 +375,7 @@
     },
     "mtd": {
       "h": "November Repaired Itself: S&P +0.52%, Brent -18.22%, Tech Still -2.87%",
-      "d": "From 10/30's 7,580.07 the S&P is 0.52% higher at 7,619.38, the Dow +1.38% and the Nasdaq +0.11%: the 11/5 AI rout (-4.36%) has been fully recovered, but technology is still 2.87% lower for the month and Brent's January contract 18.22% cheaper. The average stock is 1.45 points ahead of the index and the 10Y is 4bp higher.",
+      "d": "From 10/30's 7,580.07 the S&P is 0.52% higher at 7,619.38, the Dow +1.38% and the Nasdaq +0.11%: the 11/5 rout's hit to the month has been erased, but the index is still 0.90% below its 11/4 close, technology is still 2.87% lower for the month and Brent's January contract 18.22% cheaper. The average stock is 1.45 points ahead of the index and the 10Y is 4bp higher.",
       "c1": "November has round-tripped and turned positive: the 11/4 election session added 1.58%, the 11/5 AI rout took 4.36%, the 11/9 repair added 2.35%, and the index now sits 0.52% above its 10/30 base and 2.55% below the 10/6 record. Technology is still 2.87% lower for the month and energy 9.50% lower, while communications +8.71% and consumer discretionary +4.86% are where the money went. Breadth is ahead of the index by 1.45 points and the 10Y is 4bp higher, with the whole rate move made on 11/10.",
       "badges": [
         "S&P +0.52%",
@@ -476,7 +476,7 @@
           "main": 1,
           "steps": [
             "The S&P is 0.52% above its 10/30 base at 7,619.38, the Dow +1.38% and the Nasdaq +0.11%",
-            "The month ran +1.58% on 11/4 and gave back 4.36% on 11/5 before recovering both by 11/11",
+            "The S&P gained 1.58% on 11/4 and gave back 4.36% on 11/5; by 11/11 both it and the Nasdaq were back above their 10/30 bases, though the S&P is still 0.90% below its 11/4 close",
             "This is the first positive month-to-date reading since 11/4, when the index was +1.43%",
             "The index is still 2.55% below its 10/6 record of 7,818.93",
             "RSP is +1.99% against SPY's +0.54%, so the average stock is 1.45 points ahead"
@@ -803,7 +803,7 @@
           "main": 0,
           "steps": [
             "RSP is +7.03% for the quarter against SPY's -0.37%, a 7.40-point gap",
-            "Financials +9.79% and real estate +9.00% joined the defensive bid",
+            "Financials +9.79% and real estate +9.00% joined the bid",
             "The small caps did not lead: the Russell 2000 is +1.77% for the quarter",
             "Gold is -4.45% over the same window"
           ],

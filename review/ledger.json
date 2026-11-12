@@ -2298,9 +2298,17 @@
               "rule": "修正已发布的历史快照必须在 commit body 加一行「backfill(YYYY-MM-DD): field old→new, basis」（本次 gold 4,039.30→4,030.20，依据 GC=F 修订后收盘 + 11/11 settle 反推），subject 仍写当日主线。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": [],
+          "note": "fixer 已按 round 1 逐条修复 F1-F5 并自查：mtd 收复口径、qtd 防御名单、Nasdaq 纪录口径、10Y 比较级、DXY 日期与美元 fact 背书；F6 驳回（commit body 已有 backfill 说明）。lint 0 error、build-shell/verify 通过、http ?date=2026-11-11 四档渲染正常。"
         }
       ],
-      "resolved": false
+      "resolved": true,
+      "fixedAt": "2026-11-12T15:26:00-05:00",
+      "fixNote": "F1-F5 已修并自查通过（mtd 收复口径按 7,619.38/7,688.62 重算为 -0.90%；qtd 防御名单；Nasdaq 改挂 10/6 record 27,599.79 = -7.73%；10Y 改『since 10/29』；DXY 改『April 2025』并把美元 fact 从已滚动的 swissinfo wrap 改挂 DX-Y.NYB/history）。F6 驳回：f2b89c2 的 commit body 已写明『Also corrects the 11/10 gold baseline to the COMEX December settlement ($4,030.20, -2.05%) and re-derives its four tiers.』，并非无留痕；新值经 11/11 settle 反推成立，无需再改。"
     }
   ]
 }

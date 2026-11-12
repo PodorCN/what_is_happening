@@ -170,6 +170,11 @@
 | 2026-11-09 | 引用 | mtd ② n1 的 time 写「11/9」，但 fact 是「Brent plunged by 16% last week」，事件发生在截至 11/6 的一周 | news[].time 写事件发生日：周度变动写「week ended YYYY-MM-DD」，盘后稿也写结算日，不写文章发布日期 |
 | 2026-11-09 | 逻辑 | ytd c1 与 ① s1 枚举「ahead of the index」漏掉 real estate +10.63%（高于 S&P +10.29%） | 写「X、Y、Z 跑赢指数」前把同档 HEAT 11 个板块全部与指数涨幅比较，列全所有跑赢者；列不全就改用「led by X, Y…」的非穷举措辞 |
 | 2026-11-09 | 逻辑 | qtd ① 的「Defensives absorbed the money」与 c4「Defensives carry the quarter」把 consumer discretionary（XLY +11.18%）归入防御板块 | 写「Defensives」前固定名单：XLP/XLU/XLV/XLRE（加 XLF 需注明理由），不得把 XLY 列入；要保留 XLY 就改称「the positive sectors included …」 |
+| 2026-11-11 | 逻辑 | mtd.d「the 11/5 AI rout (-4.36%) has been fully recovered」与 mtd ① s1「recovering both by 11/11」不成立：11/4 收 7,688.62、11/11 收 7,619.38，仍低 **0.90%**（自 11/5 低点 7,353.73 只反弹 3.61%，回本需 +4.56%）；成立的只有月内转正 +0.52% | 写「跌幅已完全收复 / fully recovered」前用同档 `labels/data` 现算 期末÷跌幅前收盘−1（7,619.38/7,688.62−1 = −0.90%）；未回正就改写为「the rout's hit to the month has been erased, but the index is still 0.90% below its 11/4 close」 |
+| 2026-11-11 | 逻辑 | qtd ② s1「Financials +9.79% and real estate +9.00% joined the defensive bid」把 XLF 列入防御板块（固定名单 XLP/XLU/XLV/XLRE，XLF 需注明理由）；11/10 F2 同型复现 | 写 defensive bid / Defensives 前只用 XLP/XLU/XLV/XLRE；XLF 出现须同句给出理由，否则改写为 joined the bid / the positive sectors included …；定稿前 grep「defensive」逐处核对名单 |
+| 2026-11-11 | 逻辑 | today ① s5 把 Nasdaq「4.08% below its 10/28 high of 26,549.85」与 S&P 的 record 并列：26,549.85 是 10/28 **收盘**（当日盘中高 26,587.34），Nasdaq 历史最高收盘是 10/6 的 27,599.79，现价距其 −7.73% | 与 record 并列写「X% below its <date> high」前先取该指数全历史最高收盘；要么写「7.73% below its 10/6 record of 27,599.79」，要么明确写「4.08% below its 10/28 closing high」，并核对该 high 是收盘还是盘中 |
+| 2026-11-11 | 数字 | today ③ s2/n2「the 10Y touched 5.03% on 11/10, its highest in more than two weeks」：^TNX 11/10 高 5.021，10/29 高 5.032、10/28 高 5.049 都更高，最近一次更高只隔 12 天 | 写「highest in more than N」前用 ^TNX 1h 序列找出最近一次更高点并写具体日期（本次应写「highest since 10/29」）；引用稿里的模糊时间表述必须用自算结果替换，不得原样照抄 |
+| 2026-11-11 | 引用 | c1/③ s4「the dollar … its highest since May 2025」照抄 Bloomberg：DXY 收盘最近一次高于 102.91 是 2025-04-08 的 102.96（盘中最近一次更高在 4/10 103.03），应为 April 2025；且所挂 swissinfo 滚动 wrap 隔日已改写成 11/12 内容，原句不可再检索 | 引用「highest since X」必须用本文所用指数（DXY）日线现算最近一次更高收盘日（本次 April 2025），与源不符时按数据写；滚动 wrap 只作当日临时引用，落盘改挂 `/quote/DX-Y.NYB/history` 这类静态数据页 |
 
 ## 链结构（主链 / 辅链）
 
