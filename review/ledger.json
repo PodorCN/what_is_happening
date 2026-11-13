@@ -2353,9 +2353,16 @@
               "rule": "链里每个板块数字都挂一条同板块 ETF 的 Yahoo close fact（本次补 XLU 与 XLY 两条），或删掉该板块的具体数字；定稿前把 steps/c1 的板块名与 news 的 ETF 代码做集合比对。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true,
+      "fixedAt": "2026-11-12T19:20:00-05:00",
+      "fixNote": "F1-F4 全部成立并已修：qtd ① 标题改「Q4 Is a Rotation the Dow Did Have」（Dow +2.73% 确认吃到 rotation）；mtd c4/d 的 rout 收复句改为「the rout's hit to the month is erased … still 1.25% below its 11/4 close」（复算 7,592.40/7,688.62−1 = −1.25%）；today ② s1/d 的「most since June」换成 investinglive 页内 9.49% 均值基准（页面全文 0 次 June，已核），并把 9.49% 写进 n1 fact；qtd ① 补 XLU $43.81 +11.08%、XLY $120.46 +10.68% 两条 Yahoo close fact。另加 lint §18/§19 机械拦截，4 条 rule 已追加进 LESSONS.md。"
     }
   ]
 }

@@ -175,6 +175,9 @@
 | 2026-11-11 | 逻辑 | today ① s5 把 Nasdaq「4.08% below its 10/28 high of 26,549.85」与 S&P 的 record 并列：26,549.85 是 10/28 **收盘**（当日盘中高 26,587.34），Nasdaq 历史最高收盘是 10/6 的 27,599.79，现价距其 −7.73% | 与 record 并列写「X% below its <date> high」前先取该指数全历史最高收盘；要么写「7.73% below its 10/6 record of 27,599.79」，要么明确写「4.08% below its 10/28 closing high」，并核对该 high 是收盘还是盘中 |
 | 2026-11-11 | 数字 | today ③ s2/n2「the 10Y touched 5.03% on 11/10, its highest in more than two weeks」：^TNX 11/10 高 5.021，10/29 高 5.032、10/28 高 5.049 都更高，最近一次更高只隔 12 天 | 写「highest in more than N」前用 ^TNX 1h 序列找出最近一次更高点并写具体日期（本次应写「highest since 10/29」）；引用稿里的模糊时间表述必须用自算结果替换，不得原样照抄 |
 | 2026-11-11 | 引用 | c1/③ s4「the dollar … its highest since May 2025」照抄 Bloomberg：DXY 收盘最近一次高于 102.91 是 2025-04-08 的 102.96（盘中最近一次更高在 4/10 103.03），应为 April 2025；且所挂 swissinfo 滚动 wrap 隔日已改写成 11/12 内容，原句不可再检索 | 引用「highest since X」必须用本文所用指数（DXY）日线现算最近一次更高收盘日（本次 April 2025），与源不符时按数据写；滚动 wrap 只作当日临时引用，落盘改挂 `/quote/DX-Y.NYB/history` 这类静态数据页 |
+| 2026-11-12 | 逻辑 | mtd.c4「the 11/5 rout is repaired, the 11/4 close is not」与 mtd.d「undid the 11/5 rout but not the 11/4 level」自相矛盾：11/12 收 7,592.40 仍比 11/4 收 7,688.62 低 **1.25%**，rout 的价格损失并未收复（11/11 F1 同型已修，今日回退） | 写「rout/暴跌 is repaired / undid / fully recovered」前用同档 `labels/data` 现算 期末÷rout 前收盘−1；只有「the rout's hit to the month has been erased — back above the 10/30 base but still 1.25% below the 11/4 close」成立；改一处必须同步扫四档 c1/c4/d 的 repaired/undid/recovered 同型句 `[lint §18：窗口档出现该措辞即按最大单日跌幅现算并 WARN]` |
+| 2026-11-12 | 引用 | today ② s1/d「the most since June」在所挂 investinglive 页面 **0 次**出现（原文只有「11.39% vs 9.49% average」「up sharply from 6.79%」），该链 7 条 news 无任何 June 比较级 | 写「most/highest/lowest since <月份>」前在该链 news.u 页面全文 grep 该月份词与比较级；检索不到就改用页面内的可比基准（本次「well above the 9.49% average」）或补一条含该比较级的静态来源，并把基准句写进对应 news.fact `[lint §19]` |
+| 2026-11-12 | 引用 | qtd ① s3「utilities +11.08%」与 c1/c4「consumer discretionary +10.68%」在链内没有 XLU/XLY 的报价 fact（数字与 Yahoo 收盘一致：XLU 43.81/39.44、XLY 120.46/108.84，但读者无法从链内验算） | steps/c1/c4 里每个板块数字都要有一条同板块 ETF 的 Yahoo close fact（本次补 XLU $43.81 +11.08%、XLY $120.46 +10.68%）；定稿前把链文出现的板块名与 news.fact 里的 ETF 代码做集合比对，差集非空即补 |
 
 ## 链结构（主链 / 辅链）
 
@@ -208,6 +211,7 @@
 | 2026-11-06 | 逻辑 | today c4「Thursday's $3 trillion wipeout」与同档 ③ s2「about $2.3 trillion」、n2「erased $2.8 trillion」三个总额并存；$3T 是 Zacks 的 S&P 500 companies 口径、$2.8T 是 TheStreet 的指数市值口径，读者无法判断 | 同一事件只留一个总额并写明口径（本次统一 $2.8T = S&P 500 指数市值）；其余口径删除或并列成区间，c4 与链文同句必须同值 |
 | 2026-11-06 | 逻辑 | today ③ d「a 1.1% chip bounce cannot undo a 10.9% drawdown」把 Nasdaq 的 1.09% 说成 chip 反弹：SOXX 当日 **+3.51%**、PHLX **+4.21%**，1.09% 是 Nasdaq Composite，且 ③ 的 steps 里没有 1.1% | d 引用的每个数字必须能在同链 steps 找到**同一主语 + 同一数值**（chip 用 SOXX/PHLX 的 3.5%/4.2%，Nasdaq 用 1.09%）；定稿前把 d 的每个数字与 steps 逐个对主语 |
 | 2026-11-09 | 逻辑 | today ① n2 与 ④ n0 逐字重复同一句 WTI 结算；① 的链条目只用 Brent，WTI 句在 ① 是冗余 | 同一 WTI 结算句只保留在 ④ 一条链；① 的 news 只写 Brent 结算，两链都需要 WTI 时只允许一条 news 含该句，另一条用交叉引用 |
+| 2026-11-12 | 逻辑 | qtd 主链标题「Q4 Is a Rotation the Dow Didn't Have」与同链 s0（Dow **+2.73%**、S&P -0.77%、Nasdaq -5.57%）反向——吃到 Q4 rotation 的正是 Dow；11/11 原句是「Q4 Is a Drawdown the Dow Didn't Have」，今日把 Drawdown 换成 Rotation 后未改后半句，主链结论变成反的 | 改标题核心名词（Drawdown→Rotation）时必须同句重读后半句的肯定/否定并改成与新名词一致（the Dow **Did** Have），或恢复原名词；定稿前把每条链 t 的论断与同链 s0 的符号逐字对向（t/d 方向相反即改写） |
 
 ## 交付与上线
 

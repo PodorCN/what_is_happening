@@ -327,6 +327,47 @@ if (DATA?.closes?.brent) {
     E("data.closes.brent", `缺 qtdBaseNote——应写 "roll-adjusted: Dec 98.03 x 113.43/117.64 …"`);
 }
 
+// ---------- 18. 窗口档「跌幅已收复 / fully recovered / rout is repaired」必须与序列端点自洽（review 2026-11-11 F1、2026-11-12 F2）----------
+const RECOVER_RE = /\b(?:is|was|has been|had been)\s+(?:now\s+)?(?:fully\s+|completely\s+)?repaired\b|\bfully recovered\b|\bundid the [^.]{0,18}rout\b/i;
+for (const tier of WIN) {
+  const p = snap.P[tier];
+  const series = (p.labels || []).map((l, i) => [l, p.data?.[i]]).filter(x => typeof x[1] === "number");
+  if (series.length < 3) continue;
+  let worst = { pct: 0, i: -1 };
+  for (let i = 1; i < series.length; i++) {
+    const pct = (series[i][1] / series[i - 1][1] - 1) * 100;
+    if (pct < worst.pct) worst = { pct, i };
+  }
+  if (worst.i < 1) continue;
+  const last = series[series.length - 1][1], before = series[worst.i - 1][1];
+  const gap = (last / before - 1) * 100;
+  for (const [k, s] of authored(p)) {
+    if (!RECOVER_RE.test(s)) continue;
+    W(`${tier}.${k}`, `「跌幅已收复」类断言：本档最大单日跌幅 ${worst.pct.toFixed(2)}%（${series[worst.i][0]}，前收 ${before}），期末 ${last} = ${gap >= 0 ? "+" : ""}${gap.toFixed(2)}% —— 未回正只能写 "the rout's hit to the month has been erased … still ${Math.abs(gap).toFixed(2)}% below its X close"`);
+  }
+}
+
+// ---------- 19. 「most/highest/lowest since <月份>」必须在该档 news 里能找到该月份（review 2026-11-12 F3）----------
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const SINCE_SRC = `\\b(?:most|highest|lowest|biggest|largest|fastest|smallest|fewest|strongest|weakest)\\b[^.]{0,40}\\bsince\\s+(${MONTHS.join("|")})\\b`;
+for (const tier of ["today", ...WIN]) {
+  const p = snap.P[tier];
+  const allFacts = (p.chains || []).flatMap(c => (c.news || []).map(n => String(n.fact || ""))).join(" \n ");
+  for (const [ci, c] of (p.chains || []).entries()) {
+    const facts = (c.news || []).map(n => String(n.fact || "")).join(" \n ");
+    for (const txt of [c.t || "", c.d || "", ...(c.steps || [])].map(s => String(s).replace(/<[^>]+>/g, ""))) {
+      for (const m of txt.matchAll(new RegExp(SINCE_SRC, "g")))
+        if (!new RegExp(m[1], "i").test(facts))
+          W(`${tier}.chains.${ci}`, `「${cut(m[0], 60)}」——该链 news 里没有 "${m[1]}"，比较级无出处；改用 news 内的可比基准或补含该月份的静态来源`);
+    }
+  }
+  for (const k of ["h", "d", "c1", "c4"]) {
+    for (const m of String(p[k] || "").replace(/<[^>]+>/g, "").matchAll(new RegExp(SINCE_SRC, "g")))
+      if (!new RegExp(m[1], "i").test(allFacts))
+        W(`${tier}.${k}`, `「${cut(m[0], 60)}」——该档 news 里没有 "${m[1]}"，比较级无出处；改用 news 内的可比基准或补含该月份的静态来源`);
+  }
+}
+
 for (const e of errs) console.log("ERROR " + e);
 for (const w of warns) console.log("WARN  " + w);
 console.log(`\nlint ${DATE}: ${errs.length} error(s), ${warns.length} warning(s)`);
