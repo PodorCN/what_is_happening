@@ -2363,6 +2363,54 @@
       "resolved": true,
       "fixedAt": "2026-11-12T19:20:00-05:00",
       "fixNote": "F1-F4 全部成立并已修：qtd ① 标题改「Q4 Is a Rotation the Dow Did Have」（Dow +2.73% 确认吃到 rotation）；mtd c4/d 的 rout 收复句改为「the rout's hit to the month is erased … still 1.25% below its 11/4 close」（复算 7,592.40/7,688.62−1 = −1.25%）；today ② s1/d 的「most since June」换成 investinglive 页内 9.49% 均值基准（页面全文 0 次 June，已核），并把 9.49% 写进 n1 fact；qtd ① 补 XLU $43.81 +11.08%、XLY $120.46 +10.68% 两条 Yahoo close fact。另加 lint §18/§19 机械拦截，4 条 rule 已追加进 LESSONS.md。"
+    },
+    {
+      "date": "2026-11-13",
+      "reviewedAt": "2026-11-13T18:55:00-05:00",
+      "reviewedCommit": "2281bff",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "note": "数字侧已逐项复核通过：四档 tbl 期初/期末 vs data closes 首尾一致；dayPct/MTD/QTD/YTD 与 computed 全 match；10Y 5.15%（2-6% 区间内，^TNX 5.154 已按量级判别、未重复÷10）；11 板块四档现算与 HEAT 全 match（Yahoo XLK/XLP/XLC/XLE/XLF/XLV/XLU/XLI/XLB/XLY/XLRE）；个股 AMD -8.75 / AVGO -4.76 / SOXX -3.67 / CRWV -6.13 / NBIS -9.92 / DELL -7.18 / CSCO -6.24 / AMAT -2.74 / META +2.90 / MSFT +0.17 / AAPL +0.39（356.27 = 2026 最高收盘）全部与 Yahoo 现算一致；RSP +0.20%、SPY、^RUT、VIX 19.30/11-6 的 25.64、BTC 68,338.92（-4.30%、lowest since 8/18、较 1 月高点 97,860 的 -30.2%）、Gold 3,886.30（11/12 收 3,885.30 为 2025-10-02 以来最低，13-month low 成立）均核过；NVDA 开 169.89 / 高 170.00 / 收 162.85（-2.01%、周 -12.75%、六连跌、2012-10 以来最长）成立；周线 +2.51%/+2.27%/+2.07% 与 'best since week of Aug 3'（8/7 周 +3.58%）成立；MTD/QTD/YTD 基期跨日连续（7,580.07 / 7,651.54 / 6,845.5 与 11/12 同档一致）；labels==data 长度 20/11/33/37；四档各恰 1 条 main:1；news.u 无空值/占位符；HEAT 板块数=11 与说明 7/8/9/10 green 一致；build-shell + verify + lint（0 error / 0 warning）通过；http://127.0.0.1:8799/?date=2026-11-13 四档切换、热力图与 5/4/4/3 条链均正常渲染。",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "critical",
+              "category": "逻辑",
+              "symptom": "全档 0 处提及 Nvidia CEO Jensen Huang 已于 11/12 辞职：主链 ① 把当日 AI 抛售与 Nvidia 六周连跌只解释为「回吐周四反弹」加 FT 的继任者传闻（s1「a week before Nvidia's 11/17 earnings」），d 只写「The AI complex lost its bid again」，读者无法知道当日真正的触发事件。被引 Reuters 稿首段明写「Nvidia's shares fell 2% and recorded their sixth straight week of declines … after CEO Jensen Huang's resignation on Thursday」；AP 稿写「a day after the AI industry was rocked by the resignation of Nvidia CEO Jensen Huang … Colette Kress will be its interim CEO」；Kiplinger 写「an even bigger deal following Huang's departure … interim CEO Colette Kress」。主链应有一条 11/12 Huang 辞职 → Kress 代理 CEO → 11/17 财报 leadership vacuum 的传导节点；s1 的「a week before」也不成立（11/13→11/17 只有 4 天）。",
+              "evidence": "snapshots/2026-11-13.json 全文 grep：resign=0、stepped down=0、affair=0，Huang 仅 2 处且均为 successor/继任语境。本快照 today ① news[14] 与 ⑤ news[0]/[1] 共 3 条 fact 取自同一 AP 稿（more than 60% breadth、30.73 点、周涨 2.5%），却绕开该稿首段辞职句；被引 centraloregondaily 的 Reuters 原文首段同句。",
+              "rule": "主链第一步必须是被引稿首段给出的触发事件（本次：11/12 Huang 辞职、Kress 代理 CEO、本周市值蒸发近 $600B），继任者传闻只能作为后续节点；定稿前逐条把被引稿首段的因果句与主链 steps 对照，缺一句即补 step。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "today ③（轮动/广度链）s2 塞入 PPI 内部结构「PPI's internals showed inflation broadening beyond energy: food, services and transportation/warehousing prices rose while energy prices fell」，既不服务该链 d（staples/health/financials 承接 XLK -2%），也与 ② 的 PPI 发布重复：同一条 PPI 被两条链各讲一遍，③ 这句与 d 无因果关系。",
+              "evidence": "P.today.chains[2].d 全文无 PPI/通胀；chains[1].steps[0] 已写 PPI 0.3% vs 0.4%、6.5% y/y、core 5.0%；LESSONS 2026-10-26「CPI/PPI 只归利率链」与 2026-11-03「每个 step 必须服务该链 d」。",
+              "rule": "同档 PPI/CPI 只留在利率链，轮动链不写发布内容；每条 step 必须能回答「它如何支撑本链 d」，答不上就移到对应链或删除，定稿前按主题词（PPI/CPI/收益率/广度）做同档跨链交集检查。"
+            },
+            {
+              "id": "F3",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "2Y 定稿 4.85% / -1bp 与 AP 同日报道的 Treasury 2Y「rose to 4.87% from 4.86%」方向相反、差 2bp，且无第二来源背书 4.85。连带 today ② s3「slipped 1bp to 4.85%」、② d「the front end held at 4.85%」、today HEAT 2Y「-1bp」；mtd HEAT 2Y 应 +31bp（现 +29）、qtd 应 -1bp（现 -3）、ytd 应 +140bp（现 +138）；2s10s 应 +28bp（现 +30），qtd ③「flattened 11bp」应 13bp，ytd ②「flattened 41bp」应 43bp；c4 与 ② s3 的「35bp this week」按本站 11/6 的 4.51 现算是 +34bp（按 4.87 则 +36bp），两种口径都不是 35bp。",
+              "evidence": "本快照 today ① news 已引 AP https://apnews.com/article/stocks-markets-ai-us-oil-f8edd0eeb1494d4d2584715686c5e619，原文「The yield on the two-year Treasury rose to 4.87% from 4.86% late Thursday」；data/2026-11-13.json 的 computed 只有 tnx（10Y），无 2Y 字段；foot 自述「Treasury par curve for 11/13 not yet posted」；snapshots/2026-11-06.json HEAT.today 2Y = 4.51。",
+              "rule": "Treasury 当日未发布时，2Y/30Y 取 AP/Reuters 收盘报道值（本次 2Y=4.87）并在 foot 注明「wire close」；改后一次性重算 today/mtd/qtd/ytd 四档 HEAT 与 2s10s 水平、flatten/steepen 以及本周变动，禁止保留任何 4.85/35bp 残留。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "mtd ② s1「The move came on CPI day 11/10 (+10bp), 11/12 (+12bp) and 11/13 (+5bp)」三日合计 +27bp，而该档 10Y MTD 净变化只有 +21bp（4.94→5.15）；其余交易日合计 -6bp（11/2 -3、11/3 +4、11/4 -5、11/6 -4、11/9 +2）未交代，读者按句相加对不上 tbl。",
+              "evidence": "逐日 10Y 收盘（各日快照 today tbl）：10/30 4.94 → 11/2 4.91 → 11/3 4.95 → 11/4 4.90 → 11/6 4.86 → 11/9 4.88 → 11/10 4.98 → 11/11 4.98 → 11/12 5.10 → 11/13 5.15；P.mtd.tbl 的 10Y 行 4.94→5.15 = +21bp。",
+              "rule": "写「the move came on A/B/C」前把窗口内每个交易日的 bp 变动列全求和，须等于 tbl 净变化；只列上涨日时补一句「the other sessions a net −6bp」或改用「mostly on」。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
