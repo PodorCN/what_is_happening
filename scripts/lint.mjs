@@ -386,6 +386,20 @@ for (const tier of ["today", ...WIN]) {
         E(`${tier}.${k}`, `2s10s 写作 +${m[1]}bp，但 HEAT ${lvl["10Y"]}% − ${lvl["2Y"]}% = ${spread >= 0 ? "+" : ""}${spread}bp——曲线水平与四档利率必须同源；改任一端后重算 2s10s 水平与 flatten/steepen bp`);
     }
   }
+  // 2Y 的「Nbp lower/higher」= 该档净变动，必须等于该档 HEAT 的 2Y bp（本周变动用 "this week"，不在本规则内）
+  let bp2 = null;
+  for (const g of snap.HEAT?.[tier] || []) for (const it of g.items || []) {
+    if (String(it[0]).trim() !== "2Y") continue;
+    const m = String(it[2]).match(/^([+\-−]?\d+)\s*bp$/);
+    if (m) bp2 = Math.abs(parseInt(m[1].replace("−", "-"), 10));
+  }
+  if (bp2 == null) continue;
+  for (const [k, txt] of authored(snap.P[tier])) {
+    for (const m of txt.matchAll(/2Y[^.;]{0,44}?(\d+)\s*bp\s+(?:lower|higher)/g)) {
+      if (Math.abs(parseInt(m[1], 10)) !== bp2)
+        E(`${tier}.${k}`, `该档 2Y 写作 ${m[1]}bp lower/higher，但 HEAT 同档 2Y 是 ${bp2}bp——2Y 改值后必须同步 c1/c4/d 与每条链的净变动表述`);
+    }
+  }
 }
 
 for (const e of errs) console.log("ERROR " + e);
