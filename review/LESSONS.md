@@ -40,6 +40,7 @@
 | 2026-11-06 | 取数 | qtd HEAT 的 WTI 基期回退到 90.42（CL=F 的 11 月前月），显示 +0.49；Dec 合约 9/30 收盘是 **88.42**，应为 +2.73%（data/11-05、11-06 的 qtdBase 同错，而 foot 自己写的就是 88.42） | WTI 换月后 qtdBase 固定 88.42，禁止回写 90.42；build 后断言 today.qtdBase == 上一交易日 qtdBase，并让 HEAT 四档的 Brent/WTI/Gold/DXY/BTC 与 data computed 同档逐项相等（lint 规则 16） `[lint]` |
 | 2026-11-06 | 取数 | 油价结算差 3 美分、约 20 处：Brent 写 $98.35/+0.06%、WTI 写 $90.86/+0.38%；官方结算 Brent **$98.32/+0.03%（+3 cents）**、WTI **$90.83/+0.34%（+31 cents）**；派生 MTD/QTD/YTD 与 16.40% 回撤同偏 | 期货结算以通讯社「settled at」句为准，写完用「前结算 + cents 变动 = 今结算」双向核对（98.29+0.03=98.32、90.52+0.31=90.83），再重算全部派生 %（tbl/HEAT/kpi/徽章/c1/链/foot 一处不漏） |
 | 2026-11-09 | schema | data 的 closes.brent 只有 qtdBase: 94.52，缺 qtdBaseRaw / qtdBaseNote（11/03 起连续丢失），无法从 data 复核 QTD 的换月回补 | 每次 fetch/手填后 Brent 必须同时写 qtdBase: 94.52、qtdBaseRaw: 98.03、qtdBaseNote: "roll-adjusted: Dec 98.03 x 113.43/117.64 …"；缺任一字段视为 schema 不完整（可在 lint 检查） |
+| 2026-11-13 | 取数 | 2Y 收盘用了 CNBC 报价页的盘中「last stood at 4.848%, down from 4.864%」，写成 4.85%/-1bp；AP 同日收盘稿为「rose to 4.87% from 4.86% late Thursday」（方向相反、差 2bp）。连带四档 HEAT 2Y（mtd 应 +31、qtd -1、ytd +140）、2s10s +28bp、qtd flatten 13bp、ytd 43bp、本周 +36bp 全错 | Treasury par curve 当日未发布时，2Y/30Y 取 AP/Reuters 收盘稿值（本次 2Y=4.87%）并在 foot 注「wire close」；禁止用报价页的「last stood」盘中值当收盘。改后一次重算四档 HEAT 的 2Y bp、2s10s 水平、flatten/steepen 与本周变动，grep「4.85」「29bp」「138bp」「35bp」应为 0 处；文中 2s10s 水平由 lint §20 对 HEAT 10Y−2Y 自动校验 `[lint]` |
 
 ## 取数前提
 
@@ -178,6 +179,7 @@
 | 2026-11-12 | 逻辑 | mtd.c4「the 11/5 rout is repaired, the 11/4 close is not」与 mtd.d「undid the 11/5 rout but not the 11/4 level」自相矛盾：11/12 收 7,592.40 仍比 11/4 收 7,688.62 低 **1.25%**，rout 的价格损失并未收复（11/11 F1 同型已修，今日回退） | 写「rout/暴跌 is repaired / undid / fully recovered」前用同档 `labels/data` 现算 期末÷rout 前收盘−1；只有「the rout's hit to the month has been erased — back above the 10/30 base but still 1.25% below the 11/4 close」成立；改一处必须同步扫四档 c1/c4/d 的 repaired/undid/recovered 同型句 `[lint §18：窗口档出现该措辞即按最大单日跌幅现算并 WARN]` |
 | 2026-11-12 | 引用 | today ② s1/d「the most since June」在所挂 investinglive 页面 **0 次**出现（原文只有「11.39% vs 9.49% average」「up sharply from 6.79%」），该链 7 条 news 无任何 June 比较级 | 写「most/highest/lowest since <月份>」前在该链 news.u 页面全文 grep 该月份词与比较级；检索不到就改用页面内的可比基准（本次「well above the 9.49% average」）或补一条含该比较级的静态来源，并把基准句写进对应 news.fact `[lint §19]` |
 | 2026-11-12 | 引用 | qtd ① s3「utilities +11.08%」与 c1/c4「consumer discretionary +10.68%」在链内没有 XLU/XLY 的报价 fact（数字与 Yahoo 收盘一致：XLU 43.81/39.44、XLY 120.46/108.84，但读者无法从链内验算） | steps/c1/c4 里每个板块数字都要有一条同板块 ETF 的 Yahoo close fact（本次补 XLU $43.81 +11.08%、XLY $120.46 +10.68%）；定稿前把链文出现的板块名与 news.fact 里的 ETF 代码做集合比对，差集非空即补 |
+| 2026-11-13 | 数字 | mtd ② s1「The move came on CPI day 11/10 (+10bp), 11/12 (+12bp) and 11/13 (+5bp)」三日合计 +27bp，而同档 10Y MTD 净变化只有 +21bp（其余交易日合计 -6bp 未交代），读者按句相加对不上 tbl | 写「the move came on A/B/C」前把窗口内每个交易日的 bp 变动列全求和，必须等于 tbl 净变化；只列上涨日时补一句「against a net -6bp across the month's other sessions」或改用「mostly on」；列完用 lint 的窗口交易日数规则确认没有残留的过期「N sessions」 |
 
 ## 链结构（主链 / 辅链）
 
@@ -212,6 +214,8 @@
 | 2026-11-06 | 逻辑 | today ③ d「a 1.1% chip bounce cannot undo a 10.9% drawdown」把 Nasdaq 的 1.09% 说成 chip 反弹：SOXX 当日 **+3.51%**、PHLX **+4.21%**，1.09% 是 Nasdaq Composite，且 ③ 的 steps 里没有 1.1% | d 引用的每个数字必须能在同链 steps 找到**同一主语 + 同一数值**（chip 用 SOXX/PHLX 的 3.5%/4.2%，Nasdaq 用 1.09%）；定稿前把 d 的每个数字与 steps 逐个对主语 |
 | 2026-11-09 | 逻辑 | today ① n2 与 ④ n0 逐字重复同一句 WTI 结算；① 的链条目只用 Brent，WTI 句在 ① 是冗余 | 同一 WTI 结算句只保留在 ④ 一条链；① 的 news 只写 Brent 结算，两链都需要 WTI 时只允许一条 news 含该句，另一条用交叉引用 |
 | 2026-11-12 | 逻辑 | qtd 主链标题「Q4 Is a Rotation the Dow Didn't Have」与同链 s0（Dow **+2.73%**、S&P -0.77%、Nasdaq -5.57%）反向——吃到 Q4 rotation 的正是 Dow；11/11 原句是「Q4 Is a Drawdown the Dow Didn't Have」，今日把 Drawdown 换成 Rotation 后未改后半句，主链结论变成反的 | 改标题核心名词（Drawdown→Rotation）时必须同句重读后半句的肯定/否定并改成与新名词一致（the Dow **Did** Have），或恢复原名词；定稿前把每条链 t 的论断与同链 s0 的符号逐字对向（t/d 方向相反即改写） |
+| 2026-11-13 | 逻辑 | 主链把当日 AI 抛售只解释为「回吐周四反弹 + FT 继任者传闻」，全档 0 处提 Nvidia CEO Jensen Huang 11/12 辞职——被引稿首段明写「a day after the AI industry was rocked by the resignation of Nvidia CEO Jensen Huang」（AP，同段「Colette Kress will be its interim CEO」「cost Nvidia's market cap just under $600 billion this week」）、Reuters「after CEO Jensen Huang's resignation on Thursday」、Kiplinger「after Jensen Huang's shocking resignation as CEO and board member」；s1 的「a week before 11/17 earnings」也不成立（只有四天） | 主链第一步必须是被引稿首段给出的触发事件（对象+动作+日期），继任者/后续节点只能排在它之后；定稿前逐条把被引稿首段的因果句与主链 steps 对照，缺一句即补 step 并同步 c1/d；「a week before / next week」按实际天数改写（11/13→11/17 = four days） |
+| 2026-11-13 | 逻辑 | today ③（轮动链）s2 塞入 PPI 内部结构（food/services/transportation 涨、energy 跌），该链 d 只讲板块轮动，且同档 ② 已写 PPI 发布——发布内容跨链重复、该 step 不服务本链 d（2026-10-26「CPI/PPI 只归利率链」同类复发） | 同档 PPI/CPI 只归利率链：本次把 internals 并入 ② s0、对应 news 移挂 ②；每条 step 必须能回答「它如何支撑本链 d」，答不上就移到对应链或删除，删 step 时同链孤立 news 一并移走；定稿前按主题词（PPI/CPI/收益率/广度）做同档跨链交集检查 |
 
 ## 交付与上线
 

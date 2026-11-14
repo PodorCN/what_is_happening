@@ -2408,9 +2408,16 @@
               "rule": "写「the move came on A/B/C」前把窗口内每个交易日的 bp 变动列全求和，须等于 tbl 净变化；只列上涨日时补一句「the other sessions a net −6bp」或改用「mostly on」。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "note": "fixer 已按 round 1 逐条修复并自查：F1 主链补 11/12 Huang 辞职 → Kress 代理 CEO → FT 继任者节点（并改正 a week before → four days），h/d/c1 同步；F2 PPI internals 并入利率链 s0、news 移挂 ②，从轮动链删除；F3 2Y 改 4.87%/+1bp（AP wire close）并重算四档 HEAT、2s10s、flatten 与本周 +36bp；F4 mtd 10Y 路径补「其余交易日 -6bp」。驳回 0 条。lint 0 error/0 warning（新增 §20 2s10s 对 HEAT 自动校验），build-shell + verify 通过，http://127.0.0.1:8799/?date=2026-11-13 四档渲染正常。",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true,
+      "fixedAt": "2026-11-13T19:09:41-05:00"
     }
   ]
 }

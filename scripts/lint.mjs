@@ -368,6 +368,26 @@ for (const tier of ["today", ...WIN]) {
   }
 }
 
+// ---------- 20. 文中 2s10s 水平必须等于 HEAT 的 10Y − 2Y（review 2026-11-13 F3）----------
+for (const tier of ["today", ...WIN]) {
+  const lvl = {};
+  for (const g of snap.HEAT?.[tier] || []) for (const it of g.items || []) {
+    const name = String(it[0]).trim();
+    if (name === "10Y" || name === "2Y") {
+      const v = parseFloat(String(it[1]).replace("%", ""));
+      if (isFinite(v)) lvl[name] = v;
+    }
+  }
+  if (lvl["10Y"] == null || lvl["2Y"] == null) continue;
+  const spread = Math.round((lvl["10Y"] - lvl["2Y"]) * 100);
+  for (const [k, txt] of authored(snap.P[tier])) {
+    for (const m of txt.matchAll(/2s10s[^.;]{0,60}?\+\s*(\d+)\s*bp/g)) {
+      if (parseInt(m[1], 10) !== spread)
+        E(`${tier}.${k}`, `2s10s 写作 +${m[1]}bp，但 HEAT ${lvl["10Y"]}% − ${lvl["2Y"]}% = ${spread >= 0 ? "+" : ""}${spread}bp——曲线水平与四档利率必须同源；改任一端后重算 2s10s 水平与 flatten/steepen bp`);
+    }
+  }
+}
+
 for (const e of errs) console.log("ERROR " + e);
 for (const w of warns) console.log("WARN  " + w);
 console.log(`\nlint ${DATE}: ${errs.length} error(s), ${warns.length} warning(s)`);
