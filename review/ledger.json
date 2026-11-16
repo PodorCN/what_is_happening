@@ -2418,6 +2418,84 @@
       ],
       "resolved": true,
       "fixedAt": "2026-11-13T19:09:41-05:00"
+    },
+    {
+      "date": "2026-11-16",
+      "reviewedAt": "2026-11-16T18:52:00-05:00",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "today ② 的收益率基线把 11/13 取成 2Y 4.88%、30Y 5.47%，与本站 11/13 快照定稿的 4.87% / 5.48% 各差 1bp；据此算出的当日变动全部偏 1bp：现写「2Y 5bp to 4.83%」「30Y 1bp to 5.46%」「2s10s steepened 2bp to 29bp」，按昨日发布值应为 2Y -4bp、30Y -2bp、2s10s +1bp（28bp→29bp）。连带 today ② d、HEAT.today 的 2Y/30Y 两行同错。",
+              "evidence": "snapshots/2026-11-13.json：HEAT.today「10Y 5.15 +5bp / 30Y 5.48 +5bp / 2Y 4.87 +1bp」，foot 明写「2Y = AP wire close … Treasury par curve for 11/13 not yet posted」。今日 today.chains[1].news[0] 写「versus 5.15%, 4.88% and 5.47% on 11/13」，等于把 11/13 的 wire close 换成后发布的 Treasury par 值，但既未回改 11/13 文件，也未在 foot 注明口径切换。",
+              "rule": "写当日 bp 变动前先打开上一交易日快照的 HEAT 收益率三行取基线（本次 4.87 / 5.48）；若改用后发布的 Treasury par 值，必须在同一 commit 回写上一日 tbl/HEAT/foot 并在 foot 注明「11/13 par revised: 2Y 4.88 / 30Y 5.47」，再重算当日 bp 与 2s10s 斜率；改完 grep 旧值「-5bp」「-1bp」在 ② 与 HEAT 里应为 0 处。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "Nvidia 季度营收一致预期在同一档出现两个值：today ① 的 Investopedia news 写「revenue of $109.5 billion and net income of about $60.9 billion」，today ⑤ s3 与其 news 写「$109.10 billion」，相差 $0.4B，两处同标 Investopedia，读者无法判断哪个是共识。",
+              "evidence": "snapshots/2026-11-16.json：today.chains[0].news[19]（Investopedia，…11162026-12257790）vs today.chains[4].steps[2] 与 chains[4].news[2]（同一 URL）。",
+              "rule": "同一指标（营收/EPS/净利共识）全文件只留一个数：定稿前 grep「billion」把同名指标的两处摘出来对照，取被引页同一句的数值，并同步 ⑤ s3 与两条 news；无法判定时保留来源原句并在 fact 写「consensus $109.1-109.5B」。"
+            },
+            {
+              "id": "F3",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "mtd.d 写「the 11/5 rout was never repaired」，与同档另外四处互斥：h「Three Straight Losses Erased the Repair」、c1「a repair to 7,619.38 on 11/11, then fell…」、① t「November Ended the Repair」、① d「November is a failed repair」——四处都说 11/11 有过修复并被抹掉，只有 d 说从未修复。",
+              "evidence": "snapshots/2026-11-16.json P.mtd.d vs P.mtd.h / P.mtd.c1 / P.mtd.chains[0].t / P.mtd.chains[0].d。数据侧：11/11 收 7,619.38，高于 10/30 基期 7,580.07（月内曾转正 +0.52%），仍低于 11/4 收 7,688.62（-0.90%）。",
+              "rule": "写 repaired / never repaired / ended the repair 前，用同档 labels/data 现算「是否曾站上 11/4 收盘」（本次未站上）：统一写「the rout's hit to the month was erased, but the 11/4 close was never regained」，并把该档 h / d / c1 / c4 / 主链 t 五处一起扫一遍，不允许两种说法并存。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today ② 一条链内出现三个「当日黄金价」：step 5「settled 0.87% lower at $3,852.40」、其下 Dow Jones news「front-month Comex gold settled 0.83% lower at $3,847.40」、Reuters news「fell to $3,830.74」。前两条都是同一 12 月合约的 settlement，差 $5（4bp），未标口径差异，而「lowest settlement since October 2, 2025」是挂在 3,847.40 上的。",
+              "evidence": "snapshots/2026-11-16.json today.chains[1].steps[4] vs chains[1].news[5]（Reuters 现货 $3,830.74）、news[6]（Dow Jones/Morningstar front-month $3,847.40）、news[7]（Yahoo Dec COMEX 结算窗 VWAP $3,852.40）；foot 口径为「Dec COMEX, 13:28-13:30 ET settlement-window VWAP」。",
+              "rule": "同一合约当日只留一个结算价：正文/step 用 foot 声明的 Dec COMEX 结算窗 VWAP，通讯社的「settled」句若与之差 >$1，fact 改写为「front-month settled $3,847.40 per Dow Jones vs $3,852.40 in the 13:28-13:30 ET window」；现货一律写 spot 并与期货分行。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd ④ s2「Gold is 1.19% lower at $3,852.40, having been higher for the month as recently as 11/13」不成立：11/13 收 $3,886.30，对 10/30 基期 $3,898.90 为 -0.32%（11/13 快照自己的 mtd tbl 就是这个数），月内最后一个为正的交易日是 11/11（$4,000.50，+2.61%）。",
+              "evidence": "snapshots/2026-11-13.json P.mtd.tbl Gold 行「$3,898.90 → $3,886.30 → -0.32%」；snapshots/2026-11-11.json P.today.tbl Gold「$4,030.20 → $4,000.50」。",
+              "rule": "窗口档写「as recently as <日期> 还为正/还在上方」前，先取该日快照同档 tbl 的数值判符号；本次改写为「having been positive as recently as 11/11」或「having been only 0.32% lower as of 11/13」。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "ytd ③ s1 与主链 ① s5、c1 三处是同一句「Communications -9.26% and consumer discretionary -1.06% are the only sectors down」，辅链没有任何增量，属同档数字交集重复。",
+              "evidence": "snapshots/2026-11-16.json P.ytd.chains[0].steps[4] / P.ytd.chains[2].steps[0] / P.ytd.c1；三个数字（-9.26 / -1.06）在同档出现三次。",
+              "rule": "定稿前对同档每对链做数字交集：两个下跌板块只在主链写一次，③ 改成增量（例：只写「the two decliners sit in AI and consumer」并给一个新的对比数，如 XLY 相对指数的差值），交集里的原数字从辅链删净。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today c4 的日历项「retail sales 11/17, FOMC minutes 11/18」在全文件 115 条 news 里 0 条背书——grep「retail sales」「minutes」只命中 c4 本身，读者无法验证这两个日期。",
+              "evidence": "snapshots/2026-11-16.json today.c4 第 4 条；today 四档 chains[].news[].fact 全文检索 retail sales / FOMC minutes 均 0 命中。",
+              "rule": "c4/日历里的每个日期必须在本档某条 news.fact 有对应句（或挂官方日历链接）：0 命中就补一条 news（Census 11/17 retail sales 日程、Fed 11/18 minutes 页面）或从 c4 删掉该日期。"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ③ s3「Hormuz flows have nearly returned to pre-war levels」在本链 7 条 news 里没有对应句（全档 grep「pre-war」= 0 次），是这条链唯一无来源的传导节点；同链其他数字（IEA 1.7m、Goldman 2m、中国 -8.1%、Jones Act 90 天）都有 fact。",
+              "evidence": "snapshots/2026-11-16.json today.chains[2].steps[2] vs 该链 news[]（streetinsider 6 条 + DTN 1 条，均无 Hormuz 流量句）。",
+              "rule": "steps 里每个定量/比较级断言必须能在本链 news[].fact 找到同义句：补一条含 Hormuz 流量数字的稿，或把该分句改成新闻标题已背书的「recovering Middle East exports」。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
