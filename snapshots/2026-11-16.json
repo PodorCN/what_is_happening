@@ -2,7 +2,7 @@
  "date": "2026-11-16",
  "updatedAt": "2026-11-16T22:10:00Z",
  "label": "2026-11-16 Monday close",
- "foot": "Closing baseline (auto 2026-11-16): SPX 7416.59 (-1.92% day / -2.16% MTD / -3.07% QTD / +8.34% YTD) · DJI 51608.17 · IXIC 24509.76 · 10Y 5.12% / 2Y 4.83% / 30Y 5.46% (Treasury daily par curve) · WTI 85.72 (Dec settle) · Brent 92.44 (Jan settle; QTD base 94.52 = 9/30 Dec 98.03 x 113.43/117.64, roll-adjusted) · Gold 3852.40 (Dec COMEX, 13:28-13:30 ET settlement-window VWAP) · BTC 65374.40 (4pm ET) · VIX 22.91. Sector and single-name returns computed from Yahoo closes; WTI/Brent from exchange settlement. 25-12-31 S&P 6845.5/Dow 48063.29/Nasdaq 23241.99/10Y 4.18%/30Y 4.84%/2Y 3.47%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.44% · 26-08-31 S&P 7686.14/10Y 4.75% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/2Y 4.88%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4186.7 (fut)/BTC $83553.85/VIX 16.34. For information only - not investment advice.",
+ "foot": "Closing baseline (auto 2026-11-16): SPX 7416.59 (-1.92% day / -2.16% MTD / -3.07% QTD / +8.34% YTD) · DJI 51608.17 · IXIC 24509.76 · 10Y 5.12% / 2Y 4.83% / 30Y 5.46% (Treasury daily par curve; day bps from the 11/13 close as published, 5.15/4.87/5.48 - Treasury posted 11/13 par of 4.88/5.47 after that close) · WTI 85.72 (Dec settle) · Brent 92.44 (Jan settle; QTD base 94.52 = 9/30 Dec 98.03 x 113.43/117.64, roll-adjusted) · Gold 3852.40 (Dec COMEX, 13:28-13:30 ET settlement-window VWAP) · BTC 65374.40 (4pm ET) · VIX 22.91. Sector and single-name returns computed from Yahoo closes; WTI/Brent from exchange settlement. 25-12-31 S&P 6845.5/Dow 48063.29/Nasdaq 23241.99/10Y 4.18%/30Y 4.84%/2Y 3.47%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.44% · 26-08-31 S&P 7686.14/10Y 4.75% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/2Y 4.88%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4186.7 (fut)/BTC $83553.85/VIX 16.34. For information only - not investment advice.",
  "P": {
   "today": {
    "h": "Chips -5.3% Into the Verdict: Nasdaq -2.49%, a Correction",
@@ -15,7 +15,7 @@
     "Brent $92.44 -3.55%"
    ],
    "c1": "The market's biggest week of the quarter started with the AI complex selling itself. Nvidia fell 4.12% to $156.14 - 34.7% below its 10/6 record - as the fallout from Jensen Huang's resignation entered a second week, the Commerce Department moved to restrict remote access to advanced US chips and servers, and traders cut exposure before Tuesday's earnings. The damage was hardware-wide: Micron 7.62%, Marvell 7.27%, Intel 7.02%, AMD 5.58% and Broadcom 3.92%, with Lumentum 8.48% and SanDisk 8.58% the S&P's worst. The Nasdaq Composite closed 11.19% below its 10/6 record, a correction by the standard definition, while the S&P fell 1.92%, its third straight loss and the biggest three-session drop since June. Nine of 11 sectors fell; only consumer staples (+0.27%) and utilities (+0.18%) closed green. The rate market offered no rescue: the 10Y fell just 3bp, gold settled at its lowest since October 2025 and the dollar held near a 19-month high, because the driver is a December hike now about 92% priced, not growth fear.",
-   "c4": "<ul class='play'><li>The concentration: Nvidia -4.12% and a 5.28% SOX drop explain the 2.49% Nasdaq loss; the Dow fell 1.41%.</li><li>The tell: only staples and utilities closed higher, and Tyson's 8.72% led the index.</li><li>The rates: a 3bp fall at the 10Y is not a haven bid, and gold's lowest settle since October 2025 says the same.</li><li>The calendar: Nvidia earnings 11/17 after the close, retail sales 11/17, FOMC minutes 11/18, Anthropic prices 11/18 and trades 11/19, FOMC 12/8-9.</li></ul>",
+   "c4": "<ul class='play'><li>The concentration: Nvidia -4.12% and a 5.28% SOX drop explain the 2.49% Nasdaq loss; the Dow fell 1.41%.</li><li>The tell: only staples and utilities closed higher, and Tyson's 8.72% led the index.</li><li>The rates: a 3bp fall at the 10Y is not a haven bid, and gold's lowest settle since October 2025 says the same.</li><li>The calendar: Nvidia earnings 11/17 after the close, retail sales 11/17, Anthropic prices 11/18 and trades 11/19, FOMC 12/8-9.</li></ul>",
    "kpi": [
     [
      "S&P",
@@ -256,7 +256,7 @@
       },
       {
        "time": "11/16",
-       "fact": "Nvidia is scheduled to report quarterly results after Tuesday's closing bell; Wall Street expects revenue of $109.5 billion and net income of about $60.9 billion.",
+       "fact": "Nvidia is scheduled to report quarterly results after Tuesday's closing bell; Wall Street expects net income of about $60.9 billion, according to Visible Alpha's analyst survey.",
        "src": "Investopedia",
        "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-nasdaq-11162026-12257790"
       },
@@ -277,17 +277,18 @@
     {
      "t": "② No Haven Bid: 3bp at the 10Y, Gold at a 13-Month Low",
      "steps": [
-      "The 10Y fell 3bp to 5.12%, the 2Y 5bp to 4.83% and the 30Y 1bp to 5.46%, so 2s10s steepened 2bp to 29bp",
+      "The 10Y fell 3bp to 5.12%, the 2Y 4bp to 4.83% and the 30Y 2bp to 5.46%, so 2s10s steepened 1bp to 29bp",
       "The easing tracked crude rather than equities: cheaper oil removed the month's inflation pressure while stocks fell",
-      "December is about 92% priced for a 25bp hike after three consecutive upside CPI prints, and Fed Chair Warsh's remarks did not change it",
+      "December 8-9 is about 92% priced for a 25bp hike after three consecutive upside CPI prints, and Fed Chair Warsh's remarks did not change it",
+      "Ahead: October retail sales on 11/17 at 8:30 ET, then the FOMC's 12/8-9 meeting",
       "The dollar index rose 0.15% to 103.58, near its highest since April 2025",
-      "Gold settled 0.87% lower at $3,852.40, its lowest since October 2025 and roughly 31% below January's record"
+      "Gold's December contract settled 0.87% lower at $3,852.40, its lowest since October 2025 and roughly 31% below January's record"
      ],
      "d": "The bond market's answer to a 2.5% Nasdaq drop was 3bp: with December 92% priced and the dollar near a 19-month high, gold did the adjusting, settling at its lowest since October 2025.",
      "news": [
       {
        "time": "11/16 close",
-       "fact": "The 10-year Treasury yield was 5.12%, the 2-year 4.83% and the 30-year 5.46%, versus 5.15%, 4.88% and 5.47% on 11/13.",
+       "fact": "The 10-year Treasury yield was 5.12%, the 2-year 4.83% and the 30-year 5.46%, versus 5.15%, 4.87% and 5.48% on 11/13.",
        "src": "U.S. Treasury",
        "u": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
       },
@@ -317,13 +318,13 @@
       },
       {
        "time": "11/16",
-       "fact": "Gold fell to $3,830.74 an ounce, its lowest since October 2, 2025, and about 31.5% below January's record of $5,594.82.",
+       "fact": "Spot gold fell to $3,830.74 an ounce, its lowest since October 2, 2025, and about 31.5% below January's record of $5,594.82.",
        "src": "Reuters",
        "u": "https://kfgo.com/2026/11/16/gold-sinks-to-1-year-low-as-treasury-yields-and-dollar-bite-set-for-worst-year-since-2015"
       },
       {
        "time": "11/16",
-       "fact": "Front-month Comex gold settled 0.83% lower at $3,847.40, its lowest settlement since October 2, 2025.",
+       "fact": "The November front-month Comex contract settled 0.83% lower at $3,847.40, its lowest settlement since October 2, 2025.",
        "src": "Dow Jones / Morningstar",
        "u": "https://www.morningstar.com/news/dow-jones/202611167857/comex-gold-settles-083-lower-at-384740-data-talk"
       },
@@ -332,6 +333,18 @@
        "fact": "December COMEX gold traded at $3,852.40 in the 13:28-13:30 ET settlement window, down 0.87% from Friday's $3,886.30 settlement.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/GC%3DF/history"
+      },
+      {
+       "time": "11/17",
+       "fact": "The Census Bureau is scheduled to release October advance retail sales on November 17 at 8:30 a.m. ET.",
+       "src": "Census Bureau",
+       "u": "https://www.census.gov/retail/marts/www/marts_current.pdf"
+      },
+      {
+       "time": "12/8-9",
+       "fact": "The Federal Open Market Committee's next scheduled meeting is December 8-9.",
+       "src": "Federal Reserve",
+       "u": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
       }
      ]
     },
@@ -340,7 +353,7 @@
      "steps": [
       "Brent's January contract settled $3.40 lower at $92.44 (-3.55%) and WTI's December $2.84 lower at $85.72 (-3.21%)",
       "The IEA now sees a fourth-quarter surplus of 1.7 million barrels a day, with supply averaging 105 million bpd - a reversal from its deficit forecast",
-      "Hormuz flows have nearly returned to pre-war levels, and Goldman sees a 2 million bpd surplus in 2027 with Brent averaging $88 next year and $78 by December 2027",
+      "Middle Eastern crude flows have recovered to more than 80% of pre-war levels on DTN's ship-tracking, and Goldman sees a 2 million bpd surplus in 2027 with Brent averaging $88 next year and $78 by December 2027",
       "China's October refinery throughput fell 8.1% from a year earlier",
       "The US extended its Jones Act waiver by 90 days, widening the tanker pool"
      ],
@@ -387,6 +400,12 @@
        "fact": "Iran's Revolutionary Guards said two oil tankers struck mines in the Strait of Hormuz, after six tankers caught fire in similar incidents on Sunday and Monday.",
        "src": "Reuters",
        "u": "https://www.streetinsider.com/Commodities/Oil+settles+lower+as+recovering+Middle+East+exports+bolster+surplus+outlook/27346404.html"
+      },
+      {
+       "time": "11/16",
+       "fact": "Ship-tracking data followed by DTN showed Middle Eastern crude flows have recovered to more than 80% of pre-war levels.",
+       "src": "DTN",
+       "u": "https://www.dtnpf.com/agriculture/web/AG/news/world-policy/article/2026/11/16/oil-3-supply-surplus-signs-offset"
       }
      ]
     },
@@ -501,8 +520,8 @@
       {
        "time": "11/16",
        "fact": "Analysts expect Nvidia to post a 90.4% year-on-year earnings increase on revenue of $109.10 billion.",
-       "src": "Investopedia",
-       "u": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-nasdaq-11162026-12257790"
+       "src": "Channel News Asia / Reuters",
+       "u": "https://www.channelnewsasia.com/world/wall-street-ends-sharply-lower-ai-jitters-ahead-nvidia-results-anthropic-ipo-6556786"
       },
       {
        "time": "11/16",
@@ -528,7 +547,7 @@
   },
   "mtd": {
    "h": "November Is -2.16%: Three Straight Losses Erased the Repair",
-   "d": "From 10/30's 7,580.07 the S&P is 2.16% lower at 7,416.59, the Dow -0.31% and the Nasdaq -3.65%: the 11/5 rout was never repaired and the last three days took the index 3.54% below its 11/4 close. Energy -9.04% and technology -8.22% are the month's losers, communications +6.93% and staples +3.56% lead, the 10Y is 18bp higher at 5.12% and bitcoin 15.32% lower.",
+   "d": "From 10/30's 7,580.07 the S&P is 2.16% lower at 7,416.59, the Dow -0.31% and the Nasdaq -3.65%: 11/11's 7,619.38 erased the 11/5 rout's hit to the month, but the 11/4 close was never regained and the last three days took the index 3.54% below it. Energy -9.04% and technology -8.22% are the month's losers, communications +6.93% and staples +3.56% lead, the 10Y is 18bp higher at 5.12% and bitcoin 15.32% lower.",
    "badges": [
     "S&P -2.16%",
     "Nasdaq -3.65%",
@@ -752,7 +771,7 @@
      "t": "④ The Hedges Did Not Pay",
      "steps": [
       "Bitcoin is 15.32% lower at $65,374.40 from 10/30's $77,198.21",
-      "Gold is 1.19% lower at $3,852.40, having been higher for the month as recently as 11/13",
+      "Gold is 1.19% lower at $3,852.40, having been positive for the month as recently as 11/11",
       "The VIX is 17.97% higher at 22.91, so equity volatility rose as the AI trade fell"
      ],
      "d": "November's hedge was cash: bitcoin lost 15.32%, gold 1.19%, and volatility ended 17.97% higher than it began the month.",
@@ -1375,12 +1394,12 @@
     {
      "t": "③ Nine Sectors Up, and Two Hedges That Failed",
      "steps": [
-      "Only communications -9.26% and consumer discretionary -1.06% are down; the other nine sectors are positive",
+      "Nine of 11 sectors are higher and the median sector (+9.67%) beat the index's +8.34%",
       "Gold is -11.26% at $3,852.40 and bitcoin -25.29% at $65,374.40 - the two hedges that did not pay",
       "The dollar is +5.40% on the DXY at 103.58",
       "The Russell 2000 is +10.52% and the VIX is 53.24% higher at 22.91"
      ],
-     "d": "Breadth is the year's surprise: nine of 11 sectors are higher, and the two assets bought as insurance, gold and bitcoin, are both lower.",
+     "d": "Breadth is the year's surprise: the median sector beat the index, and the two assets bought as insurance, gold and bitcoin, are both lower.",
      "news": [
       {
        "time": "11/16 close",
@@ -1556,12 +1575,12 @@
      [
       "30Y",
       "5.46%",
-      "-1bp"
+      "-2bp"
      ],
      [
       "2Y",
       "4.83%",
-      "-5bp"
+      "-4bp"
      ]
     ]
    },

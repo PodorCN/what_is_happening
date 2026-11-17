@@ -2493,9 +2493,15 @@
               "rule": "steps 里每个定量/比较级断言必须能在本链 news[].fact 找到同义句：补一条含 Hormuz 流量数字的稿，或把该分句改成新闻标题已背书的「recovering Middle East exports」。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "note": "fixer: 8/8 findings fixed (F1-F8), re-checked build/verify/lint + http render",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true
     }
   ]
 }
