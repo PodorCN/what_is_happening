@@ -2502,6 +2502,36 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-11-17",
+      "reviewedAt": "2026-11-17T18:52:00-05:00",
+      "verdict": "PASS",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "PASS",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today ④ 的 steps[3] 与 d 把 NSA 消息写成「took the averages to their session lows, the Dow down 922.66 points at the worst」：922.66 是 NSA 消息当时（约 10:24 ET）的盘中跌幅，不是全时段低点。^DJI 1m 全时段最低 50,566.98（15:01 ET），对 11/16 收 51,608.17 为 -1,041.19 点；所引 CNBC 同一页的收盘段自己写「It dropped more than 1,000 points at its session low」。d 的「gave the tape its session low」同错。",
+              "evidence": "Yahoo ^DJI 1m 2026-11-17 最低 50,566.98 @15:01 ET = -1,041.19 点；CNBC live blog（2026-11-17 定稿）收盘段「dropped more than 1,000 points at its session low」，922.66 出自同一页盘中条目「At its session low, the Dow Industrials were down 922.66 points」（该条目写作时点约 10:24）。LESSONS 2026-10-06 已要求 session low 用全时段 1m/5m 极值核对，禁止用某一时段的局部低点冒充 session low。",
+              "rule": "写「at the worst / session low」前跑当日 ^DJI/^GSPC 1m 全时段 low 取 min 并换算点数；盘中稿在某个标题时点写的跌幅只能写成「was down 922.66 points at the time of the report」，不得当 session low；改一处必须同步该链 d 与 steps。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "同一条 news fact「Markets priced a 100% chance of a 25bp rate hike at the December 8-9 FOMC meeting.」（同一 URL：Yahoo/Barchart stocks-pressured-weakness-software-health-151154665）在 today.chains[4].news[8]、mtd.chains[1].news[1]、qtd.chains[2].news[1] 三处逐字重复；三档的 rate step 都已引用该事实，等于同一句挂了三条 news。",
+              "evidence": "snapshots/2026-11-17.json 三档 news 列表逐字比对；LESSONS 2026-10-27 F6「同 URL + 同句的 fact 只留一处——留给该事实真正的主场档，另一处删除或改成本档口径的不同句子」。",
+              "rule": "定稿前对全部 news 跑「URL + fact 全文」去重：12/8-9 FOMC 定价只保留 today ⑤ 的一条 news（或统一放 qtd ③），mtd/qtd/ytd 的 rate step 保留「December 8-9 is fully priced」这类本档句子但删掉重复的 news 条目。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
