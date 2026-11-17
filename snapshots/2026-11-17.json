@@ -359,7 +359,8 @@
      "t": "③ Managed Care Met the CRUSH Rule",
      "steps": [
       "Health insurers fell after CMS proposed the CRUSH anti-fraud rule, which federal health officials said would expand Medicare Advantage audits",
-      "UnitedHealth fell 5.42% to $389.68, Molina 5.10%, Humana 3.88%, CVS 3.14%, Centene 2.97%, Elevance 2.77% and Cigna 2.03%",
+      "UnitedHealth fell 5.42% to $389.68, Molina 5.10% and Humana 3.88%",
+      "CVS 3.14%, Centene 2.97%, Elevance 2.77% and Cigna 2.03% carried the decline across managed care",
       "Health care fell 1.41% on the XLV, with UnitedHealth the Dow's third-biggest percentage loser behind Salesforce and Nike",
       "The rule was announced on 11/16 and HHS put the saving at $90 billion"
      ],
@@ -532,7 +533,7 @@
       },
       {
        "time": "11/17",
-       "fact": "US gold futures for December delivery settled 0.2% higher at $3,864.20 an ounce.",
+       "fact": "US gold futures for December delivery settled at $3,864.20 an ounce.",
        "src": "Reuters",
        "u": "https://www.reuters.com/world/india/gold-hovers-near-over-one-year-low-firm-dollar-fed-hike-bets-weigh-2026-11-17/"
       },
