@@ -2532,6 +2532,84 @@
         }
       ],
       "resolved": false
+    },
+    {
+      "date": "2026-11-18",
+      "reviewedAt": "2026-11-18T18:53:56-05:00",
+      "verdict": "PASS",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "PASS",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ① s1 与 c1 写 Nvidia 营收「up 103% from a year earlier」，但本链 10 条 news 无一条含 103% 或上年同期营收；CNBC fact 只给 $115.84B vs $109.10B 预期、指引 ~$130B vs $125.1B、以及「expand by roughly 90%」，读者无法验算 103%。",
+              "evidence": "snapshots/2026-11-18.json today.chains[0].news 全文 grep「103」= 0；全文件「103%」只出现在 c1 与 ① s1 两处文案，无对应 fact。",
+              "rule": "同比增速必须出现在本链某条 fact 的原句，或由 fact 里给出的上年同期数字现算；两者都没有就删掉百分比，改写为 fact 已有的口径（revenue $115.84B vs $109.10B expected），或补一条含上年同期营收的静态来源。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ⑤ s4 写 Anthropic「priced its IPO at $83 a share, above the $70-$78 range」，但所挂 CNBC fact 原句只有「above the expected range」，没有 $70-$78 这组数字。",
+              "evidence": "today.chains[4].news 中 Anthropic 条目仅一条（CNBC 2026/11/18 anthropic-ipo-ai-offering-price）：11/18 | priced at $83 per share, above the expected range, expected to begin trading on the Nasdaq under ANT on Thursday。全文件「$70」「$78」仅命中该 step。",
+              "rule": "区间/目标价类数字必须能在 news.fact 原句找到；来源只写「above the expected range」就照写，不得自行补区间；要保留区间就补一条写明 $70-$78 的静态源。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today ③ s5 写「Caterpillar fell 2.11% to $558.77, so the Dow's industrial leg added to the 561.25-point decline that UnitedHealth led」——该链 t/d 是医保政策链（CRUSH 扩大审计 + Sanders Medicare for All），CAT 与医保政策无关，也不解释任何保险股走势；它只是道指点数贡献，属主链/c1 的素材。",
+              "evidence": "today.chains[2] d 只讲 UnitedHealth -10.21% 与 health -2.20%；同链其余 4 条 step 全是保险公司/药企；CAT 的 fact 只有价格与跌幅，无政策关联；Dow -561.25 已在 ① c1 出现。",
+              "rule": "每条 step 必须能回答「它如何支撑本链 d」；答不上就删除或移到主链。医保链只保留 UNH/HUM/XLV/MRK/AMGN/JNJ，道指工业腿的贡献写在主链或另设指数贡献句。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today ④ s3 写「WTI fell harder than Brent, more than $4 intraday against Brent's $2」：按同链 Newsquawk 区间（WTI 81.20–84.77、Brent 90.34–93.54）对前结算（86.01 / 93.14）现算，WTI 盘中最大跌幅 $4.81（>4 ✓），Brent 为 $2.80，不是 $2，差 $0.80。",
+              "evidence": "同链 news「WTI traded between $81.20 and $84.77 a barrel and Brent between $90.34 and $93.54」(Newsquawk)；data/2026-11-18.json closes.wti.prev=86.01、closes.brent.prev=93.14 → 86.01−81.20=4.81、93.14−90.34=2.80。",
+              "rule": "写「X 比 Y 跌得更狠，盘中 $a 对 $b」时，两个数都用各自「前一结算 − 当日区间低点」现算后再落笔；Brent 写 ~$2.8，或只保留 WTI 的 >$4 并删掉对比数。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd 同档数字交集：① s4 已列 energy -12.47% 与 technology -8.75%，③ s3/s4 又把这两个数字各讲一遍；② s4「against -3.38% for the S&P and -3.04% for the Dow」重复 ① s1 的 S&P/Dow 月度涨跌。辅链在这些数字上零增量。",
+              "evidence": "mtd.chains[0].steps[3] vs mtd.chains[2].steps[2]/[3]；mtd.chains[0].steps[0] vs mtd.chains[1].steps[3]。LESSONS 2026-10-27 / 2026-11-16 已两次记录同档数字交集问题。",
+              "rule": "定稿前对同档每对链求数字交集：主链只留端点（S&P -3.38 / Dow -3.04 / Nasdaq -3.96），energy 与 tech 的窗口值只归 ③；② 的 Russell 句改成只与 S&P 比（「-3.47% vs the S&P's -3.38%」）或删掉 Dow。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "qtd ③ 标题「The Quarter's Rate Bill: Long End Down, Front End Flat」与 c4「The rate bill: 22bp lower at the 10Y but only 8bp at the 2Y」把收益率下行 22/23bp 叫成「bill」——这是给股债减压，不是成本；同档 d 又写「the curve did the work for equities」，title 与 d 方向相反（YTD ② 的 +89bp 才成立为 bill）。",
+              "evidence": "qtd.chains[2].t / steps[0..1] / qtd.c4 第 4 条；Treasury：10Y 5.29→5.07（-22bp）、30Y 5.64→5.41（-23bp）、2Y 4.88→4.80（-8bp）；ytd ② 同口径 +89bp 才称 bill。",
+              "rule": "「bill / cost」只用于窗口净变动为正的期限；本季 10Y/30Y 为负，标题与 c4 改写为「rate relief / the long end paid equities」，与 d 的「did the work for equities」同向。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "ytd ④ s1 写 Nvidia「after trading at a record $239.24 on 10/6」：$239.24 是 10/6 的纪录收盘，当日盘中最高 $243.37；「trading at a record」会被读成盘中纪录，与 Yahoo 日线 high 不符。",
+              "evidence": "Yahoo NVDA 1d 2026-10-06：O 242.10 / H 243.37 / L 238.93 / C 239.24；1y 最大收盘 = 2026-10-06 239.24。",
+              "rule": "record 类断言同句点名 close 或 intraday 并取对应序列：写「record close of $239.24」或「intraday record $243.37」；不得用「trading at a record」混指收盘纪录。"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today 的 deck 与 c1 写 Nvidia「closed 2.89% lower at $150.96 after the board ruled out Jensen Huang's return」，把收盘下跌归因于董事会表态；但该表态发生在 11/17 盘后电话会开场（11/18 开盘前已公开），同链 s2 自己写股价当日早盘还涨 2.7%（Yahoo 开盘 159.19 = +2.4%），所引 Reuters 也未把跌幅归因于它。",
+              "evidence": "today.chains[0].steps[1]「rose as much as 2.7% early and closed 2.89% lower… the board chair… had opened the earnings call the night before」；Reuters fact「Nvidia rose as much as 2.7% after its results and finished 2.9% lower」无归因；Yahoo NVDA 11/18 O 159.19 / H 159.70 / L 150.40 / C 150.96。",
+              "rule": "开盘前已公开的事件不能写成「closed lower after X」；要么按序列写「opened +2.4%, faded to -2.89%」，要么挂一条明确把跌幅归因于该事件/其他催化剂的来源；deck 与 c1 同句一并改。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
