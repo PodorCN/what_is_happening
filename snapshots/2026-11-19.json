@@ -2,7 +2,7 @@
  "date": "2026-11-19",
  "updatedAt": "2026-11-19T22:30:00Z",
  "label": "2026-11-19 Thursday close",
- "foot": "Closing baseline (auto 2026-11-19): SPX 7175.83 (-2.02% day / -5.33% MTD / -6.22% QTD / +4.83% YTD) · DJI 49097.06 · IXIC 23879.20 · 10Y 5.04% / 2Y 4.76% / 30Y 5.40% (Treasury daily par curve) · WTI 83.21 (Dec settle) · Brent 91.98 (Jan settle; QTD base 94.52 = 9/30 Dec 98.03 x 113.43/117.64, roll-adjusted) · Gold 3660.10 (Dec COMEX settle; day change computed on the 11/18 Dec settle of 3741.90) · BTC 61474.84 (4pm ET) · VIX 28.44. Sector and single-name returns computed from Yahoo closes; WTI/Brent from Reuters settlement reports, gold from the Dec COMEX settle. 25-12-31 S&P 6845.5/Dow 48063.29/Nasdaq 23241.99/10Y 4.18%/30Y 4.84%/2Y 3.47%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.44% · 26-08-31 S&P 7686.14/10Y 4.75% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/2Y 4.88%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4186.70 (fut)/BTC $83553.85/VIX 16.34. For information only - not investment advice.",
+ "foot": "Closing baseline (auto 2026-11-19): SPX 7175.83 (-2.02% day / -5.33% MTD / -6.22% QTD / +4.83% YTD) · DJI 49097.06 · IXIC 23879.20 · 10Y 5.04% / 2Y 4.76% / 30Y 5.40% (Treasury daily par curve) · WTI 83.21 (Dec settle) · Brent 91.98 (Jan settle; QTD base 94.52 = 9/30 Dec 98.03 x 113.43/117.64, roll-adjusted) · Gold 3660.10 (Dec COMEX settle; day change computed on the 11/18 Dec settle of 3741.90) · BTC 61984.03 (4pm ET) · VIX 28.44. Sector and single-name returns computed from Yahoo closes; WTI/Brent from Reuters settlement reports, gold from the Dec COMEX settle. 25-12-31 S&P 6845.5/Dow 48063.29/Nasdaq 23241.99/10Y 4.18%/30Y 4.84%/2Y 3.47%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.44% · 26-08-31 S&P 7686.14/10Y 4.75% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/2Y 4.88%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4186.70 (fut)/BTC $83553.85/VIX 16.34. For information only - not investment advice.",
  "P": {
   "today": {
    "h": "Anthropic's Record Debut Was the Sell Signal: S&P -2.02%, Dow Below 50,000",
@@ -494,7 +494,7 @@
    "h": "November Is -5.33%: Six Losses and Two Failed Repairs",
    "d": "November's problem is that every repair was sold: the index is 6.67% below the 11/4 close and 5.82% below the 11/11 close, which is why a 5.33% monthly loss is the story rather than a rotation.",
    "c1": "<p>November's repair failed and then some. The month peaked at 7,688.62 on 11/4, retried 7,619.38 on 11/11, and has lost six straight sessions since to 7,175.83 - 5.33% below the 10/30 base, 8.23% below the 10/6 record and 6.67% below the 11/4 close. Only communications +2.86%, staples +0.49% and consumer discretionary +0.43% are still positive; energy -13.04% and technology -10.48% carry the damage. The 10Y is 10bp higher at 5.04% and Brent 18.91% lower at $91.98.</p>",
-   "c4": "<ul class='play'><li>The level: 7,175.83 is 5.33% below the 10/30 base and 8.23% below the 10/6 record.</li><li>The split: communications +2.86%, staples +0.49% and consumer discretionary +0.43% are the only sectors up; energy -13.04% is the worst.</li><li>The rates: 10bp at the 10Y, 20bp at the 2Y and a 10bp flattening to a 28bp 2s10s.</li><li>The hedges: gold -6.12% and bitcoin -20.37% both failed, while the VIX is 46.45% higher.</li></ul>",
+   "c4": "<ul class='play'><li>The level: 7,175.83 is 5.33% below the 10/30 base and 8.23% below the 10/6 record.</li><li>The split: communications +2.86%, staples +0.49% and consumer discretionary +0.43% are the only sectors up; energy -13.04% is the worst.</li><li>The rates: 10bp at the 10Y, 20bp at the 2Y and a 10bp flattening to a 28bp 2s10s.</li><li>The hedges: gold -6.12% and bitcoin -19.71% both failed, while the VIX is 46.45% higher.</li></ul>",
    "kpi": [
     [
      "S&P",
@@ -757,11 +757,11 @@
      "t": "④ The Hedges Failed Again",
      "steps": [
       "Gold fell from 3,898.90 to 3,660.10, -6.12%",
-      "Bitcoin fell from 77,198.21 to 61,474.84, -20.37%",
+      "Bitcoin fell from 77,198.21 to 61,984.03, -19.71%",
       "The VIX rose from 19.42 to 28.44, +46.45%",
       "The dollar index rose from 101.88 to 103.94, +2.02%"
      ],
-     "d": "The month's hedges both lost money: gold 6.12% lower and bitcoin 20.37%, while volatility was the one thing that paid.",
+     "d": "The month's hedges both lost money: gold 6.12% lower and bitcoin 19.71%, while volatility was the one thing that paid.",
      "news": [
       {
        "time": "10/30 close",
@@ -783,7 +783,7 @@
       },
       {
        "time": "11/19 close",
-       "fact": "Bitcoin traded at $61,474.84 on 11/19 versus $62,264.24 on 11/18.",
+       "fact": "Bitcoin traded at $61,984.03 on 11/19 versus $62,539.26 on 11/18.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/BTC-USD/history"
       },
@@ -1070,10 +1070,10 @@
      "t": "④ Gold and Bitcoin Did Not Hedge Q4",
      "steps": [
       "Gold fell from 4,186.70 to 3,660.10, -12.58%",
-      "Bitcoin fell from 83,553.85 to 61,474.84, -26.42%",
+      "Bitcoin fell from 83,553.85 to 61,984.03, -25.82%",
       "The dollar index rose 2.45% to 103.94"
      ],
-     "d": "The quarter's hedges failed: gold is 12.58% lower and bitcoin 26.42%, while the dollar is 2.45% higher.",
+     "d": "The quarter's hedges failed: gold is 12.58% lower and bitcoin 25.82%, while the dollar is 2.45% higher.",
      "news": [
       {
        "time": "9/30 close",
@@ -1095,7 +1095,7 @@
       },
       {
        "time": "11/19 close",
-       "fact": "Bitcoin ended 11/19 at $61,474.84, down from $62,264.24.",
+       "fact": "Bitcoin ended 11/19 at $61,984.03, down from $62,539.26.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/BTC-USD/history"
       }
@@ -1106,8 +1106,8 @@
   "ytd": {
    "h": "The Bull at +4.83%: Energy +36%, Staples Second, Tech Fourth",
    "d": "S&P +4.83%, Nasdaq +2.74% and Dow +2.15%: energy +36.19%, staples +15.68% and health +14.64% carry the year, with technology +11.61% fourth; the 10Y is 86bp higher at 5.04% and Brent 51.16% higher. Communications -12.71% and consumer discretionary -2.96% are the only sectors down.",
-   "c1": "<p>The year's engine is not the AI trade. Energy leads at +36.19%, staples is second at +15.68%, health third at +14.64%, technology fourth at +11.61% and materials fifth at +8.97%; real estate (+6.27%) and industrials (+4.02%) are the only other sectors ahead of the index, and financials (+1.48%) and utilities (+0.75%) are just behind. Communications -12.71% and consumer discretionary -2.96% are the only sectors down. The referee is the 10Y at 5.04%, 86bp above where 2025 ended, with the 2Y 129bp higher and 2s10s 43bp flatter at 28bp. Gold -15.69% and bitcoin -29.75% mean the year's hedges both lost money.</p>",
-   "c4": "<ul class='play'><li>The engine: energy +36.19% and staples +15.68%, with health +14.64% third and technology +11.61% fourth.</li><li>The referee: an 86bp 10Y and a 129bp 2Y, with 2s10s 43bp flatter at 28bp.</li><li>The breadth: nine of 11 sectors are higher and the average stock is 5.50 points ahead.</li><li>The hedges: gold -15.69% and bitcoin -29.75%, both lower for the year.</li></ul>",
+   "c1": "<p>The year's engine is not the AI trade. Energy leads at +36.19%, staples is second at +15.68%, health third at +14.64%, technology fourth at +11.61% and materials fifth at +8.97%; real estate (+6.27%) and industrials (+4.02%) are the only other sectors ahead of the index, and financials (+1.48%) and utilities (+0.75%) are just behind. Communications -12.71% and consumer discretionary -2.96% are the only sectors down. The referee is the 10Y at 5.04%, 86bp above where 2025 ended, with the 2Y 129bp higher and 2s10s 43bp flatter at 28bp. Gold -15.69% and bitcoin -29.17% mean the year's hedges both lost money.</p>",
+   "c4": "<ul class='play'><li>The engine: energy +36.19% and staples +15.68%, with health +14.64% third and technology +11.61% fourth.</li><li>The referee: an 86bp 10Y and a 129bp 2Y, with 2s10s 43bp flatter at 28bp.</li><li>The breadth: nine of 11 sectors are higher and the average stock is 5.50 points ahead.</li><li>The hedges: gold -15.69% and bitcoin -29.17%, both lower for the year.</li></ul>",
    "kpi": [
     [
      "S&P",
@@ -1357,7 +1357,7 @@
       "Seven of 11 sectors are ahead of the S&P's +4.83%: energy, staples, health, technology, materials, real estate and industrials",
       "Communications -12.71% and consumer discretionary -2.96% are the only sectors down",
       "The equal-weight RSP is +10.48% against SPY +4.98%, a 5.50-point lead",
-      "Gold is -15.69% and bitcoin -29.75%"
+      "Gold is -15.69% and bitcoin -29.17%"
      ],
      "d": "Breadth is the year's surprise: seven sectors and the average stock beat the index, and the two assets bought as insurance, gold and bitcoin, are both lower.",
      "news": [
@@ -1393,7 +1393,7 @@
       },
       {
        "time": "11/19 close",
-       "fact": "BTC traded at $61,474.84 on 11/19, 1.27% below its 11/18 level.",
+       "fact": "BTC traded at $61,984.03 on 11/19, 1.27% below its 11/18 level.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/BTC-USD/history"
       }
@@ -1576,7 +1576,7 @@
      [
       "BTC",
       "$61.5k",
-      "-1.27"
+      "-0.89"
      ],
      [
       "Stoxx 600",
@@ -1723,7 +1723,7 @@
      [
       "BTC",
       "$61.5k",
-      "-20.37"
+      "-19.71"
      ]
     ]
    }
@@ -1865,7 +1865,7 @@
      [
       "BTC",
       "$61.5k",
-      "-26.42"
+      "-25.82"
      ]
     ]
    }
@@ -2007,7 +2007,7 @@
      [
       "BTC",
       "$61.5k",
-      "-29.75"
+      "-29.17"
      ]
     ]
    }
