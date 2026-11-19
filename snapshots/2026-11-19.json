@@ -711,7 +711,13 @@
      "news": [
       {
        "time": "10/30 close",
-       "fact": "Brent's January contract closed at $113.43 and WTI's December contract at $104.12 on 10/30.",
+       "fact": "Brent's January contract closed at $113.43 on 10/30.",
+       "src": "Reuters",
+       "u": "https://finance.yahoo.com/news/oil-settles-flat-hormuz-disruptions-204200455.html"
+      },
+      {
+       "time": "10/30 close",
+       "fact": "WTI's December contract closed at $104.12 on 10/30.",
        "src": "Reuters",
        "u": "https://finance.yahoo.com/news/oil-settles-flat-hormuz-disruptions-204200455.html"
       },
@@ -759,9 +765,15 @@
      "news": [
       {
        "time": "10/30 close",
-       "fact": "December gold settled at $3,898.90 and bitcoin traded at $77,198.21 on 10/30.",
+       "fact": "December gold settled at $3,898.90 on 10/30.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/GC=F/history"
+      },
+      {
+       "time": "10/30 close",
+       "fact": "Bitcoin traded at $77,198.21 on 10/30.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/BTC-USD/history"
       },
       {
        "time": "11/19",
@@ -947,9 +959,21 @@
      "news": [
       {
        "time": "9/30 close",
-       "fact": "The S&P 500 closed at 7,651.54, the Dow at 50,906.05 and the Nasdaq at 26,861.06 on 9/30.",
+       "fact": "The S&P 500 closed at 7,651.54 on 9/30.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/%5EGSPC/history"
+      },
+      {
+       "time": "9/30 close",
+       "fact": "The Dow closed at 50,906.05 on 9/30.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/%5EDJI/history"
+      },
+      {
+       "time": "9/30 close",
+       "fact": "The Nasdaq closed at 26,861.06 on 9/30.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/%5EIXIC/history"
       },
       {
        "time": "11/19 close",
@@ -1001,7 +1025,13 @@
       },
       {
        "time": "9/30 close",
-       "fact": "The S&P 500 closed at 7,651.54 on 9/30; the Nasdaq closed at 26,861.06 that day.",
+       "fact": "The S&P 500 began the quarter at 7,651.54.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/%5EGSPC/history"
+      },
+      {
+       "time": "9/30 close",
+       "fact": "The Nasdaq began the quarter at 26,861.06.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/%5EIXIC/history"
       }
@@ -1047,9 +1077,15 @@
      "news": [
       {
        "time": "9/30 close",
-       "fact": "December gold settled at $4,186.70 and bitcoin traded at $83,553.85 on 9/30.",
+       "fact": "December gold settled at $4,186.70 on 9/30.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/GC=F/history"
+      },
+      {
+       "time": "9/30 close",
+       "fact": "Bitcoin traded at $83,553.85 on 9/30.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/BTC-USD/history"
       },
       {
        "time": "11/19",
@@ -1237,9 +1273,21 @@
      "news": [
       {
        "time": "12/31/25 close",
-       "fact": "The S&P 500 closed at 6,845.50, the Dow at 48,063.29 and the Nasdaq at 23,241.99 on 12/31/25.",
+       "fact": "The S&P 500 closed at 6,845.50 on 12/31/25.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/%5EGSPC/history"
+      },
+      {
+       "time": "12/31/25 close",
+       "fact": "The Dow closed at 48,063.29 on 12/31/25.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/%5EDJI/history"
+      },
+      {
+       "time": "12/31/25 close",
+       "fact": "The Nasdaq closed at 23,241.99 on 12/31/25.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/%5EIXIC/history"
       },
       {
        "time": "11/19 close",
