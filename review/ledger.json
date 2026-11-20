@@ -2705,6 +2705,109 @@
       "resolved": true,
       "fixedAt": "2026-11-19T19:07:18-05:00",
       "fixNote": "F1 mtd ① s0 改「its two best closes of the month」、d 的 6.67%→7.15%（7,688.62/7,175.83−1）；F2 ytd ③ n5 1.27%→0.89%；F3 today ③ s1 补 utilities −1.24%（按 HEAT 排序 Energy/Utilities/Staples）；F5 mtd ③ n0/n1 改挂 CNBC 2026/10/30 结算稿（页内 117.64/113.43/104.12 已核）；F6 today ② 删「More than 90% of S&P 500 constituents fell」step 并把该 fact 移挂 ③，② d 去掉 90%；F7 qtd ③ 标题改「The Quarter's Rate Relief」；F8 today ① n0 改为 CNBC 原句（above the expected range、979.6m 股、$81B），新增 11/10 CNBC 定价区间 fact（$70-$78、825m 股）；F9 mtd ① s3 去数字改为方向+计数句，板块数字归 ③。F4 驳回理由见 round 2 note（已复读 CNBC 原文）。"
+    },
+    {
+      "date": "2026-11-20",
+      "reviewedAt": "2026-11-20T18:45:00-05:00",
+      "reviewedCommit": "914694a",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "P.today.d 写「The S&P and Dow closed in correction」，但 Dow 48,147.33 距历史最高收盘 53,356.12（2026-11-04）只有 −9.76%，未达 −10% 回调门槛；同档 c1 只对 S&P 说了 correction，两句不一致。",
+              "evidence": "data/*.json 全部 closes.dji.today 的最大值 = 53,356.12109375（data/2026-11-04.json）；48,147.328125/53,356.12109375−1 = −9.762%。本站回调口径为历史最高收盘：snapshots/2026-11-16.json「The Nasdaq is more than 10% below its all-time closing high reached on October 6, confirming a correction」。",
+              "rule": "写「X closed in correction」前，取该指数历史最高收盘，现价÷高点−1 ≤ −10% 才可写；未达就写「near a correction」或只保留 S&P，并在同句给出距高点的百分比。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "today 主链 ① s1「Reuters reported the SEC is exploring possible accounting issues at Nvidia, the single-name trigger for the session」与辅链 ② s0 逐字重复同一事实，两链 news 也各挂同一条 CNBC URL/fact；② 没有主链之外的触发增量。",
+              "evidence": "4-gram 比对：① 与 ② 共享 6 个 4-gram（the sec is exploring / exploring possible accounting / possible accounting issues at …）；① n2 与 ② n0 的 u 同为 https://www.cnbc.com/2026/11/19/stock-market-today-live-updates.html。",
+              "rule": "定稿前对主链×每条辅链做 4-gram 比对：共享 ≥4 词的事实句只能留一处；SEC 事实归 ②，① s1 删掉或改成不带 SEC 的传导句，② 从 California subpoena 这类增量事实起头。"
+            },
+            {
+              "id": "F3",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "本日 commit 修订 11/19 黄金结算价（3,660.10 → 3,685.50，day −1.51%）并同步了 tbl/kpi/HEAT/部分链，但 11/19 仍有两处 prose 是旧值：today.c4「while gold fell 2.19%」（同档 tbl 为 −1.51%）、mtd.c4「gold −6.12%」（同档 mtd tbl 为 −5.47%）。",
+              "evidence": "snapshots/2026-11-19.json：P.today.tbl Gold ['$3,741.90','$3,685.50','-1.51%']、HEAT.today Gold −1.51%、P.mtd.tbl Gold −5.47%、HEAT.mtd −5.47%；同文件 today.c4 仍写 2.19%，mtd.c4 仍写 −6.12%。",
+              "rule": "修订历史结算价时，先 grep 旧值字符串（3,660.10 / 2.19 / 6.12）覆盖四档 c1/c4/d/steps/HEAT/tbl/news 每一处后全部替换；改完用同档 tbl 的百分比逐档回读 c4。"
+            },
+            {
+              "id": "F4",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "mtd ③ s3「Nine of 11 sectors are lower, and the two that are not are the year's defensive stands」把 communications 称作「the year's defensive stands」；communications 年内 −15.03%，是 11 个板块里最差的一个。",
+              "evidence": "HEAT.ytd Comms −15.03（最低）、HEAT.mtd Comms +0.13（月内另一个为正）、HEAT.mtd Staples +1.16；ytd c1 亦写 communications −15.03 为最差。",
+              "rule": "写「defensive」只能用 XLP/XLU/XLV/XLRE；写「the year's …」前先看 HEAT.ytd 同板块符号，Comms（−15.03）只能写「the month's other gainer」，不能归入防御。"
+            },
+            {
+              "id": "F5",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "mtd ③ d「nearly all of the damage came from the largest technology names rather than from the broad market」与同链 s1「Russell 2000 −8.18%, marginally better than the S&P」矛盾：小盘跌 8.18%（S&P 8.83% 的 93%），不能否定 broad market 也在跌。",
+              "evidence": "mtd ③ s1 自带 2,581.79/2,811.84−1 = −8.18%，同档 S&P −8.83%，HEAT.mtd Russell 2K −8.18；d 的「rather than from the broad market」与这两个数直接冲突。",
+              "rule": "写「rather than the broad market」前先取同档小盘/等权跌幅：小盘跌幅 > 指数跌幅×0.9 时只能写「the damage was concentrated in tech, but small caps fell almost as much」，不得否定 broad market。"
+            },
+            {
+              "id": "F6",
+              "severity": "major",
+              "category": "引用",
+              "symptom": "today ② n3 与 ⑤ n2 的 Yahoo live URL slug 为 stock-market-today-friday-november-19-…，但 2026-11-19 是 Thursday（11/20 才是 Friday）；该 URL 被用来支持两条 11/20 事实，页面不可按 slug 检索。",
+              "evidence": "同库 14 条 finance.yahoo.com/markets/live/… URL 的星期与日期全部一致（monday-october-12、friday-october-9、tuesday-november-3…），只有这条 friday-november-19 与日历冲突；2026-11-19 = Thursday、2026-11-20 = Friday。",
+              "rule": "复制 Yahoo live URL 时把 slug 的星期+月+日与 DATE 对齐（11/20 → friday-november-20），落盘前用 `date -d` 核星期；核不上就改用 /quote/<TICKER>/history 这类稳定页。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today ③ d「One green sector and four mega-cap staples names」把 Johnson & Johnson 算进 staples；J&J 属 health care（XLV），steps 里四个名字只有 Walmart/Costco/P&G 是 staples。",
+              "evidence": "同链 s1「Walmart … Costco, Johnson & Johnson and Procter & Gamble」；c4 亦列 J&J；HEAT 中 health −0.12% 与 staples +0.67% 是两个板块。",
+              "rule": "写「N 个 X 板块的名字」前逐个核 GICS 板块：JNJ 归 health care，不能算 staples；改成「three staples names plus J&J」或删掉数量词。"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "schema",
+              "symptom": "snapshots/2026-11-20.json 的 label 为「2026-11-20 周五收盘」，是 39 份快照里唯一含中文的 label；其余全部为「YYYY-MM-DD Weekday close」英文格式。",
+              "evidence": "全库扫描只有 2026-11-20 的 label 命中汉字；11/18「2026-11-18 Wednesday close」、11/19「2026-11-19 Thursday close」。",
+              "rule": "label 固定写「YYYY-MM-DD <Weekday> close」（英文），星期用 `date -d` 核；提交前 grep label 确认无汉字。"
+            },
+            {
+              "id": "F9",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "ytd ① n1 的 fact 主语是 S&P（7,818.93 / 14.22% / 6,845.50），但 u 指向 ^IXIC 的 quote 页。",
+              "evidence": "n1「The S&P 500 peaked at 7,818.93 … 14.22% above the 2025 close of 6,845.50」+ u=…%5EIXIC/history；同链 n2 才是 Nasdaq 数字。",
+              "rule": "news.fact 的主语指数与 URL ticker 必须一致（S&P→%5EGSPC、Nasdaq→%5EIXIC、Dow→%5EDJI）；写完逐条比对 fact 首个指数名与 URL。"
+            },
+            {
+              "id": "F10",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "三条 news 在同链没有 step 支撑：today ① n3（NVDA 125.53/−14.01）在 ① 无 NVDA step（NVDA 只在 ② s2）、② n4（^SOX 8,408.59/−10.73）在 ② 无 SOX step（SOX 在 ① s2）、③ n6（VIX 35.89）在 ③ 无 VIX step。",
+              "evidence": "逐链 steps 关键词比对：① steps 含 SOX/AMD/MU/AVGO 但无 NVDA；② steps 含 NVDA 但无 SOX；③ steps 无 VIX。",
+              "rule": "每条 news 必须能在同链某个 step 找到同主语+同数值；找不到就移到主场链或删掉，不留孤立引文。"
+            },
+            {
+              "id": "F11",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today ⑤ n0「COMEX gold futures settled down $171.50 at $3,514.50」隐含前结算 3,686.00，而 tbl/data 用的 11/19 结算价是 3,685.50（差 $0.50），day% 因此 −4.64% 而非按 3,686.00 的 −4.65%。",
+              "evidence": "3,514.50 + 171.50 = 3,686.00；data/2026-11-20.json closes.gold.prev = 3,685.5；P.today.tbl Gold ['$3,685.50','$3,514.50','-4.64%']。",
+              "rule": "同一商品的「settled down $X at $Y」必须满足 prev = Y + X；差 >$0.10 时改写（改 drop 金额或用 ~ 约数），并在 foot 注明修订来源。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
