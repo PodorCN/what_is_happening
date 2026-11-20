@@ -117,7 +117,7 @@
      "t": "① Anthropic's Debut Was the Sell Signal",
      "main": 1,
      "steps": [
-      "Anthropic priced its IPO at $83 a share, above the $70-$78 marketed range, and raised $81 billion in the largest initial public offering on record",
+      "Anthropic priced its IPO at $83 a share, above the $70-$78 range, and raised $81 billion in the largest initial public offering on record",
       "The stock opened at $111.50, a 34.3% premium, briefly giving the AI lab a fully diluted valuation of about $2 trillion",
       "The S&P 500 was up as much as 1.3% and the Nasdaq 2% before the first trade; both rolled to session lows once Anthropic began trading",
       "The S&P closed 147.80 points, or 2.02%, lower at 7,175.83, a sixth straight loss and its longest in two and a half years; the Dow lost 1,101.11 points to 49,097.06, below 50,000 for the first time since June",
@@ -128,9 +128,15 @@
      "news": [
       {
        "time": "11/18 after bell",
-       "fact": "Anthropic priced its initial public offering at $83 a share, above the $70-$78 marketed range, raising a record $81 billion in the largest IPO on record.",
+       "fact": "Anthropic priced its initial public offering at $83 a share, above the expected range, selling 979.6 million shares and raising a record $81 billion in the largest IPO on record.",
        "src": "CNBC",
        "u": "https://www.cnbc.com/2026/11/18/stock-market-today-live-updates.html"
+      },
+      {
+       "time": "11/10",
+       "fact": "Anthropic set the IPO price range at $70 to $78 a share, offering 825 million shares in the upcoming listing.",
+       "src": "CNBC",
+       "u": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html"
       },
       {
        "time": "11/19",
@@ -206,11 +212,10 @@
       "The S&P 500 closed below its 200-day moving average on 11/18 for the first time since April 7, and deepened the break on 11/19 with the average at 7,348.54",
       "The index sliced through 7,300, a level it had not closed below since mid-June, and the close sat 2.35% under the 200-day line",
       "The VIX jumped 15.8% to 28.44 and traded close to 29, its highest level since March",
-      "More than 90% of S&P 500 constituents fell",
       "Treasury yields fell as stocks dropped: the 10Y fell 3bp to 5.04%, the 2Y 4bp to 4.76% and the 30Y 1bp to 5.40%, leaving a 28bp 2s10s",
       "Weaker data helped the bid: jobless claims rose slightly more than expected and mid-Atlantic manufacturing slowed by more than forecast"
      ],
-     "d": "Once the 200-day gave way, the selling stopped being only about AI: a technical break, a VIX near 29 and a 90% down day turned one IPO into a market-wide liquidation, with Treasuries the only bid.",
+     "d": "Once the 200-day gave way, the selling stopped being only about AI: a technical break and a VIX near 29 turned one IPO into a market-wide liquidation, with Treasuries the only bid.",
      "news": [
       {
        "time": "11/19",
@@ -238,12 +243,6 @@
       },
       {
        "time": "11/19",
-       "fact": "More than 90% of the stocks in the S&P 500 fell.",
-       "src": "Associated Press",
-       "u": "https://www.latimes.com/business/story/2026-11-19/wall-street-tumbles-to-its-longest-losing-streak-since-2024-as-dow-drops-1-100-points"
-      },
-      {
-       "time": "11/19",
        "fact": "The 10-year Treasury yield fell to 5.04% from 5.07% on 11/18.",
        "src": "Associated Press",
        "u": "https://www.latimes.com/business/story/2026-11-19/wall-street-tumbles-to-its-longest-losing-streak-since-2024-as-dow-drops-1-100-points"
@@ -266,7 +265,7 @@
      "t": "③ Breadth: 90% Down, and Retail Led the Damage",
      "steps": [
       "All 11 S&P 500 sectors closed lower, with consumer discretionary -2.79%, communications -2.67% and materials -2.06% the weakest",
-      "Energy -0.65% and staples -1.45% lost the least, the only defensible corners of a 90%-down tape",
+      "Energy -0.65%, utilities -1.24% and staples -1.45% lost the least, the only defensible corners of a 90%-down tape",
       "Williams-Sonoma fell 15.16% to $220.66 after revenue missed and the midpoint of its 2026 revenue forecast came in below consensus",
       "Walmart fell 1.04% even though profit and revenue edged past estimates, while Target rose 0.92% and TJX slipped 0.63%",
       "The equal-weight RSP fell 1.76% against SPY's 1.96%, so the average stock beat the cap-weighted index by 0.20 points",
@@ -297,6 +296,12 @@
        "fact": "The staples ETF closed at $89.86, down 1.45% from its 11/18 close of $91.18.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/XLP/history"
+      },
+      {
+       "time": "11/19",
+       "fact": "More than 90% of the stocks in the S&P 500 fell.",
+       "src": "Associated Press",
+       "u": "https://www.latimes.com/business/story/2026-11-19/wall-street-tumbles-to-its-longest-losing-streak-since-2024-as-dow-drops-1-100-points"
       },
       {
        "time": "11/19",
@@ -598,13 +603,13 @@
      "t": "① November's Sixth Loss Broke the Month",
      "main": 1,
      "steps": [
-      "From the 10/30 base of 7,580.07 the S&P rose to 7,688.62 on 11/4 and 7,619.38 on 11/11, the month's only two positive closes",
+      "From the 10/30 base of 7,580.07 the S&P rose to 7,688.62 on 11/4 and retried 7,619.38 on 11/11, its two best closes of the month",
       "Six straight losses from 11/12 to 11/19 took the index to 7,175.83, 5.33% below the base and 8.23% below the 10/6 record",
       "The Dow is -5.16% and the Nasdaq -6.12%, with the Nasdaq deeper than the S&P's 5.33% decline",
-      "Only communications +2.86%, staples +0.49% and consumer discretionary +0.43% remain positive; energy -13.04% is the worst",
+      "Only communications, staples and consumer discretionary remain higher on the month; the other eight sectors, energy included, are lower",
       "The equal-weight RSP is 2.21 points ahead of SPY, so the average stock lost less than the index"
      ],
-     "d": "November's problem is that every repair was sold: the month's two best closes sit 6.67% and 6.18% above the current level, which is why a 5.33% monthly loss is the story rather than a rotation.",
+     "d": "November's problem is that every repair was sold: the month's two best closes sit 7.15% and 6.18% above the current level, which is why a 5.33% monthly loss is the story rather than a rotation.",
      "news": [
       {
        "time": "11/4 close",
@@ -711,15 +716,15 @@
      "news": [
       {
        "time": "10/30 close",
-       "fact": "Brent's January contract closed at $113.43 on 10/30.",
-       "src": "Reuters",
-       "u": "https://finance.yahoo.com/news/oil-settles-flat-hormuz-disruptions-204200455.html"
+       "fact": "Brent's more active January contract settled at $113.43 on 10/30, with the December contract expiring at $117.64.",
+       "src": "CNBC (Reuters)",
+       "u": "https://www.cnbc.com/2026/10/30/oil-rises-on-supply-concerns-as-houthis-attack-saudi-arabia.html"
       },
       {
        "time": "10/30 close",
-       "fact": "WTI's December contract closed at $104.12 on 10/30.",
-       "src": "Reuters",
-       "u": "https://finance.yahoo.com/news/oil-settles-flat-hormuz-disruptions-204200455.html"
+       "fact": "US West Texas Intermediate's December contract settled at $104.12 on 10/30.",
+       "src": "CNBC (Reuters)",
+       "u": "https://www.cnbc.com/2026/10/30/oil-rises-on-supply-concerns-as-houthis-attack-saudi-arabia.html"
       },
       {
        "time": "11/19",
@@ -952,8 +957,7 @@
       "From 9/30, the S&P is -6.22%, the Dow -3.55% and the Nasdaq -11.10%",
       "Technology -17.91% and the SOXX -27.22% are the drawdown",
       "Staples +11.49%, utilities +9.05%, consumer discretionary +6.47%, health +5.37%, real estate +4.82% and financials +4.08% are still higher",
-      "Energy -0.99%, materials +1.48% and industrials -3.37% round out a quarter where seven of 11 sectors are up",
-      "The equal-weight RSP is +1.74% against SPY -6.13%"
+      "Energy -0.99%, materials +1.48% and industrials -3.37% round out a quarter where seven of 11 sectors are up"
      ],
      "d": "Q4 is a rotation, not a rally: the index is 6.22% lower, the AI hardware complex is down 17.91% to 27.22%, and the money sits in staples, utilities and consumer discretionary.",
      "news": [
@@ -1038,7 +1042,7 @@
      ]
     },
     {
-     "t": "③ The Quarter's Rate Bill: Long End Down, Front End Flat",
+     "t": "③ The Quarter's Rate Relief: Long End Down, Front End Flat",
      "steps": [
       "The 10Y fell 25bp to 5.04%, the 30Y 24bp to 5.40% and the 2Y 12bp to 4.76%",
       "2s10s narrowed from 41bp to 28bp, a 13bp flattening",
@@ -1355,7 +1359,7 @@
      "t": "③ Seven Sectors Beat the Index, and Two Hedges Failed",
      "steps": [
       "Seven of 11 sectors are ahead of the S&P's +4.83%: energy, staples, health, technology, materials, real estate and industrials",
-      "Communications -12.71% and consumer discretionary -2.96% are the only sectors down",
+      "The median sector is +6.27%, 1.44 points ahead of the index",
       "The equal-weight RSP is +10.48% against SPY +4.98%, a 5.50-point lead",
       "Gold is -15.69% and bitcoin -29.17%"
      ],
@@ -1393,7 +1397,7 @@
       },
       {
        "time": "11/19 close",
-       "fact": "BTC traded at $61,984.03 on 11/19, 1.27% below its 11/18 level.",
+       "fact": "BTC traded at $61,984.03 on 11/19, 0.89% below its 11/18 level.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/BTC-USD/history"
       }

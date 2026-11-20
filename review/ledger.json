@@ -2610,6 +2610,101 @@
         }
       ],
       "resolved": false
+    },
+    {
+      "date": "2026-11-19",
+      "reviewedAt": "2026-11-19T18:49:48-05:00",
+      "reviewedCommit": "93d103b",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "mtd ① s0「the month's only two positive closes」不成立：11/12 收 7,592.40 高于 10/30 基期 7,580.07，是第三个为正的收盘；同链 d「the month's two best closes sit 6.67% and 6.18% above the current level」把 11/4→11/19 的跌幅 6.67% 当成现价到 11/4 的涨幅，正确为 7,688.62/7,175.83−1 = 7.15%（6.18% 一档正确）。",
+              "evidence": "同档 labels/data：11/4 7,688.62、11/11 7,619.38、11/12 7,592.40、11/19 7,175.83；7,592.40/7,580.07−1 = +0.16%；7,688.62/7,175.83−1 = +7.15%，7,175.83/7,688.62−1 = −6.67%。",
+              "rule": "写「only N positive closes」前把同档 data 逐点与基期比符号并数个数；「x% above the current level」必须用 高点÷现价−1，1−现价÷高点 只能用在「below」句。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "ytd ③ n5「BTC traded at $61,984.03 on 11/19, 1.27% below its 11/18 level」是旧值：按 61,984.03/62,539.26−1 应为 −0.89%，与 data.computed.btc.dayPct −0.89、HEAT −0.89 矛盾——HEAD 只改了价格没同步百分比。",
+              "evidence": "data/2026-11-19.json closes.btc today 61,984.03 / prev 62,539.26 → −0.89%；HEAT.today BTC -0.89；ytd ③ n5 写 1.27%。",
+              "rule": "改现值必须同句重算日环比（今收÷prev−1）并 grep 该资产其他「% below/above its <日期> level」句；与 data.computed.dayPct 差 >0.05pp 即错。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today ③ s1「Energy -0.65% and staples -1.45% lost the least」错：Utilities −1.24% 跌幅更小，Staples 只是第三小（Financials −1.49 第四）。",
+              "evidence": "HEAT.today 11 板块：Energy -0.65、Utilities -1.24、Staples -1.45、Financials -1.49 … ConsDisc -2.79；升序前三为 Energy/Utilities/Staples。",
+              "rule": "写「lost the least / the weakest」前把 HEAT 同档 11 个板块排序取前三名逐个写进句子。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "today ① s2 与 c1「the Nasdaq, up 2% early」被指把 CNBC 的 Nasdaq-100 +2% 当成 Composite；reviewer 认为同页写 Composite 开盘 +1.5%。",
+              "evidence": "reviewer 引：CNBC live blog「Futures tied to the Nasdaq-100 gained more than 2% early Thursday」「The Nasdaq Composite jumped 1.5% just after 9:30 a.m. ET」。",
+              "rule": "盘中/开盘涨跌幅必须点名指数口径（Composite vs Nasdaq-100 vs futures）：Composite 用页面 Composite 句，期货用 futures 句，不得混用。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "mtd ③ n0/n1 把 10/30 的 Brent $113.43 / WTI $104.12 锚点挂在 11/19 的 Reuters 油价稿（finance.yahoo.com/news/oil-settles-flat-hormuz-disruptions-204200455.html）；该页全文 0 处 113.43/104.12（2026-11-04 F9 同型）。",
+              "evidence": "实测该页：113.43 出现 0 次、104.12 出现 0 次，只有 91.98 / 83.21；10/30 的正确出处是当日结算稿（Reuters/CNBC 页内含 117.64 / 113.43 / 104.12）。",
+              "rule": "期初锚点必须挂专门复述该结算日的稿件；挂 URL 前先在页内 grep 该数字，0 命中就换源。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today 的 90% breadth 在辅链 ② s3/d 与 ③ t/d/s1 重复叙述（reviewer 记为「主链 s3」，实际主链 ① 六条 step 均无 90%），辅链 ② 零增量（2026-10-06 同型）。",
+              "evidence": "today ② s3「More than 90% of S&P 500 constituents fell」、② d「a 90% down day」、③ t「Breadth: 90% Down」、③ s1「90%-down tape」、③ d「more than 90% of stocks fell」；① 无该句。",
+              "rule": "广度类计数只归广度链 ③；定稿前 grep「90%」「all 11 sectors」确认只出现在一条链，删 step 时把该 fact 移挂 ③。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "qtd ③ 标题「The Quarter's Rate Bill: Long End Down, Front End Flat」与同档 c4「The rate relief」、d「the curve did the work for equities」反向；本季 10Y/30Y 均下行（2026-11-18 F6 未修的复现）。",
+              "evidence": "qtd tbl：10Y 5.29→5.04（−25bp）、30Y 5.64→5.40（−24bp）、2Y 4.88→4.76（−12bp）；qtd c4 第 4 条写「The rate relief」；ytd ② 的 +86bp 才成立为 bill。",
+              "rule": "「bill / cost」只用于窗口净变动为正的期限；先算 tbl 首尾 bp，负数写 relief，并让 t 与 d/c4 的方向词一致。"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ① n0 fact 的「$70-$78 marketed range」不在所挂 CNBC live 页（该页只说 above the expected range）；区间出自 CNBC 11/10 的定价区间稿（2026-11-18 F2 同型）。",
+              "evidence": "cnbc.com/2026/11/18/stock-market-today-live-updates.html 全文「$70」「$78」「marketed」0 命中；cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html 标题与正文均写 $70 to $78。",
+              "rule": "每个数字挂针对它的那条来源；一条 fact 只写该页能逐字找到的内容。"
+            },
+            {
+              "id": "F9",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd ① s3 与 ③ s1 重复 energy −13.04% / technology −10.48%（① s3 的 staples +0.49 又与 ③ s2 重复），同档数字交集（2026-11-18 F5 同型）。",
+              "evidence": "mtd ① s3「Only communications +2.86%, staples +0.49% and consumer discretionary +0.43% remain positive; energy -13.04% is the worst」vs ③ s1「Energy -13.04% is the month's worst sector, with technology -10.48% …」、③ s2「Staples +0.49% …」。",
+              "rule": "板块窗口值只归板块链 ③；主链只留方向与计数；定稿前对同档每对链求百分比交集，同一数字出现两次以上即从主链删。"
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": [],
+          "note": "fixer: 8/9 findings 成立并修复（F1/F2/F3/F5/F6/F7/F8/F9），F4 驳回——CNBC live 页总结段原文为「The tech-heavy Nasdaq Composite dropped 2.25% to end at 23,879.20 after gaining as much as 2% earlier in the session」，2% 属 Composite 盘中最大涨幅，Nasdaq-100 的 2% 指期货、1.5% 指 9:30 开盘值，故「the Nasdaq, up 2% early」不是口径串用，不改。同型顺修：qtd ① s4（RSP +1.74/SPY −6.13 与 ② 重复，删除）、ytd ③ s1（恢复 11/16 的 median-sector 增量写法）。lint 0 error/0 warning、build-shell/verify 通过、http ?date=2026-11-19 四档渲染正常。"
+        }
+      ],
+      "resolved": true,
+      "fixedAt": "2026-11-19T19:07:18-05:00",
+      "fixNote": "F1 mtd ① s0 改「its two best closes of the month」、d 的 6.67%→7.15%（7,688.62/7,175.83−1）；F2 ytd ③ n5 1.27%→0.89%；F3 today ③ s1 补 utilities −1.24%（按 HEAT 排序 Energy/Utilities/Staples）；F5 mtd ③ n0/n1 改挂 CNBC 2026/10/30 结算稿（页内 117.64/113.43/104.12 已核）；F6 today ② 删「More than 90% of S&P 500 constituents fell」step 并把该 fact 移挂 ③，② d 去掉 90%；F7 qtd ③ 标题改「The Quarter's Rate Relief」；F8 today ① n0 改为 CNBC 原句（above the expected range、979.6m 股、$81B），新增 11/10 CNBC 定价区间 fact（$70-$78、825m 股）；F9 mtd ① s3 去数字改为方向+计数句，板块数字归 ③。F4 驳回理由见 round 2 note（已复读 CNBC 原文）。"
     }
   ]
 }

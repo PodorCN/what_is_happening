@@ -186,6 +186,11 @@
 | 2026-11-16 | 数字 | mtd ④ s2「Gold … having been higher for the month as recently as 11/13」不成立：11/13 金 -0.32%（该日 mtd tbl），月内最后一个为正的交易日是 11/11（+2.61%） | 写「as recently as <日期> 还为正/还在上方」前，先取该日快照同档 tbl 的数值判符号；符号不符就改到真正为正的那一天（本次 11/11），不得凭印象取最近一个交易日 |
 | 2026-11-16 | 引用 | today c4 的日历项「retail sales 11/17, FOMC minutes 11/18」在全文件 118 条 news 里 0 条背书（Investopedia / CNA 页均无 retail sales、minutes） | c4 每个日期必须有一条 news.fact 对应：retail sales 挂 Census 的 marts_current.pdf（页内「Next release: November 17, 2026」）、FOMC 12/8-9 挂 Fed fomccalendars.htm；官方日程也查不到的项目（本次 FOMC minutes）直接从 c4 删除，不留无源日期 |
 | 2026-11-16 | 引用 | today ③ s3「Hormuz flows have nearly returned to pre-war levels」在本链 7 条 news 里无对应句（headline 只写「recovering Middle East exports」），是唯一无源的传导节点 | steps 的每个定量/比较级断言必须在本链 news.fact 有同义句：补 DTN 船运跟踪「recovered to more than 80% of pre-war levels」并按 80% 口径改写，不写「nearly returned」这类来源未给的比较级 |
+| 2026-11-19 | 数字 | mtd ① s0「the month's only two positive closes」漏计 11/12（7,592.40 > 10/30 基期 7,580.07，是第三个为正收盘）；同链 d「two best closes sit 6.67% and 6.18% above the current level」把跌幅当成涨幅（7,688.62/7,175.83−1 = 7.15%） | 写「only N positive closes / 只有 N 个…」前，把同档 labels/data 逐点与基期比符号并数个数；写「x% above the current level」必须用 高点÷现价−1（本次 7.15%），1−现价÷高点 只能用在「below」句 |
+| 2026-11-19 | 数字 | ytd ③ n5「BTC traded at $61,984.03 on 11/19, 1.27% below its 11/18 level」沿用旧百分比：61,984.03/62,539.26−1 = −0.89%，与同档 HEAT −0.89、data.computed.btc.dayPct −0.89 矛盾 | 改现值必须同句重算日环比（今收÷data.closes.prev−1），并 grep 该资产其他「% below/above its <日期> level」句；与 data.computed 的 dayPct 差 >0.05pp 即错 |
+| 2026-11-19 | 数字 | today ③ s1「Energy -0.65% and staples -1.45% lost the least」漏掉 utilities -1.24%（跌幅第二小），staples 只是第三 | 写「lost the least / the weakest」前，把 HEAT 同档 11 个板块按涨跌幅排序取前三名逐个写进句子；名次与 HEAT 不符即错 |
+| 2026-11-19 | 引用 | mtd ③ n0/n1 把 10/30 的 Brent $113.43 / WTI $104.12 锚点挂在 11/19 的 Reuters 油价稿上：该页全文 0 处 113.43/104.12（2026-11-04 F9 同型） | 期初锚点必须挂专门复述该结算日的稿件：本次改用 CNBC 2026/10/30 结算稿（页内含 117.64 / 113.43 / 104.12 三个数）；挂 URL 前先在页内 grep 该数字，0 命中就换源 |
+| 2026-11-19 | 引用 | today ① n0 的「$70-$78 marketed range」不在所挂 CNBC live 页（该页只写 above the expected range、979.6m 股、$81.3B）；区间实际出自 CNBC 11/10 的定价区间稿 | 每个数字都要有针对它的那句话：price range 挂 CNBC 2026/11/10「Anthropic sets IPO price range of $70 to $78」，priced/开盘价挂 live 页；一条 fact 只写该来源页能逐字找到的内容（2026-11-18 F2 同型复发） |
 
 ## 链结构（主链 / 辅链）
 
@@ -224,6 +229,9 @@
 | 2026-11-13 | 逻辑 | today ③（轮动链）s2 塞入 PPI 内部结构（food/services/transportation 涨、energy 跌），该链 d 只讲板块轮动，且同档 ② 已写 PPI 发布——发布内容跨链重复、该 step 不服务本链 d（2026-10-26「CPI/PPI 只归利率链」同类复发） | 同档 PPI/CPI 只归利率链：本次把 internals 并入 ② s0、对应 news 移挂 ②；每条 step 必须能回答「它如何支撑本链 d」，答不上就移到对应链或删除，删 step 时同链孤立 news 一并移走；定稿前按主题词（PPI/CPI/收益率/广度）做同档跨链交集检查 |
 | 2026-11-16 | 逻辑 | mtd.d「the 11/5 rout was never repaired」与同档 h「Three Straight Losses Erased the Repair」、c1「a repair to 7,619.38 on 11/11」、主链 t「November Ended the Repair」/d「a failed repair」互斥（四种说法只有 d 说从未修复） | 写 repaired / never repaired / ended the repair 前，用同档 labels/data 现算两件事：期末 vs 10/30 基期（月内是否转正）、期末 vs 跌幅前收盘（11/4 7,688.62 是否收复）；本次只成立「11/11 的 7,619.38 抹掉了月内跌幅，但从未收复 11/4 收盘」，h/d/c1/c4/主链 t 五处必须同一说法 |
 | 2026-11-16 | 逻辑 | ytd ③ s1 与主链 ① s5、c1 是同一句「Comms -9.26% / ConsDisc -1.06% only sectors down」，三个数字在同档出现三次，辅链零增量 | 定稿前对同档每对链做数字交集：两个下跌板块只在主链写一次；辅链给一个现算的增量（本次改为「median sector +9.67% vs 指数 +8.34%」，由 HEAT 11 项取中位数），交集里的原数字从辅链删净 |
+| 2026-11-19 | 逻辑 | today 的 90% breadth 在 ② s3/d 与 ③ t/s1/d 各讲一遍（同档 5 处）：② 是技术位链，广度不服务其 d，③ 才是广度链 | 广度（90% down、板块全涨/全跌的计数）只归广度链 ③；技术位链 ② 只留均线/整数关口/VIX/收益率/数据；定稿前 grep「90%」「all 11 sectors」确认只出现在一条链，删 step 时把该 fact 移挂 ③ |
+| 2026-11-19 | 逻辑 | qtd ③ 标题 "The Quarter's Rate Bill" 与同档 c4「The rate relief」、d「the curve did the work for equities」反向：本季 10Y −25bp、30Y −24bp 是减压不是成本（2026-11-18 F6 的复现） | 「bill / cost」只能用于窗口净变动为正的期限：先算 tbl 首尾 bp，负数就写 relief（本次改 "The Quarter's Rate Relief"）；定稿前把每条链 t 与同档 d/c4 的方向词（bill vs relief、drawdown vs rally）逐字对向 |
+| 2026-11-19 | 逻辑 | mtd ① s3 与 ③ s1/s2 数字交集：energy −13.04%、tech −10.48%、staples +0.49 在两条链各写一遍（2026-11-18 F5 同型）；同期 qtd ① s4 与 ② s0/d 把 RSP +1.74% / SPY −6.13% 写三遍 | 板块与宽度类窗口数字只归各自的专属链（板块→③，RSP/SPY→②）；主链只留方向与计数句（本次 ① 改成 "only communications, staples and consumer discretionary remain higher … the other eight, energy included, are lower"）；定稿前对同档每对链求百分比交集，同一数字出现两次以上即从主链删 |
 
 ## 交付与上线
 
