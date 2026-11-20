@@ -2,7 +2,7 @@
  "date": "2026-11-19",
  "updatedAt": "2026-11-19T22:30:00Z",
  "label": "2026-11-19 Thursday close",
- "foot": "Closing baseline (auto 2026-11-19): SPX 7175.83 (-2.02% day / -5.33% MTD / -6.22% QTD / +4.83% YTD) · DJI 49097.06 · IXIC 23879.20 · 10Y 5.04% / 2Y 4.76% / 30Y 5.40% (Treasury daily par curve) · WTI 83.21 (Dec settle) · Brent 91.98 (Jan settle; QTD base 94.52 = 9/30 Dec 98.03 x 113.43/117.64, roll-adjusted) · Gold 3660.10 (Dec COMEX settle; day change computed on the 11/18 Dec settle of 3741.90) · BTC 61984.03 (4pm ET) · VIX 28.44. Sector and single-name returns computed from Yahoo closes; WTI/Brent from Reuters settlement reports, gold from the Dec COMEX settle. 25-12-31 S&P 6845.5/Dow 48063.29/Nasdaq 23241.99/10Y 4.18%/30Y 4.84%/2Y 3.47%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.44% · 26-08-31 S&P 7686.14/10Y 4.75% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/2Y 4.88%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4186.70 (fut)/BTC $83553.85/VIX 16.34. For information only - not investment advice.",
+ "foot": "Closing baseline (auto 2026-11-19): SPX 7175.83 (-2.02% day / -5.33% MTD / -6.22% QTD / +4.83% YTD) · DJI 49097.06 · IXIC 23879.20 · 10Y 5.04% / 2Y 4.76% / 30Y 5.40% (Treasury daily par curve) · WTI 83.21 (Dec settle) · Brent 91.98 (Jan settle; QTD base 94.52 = 9/30 Dec 98.03 x 113.43/117.64, roll-adjusted) · Gold 3685.50 (Dec COMEX settle; revised 11/20 from an erroneous 3,660.10 print, day change computed on the 11/18 Dec settle of 3741.90) · BTC 61984.03 (4pm ET) · VIX 28.44. Sector and single-name returns computed from Yahoo closes; WTI/Brent from Reuters settlement reports, gold from the Dec COMEX settle. 25-12-31 S&P 6845.5/Dow 48063.29/Nasdaq 23241.99/10Y 4.18%/30Y 4.84%/2Y 3.47%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.44% · 26-08-31 S&P 7686.14/10Y 4.75% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/2Y 4.88%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4186.70 (fut)/BTC $83553.85/VIX 16.34. For information only - not investment advice.",
  "P": {
   "today": {
    "h": "Anthropic's Record Debut Was the Sell Signal: S&P -2.02%, Dow Below 50,000",
@@ -12,9 +12,9 @@
     "Nasdaq 23,879 -2.25%",
     "Dow 49,097 -2.19%",
     "10Y 5.04% -3bp",
-    "Gold $3,660 -2.19%"
+    "Gold $3,685 -1.51%"
    ],
-   "c1": "<p>Anthropic raised the money and the market took it away. The Claude maker priced the largest IPO on record at $83 a share, opened at $111.50 - a 34.3% pop - and briefly carried a $2 trillion fully diluted valuation, yet the S&amp;P 500 fell 147.80 points, or 2.02%, to 7,175.83 for a sixth straight loss, its longest in two and a half years. The index had been up as much as 1.3% before the first trade; the Nasdaq, up 2% early, closed 2.25% lower at 23,879.20. The Dow lost 1,101.11 points, or 2.19%, to 49,097.06, its first close below 50,000 since June. Nvidia erased a 4.7% gain to close 3.30% lower, Micron flipped from +7.8% to -2.1% and AMD fell 7.72% after Hunterbrook Capital disclosed a short position. Gold's December contract settled 2.19% lower at $3,660.10 and Brent rose 3 cents to $91.98 as the dollar held near a 19-month high.</p>",
+   "c1": "<p>Anthropic raised the money and the market took it away. The Claude maker priced the largest IPO on record at $83 a share, opened at $111.50 - a 34.3% pop - and briefly carried a $2 trillion fully diluted valuation, yet the S&amp;P 500 fell 147.80 points, or 2.02%, to 7,175.83 for a sixth straight loss, its longest in two and a half years. The index had been up as much as 1.3% before the first trade; the Nasdaq, up 2% early, closed 2.25% lower at 23,879.20. The Dow lost 1,101.11 points, or 2.19%, to 49,097.06, its first close below 50,000 since June. Nvidia erased a 4.7% gain to close 3.30% lower, Micron flipped from +7.8% to -2.1% and AMD fell 7.72% after Hunterbrook Capital disclosed a short position. Gold's December contract settled 1.51% lower at $3,685.50 and Brent rose 3 cents to $91.98 as the dollar held near a 19-month high.</p>",
    "c4": "<ul class='play'><li>The event: the biggest IPO ever opened 34% above its $83 price and closed 17% higher at $97.17, and the S&amp;P still fell 2.02%.</li><li>The reversal: the S&amp;P was up 1.3% and the Nasdaq 2% before Anthropic traded; both closed at session lows.</li><li>The breadth: more than 90% of the S&amp;P 500 fell and all 11 sectors closed lower.</li><li>The tell: the 10Y fell 3bp to 5.04% while gold fell 2.19%, so bonds were buying safety rather than easing.</li></ul>",
    "kpi": [
     [
@@ -37,8 +37,8 @@
     ],
     [
      "Gold",
-     "$3,660",
-     "-2.19%",
+     "$3,685",
+     "-1.51%",
      0
     ]
    ],
@@ -76,8 +76,8 @@
     [
      "Gold",
      "$3,741.90",
-     "$3,660.10",
-     "-2.19%"
+     "$3,685.50",
+     "-1.51%"
     ]
    ],
    "labels": [
@@ -362,20 +362,20 @@
     {
      "t": "④ Gold Failed as a Hedge While Oil Held",
      "steps": [
-      "Gold's December contract settled 2.19% lower at $3,660.10, extending its slide to a 14-month low even as Treasury yields fell",
+      "Gold's December contract settled 1.51% lower at $3,685.50, extending its slide to a 14-month low even as Treasury yields fell",
       "The dollar index held at 103.94, near its highest since April 2025, and markets priced about a 91% chance of a December rate hike",
       "Brent settled up 3 cents, or 0.03%, at $91.98, while WTI fell 5 cents, or 0.06%, to $83.21, its lowest since August 26",
       "Two tankers struck naval mines in the Strait of Hormuz and exploded, Iran's navy said, and Houthi missiles hit Riyadh",
       "The IEA put cumulative Middle East supply losses at 2.8 billion barrels of oil and 60 billion cubic metres of gas",
       "Rising US crude inventories and forecasts of a global surplus kept the rally capped"
      ],
-     "d": "Gold's failure is the tell: it fell 2.19% to a 14-month low while yields fell, because the dollar and Fed pricing, not safety, are driving it; oil was flat because Hormuz supply risk offset the surplus.",
+     "d": "Gold's failure is the tell: it fell 1.51% to a 14-month low while yields fell, because the dollar and Fed pricing, not safety, are driving it; oil was flat because Hormuz supply risk offset the surplus.",
      "news": [
       {
        "time": "11/19",
-       "fact": "December gold settled at $3,660.10, down $81.80 from the prior settlement of $3,741.90.",
-       "src": "Brownfield Ag News",
-       "u": "https://brownfieldagnews.com/news/closing-grain-and-livestock-futures-november-19-2026"
+       "fact": "US gold futures for December delivery settled 1.5% lower at $3,685.50, down $56.40 from the prior settlement of $3,741.90.",
+       "src": "Reuters",
+       "u": "https://www.reuters.com/world/india/gold-edges-up-14-month-low-markets-assess-fed-rate-outlook-2026-11-19/"
       },
       {
        "time": "11/19",
@@ -560,8 +560,8 @@
     [
      "Gold",
      "$3,898.90",
-     "$3,660.10",
-     "-6.12%"
+     "$3,685.50",
+     "-5.47%"
     ]
    ],
    "labels": [
@@ -761,12 +761,12 @@
     {
      "t": "④ The Hedges Failed Again",
      "steps": [
-      "Gold fell from 3,898.90 to 3,660.10, -6.12%",
+      "Gold fell from 3,898.90 to 3,685.50, -5.47%",
       "Bitcoin fell from 77,198.21 to 61,984.03, -19.71%",
       "The VIX rose from 19.42 to 28.44, +46.45%",
       "The dollar index rose from 101.88 to 103.94, +2.02%"
      ],
-     "d": "The month's hedges both lost money: gold 6.12% lower and bitcoin 19.71%, while volatility was the one thing that paid.",
+     "d": "The month's hedges both lost money: gold 5.47% lower and bitcoin 19.71%, while volatility was the one thing that paid.",
      "news": [
       {
        "time": "10/30 close",
@@ -782,9 +782,9 @@
       },
       {
        "time": "11/19",
-       "fact": "Gold December contract settled at $3,660.10 on 11/19, $81.80 below the prior settlement.",
-       "src": "Brownfield Ag News",
-       "u": "https://brownfieldagnews.com/news/closing-grain-and-livestock-futures-november-19-2026"
+       "fact": "December gold settled at $3,685.50 on 11/19, $56.40 below the prior settlement.",
+       "src": "Reuters",
+       "u": "https://www.reuters.com/world/india/gold-edges-up-14-month-low-markets-assess-fed-rate-outlook-2026-11-19/"
       },
       {
        "time": "11/19 close",
@@ -828,8 +828,8 @@
     ],
     [
      "Gold",
-     "$3,660",
-     "-12.58%",
+     "$3,685",
+     "-11.97%",
      0
     ]
    ],
@@ -867,8 +867,8 @@
     [
      "Gold",
      "$4,186.70",
-     "$3,660.10",
-     "-12.58%"
+     "$3,685.50",
+     "-11.97%"
     ]
    ],
    "labels": [
@@ -1073,11 +1073,11 @@
     {
      "t": "④ Gold and Bitcoin Did Not Hedge Q4",
      "steps": [
-      "Gold fell from 4,186.70 to 3,660.10, -12.58%",
+      "Gold fell from 4,186.70 to 3,685.50, -11.97%",
       "Bitcoin fell from 83,553.85 to 61,984.03, -25.82%",
       "The dollar index rose 2.45% to 103.94"
      ],
-     "d": "The quarter's hedges failed: gold is 12.58% lower and bitcoin 25.82%, while the dollar is 2.45% higher.",
+     "d": "The quarter's hedges failed: gold is 11.97% lower and bitcoin 25.82%, while the dollar is 2.45% higher.",
      "news": [
       {
        "time": "9/30 close",
@@ -1093,9 +1093,9 @@
       },
       {
        "time": "11/19",
-       "fact": "December gold ended 11/19 at $3,660.10, down $81.80 from $3,741.90.",
-       "src": "Brownfield Ag News",
-       "u": "https://brownfieldagnews.com/news/closing-grain-and-livestock-futures-november-19-2026"
+       "fact": "December gold ended 11/19 at $3,685.50, down $56.40 from $3,741.90.",
+       "src": "Reuters",
+       "u": "https://www.reuters.com/world/india/gold-edges-up-14-month-low-markets-assess-fed-rate-outlook-2026-11-19/"
       },
       {
        "time": "11/19 close",
@@ -1110,8 +1110,8 @@
   "ytd": {
    "h": "The Bull at +4.83%: Energy +36%, Staples Second, Tech Fourth",
    "d": "S&P +4.83%, Nasdaq +2.74% and Dow +2.15%: energy +36.19%, staples +15.68% and health +14.64% carry the year, with technology +11.61% fourth; the 10Y is 86bp higher at 5.04% and Brent 51.16% higher. Communications -12.71% and consumer discretionary -2.96% are the only sectors down.",
-   "c1": "<p>The year's engine is not the AI trade. Energy leads at +36.19%, staples is second at +15.68%, health third at +14.64%, technology fourth at +11.61% and materials fifth at +8.97%; real estate (+6.27%) and industrials (+4.02%) are the only other sectors ahead of the index, and financials (+1.48%) and utilities (+0.75%) are just behind. Communications -12.71% and consumer discretionary -2.96% are the only sectors down. The referee is the 10Y at 5.04%, 86bp above where 2025 ended, with the 2Y 129bp higher and 2s10s 43bp flatter at 28bp. Gold -15.69% and bitcoin -29.17% mean the year's hedges both lost money.</p>",
-   "c4": "<ul class='play'><li>The engine: energy +36.19% and staples +15.68%, with health +14.64% third and technology +11.61% fourth.</li><li>The referee: an 86bp 10Y and a 129bp 2Y, with 2s10s 43bp flatter at 28bp.</li><li>The breadth: nine of 11 sectors are higher and the average stock is 5.50 points ahead.</li><li>The hedges: gold -15.69% and bitcoin -29.17%, both lower for the year.</li></ul>",
+   "c1": "<p>The year's engine is not the AI trade. Energy leads at +36.19%, staples is second at +15.68%, health third at +14.64%, technology fourth at +11.61% and materials fifth at +8.97%; real estate (+6.27%) and industrials (+4.02%) are the only other sectors ahead of the index, and financials (+1.48%) and utilities (+0.75%) are just behind. Communications -12.71% and consumer discretionary -2.96% are the only sectors down. The referee is the 10Y at 5.04%, 86bp above where 2025 ended, with the 2Y 129bp higher and 2s10s 43bp flatter at 28bp. Gold -15.10% and bitcoin -29.17% mean the year's hedges both lost money.</p>",
+   "c4": "<ul class='play'><li>The engine: energy +36.19% and staples +15.68%, with health +14.64% third and technology +11.61% fourth.</li><li>The referee: an 86bp 10Y and a 129bp 2Y, with 2s10s 43bp flatter at 28bp.</li><li>The breadth: nine of 11 sectors are higher and the average stock is 5.50 points ahead.</li><li>The hedges: gold -15.10% and bitcoin -29.17%, both lower for the year.</li></ul>",
    "kpi": [
     [
      "S&P",
@@ -1172,8 +1172,8 @@
     [
      "Gold",
      "$4,341.10",
-     "$3,660.10",
-     "-15.69%"
+     "$3,685.50",
+     "-15.10%"
     ]
    ],
    "labels": [
@@ -1361,7 +1361,7 @@
       "Seven of 11 sectors are ahead of the S&P's +4.83%: energy, staples, health, technology, materials, real estate and industrials",
       "The median sector is +6.27%, 1.44 points ahead of the index",
       "The equal-weight RSP is +10.48% against SPY +4.98%, a 5.50-point lead",
-      "Gold is -15.69% and bitcoin -29.17%"
+      "Gold is -15.10% and bitcoin -29.17%"
      ],
      "d": "Breadth is the year's surprise: seven sectors and the average stock beat the index, and the two assets bought as insurance, gold and bitcoin, are both lower.",
      "news": [
@@ -1391,9 +1391,9 @@
       },
       {
        "time": "11/19",
-       "fact": "Gold settled at $3,660.10 on 11/19, down $81.80 on the session.",
-       "src": "Brownfield Ag News",
-       "u": "https://brownfieldagnews.com/news/closing-grain-and-livestock-futures-november-19-2026"
+       "fact": "Gold settled at $3,685.50 on 11/19, down $56.40 on the session.",
+       "src": "Reuters",
+       "u": "https://www.reuters.com/world/india/gold-edges-up-14-month-low-markets-assess-fed-rate-outlook-2026-11-19/"
       },
       {
        "time": "11/19 close",
@@ -1569,8 +1569,8 @@
      ],
      [
       "Gold fut",
-      "$3,660",
-      "-2.19"
+      "$3,685",
+      "-1.51"
      ],
      [
       "DXY",
@@ -1716,8 +1716,8 @@
      ],
      [
       "Gold fut",
-      "$3,660",
-      "-6.12"
+      "$3,685",
+      "-5.47"
      ],
      [
       "DXY",
@@ -1858,8 +1858,8 @@
      ],
      [
       "Gold fut",
-      "$3,660",
-      "-12.58"
+      "$3,685",
+      "-11.97"
      ],
      [
       "DXY",
@@ -2000,8 +2000,8 @@
      ],
      [
       "Gold fut",
-      "$3,660",
-      "-15.69"
+      "$3,685",
+      "-15.10"
      ],
      [
       "DXY",
