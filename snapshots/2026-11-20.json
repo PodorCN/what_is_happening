@@ -1,12 +1,12 @@
 {
  "date": "2026-11-20",
  "updatedAt": "2026-11-20T22:10:00Z",
- "label": "2026-11-20 周五收盘",
- "foot": "Closing baseline (auto 2026-11-20): SPX 6910.39 (-3.70% day / -8.83% MTD / -9.69% QTD / +0.95% YTD) · DJI 48147.33 · IXIC 22617.73 · 10Y 4.92% / 2Y 4.63% / 30Y 5.31% (Treasury daily par curve) · WTI 83.98 (Dec settle, final front-month session) · Brent 92.57 (Jan settle; QTD base 94.52 = 9/30 Dec 98.03 x 113.43/117.64, roll-adjusted) · Gold 3514.50 (Dec COMEX settle) · BTC 58893.09 (4pm ET) · VIX 35.89. Sector and single-name returns computed from Yahoo closes; WTI/Brent from Reuters settlement reports, gold from the Dec COMEX settlement window. 25-12-31 S&P 6845.5/Dow 48063.29/Nasdaq 23241.99/10Y 4.18%/30Y 4.84%/2Y 3.47%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.44% · 26-08-31 S&P 7686.14/10Y 4.75% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/2Y 4.88%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4186.70 (fut)/BTC $83553.85/VIX 16.34. For information only - not investment advice.",
+ "label": "2026-11-20 Friday close",
+ "foot": "Closing baseline (auto 2026-11-20): SPX 6910.39 (-3.70% day / -8.83% MTD / -9.69% QTD / +0.95% YTD) · DJI 48147.33 · IXIC 22617.73 · 10Y 4.92% / 2Y 4.63% / 30Y 5.31% (Treasury daily par curve) · WTI 83.98 (Dec settle, final front-month session) · Brent 92.57 (Jan settle; QTD base 94.52 = 9/30 Dec 98.03 x 113.43/117.64, roll-adjusted) · Gold 3514.50 (Dec COMEX settle; prior 3,685.50 as revised 11/20) · BTC 58893.09 (4pm ET) · VIX 35.89. Sector and single-name returns computed from Yahoo closes; WTI/Brent from Reuters settlement reports, gold from the Dec COMEX settlement window. 25-12-31 S&P 6845.5/Dow 48063.29/Nasdaq 23241.99/10Y 4.18%/30Y 4.84%/2Y 3.47%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.44% · 26-08-31 S&P 7686.14/10Y 4.75% · 26-09-30 S&P 7651.54/Dow 50906.05/Nasdaq 26861.06/10Y 5.29%/30Y 5.64%/2Y 4.88%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4186.70 (fut)/BTC $83553.85/VIX 16.34. For information only - not investment advice.",
  "P": {
   "today": {
    "h": "The Last Good News Failed: S&P -3.70% in a Seventh Straight Loss, Nasdaq -5.28% and Negative for the Year",
-   "d": "Anthropic's record IPO did not revive the AI trade; it marked the top. The S&P and Dow closed in correction, the Nasdaq gave back all of 2026, and the money went to Treasuries and staples while gold and bitcoin were sold for cash.",
+   "d": "Anthropic's record IPO did not revive the AI trade; it marked the top. The S&P closed in correction, 11.62% below its record, while the Dow sits 9.76% below its own; the Nasdaq gave back all of 2026, and the money went to Treasuries and staples while gold and bitcoin were sold for cash.",
    "badges": [
     "S&P 6,910 -3.70%",
     "Dow 48,147 -1.93%",
@@ -120,7 +120,7 @@
      "main": 1,
      "steps": [
       "Anthropic priced at $83 and closed its debut at $97.17 on 11/19; on 11/20 it closed at $88.91, 8.50% lower, after trading at $83.05",
-      "Reuters reported the SEC is exploring possible accounting issues at Nvidia, the single-name trigger for the session",
+      "Nvidia fell 14.01% to $125.53 as a regulatory problem replaced the valuation debate",
       "The semis followed: the PHLX Semiconductor Index -10.73%, AMD -13.25%, Micron -13.90%, Broadcom -12.19%",
       "The S&P 500 fell 3.70% to 6,910.39, a seventh straight decline, and the Nasdaq 5.28% to 22,617.73, now negative for 2026",
       "The bid went to Treasuries and staples, the only two places that held",
@@ -141,22 +141,16 @@
        "u": "https://www.cnbc.com/2026/11/20/stocks-moving-the-most-today-live-updates.html"
       },
       {
-       "time": "11/20",
-       "fact": "Reuters reported that the U.S. Securities and Exchange Commission is exploring possible accounting issues at Nvidia.",
-       "src": "CNBC",
-       "u": "https://www.cnbc.com/2026/11/19/stock-market-today-live-updates.html"
-      },
-      {
        "time": "11/20 close",
        "fact": "NVDA closed at $125.53, down 14.01% from $145.98.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/NVDA/history"
       },
       {
-       "time": "11/20",
-       "fact": "The PHLX Semiconductor Index sank 10.7%.",
-       "src": "AP",
-       "u": "https://spectrumlocalnews.com/nc/coastal/business/2026/11/20/wall-street-nov-20-2026"
+       "time": "11/20 close",
+       "fact": "The PHLX Semiconductor Index (^SOX) closed at 8,408.59, down 10.73% from 9,419.72.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/%5ESOX/history"
       },
       {
        "time": "11/20",
@@ -197,7 +191,7 @@
       "California's attorney general served Nvidia an investigative subpoena over whether advanced chips may have gone to China",
       "NVDA closed at $125.53, down 14.01% and 33% lower in November",
       "It is the seventh consecutive losing week, the longest streak since the 2008 financial crisis",
-      "Seventy-one of the Nasdaq-100's 101 stocks are in bear markets, including all 20 semiconductor and memory names"
+      "Seventy-one of the Nasdaq-100's 101 stocks are in bear markets, including all 20 semiconductor and memory names, and the VIX ended at 35.89, the highest since April 2025"
      ],
      "d": "A valuation debate can be argued with; a subpoena cannot, which is why Nvidia fell nearly four times as much as the S&P and carried the whole AI complex with it.",
      "news": [
@@ -226,23 +220,23 @@
        "u": "https://finance.yahoo.com/markets/live/stock-market-today-friday-november-19-dow-sp-500-nasdaq-anthropic-nvidia-141644188.html"
       },
       {
-       "time": "11/20 close",
-       "fact": "^SOX closed at 8,408.59, down 10.73% from 9,419.72.",
+       "time": "11/20",
+       "fact": "The VIX closed at 35.89, its highest close since April 2025, when it closed at 37.56 on 4/11.",
        "src": "Yahoo Finance",
-       "u": "https://finance.yahoo.com/quote/%5ESOX/history"
+       "u": "https://finance.yahoo.com/quote/%5EVIX/history"
       }
      ]
     },
     {
      "t": "③ A Hiding Place, Not a Rotation",
      "steps": [
-      "Staples +0.67% was the only sector to rise; health -0.12% and energy -0.62% lost the least among the rest",
+      "Staples +0.67% was the only sector to rise; health -0.12%, energy -0.62% and utilities -0.74% lost the least among the rest",
       "Walmart gained more than 1%, while Costco, Johnson & Johnson and Procter & Gamble each rose around 1%",
       "The selling reached past AI: the Russell 2000 fell 2.76% to 2,581.79, more than the Dow's 1.93%",
       "Technology's 7.27% decline was the deepest of the 11",
       "Consumer sentiment rose to 51.5 in November from 48.0, and year-ahead inflation expectations fell to 3.7% from 4.7%"
      ],
-     "d": "One green sector and four mega-cap staples names is a hiding place, not a rotation; the Russell's 2.76% fall shows the selling had already left the AI complex.",
+     "d": "One green sector and four mega-cap defensive names - three staples plus J&J - is a hiding place, not a rotation; the Russell's 2.76% fall shows the selling had already left the AI complex.",
      "news": [
       {
        "time": "11/20 close",
@@ -279,12 +273,6 @@
        "fact": "Consumers expect prices to rise 3.7% over the next year, the lowest since February and down from 4.7% in October.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/economy/articles/us-consumer-sentiment-rises-improved-150000834.html"
-      },
-      {
-       "time": "11/20",
-       "fact": "The VIX closed at 35.89, its highest close since April 2025, when it closed at 37.56 on 4/11.",
-       "src": "Yahoo Finance",
-       "u": "https://finance.yahoo.com/quote/%5EVIX/history"
       }
      ]
     },
@@ -357,7 +345,7 @@
      "news": [
       {
        "time": "11/20",
-       "fact": "COMEX gold futures settled down $171.50 at $3,514.50 an ounce on Friday.",
+       "fact": "COMEX gold futures settled $171.00 lower at $3,514.50 an ounce on Friday, a 4.64% decline from the prior settlement of $3,685.50.",
        "src": "GoldSquawk",
        "u": "https://goldsquawk.com/opinion/gold-drops-fed-bets-yemen-threat-lifts-red"
       },
@@ -623,10 +611,10 @@
      "steps": [
       "The S&P is 8.83% below its 10/30 base, the Nasdaq 11.08% and the Dow 7.00%",
       "The Russell 2000 is 8.18% lower, marginally better than the S&P, so small caps did not underperform the index",
-      "Financials fell 3.43% and real estate 1.64%, far less than the AI-linked sectors",
-      "Nine of 11 sectors are lower, and the two that are not are the year's defensive stands"
+      "Financials fell 3.43%, real estate 1.64% and consumer discretionary 2.53%, far less than the AI-linked sectors",
+      "Nine of 11 sectors are lower, and only staples (+1.16%) of the two that are not is a defensive stand; communications (+0.13%) is the month's other gainer but the year's worst at -15.03%"
      ],
-     "d": "Concentration cut both ways in November: the index fell almost as much as small caps, but nearly all of the damage came from the largest technology names rather than from the broad market.",
+     "d": "Concentration cut both ways in November: the megacaps supplied most of the drop, but small caps fell 8.18% against the S&P's 8.83%, so the broad market was not spared.",
      "news": [
       {
        "time": "10/30 close",
@@ -1103,25 +1091,13 @@
        "time": "10/6 close",
        "fact": "The S&P 500 peaked at 7,818.93 on 10/6, a record close 14.22% above the 2025 close of 6,845.50.",
        "src": "Yahoo Finance",
-       "u": "https://finance.yahoo.com/quote/%5EIXIC/history"
+       "u": "https://finance.yahoo.com/quote/%5EGSPC/history"
       },
       {
        "time": "11/20 close",
        "fact": "The Nasdaq closed at 22,617.73, 2.69% below its 2025 close of 23,241.99.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/%5EIXIC/history"
-      },
-      {
-       "time": "11/20 close",
-       "fact": "XLE closed at $60.51, up 35.34% from $44.71 on 12/31/25.",
-       "src": "Yahoo Finance",
-       "u": "https://finance.yahoo.com/quote/XLE/history"
-      },
-      {
-       "time": "11/20 close",
-       "fact": "XLP closed at $90.46, up 16.45% from $77.68 on 12/31/25, and XLK at $149.01, up 3.50% from $143.97.",
-       "src": "Yahoo Finance",
-       "u": "https://finance.yahoo.com/quote/XLP/history"
       },
       {
        "time": "10/6 close",
@@ -1187,6 +1163,18 @@
        "fact": "XLV closed at $177.24, up 14.50% from $154.80 on 12/31/25, and XLB at $48.34, up 6.59% from $45.35.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/XLV/history"
+      },
+      {
+       "time": "11/20 close",
+       "fact": "XLE closed at $60.51, up 35.34% from $44.71 on 12/31/25.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLE/history"
+      },
+      {
+       "time": "11/20 close",
+       "fact": "XLP closed at $90.46, up 16.45% from $77.68 on 12/31/25, and XLK at $149.01, up 3.50% from $143.97.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLP/history"
       }
      ]
     }

@@ -2805,9 +2805,17 @@
               "rule": "同一商品的「settled down $X at $Y」必须满足 prev = Y + X；差 >$0.10 时改写（改 drop 金额或用 ~ 约数），并在 foot 注明修订来源。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": [],
+          "note": "fixer: 10/11 findings 成立并修复（F1/F2/F3/F4/F5/F7/F8/F9/F10/F11）；F6 驳回——该 Yahoo live URL 实测 HTTP 200、datePublished 2026-11-20T09:28Z、标题「Dow and S&P 500 enter correction, Nasdaq sinks 5%…」、正文含所引「Seventy-one of the 101」「below $59,000」，页面就是 11/20 的 live blog，slug 里的 friday-november-19 是 Yahoo 自身笔误（thursday-november-19 / friday-november-20 两个变体均 404），改 slug 会造出死链，故保留。同型顺修：mtd ③ s2 补 consumer discretionary −2.53（n3 原本无 step 支撑）、ytd ① 的 XLE / XLP-XLK 两条 sector 锚点移到 ③ s1（① 无对应 step）、today ③ s0 补 utilities −0.74%（前三小跌幅漏一个）。lint 0 error/0 warning、build-shell/verify 通过、http ?date=2026-11-20 四档 + 热力图 + 链渲染正常。"
         }
       ],
-      "resolved": false
+      "resolved": true,
+      "fixedAt": "2026-11-20T19:20:00-05:00",
+      "fixNote": "F1 today.d 改为只让 S&P 称 correction 并给出 Dow −9.76%；F2 删 ① 的 SEC sentence/news，① s1 改为 NVDA −14.01%/125.53 的传导句；F3 11/19 today.c4 2.19%→1.51%、mtd.c4 −6.12%→−5.47%；F4 mtd ③ s3 改为「只有 staples 是防御，communications 是月内另一个上涨但年内最差 −15.03%」；F5 mtd ③ d 改为「megacaps 贡献大部分跌幅，但 small caps −8.18% vs S&P −8.83%，broad market 未能幸免」；F7 today ③ d 改「three staples plus J&J」；F8 label →「2026-11-20 Friday close」；F9 ytd ① n1 URL ^IXIC→^GSPC；F10 ① 补 NVDA 进 s1、SOX close 归 ① n4、VIX 补进 ② s4 并把 news 移到 ②；F11 gold ⑤ n0 改「$171.00 lower … prior settlement of $3,685.50」，foot 注明 11/19 修订。F6 驳回理由见 round 2 note。"
     }
   ]
 }

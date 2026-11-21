@@ -42,6 +42,8 @@
 | 2026-11-09 | schema | data 的 closes.brent 只有 qtdBase: 94.52，缺 qtdBaseRaw / qtdBaseNote（11/03 起连续丢失），无法从 data 复核 QTD 的换月回补 | 每次 fetch/手填后 Brent 必须同时写 qtdBase: 94.52、qtdBaseRaw: 98.03、qtdBaseNote: "roll-adjusted: Dec 98.03 x 113.43/117.64 …"；缺任一字段视为 schema 不完整（可在 lint 检查） |
 | 2026-11-13 | 取数 | 2Y 收盘用了 CNBC 报价页的盘中「last stood at 4.848%, down from 4.864%」，写成 4.85%/-1bp；AP 同日收盘稿为「rose to 4.87% from 4.86% late Thursday」（方向相反、差 2bp）。连带四档 HEAT 2Y（mtd 应 +31、qtd -1、ytd +140）、2s10s +28bp、qtd flatten 13bp、ytd 43bp、本周 +36bp 全错 | Treasury par curve 当日未发布时，2Y/30Y 取 AP/Reuters 收盘稿值（本次 2Y=4.87%）并在 foot 注「wire close」；禁止用报价页的「last stood」盘中值当收盘。改后一次重算四档 HEAT 的 2Y bp、2s10s 水平、flatten/steepen 与本周变动，grep「4.85」「29bp」「138bp」「35bp」应为 0 处；文中 2s10s 水平由 lint §20 对 HEAT 10Y−2Y 自动校验 `[lint]` |
 | 2026-11-16 | 数据 | 当日 bp 的 11/13 基线取了后发布的 Treasury par（2Y 4.88 / 30Y 5.47），与本站 11/13 已发布的 4.87 / 5.48 差 1bp，导致 ② step 的 2Y -5bp / 30Y -1bp / 2s10s +2bp 与 HEAT 两格全偏（按发布值应为 -4 / -2 / +1） | 写当日 bp 前先打开上一交易日快照 HEAT 的收益率三行取基线（本次 5.15 / 4.87 / 5.48）；若决定改用后发布的 Treasury par，必须在同一 commit 回写上一日 tbl/HEAT/foot 并在 foot 注明修正，再重算当日 bp 与 2s10s；改完 grep「-5bp」「-1bp」「steepened 2bp」应为 0 处 |
+| 2026-11-20 | 数字 | 修订 11/19 黄金结算价（3,660.10→3,685.50、day −1.51%）时只同步了 tbl/kpi/HEAT 与部分链，同文件的 today.c4 仍写「gold fell 2.19%」、mtd.c4 仍写「gold −6.12%」（同档 tbl 分别为 −1.51% / −5.47%） | 修订历史结算价后旧值会以「百分比」形式残留在同文件的 c4/steps/d 里：改价后立刻 grep 旧值字符串（2.19 / 6.12 / 3660.10）并对四档每一处 c1/c4/d/steps/foot 用同档 tbl 的百分比逐条回读，差 0.01pp 即改 |
+| 2026-11-20 | 数字 | today ⑤ n0「settled down $171.50 at $3,514.50」隐含前结算 3,686.00，与本站 tbl/prev 的 3,685.50 差 $0.50，day% 按 3,685.50 应为 −4.64% 而非 −4.65% | 同一商品的「settled down $X at $Y」必须满足 前结算 = Y + X；与本站 prev 差 >$0.10 就改写为「$X lower … from the prior settlement of $prev」（本次写 $171.00 / −4.64%），并在 foot 注一句修订来源，禁止直接照抄通讯社的 drop 金额 |
 
 ## 取数前提
 
@@ -191,6 +193,11 @@
 | 2026-11-19 | 数字 | today ③ s1「Energy -0.65% and staples -1.45% lost the least」漏掉 utilities -1.24%（跌幅第二小），staples 只是第三 | 写「lost the least / the weakest」前，把 HEAT 同档 11 个板块按涨跌幅排序取前三名逐个写进句子；名次与 HEAT 不符即错 |
 | 2026-11-19 | 引用 | mtd ③ n0/n1 把 10/30 的 Brent $113.43 / WTI $104.12 锚点挂在 11/19 的 Reuters 油价稿上：该页全文 0 处 113.43/104.12（2026-11-04 F9 同型） | 期初锚点必须挂专门复述该结算日的稿件：本次改用 CNBC 2026/10/30 结算稿（页内含 117.64 / 113.43 / 104.12 三个数）；挂 URL 前先在页内 grep 该数字，0 命中就换源 |
 | 2026-11-19 | 引用 | today ① n0 的「$70-$78 marketed range」不在所挂 CNBC live 页（该页只写 above the expected range、979.6m 股、$81.3B）；区间实际出自 CNBC 11/10 的定价区间稿 | 每个数字都要有针对它的那句话：price range 挂 CNBC 2026/11/10「Anthropic sets IPO price range of $70 to $78」，priced/开盘价挂 live 页；一条 fact 只写该来源页能逐字找到的内容（2026-11-18 F2 同型复发） |
+| 2026-11-20 | 数字 | today.d「The S&P and Dow closed in correction」：Dow 48,147.33 距历史最高收盘 53,356.12（11/4）只有 −9.76%，未达 −10%；同档 c1 只对 S&P 说了 correction | 写「X closed in correction」前先取该指数历史最高收盘现算 现价÷高点−1 ≤ −10% 才可写；未达就只保留成立的指数并给出距高点百分比（本次 S&P −11.62% / Dow −9.76%），d 与 c1 同步 |
+| 2026-11-20 | 逻辑 | mtd ③ s3「the two that are not are the year's defensive stands」把 communications 算进防御：它月内 +0.13%，但年内 −15.03% 是 11 个板块里最差 | 「defensive」只能用 XLP/XLU/XLV/XLRE；写「the year's …」前先看 HEAT.ytd 同板块符号——communications 只能写「the month's other gainer but the year's worst」 |
+| 2026-11-20 | 逻辑 | mtd ③ d「nearly all of the damage came from the largest technology names rather than from the broad market」与同链 s1「Russell 2000 −8.18%，仅略好于 S&P −8.83%」矛盾 | 写「rather than from the broad market」前先取同档小盘/等权跌幅：小盘跌幅 > 指数跌幅×0.9 时不得否定 broad market（本次 Russell −8.18% vs S&P −8.83%），改写为「megacaps supplied most of the drop, but small caps fell almost as much」 |
+| 2026-11-20 | 逻辑 | today ③ d「four mega-cap staples names」把 J&J 算进 staples；同链 s1 的四个名字只有 Walmart / Costco / P&G 属 XLP，JNJ 属 health care（XLV） | 数「N 个 X 板块的名字」前逐个核 GICS：JNJ 归 health care；改写为「three staples plus J&J」或删掉数量词，c4/d 同句一并核 |
+| 2026-11-20 | 引用 | ytd ① n1 的 fact 主语是 S&P（7,818.93 / 14.22% / 6,845.50），u 却指向 ^IXIC 的 quote 页 | news.fact 的主语指数与 URL ticker 必须一致（S&P→%5EGSPC、Nasdaq→%5EIXIC、Dow→%5EDJI、SOX→%5ESOX、VIX→%5EVIX）；定稿前逐条比对 fact 首个指数名与 URL，多主语 fact 以首个主语为准或拆条 |
 
 ## 链结构（主链 / 辅链）
 
@@ -232,12 +239,15 @@
 | 2026-11-19 | 逻辑 | today 的 90% breadth 在 ② s3/d 与 ③ t/s1/d 各讲一遍（同档 5 处）：② 是技术位链，广度不服务其 d，③ 才是广度链 | 广度（90% down、板块全涨/全跌的计数）只归广度链 ③；技术位链 ② 只留均线/整数关口/VIX/收益率/数据；定稿前 grep「90%」「all 11 sectors」确认只出现在一条链，删 step 时把该 fact 移挂 ③ |
 | 2026-11-19 | 逻辑 | qtd ③ 标题 "The Quarter's Rate Bill" 与同档 c4「The rate relief」、d「the curve did the work for equities」反向：本季 10Y −25bp、30Y −24bp 是减压不是成本（2026-11-18 F6 的复现） | 「bill / cost」只能用于窗口净变动为正的期限：先算 tbl 首尾 bp，负数就写 relief（本次改 "The Quarter's Rate Relief"）；定稿前把每条链 t 与同档 d/c4 的方向词（bill vs relief、drawdown vs rally）逐字对向 |
 | 2026-11-19 | 逻辑 | mtd ① s3 与 ③ s1/s2 数字交集：energy −13.04%、tech −10.48%、staples +0.49 在两条链各写一遍（2026-11-18 F5 同型）；同期 qtd ① s4 与 ② s0/d 把 RSP +1.74% / SPY −6.13% 写三遍 | 板块与宽度类窗口数字只归各自的专属链（板块→③，RSP/SPY→②）；主链只留方向与计数句（本次 ① 改成 "only communications, staples and consumer discretionary remain higher … the other eight, energy included, are lower"）；定稿前对同档每对链求百分比交集，同一数字出现两次以上即从主链删 |
+| 2026-11-20 | 逻辑 | 主链 ① s1 与辅链 ② s0 逐字重复「SEC is exploring possible accounting issues at Nvidia」，① n2 与 ② n0 还是同一条 CNBC URL：主链把披露事实当触发，② 没有主链之外的增量 | 主链与辅链不得逐字共句：定稿前对主链×每条辅链做 4-gram 比对（共享 ≥4 词即改）；SEC/法律类事实只归披露链 ②，主链改成不带该事实的传导句且保留可核对数字（本次 ① s1 →「Nvidia fell 14.01% to $125.53 as a regulatory problem replaced the valuation debate」，并删 ① 的 SEC news） |
+| 2026-11-20 | 引用 | 三条 news 在同链无 step 支撑：① n3（NVDA 125.53/−14.01）在 ① 无 NVDA step、② n4（SOX 8,408.59/−10.73）在 ② 无 SOX step、③ n6（VIX 35.89）在 ③ 无 VIX step（2026-11-03 同型复发） | 每条 news 必须能在同链某个 step 找到同主语（同数值更佳）：找不到就移到有该 step 的链或删掉；本次 NVDA 补进 ① s1、SOX 归 ① s2、VIX 补进 ② s4，顺带把 mtd ③ 的 XLY 补进 s2、ytd ① 的 XLE/XLP-XLK 移到 ③ s1；定稿前逐链列出 news 主语与 steps 主语求交，空集即改 |
 
 ## 交付与上线
 
 | 日期 | 类别 | 症状 | 规则 |
 |---|---|---|---|
 | 2026-11-09 | 渲染 | 交付未完成：snapshots/2026-11-09.json 与 data/2026-11-09.json 仍 untracked，index.html、snapshots/index.json 未提交，最新 commit 仍是 11/06；live*.html、scratch/ 调试残留未清理 | 收尾固定顺序：build-shell → verify → git add snapshots/<DATE>.json data/<DATE>.json snapshots/index.json index.html → git commit -m "wrap(<DATE>): …" → git push origin main → git log --oneline -2 确认；live*.html 与 scratch/ 先删掉，不得入库；工具预算不足时优先 commit/push，再写文案 |
+| 2026-11-20 | schema | snapshots/2026-11-20.json 的 label 写成「2026-11-20 周五收盘」，是 39 份快照里唯一含中文的一份，其余全部为「YYYY-MM-DD Weekday close」 | label 固定写「YYYY-MM-DD <Weekday> close」（英文），星期用 `date -d` 核；提交前 `grep -P '[\x{4e00}-\x{9fff}]' snapshots/<DATE>.json` 确认 label 无汉字 |
 
 
 ## 待补充
