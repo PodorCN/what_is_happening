@@ -1,6 +1,6 @@
 {
  "date": "2026-11-23",
- "updatedAt": "2026-11-23T22:24:29Z",
+ "updatedAt": "2026-11-23T22:27:39Z",
  "label": "2026-11-23 Monday close",
  "foot": "Closing baseline (auto 2026-11-23): SPX 7237.17 (+4.73% day / -4.52% MTD / -5.42% QTD / +5.72% YTD) · DJI 49595.31 · IXIC 24089.56 · 10Y 4.92% / 2Y 4.63% / 30Y 5.29% (Treasury daily par curve) · WTI 80.17 (Jan settle; MTD base 103.41 = 10/30 Dec 104.12 x 83.41/83.98, roll-adjusted; QTD base 87.82 = 9/30 Dec 88.42 x 83.41/83.98) · Brent 89.37 (Jan settle; QTD base 94.52 = 9/30 Dec 98.03 x 113.43/117.64, roll-adjusted) · Gold 3651.60 (Dec COMEX settle, 13:28-13:30 ET VWAP; front-month Nov settled 3,649.20) · BTC 61249.19 (4pm ET) · VIX 26.62. Sector and single-name returns computed from Yahoo closes; WTI/Brent from Reuters settlement reports. 25-12-31 S&P 6845.5/Dow 48063.29/Nasdaq 23241.99/10Y 4.18%/30Y 4.84%/2Y 3.47%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.44% · 26-08-31 S&P 7686.14/10Y 4.75% · 26-09-30 S&P 7651.54/10Y 5.29%/30Y 5.64%/2Y 4.88%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4186.70 (fut)/BTC $83553.85/VIX 16.34. For information only - not investment advice.",
  "P": {
@@ -173,7 +173,7 @@
      ]
     },
     {
-     "t": "② The Rally Was a Megacap Event, Not a Broad Recovery",
+     "t": "② The Rally Was Megacap-Led: The Average Stock Lagged",
      "steps": [
       "The equal-weight S&P 500 ETF (RSP) rose 2.59% to $212.82, 2.12 points behind SPY's 4.71%.",
       "Nine of 11 S&P sectors rose, but energy and staples were the only decliners.",
@@ -182,7 +182,7 @@
       "CrowdStrike fell 8.92% to $208.97 on its $43.9 billion all-stock purchase of Zscaler.",
       "The Russell 2000 rose 3.40% to 2,669.66, 1.33 points behind the S&P 500."
      ],
-     "d": "A 4.71% SPY day with a 2.59% equal-weight day is a megacap re-rating: the bid went to the AI complex and the growth sectors, and the two non-growth corners, energy and staples, were left out.",
+     "d": "A 4.71% SPY day with a 2.59% equal-weight day is a megacap-led re-rating: nine sectors rose, but the bid concentrated in AI and growth while energy and staples were left out.",
      "news": [
       {
        "time": "11/23 close",
@@ -907,7 +907,7 @@
      ]
     },
     {
-     "t": "③ The Quarter's Inversion: Defensives Up, AI Down",
+     "t": "③ The Quarter's Rotation: Defensives and Cyclicals Beat AI",
      "steps": [
       "Staples +12.13%, utilities +9.84%, consumer discretionary +7.43% and health +6.53% lead the quarter.",
       "Technology -17.05% and communications -6.64% are the worst; seven of 11 sectors are higher.",
