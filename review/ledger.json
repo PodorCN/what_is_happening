@@ -2816,6 +2816,109 @@
       "resolved": true,
       "fixedAt": "2026-11-20T19:20:00-05:00",
       "fixNote": "F1 today.d 改为只让 S&P 称 correction 并给出 Dow −9.76%；F2 删 ① 的 SEC sentence/news，① s1 改为 NVDA −14.01%/125.53 的传导句；F3 11/19 today.c4 2.19%→1.51%、mtd.c4 −6.12%→−5.47%；F4 mtd ③ s3 改为「只有 staples 是防御，communications 是月内另一个上涨但年内最差 −15.03%」；F5 mtd ③ d 改为「megacaps 贡献大部分跌幅，但 small caps −8.18% vs S&P −8.83%，broad market 未能幸免」；F7 today ③ d 改「three staples plus J&J」；F8 label →「2026-11-20 Friday close」；F9 ytd ① n1 URL ^IXIC→^GSPC；F10 ① 补 NVDA 进 s1、SOX close 归 ① n4、VIX 补进 ② s4 并把 news 移到 ②；F11 gold ⑤ n0 改「$171.00 lower … prior settlement of $3,685.50」，foot 注明 11/19 修订。F6 驳回理由见 round 2 note。"
-    }
+    },
+  {
+    "date": "2026-11-23",
+    "reviewedAt": "2026-11-23T18:45:11-05:00",
+    "reviewedCommit": "4a33ae7",
+    "verdict": "REVISE",
+    "rounds": [
+      {
+        "round": 1,
+        "verdict": "REVISE",
+        "findings": [
+          {
+            "id": "F1",
+            "severity": "major",
+            "category": "数字",
+            "symptom": "mtd ③ s3「The Nasdaq is 5.30% lower at 24,089.56, 1.10 points worse than the S&P」：5.30−4.52 = 0.78pp；1.10 是 Nasdaq 对 Dow 的差（5.30−4.20）。正确应写 0.78 points（或把比较对象改为 Dow）。",
+            "evidence": "同档 tbl：S&P −4.52%、Dow −4.20%、Nasdaq −5.30%；data.computed.ixic.mtdPct −5.30 / spx.mtdPct −4.52。",
+            "rule": "写「X points worse/better than Y」前用同档 tbl 两行百分比相减；句中同时出现 S&P/Dow/Nasdaq 时逐个配对，不得把对 Dow 的差写给 S&P。"
+          },
+          {
+            "id": "F2",
+            "severity": "major",
+            "category": "引用",
+            "symptom": "today ④ n1 的 fact 把来源的「2-year to 30-year gap about 62bp vs 68bp pre-market」写成「the 2s10s gap was about 62bp versus about 68bp」；同链 s2 写 2s10s 收在 29bp（Treasury 4.92−4.63），62bp 是 2s30s 口径，期限与数字双错。",
+            "evidence": "所引 Investing.com（Yahoo 转载）原文：「The 2-year to 30-year gap is about 62 bp, versus about 68 bp pre-market」；Treasury 11/23 CSV 10Y 4.92 / 2Y 4.63 → 2s10s 29bp；2s30s = 5.29−4.63 = 66bp。",
+            "rule": "引用曲线价差必须连同期限对一起抄（2-year to 30-year ≠ 2s10s）；同链 2s10s 只用 Treasury 收盘现算值 29bp，2s30s 另写并标明口径。"
+          },
+          {
+            "id": "F3",
+            "severity": "major",
+            "category": "数字",
+            "symptom": "qtd ③ s4「Energy is only 2.65% lower for the quarter despite a 21.21% drop this month」把 Brent 的月跌幅 21.21% 安在能源板块上：XLE 月内 −14.50%，−2.65% 是 XLE 的 QTD。",
+            "evidence": "HEAT.mtd Energy −14.50；HEAT.qtd Energy −2.65；mtd ① s4 与 mtd c4 的 21.21% 明确属于 Brent；XLE 59.87/70.02−1 = −14.50%。",
+            "rule": "同一句里板块与商品不可互换：写「Energy … despite」必须用 XLE 的 −14.50%；要引用 Brent 就写「Brent 21.21% lower this month」。"
+          },
+          {
+            "id": "F4",
+            "severity": "minor",
+            "category": "逻辑",
+            "symptom": "mtd ② n3 fact「The month ends with the 2Y at 4.63%, the 10Y at 4.92% and the 30Y at 5.29%」：11/23 只是倒数第 4 个交易日（11/24、11/25、11/27 仍在，11/26 休市），不是月末。",
+            "evidence": "mtd labels 末点 11/23；NYSE 日历 11/26 感恩节休市、11/27 提前收；LESSONS 2026-10-29「月末最后两个交易日禁用 ends the month」。",
+            "rule": "「ends the month / 月度收官」只留给月末最后一个交易日；此前写「with three sessions left」或「month-to-date」。"
+          },
+          {
+            "id": "F5",
+            "severity": "minor",
+            "category": "引用",
+            "symptom": "单标的 Yahoo /quote/<SYM>/history 页被用来背书多个标的的数字，共 7 条：mtd ① n5（XLC 页含 XLY）、mtd ③ n3（^DJI 页含 Nasdaq）、qtd ① n0（^GSPC 页含 Nasdaq）、ytd ① n0（^GSPC 页含 Dow/Nasdaq）、ytd ① n5（XLP 页含 XLV）、ytd ③ n2（XLRE 页含 XLI）、ytd ③ n3（XLF 页含 XLU）。",
+            "evidence": "Yahoo 单标的 history 页只展示 URL 中 symbol 的序列，第二标的数字在该页不可检索（LESSONS 2026-10-29 同型）；已用 Yahoo 日线核对，上述数字本身全部正确。",
+            "rule": "一条 fact 只写 URL 里那个 symbol 的数字；并列 N 个标的就拆成 N 条 news，各挂自己的 /quote/<SYM>/history。"
+          },
+          {
+            "id": "F6",
+            "severity": "minor",
+            "category": "schema",
+            "symptom": "板块 ETF 的 news 挂在与 step 不对应的链上/缺失：ytd ① n4-n6（XLE/XLP/XLV/XLK）所在的 ① 没有任何板块 step，而引用 staples/health/tech 的 ytd ③ s1 本链无对应 fact；qtd ① n3-n4（XLK/XLP）同病，引用它们的 qtd ③ s0/s1/s3/s4 无 XLP/XLK/XLF/XLRE/XLB/XLE fact；today ② s2 的 Tech +8.97/ConsDisc +3.97/Industrials +3.90/RealEstate +1.04 在 today 全档没有任何 XLK/XLY/XLI/XLRE close fact。",
+            "evidence": "逐链 grep：ytd ① steps 仅 S&P/Nasdaq/Dow/gold/BTC；qtd ① steps 无板块句；today ② news 只有 RSP/SPY/XLE/XLP/ANT/CRWD/RUT。LESSONS 2026-11-12「steps 每个板块数字都要有同板块 ETF close fact」与 2026-11-20 F10「news 须在同链 step 找到同主语」同型复发。",
+            "rule": "每个板块数字的 ETF close fact 必须挂在使用该数字的同一链；定稿前对每条链做「步骤板块名集合 − news 板块名集合」检查，差集非空就移动 fact 或补一条。"
+          },
+          {
+            "id": "F7",
+            "severity": "minor",
+            "category": "逻辑",
+            "symptom": "ytd ③ s5「The 45.90-point spread is wider than the quarter's 29.18-point spread, so the year's dispersion built in Q4」比较的是两对不同板块（year: Energy−Comms 45.90；Q4: Staples−Tech 29.18），不能据此推出 Q4 扩大了年度分化；同一对 Energy−Comms 在 9/30 已是 43.28，Q4 只扩大 2.62 点。",
+            "evidence": "XLE 9/30 61.50 / 2025 年底 44.71 → +37.55%；XLC 110.97/117.72−1 = −5.73%；9/30 spread 43.28 → 今日 45.90。QTD max spread = XLP +12.13 − XLK −17.05 = 29.18。",
+            "rule": "比较两个窗口的 spread 必须用同一对板块：写「Energy−Comms 从 9/30 的 43.28 扩到 45.90」；不同板块对只能并列，不得用「so … built in Q4」下结论。"
+          },
+          {
+            "id": "F8",
+            "severity": "minor",
+            "category": "数字",
+            "symptom": "today d「the equal-weight index lagged by 2.12 points」：2.12 是 RSP +2.59 vs SPY +4.71；对 S&P 500 指数（+4.73）应为 2.14。",
+            "evidence": "today ② s0 明确 2.12 = SPY 4.71 − RSP 2.59；tbl/kpi S&P +4.73。",
+            "rule": "d 里写差值必须同句点名比较对象（SPY 或 S&P 500），并与同链 step 用同一对象、同一数值；差 0.01pp 即统一。"
+          },
+          {
+            "id": "F9",
+            "severity": "minor",
+            "category": "引用",
+            "symptom": "today ② n5 把「Anthropic priced its IPO at $83」的 time 标成 11/20；本站 11/19 快照已记录「priced … at $83 a share, opened at $111.50」。",
+            "evidence": "snapshots/2026-11-19.json today.c1；CNBC 11/23 稿「gained 17% in its debut on Thursday」= 首日 11/19。",
+            "rule": "news.time 写事件发生日：IPO 定价写 11/19（定价/首日），不写 11/20 复盘文章日期。"
+          },
+          {
+            "id": "F10",
+            "severity": "minor",
+            "category": "引用",
+            "symptom": "qtd ① n7 把「roll-adjusted 9/30 base of $94.52」挂在 11/23 的 Reuters via CNA 油价稿上；该页只有 89.37 / 80.17，0 处 94.52/113.43。",
+            "evidence": "curl 该 CNA 页 grep：94.52 = 0、113.43 = 0、5.45 = 0；94.52 是 data.closes.brent.qtdBase（roll-adjusted 计算值）。",
+            "rule": "计算出来的基期/派生百分比不挂在行情新闻 URL 上：留在 data/foot 或另挂含该数的静态页；news.u 只背书页内实际出现的数字。"
+          },
+          {
+            "id": "F11",
+            "severity": "minor",
+            "category": "引用",
+            "symptom": "ytd ② n0 用 2026 年 Treasury CSV 背书 12/31/25 的 4.18%/3.47%/4.84%；该 CSV 最早一行是 01/02/2026，没有 12/31/2025。",
+            "evidence": "下载 field_tdr_date_value=2026 的 CSV：grep 12/31/2025 = 0，首行 01/02/2026；数值本身与 LESSONS 2026-10-20 的 Treasury 口径一致。",
+            "rule": "跨年锚点改挂 field_tdr_date_value=2025 的 CSV（或 2025-12-31 当日 Treasury 页）；年份必须与 URL 的 field_tdr_date_value 一致。"
+          }
+        ]
+      }
+    ],
+    "resolved": false
+  }
   ]
 }
