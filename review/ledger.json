@@ -2927,6 +2927,101 @@
     "resolved": true,
     "fixedAt": "2026-11-23T19:25:00-05:00",
     "fixNote": "F1 mtd ③ s3 1.10→0.78；F2 ④ n1 改为 2-year to 30-year gap（来源原口径）；F3 qtd ③ s4 21.21%→XLE 月跌 14.50%；F4 mtd ② n3「month ends」→「with three trading days left」；F5 7 条多标的 Yahoo fact 拆成单标的 news；F6 qtd/ytd 板块 ETF fact 移挂 ③、today ② 与 qtd ③ 补齐缺失 ETF fact；F7 ytd ③ s5 改为同一对 Energy−Comms 43.28→45.90；F8 today d 2.12→2.14（对 S&P 500）；F9 n5 time 11/20→11/18 after bell（CNBC 原文定价周三盘后，reviewer 的 11/19 是首日）；F10 删除挂 CNA 的 94.52 派生基期 fact，保留 foot；F11 ytd ② n0 URL 改 /2025/ + field_tdr_date_value=2025。lint 新增 §21 单标的页多标的、§22 链内板块 ETF fact 检查。"
-  }
+  },
+    {
+      "date": "2026-11-24",
+      "reviewedAt": "2026-11-24T18:44:06-05:00",
+      "reviewedCommit": "c4718e8",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "ytd ② d「116bp of 2-year tightening against 46bp at the 30-year, a 43bp flattening」：116bp(2Y) 配 46bp(30Y) 对应的是 2s30s 收窄 70bp（137→67bp）；43bp 是 2s10s 的收窄（71→28bp，116−73）。句中把 30Y 的 46bp 与 2s10s 的 43bp 拼在一起，读者按 116/46 算不出 43。",
+              "evidence": "Treasury daily par curve：12/31/25 2Y 3.47 / 10Y 4.18 / 30Y 4.84；11/24 2Y 4.63 / 10Y 4.91 / 30Y 5.30。2s10s 71→28bp（−43bp）；2s30s 137→67bp（−70bp）。同链 s1 自己写 10Y +73bp、30Y +46bp，s2 写 2s10s 71→28。",
+              "rule": "写「a Nbp flattening」前先锁定同一对期限：2Y−30Y 口径写 70bp（137→67），2Y−10Y 口径写 43bp（71→28）；句中列了 30Y 的 46bp 就不能配 43bp，要么把 46bp 换成 73bp(10Y)，要么把 43bp 换成 70bp。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "mtd ③ d「Concentration cut one way this month: the loss was in the megacaps」与同链 s1 的 Russell 2000 −4.51%（只比 S&P −5.00% 好 0.49pp）矛盾：小盘也跌了 4.51%，不能说损失只在 megacaps / 只 cut one way。",
+              "evidence": "HEAT.mtd Russell −4.51；同链 s2 自己写「The Russell 2000 is 4.51% lower ... 0.49 points better than the S&P 500」；LESSONS 2026-11-20 规则：小盘跌幅 > 指数×0.9（4.51 > 4.50）时不得否定 broad market。",
+              "rule": "写「the loss was in the megacaps / cut one way」前先取同档 Russell 与小盘跌幅；小盘跌幅 > 指数×0.9 就改写为「megacaps supplied most of the drop, but small caps fell almost as much」并保留 4.51 vs 5.00。"
+            },
+            {
+              "id": "F3",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "qtd ③ d「gold, bitcoin and crude all fell while the dollar rose, the mirror image of the first nine months」对 gold/BTC 不成立：两者在前九个月已经是跌的（gold 4,341.10→4,186.70 = −3.56%；BTC 87,508.83→83,553.85 = −4.52%），只有 crude（Brent 60.85→98.03 = +61.1%）是涨的；Q4 是延续而非镜像。",
+              "evidence": "data/foot 的 12/31 与 9/30 基期：gold 4,341.10 / 4,186.70，BTC 87,508.83 / 83,553.85，Brent 60.85 / 98.03；QTD 表 gold −14.92、BTC −28.62、Brent −3.30；YTD 表 gold −17.94、BTC −31.85、Brent +50.21。",
+              "rule": "写「mirror image of the first nine months」前用 ytd/qtd tbl 现算 9/30 相对 12/31 的符号；只有符号相反才写 mirror，gold/BTC 同号为延续，改写「extended the first nine months' losses」或只把 crude 写成镜像。"
+            },
+            {
+              "id": "F4",
+              "severity": "major",
+              "category": "引用",
+              "symptom": "ytd ② n1 用 /2026/ 且 field_tdr_date_value=2026 的 Treasury CSV 背书 12/31/2025 的 2Y 3.47% / 10Y 4.18% / 30Y 4.84%；该 CSV 最早 01/02/2026，grep 12/31/2025 = 0，URL 与 fact 年份不符。11/23 的同一问题（F11）已修复为 /2025/，今天回退。",
+              "evidence": "下载 field_tdr_date_value=2026 CSV：grep 12/31/2025 = 0，首行 01/02/2026；/2025/ CSV 的 12/31/2025 行 = 3.47/4.18/4.84。当前 11/23 快照 ytd ② n0 已是 /2025/ 路径，11/24 又回退到 /2026/。",
+              "rule": "跨年 Treasury 锚点固定挂 /2025/ 且 field_tdr_date_value=2025 的 CSV；写完对每条 Treasury fact 做「fact 年份 == URL 路径年份 == field_tdr_date_value」三项一致检查，2025 fact 配 2026 URL 即 ERROR。"
+            },
+            {
+              "id": "F5",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "ytd ① d「The year is positive on earnings and defensives, not on AI」与 ytd c4「not because AI did」不成立：同档 HEAT tech +9.11%（11 档第 5，高于 S&P +5.19%），Nasdaq +2.11%，AI 硬件 SOXX +28.1%、MU +120.7%、AMD +93.0%；AI 仍是正贡献，只是不再领跑。",
+              "evidence": "HEAT.ytd Tech +9.11、S&P +5.19、Nasdaq +2.11；Yahoo 12/31/25 vs 11/24：SOXX 100.38→128.62（+28.1%）、MU 285.41→629.79（+120.7%）、AMD 214.16→413.27（+93.0%）；同链标题「The Year's Two Engines Stalled in Q4」自己把 AI 列为引擎之一。",
+              "rule": "写「not on AI / not because AI did」前先取同档 tech 与 Nasdaq 的 YTD 符号（tech +9.11、Nasdaq +2.11 均为正）；只要为正就只能写「AI no longer leads」，不能否定 AI 的贡献，并同句给出 tech +9.11% vs S&P +5.19%。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "mtd ② d「gold, bitcoin and long duration all failed as hedges」与同链 s2「10Y fell 3bp」矛盾：10Y 收益率下行 3bp 对应价格约 +0.25%，long duration 不是 failed；c4 的 failed-hedge 清单也只列 gold/BTC/Brent，没有 duration。标题「The Month's Only Paid Hedge Was Volatility」的「Only」因此不成立。",
+              "evidence": "同链 s2：2Y +7bp、10Y −3bp、2s10s 38→28；10Y 修正久期约 8.5，−3bp ≈ +0.25% 价格回报；同档 c4「The hedge that failed: gold −8.64%, bitcoin −22.75% and Brent −19.42%」不含 duration。",
+              "rule": "写「only paid hedge / failed as hedges」前先算每个资产的窗口价格回报；10Y −3bp 是正回报，标题改「Volatility Was the Only Meaningful Hedge」，d 写「long duration returned only ~0.25%, not enough to offset the equity loss」，并把 duration 从 failed 清单里删掉。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "mtd ③ d「an equal-weighted portfolio kept 2.90 points more than the index」：2.90 是 RSP −1.99 vs SPY −4.89 的差；对 S&P 500（−5.00）应为 3.01。句中说「than the index」却用了 SPY 的口径。",
+              "evidence": "同链 s1「RSP is 1.99% lower ... against SPY's 4.89%」；tbl/HEAT mtd S&P −5.00；5.00−1.99 = 3.01，4.89−1.99 = 2.90。",
+              "rule": "d 里的差值句必须点名比较对象并与同链 step 同对象：写「than the index」就用 S&P 5.00−1.99=3.01，写「than SPY」才用 2.90。"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "qtd c4「The bill: the 2Y still carries 116bp of 2026 tightening expectations into the December FOMC」把 YTD 的 116bp 放进 QTD playbook，且 QTD 2Y 实际 −25bp；同档 ② 标题是「The Quarter's Rate Relief」，bill 与 relief 并置矛盾。",
+              "evidence": "Treasury：9/30 2Y 4.88 → 11/24 4.63（−25bp）；12/31/25 3.47 → 4.63（+116bp）。qtd ② 标题「The Quarter's Rate Relief」、c4 第 2 条「10Y −38bp, 30Y −34bp, 2Y −25bp」。",
+              "rule": "「bill / cost」只能用于窗口净变动为正的期限；QTD 2Y −25bp 不能写 bill，删掉该 bullet 或改成「the year's 116bp of 2Y tightening is still in the curve — not this quarter's」，并与「The Quarter's Rate Relief」同向。"
+            },
+            {
+              "id": "F9",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "qtd ③ s1 的换月句「December crude settled at $117.64 on 10/30 before the January contract took over」在本链 4 条 news 里没有 10/30 的结算来源（全部是 11/24 的稿）；117.64/113.43 只在 foot 的公式里出现。",
+              "evidence": "qtd ③ news：n1 11/24 gold、n2 11/24 BTC、n3 11/24 Brent settle 91.40、n4 11/24 DXY；grep 117.64/113.43 在 qtd ③ news = 0；LESSONS 2026-11-04 要求换月锚点挂 10/30 当日结算稿。",
+              "rule": "换月锚点（117.64/113.43 @10/30）必须挂 10/30 当日结算稿（CNBC/Reuters 10/30）；本链没有就补一条 10/30 的 news，或把该句从 step 移到 foot（foot 已有公式）。"
+            },
+            {
+              "id": "F10",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "mtd c1 / qtd c1 / qtd ① s3 写「the last two sessions recovered 4.21% of the 10.12% slide」：4.21 是自 11/20 低点 6,910.39 反弹到 7,201.09 的幅度（+4.21%），4.21% of 10.12% 字面只有 0.43pp；实际收复了 10.12% 跌幅的 41.6%（4.21pp）。",
+              "evidence": "6,910.39→7,201.09 = +4.207%；7,688.62→6,910.39 = −10.12%；4.207/10.12 = 41.6%。同档 mtd ① s2 的写法「recovered 4.21% from that low」才是自低点反弹口径。",
+              "rule": "写「recovered X% of the Y% slide」前先算 X/Y：X 是自低点反弹幅度、不是跌幅的百分比；本次写「recovered 4.21 percentage points (41.6%) of the 10.12% slide」，或保留「4.21% from the low」。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
+    }
   ]
 }
