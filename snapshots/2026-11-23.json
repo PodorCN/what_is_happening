@@ -6,7 +6,7 @@
  "P": {
   "today": {
    "h": "Huang's Return: S&P +4.73% and Nasdaq +6.51%, the Best Day Since April 2025",
-   "d": "Nvidia's board put Jensen Huang back 11 days after he resigned and the AI complex re-rated: NVDA +31.48%, the Nasdaq +6.51%, the VIX -25.83%. The S&P is still 7.44% below its record, the equal-weight index lagged by 2.12 points, and energy fell as crude hit a three-month low.",
+   "d": "Nvidia's board put Jensen Huang back 11 days after he resigned and the AI complex re-rated: NVDA +31.48%, the Nasdaq +6.51%, the VIX -25.83%. The S&P is still 7.44% below its record, the equal-weight index lagged the S&P 500 by 2.14 points, and energy fell as crude hit a three-month low.",
    "badges": [
     "S&P 7,237 +4.73%",
     "Dow 49,595 +3.01%",
@@ -210,12 +210,36 @@
       },
       {
        "time": "11/23 close",
+       "fact": "The technology ETF (XLK) closed at $162.38, up 8.97% from $149.01.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLK/history"
+      },
+      {
+       "time": "11/23 close",
+       "fact": "The consumer discretionary ETF (XLY) closed at $116.93, up 3.97% from $112.46.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLY/history"
+      },
+      {
+       "time": "11/23 close",
+       "fact": "The industrials ETF (XLI) closed at $162.47, up 3.90% from $156.37.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLI/history"
+      },
+      {
+       "time": "11/23 close",
+       "fact": "The real estate ETF (XLRE) closed at $42.90, up 1.04% from $42.46.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLRE/history"
+      },
+      {
+       "time": "11/23 close",
        "fact": "Anthropic (ANT) closed at $87.64, down 1.43% from $88.91 and below its $97.17 first-day close.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/ANT/history"
       },
       {
-       "time": "11/20",
+       "time": "11/18 after bell",
        "fact": "Anthropic priced its IPO at $83.",
        "src": "Investopedia",
        "u": "https://www.aol.com/articles/5-things-investors-know-monday-125056000.html"
@@ -302,7 +326,7 @@
       },
       {
        "time": "11/23",
-       "fact": "Yields were up at the front while 10-year to 30-year yields were flat to lower than the pre-market print, a flattening move; the 2s10s gap was about 62bp versus about 68bp pre-market.",
+       "fact": "Yields were up at the front while 10-year to 30-year yields were flat to lower than the pre-market print, a flattening move; the 2-year to 30-year gap was about 62bp versus about 68bp pre-market.",
        "src": "Investing.com",
        "u": "https://finance.yahoo.com/markets/stocks/articles/bond-market-flattening-wednesday-pce-200337155.html"
       },
@@ -542,9 +566,15 @@
       },
       {
        "time": "11/23 close",
-       "fact": "XLC closed at $103.60, up 3.70% from $99.90 on 10/30; XLY closed at $116.93, up 1.34% from $115.38.",
+       "fact": "XLC closed at $103.60, up 3.70% from $99.90 on 10/30.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/XLC/history"
+      },
+      {
+       "time": "11/23 close",
+       "fact": "XLY closed at $116.93, up 1.34% from $115.38 on 10/30.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLY/history"
       },
       {
        "time": "11/23 close",
@@ -597,7 +627,7 @@
       },
       {
        "time": "11/23",
-       "fact": "The month ends with the 2Y at 4.63%, the 10Y at 4.92% and the 30Y at 5.29%, versus 4.56%, 4.94% and 5.31% on 10/30.",
+       "fact": "With three trading days left in November, the 2Y is at 4.63%, the 10Y at 4.92% and the 30Y at 5.29%, versus 4.56%, 4.94% and 5.31% on 10/30.",
        "src": "U.S. Treasury",
        "u": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv"
       },
@@ -615,7 +645,7 @@
       "The Russell 2000 is 5.06% lower at 2,669.66, 0.54 points worse than the S&P 500's 4.52%.",
       "The equal-weight RSP is 2.51% lower against SPY's 4.42% decline, so the average stock fell 1.91 points less than the cap-weighted index.",
       "The Dow is 4.20% lower at 49,595.31.",
-      "The Nasdaq is 5.30% lower at 24,089.56, 1.10 points worse than the S&P.",
+      "The Nasdaq is 5.30% lower at 24,089.56, 0.78 points worse than the S&P.",
       "The S&P closed at 6,910.39 on 11/20; the 11/23 session recovered 326.78 points of the month's loss."
      ],
      "d": "Concentration cut both ways: the equal-weight index fell 1.9 points less than the S&P, but the Russell is now 0.5 points worse, so the month's damage is no longer only a megacap problem.",
@@ -640,9 +670,15 @@
       },
       {
        "time": "11/23 close",
-       "fact": "The Dow closed at 49,595.31, down 4.20% from 51,770.31, and the Nasdaq at 24,089.56, down 5.30% from 25,437.00.",
+       "fact": "The Dow closed at 49,595.31, down 4.20% from 51,770.31.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/%5EDJI/history"
+      },
+      {
+       "time": "11/23 close",
+       "fact": "The Nasdaq closed at 24,089.56, down 5.30% from 25,437.00.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/%5EIXIC/history"
       },
       {
        "time": "11/20 close",
@@ -827,9 +863,15 @@
      "news": [
       {
        "time": "9/30 close",
-       "fact": "The S&P 500 closed at 7,651.54 on 9/30 and the Nasdaq at 26,861.06.",
+       "fact": "The S&P 500 closed at 7,651.54 on 9/30.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/%5EGSPC/history"
+      },
+      {
+       "time": "9/30 close",
+       "fact": "The Nasdaq closed at 26,861.06 on 9/30.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/%5EIXIC/history"
       },
       {
        "time": "11/20 close",
@@ -845,18 +887,6 @@
       },
       {
        "time": "11/23 close",
-       "fact": "XLK closed at $162.38, down 17.05% from $195.75 on 9/30.",
-       "src": "Yahoo Finance",
-       "u": "https://finance.yahoo.com/quote/XLK/history"
-      },
-      {
-       "time": "11/23 close",
-       "fact": "XLP closed at $90.38, up 12.13% from $80.60 on 9/30.",
-       "src": "Yahoo Finance",
-       "u": "https://finance.yahoo.com/quote/XLP/history"
-      },
-      {
-       "time": "11/23 close",
        "fact": "December gold settled at $3,651.60, down 12.78% from $4,186.70 on 9/30.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/GC=F/history"
@@ -866,12 +896,6 @@
        "fact": "Bitcoin traded at $61,249.19, down 26.69% from $83,553.85 on 9/30.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/BTC-USD/history"
-      },
-      {
-       "time": "11/23 settle",
-       "fact": "Brent for January settled at $89.37, down 5.45% from the roll-adjusted 9/30 base of $94.52.",
-       "src": "Reuters via CNA",
-       "u": "https://www.channelnewsasia.com/business/oil-slumps-3-month-low-increased-middle-east-flows-libyan-pipeline-restart-6573726"
       }
      ]
     },
@@ -913,10 +937,22 @@
       "Technology -17.05% and communications -6.64% are the worst; seven of 11 sectors are higher.",
       "The equal-weight RSP is +2.31% against SPY's -5.29%, a 7.60-point gap.",
       "Financials +4.21%, real estate +4.86% and materials +2.46% round out the seven gainers.",
-      "Energy is only 2.65% lower for the quarter despite a 21.21% drop this month."
+      "Energy is only 2.65% lower for the quarter despite a 14.50% drop this month."
      ],
      "d": "Q4 was a factor rotation inside a drawdown: the same quarter that took 17.05% off technology added 12.13% to staples, and the equal-weight index beat the cap-weighted one by 7.60 points.",
      "news": [
+      {
+       "time": "11/23 close",
+       "fact": "XLK closed at $162.38, down 17.05% from $195.75 on 9/30.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLK/history"
+      },
+      {
+       "time": "11/23 close",
+       "fact": "XLP closed at $90.38, up 12.13% from $80.60 on 9/30.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLP/history"
+      },
       {
        "time": "11/23 close",
        "fact": "XLU closed at $43.32, up 9.84% from $39.44 on 9/30.",
@@ -940,6 +976,30 @@
        "fact": "XLC closed at $103.60, down 6.64% from $110.97 on 9/30.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/XLC/history"
+      },
+      {
+       "time": "11/23 close",
+       "fact": "XLF closed at $55.65, up 4.21% from $53.40 on 9/30.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLF/history"
+      },
+      {
+       "time": "11/23 close",
+       "fact": "XLRE closed at $42.90, up 4.86% from $40.91 on 9/30.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLRE/history"
+      },
+      {
+       "time": "11/23 close",
+       "fact": "XLB closed at $49.90, up 2.46% from $48.70 on 9/30.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLB/history"
+      },
+      {
+       "time": "11/23 close",
+       "fact": "XLE closed at $59.87, down 2.65% from $61.50 on 9/30 and down 14.50% from $70.02 on 10/30.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLE/history"
       },
       {
        "time": "11/23 close",
@@ -1139,9 +1199,21 @@
      "news": [
       {
        "time": "12/31/25 close",
-       "fact": "The S&P 500 closed 2025 at 6,845.50, the Dow at 48,063.29 and the Nasdaq at 23,241.99.",
+       "fact": "The S&P 500 closed 2025 at 6,845.50.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/%5EGSPC/history"
+      },
+      {
+       "time": "12/31/25 close",
+       "fact": "The Dow closed 2025 at 48,063.29.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/%5EDJI/history"
+      },
+      {
+       "time": "12/31/25 close",
+       "fact": "The Nasdaq closed 2025 at 23,241.99.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/%5EIXIC/history"
       },
       {
        "time": "10/6 close",
@@ -1160,24 +1232,6 @@
        "fact": "The Nasdaq closed at 24,089.56 on 11/23, 3.65% above its 2025 close of 23,241.99.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/%5EIXIC/history"
-      },
-      {
-       "time": "11/23 close",
-       "fact": "XLE closed at $59.87, up 33.91% from $44.71 at the end of 2025.",
-       "src": "Yahoo Finance",
-       "u": "https://finance.yahoo.com/quote/XLE/history"
-      },
-      {
-       "time": "11/23 close",
-       "fact": "XLP closed at $90.38, up 16.35% from $77.68; XLV at $179.42, up 15.90% from $154.80.",
-       "src": "Yahoo Finance",
-       "u": "https://finance.yahoo.com/quote/XLP/history"
-      },
-      {
-       "time": "11/23 close",
-       "fact": "XLK closed at $162.38, up 12.79% from $143.97 at the end of 2025.",
-       "src": "Yahoo Finance",
-       "u": "https://finance.yahoo.com/quote/XLK/history"
       },
       {
        "time": "11/23 close",
@@ -1208,7 +1262,7 @@
        "time": "12/31/25 close",
        "fact": "The 10-year Treasury yield was 4.18%, the 2-year 3.47% and the 30-year 4.84% on 12/31/25.",
        "src": "U.S. Treasury",
-       "u": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv"
+       "u": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2025/all?type=daily_treasury_yield_curve&field_tdr_date_value=2025&page&_format=csv"
       },
       {
        "time": "11/23",
@@ -1226,13 +1280,13 @@
       "Real estate +6.32%, industrials +4.74%, financials +1.61% and utilities +1.48% are the remaining gainers; nine of 11 sectors are higher.",
       "Consumer discretionary -2.08% is the only other decliner.",
       "The equal-weight RSP is +11.10% against SPY's +5.92%, a 5.18-point gap.",
-      "The 45.90-point spread is wider than the quarter's 29.18-point spread, so the year's dispersion built in Q4."
+      "The 45.90-point spread is about 2.6 points wider than the 43.28-point Energy-to-communications gap on 9/30."
      ],
      "d": "The year's dispersion is the story: a 45.90-point spread between energy and communications is what a regime change looks like inside a single index.",
      "news": [
       {
        "time": "11/23 close",
-       "fact": "XLC closed at $103.60, down 11.99% from $117.72 at the end of 2025.",
+       "fact": "XLC closed at $103.60, down 11.99% from $117.72 at the end of 2025; it was $110.97 on 9/30.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/XLC/history"
       },
@@ -1244,21 +1298,57 @@
       },
       {
        "time": "11/23 close",
-       "fact": "XLRE closed at $42.90, up 6.32% from $40.35; XLI at $162.47, up 4.74% from $155.12.",
+       "fact": "XLRE closed at $42.90, up 6.32% from $40.35 at the end of 2025.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/XLRE/history"
       },
       {
        "time": "11/23 close",
-       "fact": "XLF closed at $55.65, up 1.61% from $54.77; XLU at $43.32, up 1.48% from $42.69.",
+       "fact": "XLI closed at $162.47, up 4.74% from $155.12 at the end of 2025.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLI/history"
+      },
+      {
+       "time": "11/23 close",
+       "fact": "XLF closed at $55.65, up 1.61% from $54.77 at the end of 2025.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/XLF/history"
+      },
+      {
+       "time": "11/23 close",
+       "fact": "XLU closed at $43.32, up 1.48% from $42.69 at the end of 2025.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLU/history"
       },
       {
        "time": "11/23 close",
        "fact": "XLB closed at $49.90, up 10.03% from $45.35 at the end of 2025.",
        "src": "Yahoo Finance",
        "u": "https://finance.yahoo.com/quote/XLB/history"
+      },
+      {
+       "time": "11/23 close",
+       "fact": "XLE closed at $59.87, up 33.91% from $44.71 at the end of 2025; it was $61.50 on 9/30.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLE/history"
+      },
+      {
+       "time": "11/23 close",
+       "fact": "XLP closed at $90.38, up 16.35% from $77.68 at the end of 2025.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLP/history"
+      },
+      {
+       "time": "11/23 close",
+       "fact": "XLV closed at $179.42, up 15.90% from $154.80 at the end of 2025.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLV/history"
+      },
+      {
+       "time": "11/23 close",
+       "fact": "XLK closed at $162.38, up 12.79% from $143.97 at the end of 2025.",
+       "src": "Yahoo Finance",
+       "u": "https://finance.yahoo.com/quote/XLK/history"
       },
       {
        "time": "11/23 close",

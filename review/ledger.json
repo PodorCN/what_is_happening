@@ -2917,8 +2917,16 @@
           }
         ]
       }
+    ,
+      {
+        "round": 2,
+        "verdict": "PASS",
+        "findings": []
+      }
     ],
-    "resolved": false
+    "resolved": true,
+    "fixedAt": "2026-11-23T19:25:00-05:00",
+    "fixNote": "F1 mtd ③ s3 1.10→0.78；F2 ④ n1 改为 2-year to 30-year gap（来源原口径）；F3 qtd ③ s4 21.21%→XLE 月跌 14.50%；F4 mtd ② n3「month ends」→「with three trading days left」；F5 7 条多标的 Yahoo fact 拆成单标的 news；F6 qtd/ytd 板块 ETF fact 移挂 ③、today ② 与 qtd ③ 补齐缺失 ETF fact；F7 ytd ③ s5 改为同一对 Energy−Comms 43.28→45.90；F8 today d 2.12→2.14（对 S&P 500）；F9 n5 time 11/20→11/18 after bell（CNBC 原文定价周三盘后，reviewer 的 11/19 是首日）；F10 删除挂 CNA 的 94.52 派生基期 fact，保留 foot；F11 ytd ② n0 URL 改 /2025/ + field_tdr_date_value=2025。lint 新增 §21 单标的页多标的、§22 链内板块 ETF fact 检查。"
   }
   ]
 }

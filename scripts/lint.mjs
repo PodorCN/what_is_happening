@@ -402,6 +402,44 @@ for (const tier of ["today", ...WIN]) {
   }
 }
 
+// ---------- 21. 单标的 Yahoo 页不得背书第二个标的（review 2026-10-29 / 2026-11-23 F5）----------
+const YQ = /finance\.yahoo\.com\/quote\/([^/]+)\/history/;
+const ETF_CODES = ["XLE", "XLF", "XLRE", "XLB", "XLI", "XLK", "XLY", "XLP", "XLV", "XLU", "XLC", "SPY", "RSP", "ANT", "CRWD", "NVDA", "MSFT", "AAPL", "AMZN", "GOOGL", "META", "TSLA", "MU", "DELL", "AMD", "SOXX", "DRAM"];
+const INDEX_NAMES = { "^GSPC": "S&P 500", "^IXIC": "Nasdaq", "^DJI": "Dow", "^RUT": "Russell 2000", "^VIX": "VIX", "^SOX": "PHLX Semiconductor Index" };
+for (const tier of ["today", ...WIN])
+  for (const [ci, c] of (snap.P[tier]?.chains || []).entries())
+    for (const [ni, n] of (c.news || []).entries()) {
+      const m = String(n.u || "").match(YQ);
+      if (!m) continue;
+      let sym; try { sym = decodeURIComponent(m[1]).toUpperCase(); } catch { sym = m[1].toUpperCase(); }
+      if (!/^\^?[A-Z.]+$/.test(sym)) continue;
+      const fact = String(n.fact || "");
+      const others = ETF_CODES.filter(t => t !== sym && new RegExp(`\\b${t}\\b`).test(fact));
+      if (others.length)
+        W(`${tier}.chains.${ci}.news.${ni}`, `Yahoo 单标的页 ${m[1]} 的 fact 还写了 ${others.join("/")} 的数字——一条 fact 只背书 URL 里的 symbol，并列标的拆成多条 news`);
+      const alsoIndex = Object.entries(INDEX_NAMES).filter(([k, name]) => {
+        if (k === sym) return false;
+        return new RegExp(`\\b${name}\\b(?!\\s+(?:ETF|index|Index|Composite))[^.;]{0,40}?\\d`, "i").test(fact);
+      }).map(([, name]) => name);
+      if (alsoIndex.length)
+        W(`${tier}.chains.${ci}.news.${ni}`, `Yahoo 单标的页 ${m[1]} 的 fact 还写了 ${alsoIndex.join("/")}——指数各挂自己的 /quote/<SYM>/history，或拆条`);
+    }
+
+// ---------- 22. 链内板块数字必须有同板块 ETF close fact（review 2026-11-12 / 2026-11-23 F6）----------
+const SECTOR_ETF = [["technology", "XLK"], ["tech", "XLK"], ["energy", "XLE"], ["staples", "XLP"], ["consumer discretionary", "XLY"], ["industrials", "XLI"], ["real estate", "XLRE"], ["health", "XLV"], ["utilities", "XLU"], ["financials", "XLF"], ["materials", "XLB"], ["communications", "XLC"], ["comms", "XLC"]];
+for (const tier of ["today", ...WIN])
+  for (const [ci, c] of (snap.P[tier]?.chains || []).entries()) {
+    const steps = (c.steps || []).join(" ");
+    const facts = (c.news || []).map(n => String(n.fact || "")).join(" ");
+    const missing = new Set();
+    for (const [name, etf] of SECTOR_ETF) {
+      if (!new RegExp(`\\b${name}\\b[^.;]{0,50}?[+\\-−]?\\d`, "i").test(steps)) continue;
+      if (!new RegExp(`\\b${etf}\\b`).test(facts)) missing.add(`${name}→${etf}`);
+    }
+    if (missing.size)
+      W(`${tier}.chains.${ci}`, `step 写了 ${[...missing].join("、")} 的数字，但本链 news 没有对应 ETF close fact——把 fact 移到本链或补一条`);
+  }
+
 for (const e of errs) console.log("ERROR " + e);
 for (const w of warns) console.log("WARN  " + w);
 console.log(`\nlint ${DATE}: ${errs.length} error(s), ${warns.length} warning(s)`);

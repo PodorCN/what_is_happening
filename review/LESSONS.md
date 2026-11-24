@@ -198,6 +198,17 @@
 | 2026-11-20 | 逻辑 | mtd ③ d「nearly all of the damage came from the largest technology names rather than from the broad market」与同链 s1「Russell 2000 −8.18%，仅略好于 S&P −8.83%」矛盾 | 写「rather than from the broad market」前先取同档小盘/等权跌幅：小盘跌幅 > 指数跌幅×0.9 时不得否定 broad market（本次 Russell −8.18% vs S&P −8.83%），改写为「megacaps supplied most of the drop, but small caps fell almost as much」 |
 | 2026-11-20 | 逻辑 | today ③ d「four mega-cap staples names」把 J&J 算进 staples；同链 s1 的四个名字只有 Walmart / Costco / P&G 属 XLP，JNJ 属 health care（XLV） | 数「N 个 X 板块的名字」前逐个核 GICS：JNJ 归 health care；改写为「three staples plus J&J」或删掉数量词，c4/d 同句一并核 |
 | 2026-11-20 | 引用 | ytd ① n1 的 fact 主语是 S&P（7,818.93 / 14.22% / 6,845.50），u 却指向 ^IXIC 的 quote 页 | news.fact 的主语指数与 URL ticker 必须一致（S&P→%5EGSPC、Nasdaq→%5EIXIC、Dow→%5EDJI、SOX→%5ESOX、VIX→%5EVIX）；定稿前逐条比对 fact 首个指数名与 URL，多主语 fact 以首个主语为准或拆条 |
+| 2026-11-23 | 数字 | mtd ③ s3「Nasdaq … 1.10 points worse than the S&P」：5.30−4.52=0.78pp，1.10 是对 Dow（5.30−4.20）的差 | 写「X points worse/better than Y」前用同档 tbl 两行百分比相减；句中同时出现 S&P/Dow/Nasdaq 时逐个配对，不得把对 Dow 的差写给 S&P |
+| 2026-11-23 | 引用 | today ④ n1 把来源「2-year to 30-year gap about 62bp vs 68bp pre-market」写成「2s10s gap 62bp」，与同链 Treasury 收盘现算 2s10s 29bp 矛盾 | 引用曲线价差必须连同期限对一起抄（2-year to 30-year ≠ 2s10s）；同链 2s10s 只用 Treasury 收盘现算值，2s30s 另写并标明口径 |
+| 2026-11-23 | 数字 | qtd ③ s4 把 Brent 月跌 21.21% 安在 Energy 板块上：XLE 月内 −14.50%，−2.65% 是 XLE 的 QTD | 同一句里板块与商品不可互换：写「Energy … despite」必须用 XLE 的 −14.50%；要引用 Brent 就写「Brent 21.21% lower this month」 |
+| 2026-11-23 | 逻辑 | mtd ② n3「The month ends with…」：11/23 之后还有 11/24、11/25、11/27 三个交易日（11/26 休市） | 「ends the month / 月度收官」只留给月末最后一个交易日；此前写「with three trading days left」或「month-to-date」 |
+| 2026-11-23 | 引用 | 7 条 news 用单标的 Yahoo 页背书两个标的（mtd ① n5 XLC 页含 XLY、mtd ③ n3 ^DJI 页含 Nasdaq、qtd ① n0 ^GSPC 页含 Nasdaq、ytd ① n0 ^GSPC 页含 Dow/Nasdaq、ytd ① n5 XLP 页含 XLV、ytd ③ n2 XLRE 页含 XLI、ytd ③ n3 XLF 页含 XLU） | 一条 fact 只写 URL 里那个 symbol 的数字；并列 N 个标的就拆成 N 条 news，各挂自己的 /quote/&lt;SYM&gt;/history `[lint]` |
+| 2026-11-23 | schema | 板块 ETF fact 挂错链：qtd/ytd ① 有 fact 无 step，③ 有 step 无 fact；today ② s2 的 Tech/ConsDisc/Industrials/RealEstate 无 ETF close fact | 每个板块数字的 ETF close fact 必须挂在使用该数字的同一链；定稿前对每条链做「步骤板块名集合 − news 板块名集合」检查，差集非空就移动 fact 或补一条 `[lint]` |
+| 2026-11-23 | 逻辑 | ytd ③ s5 用两对不同板块（Energy−Comms 45.90 vs Staples−Tech 29.18）论证「Q4 扩大年度分化」；同对 Energy−Comms 9/30 已是 43.28 | 比较两个窗口的 spread 必须用同一对板块：写「Energy−Comms 从 9/30 的 43.28 扩到 45.90」；不同板块对只能并列，不得用「so … built in Q4」下结论 |
+| 2026-11-23 | 数字 | today d「equal-weight index lagged by 2.12 points」是对 SPY；对 S&P 500（+4.73）应为 2.14 | d 里写差值必须同句点名比较对象（SPY 或 S&P 500），并与同链 step 用同一对象、同一数值；差 0.01pp 即统一 |
+| 2026-11-23 | 引用 | today ② n5 把「Anthropic priced its IPO at $83」的 time 标成 11/20；CNBC 原文为 Wed 11/18 6:33 PM ET「priced … on Wednesday」，首日交易是 11/19 | news.time 写事件发生日：IPO 定价写 11/18 after bell，不写首日 11/19 或复盘文章日 11/20 |
+| 2026-11-23 | 引用 | qtd ① n7 把 roll-adjusted 9/30 base 94.52 挂在 11/23 Reuters via CNA 油价稿上；该页只有 89.37/80.17，0 处 94.52 | 计算出来的基期/派生百分比不挂在行情新闻 URL 上：留在 data/foot 或另挂含该数的静态页；news.u 只背书页内实际出现的数字 |
+| 2026-11-23 | 引用 | ytd ② n0 用 2026 年 Treasury CSV 背书 12/31/25 的 4.18%/3.47%/4.84%；该 CSV 最早 01/02/2026，且路径 /2026/ 会覆盖查询年份 | 跨年锚点改挂路径 /2025/ 且 field_tdr_date_value=2025 的 Treasury CSV；路径年份与查询年份必须同时与 fact 年份一致 |
 
 ## 链结构（主链 / 辅链）
 
