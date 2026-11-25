@@ -374,7 +374,7 @@
           "steps": [
             "The Treasury par curve closed at 2Y 4.63%, 10Y 4.91% and 30Y 5.30%: the 10Y fell 1bp, the 2Y was unchanged and the 30Y rose 1bp, leaving 2s10s at 28bp.",
             "Fed funds futures priced a 95% probability that the Fed raises rates by 25bp in December and 5% odds of a 50bp move.",
-            "Gold settled 2.45% lower at $3,559.90 on the front-month contract, with December at $3,562.10, a session after its 3.90% bounce; spot was down 2% at $3,558.25 by 2:11 p.m. ET.",
+            "Gold settled 2.45% lower at $3,559.90 on the front-month November contract, with December at $3,562.10, a session after its 3.90% bounce; spot was down 2% at $3,558.25 by 2:11 p.m. ET.",
             "Silver fell 5.70% to $40.69, so the whole metals complex was sold, not just bullion.",
             "The dollar index slipped to 103.83, so gold fell without a stronger dollar to blame.",
             "October PCE lands on 11/25, the next test for whether the December hike stays fully priced."
@@ -604,7 +604,7 @@
         7237.17,
         7201.09
       ],
-      "c1": "<p>November is a 5.00% drawdown on the S&amp;P 500 from the 10/30 base of 7,580.07, and its shape has not changed: the month's high was 7,688.62 on 11/4, its low 6,910.39 on 11/20, and the last two sessions recovered 4.21% of the 10.12% slide from that high. Technology (-12.49%) and energy (-13.67%) are the two worst of the 11 sectors; communications (+4.55%), staples (+2.75%), consumer discretionary (+2.03%) and real estate (+0.67%) are the only ones above the line. The Nasdaq is 6.70% lower for the month against the Dow's 3.38%, and the S&amp;P is 7.90% below its 10/6 record.</p>",
+      "c1": "<p>November is a 5.00% drawdown on the S&amp;P 500 from the 10/30 base of 7,580.07, and its shape has not changed: the month's high was 7,688.62 on 11/4, its low 6,910.39 on 11/20, and the last two sessions recovered 41.6% of the 10.12% slide from that high, 4.21 percentage points. Technology (-12.49%) and energy (-13.67%) are the two worst of the 11 sectors; communications (+4.55%), staples (+2.75%), consumer discretionary (+2.03%) and real estate (+0.67%) are the only ones above the line. The Nasdaq is 6.70% lower for the month against the Dow's 3.38%, and the S&amp;P is 7.90% below its 10/6 record.</p>",
       "c4": "<ul class='play'><li>The shape: AI and oil took the month down; the 11/20 low was 8.83% below the base before two sessions cut that to 5.00%.</li><li>The breadth: four of 11 sectors are above the 10/30 line, and two of them are defensives.</li><li>The hedge that failed: gold -8.64%, bitcoin -22.75% and Brent -19.42% all lost money while the VIX rose 35.74%.</li><li>The rates: the 2Y rose 7bp while the 10Y fell 3bp, a 10bp flattening to 28bp.</li><li>The next test: October PCE on 11/25, then the December FOMC that the market has already priced for a hike.</li></ul>",
       "chains": [
         {
@@ -663,16 +663,16 @@
           ]
         },
         {
-          "t": "② The Month's Only Paid Hedge Was Volatility",
+          "t": "② Volatility Was the Month's Only Meaningful Hedge",
           "main": 0,
           "steps": [
             "The VIX is 35.74% higher at 26.36.",
-            "Gold is 8.64% lower at $3,562.10 and bitcoin 22.75% lower at $59,637.65.",
+            "Gold is 8.64% lower at $3,562.10 on the December contract, $2.20 above the November front month's settle, and bitcoin 22.75% lower at $59,637.65.",
             "The 2Y rose 7bp to 4.63% while the 10Y fell 3bp to 4.91%, flattening 2s10s to 28bp from 38bp.",
             "The dollar index is 1.91% higher at 103.83.",
             "October PCE on 11/25 is the next test for whether the December hike stays fully priced."
           ],
-          "d": "November paid for volatility and nothing else: gold, bitcoin and long duration all failed as hedges, and the curve flattened as the front end sold off.",
+          "d": "November paid for volatility and little else: gold and bitcoin failed as hedges, long duration returned only about 0.25%, and the curve flattened as the front end sold off.",
           "news": [
             {
               "time": "11/24 close",
@@ -682,7 +682,7 @@
             },
             {
               "time": "11/24 settle",
-              "fact": "Comex gold settled 2.45% lower at $3,559.90 an ounce on 11/24.",
+              "fact": "Front-month November Comex gold lost $89.30 an ounce, or 2.45%, to settle at $3,559.90 on 11/24.",
               "src": "Morningstar / Dow Jones",
               "u": "https://www.morningstar.com/news/dow-jones/202611246254/comex-gold-settles-245-lower-at-355990-data-talk"
             },
@@ -716,10 +716,10 @@
           "t": "③ The Average Stock Fell Far Less Than the Index",
           "main": 0,
           "steps": [
-            "RSP is 1.99% lower for the month against SPY's 4.89%, so the average stock fell 2.90 points less than the cap-weighted index.",
+            "RSP is 1.99% lower for the month against SPY's 4.89%, so the average stock fell 2.90 points less than SPY.",
             "The Russell 2000 is 4.51% lower at 2,684.94, 0.49 points better than the S&P 500."
           ],
-          "d": "Concentration cut one way this month: the loss was in the megacaps, and an equal-weighted portfolio kept 2.90 points more than the index.",
+          "d": "Concentration was a size story, not an escape hatch: megacaps supplied most of the drop, but the Russell 2000 still fell 4.51% against the S&P's 5.00%, and an equal-weighted portfolio kept 3.01 points more than the index.",
           "news": [
             {
               "time": "11/24 close",
@@ -901,8 +901,8 @@
         7237.17,
         7201.09
       ],
-      "c1": "<p>Q4 is a 5.89% drawdown on the S&amp;P 500 from the 9/30 base of 7,651.54 and an 11.64% drawdown on the Nasdaq, while the Dow is only 1.74% lower. The quarter's low was 6,910.39 on 11/20, 9.69% below the base; the last two sessions recovered 4.21% of that. Technology is 19.75% lower for the quarter and communications 5.88% lower, while staples +14.00%, utilities +10.04%, health +9.68% and consumer discretionary +8.16% lead: seven of 11 sectors are higher. The 10Y fell 38bp over the same window, so the de-rating came with a bond bid rather than a rate shock.</p>",
-      "c4": "<ul class='play'><li>The shape: an AI de-rating inside an equity drawdown, with the Dow down only 1.74% against the Nasdaq's 11.64%.</li><li>The rates: 10Y -38bp, 30Y -34bp and 2Y -25bp; 2s10s flattened 41bp to 28bp.</li><li>The rotation: seven of 11 sectors are higher, led by staples and utilities.</li><li>The commodity side: gold -14.92%, bitcoin -28.62% and Brent -3.30% on a roll-adjusted basis.</li><li>The bill: the 2Y still carries 116bp of 2026 tightening expectations into the December FOMC.</li></ul>",
+      "c1": "<p>Q4 is a 5.89% drawdown on the S&amp;P 500 from the 9/30 base of 7,651.54 and an 11.64% drawdown on the Nasdaq, while the Dow is only 1.74% lower. The quarter's low was 6,910.39 on 11/20, 9.69% below the base; the last two sessions recovered 41.6% of that drawdown, 4.21 percentage points. Technology is 19.75% lower for the quarter and communications 5.88% lower, while staples +14.00%, utilities +10.04%, health +9.68% and consumer discretionary +8.16% lead: seven of 11 sectors are higher. The 10Y fell 38bp over the same window, so the de-rating came with a bond bid rather than a rate shock.</p>",
+      "c4": "<ul class='play'><li>The shape: an AI de-rating inside an equity drawdown, with the Dow down only 1.74% against the Nasdaq's 11.64%.</li><li>The rates: 10Y -38bp, 30Y -34bp and 2Y -25bp; 2s10s flattened 41bp to 28bp.</li><li>The rotation: seven of 11 sectors are higher, led by staples and utilities.</li><li>The commodity side: gold -14.92%, bitcoin -28.62% and Brent -3.30% on a roll-adjusted basis.</li><li>The carry: the 2Y is still 116bp above its 2026 starting point even after this quarter's 25bp give-back — the year's bill, not the quarter's.</li></ul>",
       "chains": [
         {
           "t": "① Q4 Is a Drawdown the Dow Didn't Have",
@@ -910,7 +910,7 @@
           "steps": [
             "The S&P 500 is 5.89% below its 9/30 base of 7,651.54, the Nasdaq 11.64% and the Dow only 1.74%.",
             "Technology is 19.75% lower for the quarter, the worst of the 11 sectors; staples +14.00%, utilities +10.04% and health +9.68% lead.",
-            "The quarter's low was 6,910.39 on 11/20, 9.69% below the base; the last two sessions recovered 4.21% of it.",
+            "The quarter's low was 6,910.39 on 11/20, 9.69% below the base; the last two sessions recovered 41.6% of it, 4.21 percentage points.",
             "Seven of 11 sectors are higher for the quarter; technology, communications, energy and industrials are lower."
           ],
           "d": "The quarter's drawdown is a technology event, not a broad one: seven sectors are higher and the Dow is down less than two percent.",
@@ -1000,15 +1000,15 @@
           "t": "③ The Quarter Sold Its Stores of Value",
           "main": 0,
           "steps": [
-            "Gold is 14.92% lower at $3,562.10 and bitcoin 28.62% lower at $59,637.65.",
+            "Gold is 14.92% lower at $3,562.10 on the December contract (the November front month settled at $3,559.90) and bitcoin 28.62% lower at $59,637.65.",
             "Brent is 3.30% lower on a roll-adjusted basis at $91.40; December crude settled at $117.64 on 10/30 before the January contract took over.",
             "The dollar index is 2.34% higher at 103.83."
           ],
-          "d": "Q4's second de-rating was in stores of value: gold, bitcoin and crude all fell while the dollar rose, the mirror image of the first nine months.",
+          "d": "Q4's second de-rating extended the first nine months: gold and bitcoin fell further, crude finally turned down with them, and the dollar rose.",
           "news": [
             {
               "time": "11/24 settle",
-              "fact": "The front-month Comex gold contract settled at $3,559.90 on 11/24, down $89.30 or 2.45%.",
+              "fact": "The front-month November Comex gold contract settled at $3,559.90 on 11/24, down $89.30 or 2.45%.",
               "src": "Morningstar / Dow Jones",
               "u": "https://www.morningstar.com/news/dow-jones/202611246254/comex-gold-settles-245-lower-at-355990-data-talk"
             },
@@ -1029,6 +1029,12 @@
               "fact": "The dollar index closed at 103.83, up 2.34% from 101.45 on 9/30.",
               "src": "Yahoo Finance",
               "u": "https://finance.yahoo.com/quote/DX-Y.NYB/history"
+            },
+            {
+              "time": "10/30 settle",
+              "fact": "Brent's more active January contract settled at $113.43 on 10/30, with the December contract expiring at $117.64.",
+              "src": "CNBC (Reuters)",
+              "u": "https://www.cnbc.com/2026/10/30/oil-rises-on-supply-concerns-as-houthis-attack-saudi-arabia.html"
             }
           ]
         }
@@ -1201,7 +1207,7 @@
         7201.09
       ],
       "c1": "<p>2026 is still a positive year, but barely for the AI index. The S&amp;P 500 is 5.19% above its 12/31 base of 6,845.50 after being 14.22% higher at the 10/6 record of 7,818.93, and it is now 7.90% below that record. The Nasdaq is 2.11% higher after leading the first nine months; energy +35.20%, health +19.33% and staples +18.28% are the year's leaders, while communications -11.27% is the only double-digit loser. The 10Y is 73bp higher at 4.91%, with the 2Y up 116bp, and gold is 17.94% lower: the year's gains survived the quarter, but the leadership rotated.</p>",
-      "c4": "<ul class='play'><li>The round trip: S&P +14.22% at the 10/6 record is now +5.19%, a 9.03-point give-back.</li><li>The leadership: energy, health and staples replaced AI at the top of the year's return table.</li><li>The rates: the front end is 116bp higher and the 2s10s spread has flattened from 71bp to 28bp.</li><li>The stores of value: gold -17.94% and bitcoin -31.85%, the year's worst assets.</li><li>The base case: the year is positive because earnings and defensives held, not because AI did.</li></ul>",
+      "c4": "<ul class='play'><li>The round trip: S&P +14.22% at the 10/6 record is now +5.19%, a 9.03-point give-back.</li><li>The leadership: energy, health and staples replaced AI at the top of the year's return table.</li><li>The rates: the front end is 116bp higher and the 2s10s spread has flattened from 71bp to 28bp.</li><li>The stores of value: gold -17.94% and bitcoin -31.85%, the year's worst assets.</li><li>The base case: the year is positive because earnings and defensives held; AI still adds, with tech +9.11% against the S&P's +5.19%, but it no longer leads.</li></ul>",
       "chains": [
         {
           "t": "① The Year's Two Engines Stalled in Q4",
@@ -1211,7 +1217,7 @@
             "The Nasdaq is 2.11% higher and the Dow 4.07%, so the AI index no longer leads the year.",
             "The S&P is 7.90% below that 10/6 record."
           ],
-          "d": "The year is positive on earnings and defensives, not on AI: the S&P kept a third of its 14.22% peak gain, and the Nasdaq is barely above its base.",
+          "d": "The year is positive on earnings and defensives more than on AI: the S&P kept a third of its 14.22% peak gain, tech is still 9.11% higher but no longer leads, and the Nasdaq is barely above its base.",
           "news": [
             {
               "time": "12/31 close",
@@ -1251,15 +1257,15 @@
           "steps": [
             "The 2Y is 116bp higher at 4.63%, the 10Y 73bp higher at 4.91% and the 30Y 46bp higher at 5.30%.",
             "The 2s10s spread has flattened from 71bp on 12/31 to 28bp.",
-            "Gold is 17.94% lower at $3,562.10 and bitcoin 31.85% lower at $59,637.65."
+            "Gold is 17.94% lower at $3,562.10 on the December contract (the November front month settled at $3,559.90) and bitcoin 31.85% lower at $59,637.65."
           ],
-          "d": "The year's rate bill was paid at the front end: 116bp of 2-year tightening against 46bp at the 30-year, a 43bp flattening that crushed non-yielding assets.",
+          "d": "The year's rate bill was paid at the front end: 116bp of 2-year tightening against 73bp at the 10-year, a 43bp flattening of 2s10s that crushed non-yielding assets.",
           "news": [
             {
               "time": "12/31 close",
               "fact": "The 2-year Treasury yield was 3.47%, the 10-year 4.18% and the 30-year 4.84% on 12/31/2025.",
               "src": "U.S. Treasury",
-              "u": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&page&_format=csv"
+              "u": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2025/all?type=daily_treasury_yield_curve&field_tdr_date_value=2025&page&_format=csv"
             },
             {
               "time": "11/24",
@@ -1269,7 +1275,7 @@
             },
             {
               "time": "11/24 settle",
-              "fact": "Comex gold settled at $3,559.90 on 11/24, 2.45% lower on the day.",
+              "fact": "Front-month November Comex gold settled at $3,559.90 on 11/24, 2.45% lower on the day.",
               "src": "Morningstar / Dow Jones",
               "u": "https://www.morningstar.com/news/dow-jones/202611246254/comex-gold-settles-245-lower-at-355990-data-talk"
             },

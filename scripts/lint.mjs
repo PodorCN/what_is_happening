@@ -440,6 +440,22 @@ for (const tier of ["today", ...WIN])
       W(`${tier}.chains.${ci}`, `step 写了 ${[...missing].join("、")} 的数字，但本链 news 没有对应 ETF close fact——把 fact 移到本链或补一条`);
   }
 
+// ---------- 23. Treasury CSV 路径年份必须与 fact 年份一致（review 2026-11-23 F11 / 2026-11-24 F4）----------
+const TR_URL = /daily-treasury-rates\.csv\/(\d{4})\/all\?[^"]*field_tdr_date_value=(\d{4})/;
+for (const tier of ["today", ...WIN])
+  for (const [ci, c] of (snap.P[tier]?.chains || []).entries())
+    for (const [ni, n] of (c.news || []).entries()) {
+      const m = String(n.u || "").match(TR_URL);
+      if (!m) continue;
+      if (m[1] !== m[2])
+        E(`${tier}.chains.${ci}.news.${ni}`, `Treasury CSV 路径年份 ${m[1]} ≠ field_tdr_date_value=${m[2]}——两者必须同为该 fact 的年份`);
+      const yrs = new Set();
+      for (const y of String(n.fact || "").matchAll(/\b(20\d{2})\b/g)) yrs.add(y[1]);
+      for (const y of String(n.fact || "").matchAll(/\b\d{1,2}\/\d{1,2}\/(\d{2})\b/g)) yrs.add("20" + y[1]);
+      if (yrs.size === 1 && !yrs.has(m[1]))
+        E(`${tier}.chains.${ci}.news.${ni}`, `fact 年份 ${[...yrs][0]} 与 URL 路径年份 ${m[1]} 不符——跨年锚点（12/31/2025）挂 /2025/ CSV`);
+    }
+
 for (const e of errs) console.log("ERROR " + e);
 for (const w of warns) console.log("WARN  " + w);
 console.log(`\nlint ${DATE}: ${errs.length} error(s), ${warns.length} warning(s)`);
