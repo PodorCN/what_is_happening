@@ -604,7 +604,7 @@
         7237.17,
         7201.09
       ],
-      "c1": "<p>November is a 5.00% drawdown on the S&amp;P 500 from the 10/30 base of 7,580.07, and its shape has not changed: the month's high was 7,688.62 on 11/4, its low 6,910.39 on 11/20, and the last two sessions recovered 41.6% of the 10.12% slide from that high, 4.21 percentage points. Technology (-12.49%) and energy (-13.67%) are the two worst of the 11 sectors; communications (+4.55%), staples (+2.75%), consumer discretionary (+2.03%) and real estate (+0.67%) are the only ones above the line. The Nasdaq is 6.70% lower for the month against the Dow's 3.38%, and the S&amp;P is 7.90% below its 10/6 record.</p>",
+      "c1": "<p>November is a 5.00% drawdown on the S&amp;P 500 from the 10/30 base of 7,580.07, and its shape has not changed: the month's high was 7,688.62 on 11/4, its low 6,910.39 on 11/20, and the last two sessions recovered 290.70 points, 37.4% of the 10.12% slide from that high. Technology (-12.49%) and energy (-13.67%) are the two worst of the 11 sectors; communications (+4.55%), staples (+2.75%), consumer discretionary (+2.03%) and real estate (+0.67%) are the only ones above the line. The Nasdaq is 6.70% lower for the month against the Dow's 3.38%, and the S&amp;P is 7.90% below its 10/6 record.</p>",
       "c4": "<ul class='play'><li>The shape: AI and oil took the month down; the 11/20 low was 8.83% below the base before two sessions cut that to 5.00%.</li><li>The breadth: four of 11 sectors are above the 10/30 line, and two of them are defensives.</li><li>The hedge that failed: gold -8.64%, bitcoin -22.75% and Brent -19.42% all lost money while the VIX rose 35.74%.</li><li>The rates: the 2Y rose 7bp while the 10Y fell 3bp, a 10bp flattening to 28bp.</li><li>The next test: October PCE on 11/25, then the December FOMC that the market has already priced for a hike.</li></ul>",
       "chains": [
         {
@@ -901,7 +901,7 @@
         7237.17,
         7201.09
       ],
-      "c1": "<p>Q4 is a 5.89% drawdown on the S&amp;P 500 from the 9/30 base of 7,651.54 and an 11.64% drawdown on the Nasdaq, while the Dow is only 1.74% lower. The quarter's low was 6,910.39 on 11/20, 9.69% below the base; the last two sessions recovered 41.6% of that drawdown, 4.21 percentage points. Technology is 19.75% lower for the quarter and communications 5.88% lower, while staples +14.00%, utilities +10.04%, health +9.68% and consumer discretionary +8.16% lead: seven of 11 sectors are higher. The 10Y fell 38bp over the same window, so the de-rating came with a bond bid rather than a rate shock.</p>",
+      "c1": "<p>Q4 is a 5.89% drawdown on the S&amp;P 500 from the 9/30 base of 7,651.54 and an 11.64% drawdown on the Nasdaq, while the Dow is only 1.74% lower. The quarter's low was 6,910.39 on 11/20, 9.69% below the base; the last two sessions recovered 290.70 points, 37.4% of that drawdown. Technology is 19.75% lower for the quarter and communications 5.88% lower, while staples +14.00%, utilities +10.04%, health +9.68% and consumer discretionary +8.16% lead: seven of 11 sectors are higher. The 10Y fell 38bp over the same window, so the de-rating came with a bond bid rather than a rate shock.</p>",
       "c4": "<ul class='play'><li>The shape: an AI de-rating inside an equity drawdown, with the Dow down only 1.74% against the Nasdaq's 11.64%.</li><li>The rates: 10Y -38bp, 30Y -34bp and 2Y -25bp; 2s10s flattened 41bp to 28bp.</li><li>The rotation: seven of 11 sectors are higher, led by staples and utilities.</li><li>The commodity side: gold -14.92%, bitcoin -28.62% and Brent -3.30% on a roll-adjusted basis.</li><li>The carry: the 2Y is still 116bp above its 2026 starting point even after this quarter's 25bp give-back — the year's bill, not the quarter's.</li></ul>",
       "chains": [
         {
@@ -910,7 +910,7 @@
           "steps": [
             "The S&P 500 is 5.89% below its 9/30 base of 7,651.54, the Nasdaq 11.64% and the Dow only 1.74%.",
             "Technology is 19.75% lower for the quarter, the worst of the 11 sectors; staples +14.00%, utilities +10.04% and health +9.68% lead.",
-            "The quarter's low was 6,910.39 on 11/20, 9.69% below the base; the last two sessions recovered 41.6% of it, 4.21 percentage points.",
+            "The quarter's low was 6,910.39 on 11/20, 9.69% below the base; the last two sessions recovered 37.4% of it, 290.70 points.",
             "Seven of 11 sectors are higher for the quarter; technology, communications, energy and industrials are lower."
           ],
           "d": "The quarter's drawdown is a technology event, not a broad one: seven sectors are higher and the Dow is down less than two percent.",

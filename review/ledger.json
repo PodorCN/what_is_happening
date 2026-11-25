@@ -3024,7 +3024,7 @@
           "round": 2,
           "verdict": "PASS",
           "findings": [],
-          "note": "fixer 2026-11-24T19:10: F1-F10 全部成立并已修（F4 为 11/23 F11 回归，已加 lint 规则 23 自动拦截）；reviewer 末尾备注的 gold fact 未点名 November（3 处）一并修（记作 F11）。lint 0 error / 0 warning，build-shell + verify 通过，?date=2026-11-24 四档渲染正常。"
+          "note": "fixer 2026-11-24T19:10: F1-F10 全部成立并已修（F4 为 11/23 F11 回归，已加 lint 规则 23 自动拦截）；reviewer 末尾备注的 gold fact 未点名 November（3 处）一并修（记作 F11）。F10 的结论成立但 reviewer 给的 41.6% 不可用：41.6 是两个不同基数的百分比相除（4.207/10.12）；按点位算 (7201.09-6910.39)/(7688.62-6910.39)=37.4%，落盘用 37.4%。lint 0 error / 0 warning，build-shell + verify 通过，?date=2026-11-24 四档渲染正常。"
         }
       ],
       "resolved": true
