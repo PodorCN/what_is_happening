@@ -3028,6 +3028,109 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-11-25",
+      "reviewedAt": "2026-11-25T18:41:02-05:00",
+      "reviewedCommit": "a228568",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "数字",
+              "symptom": "qtd ① s2「The quarter bottomed at 6,910.39 on 11/20, 9.69% below the base, and the rebound has retaken 35.0% of that, 272.39 points」与 qtd c1「the rebound has recovered 272.39 points, 35.0% of that drawdown」：35.0% 是 MTD 窗口的收复比例（272.39/778.23，峰为 11/4 的 7,688.62），被原样搬进 QTD。按句中自己定义的「9.69% below the base」算，跌幅 741.15 点，272.39/741.15 = 36.8%；按 Q4 真实高点（10/6 的 7,818.93，峰谷 908.54 点）算是 30.0%。两个 QTD 口径都不是 35.0%。",
+              "evidence": "Yahoo ^GSPC：Q4 最高收盘 7,818.93（10/6）、最低 6,910.39（11/20），9/30 基期 7,651.54；272.39 = 7,182.78 − 6,910.39。mtd c1 自己写「35.0% of the 10.12% slide from that high」，说明 35.0% 只属于 11/4 高点起的 778.23 点跌幅。",
+              "rule": "窗口档写「recovered X% of the slide」前先在本档 labels/data 里取自己的峰与谷：QTD 用 10/6 的 7,818.93（272.39/908.54 = 30.0%），或明写基期跌幅 741.15 点（36.8%）；禁止把 MTD 的 11/4 高点 7,688.62 与 10.12% 带进 QTD 的句子。"
+            },
+            {
+              "id": "F2",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "today ② d「breadth was positive all session」与同档主链 ① s2 矛盾：09:45 时 S&P 已 −3.2%、Nasdaq −4.6%、Dow −1,105 点，当时广度不可能为正；② 也没有任何盘中广度序列，只有收盘 8/11 板块这一个当日值。",
+              "evidence": "^DJI / ^GSPC / ^IXIC 1m 低点均在 09:45（48,913.74 / 6,970.11 / 22,635.23），对应 −2.21% / −3.21% / −4.63%；today ② 的 steps 只有收盘 ETF 值（XLB/XLRE/XLC/XLK/XLV/XLY），没有 intraday breadth 数据。",
+              "rule": "写「all session / 全天」类广度断言前先取当日盘中序列；拿不到就删掉时间限定，只能写「breadth closed positive — eight of 11 sectors rose」。"
+            },
+            {
+              "id": "F3",
+              "severity": "major",
+              "category": "引用",
+              "symptom": "today ④ n5 把 AOL 稿写成「The dollar index rose 0.13% to 103.97, recovering part of its 0.4% slide in the prior session」，但该页现文只有「The dollar index … fell 0.14%」（103.97、0.13%、0.4% 在页内均 0 处）；s4 的「the DXY was up 0.13% at 103.97 in early trading」因此没有源。",
+              "evidence": "抓取 https://www.aol.com/articles/stocks-retreat-ai-rebound-stumbles-015033000.html 全文：dollar 只出现 1 次，为「fell 0.14%」；Yahoo DX-Y.NYB 5m 显示日内最高 104.089（01:15 ET），103.97 只是某个早盘时点的估值。",
+              "rule": "滚动通讯社稿（AOL/Reuters wrap）落盘前用 2 个特征词（103.97 + 0.13%）在页内检索；检索不到就只写页内现值（fell 0.14%），要保留盘中高点必须另挂 Yahoo 5m 数据页并标注时点。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today c4「The gate: OPEC+ on 11/29, then the December 8-9 FOMC; US markets are closed 11/26 and shut at 1 p.m. ET on 11/27」中，FOMC 12/8-9、11/26 休市、11/27 提前收盘三项在全文件 90 条 news 里 0 条背书；mtd c4 的「the December 8-9 FOMC the market has already priced for a hike」同病。",
+              "evidence": "grep 全部 news.fact：只有 ⑤ n4 的「OPEC+ meetings on Nov. 29 to set 2027 output」有源；FOMC / December 8 / 1 p.m. 只命中 c4 自身。LESSONS 2026-11-16 F7 已要求 c4 每个日期有 news 背书。",
+              "rule": "c4 每个日期写进快照前挂一条 news：FOMC 挂 federalreserve.gov 的 fomccalendars.htm，11/26 休市与 11/27 半天挂 NYSE 假日表；挂不上的日期直接从 c4 删除。"
+            },
+            {
+              "id": "F5",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "mtd ③ n1 / qtd ③ n0 / ytd ② n2 三条 fact 把「December … $3,538.20」挂在 Morningstar 结算稿上，但该页全文只有 November $3,534.70（−0.71%），grep 3,538 = 0；3,538.20 是本机 13:28-13:30 VWAP 自算值（foot 已注明）。",
+              "evidence": "抓取 morningstar.com/news/dow-jones/202611256404/comex-gold-settles-071-lower-at-353470-data-talk 全文：仅「Front Month Comex Gold for November delivery lost $25.20 … to $3534.70」，无 December / 3,538；GCZ26 1m 13:28-13:30 VWAP = 3,538.30。",
+              "rule": "自算的结算 VWAP 只写进 data/foot，不写成 news.fact 的页面事实；gold fact 只引页内确有的 November 句，要挂 Dec 就另加 Yahoo /quote/GCZ26.CMX/history。"
+            },
+            {
+              "id": "F6",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "mtd d 与 mtd c4 写「the 10Y's 9bp decline/rally was worth only about 0.5% in price」：按本站 11/24 自己的换算（3bp ≈ 0.25%，隐含久期 ~8.3），9bp 应 ≈ 0.75%，不是 0.5%。",
+              "evidence": "LESSONS 2026-11-24 F6 用「−3bp ≈ +0.25% 价格回报」；10Y 修正久期 ~8，9bp × 8 ≈ 0.72%。",
+              "rule": "写「Nbp ≈ x% 价格回报」前用同一久期口径现算：x% = Nbp × 8 / 100（9bp → 0.7%，写 about 0.7%），并让 d 与 c4 同值。"
+            },
+            {
+              "id": "F7",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "「1,105-point」出现在 today h / ① d / c1 / c4 / ① s5，但本链唯一相关 news（① n2）只写「more than 1,100 points」；1,105 是本机 ^DJI 1m 低点 48,913.74 的推算（50,018.70 − 48,913.74 = 1,104.96），无页面背书。",
+              "evidence": "CNBC live 页全文 4 处 1,100、0 处 1,105；Yahoo ^DJI 1m low 48,913.74 @09:45。",
+              "rule": "盘中点数（session low/high）要么写来源口径「more than 1,100」，要么在链内挂一条含该值的行情页并写明时点；h/d/c1/c4 与链文必须同一口径。"
+            },
+            {
+              "id": "F8",
+              "severity": "minor",
+              "category": "取数",
+              "symptom": "FX 面板的 11/24 收盘被整体改写：今日 series 的 11/24 点 usdcad 1.43653 / usdjpy 159.009 / usdeur 0.91675 / usdcny 6.6643 / cadcny 4.63897，昨日快照同点为 1.42694 / 159.224 / 0.9117 / 6.6543 / 4.6723（usdcad 差 0.67%），今日 day% 用重拉值（−1.08%）；同一交易日出现两个收盘。",
+              "evidence": "snapshots/2026-11-24.json 的 FX series 最后一点 vs snapshots/2026-11-25.json 同日期点；Yahoo CAD=X 11/24 现值为 1.43653（昨日 17:18 fetch 时 bar 未定稿）。",
+              "rule": "FX 的 DATE bar 在 19:00 ET 后才定稿：次日 fetch 必须用重拉值覆盖前一日同点（USD/CAD 1.43653 等 5 对），并在 foot 注明「FX 11/24 已按定稿 bar 修订」。"
+            },
+            {
+              "id": "F9",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today ④ d 写「gold's break below $3,500 bottomed at a one-year low」，源文是「lowest level since August 2025」/标题「more than one-year low」；one-year 低报了时间跨度。",
+              "evidence": "Mining.com 正文「hitting its lowest level since August 2025」；页面标题「Gold price falls 3% to more than one-year low」。",
+              "rule": "比较级按源文口径写：本次写「a more-than-one-year low」，不得把 since August 2025 压成 one-year。"
+            },
+            {
+              "id": "F10",
+              "severity": "minor",
+              "category": "schema",
+              "symptom": "qtd c1 / ① s1 / ① s3 用到 communications −5.04%、energy −0.98%、industrials −2.41%，但 qtd 三条链的 ETF fact 只有 XLK / XLP / XLU / XLV，没有 XLC / XLE / XLI，读者在本档无法验算这三个数。",
+              "evidence": "qtd ① news n4-n7 仅 XLK/XLP/XLU/XLV；HEAT.qtd comms −5.04 / energy −0.98 / industrials −2.41。",
+              "rule": "窗口档每个被点名的板块都要有同板块 ETF 的 Yahoo close fact（本次补 XLC/XLE/XLI）；定稿前对「链文板块名 − news 板块名」求差集，非空即补。"
+            },
+            {
+              "id": "F11",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ① s0「keeping a December hike fully priced」不在本链任何 news.fact 里（n0 只写 PCE 3.3%/3.8% 与 GDP 4.3%）；「fully priced」也比来源更强（live 页只说「reiterated expectations for interest rate hikes … in December and January」，未给概率）。",
+              "evidence": "① n0-n8 无 hike / priced 字样；CNBC live 页原句为 reiterated expectations。",
+              "rule": "step 的每个断言必须能在本链 news.fact 找到同义句：本次改写为「with expectations for December and January hikes reiterated」并去掉 fully priced。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
