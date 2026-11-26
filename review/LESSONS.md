@@ -46,6 +46,8 @@
 | 2026-11-20 | 数字 | today ⑤ n0「settled down $171.50 at $3,514.50」隐含前结算 3,686.00，与本站 tbl/prev 的 3,685.50 差 $0.50，day% 按 3,685.50 应为 −4.64% 而非 −4.65% | 同一商品的「settled down $X at $Y」必须满足 前结算 = Y + X；与本站 prev 差 >$0.10 就改写为「$X lower … from the prior settlement of $prev」（本次写 $171.00 / −4.64%），并在 foot 注一句修订来源，禁止直接照抄通讯社的 drop 金额 |
 | 2026-11-24 | 数字 | mtd ② n1 / qtd ③ n0 / ytd ② n2 的黄金 fact 用 front-month Nov $3,559.90，同链 step 与 tbl 用 Dec $3,562.10（差 $2.20），fact 未点名 November，读者无法判断两个价的关系 | 通讯社「front-month settled」句必须写明月份（本次 November）；同档 step 用本站基准合约（Dec）时，同句括注「the November front month settled at $X」给出两个合约与差额；tbl/HEAT 与派生 % 一律用 Dec |
 
+| 2026-11-25 | 取数 | FX 面板 11/24 收盘被次日重拉值整体改写（USD/CAD 1.42694→1.43653、USD/JPY 159.224→159.009、USD/EUR 0.9117→0.91675、USD/CNY 6.6543→6.6643、CAD/CNY 4.6723→4.63897），同一交易日在两份文件里有两个收盘且未说明 | FX 的 DATE bar 在 19:00 ET 后才定稿：次日 fetch 必须用重拉值覆盖前一日同点五对，并在 foot 注明「FX 11/24 closes revised to final bars (…五对值)」；不得让同一交易日的两个收盘并存而不加说明 |
+
 ## 取数前提
 
 | 日期 | 类别 | 症状 | 规则 |
@@ -219,6 +221,17 @@
 | 2026-11-24 | 数字 | mtd ③ d「kept 2.90 points more than the index」：2.90 是 RSP −1.99 vs SPY −4.89 的差；对 S&P 500（−5.00）应为 3.01；同链 s0 也把 2.90 挂在 cap-weighted index 上 | d 的差值句必须点名比较对象并与同链 step 同对象：写「than the index」用 S&P 5.00−1.99=3.01，写「than SPY」才用 2.90 |
 | 2026-11-24 | 数字 | mtd c1 / qtd c1 / qtd ① s2「the last two sessions recovered 4.21% of the 10.12% slide」量纲错：4.21% 是自 11/20 低点 6,910.39 到 7,201.09 的百分比涨幅（基数不同），照字面只等于 0.43pp；实收复 290.70 点，占 778.23 点跌幅的 **37.4%**（注意 4.21/10.12 = 41.6% 也是基数错配，reviewer 给的该值同样不可用） | 写「recovered X% of the slide」前用同一点位序列算 (期末−低点)/(高点−低点)（本次 290.70/778.23 = 37.4%），两个百分比变化不能相除；落盘写成「recovered 290.70 points, 37.4% of the 10.12% slide」 |
 | 2026-11-24 | 引用 | qtd ③ s1 的换月锚点「December crude settled at $117.64 on 10/30」在本链 4 条 news 里没有 10/30 的结算源（全是 11/24 的稿），117.64/113.43 只出现在 foot 公式里 | 换月锚点必须挂 10/30 当日结算稿（CNBC 2026/10/30 油价稿含 117.64 / 113.43 / 104.12）；本链没有就补一条 10/30 的 news，或把该句从 step 移到 foot |
+
+| 2026-11-25 | 数字 | qtd ① s2 与 qtd c1 的「recovered 272.39 points, 35.0% of that drawdown」用了 MTD 的 11/4 高点（7,688.62，跌幅 778.23 点）；按句中「9.69% below the base」的基期跌幅 741.15 点应为 36.8%，按 Q4 真实高点 7,818.93 应为 30.0% | 写「recovered X% of the slide/drawdown」前先锁定本档自己的峰谷：QTD 用本档高点（10/6 7,818.93，272.39/908.54 = 30.0%）或明写基期跌幅（7,651.54→6,910.39 = 741.15 点，36.8%）；禁止把 MTD 的 11/4 高点与 35.0% 搬进 QTD |
+| 2026-11-25 | 逻辑 | today ② d「breadth was positive all session」与主链 ① s2 矛盾：09:45 时 S&P 已 −3.2%、Nasdaq −4.6%，当日只有收盘 8/11 板块一个广度值 | 写「all session/全天」类广度断言前必须取当日盘中广度序列；拿不到就删掉时间限定，只写收盘广度（「eight of 11 sectors rose」），不得用收盘值反推全天 |
+| 2026-11-25 | 引用 | today ④ n5 把 AOL 稿写成「The dollar index rose 0.13% to 103.97」，该页现文只有「fell 0.14%」，103.97/0.13%/0.4% 页内 0 处；s4 的「up 0.13% at 103.97 in early trading」因此无源 | 滚动通讯社稿（AOL/Reuters wrap）落盘前用 2 个特征词（价位 + 百分比）在页内检索；检索不到就只写页内现值，或删掉该 news 与依赖它的 step，不得把盘中估值写成事实 |
+| 2026-11-25 | 引用 | today c4 与 mtd c4 的「December 8-9 FOMC」「11/26 休市」「11/27 1 p.m. 收盘」在全文件 90 条 news 里 0 条背书（只有 OPEC+ 11/29 有源） | c4 每个日期写进快照前挂一条 news：FOMC 挂 federalreserve.gov/monetarypolicy/fomccalendars.htm（2026-12-8/9），NYSE 假日与 1 p.m. 提前收盘挂 nyse.com/markets/hours-calendars；挂不上的日期直接从 c4 删除 |
+| 2026-11-25 | 引用 | mtd ③ n1/qtd ③ n0/ytd ② n2 把「December … $3,538.20」挂在 Morningstar 结算稿上，该页只有 November $3,534.70（−0.71%），3,538.20 是本机 13:28-13:30 VWAP 自算值 | 自算的期货结算 VWAP 只写进 data/foot，不写成 news.fact 的页面事实；gold fact 只引 Dow Jones Data Talk 页内确有的 November 前月句（$3,534.70/−0.71%），Dec 基准值留在 foot 与链文（不挂该 URL） |
+| 2026-11-25 | 数字 | mtd d 与 mtd c4 写「the 10Y's 9bp decline was worth about 0.5%」：按本站 11/24 的久期口径（3bp≈0.25%），9bp 应≈0.7% | 写「Nbp ≈ x% 价格回报」前用同一久期口径现算（x% = Nbp × 8/100；9bp → 0.7%），d 与 c4 必须同值 |
+| 2026-11-25 | 引用 | 「1,105-point」出现在 today h/① d/c1/c4 共 4 处（reviewer 记 5 处，① s5 实为 164.25 点），唯一相关 news ① n2 只写「more than 1,100 points」；1,105 由本机 ^DJI 1m 低点 48,913.74 推算 | 盘中点数（session low/high）要么写来源口径「more than 1,100 points」，要么在链内挂一条含该值的行情页并写明时点；h/d/c1/c4 与链文必须同一口径，不得用 1m 推算值冒充满点差 |
+| 2026-11-25 | 逻辑 | today ④ d 与标题写「a one-year low/One-Year Low」，源文为「lowest level since August 2025」/标题「more than one-year low」 | 比较级按源文口径写：源文「lowest since August 2025/more than one-year low」不得压成「one-year low」；年份/月份锚点与比较级同句保留 |
+| 2026-11-25 | schema | qtd c1 用到 communications −5.04%，qtd ① s3 点名 energy/industrials，但本档 news 只有 XLK/XLP/XLU/XLV 的 ETF fact（energy −0.98/industrials −2.41 仅见 HEAT） | 窗口档每个被点名的板块都要有同板块 ETF 的 Yahoo close fact（本次补 XLC 105.38/−5.04%、XLE 60.90/−0.98%、XLI 162.95/−2.41%）；定稿前对「链文板块名 − news 板块名」求差集，非空即补 |
+| 2026-11-25 | 引用 | today ① s0「keeping a December hike fully priced」不在本链任何 news.fact 里，且强于来源的「reiterated expectations for interest rate hikes in December and January」 | step 的每个断言必须能在本链 news.fact 找到同义句：把「fully priced」改为来源原话「reiterated expectations for December and January hikes」，并同步 c4 的同一断言 |
 
 ## 链结构（主链 / 辅链）
 

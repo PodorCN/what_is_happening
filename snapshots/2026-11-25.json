@@ -2,10 +2,10 @@
   "date": "2026-11-25",
   "updatedAt": "2026-11-25T22:45:00Z",
   "label": "2026-11-25 Wednesday close",
-  "foot": "Closing baseline (auto 2026-11-25): SPX 7182.78 (-0.25% day / -5.24% MTD / -6.13% QTD / +4.93% YTD) · DJI 50182.95 · IXIC 23585.80 · 10Y 4.85% / 2Y 4.61% / 30Y 5.24% (Treasury daily par curve) · WTI 83.68 (Jan settle, +$1.63; MTD base 103.41 = 10/30 Dec 104.12 x 83.41/83.98, roll-adjusted; QTD base 87.82 = 9/30 Dec 88.42 x 83.41/83.98) · Brent 94.61 (Jan settle, +$3.21; QTD base 94.52 = 9/30 Dec 98.03 x 113.43/117.64, roll-adjusted) · Gold 3538.20 (Dec COMEX settle, 13:28-13:30 ET VWAP; front-month Nov settled 3,534.70; GC=F now quotes February, ~3,613, so its day change is a roll artifact) · BTC 60137.61 (4pm ET) · VIX 28.29. Sector and single-name returns computed from Yahoo closes; WTI/Brent from Reuters/CNBC settlement reports. 25-12-31 S&P 6845.5/Dow 48063.29/Nasdaq 23241.99/10Y 4.18%/30Y 4.84%/2Y 3.47%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.44% · 26-08-31 S&P 7686.14/10Y 4.75% · 26-09-30 S&P 7651.54/10Y 5.29%/30Y 5.64%/2Y 4.88%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4186.70 (fut)/BTC $83553.85/VIX 16.34. For information only - not investment advice.",
+  "foot": "Closing baseline (auto 2026-11-25): SPX 7182.78 (-0.25% day / -5.24% MTD / -6.13% QTD / +4.93% YTD) · DJI 50182.95 · IXIC 23585.80 · 10Y 4.85% / 2Y 4.61% / 30Y 5.24% (Treasury daily par curve) · WTI 83.68 (Jan settle, +$1.63; MTD base 103.41 = 10/30 Dec 104.12 x 83.41/83.98, roll-adjusted; QTD base 87.82 = 9/30 Dec 88.42 x 83.41/83.98) · Brent 94.61 (Jan settle, +$3.21; QTD base 94.52 = 9/30 Dec 98.03 x 113.43/117.64, roll-adjusted) · Gold 3538.20 (Dec COMEX settle, 13:28-13:30 ET VWAP; front-month Nov settled 3,534.70; GC=F now quotes February, ~3,613, so its day change is a roll artifact) · BTC 60137.61 (4pm ET) · VIX 28.29. Sector and single-name returns computed from Yahoo closes; WTI/Brent from Reuters/CNBC settlement reports. 25-12-31 S&P 6845.5/Dow 48063.29/Nasdaq 23241.99/10Y 4.18%/30Y 4.84%/2Y 3.47%/WTI 57.42/Brent 60.85 (front-month back series) · 26-06-30 S&P 7499.36/10Y 4.44% · 26-08-31 S&P 7686.14/10Y 4.75% · 26-09-30 S&P 7651.54/10Y 5.29%/30Y 5.64%/2Y 4.88%/WTI $88.42 (Dec)/Brent $98.03 (Dec; QTD roll-adj. 94.52)/Gold $4186.70 (fut)/BTC $83553.85/VIX 16.34. FX 11/24 closes revised to final bars (USD/CAD 1.43653, USD/JPY 159.009, USD/EUR 0.91675, USD/CNY 6.6643, CAD/CNY 4.63897). For information only - not investment advice.",
   "P": {
     "today": {
-      "h": "A 1,105-Point Hole, Erased: Dow +0.33%, S&P -0.25%",
+      "h": "A 1,100-Point Hole, Erased: Dow +0.33%, S&P -0.25%",
       "d": "October core PCE at 3.3% and Section 301 tariffs on 14 trading partners knocked the S&P 3.2% lower at the open, but dip buyers and a Michael Burry post turned the tape: the Dow closed higher, eight of 11 sectors rose and the equal-weight ETF beat SPY by 1.12 points.",
       "badges": [
         "S&P 7,182 -0.25%",
@@ -116,21 +116,21 @@
         7201.09,
         7182.78
       ],
-      "c1": "<p>The S&amp;P 500 fell as much as 3.2% within the first half hour, then closed 0.25% lower at 7,182.78. The Nasdaq Composite was down 4.6% at its low and finished 0.62% lower at 23,585.80, while the Dow erased a 1,105-point hole to close up 164.25 points at 50,182.95. October core PCE rose 3.3% year over year against a 3.2% forecast, with headline PCE at 3.8% and third-quarter GDP revised up to 4.3%, and the White House proposed Section 301 tariffs on 14 trading partners including China, the EU and Japan. Nvidia was off almost 7% at midday before closing 3.91% lower at $149.30, after S&amp;P Global put its AA rating on CreditWatch Negative; Micron lost 4.53%, Oracle 5.13% and Alphabet 2.13%. The damage stayed narrow: eight of 11 sectors rose, materials +2.07% and real estate +0.92% led, the equal-weight S&amp;P 500 ETF added 0.83% against SPY's -0.29%, and the Russell 2000 gained 0.71%. The VIX traded back above 30 in the morning and settled 7.32% higher at 28.29.</p>",
-      "c4": "<ul class='play'><li>The trigger: core PCE at 3.3% kept a December hike fully priced, and Section 301 duties on 14 partners added a trade shock on top of the AI de-rating.</li><li>The reversal: a 1,105-point Dow hole became a 164-point gain, helped by thin pre-holiday volume and Michael Burry's \"temporarily almost entirely long\" post.</li><li>The breadth: eight of 11 sectors rose and the equal-weight ETF beat SPY by 1.12 points, so the index loss was a megacap problem.</li><li>The AI tell: S&amp;P Global put Nvidia's AA rating on CreditWatch Negative and Ambarella fell 19.77% on guidance.</li><li>The gate: OPEC+ on 11/29, then the December 8-9 FOMC; US markets are closed 11/26 and shut at 1 p.m. ET on 11/27.</li></ul>",
+      "c1": "<p>The S&amp;P 500 fell as much as 3.2% within the first half hour, then closed 0.25% lower at 7,182.78. The Nasdaq Composite was down 4.6% at its low and finished 0.62% lower at 23,585.80, while the Dow erased a hole of more than 1,100 points to close up 164.25 points at 50,182.95. October core PCE rose 3.3% year over year against a 3.2% forecast, with headline PCE at 3.8% and third-quarter GDP revised up to 4.3%, and the White House proposed Section 301 tariffs on 14 trading partners including China, the EU and Japan. Nvidia was off almost 7% at midday before closing 3.91% lower at $149.30, after S&amp;P Global put its AA rating on CreditWatch Negative; Micron lost 4.53%, Oracle 5.13% and Alphabet 2.13%. The damage stayed narrow: eight of 11 sectors rose, materials +2.07% and real estate +0.92% led, the equal-weight S&amp;P 500 ETF added 0.83% against SPY's -0.29%, and the Russell 2000 gained 0.71%. The VIX traded back above 30 in the morning and settled 7.32% higher at 28.29.</p>",
+      "c4": "<ul class='play'><li>The trigger: core PCE at 3.3% reiterated expectations for December and January hikes, and Section 301 duties on 14 partners added a trade shock on top of the AI de-rating.</li><li>The reversal: a Dow hole of more than 1,100 points became a 164-point gain, helped by thin pre-holiday volume and Michael Burry's \"temporarily almost entirely long\" post.</li><li>The breadth: eight of 11 sectors rose and the equal-weight ETF beat SPY by 1.12 points, so the index loss was a megacap problem.</li><li>The AI tell: S&amp;P Global put Nvidia's AA rating on CreditWatch Negative and Ambarella fell 19.77% on guidance.</li><li>The gate: OPEC+ on 11/29, then the December 8-9 FOMC; US markets are closed 11/26 and shut at 1 p.m. ET on 11/27.</li></ul>",
       "chains": [
         {
           "t": "① The Morning Priced a Shock, the Afternoon Priced a Holiday Tape",
           "main": 1,
           "steps": [
-            "October core PCE rose 3.3% year over year against a 3.2% forecast, with headline PCE at 3.8% and third-quarter GDP revised up to 4.3%, keeping a December hike fully priced.",
+            "October core PCE rose 3.3% year over year against a 3.2% forecast, with headline PCE at 3.8% and third-quarter GDP revised up to 4.3%; the data reiterated expectations for December and January hikes.",
             "The White House proposed Section 301 tariffs on 14 trading partners including China, the EU and Japan; China faces 20% on top of the 25% imposed in 2018.",
             "The S&P fell 3.2% and the Nasdaq 4.6% at their lows inside the first half hour, and the Dow was down more than 1,100 points.",
             "Nvidia was off almost 7% at midday before closing 3.91% lower at $149.30.",
             "Buyers returned after midday: traders cited thin pre-Thanksgiving volume and a Michael Burry newsletter saying his portfolio is \"temporarily almost entirely long\".",
             "The Dow closed up 164.25 points at 50,182.95 and the S&P 0.25% lower, while the VIX settled at 28.29 after trading above 30."
           ],
-          "d": "The morning was a tariff-and-inflation shock, the afternoon a holiday-tape reversal: the Dow turned a 1,105-point loss into a 164-point gain and the S&P kept less than a tenth of its worst loss.",
+          "d": "The morning was a tariff-and-inflation shock, the afternoon a holiday-tape reversal: the Dow turned a loss of more than 1,100 points into a 164-point gain and the S&P kept less than a tenth of its worst loss.",
           "news": [
             {
               "time": "11/25",
@@ -185,6 +185,12 @@
               "fact": "The S&P 500 closed at 7,182.78, down 18.31 points or 0.25% from 7,201.09.",
               "src": "Yahoo Finance",
               "u": "https://finance.yahoo.com/quote/%5EGSPC/history"
+            },
+            {
+              "time": "11/25",
+              "src": "CNBC",
+              "fact": "October's PCE reading reiterated expectations for interest rate hikes from the Federal Reserve in December and January.",
+              "u": "https://www.cnbc.com/2026/11/24/stock-market-today-live-updates-.html"
             }
           ]
         },
@@ -198,7 +204,7 @@
             "The Russell 2000 added 0.71% to 2,704.06.",
             "The Dow's gain came from IBM +3.33%, Salesforce +2.04% and Sherwin-Williams +2.40%."
           ],
-          "d": "The index fell only because its largest stocks did: breadth was positive all session, materials and real estate were bid, and an equal-weighted portfolio beat the cap-weighted one by more than a point.",
+          "d": "The index fell only because its largest stocks did: eight of 11 sectors rose, materials and real estate were bid, and an equal-weighted portfolio beat the cap-weighted one by more than a point.",
           "news": [
             {
               "time": "11/25 close",
@@ -336,16 +342,17 @@
           ]
         },
         {
-          "t": "④ A Bond Bid, and Gold's Slide Stopped at a One-Year Low",
+          "t": "④ A Bond Bid, and Gold's Slide to Its Lowest Since August 2025",
           "main": 0,
           "steps": [
             "The Treasury par curve closed at 2Y 4.61%, 10Y 4.85% and 30Y 5.24%: the 10Y fell 6bp, the 30Y 6bp and the 2Y 2bp, leaving 2s10s at 24bp, 4bp flatter.",
             "The long end led the bid, with the 7Y and the 20Y each down 5bp against the 2Y's 2bp.",
             "Spot gold fell 3% to $3,445.89 an ounce by 11:13 a.m. ET, its lowest since August 2025; the December contract settled 0.67% lower at $3,538.20.",
             "The front-month November contract settled at $3,534.70, down 0.71%, and Comex's active month has rolled to February.",
-            "The dollar gave up its tariff bid: the DXY was up 0.13% at 103.97 in early trading and closed 0.12% lower at 103.71."
+            "The dollar slipped: the DXY closed 0.12% lower at 103.71.",
+            "The calendar: the next FOMC meeting is December 8-9, with US markets closed on 11/26 and closing at 1 p.m. ET on 11/27."
           ],
-          "d": "The rate shock never reached the bond market: yields fell across the curve, gold's break below $3,500 bottomed at a one-year low, and the dollar surrendered its morning gain.",
+          "d": "The rate shock never reached the bond market: yields fell across the curve, gold's break below $3,500 bottomed at its lowest since August 2025, and the dollar slipped.",
           "news": [
             {
               "time": "11/25",
@@ -379,9 +386,15 @@
             },
             {
               "time": "11/25",
-              "fact": "The dollar index rose 0.13% to 103.97, recovering part of its 0.4% slide in the prior session.",
-              "src": "Reuters via AOL",
-              "u": "https://www.aol.com/articles/stocks-retreat-ai-rebound-stumbles-015033000.html"
+              "src": "Federal Reserve",
+              "fact": "The Federal Open Market Committee's next meeting is scheduled for December 8-9, 2026.",
+              "u": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+            },
+            {
+              "time": "11/26",
+              "src": "NYSE",
+              "fact": "The NYSE holiday calendar lists a full closure on November 26, 2026 and an early close at 1:00 p.m. ET on November 27, 2026.",
+              "u": "https://www.nyse.com/markets/hours-calendars"
             }
           ]
         },
@@ -548,7 +561,7 @@
         7182.78
       ],
       "c1": "<p>November is a 5.24% drawdown on the S&amp;P 500 from the 10/30 base of 7,580.07, and its shape is unchanged: the month's high was 7,688.62 on 11/4, its low 6,910.39 on 11/20, and the rebound since has recovered 272.39 points, 35.0% of the 10.12% slide from that high. Technology (-13.21%) and energy (-13.02%) are the two worst of the 11 sectors; communications +5.49%, staples +3.22%, consumer discretionary +1.83%, real estate +1.60% and utilities +0.41% are above the line, and financials are unchanged. The Nasdaq is 7.28% lower for the month against the Dow's 3.07%, and the S&amp;P is 8.14% below its 10/6 record.</p>",
-      "c4": "<ul class='play'><li>The shape: the 11/20 low was 8.83% below the base; the rebound has taken that to 5.24%.</li><li>The breadth: five of 11 sectors are above the 10/30 line and financials are flat.</li><li>The hedge that paid: the VIX is 45.67% higher at 28.29; gold -9.25%, bitcoin -22.10% and Brent -16.59% all lost money, and the 10Y's 9bp decline was worth only about 0.5% in price.</li><li>The rates: the 2Y rose 5bp while the 10Y fell 9bp, a 14bp flattening to 24bp.</li><li>The next test: OPEC+ on 11/29, then the December 8-9 FOMC the market has already priced for a hike.</li></ul>",
+      "c4": "<ul class='play'><li>The shape: the 11/20 low was 8.83% below the base; the rebound has taken that to 5.24%.</li><li>The breadth: five of 11 sectors are above the 10/30 line and financials are flat.</li><li>The hedge that paid: the VIX is 45.67% higher at 28.29; gold -9.25%, bitcoin -22.10% and Brent -16.59% all lost money, and the 10Y's 9bp decline was worth only about 0.7% in price.</li><li>The rates: the 2Y rose 5bp while the 10Y fell 9bp, a 14bp flattening to 24bp.</li><li>The next test: OPEC+ on 11/29, then the December 8-9 FOMC.</li></ul>",
       "chains": [
         {
           "t": "① November Took the Year's Winners Apart",
@@ -662,7 +675,7 @@
             "The dollar index is 1.79% higher at 103.71, so the month's commodity slide came with a firmer dollar rather than a weaker one.",
             "The 2Y rose 5bp to 4.61% while the 10Y fell 9bp to 4.85%, flattening 2s10s to 24bp from 38bp."
           ],
-          "d": "November paid for volatility and little else: gold and bitcoin failed as hedges, the 10Y's 9bp rally was worth about 0.5%, and the curve flattened as the front end held.",
+          "d": "November paid for volatility and little else: gold and bitcoin failed as hedges, the 10Y's 9bp rally was worth about 0.7%, and the curve flattened as the front end held.",
           "news": [
             {
               "time": "11/25 close",
@@ -672,7 +685,7 @@
             },
             {
               "time": "11/25 settle",
-              "fact": "Comex gold settled at $3,534.70 for the November front month on 11/25, down 0.71%, with December at $3,538.20.",
+              "fact": "Front Month Comex Gold for November delivery lost $25.20 per troy ounce, or 0.71%, to $3,534.70 on 11/25.",
               "src": "Morningstar / Dow Jones",
               "u": "https://www.morningstar.com/news/dow-jones/202611256404/comex-gold-settles-071-lower-at-353470-data-talk"
             },
@@ -858,7 +871,7 @@
         7201.09,
         7182.78
       ],
-      "c1": "<p>Q4 is a 6.13% drawdown on the S&amp;P 500 from the 9/30 base of 7,651.54 and a 12.19% drawdown on the Nasdaq, while the Dow is only 1.42% lower. The quarter's low was 6,910.39 on 11/20, 9.69% below the base; the rebound has recovered 272.39 points, 35.0% of that drawdown. Technology is 20.41% lower for the quarter and communications 5.04% lower, while staples +14.52%, utilities +10.57%, health +9.06% and consumer discretionary +7.95% lead: seven of 11 sectors are higher. The 10Y fell 44bp over the same window, so the de-rating came with a bond bid rather than a rate shock.</p>",
+      "c1": "<p>Q4 is a 6.13% drawdown on the S&amp;P 500 from the 9/30 base of 7,651.54 and a 12.19% drawdown on the Nasdaq, while the Dow is only 1.42% lower. The quarter's low was 6,910.39 on 11/20, 9.69% below the base; the rebound has recovered 272.39 points, 36.8% of that 741.15-point drawdown from the base. Technology is 20.41% lower for the quarter and communications 5.04% lower, while staples +14.52%, utilities +10.57%, health +9.06% and consumer discretionary +7.95% lead: seven of 11 sectors are higher. The 10Y fell 44bp over the same window, so the de-rating came with a bond bid rather than a rate shock.</p>",
       "c4": "<ul class='play'><li>The shape: an AI de-rating inside an equity drawdown, with the Dow down only 1.42% against the Nasdaq's 12.19%.</li><li>The rates: 10Y -44bp, 30Y -40bp and 2Y -27bp; 2s10s flattened 17bp to 24bp.</li><li>The rotation: seven of 11 sectors are higher, led by staples and utilities.</li><li>The commodity side: gold -15.49%, bitcoin -28.03% and Brent +0.10% on a roll-adjusted basis.</li><li>The carry: the 2Y is still 114bp above its 2026 starting point even after this quarter's 27bp give-back.</li></ul>",
       "chains": [
         {
@@ -867,7 +880,7 @@
           "steps": [
             "The S&P 500 sits 6.13% under its 9/30 base of 7,651.54, the Nasdaq 12.19% and the Dow only 1.42%.",
             "Technology accounts for the worst sector loss at 20.41%; staples +14.52%, utilities +10.57% and health +9.06% are the leaders.",
-            "The quarter bottomed at 6,910.39 on 11/20, 9.69% below the base, and the rebound has retaken 35.0% of that, 272.39 points.",
+            "The quarter bottomed at 6,910.39 on 11/20, 9.69% below the base, and the rebound has retaken 272.39 points, 36.8% of that 741.15-point drop.",
             "Seven of the 11 sectors are up since 9/30; technology, communications, energy and industrials are the four that are not."
           ],
           "d": "The quarter's drawdown is a technology event, not a broad one: seven sectors are higher and the Dow is down less than two percent.",
@@ -925,6 +938,24 @@
               "fact": "The S&P 500 closed at 6,910.39 on 11/20, 9.69% below the 9/30 base.",
               "src": "Yahoo Finance",
               "u": "https://finance.yahoo.com/quote/%5EGSPC/history"
+            },
+            {
+              "time": "11/25 close",
+              "src": "Yahoo Finance",
+              "fact": "XLC closed at $105.38, down 5.04% from $110.97 on 9/30.",
+              "u": "https://finance.yahoo.com/quote/XLC/history"
+            },
+            {
+              "time": "11/25 close",
+              "src": "Yahoo Finance",
+              "fact": "XLE closed at $60.90, down 0.98% from $61.50 on 9/30.",
+              "u": "https://finance.yahoo.com/quote/XLE/history"
+            },
+            {
+              "time": "11/25 close",
+              "src": "Yahoo Finance",
+              "fact": "XLI closed at $162.95, down 2.41% from $166.98 on 9/30.",
+              "u": "https://finance.yahoo.com/quote/XLI/history"
             }
           ]
         },
@@ -965,7 +996,7 @@
           "news": [
             {
               "time": "11/25 settle",
-              "fact": "The December Comex contract settled at $3,538.20 on 11/25, and the expiring November front month settled at $3,534.70.",
+              "fact": "Comex's front-month November gold settled at $3,534.70 on 11/25, down 0.71% and lower for a second straight session.",
               "src": "Morningstar / Dow Jones",
               "u": "https://www.morningstar.com/news/dow-jones/202611256404/comex-gold-settles-071-lower-at-353470-data-talk"
             },
@@ -1240,7 +1271,7 @@
             },
             {
               "time": "11/25 settle",
-              "fact": "Gold for December delivery settled at $3,538.20 on 11/25; the November front month settled at $3,534.70, down 0.71%.",
+              "fact": "Front Month Comex Gold for November delivery settled at $3,534.70 on 11/25, down $25.20 or 0.71%.",
               "src": "Morningstar / Dow Jones",
               "u": "https://www.morningstar.com/news/dow-jones/202611256404/comex-gold-settles-071-lower-at-353470-data-talk"
             },

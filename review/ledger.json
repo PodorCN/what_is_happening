@@ -3128,9 +3128,15 @@
               "rule": "step 的每个断言必须能在本链 news.fact 找到同义句：本次改写为「with expectations for December and January hikes reiterated」并去掉 fully priced。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": [],
+          "note": "fixer: F1-F11 全部修复并自查通过。F7 的 1,105 实际出现 4 处（h、① d、c1、c4；① s5 是 164.25 点），F10 中 energy/industrials 的数字仅出现在 HEAT、链文只点名未给数；两处均按成立部分修好并在 LESSONS 记录差异。"
         }
       ],
-      "resolved": false
+      "resolved": true
     }
   ]
 }
