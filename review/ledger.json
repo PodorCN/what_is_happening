@@ -3137,6 +3137,53 @@
         }
       ],
       "resolved": true
+    },
+    {
+      "date": "2026-11-27",
+      "reviewedAt": "2026-11-27T18:45:00-05:00",
+      "reviewedCommit": "7a1d963",
+      "verdict": "REVISE",
+      "rounds": [
+        {
+          "round": 1,
+          "verdict": "REVISE",
+          "findings": [
+            {
+              "id": "F1",
+              "severity": "major",
+              "category": "逻辑",
+              "symptom": "today 主链 ① 的 d 与 s0 把 11/20 的低点幅度与 11/27 的当日涨幅拼成一次动作：d 写「the Nasdaq 100 rose 2.61% off a 19.84% drawdown」，s0 写「had closed 11/20 at 25,028.98, 19.84% below its 10/6 record …; it rose 2.61% to 26,726.39 on 11/27」。2.61% 的分母是 11/25 收盘 26,046.90（距纪录 −16.58%），不是 25,028.98（−19.84%）；按 s0 给的 25,028.98 复算 25,028.98×1.0261 = 25,682.24，与 26,726.39 差 1,044 点。",
+              "evidence": "Yahoo ^NDX 日线：11/20 25,028.98、11/23 26,746.10、11/24 26,214.17、11/25 26,046.90、11/27 26,726.39；同链 n3 自己写「up 2.61% from 26,046.90」，正确分母已在链内。26,726.39/25,028.98−1 = +6.78%（四日累计反弹），26,046.90/31,224.47−1 = −16.58%，11/27 收盘仍距 10/6 纪录 −14.41%。",
+              "rule": "写「X rose n% to Y」时同一句必须给出 n% 的分母、且 Y/(1+n%) 可复算出该分母（本次 26,726.39/1.0261 = 26,046.90）；引用一周前的回撤幅度不得与当日涨跌幅并置——要写就另起一句「the four-session rebound from the 11/20 low is +6.78%, still 14.41% below the 10/6 record」。"
+            },
+            {
+              "id": "F2",
+              "severity": "minor",
+              "category": "逻辑",
+              "symptom": "today ② 标题「Everything Rose, but the Average Stock Lagged」与同链 s5「Bitcoin was the exception: it fell 0.75% to $59,684.11 and ether 1.83% to $1,659.78」及 d「and crypto sat it out」相反——链内自己点名加密没涨，标题却断言 everything rose。",
+              "evidence": "同档 HEAT today「BTC $59.7k −0.75」；② s5 原文；② d 原文。",
+              "rule": "链标题的全体量词（everything / all）必须覆盖同链 steps 的每一项资产：有例外就改成「Everything but Crypto Rose」或「All 11 Sectors Rose」，不得先用 everything、再在末段写 the exception。"
+            },
+            {
+              "id": "F3",
+              "severity": "minor",
+              "category": "引用",
+              "symptom": "today ③ n1 引 Bloomberg「The yield on 10-year Treasuries advanced eight basis points to 4.93%」，与同链 s0 及 kpi/tbl/HEAT 的「10Y 4.94% +9bp」差 1bp/1bp，同档没有任何一句说明这是两个口径。",
+              "evidence": "swissinfo 的 Bloomberg 转载原文确为「advanced eight basis points to 4.93%」；本站数字来自 Treasury par CSV（11/25 4.85 → 11/27 4.94 = +9bp），foot 只写「Treasury daily par curve」，未解释这 1bp 的来源差。",
+              "rule": "引用通讯社收益率与本站 Treasury par 不一致时，在该 fact 里标明口径（「Bloomberg generic 4.93%, +8bp vs Treasury par 4.94%, +9bp」）或删掉该条只留 Treasury fact；同一档不得让两个未标注口径的 10Y 值并置。"
+            },
+            {
+              "id": "F4",
+              "severity": "minor",
+              "category": "数字",
+              "symptom": "mtd ② s0「RSP is 0.03% higher for the month against SPY's 3.63% decline, 3.76 points better than the index」：句中给出的 SPY 口径差是 0.03−(−3.63) = 3.66，3.76 实际是 RSP 对 S&P 500（−3.73）的差；标题与 d 的 3.76 用的是 S&P，读者按 s0 的 SPY 复算会对不上 0.10pp。",
+              "evidence": "Yahoo：RSP 218.31→218.38 = +0.032%，SPY 755.72→728.32 = −3.626%，S&P 7,580.07→7,297.49 = −3.728%；RSP−SPY = 3.66，RSP−S&P = 3.76（与 11/24 F7 同一类混用）。",
+              "rule": "写「N points better than the index」时同句只能出现被比较的那一个基准：用 S&P 就写「3.76 points better than the S&P 500」并不再列 SPY 的跌幅；要列 SPY 就写「3.66 points better than SPY」。"
+            }
+          ]
+        }
+      ],
+      "resolved": false
     }
   ]
 }
