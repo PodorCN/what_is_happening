@@ -47,6 +47,7 @@
 | 2026-11-24 | 数字 | mtd ② n1 / qtd ③ n0 / ytd ② n2 的黄金 fact 用 front-month Nov $3,559.90，同链 step 与 tbl 用 Dec $3,562.10（差 $2.20），fact 未点名 November，读者无法判断两个价的关系 | 通讯社「front-month settled」句必须写明月份（本次 November）；同档 step 用本站基准合约（Dec）时，同句括注「the November front month settled at $X」给出两个合约与差额；tbl/HEAT 与派生 % 一律用 Dec |
 
 | 2026-11-25 | 取数 | FX 面板 11/24 收盘被次日重拉值整体改写（USD/CAD 1.42694→1.43653、USD/JPY 159.224→159.009、USD/EUR 0.9117→0.91675、USD/CNY 6.6543→6.6643、CAD/CNY 4.6723→4.63897），同一交易日在两份文件里有两个收盘且未说明 | FX 的 DATE bar 在 19:00 ET 后才定稿：次日 fetch 必须用重拉值覆盖前一日同点五对，并在 foot 注明「FX 11/24 closes revised to final bars (…五对值)」；不得让同一交易日的两个收盘并存而不加说明 |
+| 2026-11-27 | 引用 | today ③ n1 引 Bloomberg「10Y advanced eight basis points to 4.93%」，与同档 kpi/tbl/HEAT 的 Treasury par 4.94%/+9bp 差 1bp/1bp，同档没有一句说明这是两个口径 | 引用通讯社收益率与本站 Treasury par 不一致时，在该 fact 里同句写明两个口径与差值（「Bloomberg 4.93%, +8bp; the Treasury par curve used here 4.94%, +9bp — a 1bp convention gap」）或删掉该条；同一档不得让两个未标注口径的 10Y 值并置 |
 
 ## 取数前提
 
@@ -232,6 +233,8 @@
 | 2026-11-25 | 逻辑 | today ④ d 与标题写「a one-year low/One-Year Low」，源文为「lowest level since August 2025」/标题「more than one-year low」 | 比较级按源文口径写：源文「lowest since August 2025/more than one-year low」不得压成「one-year low」；年份/月份锚点与比较级同句保留 |
 | 2026-11-25 | schema | qtd c1 用到 communications −5.04%，qtd ① s3 点名 energy/industrials，但本档 news 只有 XLK/XLP/XLU/XLV 的 ETF fact（energy −0.98/industrials −2.41 仅见 HEAT） | 窗口档每个被点名的板块都要有同板块 ETF 的 Yahoo close fact（本次补 XLC 105.38/−5.04%、XLE 60.90/−0.98%、XLI 162.95/−2.41%）；定稿前对「链文板块名 − news 板块名」求差集，非空即补 |
 | 2026-11-25 | 引用 | today ① s0「keeping a December hike fully priced」不在本链任何 news.fact 里，且强于来源的「reiterated expectations for interest rate hikes in December and January」 | step 的每个断言必须能在本链 news.fact 找到同义句：把「fully priced」改为来源原话「reiterated expectations for December and January hikes」，并同步 c4 的同一断言 |
+| 2026-11-27 | 数字 | mtd ② s0 列 SPY −3.63% 后写「3.76 points better than the index」：按 SPY 应为 3.66，3.76 是对 S&P（−3.73）的差；today ② s3 同型（对比 SPY 1.62% 却写 lagged the index by 0.40） | 「N points better/worse than X」的 X 必须与句中列出的那个基准同物：用 SPY 就写「3.66 points better than SPY」（0.03−(−3.63)），用 S&P 就写「3.76 points better than the S&P 500」且不再列 SPY%；标题/d/steps 三处同值，换基准时三处一起换 `[lint：points better than the index 同句两个基准 → WARN]` |
+| 2026-11-27 | 数字 | today 主链 ① d/s0 把 11/20 的 −19.84% 回撤与 11/27 的 +2.61% 拼成一次动作（「rose 2.61% off a 19.84% drawdown」）：2.61% 的分母是 11/25 收盘 26,046.90，按 25,028.98 复算应为 +6.78%，差 1,044 点 | 写「rose n% to Y」必须同句给出 n% 的基期价/日期（26,726.39/1.0261=26,046.90）；一周前的回撤幅度另起一句写「the four-session rebound from the 11/20 low is +6.78%, still 14.41% below the 10/6 record」，不得与当日涨跌幅并置 `[lint：rose X% off a Y% drawdown → WARN]` |
 
 ## 链结构（主链 / 辅链）
 
@@ -276,6 +279,7 @@
 | 2026-11-20 | 逻辑 | 主链 ① s1 与辅链 ② s0 逐字重复「SEC is exploring possible accounting issues at Nvidia」，① n2 与 ② n0 还是同一条 CNBC URL：主链把披露事实当触发，② 没有主链之外的增量 | 主链与辅链不得逐字共句：定稿前对主链×每条辅链做 4-gram 比对（共享 ≥4 词即改）；SEC/法律类事实只归披露链 ②，主链改成不带该事实的传导句且保留可核对数字（本次 ① s1 →「Nvidia fell 14.01% to $125.53 as a regulatory problem replaced the valuation debate」，并删 ① 的 SEC news） |
 | 2026-11-20 | 引用 | 三条 news 在同链无 step 支撑：① n3（NVDA 125.53/−14.01）在 ① 无 NVDA step、② n4（SOX 8,408.59/−10.73）在 ② 无 SOX step、③ n6（VIX 35.89）在 ③ 无 VIX step（2026-11-03 同型复发） | 每条 news 必须能在同链某个 step 找到同主语（同数值更佳）：找不到就移到有该 step 的链或删掉；本次 NVDA 补进 ① s1、SOX 归 ① s2、VIX 补进 ② s4，顺带把 mtd ③ 的 XLY 补进 s2、ytd ① 的 XLE/XLP-XLK 移到 ③ s1；定稿前逐链列出 news 主语与 steps 主语求交，空集即改 |
 | 2026-11-24 | 逻辑 | qtd c4「The bill: the 2Y still carries 116bp of 2026 tightening expectations into the December FOMC」把 YTD 的 116bp 放进 QTD playbook，而 QTD 2Y 实为 −25bp，与同档「The Quarter's Rate Relief」方向相反（2026-11-19 同型复发） | 「bill / cost」只能用于窗口净变动为正的期限；QTD 2Y −25bp 不得写 bill，改写为「the carry: the 2Y is still 116bp above its 2026 starting point even after this quarter's 25bp give-back — the year's bill, not the quarter's」，并与同档「Rate Relief」同向 |
+| 2026-11-27 | 逻辑 | today ② 标题「Everything Rose」与同链 s5（Bitcoin −0.75%、ether −1.83%）、d（crypto sat it out）相反 | 链标题的全体量词（everything/all/every）必须覆盖同链 steps 的每一项资产：有例外就改成限定主语（「All 11 Sectors Rose, but the Average Stock Lagged」），不得先用 everything、再在末段写 the exception |
 
 ## 交付与上线
 

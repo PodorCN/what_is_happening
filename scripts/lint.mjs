@@ -456,6 +456,35 @@ for (const tier of ["today", ...WIN])
         E(`${tier}.chains.${ci}.news.${ni}`, `fact 年份 ${[...yrs][0]} 与 URL 路径年份 ${m[1]} 不符——跨年锚点（12/31/2025）挂 /2025/ CSV`);
     }
 
+// ---------- 24. 「N points better/worse than the index」同句不得再列第二个基准（review 2026-11-27 F4；2026-11-23 同型）
+const spxPctOf = tier => {
+  const r = (snap.P[tier]?.tbl || []).find(x => String(x[0]).trim() === "S&P");
+  if (!r) return null;
+  const o = numOf(r[1]), c = numOf(r[2]);
+  return isFinite(o) && isFinite(c) && o ? (c / o - 1) * 100 : null;
+};
+for (const tier of ["today", ...WIN]) {
+  const spx = spxPctOf(tier);
+  if (spx == null) continue;
+  for (const [k, txt] of authored(snap.P[tier])) {
+    for (const sen of sentences(txt)) {
+      const m = sen.match(/(\d+(?:\.\d+)?)\s+points?\s+(better|worse)\s+than\s+(?:the\s+index|the\s+S&P(?:\s+500)?)/i);
+      if (!m) continue;
+      const named = [...sen.matchAll(/\b(SPY|RSP|Russell 2000|Dow|Nasdaq)\b[^.%;]{0,24}?([+\-−]?\d+(?:\.\d+)?)%/gi)].map(x => x[1].toLowerCase());
+      const uniq = [...new Set(named)];
+      if (uniq.length < 2) continue; // 只有一个基准（句首主语）时 "the index" 无歧义
+      W(`${tier}.${k}`, `同句既写 ${uniq.join("/")} 的百分比又写「${m[1]} points ${m[2]} than the index」——「the index」= S&P ${spx >= 0 ? "+" : ""}${spx.toFixed(2)}%，两个基准不可混用；改成「N points ${m[2]} than SPY」或「than the S&P 500」并只留那一个基准：「${cut(sen)}」`);
+    }
+  }
+}
+
+// ---------- 25. 「rose X% off a Y% drawdown」把当日涨幅与一周前的回撤幅度并置（review 2026-11-27 F1）
+const MIXED_DD = /\b(?:rose|gained|advanced|added|rebounded|rallied)\s+(\d+(?:\.\d+)?)%\s+(?:off|from|out\s+of)\s+(?:a|its|the)\s+(\d+(?:\.\d+)?)%\s+drawdown/i;
+for (const tier of ["today", ...WIN]) for (const [k, txt] of authored(snap.P[tier])) for (const sen of sentences(txt)) {
+  const m = sen.match(MIXED_DD);
+  if (m) W(`${tier}.${k}`, `「${cut(m[0], 60)}」把当日涨幅 ${m[1]}% 与回撤幅度 ${m[2]}% 并置：${m[1]}% 的分母是前一交易日收盘，必须在同句写明基期价，回撤另起一句「the rebound from the low is +x%, still y% below the record」：「${cut(sen)}」`);
+}
+
 for (const e of errs) console.log("ERROR " + e);
 for (const w of warns) console.log("WARN  " + w);
 console.log(`\nlint ${DATE}: ${errs.length} error(s), ${warns.length} warning(s)`);

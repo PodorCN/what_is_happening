@@ -3181,9 +3181,16 @@
               "rule": "写「N points better than the index」时同句只能出现被比较的那一个基准：用 S&P 就写「3.76 points better than the S&P 500」并不再列 SPY 的跌幅；要列 SPY 就写「3.66 points better than SPY」。"
             }
           ]
+        },
+        {
+          "round": 2,
+          "verdict": "PASS",
+          "findings": []
         }
       ],
-      "resolved": false
+      "resolved": true,
+      "fixedAt": "2026-11-27T19:20:00-05:00",
+      "fixNote": "F1 today ① d/s0 改写：rose 2.61% 写明分母 26,046.90，回撤另起一句（four-session rebound +6.78%、still 14.41% below the 10/6 record）；F2 today ② 标题 Everything Rose → All 11 Sectors Rose（同链 s5/d 已点名 crypto 例外）；F3 today ③ n1 在 fact 里标明 Bloomberg 4.93%/+8bp 与 Treasury par 4.94%/+9bp 的 1bp 口径差；F4 mtd ② 统一为 SPY 基准 3.66（title/s0/d 三处）；同类顺手修 today ② s3（对比 SPY 1.62% 却写 lagged the index）为 lagged SPY；lint 新增 §24 同句两个基准、§25 rose X% off a Y% drawdown。"
     }
   ]
 }

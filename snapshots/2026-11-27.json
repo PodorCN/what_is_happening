@@ -125,14 +125,14 @@
      "t": "① The AI Trade Unwound Its Bear-Market Discount",
      "main": 1,
      "steps": [
-      "The Nasdaq 100 had closed 11/20 at 25,028.98, 19.84% below its 10/6 record of 31,224.47, on the brink of a bear market; it rose 2.61% to 26,726.39 on 11/27.",
+      "The Nasdaq 100 had closed 11/20 at 25,028.98, 19.84% below its 10/6 record of 31,224.47, on the brink of a bear market; from 11/25's 26,046.90 it rose 2.61% to 26,726.39 on 11/27, a four-session rebound of 6.78% that still leaves it 14.41% below the record.",
       "Micron +7.60% to $646.95 and Marvell +7.34% to $140.54 led the chip rebound, and the PHLX Semiconductor Index gained 4.69% to 9,186.71.",
       "Nvidia, up 31% on 11/23 when Jensen Huang was reinstated as chief executive, added only 0.80% to $150.49: the buying went to the laggards, not the leader.",
       "The megacaps joined in: Amazon +3.96% to $254.12, Meta +3.13% to $628.96 and Tesla +5.22% to $400.00.",
       "The S&P closed 1.60% higher at 7,297.49, the Nasdaq Composite 2.31% at 24,129.50, and the VIX fell 15.84% to 23.81.",
       "The week finished with the S&P up 5.6%, its best since April 2025, and the Dow up 5.5%, its biggest weekly advance since October 2022."
      ],
-     "d": "The AI trade that had slid to the brink of a bear market reversed: the Nasdaq 100 rose 2.61% off a 19.84% drawdown, the semiconductor gauge gained 4.69%, and the S&P finished its best week since April 2025.",
+     "d": "The AI trade that had slid to the brink of a bear market reversed: the Nasdaq 100 rose 2.61% on the day from 26,046.90, the semiconductor gauge gained 4.69%, and the S&P finished its best week since April 2025; the four-session rebound from the 11/20 low is 6.78%, still 14.41% below the 10/6 record.",
      "news": [
       {
        "time": "11/27",
@@ -233,16 +233,16 @@
      ]
     },
     {
-     "t": "② Everything Rose, but the Average Stock Lagged",
+     "t": "② All 11 Sectors Rose, but the Average Stock Lagged",
      "steps": [
       "All 11 S&amp;P sectors rose, led by technology +2.80% (XLK $160.15) and consumer discretionary +2.11% (XLY $119.97).",
       "Health care +0.28% (XLV $184.20) and utilities +0.28% (XLU $43.73) were last, with staples +0.41% (XLP $92.68).",
       "Four of every five stocks advanced, and NYSE advancers beat decliners by 3.25 to 1.",
-      "The equal-weight ETF rose 1.22% to $218.38 against SPY's 1.62% to $728.32, so the average stock lagged the index by 0.40 points.",
+      "The equal-weight ETF rose 1.22% to $218.38 against SPY's 1.62% to $728.32, so the average stock lagged SPY by 0.40 points.",
       "The Russell 2000 added 1.71% to 2,750.30, ahead of the S&P's 1.60%.",
       "Bitcoin was the exception: it fell 0.75% to $59,684.11 and ether 1.83% to $1,659.78 while every equity sector rallied."
      ],
-     "d": "The rally was broad but not equal: all 11 sectors rose and four of five stocks gained, yet the buying was megacap-weighted, so the equal-weight fund lagged SPY by 0.40 points and crypto sat it out.",
+     "d": "The rally was broad but not equal: four of five stocks gained and no sector fell, yet the buying was megacap-weighted, so the equal-weight fund lagged SPY by 0.40 points and crypto sat it out.",
      "news": [
       {
        "time": "11/27 close",
@@ -337,7 +337,7 @@
       },
       {
        "time": "11/27",
-       "fact": "The yield on 10-year Treasuries advanced eight basis points to 4.93%.",
+       "fact": "The yield on 10-year Treasuries advanced eight basis points to 4.93%, Bloomberg's quote; the Treasury par curve used on this page shows 4.94%, up nine basis points, a 1bp convention gap.",
        "src": "Bloomberg",
        "u": "https://swissinfo.ch/eng/s%26p-500-has-best-week-since-april-2025-on-ai-rally%3A-markets-wrap/92446051"
       },
@@ -649,13 +649,13 @@
      ]
     },
     {
-     "t": "② The Average Stock Kept 3.76 Points More Than the Index",
+     "t": "② The Average Stock Kept 3.66 Points More Than SPY",
      "steps": [
-      "RSP is 0.03% higher for the month against SPY's 3.63% decline, 3.76 points better than the index.",
+      "RSP is 0.03% higher for the month against SPY's 3.63% decline, 3.66 points better.",
       "The Russell 2000 is 2.19% lower at 2,750.30, 1.54 points better than the index.",
       "The concentration is in single names: Nvidia is 26.46% lower for the month and Micron 26.88%."
      ],
-     "d": "Concentration was a size story, not an escape hatch: megacaps supplied most of the drop, but the Russell 2000 still fell 2.19% and an equal-weighted portfolio kept 3.76 points more than the index.",
+     "d": "Concentration was a size story, not an escape hatch: megacaps supplied most of the drop, but the Russell 2000 still fell 2.19% and an equal-weighted portfolio kept 3.66 points more than SPY.",
      "news": [
       {
        "time": "11/27 close",
